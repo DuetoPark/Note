@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- 페이지 설명 -->
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="자바스크립트, javascript, 이벤트, e.target, children, parentElement"/>
+    <meta name="description" content="addEventListener의 이벤트 변수의 특징과 e.target을 사용하는 이유,  활용법을 공부합시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>e.target | Javascript</title>
+
+    <!-- Style -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/animation/animation.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript-media-query.css">
+  </head>
+
+  <body>
+    <header class='note-header'>
+      <div class='container'>
+        <h1 class='note-header-title'>
+          <a href='../main.html'>🔥기초튼튼 이가탄🔥</a>
+        </h1>
+
+        <nav class='note-header-nav'>
+          <h2 class='sr-only note-header-nav-title'>다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list'>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>javascript</button>
+            </li>
+          </ol>
+
+          <!-- 페이지 이동 모달 -->
+          <article class="go-to-pages">
+            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+
+            <button class="go-to-pages-close"
+              type="button"></button>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/01-meta.html">1-meta.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/02-pre.html">2-pre.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/03-inline-block.html">3-inline-block.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/04-picture.html">4-picture.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/05-list-child-element.html">5-list-child-element.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/01-link.html">1-link.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/02-stroke.html">2-stroke.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/03-background-clip.html">3-background-clip.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/04-line-break.html">4-line-break.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/05-pseudo-opacity.html">5-pseudo-opacity.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/06-width.html">6-width.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/07-main-tag-IE.html">7-main-tag-IE.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/08-transform-origin.html">8-transform-origin.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/09-padding-top.html">9-padding-top.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/10-direction.html">10-direction.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./01-pseudo-style.html">1-pseudo-style.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./02-toggle.html">2-toggle.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./03-copy.html">3-copy.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./04-e.target.html">4-e.target.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./05-switch.html">5-switch.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./06-timing-event.html">6-timing-event.html</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </nav>
+
+        <div class='toggle-button-group'>
+          <strong class='toggle-button-title'>Day/Night Switch</strong>
+          <button class='toggle-button' type='button'></button>
+        </div>
+      </div>
+    </header>
+
+    <main class='note-main'>
+      <section class='container'>
+        <h1 class='main-title'>
+          <strong>👉e.target👈</strong>
+        </h1>
+
+        <article class='e-target'>
+          <h1 class='main-article-title'>🙌개요</h1>
+          <p>
+            1분코딩 자바스크립트 강의를 듣다가 e.target이 활용도가 높아서 매우매우매우 편하다는 말씀을 듣고 얼마나 편한지 궁금해졌다.<br/>
+            <br/>
+            그래서 javascript-3-copy.html 페이지에 클릭 이벤트를 추가해봤다.<br/>
+          </p>
+
+          <h2 class='main-article-subtitle'>🙏이것만은 가져가고 만다</h2>
+          <ul class='main-article-list background-white-radius'>
+            <li class='main-article-list-items hyphen'>
+              개발자도구-property 활용법
+            </li>
+            <li class='main-article-list-items hyphen'>
+              모던 javaScript 튜토리얼에서 배운 children과 parentElement 개념 정리
+            </li>
+          </ul>
+        </article>
+
+        <article class='e-target-desc'>
+          <h1 class='main-article-title'>👸e.target</h1>
+
+          <h2 class='main-article-subtitle'>🐠특징</h2>
+          <ul class='main-article-list'>
+            <li class='main-article-list-items hyphen'>
+              addEventListener에 지정한 handler함수에는 event 변수가 자동으로 생성된다.
+            </li>
+            <li class='main-article-list-items hyphen'>
+              e.target에는 마우스의 위치, 선택한 요소 등등의 정보가 들어있다.
+            </li>
+            <li class='main-article-list-items hyphen'>
+              개발자도구에서 해당 요소의 자식 요소를 확인할 수 있다.
+            </li>
+          </ul>
+
+          <h2 class='main-article-subtitle'>🐳사용하는 이유</h2>
+          <p>
+            이거는 정말 신세계.
+            <strong>같은 그룹에 있는 요소에만 이벤트가 발생하게 만들 수 있다.</strong>
+          </p>
+          <p>
+            땅콩에 비유하자면,<br/>
+            땅콩의 왼쪽 알맹이를 누르면 오른쪽 알맹이가 팝콘처럼 터지는 함수를 만들었다고 치자.<br/>
+            함수의 동작은 왼쪽 알맹 꾹, 오른쪽 알맹 파사삭으로 구성되어있다.<br/>
+            1번 땅콩의 왼쪽 알맹만이 1번 땅콩의 오른쪽 알맹과 매치된다는 조건이 있다.
+          </p>
+          <div class='e-target-reason-image-group'>
+            <img class='e-target-reason-image'
+              src='../../assets/images/퓨전.jpg'
+              alt=''>
+          </div>
+
+          <p>
+            e.target 사용하지 않는다는 건,<br/>
+            땅콩 껍질 까서 하나의 병에 다 담아 놓은 모습과 유사하다.<br/>
+            알맹이마다 동작을 지정하고 몇번째 땅콩인지 인지해야 한다.<br/>
+            왜냐하면 땅콩이 막 섞여있으니까 짝꿍 알맹을 잃기 쉽다.
+          </p>
+          <div class='e-target-reason-image-group'>
+            <img class='e-target-reason-image'
+              src='../../assets/images/peanut.jpg'
+              alt=''>
+          </div>
+
+          <p>
+            e.target 사용한다는 건,<br/>
+            껍질 벗기지 않은 땅콩의 모습과 유사하다.<br/>
+            왼쪽 알맹과 오른쪽 알맹이 하나의 껍질로 묶여 있어서,<br/>
+            땅콩을 막 섞어도 알맹이들은 짝을 맞추고 있어서 몇번째 땅콩의 알맹이인지 알 필요 없다.
+          </p>
+          <div class='e-target-reason-image-group'>
+            <img class='e-target-reason-image'
+              src='../../assets/images/peanut2.jpg'
+              alt=''>
+          </div>
+
+          <p>
+            즉, e.target 사용안하면 dom 요소를 페이지 처음부터 끝까지 찾아내서 동작하게 만든다.<br/>
+            e.target 사용하면 해당 그룹 내에서 필요한 요소를 찾아내서 동작하게 만든다. 다른 그룹과의 간섭은 없다.<br/>
+            그룹에 이벤트를 지정해 놓기만 하면, 동작을 지정한 함수를 여기저기 막 가져다 쓸 수 있다.
+          </p>
+        </article>
+
+        <article class='develop-tools-property'>
+          <h1 class='main-article-title'>🐲개발자도구 property</h1>
+          <p>
+            이벤트 지정할 때 사용하기 좋은 정보들이 콸콸콸!
+          </p>
+          <img class='e-target-image'
+            src='../../assets/images/develop-tools-property.png'
+            alt=''/>
+
+          <h2 class='main-article-subtitle'>🐖주로 확인할 정보</h2>
+          <ul class='main-article-list background-white-radius'>
+            <li class='main-article-list-items hyphen'>children</li>
+            <li class='main-article-list-items hyphen'>classList</li>
+            <li class='main-article-list-items hyphen'>innerText</li>
+            <li class='main-article-list-items hyphen'>lastElementChild</li>
+            <li class='main-article-list-items hyphen'>nextElementSibling</li>
+            <li class='main-article-list-items hyphen'>parentElement</li>
+            <li class='main-article-list-items hyphen'>previousElementSibling</li>
+          </ul>
+        </article>
+
+        <article class='e-target-nextElementSibling'>
+          <h1 class='main-article-title'>🌝nextElementSibling</h1>
+          <p>
+            선택한 요소의 형재자매 요소
+          </p>
+          <img class='e-target-image'
+            src='../../assets/images/next-element-sibling.png'
+            alt='개발자도구에서 nextElementSibling 확인하기'/>
+        </article>
+
+        <article class='e-target-children'>
+          <h1 class='main-article-title'>🌳children</h1>
+          <p>
+            선택한 요소의 자식 요소
+
+            이 요소가 자식요소로 어떤 애들을 가지는지 확인하는 용도로 사용하고 있다.
+          </p>
+          <img class='e-target-image'
+            src='../../assets/images/children.png'
+            alt='개발자도구에서 children 확인하기'/>
+        </article>
+
+        <article class='e-target-parentElement'>
+          <h1 class='main-article-title'>🎁parentElement</h1>
+          <p>
+            선택한 요소의 부모 요소
+
+            해당 요소에서 빠져나오는 이벤트를 지정할 때 사용하고 있다.
+          </p>
+          <img class='e-target-image'
+            src='../../assets/images/parentElement2.png'
+            alt='개발자도구에서 parentElement 확인하기'/>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2020년 1월 3일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/app/modal.js"></script>
+  </body>
+</html>

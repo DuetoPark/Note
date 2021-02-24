@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- 페이지 설명 -->
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="자바스크립트, javascript, 토글, toggle"/>
+    <meta name="description" content="자바스크립트로 토글하는 방법, 내가 토글을 잘 못했던 이유, 토글을 연습하면서 배운 점을 정리해봤다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>토글(Toggle) | Javascript</title>
+
+    <!-- Style -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript-media-query.css">
+  </head>
+
+  <body>
+    <header class='note-header'>
+      <div class='container'>
+        <h1 class='note-header-title'>
+          <a href='../main.html'>🔥기초튼튼 이가탄🔥</a>
+        </h1>
+
+        <nav class='note-header-nav'>
+          <h2 class='sr-only note-header-nav-title'>다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list'>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>javascript</button>
+            </li>
+          </ol>
+
+          <!-- 페이지 이동 모달 -->
+          <article class="go-to-pages">
+            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+
+            <button class="go-to-pages-close"
+              type="button"></button>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/01-meta.html">1-meta.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/02-pre.html">2-pre.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/03-inline-block.html">3-inline-block.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/04-picture.html">4-picture.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/05-list-child-element.html">5-list-child-element.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/01-link.html">1-link.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/02-stroke.html">2-stroke.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/03-background-clip.html">3-background-clip.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/04-line-break.html">4-line-break.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/05-pseudo-opacity.html">5-pseudo-opacity.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/06-width.html">6-width.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/07-main-tag-IE.html">7-main-tag-IE.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/08-transform-origin.html">8-transform-origin.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/09-padding-top.html">9-padding-top.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/10-direction.html">10-direction.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./01-pseudo-style.html">1-pseudo-style.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./02-toggle.html">2-toggle.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./03-copy.html">3-copy.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./04-e.target.html">4-e.target.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./05-switch.html">5-switch.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./06-timing-event.html">6-timing-event.html</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </nav>
+
+        <div class='toggle-button-group'>
+          <strong class='toggle-button-title'>Day/Night Switch</strong>
+          <button class='toggle-button' type='button'></button>
+        </div>
+      </div>
+    </header>
+
+    <main class='note-main'>
+      <section class='container'>
+        <h1 class='main-title'>
+          <strong>🙋토글 (Toggle)🙋</strong>
+        </h1>
+
+        <article class='how-to-toggle'>
+          <h1 class='main-article-title'>👶토글하는 방법</h1>
+          <div>
+            <h2 class='main-article-subtitle order'>HTML</h2>
+            <p>
+              꼭 지켜야 하는게 있다면, <strong class='underline'>클래스 선언할 때 이름에 규칙을 세우는 것</strong>
+            </p>
+          </div>
+
+          <div>
+            <h2 class='main-article-subtitle order'>CSS</h2>
+            <p>
+              웹 페이지를 만들 때, <strong class='underline'>반복되는 스타일은 별개의 파일을 만들어서 그 파일에 작성</strong>하고 관리한다.(나는 common.css에 작성)<br/>
+              토글되었을 때 보여질 스타일도 common.css 파일에 작성
+            </p>
+            <pre class='main-article-pre background-white-radius'>
+              <code>
+                .background-toggled{
+                  background-color: #525252;
+                  color: #FFFFFF;
+                }
+              </code>
+            </pre>
+          </div>
+
+          <div>
+            <h2 class='main-article-subtitle order'>Javascript</h2>
+            <p>
+              작성한 스타일을 추가하는 함수(toggled();)를 만든다.<br/>
+              핸들러(toggleHandler)에 함수(toggled();)를 선언한다.<br/>
+              이벤트를 줄 요소에 addEventListener 메소드를 선언한다.
+            </p>
+            <pre class='main-article-pre background-white-radius'>
+              <code>
+                function toggled () {
+                  document.body.classList.add('background-toggled');
+                }
+
+                let toggleHandler = function () {
+                  toggled();
+                }
+
+                toggleButton.addEventListener('click', toggleHandler);
+              </code>
+            </pre>
+          </div>
+        </article>
+
+        <article class='my-top-secret'>
+          <h1 class='main-article-title'>🎉나 사실 토글 잘 못한다!!!</h1>
+
+          <div>
+            <h2 class='main-article-subtitle'>📀내가 토글을 잘 못했던 이유</h2>
+            <ul class='main-article-list background-white-radius'>
+              <li class='main-article-list-items hyphen'>
+                <strong class='underline'>common.css를 만들지 않았다</strong>
+              </li>
+              <li class='main-article-list-items hyphen'>클래스명이 자유분방했다</li>
+              <li class='main-article-list-items hyphen'>어떻게하면 원하는 DOM 요소만 선택할 수 있는지 고민하지 않았다</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class='main-article-subtitle'>📢그래서 어떻게 했냐면</h2>
+            <ul class='main-article-list background-white-radius'>
+              <li class='main-article-list-items hyphen'>
+                <strong class='underline'>common 스타일을 작성했다</strong>
+              </li>
+              <li class='main-article-list-items hyphen'>
+                클래스명에 통일감/규칙을 세웠다
+              </li>
+              <li class='main-article-list-items hyphen'>
+                대입연산자를 사용해서 DOM 요소를 선택했다
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class='main-article-subtitle'>🎬토글을 연습하면서 배운 점</h2>
+            <ul class='main-article-list background-white-radius'>
+              <li class='main-article-list-items hyphen'>
+                classList.add()는 진짜 편하다
+              </li>
+              <li class='main-article-list-items hyphen'>
+                현재 상태를 저장할 변수가 필요하다
+              </li>
+              <li class='main-article-list-items hyphen'>
+                부모요소에 이벤트를 지정하면 반복문의 사용을 줄일 수 있다
+              </li>
+              <li class='main-article-list-items hyphen'>
+                두렵다고 피하면 그 상황이 오래갈 뿐이다. 조금 망하면 어때 라는 마음가짐으로 몸통박치기를 해보자. 홀가분하다
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2020년 12월 29일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/app/modal.js"></script>
+  </body>
+</html>

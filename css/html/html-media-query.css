@@ -1,0 +1,134 @@
+/* Tablet Style
+min-width >=576px  */
+@media screen and (min-width:576px) {
+  /* HTML-1-meta.html */
+  /* animation */
+  .data-image{
+    width: 130px; /* 미티어쿼리 변경값*/
+  }
+
+  .box-image{
+    width: 400px; /* 미티어쿼리 변경값*/
+  }
+
+  /* Article - Meta-Attribute */
+  .meta-attribute li.main-article-list-items.type{
+    margin-bottom: 0;  /* 미티어쿼리 변경값*/
+  }
+
+
+  /* HTML-2-pre.html */
+
+
+  /* HTML-3-inline-block.html */
+  /* Article - Block-Element */
+  .block-element > p{
+    margin-bottom: 16px; /* 미티어쿼리 변경값*/
+  }
+
+  .p-tag-image{
+    width: 400px; /* 미티어쿼리 변경값*/
+  }
+
+  /* Article - Inline-Element */
+  .inline-element p{
+    margin-bottom: 16px; /* 미티어쿼리 변경값*/
+  }
+
+  .inline-element > p{
+    margin-bottom: 24px; /* 미티어쿼리 변경값*/
+  }
+
+  .inline-element-image-group{
+    overflow-x: hidden;
+    margin-bottom: 16px;
+  }
+
+
+  /* HTML-4-Picture.html */
+  /* common */
+  .picture > p,
+  .picture-syntax > p,
+  .picture-operating-principle > p,
+  .picture-example > pre {
+    margin-bottom: 24px;
+  }
+
+  /* Article - Picture-Syntax */
+  .picture-syntax ul{
+    padding: 15px 20px;
+  }
+
+
+
+  /* HTML-5-list-child-element.html */
+  .list-child-element > p,
+  .list-child-element > ul{
+    margin-bottom: 16px;
+  }
+
+  .list-child-element > ul{
+    padding: 15px 20px;
+  }
+}
+
+/* Desktop Style
+min-width >=768px  */
+@media screen and (min-width:768px) {
+  /* HTML-1-meta.html */
+  /* Article - Meta-Attribute */
+  .meta-attribute-type{
+    margin-bottom: 48px; /* 미티어쿼리 변경값*/
+  }
+
+
+  /* HTML-2-pre.html */
+
+
+  /* HTML-3-inline-block.html */
+  /* Article - Block-Element */
+  .block-element > p{
+    margin-bottom: 32px; /* 미티어쿼리 변경값*/
+  }
+
+  /* Article - Inline-Element */
+  .inline-element p{
+    margin-bottom: 24px; /* 미티어쿼리 변경값*/
+  }
+
+  .inline-element > p{
+    margin-bottom: 32px; /* 미티어쿼리 변경값*/
+  }
+
+  .inline-element-image-group{
+    margin-bottom: 24px;
+  }
+
+
+
+  /* HTML-4-Picture.html */
+  /* common */
+  .picture > p,
+  .picture-syntax > p,
+  .picture-operating-principle > p,
+  .picture-example > pre {
+    margin-bottom: 36px;
+  }
+
+  /* Article - Picture-Syntax */
+  .picture-syntax ul{
+    padding: 20px 40px;
+  }
+
+
+
+  /* HTML-5-list-child-element.html */
+  .list-child-element > p,
+  .list-child-element > ul{
+    margin-bottom: 24px;
+  }
+
+  .list-child-element > ul{
+    padding: 20px 40px;
+  }
+}

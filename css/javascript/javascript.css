@@ -1,0 +1,360 @@
+/* Javascript-1-Pseudo-Style.html */
+/* Article - Pseudo-Style */
+.pseudo-style > div{
+  margin-bottom: 16px;
+}
+
+.pseudo-style > div:last-child{
+  margin-bottom: 0;
+}
+
+.pseudo-style-solution > p,
+.pseudo-style-solution > pre{
+  margin-bottom: 16px;
+}
+
+.pseudo-style-solution > pre:last-child{
+  margin-bottom: 0;
+}
+
+
+
+/* Javascript-2-Toggle.html */
+.how-to-toggle > div,
+.my-top-secret > div{
+  margin-bottom: 16px;
+}
+
+.how-to-toggle > div:last-child,
+.my-top-secret > div:last-child{
+  margin-bottom: 0;
+}
+
+
+/* Article - How-To-Toggle */
+.how-to-toggle > div > p{
+  margin-bottom: 16px;
+}
+
+.how-to-toggle > div:last-child > pre{
+  overflow-x: scroll;
+}
+
+
+/* Article - My-Top-Secret */
+.my-top-secret > div > ul.main-article-list.background-white-radius{
+  padding: 20px;
+}
+
+
+
+/* Javascript-3-Copy.html */
+/* Common */
+.main-article-modal-group > .show-code-button{
+  margin-bottom: 16px;
+}
+
+.main-article-modal-group .modal-code{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation-name: opacity-magic-100;
+  animation-duration: 250ms;
+  animation-timing-function: ease-in-out;
+}
+
+.modal-code > pre.main-article-pre.background-white-radius{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  overflow-x: scroll;
+  animation-name: transformY-5px;
+  animation-duration: 250ms;
+  animation-timing-function: ease-in-out;
+}
+
+.clipboardData-desc .main-article-subtitle,
+.navigator-desc .main-article-subtitle{
+  overflow-wrap: break-word;
+}
+
+
+/* Article - Clipboard-Copy-Code */
+.clipboard-copy-code > p{
+  margin-bottom: 8px;
+}
+
+.clipboard-copy-code .show-code-button{
+  margin-bottom: 0;
+}
+
+
+/* Article - How-To-Copy */
+.how-to-copy li.main-article-list-items.hyphen{
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.how-to-copy li.main-article-list-items.hyphen::after{
+  content: '';
+  opacity: 0;
+}
+
+.how-to-copy li.main-article-list-items.hyphen:hover::after{
+  content: '👇해당 영역으로 이동👇';
+  position: absolute;
+  z-index: 1;
+  bottom: -2px;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  padding: 4px;
+  white-space: nowrap;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+
+
+/* Article - How-To-Copy-Textarea */
+.createElement-desc > p,
+.select-desc > p,
+.execCommand-desc > p,
+/* Article - How-To-Copy-input */
+.how-to-copy-input > p,
+/* Article - How-To-Copy-old-IE */
+.how-to-copy-old-IE > p,
+/* Article - How-To-Copy-Mix */
+.how-to-copy-mix > p,
+.navigator-desc > p{
+  margin-bottom: 8px;
+}
+
+
+/* Article - How-To-Copy-Textarea */
+.how-to-copy-textarea > ol,
+.createElement-desc,
+.select-desc{
+  margin-bottom: 16px;
+}
+
+.how-to-copy-textarea p.background-white-radius{
+  padding: 10px 20px;
+  overflow-x: scroll;
+}
+
+.select-target-type{
+  display: flex;
+}
+
+.select-target-type > li.main-article-list-items.type{
+  margin-right: 4px;
+  margin-bottom: 0;
+}
+
+.execCommand-desc > p:last-child{
+  margin-bottom: 0;
+}
+
+
+/* Article - How-To-Copy-input */
+.how-to-copy-input .show-code-button{
+  margin-bottom: 0;
+}
+
+
+/* Article - How-To-Copy-Mix */
+.navigator-desc > p:last-child{
+  margin-bottom: 0;
+}
+
+
+
+/* Javascript-4-e.target.html */
+/* Common */
+.e-target-desc > p,
+.e-target-reason-image-group,
+.develop-tools-property > p,
+.e-target-image,
+.e-target-nextElementSibling > p,
+.e-target-children > p,
+.e-target-parentElement > p{
+  margin-bottom: 8px;
+}
+
+
+/* Article - E-Target */
+.e-target > p{
+  margin-bottom: 16px;
+}
+
+.e-target > ul{
+  padding: 10px 20px;
+}
+
+
+/* Article - E-Target-Desc */
+.e-target-desc > p:last-child{
+  margin-bottom: 0;
+}
+
+.e-target-desc > ul{
+  margin-bottom: 16px;
+}
+
+.e-target-reason-image{
+  width: 100%;
+  height: auto;
+}
+
+
+/* Article - Develop-Tools-Property */
+.e-target-image{
+  width: 100%;
+  height: auto;
+}
+
+.develop-tools-property > ul.main-article-list.background-white-radius{
+  padding: 10px 20px;
+}
+
+
+
+/* Javascript-5-switch.html */
+/* common */
+.switch ul,
+.switch-syntax > p:first-of-type,
+.switch-precautions > ul{
+  padding: 10px 20px;
+}
+
+
+/* Article - Switch-syntax */
+.switch-syntax > p:first-of-type,
+.switch-precautions > p,
+.switch-precautions > ul{
+  margin-bottom: 8px;
+}
+
+
+/* Article - Switch */
+.switch > p{
+  margin-bottom: 16px;
+}
+
+
+/* Javascript-6-timing-event.html */
+/* Article - timing-event */
+.timing-event .main-article-title,
+.timing-event-syntax .main-article-subtitle{
+  text-transform: capitalize;
+}
+
+/* Article - timing-event (common) */
+.timing-event-syntax,
+.no-timing-event,
+.apply-timing-event,
+.no-timing-event > p,
+.no-timing-event .main-article-list{
+  margin-bottom: 16px;
+}
+
+.open-modal-sample{
+  display: block;
+  width: 150px;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  border-radius: 2px;
+  border: 1px solid #CCCCCC;
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+.open-modal-sample:hover,
+.open-modal-sample:active,
+.open-modal-sample:focus{
+  border: 1px solid #CCCCCC;
+}
+
+/* Article - timing-event (timing-event-syntax) */
+.timing-event-syntax .background-white-radius{
+  padding: 10px 20px;
+  margin-bottom: 8px;
+}
+
+.timing-event-syntax .background-white-radius:last-child{
+  margin-bottom: 0;
+}
+
+/* Article - timing-event (modal-sample) */
+.modal-sample{
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: none;
+  width: 100%;
+  padding: 10px;
+  background-color: #FFF;
+}
+
+.close-modal-sample{
+  position: relative; top: 0;
+  left: 100%;
+  transform: translateX(-100%);
+  display: block;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("../../assets/images/close.svg");
+  background-repeat: no-repeat;
+  background-size: 36px;
+  cursor: pointer;
+}
+
+.modal-sample-title{
+  padding-bottom: 24px;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: "MADE-Mirage-Medium", serif;
+  border-bottom: 1px solid #727272;
+  color: #CB0000;
+}
+
+.modal-sample-content > div{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  margin-bottom: 8px;
+}
+
+.modal-sample-subtitle,
+.modal-sample-date{
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #333333;
+  letter-spacing: -0.05em;
+}
+
+.modal-sample-date{
+  color: #727272;
+}
+
+.modal-sample-image{
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.modal-sample-p{
+  font-size: 20px;
+  font-family: "MADE-Mirage-bold", serif;
+}

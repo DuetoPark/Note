@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- 페이지 설명 -->
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="CSS, 웹접근성, 텍스트 숨기기, SEO, SEO-hidden"/>
+    <meta name="description" content="웹접근성 고려한 텍스트 숨기기를 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>텍스트 숨기기 | CSS</title>
+
+    <!-- Style -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/css/css-style.css">
+    <link rel="stylesheet" href="../../css/css/css-media-query.css">
+  </head>
+
+  <body>
+    <header class='note-header'>
+      <div class='container'>
+        <h1 class='note-header-title'>
+          <a href='../main.html'>🔥기초튼튼 이가탄🔥</a>
+        </h1>
+
+        <nav class='note-header-nav'>
+          <h2 class='sr-only note-header-nav-title'>다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list'>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>javascript</button>
+            </li>
+          </ol>
+
+          <!-- 페이지 이동 모달 -->
+          <article class="go-to-pages">
+            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+
+            <button class="go-to-pages-close"
+              type="button"></button>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/01-meta.html">1-meta.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/02-pre.html">2-pre.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/03-inline-block.html">3-inline-block.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/04-picture.html">4-picture.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/05-list-child-element.html">5-list-child-element.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./01-link.html">1-link.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./02-stroke.html">2-stroke.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./03-background-clip.html">3-background-clip.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./04-line-break.html">4-line-break.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./05-pseudo-opacity.html">5-pseudo-opacity.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./06-width.html">6-width.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./07-main-tag-IE.html">7-main-tag-IE.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./08-transform-origin.html">8-transform-origin.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./09-padding-top.html">9-padding-top.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./10-direction.html">10-direction.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/01-pseudo-style.html">1-pseudo-style.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/02-toggle.html">2-toggle.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/03-copy.html">3-copy.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/04-e.target.html">4-e.target.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/05-switch.html">5-switch.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/06-timing-event.html">6-timing-event.html</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </nav>
+
+        <div class='toggle-button-group'>
+          <strong class='toggle-button-title'>Day/Night Switch</strong>
+          <button class='toggle-button' type='button'></button>
+        </div>
+      </div>
+    </header>
+
+    <main class='note-main'>
+      <section class='container'>
+        <h1 class='main-title'>
+          <strong>🍕접근성을 고려한 텍스트 숨기기🍕</strong>
+        </h1>
+
+        <article class='SEO-hidden-summary'>
+          <h2 class='main-article-title'>🍹개요</h2>
+
+          <p>
+            접근성과 최적화를 열심히 공부해두면 짱 멋있는 웹 프론트엔드 개발자가 될 것 같다는 느낌이 들었다.
+            그래서 접근성을 유지한 텍스트 숨김 방법을 공부해보기로 했다.
+          </p>
+        </article>
+
+        <article class='no-SEO-hidden'>
+          <h2 class='main-article-title'>🍺그냥 숨기기</h2>
+
+          <ol>
+            <li class="no-SEO-hidden-list-items">
+              <div class="SEO-hidden-display">
+                <h3 class="main-article-subtitle">🍎display: none;</h3>
+
+                <pre class="main-article-pre background-white-radius">
+                  <code>
+                    display: none;
+                  </code>
+                </pre>
+
+                <p>
+                  display: none;은 <strong>정보를 표기하지 않겠다</strong>라는 의미이다.<br/>
+                  그러면 보조기기에 정보 전달을 하지 않음.<br/>
+                  즉, 내용을 숨겼다고 인식하는 게 아니라, 처음부터 없는 정보라고 인식.
+                </p>
+              </div>
+            </li>
+            <li class="no-SEO-hidden-list-items">
+              <div class="SEO-hidden-visibility">
+                <h3 class="main-article-subtitle">🍏visibility: hidden;</h3>
+
+                <pre class="main-article-pre background-white-radius">
+                  <code>
+                    visibility: hidden;
+                    position: absolute;
+                  </code>
+                </pre>
+
+                <p>
+                  display: none;와 동일하다.
+                </p>
+              </div>
+            </li>
+            <li class="no-SEO-hidden-list-items">
+              <div class="SEO-hidden-text-indent">
+                <h3 class="main-article-subtitle">🍊text-indent: -9999px;</h3>
+
+                <pre class="main-article-pre background-white-radius">
+                  <code>
+                    text-indent: -9999px;
+                  </code>
+                </pre>
+
+                <ul>
+                  <li class="main-article-list-items hyphen">
+                    구글 검색엔진에서 스팸으로 인식
+                  </li>
+                  <li class="main-article-list-items hyphen">
+                    VoiceOver로 초점 이동시키면, 초점이 잡히는 문제 발생
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="no-SEO-hidden-list-items">
+              <div class="SEO-hidden-zero-pixel">
+                <h3 class="main-article-subtitle">🍋zero-pixel</h3>
+
+                <pre class="main-article-pre background-white-radius">
+                  <code>
+                    width: 0;
+                    height: 0;
+                    font-size: 0;
+                  </code>
+                </pre>
+
+                <div class="">
+                  <h4 class="main-article-subtitle order">width와 height를 0으로 지정할 때</h4>
+
+                  <ul>
+                    <li class="main-article-list-items hyphen">
+                      NVDA와 VoiceOver는 contents를 읽음
+                    </li>
+                    <li class="main-article-list-items hyphen">
+                      VoiceOver로 초점 이동시키면, 초점이 잡히는 문제 발생
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="">
+                  <h4 class="main-article-subtitle order">font-size를 0으로 지정할 때</h4>
+
+                  <ul>
+                    <li class="main-article-list-items hyphen">
+                      VoiceOver가 contents를 읽지 못함
+                    </li>
+                    <li class="main-article-list-items hyphen">
+                      구글 검색엔진에서 스팸으로 인식
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="no-SEO-hidden-list-items">
+              <div class="SEO-hidden-opacity">
+                <h3 class="main-article-subtitle">🍉opacity: 0;</h3>
+
+                <pre class="main-article-pre background-white-radius">
+                  <code>
+                    opacity: 0;
+                  </code>
+                </pre>
+
+                <ul>
+                  <li class="main-article-list-items hyphen">
+                    VoiceOver로 초점 이동시키면, 초점이 잡히는 문제 발생
+                  </li>
+                  <li class="main-article-list-items hyphen">
+                    대화형 요소인 경우, 마우스가 반응함
+                  </li>
+                  <li class="main-article-list-items hyphen">
+                    VoiceOver가 읽지 못함
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="no-SEO-hidden-list-items">
+              <div class="SEO-hidden-position">
+                <h3 class="main-article-subtitle">🍓position: absolute;</h3>
+
+                <pre class="main-article-pre background-white-radius">
+                  <code>
+                    position: absolute;
+                    top: -9999px;
+                    left: -9999px;
+                  </code>
+                </pre>
+
+                <ul>
+                  <li class="main-article-list-items hyphen">
+                    VoiceOver로 초점 이동시키면, 초점이 잡히는 문제 발생
+                  </li>
+                  <li class="main-article-list-items hyphen">
+                    스팸으로 인식
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </article>
+
+        <article class='SEO-hidden'>
+          <h2 class='main-article-title'>🍸접근성을 고려한 숨기기</h2>
+
+          <pre class="main-article-pre background-white-radius">
+            <code>
+              .hidden{
+                overflow: hidden;
+                width: 1px;
+                height: 1px;
+                border: 0;
+                margin: -1px;
+                clip: rect(1px, 1px, 1px, 1px);
+                clip-path: inset(50%);
+              }
+            </code>
+          </pre>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://mulder21c.github.io/2019/03/22/screen-hide-text/'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "The Tracks of mulder21c - 접근 가능한 숨김 텍스트", github, 2021년 2월 5일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://mulder21c.github.io/2019/03/22/screen-hide-text/'>
+              https://mulder21c.github.io/2019/03/22/screen-hide-text/
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 2월 5일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/app/modal.js"></script>
+  </body>
+</html>

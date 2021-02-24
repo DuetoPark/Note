@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- 페이지 설명 -->
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="css, background-clip, text-fill-color, 글자 안에 이미지, 텍스트 이미지, 이미지 텍스트"/>
+    <meta name="description" content="글자에 색 또는 이미지를 넣을 수 있는 속성인 background-clip과 background-clip 값의 종류에 대해 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>글자 안에 이미지(background-clip) | CSS</title>
+
+    <!-- Style -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/css/css-style.css">
+    <link rel="stylesheet" href="../../css/css/css-media-query.css">
+  </head>
+
+  <body>
+    <header class='note-header'>
+      <div class='container'>
+        <h1 class='note-header-title'>
+          <a href='../main.html'>🔥기초튼튼 이가탄🔥</a>
+        </h1>
+
+        <nav class='note-header-nav'>
+          <h2 class='sr-only note-header-nav-title'>다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list'>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>javascript</button>
+            </li>
+          </ol>
+
+          <!-- 페이지 이동 모달 -->
+          <article class="go-to-pages">
+            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+
+            <button class="go-to-pages-close"
+              type="button"></button>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/01-meta.html">1-meta.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/02-pre.html">2-pre.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/03-inline-block.html">3-inline-block.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/04-picture.html">4-picture.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/05-list-child-element.html">5-list-child-element.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./01-link.html">1-link.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./02-stroke.html">2-stroke.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./03-background-clip.html">3-background-clip.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./04-line-break.html">4-line-break.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./05-pseudo-opacity.html">5-pseudo-opacity.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./06-width.html">6-width.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./07-main-tag-IE.html">7-main-tag-IE.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./08-transform-origin.html">8-transform-origin.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./09-padding-top.html">9-padding-top.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./10-direction.html">10-direction.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/01-pseudo-style.html">1-pseudo-style.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/02-toggle.html">2-toggle.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/03-copy.html">3-copy.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/04-e.target.html">4-e.target.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/05-switch.html">5-switch.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/06-timing-event.html">6-timing-event.html</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </nav>
+
+        <div class='toggle-button-group'>
+          <strong class='toggle-button-title'>Day/Night Switch</strong>
+          <button class='toggle-button' type='button'></button>
+        </div>
+      </div>
+    </header>
+
+    <main class='note-main'>
+      <section class='container'>
+        <h1 class='main-title'>
+          <strong>🍕글자 안에 이미지🍕</strong>
+        </h1>
+
+        <article class='background-clip'>
+          <h1 class='main-article-title'>⚾글자 안에 이미지 넣는 방법</h1>
+
+          <p>
+            그림 위에 글자를 배치하기는 많이 해봤지만,<br/>
+            글자 안에 이미지를 배치하는 건 안해봤다.<br/>
+            어.. 어떻게 해야하는지 구상을 해봤는데,<br/>
+            background image와 text의 color를 이용하면 되지 않을까?<br/>
+            <br/>
+            아니었다.<br/>
+            <br/>
+            웹 크로스 브라우징 적용
+          </p>
+
+          <pre class='main-article-pre background-white-radius'>
+            <code>
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: transparent;
+              -webkit-text-fill-color:transparent;
+            </code>
+          </pre>
+        </article>
+
+        <article class='background-clip-type-desc'>
+          <h2 class='main-article-subtitle'>🐛background-clip의 종류</h2>
+          <ul class='main-article-list background-clip-type'>
+            <li class='main-article-list-items type'>border-box</li>
+            <li class='main-article-list-items type'>padding-box</li>
+            <li class='main-article-list-items type'>content-box</li>
+            <li class='main-article-list-items type'>text</li>
+          </ul>
+
+          <div class='background-clip-image-group'>
+            <div>
+              <p class='background-clip-desc'>
+                배경이 테두리의 바깥 경계까지 차지
+              </p>
+              <img class='background-clip-image'
+                src='../../assets/images/background-clip-border-box.png'
+                alt='border-box'>
+            </div>
+            <div>
+              <p class='background-clip-desc'>
+                배경이 안쪽 여백의 바깥 경계까지 차지
+              </p>
+              <img class='background-clip-image'
+                src='../../assets/images/background-clip-padding-box.png'
+                alt='padding-box'>
+            </div>
+            <div>
+              <p class='background-clip-desc'>
+                배경을 콘텐츠 상자에 맞춤
+              </p>
+              <img class='background-clip-image'
+                src='../../assets/images/background-clip-content-box.png'
+                alt='content-box'>
+            </div>
+            <div>
+              <p class='background-clip-desc'>
+                배경을 전경 텍스트 위에만 그림
+              </p>
+              <img class='background-clip-image'
+                src='../../assets/images/background-clip-text.png'
+                alt='text'>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Web/CSS/background-clip'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "MDN-background-clip", MDN,  2020년 12월 29일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Web/CSS/background-clip'>
+              https://developer.mozilla.org/ko/docs/Web/CSS/background-clip
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2020년 12월 29일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/app/modal.js"></script>
+  </body>
+</html>

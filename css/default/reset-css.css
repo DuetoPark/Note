@@ -1,0 +1,88 @@
+/* Reset CSS */
+/* 폰트
+-기본글꼴: 스포 한 산스 네오
+-기본크기: 14px;
+-기본두께: 400;
+-line-height: 1.428571428571429;
+-letter-spacing: 0.03em; */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.428571428571429;
+  letter-spacing: 0.03em;
+}
+
+ol,
+ul,
+li{
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong{
+  font-weight: 400;
+}
+
+dfn,
+em,
+cite,
+q{
+  font-style: normal;
+}
+
+dl,
+dt,
+dd{
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg{
+  display: block;
+}
+
+input,
+button,
+textarea{
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.428571428571429;
+  letter-spacing: 0.03em;
+  border: none;
+  outline: none;
+}
+
+input:hover,
+input:active,
+input:focus,
+button:hover,
+button:active,
+button:focus,
+textarea:hover,
+textarea:active,
+textarea:focus{
+  border: none;
+  outline: none;
+}
+
+blockquote,
+cite{
+  quotes: none;
+}

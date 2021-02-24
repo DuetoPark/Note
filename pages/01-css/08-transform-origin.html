@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- 페이지 설명 -->
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="CSS, transform 중심점, transform-origin"/>
+    <meta name="description" content="transform 속성의 중심점을 표현하는 속성인 transform-origin 뿌시기!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>transform-origin | CSS</title>
+
+    <!-- Style -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/animation/animation.css">
+    <link rel="stylesheet" href="../../css/css/css-style.css">
+    <link rel="stylesheet" href="../../css/css/css-media-query.css">
+  </head>
+
+  <body>
+    <header class='note-header'>
+      <div class='container'>
+        <h1 class='note-header-title'>
+          <a href='../main.html'>🔥기초튼튼 이가탄🔥</a>
+        </h1>
+
+        <nav class='note-header-nav'>
+          <h2 class='sr-only note-header-nav-title'>다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list'>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>javascript</button>
+            </li>
+          </ol>
+
+          <!-- 페이지 이동 모달 -->
+          <article class="go-to-pages">
+            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+
+            <button class="go-to-pages-close"
+              type="button"></button>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/01-meta.html">1-meta.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/02-pre.html">2-pre.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/03-inline-block.html">3-inline-block.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/04-picture.html">4-picture.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/05-list-child-element.html">5-list-child-element.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./01-link.html">1-link.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./02-stroke.html">2-stroke.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./03-background-clip.html">3-background-clip.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./04-line-break.html">4-line-break.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./05-pseudo-opacity.html">5-pseudo-opacity.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./06-width.html">6-width.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./07-main-tag-IE.html">7-main-tag-IE.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./08-transform-origin.html">8-transform-origin.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./09-padding-top.html">9-padding-top.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./10-direction.html">10-direction.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/01-pseudo-style.html">1-pseudo-style.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/02-toggle.html">2-toggle.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/03-copy.html">3-copy.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/04-e.target.html">4-e.target.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/05-switch.html">5-switch.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/06-timing-event.html">6-timing-event.html</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </nav>
+
+        <div class='toggle-button-group'>
+          <strong class='toggle-button-title'>Day/Night Switch</strong>
+          <button class='toggle-button' type='button'></button>
+        </div>
+      </div>
+    </header>
+
+    <main class='note-main'>
+      <section class='container'>
+        <h1 class='main-title'>
+          <strong>🌋transform-origin🌋</strong>
+        </h1>
+
+        <article class='transform-origin-summary'>
+          <h2 class='main-article-title'>🌎개요</h2>
+
+          <p>
+            transform rotate할 때마다 나는 화가났다.<br/>
+            그래서 뿌시기로했다.
+          </p>
+        </article>
+
+        <article class='transform-origin'>
+          <h2 class='main-article-title'>🌜transform-origin</h2>
+
+          <p>
+            transform의 기준점을 개발자가 지정할 수 있는 속성이다.<br/>
+            기본 설정값은 x축: 50%, y축: 50%이다.<br/>
+            기준은 x축, y축, z축. 총 3개.<br/>
+          </p>
+
+          <div class="transform-origin-syntax">
+            <h3 class='main-article-subtitle'>🌝문법</h3>
+            <p>
+              transform-origin: x-axis y-axis z-axis;
+            </p>
+          </div>
+
+          <div class="transform-origin-unit">
+            <h3 class='main-article-subtitle'>🌚단위</h3>
+            <ul class="main-article-list">
+              <li class="main-article-list-items hyphen">%</li>
+              <li class="main-article-list-items hyphen">left</li>
+              <li class="main-article-list-items hyphen">right</li>
+              <li class="main-article-list-items hyphen">top</li>
+              <li class="main-article-list-items hyphen">bottom</li>
+              <li class="main-article-list-items hyphen">center</li>
+              <li class="main-article-list-items hyphen">length</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class='transform-origin-example'>
+          <h2 class='main-article-title'>⛅예시</h2>
+
+          <div>
+            <button class="transform-origin-example-start"
+              type="button"
+              value="1">애니메이션 시작</button>
+            <img class="transform-origin-image"
+              src="../../assets/images/퓨전.jpg"
+              alt="기준점 x축 center y축 center">
+            <strong class="transform-origin-desc">
+              transform-origin: center center;
+            </strong>
+          </div>
+
+          <div>
+            <button class="transform-origin-example-start"
+              type="button"
+              value="2">애니메이션 시작</button>
+            <img class="transform-origin-image"
+              src="../../assets/images/퓨전.jpg"
+              alt="기준점 x축 top y축 right">
+            <strong class="transform-origin-desc">
+              transform-origin: top right;
+            </strong>
+          </div>
+
+          <div>
+            <button class="transform-origin-example-start"
+              type="button"
+              value="3">애니메이션 시작</button>
+            <img class="transform-origin-image"
+              src="../../assets/images/퓨전.jpg"
+              alt="기준점 x축 bottom y축 left">
+            <strong class="transform-origin-desc">
+              transform-origin: bottom left;
+            </strong>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://www.w3schools.com/cssref/css3_pr_transform-origin.asp'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "w3schools.com - CSS transform-origin property", w3schools.com, 2021년 1월 19일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.w3schools.com/cssref/css3_pr_transform-origin.asp'>
+              https://www.w3schools.com/cssref/css3_pr_transform-origin.asp
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 1월 19일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/app/modal.js"></script>
+    <script>
+      const transformExample = document.querySelector(".transform-origin-example");
+
+      function animationActive (target) {
+        if(target.value === "1"){
+          target.nextElementSibling.classList.add("transform-origin-center");
+          window.setTimeout(function() {
+            target.nextElementSibling.classList.remove("transform-origin-center");
+          },3000);
+        } else if (target.value === "2") {
+          target.nextElementSibling.classList.add("transform-origin-top-right");
+          window.setTimeout(function() {
+            target.nextElementSibling.classList.remove("transform-origin-top-right");
+          },3000);
+        } else if (target.value === "3") {
+          target.nextElementSibling.classList.add("transform-origin-bottom-left");
+          window.setTimeout(function() {
+            target.nextElementSibling.classList.remove("transform-origin-bottom-left");
+          },3000);
+        }
+      }
+
+      function animationHandler (e) {
+        animationActive(e.target);
+      }
+
+
+      transformExample.addEventListener("click", animationHandler);
+
+    </script>
+
+  </body>
+</html>

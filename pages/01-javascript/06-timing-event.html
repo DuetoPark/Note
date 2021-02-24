@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- 페이지 설명 -->
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="javascript, 자바스크립트, timing Event, 타이밍 이벤트"/>
+    <meta name="description" content="타이밍 이벤트의 문법과 왜 사용해야 하는지에 대해서 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>timing event | Javascript</title>
+
+    <!-- Style -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/common/font.css">
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/common/modal.css">
+  </head>
+
+  <body>
+    <header class='note-header'>
+      <div class='container'>
+        <h1 class='note-header-title'>
+          <a href='../main.html'>🔥기초튼튼 이가탄🔥</a>
+        </h1>
+
+        <nav class='note-header-nav'>
+          <h2 class='sr-only note-header-nav-title'>다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list'>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>javascript</button>
+            </li>
+          </ol>
+
+          <!-- 페이지 이동 모달 -->
+          <article class="go-to-pages">
+            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+
+            <button class="go-to-pages-close"
+              type="button"></button>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/01-meta.html">1-meta.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/02-pre.html">2-pre.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/03-inline-block.html">3-inline-block.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/04-picture.html">4-picture.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/05-list-child-element.html">5-list-child-element.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/01-link.html">1-link.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/02-stroke.html">2-stroke.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/03-background-clip.html">3-background-clip.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/04-line-break.html">4-line-break.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/05-pseudo-opacity.html">5-pseudo-opacity.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/06-width.html">6-width.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/07-main-tag-IE.html">7-main-tag-IE.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/08-transform-origin.html">8-transform-origin.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/09-padding-top.html">9-padding-top.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-css/10-direction.html">10-direction.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./01-pseudo-style.html">1-pseudo-style.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./02-toggle.html">2-toggle.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./03-copy.html">3-copy.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./04-e.target.html">4-e.target.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./05-switch.html">5-switch.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./06-timing-event.html">6-timing-event.html</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </nav>
+
+        <div class='toggle-button-group'>
+          <strong class='toggle-button-title'>Day/Night Switch</strong>
+          <button class='toggle-button' type='button'></button>
+        </div>
+      </div>
+    </header>
+
+    <main class='note-main'>
+      <section class='container'>
+        <h1 class='main-title'>
+          <strong>👀타이밍 이벤트👀</strong>
+        </h1>
+
+        <article class='timing-event-summary'>
+          <h2 class='main-article-title'>👸개요</h2>
+
+          <p>
+            나는 모달을 만드는 건 자신있다.<br/>
+            근데 효과 넣는 건 자신없다.<br/>
+            그래서 도전해봤다.<br/>
+            그러지 말았어야 했는데!<br/>
+            <br/>
+            어쨌든 나는 도전했고, 타이밍 이벤트를 배웠다.
+          </p>
+        </article>
+
+        <article class='timing-event'>
+          <h2 class='main-article-title'>👮timing event</h2>
+
+          <div class='timing-event-syntax'>
+            <h3 class='main-article-subtitle'>timing event 문법</h3>
+            <p class='background-white-radius'>
+              <span class="error">window.setTimeout(function, milliseconds);</span><br/>
+              <br/>
+              메소드의 첫번째 변수에 실행할 함수명을 넣거나,<br/>
+              함수를 작성한다.<br/>
+              <br/>
+              메소드의 두번재 변수에는 지연할 만큼의 시간을 넣는다.<br/>
+              단위는 기입하지 않는다.<br/>
+              <br/>
+              window없이 setTimeout 메소드 단독으로 나올 수 있다.<br/>
+              <br/>
+              에잉, 이 함수 멈출래.<br/>
+              <span class="error">clearTimeout(function)</span><br/>
+              다른 버튼에 클릭 이벤트로 지정한다.
+            </p>
+
+            <p class='background-white-radius'>
+              여러번 진행됬으면 좋겠다.<br/>
+              <span class="error">window.setInterval(function, milliseconds);</span><br/>
+              <br/>
+              이것도 window없이 setInterval 메소드 단독으로 사용할 수 있다.<br/>
+              (기다리기)-(실행)-(기다리기)-(실행) 무한반복한다.<br/>
+              <br/>
+              으악, 이 함수 멈출래.<br/>
+              <span class="error">window.clearInterval(function);</span><br/>
+              다른 버튼에 클릭 이벤트로 지정한다.
+            </p>
+          </div>
+
+          <div class="no-timing-event">
+            <h3 class='main-article-subtitle'>👼타이밍 이벤트 적용 안 할 때</h3>
+
+            <button class="open-modal-sample"
+              type="button">모달열기</button>
+
+            <p>
+              용량이 큰 페이지에서 모달이 출력될 때,<br/>
+              애니메이션을 적용시키면 깜빡깜빡거리는 현상이 발생한다.<br/>
+              CSS 조작과 브라우저의 특징으로 인해 일어난다.<br/>
+              여기에서 말하는 브라우저의 특징이란, 코드가 작성된 순서대로 읽음을 의미한다.
+            </p>
+
+            <ol class="main-article-list">
+              <li class="main-article-list-items hyphen order">
+                애니메이션 실행 -(공백)- 클래스 추가
+              </li>
+              <li class="main-article-list-items hyphen order">
+                애니메이션 100%에서 {display: 1; opacity: 1;}
+              </li>
+              <li class="main-article-list-items hyphen order">
+                (공백)에서 {display: none; opacity:1;}
+              </li>
+              <li class="main-article-list-items hyphen order">
+                클래스 추가 {display: 1; opacity: 1;}
+              </li>
+            </ol>
+
+            <p>
+              공백일때 display가 none으로 변해서, 동작 도중에 깜빡깜빡하는 현상이 나타남.<br/>
+              <strong>setTimeout을 사용해서</strong> 애니메이션이 끝나기 전에 클래스를 추가하면 됨
+            </p>
+          </div>
+
+          <div class="apply-timing-event">
+            <h3 class='main-article-subtitle'>👵타이밍 이벤트 적용했을 때</h3>
+
+            <button class="open-modal-sample"
+              type="button">모달열기</button>
+          </div>
+
+          <div class="modal-sample">
+            <button class="close-modal-sample"
+              type="button"
+              aria-label="모달 닫기"></button>
+
+            <section class="modal-sample-content">
+              <h2 class='modal-sample-title'>sample</h2>
+              <div>
+                <h3 class="modal-sample-subtitle">note</h3>
+                <strong class="modal-sample-date">19th january 2021</strong>
+              </div>
+              <img class="modal-sample-image"
+                src="../../assets/images/썸네일.png"
+                alt="아무 의미없는 사진" />
+              <p class="modal-sample-p">
+                Modal, Javascript, Timing Event<br/>
+                I can do it
+              </p>
+            </section>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://www.w3schools.com/js/js_timing.asp'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "w3schools - JavaScript Timing Events", w3schools.com, 2021년 1월 19일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.w3schools.com/js/js_timing.asp'>
+              https://www.w3schools.com/js/js_timing.asp
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite="https://www.behance.net/gallery/111179931/The-Art-Newspaper-News-Website">
+          <strong class='note-footer-reference-name'>
+            모달 디자인 참고: "behance - The Art Newspaper / News Website", behance, author - Polina Rykova, 2021년 01월 19일 접속
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href="https://www.behance.net/gallery/111179931/The-Art-Newspaper-News-Website">
+              https://www.behance.net/gallery/111179931/The-Art-Newspaper-News-Website
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 1월 14일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/app/modal.js"></script>
+    <script>
+      // Javascript-6-timing-event.html
+      // Modal event
+      const modalSample = document.querySelector(".modal-sample");
+      const openModalSample = document.querySelectorAll(".open-modal-sample");
+      const closeModalSample = document.querySelector(".close-modal-sample");
+
+
+      function openSampleError () {
+        modalSample.classList.add("modal-open-animation");
+        document.body.classList.add("body-scroll-off");
+        window.setTimeout(function () {
+          modalSample.classList.add("modal-active");
+        }, 300);
+        window.setTimeout(function () {
+          modalSample.classList.remove("modal-open-animation");
+        }, 300);
+      }
+
+      function openSample () {
+        modalSample.classList.add("modal-open-animation");
+        document.body.classList.add("body-scroll-off");
+        window.setTimeout(function () {
+          modalSample.classList.add("modal-active");
+        }, 200);
+        window.setTimeout(function () {
+          modalSample.classList.remove("modal-open-animation");
+        }, 300);
+      }
+
+      function closeSample () {
+        modalSample.classList.add("modal-close-animation");
+        window.setTimeout(function () {
+          modalSample.classList.remove("modal-active");
+          document.body.classList.remove("body-scroll-off");
+        }, 200);
+        window.setTimeout(function () {
+          modalSample.classList.remove("modal-close-animation");
+        }, 300);
+      }
+
+      function openSampleErrorHandler () {
+        openSampleError();
+      }
+
+      function openSampleHandler () {
+        openSample();
+      }
+
+      function closeSampleHandler (e) {
+        if (e.target.tagName === "BUTTON") {
+          closeSample();
+        }
+      }
+
+      openModalSample[0].addEventListener("click", openSampleErrorHandler);
+      openModalSample[1].addEventListener("click", openSampleHandler);
+      modalSample.addEventListener("click", closeSampleHandler);
+
+    </script>
+  </body>
+</html>

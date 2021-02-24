@@ -1,0 +1,349 @@
+/* Tablet Style
+min-width >=576px  */
+@media screen and (min-width:576px) {
+  /* Javascript-1-Pseudo-Style.html */
+  /* Article - Pseudo-Style */
+  .pseudo-style > div{
+    margin-bottom: 24px;
+  }
+
+  .pseudo-style-solution > p,
+  .pseudo-style-solution > pre{
+    margin-bottom: 24px;
+  }
+
+
+  /* Javascript-2-Toggle.html */
+  .how-to-toggle > div,
+  .my-top-secret > div{
+    margin-bottom: 24px;
+  }
+
+
+  /* Article - How-To-Toggle */
+  .how-to-toggle > div > p{
+    margin-bottom: 24px;
+  }
+
+  .how-to-toggle > div:last-child > pre{
+    overflow-x: hidden;
+  }
+
+
+  /* Article - My-Top-Secret */
+  .my-top-secret > div > ul.main-article-list.background-white-radius{
+    padding: 20px 40px;
+  }
+
+
+
+  /* Javascript-3-Copy.html */
+  /* Common */
+  .main-article-modal-group > .show-code-button{
+    margin-bottom: 24px;
+  }
+
+  .modal-code > pre.main-article-pre.background-white-radius{
+    width: 80%;
+    overflow-x: hidden;
+  }
+
+
+  /* Article - Clipboard-Copy-Code */
+  .clipboard-copy-code > p{
+    margin-bottom: 24px;
+  }
+
+
+  /* Article - How-To-Copy */
+  .how-to-copy li.main-article-list-items.hyphen:hover::after{
+    left: 20%;
+    transform: translate(-50%, 100%);
+  }
+
+
+  /* Article - How-To-Copy-Textarea */
+  .createElement-desc > p,
+  .select-desc > p,
+  .execCommand-desc > p,
+  /* Article - How-To-Copy-input */
+  .how-to-copy-input > p,
+  /* Article - How-To-Copy-old-IE */
+  .how-to-copy-old-IE > p,
+  /* Article - How-To-Copy-Mix */
+  .how-to-copy-mix > p,
+  .navigator-desc > p{
+    margin-bottom: 24px;
+  }
+
+
+  /* Article - How-To-Copy-Textarea */
+  .how-to-copy-textarea > ol,
+  .createElement-desc,
+  .select-desc{
+    margin-bottom: 24px;
+  }
+
+  .how-to-copy-textarea p.background-white-radius{
+    padding: 20px 40px;
+    overflow-x: hidden;
+  }
+
+
+
+  /* Javascript-4-e.target.html */
+  /* Common */
+  .e-target-desc > p,
+  .e-target-reason-image-group,
+  .develop-tools-property > p,
+  .e-target-image,
+  .e-target-nextElementSibling > p,
+  .e-target-children > p,
+  .e-target-parentElement > p{
+    margin-bottom: 16px;
+  }
+
+
+  /* Article - E-Target */
+  .e-target > p{
+    margin-bottom: 24px;
+  }
+
+  .e-target > ul{
+    padding: 15px 20px;
+  }
+
+
+  /* Article - E-Target-Desc */
+  .e-target-desc > ul{
+    margin-bottom: 24px;
+  }
+
+
+  /* Article - Develop-Tools-Property */
+  .develop-tools-property > ul.main-article-list.background-white-radius{
+    padding: 15px 20px;
+  }
+
+
+
+  /* Javascript-5-switch.html */
+  /* common */
+  .switch ul,
+  .switch-syntax > p:first-of-type,
+  .switch-precautions > ul{
+    padding: 15px 20px;
+  }
+
+
+  /* Article - Switch-syntax */
+  .switch-syntax > p:first-of-type,
+  .switch-precautions > p,
+  .switch-precautions > ul{
+    margin-bottom: 16px;
+  }
+
+
+  /* Article - Switch */
+  .switch > p{
+    margin-bottom: 24px;
+  }
+
+
+
+  /* Javascript-6-timing-event.html */
+    /* Article - timing-event (common) */
+  .timing-event-syntax,
+  .no-timing-event,
+  .apply-timing-event,
+  .no-timing-event > p,
+  .no-timing-event .main-article-list{
+    margin-bottom: 24px;
+  }
+
+  /* Article - timing-event (timing-event-syntax) */
+  .timing-event-syntax .background-white-radius{
+    padding: 15px 20px;
+    margin-bottom: 16px;
+  }
+
+  /* Article - timing-event (modal-sample) */
+  .modal-sample{
+    width: 450px;
+    right: 16px;
+    top: 16px;
+  }
+
+  .modal-sample-subtitle,
+  .modal-sample-date{
+    font-size: 12px;
+  }
+}
+
+
+/* Desktop Style
+min-width >=768px  */
+@media screen and (min-width:768px) {
+  /* Javascript-1-Pseudo-Style.html */
+  /* Article - Pseudo-Style */
+  .pseudo-style > div{
+    margin-bottom: 36px;
+  }
+
+  .pseudo-style-solution > p,
+  .pseudo-style-solution > pre{
+    margin-bottom: 36px;
+  }
+
+
+
+  /* Javascript-2-Toggle.html */
+  .how-to-toggle > div,
+  .my-top-secret > div{
+    margin-bottom: 36px;
+  }
+
+
+  /* Article - How-To-Toggle */
+  .how-to-toggle > div > p{
+    margin-bottom: 36px;
+  }
+
+
+
+    /* Javascript-3-Pseudo-Style.html */
+    /* Common */
+    .main-article-modal-group > .show-code-button{
+      margin-bottom: 36px;
+    }
+
+    .modal-code > pre.main-article-pre.background-white-radius{
+      width: 50%;
+      overflow-x: hidden;
+    }
+
+
+    /* Article - Clipboard-Copy-Code */
+    .clipboard-copy-code > p{
+      margin-bottom: 36px;
+    }
+
+
+    /* Article - How-To-Copy */
+    .how-to-copy li.main-article-list-items.hyphen:hover::after{
+      left: 15%;
+      transform: translate(-50%, 100%);
+    }
+
+
+    /* Article - How-To-Copy-Textarea */
+    .createElement-desc > p,
+    .select-desc > p,
+    .execCommand-desc > p,
+    /* Article - How-To-Copy-input */
+    .how-to-copy-input > p,
+    /* Article - How-To-Copy-old-IE */
+    .how-to-copy-old-IE > p,
+    /* Article - How-To-Copy-Mix */
+    .how-to-copy-mix > p,
+    .navigator-desc > p{
+      margin-bottom: 36px;
+    }
+
+
+    /* Article - How-To-Copy-Textarea */
+    .how-to-copy-textarea > ol,
+    .createElement-desc,
+    .select-desc{
+      margin-bottom: 36px;
+    }
+
+
+
+    /* Javascript-4-e.target.html */
+    /* Common */
+    .e-target-desc > p,
+    .e-target-reason-image-group,
+    .develop-tools-property > p,
+    .e-target-image,
+    .e-target-nextElementSibling > p,
+    .e-target-children > p,
+    .e-target-parentElement > p{
+      margin-bottom: 16px;
+    }
+
+
+    /* Article - E-Target */
+    .e-target > p{
+      margin-bottom: 36px;
+    }
+
+    .e-target > ul{
+      padding: 20px 40px;
+    }
+
+
+    /* Article - E-Target-Desc */
+    .e-target-desc > ul{
+      margin-bottom: 36px;
+    }
+
+    .e-target-reason-image{
+      width: 500px;
+    }
+
+
+    /* Article - Develop-Tools-Property */
+    .e-target-image{
+      width: 500px;
+    }
+
+    .develop-tools-property > ul.main-article-list.background-white-radius{
+      padding: 20px 40px;
+    }
+
+  /* Javascript-5-switch.html */
+  /* common */
+  .switch ul,
+  .switch-syntax > p:first-of-type,
+  .switch-precautions > ul{
+    padding: 20px 40px;
+  }
+
+
+  /* Article - Switch-syntax */
+  .switch-syntax > p:first-of-type,
+  .switch-precautions > p,
+  .switch-precautions > ul{
+    margin-bottom: 24px;
+  }
+
+
+  /* Article - Switch */
+  .switch > p{
+    margin-bottom: 36px;
+  }
+
+
+
+  /* Javascript-6-timing-event.html */
+    /* Article - timing-event (common) */
+  .timing-event-syntax,
+  .no-timing-event,
+  .apply-timing-event,
+  .no-timing-event > p,
+  .no-timing-event .main-article-list{
+    margin-bottom: 36px;
+  }
+
+  /* Article - timing-event (timing-event-syntax) */
+  .timing-event-syntax .background-white-radius{
+    padding: 20px 40px;
+    margin-bottom: 36px;
+  }
+
+  /* Article - timing-event (modal-sample) */
+  .modal-sample{
+    width: 550px;
+  }
+}

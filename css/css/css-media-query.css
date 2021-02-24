@@ -1,0 +1,426 @@
+/* Tablet Style
+min-width >=576px  */
+@media screen and (min-width:576px) {
+  /* CSS-1-link.html */
+  /* Article - Css-Align */
+  .css-align-order{
+    margin-bottom: 24px; /* 미디어쿼리 36 */
+  }
+
+  .css-align-order > ol{
+    margin-bottom: 24px; /* 미디어쿼리 36 */
+  }
+
+
+  /* Article - Reason-For-Recomment */
+  .reason-for-recomment > div{
+    margin-left: 16px;
+    margin-bottom: 24px;
+  }
+
+  .selector-priority{
+    overflow-x: hidden;
+  }
+
+
+
+  /* CSS-2-stroke.html */
+  .stroke > p,
+  .stroke-cross-browsing > p,
+  .stroke-animation > p{
+    margin-bottom: 24px;
+  }
+
+  .stroke .main-article-pre,
+  .stroke-cross-browsing .main-article-pre{
+    margin-bottom: 24px;
+  }
+
+
+
+  /* CSS-3-background-clip.html */
+  /* Article - Background-Clip */
+  .background-clip > p{
+    margin-bottom: 16px;
+  }
+
+  /* Article - Background-Clip-Type-Desc */
+  .background-clip-type{
+    margin-bottom: 24px;
+  }
+
+  .background-clip-image-group > div{
+    margin-bottom: 24px;
+  }
+
+  .background-clip-image{
+    width: 230px;
+  }
+
+
+  /* CSS-4-Line-Break.html */
+  /* Article - Main-title */
+  .line-break > p{
+    margin-bottom: 16px; /* 미디어쿼리 변형 */
+  }
+
+  .line-break ul.main-article-list{
+    margin-bottom: 16px; /* 미디어쿼리 변형 */
+    padding: 15px 20px; /* 미디어쿼리 변형 */
+  }
+
+  .line-break-type li.main-article-list-items.type{
+    margin-bottom: 0;
+  }
+
+
+  /* Article - Overflow-Wrap */
+  .overflow-wrap > p{
+    margin-bottom: 16px; /* 미디어쿼리 변형 */
+  }
+
+  .overflow-wrap > p:last-of-type{
+    margin-bottom: 32px; /* 미디어쿼리 변형 */
+  }
+
+  .overflow-wrap > div{
+    margin-bottom: 24px; /* 미디어쿼리 변형 */
+  }
+
+  /* Article - Word-Break */
+  .word-break > p{
+    margin-bottom: 16px; /* 미디어쿼리 변형 */
+  }
+
+
+  /* Article - Hyphens */
+  .hyphens{
+    margin-bottom: 64px; /* 미디어쿼리 변형 */
+  }
+
+  .hyphens > p{
+    margin-bottom: 16px; /* 미디어쿼리 변형 */
+  }
+
+
+  /* Article - White-Space */
+  .white-space > p{
+    margin-bottom: 16px; /* 미디어쿼리 변형 */
+  }
+
+  .white-space > dl.main-article-dl{
+    margin-bottom: 32px; /* 미디어쿼리 변형 */
+  }
+
+  .white-space > div{
+    margin-bottom: 32px; /* 미디어쿼리 변형 */
+  }
+
+
+  /* CSS-5-Pseudo-Opacity.html */
+  /* Article - How-To-Set-Pseudo-Opacity */
+  .pseudo-attribute-type,
+  .how-to-set-pseudo-opacity .main-article-dl{
+    margin-bottom: 24px;
+  }
+
+  .pseudo-opacity-learned > ul.main-article-list.background-white-radius{
+    padding: 15px 20px;
+  }
+
+
+
+  /* CSS-6-width.html */
+  /* common */
+  .width-calc > p,
+  .width-calc-image-group,
+  .width-group > p,
+  .width-group > ul{
+    margin-bottom: 16px;
+  }
+
+  .width-calc > ol,
+  .width-group > ul,
+  .width-group > ol{
+    padding: 15px 20px;
+  }
+
+  /* Article - width-calc */
+  .width-calc-image{
+    height: 150px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+  }
+
+
+
+  /* CSS-7-main-tag-IE.html */
+  /* Article - Main-tag-max-width */
+  .main-tag-max-width > p,
+  .main-tag-max-width > ul{
+    margin-bottom: 16px;
+  }
+
+  .main-tag-max-width > ul{
+    padding: 15px 20px;
+  }
+
+
+
+  /* CSS-8-transform-origin.html */
+  /* Article - transform-origin */
+  .transform-origin > p,
+  .transform-origin-syntax,
+  .transform-origin-example > div,
+  .transform-origin-example-start{
+    margin-bottom: 24px;
+  }
+
+  .transform-origin-example > div{
+    text-align: center;
+  }
+
+  /* Article - transform-origin-example */
+  .transform-origin-image{
+    width: 300px;
+  }
+
+
+  /* CSS-9-padding-top.html */
+  .padding-top-100 > p{
+    margin-bottom: 24px;
+  }
+
+
+  /* CSS-10-direction.html */
+  .direction > p,
+  .direction > ol{
+    margin-bottom: 16px;
+  }
+
+  .direction > ol{
+    padding: 15px 20px;
+  }
+
+
+  /* CSS-11-텍스트숨기기.html */
+  /* Article - no-SEO-hidden */
+  .no-SEO-hidden-list-items{
+    margin-bottom: 32px;
+  }
+
+  .no-SEO-hidden-list-items > div > pre,
+  .SEO-hidden-zero-pixel > div{
+    margin-bottom: 16px;
+  }
+}
+
+/* Desktop Style
+min-width >=768px  */
+@media screen and (min-width:768px) {
+  /* CSS-1-link.html */
+  /* Article - Css-Align */
+  .css-align-order{
+    margin-bottom: 32px;
+  }
+
+  .css-align-order > ol{
+    margin-bottom: 32px; /* 미디어쿼리 36 */
+  }
+
+
+  /* Article - Reason-For-Recomment */
+  .reason-for-recomment > div{
+    margin-bottom: 32px;
+  }
+
+
+
+  /* CSS-2-stroke.html */
+  .stroke > p,
+  .stroke-cross-browsing > p,
+  .stroke-animation > p{
+    margin-bottom: 32px;
+  }
+
+  .stroke .main-article-pre,
+  .stroke-cross-browsing .main-article-pre{
+    margin-bottom: 32px;
+  }
+
+
+
+  /* CSS-3-background-clip.html */
+  /* Article - Background-Clip */
+  .background-clip > p{
+    margin-bottom: 32px;
+  }
+
+  /* Article - Background-Clip-Type-Desc */
+  .background-clip-type{
+    margin-bottom: 32px;
+  }
+
+  .background-clip-image-group > div{
+    margin-bottom: 32px;
+  }
+
+  .background-clip-image{
+    width: 250px;
+  }
+
+
+
+  /* CSS-4-Line-Break.html */
+  /* Article - Main-title */
+  .line-break > p{
+    margin-bottom: 24px; /* 미디어쿼리 변형 */
+  }
+
+  .line-break ul.main-article-list{
+    margin-bottom: 24px; /* 미디어쿼리 변형 */
+    padding: 20px 40px; /* 미디어쿼리 변형 */
+  }
+
+  .line-break-type li.main-article-list-items.type{
+    margin-bottom: 0;
+  }
+
+
+  /* Article - Overflow-Wrap */
+  .overflow-wrap > p{
+    margin-bottom: 24px; /* 미디어쿼리 변형 */
+  }
+
+  .overflow-wrap > p:last-of-type{
+    margin-bottom: 44px; /* 미디어쿼리 변형 */
+  }
+
+  .overflow-wrap > div{
+    margin-bottom: 36px; /* 미디어쿼리 변형 */
+  }
+
+
+  /* Article - Word-Break */
+  .word-break > p{
+    margin-bottom: 24px; /* 미디어쿼리 변형 */
+  }
+
+
+  /* Article - Hyphens */
+  .hyphens{
+    margin-bottom: 88px; /* 미디어쿼리 변형 */
+  }
+
+  .hyphens > p{
+    margin-bottom: 24px; /* 미디어쿼리 변형 */
+  }
+
+
+  /* Article - White-Space */
+  .white-space > p{
+    margin-bottom: 24px; /* 미디어쿼리 변형 */
+  }
+
+  .white-space > dl.main-article-dl{
+    margin-bottom: 44px; /* 미디어쿼리 변형 */
+  }
+
+  .white-space > div{
+    margin-bottom: 44px; /* 미디어쿼리 변형 */
+  }
+
+
+
+  /* CSS-5-Pseudo-Opacity.html */
+  /* Article - How-To-Set-Pseudo-Opacity */
+  .pseudo-attribute-type,
+  .how-to-set-pseudo-opacity .main-article-dl{
+    margin-bottom: 32px;
+  }
+
+  .pseudo-opacity-learned > ul.main-article-list.background-white-radius{
+    padding: 20px 40px;
+  }
+
+
+
+  /* CSS-6-width.html */
+  /* common */
+  .width-calc > p,
+  .width-calc-image-group,
+  .width-group > p,
+  .width-group > ul{
+    margin-bottom: 24px;
+  }
+
+  .width-calc > ol,
+  .width-group > ul,
+  .width-group > ol{
+    padding: 20px 40px;
+  }
+
+  /* Article - width-calc */
+  .width-calc-image{
+    height: 200px;
+    margin-bottom: 32px;
+  }
+
+
+
+  /* CSS-7-main-tag-IE.html */
+  /* Article - Main-tag-max-width */
+  .main-tag-max-width > p,
+  .main-tag-max-width > ul{
+    margin-bottom: 24px;
+  }
+
+  .main-tag-max-width > ul{
+    padding: 20px 40px;
+  }
+
+
+
+  /* CSS-8-transform-origin.html */
+  /* Article - transform-origin */
+  .transform-origin > p,
+  .transform-origin-syntax,
+  .transform-origin-example > div,
+  .transform-origin-example-start{
+    margin-bottom: 36px;
+  }
+
+
+  /* Article - transform-origin-example */
+  .transform-origin-image{
+    width: 400px;
+  }
+
+
+  /* CSS-9-padding-top.html */
+  .padding-top-100 > p{
+    margin-bottom: 36px;
+  }
+
+  /* CSS-10-direction.html */
+  .direction > p,
+  .direction > ol{
+    margin-bottom: 24px;
+  }
+
+  .direction > ol{
+    padding: 20px 40px;
+  }
+
+
+  /* CSS-11-텍스트숨기기.html */
+  /* Article - no-SEO-hidden */
+  .no-SEO-hidden-list-items{
+    margin-bottom: 48px;
+  }
+
+  .no-SEO-hidden-list-items > div > pre,
+  .SEO-hidden-zero-pixel > div{
+    margin-bottom: 24px;
+  }
+}

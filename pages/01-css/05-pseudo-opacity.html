@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- 페이지 설명 -->
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="css, 가상요소 투명도, pseudo opacity"/>
+    <meta name="description" content="가상요소 스르륵 나타나는 효과에 대해 알아봅시다! "/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>가상요소 투명도 | CSS</title>
+
+    <!-- Style -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/css/css-style.css">
+    <link rel="stylesheet" href="../../css/css/css-media-query.css">
+  </head>
+
+  <body>
+    <header class='note-header'>
+      <div class='container'>
+        <h1 class='note-header-title'>
+          <a href='../main.html'>🔥기초튼튼 이가탄🔥</a>
+        </h1>
+
+        <nav class='note-header-nav'>
+          <h2 class='sr-only note-header-nav-title'>다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list'>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button'>javascript</button>
+            </li>
+          </ol>
+
+          <!-- 페이지 이동 모달 -->
+          <article class="go-to-pages">
+            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+
+            <button class="go-to-pages-close"
+              type="button"></button>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/01-meta.html">1-meta.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/02-pre.html">2-pre.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/03-inline-block.html">3-inline-block.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/04-picture.html">4-picture.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-html/05-list-child-element.html">5-list-child-element.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./01-link.html">1-link.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./02-stroke.html">2-stroke.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./03-background-clip.html">3-background-clip.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./04-line-break.html">4-line-break.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./05-pseudo-opacity.html">5-pseudo-opacity.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./06-width.html">6-width.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./07-main-tag-IE.html">7-main-tag-IE.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./08-transform-origin.html">8-transform-origin.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./09-padding-top.html">9-padding-top.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="./10-direction.html">10-direction.html</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="go-to-page-div">
+              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <ul class="go-to-page-list">
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/01-pseudo-style.html">1-pseudo-style.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/02-toggle.html">2-toggle.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/03-copy.html">3-copy.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/04-e.target.html">4-e.target.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/05-switch.html">5-switch.html</a>
+                </li>
+                <li class="go-to-page-list-items">
+                  <a class="go-to-page-anchor" href="../01-javascript/06-timing-event.html">6-timing-event.html</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </nav>
+
+        <div class='toggle-button-group'>
+          <strong class='toggle-button-title'>Day/Night Switch</strong>
+          <button class='toggle-button' type='button'></button>
+        </div>
+      </div>
+    </header>
+
+    <main class='note-main'>
+      <section class='container'>
+        <h1 class='main-title'>
+          <strong>🌹스르륵 나타나는 가상요소🌹</strong>
+        </h1>
+
+        <article class='pseudo-opacity'>
+          <h2 class='main-article-title'>🌲개요</h2>
+          <p>
+            가상요소는 transition을 해도 animation을 해도 스르륵 효과가 먹히지 않길래, 이 친구는 거친 인생을 살아왔구나 라고 결론 지어왔었다.
+          </p>
+          <p>
+            그러다 어제, 레진코믹스 페이지를 둘러보다가 스르륵 나타나는 가상요소를 봤다. 민망했다. 가상요소가 사람이 아니라 다행이라고 생각했다.<br/>
+            <br/>
+            어쨌든 나는 이제 가상요소 스르륵 나타나게 만들 수 있다. 신난다.
+          </p>
+        </article>
+
+        <article class='how-to-set-pseudo-opacity'>
+          <h1 class='main-article-title'>
+            🍄가상요소 스르륵 효과주는 방법
+          </h1>
+
+          <h2 class='main-article-subtitle'>🌴필요한 속성</h2>
+          <ol class='main-article-list pseudo-attribute-type'>
+            <li class='main-article-list-items type'>content</li>
+            <li class='main-article-list-items type'>opacity</li>
+            <li class='main-article-list-items type'>transition</li>
+          </ol>
+
+          <h2 class='main-article-subtitle'>🌴순서</h2>
+          <h3 class='main-article-subtitle order'>
+            element::after
+          </h3>
+          <dl class='main-article-dl'>
+            <div>
+              <dt class='main-article-dt'>content</dt>
+              <dd class='main-article-dd'>가상요소를 HTML에 출력하기 위해서 필요한 속성</dd>
+              <dd class='main-article-dd'>안 넣으면, transition과 animation이 먹히지 않는다</dd>
+              <dd class='main-article-dd'>속성값을 빈칸으로 두어야 한다</dd>
+            </div>
+            <div>
+              <dt class='main-article-dt'>opacity</dt>
+              <dd class='main-article-dd'>가상요소의 투명도를 조절하는 속성</dd>
+              <dd class='main-article-dd'>transition 속성과 함께 사용하면 스르륵 나타나는 효과를 줄 수 있다</dd>
+              <dd>속성값을 0으로 둔다</dd>
+            </div>
+            <div>
+              <dt class='main-article-dt'>transition</dt>
+              <dd class='main-article-dd'>요소가 부드럽게 전환되도록 만드는 속성</dd>
+              <dd class='main-article-dd'>opacity 속성값이 바뀜에 따라 부드럽게 전환한다</dd>
+            </div>
+          </dl>
+
+          <h3 class='main-article-subtitle order'>
+            element.hover::after
+          </h3>
+          <p>
+            스타일 지정 후에 opacity 속성값을 1로 설정한다.
+          </p>
+        </article>
+
+        <article class='pseudo-opacity-learned'>
+          <h2 class='main-article-title'>🐅배운점</h2>
+          <ul class='main-article-list background-white-radius'>
+            <li class='main-article-list-items hyphen'>
+              가상요소에 효과를 줄 때에는 기본 틀을 잘 지켜야 한다
+            </li>
+            <li class='main-article-list-items hyphen'>
+              구글링에 너무 의존하지 않는것도 필요하다
+            </li>
+            <li class='main-article-list-items hyphen'>
+              빨리 포기하면 죽을때까지 답을 모르게된다
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2020년 12월 29일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/app/modal.js"></script>
+  </body>
+</html>

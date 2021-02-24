@@ -1,0 +1,23 @@
+/* 모달효과 */
+.body-scroll-off{
+  overflow-y: hidden;
+  width: 100vw;
+}
+
+.modal-active{
+  display: block;
+  opacity: 1;
+}
+
+.modal-open-animation{
+  display: block;
+  animation-name: modal-open;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+.modal-close-animation{
+  animation-name: modal-close;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}

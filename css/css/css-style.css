@@ -1,0 +1,454 @@
+/* CSS-1-link.html */
+/* Article - Css-Align */
+.css-align-order{
+  margin-bottom: 16px;
+}
+
+.css-align-order > ol{
+  margin-bottom: 16px;
+}
+
+.css-align-type{
+  display: flex;
+}
+
+.css-align-type li.main-article-list-items.type{
+  margin-bottom: 0;
+  margin-right: 8px;
+}
+
+.css-align-type li.main-article-list-items.type:last-child{
+  margin-right: 0;
+}
+
+
+/* Article - Reason-For-Recomment */
+.reason-for-recomment > div{
+  margin-left: 8px;
+  margin-bottom: 16px;
+}
+
+.reason-for-recomment > div:last-child{
+  margin-bottom: 0;
+}
+
+.import-pros-and-cons li.main-article-list-items::before{
+  content: '-';
+}
+
+
+/* Article - Selector-Priority */
+.selector-priority{
+  overflow-x: scroll;
+}
+
+.align-center{
+  text-align: center;
+}
+
+
+
+/* CSS-2-stroke.html */
+/* Article - Stroke */
+.stroke > p,
+.stroke-cross-browsing > p,
+.stroke-animation > p{
+  margin-bottom: 16px;
+}
+
+.stroke .main-article-pre,
+.stroke-cross-browsing .main-article-pre{
+  margin-bottom: 8px;
+}
+
+
+/* CSS-3-background-clip.html */
+/* Article - Background-Clip */
+.background-clip > p{
+  margin-bottom: 8px;
+}
+
+/* Article - Background-Clip-Type-Desc */
+.background-clip-type{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.background-clip-type li.main-article-list-items.type{
+  margin: 0 8px 8px 0;
+}
+
+.background-clip-type li.main-article-list-items.type:last-child{
+  margin-right: 0;
+}
+
+.background-clip-image-group{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.background-clip-image-group > div{
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.background-clip-desc{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: keep-all;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #FFF;
+  opacity: 0;
+  transition: opacity 250ms ease-out;
+}
+
+.background-clip-desc:hover{
+  opacity: 1;
+}
+
+.background-clip-image{
+  width: 150px;
+  height: auto;
+}
+
+
+/* CSS-4-Line-Break.html */
+/* Article - Main-title */
+.line-break > p{
+  margin-bottom: 8px; /* 미디어쿼리 변형 */
+}
+
+.line-break ul.main-article-list{
+  margin-bottom: 8px; /* 미디어쿼리 변형 */
+  padding: 10px 20px; /* 미디어쿼리 변형 */
+}
+
+.line-break-type{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.line-break-type li.main-article-list-items.type{
+  margin-right: 4px;
+}
+
+.line-break-type li.main-article-list-items.type:last-child{
+  margin-right: 0;
+}
+
+
+/* Article - Overflow-Wrap */
+.overflow-wrap > p{
+  margin-bottom: 8px; /* 미디어쿼리 변형 */
+}
+
+.overflow-wrap > p:last-of-type{
+  margin-bottom: 24px; /* 미디어쿼리 변형 */
+}
+
+.overflow-wrap > div{
+  margin-bottom: 12px; /* 미디어쿼리 변형 */
+}
+
+.overflow-wrap > div:last-child{
+  margin-bottom: 0;
+}
+
+/* Section - Overflow-Wrap-animation */
+.overflow-wrap .main-article-dd,
+.word-break .main-article-dd{
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.overflow-wrap-normal,
+.overflow-wrap-break-word,
+.word-break-normal,
+.word-break-keep-all,
+.word-break-break-all{
+  width: 220px;
+  padding: 10px 20px;
+}
+
+.overflow-wrap-normal{
+  overflow-wrap: normal;
+}
+
+.overflow-wrap-break-word{
+  overflow-wrap: break-word;
+}
+
+.word-break-normal{
+  word-break: normal;
+}
+
+.word-break-keep-all{
+  word-break: keep-all;
+}
+
+.word-break-break-all{
+  word-break: break-all;
+}
+
+.white-space .main-article-dl dd div{
+  overflow-x: scroll;
+}
+
+.white-space .main-article-dl pre{
+  width: 220px;
+  padding: 10px 20px; /* 미디어쿼리 변형 */
+}
+
+.white-space-normal{
+  white-space: normal;
+}
+
+.white-space-nowrap{
+  white-space: nowrap;
+}
+
+.white-space-pre{
+  white-space: pre;
+}
+
+.white-space-pre-wrap{
+  white-space: pre-wrap;
+}
+
+.white-space-pre-line{
+  white-space: pre-line;
+}
+
+
+/* Article - Word-Break */
+.word-break > p{
+  margin-bottom: 8px; /* 미디어쿼리 변형 */
+}
+
+
+/* Article - Hyphens */
+.hyphens{
+  margin-bottom: 48px; /* 미디어쿼리 변형 */
+}
+
+.hyphens > p{
+  margin-bottom: 8px; /* 미디어쿼리 변형 */
+}
+
+
+/* Article - White-Space */
+.white-space > p{
+  margin-bottom: 8px; /* 미디어쿼리 변형 */
+}
+
+.white-space > dl.main-article-dl{
+  margin-bottom: 24px; /* 미디어쿼리 변형 */
+}
+
+.white-space > div{
+  margin-bottom: 24px; /* 미디어쿼리 변형 */
+}
+
+.white-space > div:last-of-type{
+  margin-bottom: 0;
+  overflow-x: scroll;
+}
+
+
+
+/* CSS-5-Pseudo-Opacity.html */
+/* Article - How-To-Set-Pseudo-Opacity */
+.pseudo-attribute-type,
+.how-to-set-pseudo-opacity .main-article-dl{
+  margin-bottom: 16px;
+}
+
+.pseudo-attribute-type > li{
+  display: inline-block;
+}
+
+.pseudo-opacity-learned > ul.main-article-list.background-white-radius{
+  padding: 10px 20px;
+}
+
+.pseudo-opacity-learned{
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.pseudo-opacity-learned::after{
+  content: '';
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.pseudo-opacity-learned:hover::after{
+  content: '👍잘 하고 있어!👍';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  opacity: 1;
+}
+
+
+
+/* CSS-6-width.html */
+/* common */
+.width-calc > p,
+.width-calc-image-group,
+.width-group > p,
+.width-group > ul{
+  margin-bottom: 8px;
+}
+
+.width-calc-image:last-child{
+  margin-bottom: 0;
+}
+
+.width-calc > ol,
+.width-group > ul,
+.width-group > ol{
+  padding: 10px 20px;
+}
+
+/* Article - width-calc */
+.width-calc-image-group{
+  overflow-x: auto;
+}
+
+.width-calc-image{
+  height: 150px;
+  margin-bottom: 16px;
+}
+
+
+
+/* CSS-7-main-tag-IE.html */
+/* Article - Main-tag-max-width */
+.main-tag-max-width > p,
+.main-tag-max-width > ul{
+  margin-bottom: 8px;
+}
+
+.main-tag-max-width > p:last-child{
+  margin-bottom: 0;
+}
+
+.main-tag-max-width > ul{
+  padding: 10px 20px;
+}
+
+
+
+/* CSS-8-transform-origin.html */
+/* Article - transform-origin */
+.transform-origin > p,
+.transform-origin-syntax,
+.transform-origin-example > div,
+.transform-origin-example-start{
+  margin-bottom: 16px;
+}
+
+/* Article - transform-origin-example */
+.transform-origin-example > div:last-child{
+  margin-bottom: 0;
+}
+
+.transform-origin-example-start{
+  display: block;
+  width: 150px;
+  height: 40px;
+  margin: 0 auto;
+  border: 1px solid #727272;
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+.transform-origin-example-start:hover,
+.transform-origin-example-start:active,
+.transform-origin-example-start:focus{
+  border: 1px solid #727272;
+}
+
+.transform-origin-image{
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.transform-origin-center{
+  animation: rotate-45deg;
+  animation-duration: 3000ms;
+  animation-timing-function: linear;
+}
+
+.transform-origin-top-right{
+  transform-origin: top right;
+  animation: rotate-45deg;
+  animation-duration: 3000ms;
+  animation-timing-function: linear;
+}
+
+.transform-origin-bottom-left{
+  transform-origin: bottom left;
+  animation: rotate-45deg;
+  animation-duration: 3000ms;
+  animation-timing-function: linear;
+}
+
+
+/* CSS-9-padding-top.html */
+.padding-top-100 > p{
+  margin-bottom: 16px;
+}
+
+
+/* CSS-10-direction.html */
+.direction > p,
+.direction > ol{
+  margin-bottom: 8px;
+}
+
+.direction > p:last-child{
+  margin-bottom: 0;
+  direction : rtl;
+}
+
+.direction > ol{
+  padding: 10px 20px;
+}
+
+
+/* CSS-11-텍스트숨기기.html */
+/* Article - no-SEO-hidden */
+.no-SEO-hidden-list-items{
+  margin-bottom: 24px;
+}
+
+.no-SEO-hidden-list-items:last-child,
+.SEO-hidden-zero-pixel > div:last-child{
+  margin-bottom: 0;
+}
+
+.no-SEO-hidden-list-items > div > pre,
+.SEO-hidden-zero-pixel > div{
+  margin-bottom: 8px;
+}
