@@ -10,7 +10,7 @@
     <meta name="description" content="타이밍 이벤트의 문법과 왜 사용해야 하는지에 대해서 알아봅시다!"/>
     <meta name="Location" content="포도와 고구마의 고장"/>
 
-    <title>splice | Javascript</title>
+    <title>split & join | Javascript</title>
 
     <!-- Style -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
@@ -89,71 +89,65 @@
     <main class='note-main'>
       <section class='container'>
         <h1 class='main-title'>
-          <strong>👀타이밍 이벤트👀</strong>
+          <strong>split & join</strong>
         </h1>
 
-        <article class='splice'>
-          <h2 class='main-article-title'>개요</h2>
+        <article class='timing'>
+          <h2 class='main-article-title'>👸개요</h2>
+          숫자야구 게임 만들다가 나는 생각했다.
+          어.. 입력값하고 숫자배열 어떻게 구분하지
+          입력값은 숫자형이고 숫자배열은 배열이다.
 
-          배열 메소드인 splice에 대해 알아볼 시간이다.
+          String(숫자배열[0])+String(숫자배열[1])+...
+
+          찝찝하고 눈물나고 방구뀌고
+          이때 사용하는 배열/문자 변환 메소드가 split과 join이다.
         </article>
 
+        <article class="" aria-labelledby="baseball-title">
+          <h3 id="" class="main-article-title">split & join</h3>
+          1. split
+            1) 문자.split(구분자);
+              결과) 배열로 변화
+
+              예시)
+              -문자 = "오이친구";
+              -문자.split(""); 결과) ["오", "이", "친", "구"]
+
+            2) 배열.split(문자 혹은 값);
+              결과) 문자 혹은 값과 일치하는 위치에서 댕겅
+
+              예시)
+              -문자 = "https://www.example.com/get/thisfolder/thanks/html"
+              -문자.split("/"); 결과) ["https", "www.example.com", "get", "thisfolder", "thanks", "html"]
+
+
+          2. join
+          배열.join(구분자)
+          결과) 문자로 변환
+
+          대신, join에서 값들을 쪼로록 붙여주고 싶다면,
+          배열.join("");를 써주자
+          -배열.join(","); 결과) "5,2,7,9"
+          -배열.join(""); 결과) "5279"
+          -배열.join(":"); 결과) "5:2:7:9"
+        </article>
 
         <article class="" aria-labelledby="baseball-title">
-          <h3 id="" class="main-article-title">splice</h3>
+          <h3 id="" class="main-article-title">indexOf</h3>
 
-          1. 소개
-          splice() 메소드가
-          :배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경한다.
+          배열.indexOf(값);
+          값의 위치를 알 수 있다.
+          -없으면 -1이 출력된다.
+          -있으면 해당값의 인덱스가 출력된다.
+        </article>
 
-          2. 문법
+        <article class="" aria-labelledby="baseball-title">
+          <h3 id="" class="main-article-title">정리</h3>
 
-            -해당 인덱스로부터 개수만큼 배열에서 요소를 뽑아낸다.
-            -가져온 요소는 가져온 배열에서 사라진다.
-            -뽑혀나온 값들은 배열 형태이다.
-
-            1) 배열의 기존 요소를 삭제
-              배열.splice(인덱스, 개수);
-
-              let A = ["안", "녕", "오", "이", "친", "구"];
-              let B = A.splice(2, 2);
-
-              결과)
-              A = ["안", "녕", "친", "구"];
-              B = ["오", "이"];
-
-              * 무작위로 뽑기
-                splice(Math.floor(Math.random * 9), 1)[1];
-              * n번 인덱스를 포함해서 이후의 모든 요소 제거
-                splice(n);
-
-                let A = ["안", "녕", "오", "이", "친", "구"];
-                A.splice(2);
-
-                let A = ["안", "녕", "오", "이", "친", "구"];
-                A.splice(-2);
-                값이 음수이면 뒤에서부터 자름
-
-                결과) A = ["안", "녕"]; / A = ["친", "구"];
-
-
-            3) 배열의 기존 요소에 추가
-              배열.splice(인덱스 위치, 0, 값);
-
-              let A = ["안", "녕", "오", "이", "친", "구"];
-              A.splice(2, 0, "토마토");
-
-              결과) A = ["안", "녕", "토마토", "오", "이", "친", "구"];
-
-
-            3) 배열의 기존 요소에 변경
-              배열.splice(인덱스 위치, 제거할 요소 갯수, 값);
-              -값은 원하는 만큼 넣고 ",(콤마)"로 구분한다.
-
-              let A = ["안", "녕", "오", "이", "친", "구"];
-              A.splice(2, 2, "고", "구", "마");
-
-              결과) A = ["안", "녕", "고", "구", "마", "친", "구"];
+          1. 순서도를 그린다.
+          2. 각 단계에 맞는 동작을 구현한다.
+          3. 구현할 때에는 동기->비동기 순서로 짠다.
         </article>
       </section>
     </main>
