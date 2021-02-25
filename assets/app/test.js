@@ -79,6 +79,21 @@ timesForm.addEventListener("submit", function (e) {
 
 
 // 숫자야구
+// 1. 숫자 랜덤으로 뽑기
+let 숫자후보;
+let 숫자배열;
+function randomNumber () {
+  숫자후보 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  숫자배열 = [];
+  for (let i=0; i<4; i++) {
+    let 뽑은것 = 숫자후보.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
+    숫자배열.push(뽑은것);
+  }
+  console.log(숫자배열);
+}
+randomNumber();
+
+// 2. 화면 구성하기
 let baseballArticle = document.querySelector(".baseball");
 
 let baseballResult = document.createElement("strong");
@@ -88,36 +103,55 @@ let baseballForm = document.createElement("form");
 baseballArticle.append(baseballForm);
 
 let baseballInput = document.createElement("input");
+baseballInput.maxLength = 4;
 baseballForm.append(baseballInput);
 
 let baseballSubmit = document.createElement("button");
+baseballSubmit.textContent = "입력";
 baseballForm.append(baseballSubmit);
 
-
-let 숫자후보 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let 숫자배열 = [];
-for (let i=0; i<4; i++) {
-  let 뽑은것 = 숫자후보.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
-  숫자배열.push(뽑은것);
-}
-
-let 입력값 = baseballInput.value;
-let 도전횟수 = 0;
+let 제한 = 0;
 
 baseballForm.addEventListener("submit", function (e) {
   e.preventDefault();
+// 3. 답 입력
+  let 입력값 = baseballInput.value;
+  console.log(입력값);
 
+  if (입력값 === 숫자배열.join("")) {
+    baseballResult.textContent = "홈런!";
+    baseballInput.value = "";
+    baseballInput.focus();
 
+    제한 = 0;
+    randomNumber();
+  } else {
+    let 입력값배열 = 입력값.split("");
+    let 스트라이크 = 0;
+    let 볼 = 0;
+    console.log("값이 틀리면");
 
-  for (도전횟수=0; 도전횟수<10; 도전횟수++){
-    // for (let i=0; i<숫자배열.length; i++) {
-    //   if (숫자[i] === Number(입력값)[0]) {
-    //
-    //   } else {
-    //
-    //   }
-    // }
+    for (let i=0; i<3; i++) {
+      if (Number(입력값배열[i]) === 숫자배열[i]) { //같은 자리 확인
+        스트라이크++;
+        console.log(i + ". 같은 자리, 같은 숫자!" + Number(입력값배열[i]), 숫자배열[i]);
+      } else if (숫자배열.indexOf(Number(입력값배열[i])) > -1) { //같은 자리는 아니고 숫자는 겹치는 친구들
+        볼++;
+        console.log(i + ". 다른 자리, 같은 숫자!" + Number(입력값배열[i]));
+      }
+    }
 
+    제한++;
+
+    if (제한 > 10) {
+      baseballResult.textContent = "10회 이상 틀려서 아웃! 정답은 " + 숫자배열.join("");
+      제한 = 0;
+      randomNumber();
+    } else {
+      baseballResult.textContent = "결과) " + 스트라이크 + " 스트라이크  " + 볼 + " 볼 현황: " + 제한 + "/10";
+    }
+
+    baseballInput.value = "";
+    baseballInput.focus();
   }
-  도전횟수++;
 });

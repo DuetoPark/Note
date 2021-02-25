@@ -10,7 +10,7 @@
     <meta name="description" content="타이밍 이벤트의 문법과 왜 사용해야 하는지에 대해서 알아봅시다!"/>
     <meta name="Location" content="포도와 고구마의 고장"/>
 
-    <title>timing event | Javascript</title>
+    <title>splice | Javascript</title>
 
     <!-- Style -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
@@ -92,25 +92,64 @@
           <strong>👀타이밍 이벤트👀</strong>
         </h1>
 
-        <article class='timing'>
-          <h2 class='main-article-title'>👸개요</h2>
+        <article class='splice'>
+          <h2 class='main-article-title'>개요</h2>
 
+          배열 메소드인 splice에 대해 알아볼 시간이다.
         </article>
 
-        <article class='timing-event'>
-          <h2 class='main-article-title'>👮timing event</h2>
 
-          <div class='timing-event-syntax'>
-            <h3 class='main-article-subtitle'>timing event 문법</h3>
+        <article class="" aria-labelledby="baseball-title">
+          <h3 id="" class="main-article-title">splice</h3>
+
+          1. 소개
+          splice() 메소드가
+          :배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경한다.
+
+          2. 문법
+
+            -해당 인덱스로부터 개수만큼 배열에서 요소를 뽑아낸다.
+            -가져온 요소는 가져온 배열에서 사라진다.
+            -뽑혀나온 값들은 배열 형태이다.
+
+            1) 배열의 기존 요소를 삭제
+              배열.splice(인덱스, 개수);
+
+              let A = ["안", "녕", "오", "이", "친", "구"];
+              let B = A.splice(2, 2);
+
+              결과)
+              A = ["안", "녕", "친", "구"];
+              B = ["오", "이"];
+
+              * 무작위로 뽑기
+                splice(Math.floor(Math.random * 9), 1)[1];
+              * n번 인덱스를 포함해서 이후의 모든 요소 제거
+                splice(n);
+
+                let A = ["안", "녕", "오", "이", "친", "구"];
+                A.splice(2);
+
+                결과) A = ["안", "녕"];
 
 
-          </div>
-        </article>
+            3) 배열의 기존 요소에 추가
+              배열.splice(인덱스 위치, 0, 값);
 
-        <article class="baseball" aria-labelledby="baseball-title">
-          <h3 id="baseball-title" class="main-article-title">숫자야구</h3>
+              let A = ["안", "녕", "오", "이", "친", "구"];
+              A.splice(2, 0, "토마토");
+
+              결과) A = ["안", "녕", "토마토", "오", "이", "친", "구"];
 
 
+            3) 배열의 기존 요소에 변경
+              배열.splice(인덱스 위치, 제거할 요소 갯수, 값);
+              -값은 원하는 만큼 넣고 ",(콤마)"로 구분한다.
+
+              let A = ["안", "녕", "오", "이", "친", "구"];
+              A.splice(2, 2, "고", "구", "마");
+
+              결과) A = ["안", "녕", "고", "구", "마", "친", "구"];
         </article>
       </section>
     </main>
@@ -119,37 +158,25 @@
       <div class='container'>
         <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
-          cite='https://www.w3schools.com/js/js_timing.asp'>
+          cite='https://edu.goorm.io/learn/lecture/10954/%EC%9B%B9-%EA%B2%8C%EC%9E%84%EC%9D%84-%EB%A7%8C%EB%93%A4%EB%A9%B0-%EB%B0%B0%EC%9A%B0%EB%8A%94-javascript-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8'>
           <strong class='note-footer-reference-name'>
-            자료 출처: "w3schools - JavaScript Timing Events", w3schools.com, 2021년 1월 19일 접속,
+            자료 출처: "구름에듀 - 웹 게임을 만들며 배우는 JavaScript - Chapter4", 구름에듀, 2021년 2월 25일 접속,
           </strong>
           <cite class='note-footer-reference-url'>
-            <a href='https://www.w3schools.com/js/js_timing.asp'>
-              https://www.w3schools.com/js/js_timing.asp
+            <a href='https://edu.goorm.io/learn/lecture/10954/%EC%9B%B9-%EA%B2%8C%EC%9E%84%EC%9D%84-%EB%A7%8C%EB%93%A4%EB%A9%B0-%EB%B0%B0%EC%9A%B0%EB%8A%94-javascript-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8'>
+              https://edu.goorm.io/learn/lecture/10954/%EC%9B%B9-%EA%B2%8C%EC%9E%84%EC%9D%84-%EB%A7%8C%EB%93%A4%EB%A9%B0-%EB%B0%B0%EC%9A%B0%EB%8A%94-javascript-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8
             </a>
           </cite>
         </blockquote>
 
         <blockquote class='note-footer-reference'
-          cite="https://www.behance.net/gallery/111179931/The-Art-Newspaper-News-Website">
+          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice'>
           <strong class='note-footer-reference-name'>
-            모달 디자인 참고: "behance - The Art Newspaper / News Website", behance, author - Polina Rykova, 2021년 01월 19일 접속
+            자료 출처: "MDN - Array.prototype.splice()", MDN, 2021년 2월 25일 접속,
           </strong>
           <cite class='note-footer-reference-url'>
-            <a href="https://www.behance.net/gallery/111179931/The-Art-Newspaper-News-Website">
-              https://www.behance.net/gallery/111179931/The-Art-Newspaper-News-Website
-            </a>
-          </cite>
-        </blockquote>
-
-        <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
-          <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 1월 14일 접속,
-          </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://gist.github.com/rxaviers/7360908'>
-              https://gist.github.com/rxaviers/7360908
+            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice'>
+              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
             </a>
           </cite>
         </blockquote>

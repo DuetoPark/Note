@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang='en'>
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- 페이지 설명 -->
     <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="css, background-clip, text-fill-color, 글자 안에 이미지, 텍스트 이미지, 이미지 텍스트"/>
-    <meta name="description" content="글자에 색 또는 이미지를 넣을 수 있는 속성인 background-clip과 background-clip 값의 종류에 대해 알아봅시다!"/>
+    <meta name="keywords" content="javascript, 자바스크립트, timing Event, 타이밍 이벤트"/>
+    <meta name="description" content="타이밍 이벤트의 문법과 왜 사용해야 하는지에 대해서 알아봅시다!"/>
     <meta name="Location" content="포도와 고구마의 고장"/>
 
-    <title>글자 안에 이미지(background-clip) | CSS</title>
+    <title>split & join | Javascript</title>
 
     <!-- Style -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/common/font.css">
     <link rel="stylesheet" href="../../css/default/reset-css.css">
     <link rel="stylesheet" href="../../css/common/grid.min.css">
     <link rel="stylesheet" href="../../css/common/common.css">
     <link rel="stylesheet" href="../../css/common/common-media-query.css">
     <link rel="stylesheet" href="../../css/animation/modal-animation.css">
-    <link rel="stylesheet" href="../../css/css/css-style.css">
-    <link rel="stylesheet" href="../../css/css/css-media-query.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/common/modal.css">
 
     <script src='../../assets/data.js'></script>
   </head>
@@ -86,76 +89,55 @@
     <main class='note-main'>
       <section class='container'>
         <h1 class='main-title'>
-          <strong>🍕글자 안에 이미지🍕</strong>
+          <strong>split & join</strong>
         </h1>
 
-        <article class='background-clip'>
-          <h1 class='main-article-title'>⚾글자 안에 이미지 넣는 방법</h1>
+        <article class='timing'>
+          <h2 class='main-article-title'>👸개요</h2>
+          숫자야구 게임 만들다가 나는 생각했다.
+          어.. 입력값하고 숫자배열 어떻게 구분하지
+          입력값은 숫자형이고 숫자배열은 배열이다.
 
-          <p>
-            그림 위에 글자를 배치하기는 많이 해봤지만,<br/>
-            글자 안에 이미지를 배치하는 건 안해봤다.<br/>
-            어.. 어떻게 해야하는지 구상을 해봤는데,<br/>
-            background image와 text의 color를 이용하면 되지 않을까?<br/>
-            <br/>
-            아니었다.<br/>
-            <br/>
-            웹 크로스 브라우징 적용
-          </p>
+          String(숫자배열[0])+String(숫자배열[1])+...
 
-          <pre class='main-article-pre background-white-radius'>
-            <code>
-              background-clip: text;
-              -webkit-background-clip: text;
-              color: transparent;
-              -webkit-text-fill-color:transparent;
-            </code>
-          </pre>
+          찝찝하고 눈물나고 방구뀌고
+          이때 사용하는 배열/문자 변환 메소드가 split과 join이다.
         </article>
 
-        <article class='background-clip-type-desc'>
-          <h2 class='main-article-subtitle'>🐛background-clip의 종류</h2>
-          <ul class='main-article-list background-clip-type'>
-            <li class='main-article-list-items type'>border-box</li>
-            <li class='main-article-list-items type'>padding-box</li>
-            <li class='main-article-list-items type'>content-box</li>
-            <li class='main-article-list-items type'>text</li>
-          </ul>
+        <article class="" aria-labelledby="baseball-title">
+          <h3 id="" class="main-article-title">split & join</h3>
+          1. split
+          문자.split(구분자)
+          결과) 배열로 변화
+          -문자.split(""); 결과) ["오", "이", "친", "구"]
 
-          <div class='background-clip-image-group'>
-            <div>
-              <p class='background-clip-desc'>
-                배경이 테두리의 바깥 경계까지 차지
-              </p>
-              <img class='background-clip-image'
-                src='../../assets/images/background-clip-border-box.png'
-                alt='border-box'>
-            </div>
-            <div>
-              <p class='background-clip-desc'>
-                배경이 안쪽 여백의 바깥 경계까지 차지
-              </p>
-              <img class='background-clip-image'
-                src='../../assets/images/background-clip-padding-box.png'
-                alt='padding-box'>
-            </div>
-            <div>
-              <p class='background-clip-desc'>
-                배경을 콘텐츠 상자에 맞춤
-              </p>
-              <img class='background-clip-image'
-                src='../../assets/images/background-clip-content-box.png'
-                alt='content-box'>
-            </div>
-            <div>
-              <p class='background-clip-desc'>
-                배경을 전경 텍스트 위에만 그림
-              </p>
-              <img class='background-clip-image'
-                src='../../assets/images/background-clip-text.png'
-                alt='text'>
-            </div>
-          </div>
+
+          2. join
+          배열.join(구분자)
+          결과) 문자로 변환
+
+          대신, join에서 값들을 쪼로록 붙여주고 싶다면,
+          배열.join("");를 써주자
+          -배열.join(","); 결과) "5,2,7,9"
+          -배열.join(""); 결과) "5279"
+          -배열.join(":"); 결과) "5:2:7:9"
+        </article>
+
+        <article class="" aria-labelledby="baseball-title">
+          <h3 id="" class="main-article-title">indexOf</h3>
+
+          배열.indexOf(값);
+          값의 위치를 알 수 있다.
+          -없으면 -1이 출력된다.
+          -있으면 해당값의 인덱스가 출력된다.
+        </article>
+
+        <article class="" aria-labelledby="baseball-title">
+          <h3 id="" class="main-article-title">정리</h3>
+
+          1. 순서도를 그린다.
+          2. 각 단계에 맞는 동작을 구현한다.
+          3. 구현할 때에는 동기->비동기 순서로 짠다.
         </article>
       </section>
     </main>
@@ -164,25 +146,25 @@
       <div class='container'>
         <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
-          cite='https://developer.mozilla.org/ko/docs/Web/CSS/background-clip'>
+          cite='https://edu.goorm.io/learn/lecture/10954/%EC%9B%B9-%EA%B2%8C%EC%9E%84%EC%9D%84-%EB%A7%8C%EB%93%A4%EB%A9%B0-%EB%B0%B0%EC%9A%B0%EB%8A%94-javascript-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8'>
           <strong class='note-footer-reference-name'>
-            자료 출처: "MDN-background-clip", MDN,  2020년 12월 29일 접속,
+            자료 출처: "구름에듀 - 웹 게임을 만들며 배우는 JavaScript - Chapter4", 구름에듀, 2021년 2월 25일 접속,
           </strong>
           <cite class='note-footer-reference-url'>
-            <a href='https://developer.mozilla.org/ko/docs/Web/CSS/background-clip'>
-              https://developer.mozilla.org/ko/docs/Web/CSS/background-clip
+            <a href='https://edu.goorm.io/learn/lecture/10954/%EC%9B%B9-%EA%B2%8C%EC%9E%84%EC%9D%84-%EB%A7%8C%EB%93%A4%EB%A9%B0-%EB%B0%B0%EC%9A%B0%EB%8A%94-javascript-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8'>
+              https://edu.goorm.io/learn/lecture/10954/%EC%9B%B9-%EA%B2%8C%EC%9E%84%EC%9D%84-%EB%A7%8C%EB%93%A4%EB%A9%B0-%EB%B0%B0%EC%9A%B0%EB%8A%94-javascript-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8
             </a>
           </cite>
         </blockquote>
 
         <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
+          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice'>
           <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2020년 12월 29일 접속,
+            자료 출처: "MDN - Array.prototype.splice()", MDN, 2021년 2월 25일 접속,
           </strong>
           <cite class='note-footer-reference-url'>
-            <a href='https://gist.github.com/rxaviers/7360908'>
-              https://gist.github.com/rxaviers/7360908
+            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice'>
+              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
             </a>
           </cite>
         </blockquote>
@@ -190,6 +172,7 @@
     </footer>
 
     <script src='../../assets/app/create.js'></script>
+    <script src="../../assets/app/test.js"></script>
     <script src='../../assets/app/app.js'></script>
     <script src="../../assets/app/modal.js"></script>
   </body>
