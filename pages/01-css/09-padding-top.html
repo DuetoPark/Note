@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- 페이지 설명 -->
     <meta name="author" content="dueto park"/>
     <meta name="keywords" content="CSS, padding-top, padding top 100%, 패딩탑"/>
     <meta name="description" content="padding-top 100%는 대체 무엇을 기준으로 크기가 지정되는지 알고싶지 않아요??? 궁금하면 커몬"/>
@@ -12,7 +10,7 @@
 
     <title>padding-top 100% | CSS</title>
 
-    <!-- Style -->
+    <!-- padding-top -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../css/default/reset-css.css">
     <link rel="stylesheet" href="../../css/common/grid.min.css">
@@ -23,6 +21,7 @@
     <link rel="stylesheet" href="../../css/css/css-style.css">
     <link rel="stylesheet" href="../../css/css/css-media-query.css">
 
+    <!-- 데이터 -->
     <script src='../../assets/data.js'></script>
   </head>
 
@@ -49,27 +48,27 @@
 
           <!-- 페이지 이동 모달 -->
           <article class="go-to-pages">
-            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+            <h2 class="sr-only">주제별 페이지 이동</h2>
 
             <button class="go-to-pages-close"
               type="button"></button>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😈html</h3>
               <ol id="go-to-page-html" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.html) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😇CSS</h3>
               <ol id="go-to-page-css" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.css) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😎Javascript</h3>
               <ol id="go-to-page-javascript" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
               </ol>
@@ -86,12 +85,12 @@
 
     <main class='note-main'>
       <section class='container'>
-        <h1 class='main-title'>
+        <h2 class='main-title'>
           <strong>🏃padding-top: 100%;🏃</strong>
-        </h1>
+        </h2>
 
         <article class='padding-top-100-summary'>
-          <h2 class='main-article-title'>👪개요</h2>
+          <h3 class='main-article-title'>👪개요</h3>
 
           <p>
             나는 변태다.<br/>
@@ -105,27 +104,23 @@
         </article>
 
         <article class='padding-top-100'>
-          <h2 class='main-article-title'>👯padding-top</h2>
+          <h3 class='main-article-title'>👯padding-top</h3>
 
           <p>
             공식 문서에 따르면,
             padding-top이나 padding-bottom값을 퍼센트로 지정할 땐 <strong> 알맹이의 껍질을 기준</strong>으로 계산된다고 나와있다.
           </p>
-
           <p>
             현재 텍스트를 감싸는 요소. 혹은, 현재 요소를 감싸는 부모요소를 기준으로 하는구나 라고 생각하면 되겠다.
           </p>
-
           <p>
             더 정확히 말하자면, 부모요소의 width이다.
           </p>
-
           <p>
             그래서 component(구성요소)에다가 {padding-top: 80%;}라고 설정하면,
             부모요소의 width의 80%만큼이 padding-top되는 것이다.
           </p>
         </article>
-
       </section>
     </main>
 
@@ -170,7 +165,9 @@
       </div>
     </footer>
 
+    <!-- 요소 생성 -->
     <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
     <script src='../../assets/app/app.js'></script>
     <script src="../../assets/app/modal.js"></script>
   </body>

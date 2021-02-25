@@ -3,16 +3,14 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- 페이지 설명 -->
     <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="css, 가상요소 투명도, pseudo opacity"/>
+    <meta name="keywords" content="css, 가상요소 투명도, pseudo-element opacity"/>
     <meta name="description" content="가상요소 스르륵 나타나는 효과에 대해 알아봅시다! "/>
     <meta name="Location" content="포도와 고구마의 고장"/>
 
     <title>가상요소 투명도 | CSS</title>
 
-    <!-- Style -->
+    <!-- pseudo-opacity -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../css/default/reset-css.css">
     <link rel="stylesheet" href="../../css/common/grid.min.css">
@@ -22,6 +20,7 @@
     <link rel="stylesheet" href="../../css/css/css-style.css">
     <link rel="stylesheet" href="../../css/css/css-media-query.css">
 
+    <!-- 데이터 -->
     <script src='../../assets/data.js'></script>
   </head>
 
@@ -48,27 +47,27 @@
 
           <!-- 페이지 이동 모달 -->
           <article class="go-to-pages">
-            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+            <h2 class="sr-only">주제별 페이지 이동</h2>
 
             <button class="go-to-pages-close"
               type="button"></button>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😈html</h3>
               <ol id="go-to-page-html" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.html) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😇CSS</h3>
               <ol id="go-to-page-css" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.css) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😎Javascript</h3>
               <ol id="go-to-page-javascript" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
               </ol>
@@ -85,68 +84,70 @@
 
     <main class='note-main'>
       <section class='container'>
-        <h1 class='main-title'>
+        <h2 class='main-title'>
           <strong>🌹스르륵 나타나는 가상요소🌹</strong>
-        </h1>
+        </h2>
 
         <article class='pseudo-opacity'>
-          <h2 class='main-article-title'>🌲개요</h2>
+          <h3 class='main-article-title'>🌲개요</h3>
           <p>
             가상요소는 transition을 해도 animation을 해도 스르륵 효과가 먹히지 않길래, 이 친구는 거친 인생을 살아왔구나 라고 결론 지어왔었다.
           </p>
           <p>
-            그러다 어제, 레진코믹스 페이지를 둘러보다가 스르륵 나타나는 가상요소를 봤다. 민망했다. 가상요소가 사람이 아니라 다행이라고 생각했다.<br/>
+            그러다 어제, 레진코믹스 페이지를 둘러보다가 스르륵 나타나는 가상요소를 봤다. 민망했다.<br/>
             <br/>
             어쨌든 나는 이제 가상요소 스르륵 나타나게 만들 수 있다. 신난다.
           </p>
         </article>
 
         <article class='how-to-set-pseudo-opacity'>
-          <h1 class='main-article-title'>
-            🍄가상요소 스르륵 효과주는 방법
-          </h1>
+          <h3 class='main-article-title'>
+            🍄opacity, transition, hover
+          </h3>
 
-          <h2 class='main-article-subtitle'>🌴필요한 속성</h2>
+          <strong class='main-article-subtitle'>🌴필요한 속성</strong>
           <ol class='main-article-list pseudo-attribute-type'>
             <li class='main-article-list-items type'>content</li>
             <li class='main-article-list-items type'>opacity</li>
             <li class='main-article-list-items type'>transition</li>
           </ol>
 
-          <h2 class='main-article-subtitle'>🌴순서</h2>
-          <h3 class='main-article-subtitle order'>
-            element::after
-          </h3>
-          <dl class='main-article-dl'>
-            <div>
-              <dt class='main-article-dt'>content</dt>
-              <dd class='main-article-dd'>가상요소를 HTML에 출력하기 위해서 필요한 속성</dd>
-              <dd class='main-article-dd'>안 넣으면, transition과 animation이 먹히지 않는다</dd>
-              <dd class='main-article-dd'>속성값을 빈칸으로 두어야 한다</dd>
-            </div>
-            <div>
-              <dt class='main-article-dt'>opacity</dt>
-              <dd class='main-article-dd'>가상요소의 투명도를 조절하는 속성</dd>
-              <dd class='main-article-dd'>transition 속성과 함께 사용하면 스르륵 나타나는 효과를 줄 수 있다</dd>
-              <dd>속성값을 0으로 둔다</dd>
-            </div>
-            <div>
-              <dt class='main-article-dt'>transition</dt>
-              <dd class='main-article-dd'>요소가 부드럽게 전환되도록 만드는 속성</dd>
-              <dd class='main-article-dd'>opacity 속성값이 바뀜에 따라 부드럽게 전환한다</dd>
-            </div>
-          </dl>
+          <div>
+            <h4 class='main-article-subtitle'>🌴순서</h4>
+            <strong class='main-article-subtitle order'>
+              element::after
+            </strong>
+            <dl class='main-article-dl'>
+              <div>
+                <dt class='main-article-dt'>content</dt>
+                <dd class='main-article-dd'>가상요소를 HTML에 출력하기 위해서 필요한 속성</dd>
+                <dd class='main-article-dd'>안 넣으면, transition과 animation이 먹히지 않는다</dd>
+                <dd class='main-article-dd'>content: '';으로 지정</dd>
+              </div>
+              <div>
+                <dt class='main-article-dt'>opacity</dt>
+                <dd class='main-article-dd'>가상요소의 투명도를 조절하는 속성</dd>
+                <dd class='main-article-dd'>transition 속성과 함께 사용하면 스르륵 나타나는 효과를 줄 수 있다</dd>
+                <dd class='main-article-dd'>속성값을 0으로 둔다</dd>
+              </div>
+              <div>
+                <dt class='main-article-dt'>transition</dt>
+                <dd class='main-article-dd'>요소가 부드럽게 전환되도록 만드는 속성</dd>
+                <dd class='main-article-dd'>opacity 속성값이 바뀜에 따라 부드럽게 전환한다</dd>
+              </div>
+            </dl>
 
-          <h3 class='main-article-subtitle order'>
-            element.hover::after
-          </h3>
-          <p>
-            스타일 지정 후에 opacity 속성값을 1로 설정한다.
-          </p>
+            <strong class='main-article-subtitle order'>
+              element.hover::after
+            </strong>
+            <p>
+              스타일 지정 후에 opacity 속성값을 1로 설정한다.
+            </p>
+          </div>
         </article>
 
         <article class='pseudo-opacity-learned'>
-          <h2 class='main-article-title'>🐅배운점</h2>
+          <h3 class='main-article-title'>🐅배운점</h3>
           <ul class='main-article-list background-white-radius'>
             <li class='main-article-list-items hyphen'>
               가상요소에 효과를 줄 때에는 기본 틀을 잘 지켜야 한다
@@ -179,7 +180,9 @@
       </div>
     </footer>
 
+    <!-- 요소 생성 -->
     <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
     <script src='../../assets/app/app.js'></script>
     <script src="../../assets/app/modal.js"></script>
   </body>

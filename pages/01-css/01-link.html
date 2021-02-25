@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- 페이지 설명 -->
     <meta name="author" content="dueto park"/>
     <meta name="keywords" content="css, link tag, link 태그"/>
     <meta name="description" content="내부 파일을 연결해주는 link 태그의 정렬 순서, import와 link의 비교, 스타일 시트 분산의 장단점, 선택자 우선순위를 알아봅시다!"/>
@@ -12,7 +10,7 @@
 
     <title>Link | CSS</title>
 
-    <!-- Style -->
+    <!-- link -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../css/default/reset-css.css">
     <link rel="stylesheet" href="../../css/common/grid.min.css">
@@ -22,6 +20,7 @@
     <link rel="stylesheet" href="../../css/css/css-style.css">
     <link rel="stylesheet" href="../../css/css/css-media-query.css">
 
+    <!-- 데이터 -->
     <script src='../../assets/data.js'></script>
   </head>
 
@@ -48,27 +47,27 @@
 
           <!-- 페이지 이동 모달 -->
           <article class="go-to-pages">
-            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+            <h2 class="sr-only">주제별 페이지 이동</h2>
 
             <button class="go-to-pages-close"
               type="button"></button>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😈html</h3>
               <ol id="go-to-page-html" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.html) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😇CSS</h3>
               <ol id="go-to-page-css" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.css) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😎Javascript</h3>
               <ol id="go-to-page-javascript" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
               </ol>
@@ -85,12 +84,12 @@
 
     <main class='note-main'>
       <section class='container'>
-        <h1 class='main-title'>
+        <h2 class='main-title'>
           <strong>🚀link🚀</strong>
-        </h1>
+        </h2>
 
         <article class='css-align'>
-          <h1 class='main-article-title'>👻css 파일 정렬 순서</h1>
+          <h3 class='main-article-title'>👻css 파일 정렬 순서</h3>
           <div class='css-align-order'>
             <ol class='main-article-list'>
               <li class='main-article-list-items order'>font</li>
@@ -105,7 +104,7 @@
             </p>
           </div>
 
-          <h2 class='main-article-subtitle'>✏️css 파일 정렬 방법</h2>
+          <strong class='main-article-subtitle'>✏️css 파일 정렬 방법</strong>
           <ul class='main-article-list css-align-type'>
             <li class='main-article-list-items type'>import</li>
             <li class='main-article-list-items type'>link</li>
@@ -113,17 +112,17 @@
         </article>
 
         <article class='reason-for-recomment'>
-          <h1 class='main-article-title'>🚗import보다 link를 권장하는 이유</h1>
+          <h3 class='main-article-title'>🚗import보다 link를 권장</h3>
 
           <div>
-            <h2 class='main-article-subtitle'>import의 장점</h2>
+            <strong class='main-article-subtitle'>import의 장점</strong>
             <p>
               @impart가 css파일 내에서 모두 해결하기 때문에 더 깔끔해 보일 수 있다. 하지만 세상은 내 뜻대로 되지 않지👅👅
             </p>
           </div>
 
           <div class='import-pros-and-cons'>
-            <h2 class='main-article-subtitle'>import 단점</h2>
+            <strong class='main-article-subtitle'>import 단점</strong>
             <ol class='main-article-list'>
               <li class='main-article-list-items'>
                 관리를 어렵게 한다.
@@ -144,9 +143,9 @@
         </article>
 
         <article class='slice-stylesheet'>
-          <h1 class='main-article-title'>
+          <h3 class='main-article-title'>
             ✨스타일 시트를 무조건 여러개로 나누는 것이 좋을까?
-          </h1>
+          </h3>
 
           <p>
             가벼운 웹 페이지와 효율적인 관리를 위해서는 스타일 시트를 나누는 것이 좋다.<br/>
@@ -168,7 +167,7 @@
         </article>
 
         <aside class='selector-priority'>
-          <h1 class='main-article-title'>😎선택자 우선순위도 알아보자😎</h1>
+          <h3 class='main-article-title'>😎선택자 우선순위도 알아보자😎</h3>
 
           <table class='main-article-table'>
             <thead>
@@ -277,7 +276,9 @@
       </div>
     </footer>
 
+    <!-- 요소 생성 -->
     <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
     <script src='../../assets/app/app.js'></script>
     <script src="../../assets/app/modal.js"></script>
   </body>

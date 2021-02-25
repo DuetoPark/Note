@@ -3,16 +3,14 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- 페이지 설명 -->
     <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="css, stroke, text-shadow, -wdbkit-text-stroke, 텍스트 외곽선"/>
+    <meta name="keywords" content="css, stroke, text-shadow, -webkit-text-stroke, 텍스트 외곽선"/>
     <meta name="description" content="텍스트에 외곽선을 넣는 속성인 stroke를 의 사용법과 stroke의 웹 크로스 브라우징에 대해 알아봅시다!"/>
     <meta name="Location" content="포도와 고구마의 고장"/>
 
     <title>텍스트 외곽선(stroke) | CSS</title>
 
-    <!-- Style -->
+    <!-- stroke -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../css/default/reset-css.css">
     <link rel="stylesheet" href="../../css/common/grid.min.css">
@@ -22,6 +20,7 @@
     <link rel="stylesheet" href="../../css/css/css-style.css">
     <link rel="stylesheet" href="../../css/css/css-media-query.css">
 
+    <!-- 데이터 -->
     <script src='../../assets/data.js'></script>
   </head>
 
@@ -48,27 +47,26 @@
 
           <!-- 페이지 이동 모달 -->
           <article class="go-to-pages">
-            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+            <h2 class="sr-only">주제별 페이지 이동</h2>
 
-            <button class="go-to-pages-close"
-              type="button"></button>
+            <button class="go-to-pages-close" type="button"></button>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😈html</h3>
               <ol id="go-to-page-html" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.html) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😇CSS</h3>
               <ol id="go-to-page-css" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.css) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😎Javascript</h3>
               <ol id="go-to-page-javascript" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
               </ol>
@@ -85,12 +83,12 @@
 
     <main class='note-main'>
       <section class='container'>
-        <h1 class='main-title'>
+        <h2 class='main-title'>
           <strong>⚠️텍스트 외곽선⚠️</strong>
-        </h1>
+        </h2>
 
         <article class='stroke'>
-          <h1 class='main-article-title'>🎉텍스트 외곽선 넣는 방법</h1>
+          <h3 class='main-article-title'>🎉stroke</h3>
           <p>
             텍스드에 외곽선을 넣는 이유는 텍스트를 강조하기 위함이다.<br/>
             css의 stroke 속성를 이용한다.
@@ -110,9 +108,9 @@
         </article>
 
         <article class='stroke-cross-browsing'>
-          <h1 class='main-article-title'>
-            🌏웹 크로스 브라우징 방법
-          </h1>
+          <h3 class='main-article-title'>
+            🌏웹 크로스 브라우징
+          </h3>
           <p>text-shadow를 이용한다.</p>
           <pre class='main-article-pre background-white-radius'>
             <code>
@@ -132,9 +130,9 @@
         </article>
 
         <aside class='stroke-animation'>
-          <h2 class='main-article-subtitle'>
-            🔇애니메이션 설정
-          </h2>
+          <h3 class='main-article-subtitle'>
+            🔇애니메이션
+          </h3>
           <p>색만 바뀌고 두께는 변하지 않는다.</p>
           <pre class='main-article-pre background-white-radius'>
             <code>
@@ -190,7 +188,9 @@
       </div>
     </footer>
 
+    <!-- 요소 생성 -->
     <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
     <script src='../../assets/app/app.js'></script>
     <script src="../../assets/app/modal.js"></script>
   </body>

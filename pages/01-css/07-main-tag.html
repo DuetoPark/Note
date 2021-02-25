@@ -3,16 +3,14 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- 페이지 설명 -->
     <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="css, main 태그, main tag, margin auto, 인터넷 익스플로어, IE, 크로스 브라우징"/>
+    <meta name="keywords" content="css, main 태그, margin auto, 인터넷 익스플로어, IE, 크로스 브라우징"/>
     <meta name="description" content="인터넷 익스플로어의 메인태그에는 {margin: 0 auto;}가 먹히지 않는 이유에 대해 알아봅시다!"/>
     <meta name="Location" content="포도와 고구마의 고장"/>
 
     <title>main 태그 | CSS</title>
 
-    <!-- Style -->
+    <!-- main-tag -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../css/default/reset-css.css">
     <link rel="stylesheet" href="../../css/common/grid.min.css">
@@ -22,6 +20,7 @@
     <link rel="stylesheet" href="../../css/css/css-style.css">
     <link rel="stylesheet" href="../../css/css/css-media-query.css">
 
+    <!-- 데이터 -->
     <script src='../../assets/data.js'></script>
   </head>
 
@@ -48,27 +47,27 @@
 
           <!-- 페이지 이동 모달 -->
           <article class="go-to-pages">
-            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+            <h2 class="sr-only">주제별 페이지 이동</h2>
 
             <button class="go-to-pages-close"
               type="button"></button>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😈html</h3>
               <ol id="go-to-page-html" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.html) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😇CSS</h3>
               <ol id="go-to-page-css" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.css) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😎Javascript</h3>
               <ol id="go-to-page-javascript" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
               </ol>
@@ -85,12 +84,12 @@
 
     <main class='note-main'>
       <section class='container'>
-        <h1 class='main-title'>
-          <strong>😇main 태그😇</strong>
-        </h1>
+        <h2 class='main-title'>
+          <strong>😇main 태그 margin😇</strong>
+        </h2>
 
         <article class='main-tag-max-width-summary'>
-          <h2 class='main-article-title'>😈개요</h2>
+          <h3 class='main-article-title'>😈개요</h3>
 
           <p>
             클론 코딩을 하던 중, 문득 궁금해졌다.<br/>
@@ -104,7 +103,7 @@
         </article>
 
         <article class='main-tag-max-width'>
-          <h2 class='main-article-title'>😎IE와 main 태그</h2>
+          <h3 class='main-article-title'>😎IE와 main 태그</h3>
 
           <p>
             결론부터 말하자면, max-width문제가 아니다.<br/>
@@ -159,7 +158,9 @@
       </div>
     </footer>
 
+    <!-- 요소 생성 -->
     <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
     <script src='../../assets/app/app.js'></script>
     <script src="../../assets/app/modal.js"></script>
   </body>

@@ -3,16 +3,14 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- 페이지 설명 -->
     <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="css, 가로, 폭, width, calc, 100%, 100vw, auto"/>
+    <meta name="keywords" content="css, width, calc, 100%, 100vw, auto"/>
     <meta name="description" content="요소의 가로 폭을 조절하는 속성인 width의 값을 calc로 지정했을 때, 100%/100vw/auto로 지정했을 때 어떻게 달라지는 지 알아봅시다!"/>
     <meta name="Location" content="포도와 고구마의 고장"/>
 
     <title> width | CSS</title>
 
-    <!-- Style -->
+    <!-- width -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../css/default/reset-css.css">
     <link rel="stylesheet" href="../../css/common/grid.min.css">
@@ -22,6 +20,7 @@
     <link rel="stylesheet" href="../../css/css/css-style.css">
     <link rel="stylesheet" href="../../css/css/css-media-query.css">
 
+    <!-- 데이터 -->
     <script src='../../assets/data.js'></script>
   </head>
 
@@ -48,27 +47,27 @@
 
           <!-- 페이지 이동 모달 -->
           <article class="go-to-pages">
-            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+            <h2 class="sr-only">주제별 페이지 이동</h2>
 
             <button class="go-to-pages-close"
               type="button"></button>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😈html</h3>
               <ol id="go-to-page-html" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.html) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😇CSS</h3>
               <ol id="go-to-page-css" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.css) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😎Javascript</h3>
               <ol id="go-to-page-javascript" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
               </ol>
@@ -85,12 +84,12 @@
 
     <main class='note-main'>
       <section class='container'>
-        <h1 class='main-title'>
-          <strong>💘width 마법의 주문💘</strong>
-        </h1>
+        <h2 class='main-title'>
+          <strong>💘width💘</strong>
+        </h2>
 
         <article class='width-summary'>
-          <h2 class='main-article-title'>🌟개요</h2>
+          <h3 class='main-article-title'>🌟개요</h3>
 
           <p>
             클론 코딩중인데,<br/>
@@ -103,7 +102,7 @@
         </article>
 
         <article class='width-calc'>
-          <h1 class='main-article-title'>✨width: calc();</h1>
+          <h3 class='main-article-title'>✨width: calc();</h3>
 
           <p>
             어떻게 한거지? 이렇게 저렇게 계속 찾아보고 시도해보다가 <strong class='underline'>🔥calc🔥</strong>를 사용했다는 걸 알게되었다.
@@ -112,10 +111,10 @@
           <div class="width-calc-image-group">
             <img class="width-calc-image"
               src="../../assets/images/width-calc-1.png"
-              alt="">
+              alt="width calc 지정">
             <img class="width-calc-image"
               src="../../assets/images/width-calc-2.png"
-              alt="">
+              alt="width calc 지정 후 가로 늘림">
           </div>
 
           <p>
@@ -138,7 +137,7 @@
         </article>
 
         <article class='width-group'>
-          <h2 class='main-article-title'>🎵추가</h2>
+          <h3 class='main-article-title'>🎵width: auto/100%;</h3>
           <p>
             그리고 width에 auto나 100%같이 유동적인 값을 줄 땐, 확인할 부분이 많다.<br/>
             <br/>
@@ -159,7 +158,7 @@
           </ul>
 
           <p>
-            이 그룹의 width를 결정하는 요소는 어디에 있나?를 찾기 위함이다.
+            이 그룹의 <strong>width를 결정하는 요소</strong>는 어디에 있나?를 찾기 위함이다.
           </p>
 
           <ol class='main-article-list background-white-radius'>
@@ -203,7 +202,9 @@
       </div>
     </footer>
 
+    <!-- 요소 생성 -->
     <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
     <script src='../../assets/app/app.js'></script>
     <script src="../../assets/app/modal.js"></script>
   </body>

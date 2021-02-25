@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- 페이지 설명 -->
     <meta name="author" content="dueto park"/>
     <meta name="keywords" content="CSS, direction, 디렉션, 텍스트 방향"/>
     <meta name="description" content="텍스트 정렬방향을 지정하는 속성인 direction을 알아봅시다!"/>
@@ -12,7 +10,7 @@
 
     <title>direction | CSS</title>
 
-    <!-- Style -->
+    <!-- direction -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../css/default/reset-css.css">
     <link rel="stylesheet" href="../../css/common/grid.min.css">
@@ -23,6 +21,7 @@
     <link rel="stylesheet" href="../../css/css/css-style.css">
     <link rel="stylesheet" href="../../css/css/css-media-query.css">
 
+    <!-- 데이터 -->
     <script src='../../assets/data.js'></script>
   </head>
 
@@ -49,27 +48,27 @@
 
           <!-- 페이지 이동 모달 -->
           <article class="go-to-pages">
-            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+            <h2 class="sr-only">주제별 페이지 이동</h2>
 
             <button class="go-to-pages-close"
               type="button"></button>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😈html</h3>
               <ol id="go-to-page-html" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.html) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😇CSS</h3>
               <ol id="go-to-page-css" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.css) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😎Javascript</h3>
               <ol id="go-to-page-javascript" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
               </ol>
@@ -86,12 +85,12 @@
 
     <main class='note-main'>
       <section class='container'>
-        <h1 class='main-title'>
+        <h2 class='main-title'>
           <strong>😏direction😏</strong>
-        </h1>
+        </h2>
 
         <article class='direction-summary'>
-          <h2 class='main-article-title'>😳개요</h2>
+          <h3 class='main-article-title'>😳개요</h3>
 
           <p>
             select 스타일링을 하는데 글씨 방향이 잘 조절되지 않았다.
@@ -105,7 +104,7 @@
         </article>
 
         <article class='direction'>
-          <h2 class='main-article-title'>😜direction</h2>
+          <h3 class='main-article-title'>😜direction</h3>
 
           <p>
             글씨의 방향을 정하는 속성이다.
@@ -152,7 +151,9 @@
       </div>
     </footer>
 
+    <!-- 요소 생성 -->
     <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
     <script src='../../assets/app/app.js'></script>
     <script src="../../assets/app/modal.js"></script>
   </body>

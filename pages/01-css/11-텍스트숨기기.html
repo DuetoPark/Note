@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- 페이지 설명 -->
     <meta name="author" content="dueto park"/>
     <meta name="keywords" content="CSS, 웹접근성, 텍스트 숨기기, SEO, SEO-hidden"/>
     <meta name="description" content="웹접근성 고려한 텍스트 숨기기를 알아봅시다!"/>
@@ -12,7 +10,7 @@
 
     <title>텍스트 숨기기 | CSS</title>
 
-    <!-- Style -->
+    <!-- 텍스트숨기기 -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../css/default/reset-css.css">
     <link rel="stylesheet" href="../../css/common/grid.min.css">
@@ -22,6 +20,7 @@
     <link rel="stylesheet" href="../../css/css/css-style.css">
     <link rel="stylesheet" href="../../css/css/css-media-query.css">
 
+    <!-- 데이터 -->
     <script src='../../assets/data.js'></script>
   </head>
 
@@ -48,27 +47,27 @@
 
           <!-- 페이지 이동 모달 -->
           <article class="go-to-pages">
-            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+            <h2 class="sr-only">주제별 페이지 이동</h2>
 
             <button class="go-to-pages-close"
               type="button"></button>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😈html</h3>
               <ol id="go-to-page-html" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.html) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😇CSS</h3>
               <ol id="go-to-page-css" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.css) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😎Javascript</h3>
               <ol id="go-to-page-javascript" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
               </ol>
@@ -85,12 +84,12 @@
 
     <main class='note-main'>
       <section class='container'>
-        <h1 class='main-title'>
+        <h2 class='main-title'>
           <strong>🍕접근성을 고려한 텍스트 숨기기🍕</strong>
-        </h1>
+        </h2>
 
         <article class='SEO-hidden-summary'>
-          <h2 class='main-article-title'>🍹개요</h2>
+          <h3 class='main-article-title'>🍹개요</h3>
 
           <p>
             접근성과 최적화를 열심히 공부해두면 짱 멋있는 웹 프론트엔드 개발자가 될 것 같다는 느낌이 들었다.
@@ -99,12 +98,12 @@
         </article>
 
         <article class='no-SEO-hidden'>
-          <h2 class='main-article-title'>🍺그냥 숨기기</h2>
+          <h3 class='main-article-title'>🍺텍스트 숨기기</h3>
 
           <ol>
             <li class="no-SEO-hidden-list-items">
               <div class="SEO-hidden-display">
-                <h3 class="main-article-subtitle">🍎display: none;</h3>
+                <h4 class="main-article-subtitle">🍎display: none;</h4>
 
                 <pre class="main-article-pre background-white-radius">
                   <code>
@@ -121,7 +120,7 @@
             </li>
             <li class="no-SEO-hidden-list-items">
               <div class="SEO-hidden-visibility">
-                <h3 class="main-article-subtitle">🍏visibility: hidden;</h3>
+                <h4 class="main-article-subtitle">🍏visibility: hidden;</h4>
 
                 <pre class="main-article-pre background-white-radius">
                   <code>
@@ -137,7 +136,7 @@
             </li>
             <li class="no-SEO-hidden-list-items">
               <div class="SEO-hidden-text-indent">
-                <h3 class="main-article-subtitle">🍊text-indent: -9999px;</h3>
+                <h4 class="main-article-subtitle">🍊text-indent: -9999px;</h4>
 
                 <pre class="main-article-pre background-white-radius">
                   <code>
@@ -157,7 +156,7 @@
             </li>
             <li class="no-SEO-hidden-list-items">
               <div class="SEO-hidden-zero-pixel">
-                <h3 class="main-article-subtitle">🍋zero-pixel</h3>
+                <h4 class="main-article-subtitle">🍋zero-pixel</h4>
 
                 <pre class="main-article-pre background-white-radius">
                   <code>
@@ -167,9 +166,8 @@
                   </code>
                 </pre>
 
-                <div class="">
-                  <h4 class="main-article-subtitle order">width와 height를 0으로 지정할 때</h4>
-
+                <div>
+                  <strong class="main-article-subtitle order">width와 height를 0으로 지정할 때</strong>
                   <ul>
                     <li class="main-article-list-items hyphen">
                       NVDA와 VoiceOver는 contents를 읽음
@@ -180,9 +178,8 @@
                   </ul>
                 </div>
 
-                <div class="">
-                  <h4 class="main-article-subtitle order">font-size를 0으로 지정할 때</h4>
-
+                <div>
+                  <strong class="main-article-subtitle order">font-size를 0으로 지정할 때</strong>
                   <ul>
                     <li class="main-article-list-items hyphen">
                       VoiceOver가 contents를 읽지 못함
@@ -196,7 +193,7 @@
             </li>
             <li class="no-SEO-hidden-list-items">
               <div class="SEO-hidden-opacity">
-                <h3 class="main-article-subtitle">🍉opacity: 0;</h3>
+                <h4 class="main-article-subtitle">🍉opacity: 0;</h4>
 
                 <pre class="main-article-pre background-white-radius">
                   <code>
@@ -219,7 +216,7 @@
             </li>
             <li class="no-SEO-hidden-list-items">
               <div class="SEO-hidden-position">
-                <h3 class="main-article-subtitle">🍓position: absolute;</h3>
+                <h4 class="main-article-subtitle">🍓position: absolute;</h4>
 
                 <pre class="main-article-pre background-white-radius">
                   <code>
@@ -243,7 +240,7 @@
         </article>
 
         <article class='SEO-hidden'>
-          <h2 class='main-article-title'>🍸접근성을 고려한 숨기기</h2>
+          <h3 class='main-article-title'>🍸접근성을 고려한 숨기기</h3>
 
           <pre class="main-article-pre background-white-radius">
             <code>
@@ -291,7 +288,9 @@
       </div>
     </footer>
 
+    <!-- 요소 생성 -->
     <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
     <script src='../../assets/app/app.js'></script>
     <script src="../../assets/app/modal.js"></script>
   </body>

@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- 페이지 설명 -->
     <meta name="author" content="dueto park"/>
     <meta name="keywords" content="CSS, transform 중심점, transform-origin"/>
     <meta name="description" content="transform 속성의 중심점을 표현하는 속성인 transform-origin 뿌시기!"/>
@@ -12,7 +10,7 @@
 
     <title>transform-origin | CSS</title>
 
-    <!-- Style -->
+    <!-- transform-origin -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../css/default/reset-css.css">
     <link rel="stylesheet" href="../../css/common/grid.min.css">
@@ -23,6 +21,7 @@
     <link rel="stylesheet" href="../../css/css/css-style.css">
     <link rel="stylesheet" href="../../css/css/css-media-query.css">
 
+    <!-- 데이터 -->
     <script src='../../assets/data.js'></script>
   </head>
 
@@ -49,27 +48,27 @@
 
           <!-- 페이지 이동 모달 -->
           <article class="go-to-pages">
-            <h2 class="sr-only">주제별로 분류한 페이지 이동</h2>
+            <h2 class="sr-only">주제별 페이지 이동</h2>
 
             <button class="go-to-pages-close"
               type="button"></button>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😈html 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😈html</h3>
               <ol id="go-to-page-html" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.html) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😇CSS 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😇CSS</h3>
               <ol id="go-to-page-css" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.css) -->
               </ol>
             </div>
 
             <div class="go-to-page-div">
-              <h2 class="go-to-page-title">😎Javascript 메뉴 리스트</h2>
+              <h3 class="go-to-page-title">😎Javascript</h3>
               <ol id="go-to-page-javascript" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
               </ol>
@@ -86,12 +85,12 @@
 
     <main class='note-main'>
       <section class='container'>
-        <h1 class='main-title'>
+        <h2 class='main-title'>
           <strong>🌋transform-origin🌋</strong>
-        </h1>
+        </h2>
 
         <article class='transform-origin-summary'>
-          <h2 class='main-article-title'>🌎개요</h2>
+          <h3 class='main-article-title'>🌎개요</h3>
 
           <p>
             transform rotate할 때마다 나는 화가났다.<br/>
@@ -100,7 +99,7 @@
         </article>
 
         <article class='transform-origin'>
-          <h2 class='main-article-title'>🌜transform-origin</h2>
+          <h3 class='main-article-title'>🌜transform-origin</h3>
 
           <p>
             transform의 기준점을 개발자가 지정할 수 있는 속성이다.<br/>
@@ -109,14 +108,14 @@
           </p>
 
           <div class="transform-origin-syntax">
-            <h3 class='main-article-subtitle'>🌝문법</h3>
+            <strong class='main-article-subtitle'>🌝문법</strong>
             <p>
               transform-origin: x-axis y-axis z-axis;
             </p>
           </div>
 
           <div class="transform-origin-unit">
-            <h3 class='main-article-subtitle'>🌚단위</h3>
+            <strong class='main-article-subtitle'>🌚단위</strong>
             <ul class="main-article-list">
               <li class="main-article-list-items hyphen">%</li>
               <li class="main-article-list-items hyphen">left</li>
@@ -130,7 +129,7 @@
         </article>
 
         <article class='transform-origin-example'>
-          <h2 class='main-article-title'>⛅예시</h2>
+          <h3 class='main-article-title'>⛅예시</h3>
 
           <div>
             <button class="transform-origin-example-start"
@@ -200,39 +199,12 @@
       </div>
     </footer>
 
+    <!-- 요소 생성 -->
     <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
     <script src='../../assets/app/app.js'></script>
     <script src="../../assets/app/modal.js"></script>
-    <script>
-      const transformExample = document.querySelector(".transform-origin-example");
-
-      function animationActive (target) {
-        if(target.value === "1"){
-          target.nextElementSibling.classList.add("transform-origin-center");
-          window.setTimeout(function() {
-            target.nextElementSibling.classList.remove("transform-origin-center");
-          },3000);
-        } else if (target.value === "2") {
-          target.nextElementSibling.classList.add("transform-origin-top-right");
-          window.setTimeout(function() {
-            target.nextElementSibling.classList.remove("transform-origin-top-right");
-          },3000);
-        } else if (target.value === "3") {
-          target.nextElementSibling.classList.add("transform-origin-bottom-left");
-          window.setTimeout(function() {
-            target.nextElementSibling.classList.remove("transform-origin-bottom-left");
-          },3000);
-        }
-      }
-
-      function animationHandler (e) {
-        animationActive(e.target);
-      }
-
-
-      transformExample.addEventListener("click", animationHandler);
-
-    </script>
+    <script src="../../assets/app/transform-origin.js"></script>
 
   </body>
 </html>
