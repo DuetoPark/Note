@@ -1,6 +1,5 @@
 /* Mobile Style
 max-width < 576px */
-
 body{
   background-color: #F0F0F3;
   color: #1F1F1F;
@@ -30,7 +29,8 @@ body{
   text-align: center;
 }
 
-.note-header-title > a{
+.note-header-title > a,
+.note-header-title span{
   font-size: 24px;
   margin-bottom: 4px;
 }
