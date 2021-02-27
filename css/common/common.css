@@ -88,7 +88,6 @@ body{
 
 /* Header - Modal - go-to-pages*/
 .go-to-pages{
-  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -98,6 +97,9 @@ body{
   padding: 120px 40px;
   text-align: left;
   background-color: #FFF;
+  animation-name: modal-open;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
 }
 
 .go-to-pages-close{
@@ -130,10 +132,6 @@ body{
   transform: rotate(-45deg);
 }
 
-.go-to-page-div{
-  display: none;
-}
-
 .go-to-page-title{
   font-size: 16px;
   font-weight: 500;
@@ -149,19 +147,7 @@ body{
   line-height: 2.142857142857143;
 }
 
-/* 모달효과 */
-.modal-active,
-.show-element{
-  display: block;
-}
-
-.modal-active{
-  animation-name: modal-open;
-  animation-duration: 300ms;
-  animation-timing-function: ease-in-out;
-}
-
-.modal-inactive{
+.modal-close{
   animation-name: modal-close;
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
