@@ -6,6 +6,7 @@ const backgroundWhiteElements = document.querySelectorAll('[class*=background-wh
 let transparentButton = document.querySelectorAll('.transparent-button');
 const pageMenus = document.querySelectorAll('.note-header-nav-list-items > button');
 const goToPageAnchors = document.querySelectorAll('.go-to-page-anchor');
+const noticeState = document.querySelector("#page-mode-state");
 let current = null;
 
 function toggled () {
@@ -38,6 +39,8 @@ function toggled () {
       transparentButton[i].classList.add('toggled-button');
     }
   }
+
+  noticeState.textContent = "야간 모드 켜짐";
 }
 
 function toggleInactive () {
@@ -54,6 +57,8 @@ function toggleInactive () {
   for (let i=0; i<transparentButton.length; i++) {
     transparentButton[i].classList.remove('toggled-button');
   }
+
+  noticeState.textContent = "야간 모드 꺼짐";
 }
 
 

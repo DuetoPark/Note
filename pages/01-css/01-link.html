@@ -75,9 +75,13 @@
           </article>
         </nav>
 
-        <div class='toggle-button-group'>
-          <strong class='toggle-button-title'>Day/Night Switch</strong>
-          <button class='toggle-button' type='button'></button>
+        <!-- 야간 모드로 전환 -->
+        <div class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
         </div>
       </div>
     </header>
