@@ -36,17 +36,18 @@
           </a>
         </h1>
 
-        <nav class='note-header-nav'>
-          <h2 class='sr-only note-header-nav-title'>다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list'>
-            <li class='note-header-nav-list-items'>
-              <button type='button'>html</button>
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택">
+            <li class='note-header-nav-list-items' aria-labelledby="html-button" role="none">
+              <button id="html-button" type='button'>html</button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button'>css</button>
+            <li class='note-header-nav-list-items' aria-labelledby="css-button" role="none">
+              <button id="css-button" type='button'>css</button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button'>javascript</button>
+            <li class='note-header-nav-list-items' aria-labelledby="js-button" role="none">
+              <button id="js-button" type='button'>javascript</button>
             </li>
           </ol>
 
