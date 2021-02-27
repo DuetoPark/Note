@@ -25,10 +25,15 @@
   </head>
 
   <body>
-    <header class='note-header'>
+    <header class='note-header' aria-label="페이지 조작 영역">
       <div class='container'>
-        <h1 class='note-header-title'>
-          <a href='../../note.html'>🔥기초튼튼 이가탄🔥</a>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
         </h1>
 
         <nav class='note-header-nav'>
