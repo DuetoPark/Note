@@ -223,10 +223,14 @@
           </p>
         </article>
 
-        <aside class='selector-priority'>
-          <h3 class='main-article-title'>😎선택자 우선순위도 알아보자😎</h3>
+        <aside class='selector-priority' aria-labelledby="selector-priority">
+          <h3 id="selector-priority" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">😎</span>
+            선택자 우선순위도 알아보자
+            <span class='main-article-title' aria-hidden="true">😎</span>
+          </h3>
 
-          <table class='main-article-table'>
+          <table class='main-article-table' aria-label="점수내는 방법">
             <thead>
               <tr>
                 <th scope="col">구분</th>
@@ -253,8 +257,8 @@
             </tbody>
           </table>
 
-          <span>예시</span>
-          <table class='main-article-table'>
+          <span aria-hidden="true">예시</span>
+          <table class='main-article-table' aria-label="예시">
             <thead>
               <tr>
                 <th scope="col">예시코드</th>
