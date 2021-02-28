@@ -15,6 +15,7 @@ function CreateNav (list, dataArray, key) {
       let goToPageAnchor = document.createElement("a");
       goToPageAnchor.className = "go-to-page-anchor";
       goToPageAnchor.href = "../01-" + key + "/" + this.dataArray[i].id + "-" + this.dataArray[i].href + ".html";
+      goToPageAnchor.setAttribute("role", "menuitem");
       goToPageAnchor.textContent = this.dataArray[i].id + "-" + this.dataArray[i].href;
       goToPageListItem.append(goToPageAnchor);
     }
