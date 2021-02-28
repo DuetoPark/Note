@@ -33,7 +33,7 @@
 }
 
 .import-pros-and-cons li.main-article-list-items::before{
-  content: '-';
+  content: '-' / "";
 }
 
 

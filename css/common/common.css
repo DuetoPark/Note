@@ -257,7 +257,7 @@ dfn.main-article-dt,
 }
 
 .main-article-dd::before{
-  content: '-';
+  content: '-' / "";
   margin-right: 4px;
 }
 
@@ -450,7 +450,7 @@ button.toggle-button.new-style::after{
 }
 
 .hyphen::before{
-  content: '-';
+  content: '-' / "";
   margin-right: 4px;
 }
 
