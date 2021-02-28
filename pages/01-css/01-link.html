@@ -39,41 +39,46 @@
         <!-- 다른 페이지로 이동 -->
         <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
           <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list' aria-label="주제 선택">
-            <li class='note-header-nav-list-items' aria-labelledby="html-button" role="none">
-              <button id="html-button" type='button'>html</button>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-html">html</button>
             </li>
-            <li class='note-header-nav-list-items' aria-labelledby="css-button" role="none">
-              <button id="css-button" type='button'>css</button>
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-css">css</button>
             </li>
-            <li class='note-header-nav-list-items' aria-labelledby="js-button" role="none">
-              <button id="js-button" type='button'>javascript</button>
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-js">javascript</button>
             </li>
           </ol>
 
 
           <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
-            <h2 id="select-chapter" class="hidden">챕터 선택</h2>
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
 
-            <button class="go-to-pages-close"
-              type="button"></button>
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
 
-            <div class="go-to-page-div hidden">
-              <h3 class="go-to-page-title">😈html</h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list" role="menu">
                 <!-- ../../assets/app/create.js (state.네비게이션.html) -->
               </ol>
             </div>
 
-            <div class="go-to-page-div hidden">
-              <h3 class="go-to-page-title">😇CSS</h3>
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
               <ol id="go-to-page-css" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.css) -->
               </ol>
             </div>
 
-            <div class="go-to-page-div hidden">
-              <h3 class="go-to-page-title">😎Javascript</h3>
+            <div id="go-to-page-div-js" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
               <ol id="go-to-page-javascript" class="go-to-page-list">
                 <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
               </ol>
