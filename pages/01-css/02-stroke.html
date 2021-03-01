@@ -97,17 +97,25 @@
       </div>
     </header>
 
-    <main class='note-main'>
+    <main class='note-main' aria-label="본문 영역">
       <section class='container'>
         <h2 class='main-title'>
-          <strong>⚠️텍스트 외곽선⚠️</strong>
+          <strong>
+            <span class='main-title' aria-hidden="true">⚠️</span>
+            텍스트 외곽선
+            <span class='main-title' aria-hidden="true">⚠️</span>
+          </strong>
         </h2>
 
-        <article class='stroke'>
-          <h3 class='main-article-title'>🎉stroke</h3>
+        <article class='stroke' aria-labelledby="stroke-title">
+          <h3 id="stroke-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🎉</span>
+            stroke
+          </h3>
           <p>
             텍스드에 외곽선을 넣는 이유는 텍스트를 강조하기 위함이다.<br/>
             css의 stroke 속성를 이용한다.
+            <span class="hidden">예시 코드</span>
           </p>
           <pre class='main-article-pre background-white-radius'>
             <code>
@@ -115,19 +123,25 @@
               -webkit-text-stroke: 1px #000;
             </code>
           </pre>
-          <p>
-            대신, 표준방법이 아니라서 <strong class='underline'>🔥웹킷 및 모질라 계열의 브라우저에서만🔥</strong> 적용된다.
-          </p>
+          <strong class='underline'>
+            <span aria-hidden="true">🔥</span>
+            대신, 표준방법이 아니라서 웹킷 및 모질라 계열의 브라우저에서만 적용된다.
+            <span aria-hidden="true">🔥</span>
+          </strong>
           <img class='can-i-use-image'
             src='../../assets/images/stroke-가능한-브라우저.png'
             alt='can i use 캡쳐 화면'>
         </article>
 
-        <article class='stroke-cross-browsing'>
-          <h3 class='main-article-title'>
-            🌏웹 크로스 브라우징
+        <article class='stroke-cross-browsing' aria-labelledby="stroke-cross-browsing-title">
+          <h3 id="stroke-cross-browsing-title" class='main-article-title'>
+            <span aria-hidden="true" class='main-article-title'>🌏</span>
+            웹 크로스 브라우징
           </h3>
-          <p>text-shadow를 이용한다.</p>
+          <p>
+            text-shadow를 이용한다.
+            <span class="hidden">예시 코드</span>
+          </p>
           <pre class='main-article-pre background-white-radius'>
             <code>
               .text-stroke {
@@ -145,11 +159,15 @@
             alt='can i use 캡쳐 화면'>
         </article>
 
-        <aside class='stroke-animation'>
-          <h3 class='main-article-subtitle'>
-            🔇애니메이션
+        <aside class='stroke-animation' aria-labelledby="stroke-animation-title">
+          <h3 id="stroke-animation-title" class='main-article-subtitle'>
+            <span aria-hidden="true" class='main-article-subtitle'>🔇</span>
+            애니메이션
           </h3>
-          <p>색만 바뀌고 두께는 변하지 않는다.</p>
+          <p>
+            색만 바뀌고 두께는 변하지 않는다.
+            <span class="hidden">예시 코드</span>
+          </p>
           <pre class='main-article-pre background-white-radius'>
             <code>
               /* Only the color will change, not the width */
