@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="../../css/common/common.css">
     <link rel="stylesheet" href="../../css/common/common-media-query.css">
     <link rel="stylesheet" href="../../css/animation/modal-animation.css">
-    <link rel="stylesheet" href="../../css/git/git.css">
-    <link rel="stylesheet" href="../../css/git/media-query.css">
 
     <!-- 데이터 -->
     <script src='../../assets/data.js'></script>
@@ -141,8 +139,14 @@
 
           <p>
             <span class="hidden-inline">다음의 명령어를 모두 입력한다.</span>
-            <strong class="order"><span class="hidden-inline">1</span>git config --global user.name "깃허브 user name"</strong><br/>
-            <strong class="order"><span class="hidden-inline">2</span>git config --global user.email "깃허브 이메일"</strong>
+            <strong class="order">
+              <span class="hidden-inline">1</span>
+              git config --global user.name "깃허브 user name"
+            </strong><br/>
+            <strong class="order">
+              <span class="hidden-inline">2</span>
+              git config --global user.email "깃허브 이메일"
+            </strong>
           </p>
         </article>
 
@@ -154,8 +158,14 @@
 
           <p class="hidden">다음의 명령어를 입력한다.</p>
           <dl class="main-article-dl" aria-label="로그인 확인 명령어">
-            <dt class="command" aria-labelledby="git-config-list-commond"><strong id="git-config-list-commond" class="order">git config --list</strong></dt>
-            <dd class="hyphen">id(user name)와 email을 확인하는 명령어</dd>
+            <dt class="command" aria-labelledby="git-config-list-commond">
+              <strong id="git-config-list-commond" class="order">
+                git config --list
+              </strong>
+            </dt>
+            <dd class="hyphen">
+              id(user name)와 email을 확인하는 명령어
+            </dd>
           </dl>
         </article>
 
@@ -179,8 +189,14 @@
 
           <p class="hidden">다음의 명령어를 입력한다.</p>
           <dl class="main-article-dl" aria-label="파일 상태 확인 명령어">
-            <dt class="command" aria-labelledby="git-state-command"><strong id="git-state-command" class="order">git status</strong></dt>
-            <dd class="hyphen">수정/신규 파일의 stage 상태를 출력한다.</dd>
+            <dt class="command" aria-labelledby="git-state-command">
+              <strong id="git-state-command" class="order">
+                git status
+              </strong>
+            </dt>
+            <dd class="hyphen">
+              수정/신규 파일의 stage 상태를 출력한다.
+            </dd>
           </dl>
         </article>
 
@@ -193,19 +209,46 @@
           <p class="hidden">상황에 따라 필요한 명령어를 선택하여 입력한다.</p>
           <dl class="main-article-dl" aria-label="git add 명령어 종류">
             <div>
-              <dt class="command" aria-labelledby="add-all"><strong id="add-all" class="order"><span class="hidden-inline">1</span>git add .</strong></dt>
-              <dd class="hyphen">수정 또는 신규 파일 모두 스테이징하는 명령어</dd>
+              <dt class="command" aria-labelledby="add-all-command">
+                <strong id="add-all-command" class="order">
+                  <span class="hidden-inline">1</span>
+                  git add .
+                </strong>
+              </dt>
+              <dd class="hyphen">
+                수정 또는 신규 파일 모두 스테이징하는 명령어
+              </dd>
             </div>
             <div>
-              <dt class="command" aria-labelledby="add-file"><strong id="add-file" class="order"><span class="hidden-inline">2</span>git add 파일명</strong></dt>
-              <dd class="hyphen">특정 파일만 스테이징하는 명령어</dd>
-              <dd class="hyphen">하나의 명령어로 여러개의 파일을 스테이징 할 수 있다.</dd>
-              <dd class="hyphen">공란으로 파일명을 구분한다.</dd>
+              <dt class="command" aria-labelledby="add-file-command">
+                <strong id="add-file-command" class="order">
+                  <span class="hidden-inline">2</span>
+                  git add 파일명
+                </strong>
+              </dt>
+              <dd class="hyphen">
+                특정 파일만 스테이징하는 명령어
+              </dd>
+              <dd class="hyphen">
+                하나의 명령어로 여러개의 파일을 스테이징 할 수 있다.
+              </dd>
+              <dd class="hyphen">
+                공란으로 파일명을 구분한다.
+              </dd>
             </div>
             <div>
-              <dt class="command" aria-labelledby="add-file-part"><strong id="add-file-part" class="order"><span class="hidden-inline">3</span>git add -p 파일명</strong></dt>
-              <dd class="hyphen">수정 내역을 확인한 뒤에 원하는 부분만 스테이징하는 명령어</dd>
-              <dd class="hyphen">y는 yes, n는 no, q는 끝내기, s는 나누기를 의미한다.</dd>
+              <dt class="command" aria-labelledby="add-file-part-command">
+                <strong id="add-file-part-command" class="order">
+                  <span class="hidden-inline">3</span>
+                  git add -p 파일명
+                </strong>
+              </dt>
+              <dd class="hyphen">
+                수정 내역을 확인한 뒤에 원하는 부분만 스테이징하는 명령어
+              </dd>
+              <dd class="hyphen">
+                y는 yes, n는 no, q는 끝내기, s는 나누기를 의미한다.
+              </dd>
             </div>
           </dl>
         </article>
@@ -218,10 +261,20 @@
 
           <p class="hidden">다음의 명령어를 입력한다.</p>
           <dl class="main-article-dl" aria-label="커밋 메세지 입력 명령어">
-            <dt class="command" aria-labelledby="git-commit-command"><strong id="git-commit-command" class="order">git commit -m "쓰고싶은 말"</strong></dt>
-            <dd class="hyphen">작업 내용을 작성한다.</dd>
-            <dd class="hyphen"><strong>세부적으로 나눠서 작성한다.</strong></dd>
-            <dd class="hyphen">명시적으로 작성한다</dd>
+            <dt class="command" aria-labelledby="git-commit-command">
+              <strong id="git-commit-command" class="order">
+                git commit -m "쓰고싶은 말"
+              </strong>
+            </dt>
+            <dd class="hyphen">
+              작업 내용을 작성한다.
+            </dd>
+            <dd class="hyphen">
+              <strong>세부적으로 나눠서 작성한다.</strong>
+            </dd>
+            <dd class="hyphen">
+              명시적으로 작성한다
+            </dd>
           </dl>
         </article>
 
@@ -234,13 +287,27 @@
           <p class="hidden">다음의 명령어를 입력한다.</p>
           <dl class="main-article-dl" aria-label="깃 리모트 명령어">
             <div>
-              <dt class="command" aria-labelledby="git-remote-command"><strong id="git-remote-command" class="order">git remote add origin 레포지토리 주소</strong></dt>
-              <dd class="hyphen">레포지토리 주소를 연결</dd>
+              <dt class="command" aria-labelledby="git-remote-command">
+                <strong id="git-remote-command" class="order">
+                  git remote add origin 레포지토리 주소
+                </strong>
+              </dt>
+              <dd class="hyphen">
+                레포지토리 주소를 연결
+              </dd>
             </div>
             <div>
-              <dt class="command" aria-labelledby="git-remote-delete-command"><strong id="git-remote-delete-command" class="order">git remote rm 지우려는 레포지토리 주소</strong></dt>
-              <dd class="hyphen">레포지토리 주소 삭제</dd>
-              <dd class="hyphen">레포지토리 주소를 잘못 입력했을 경우에 사용</dd>
+              <dt class="command" aria-labelledby="git-remote-delete-command">
+                <strong id="git-remote-delete-command" class="order">
+                  git remote rm 지우려는 레포지토리 주소
+                </strong>
+              </dt>
+              <dd class="hyphen">
+                레포지토리 주소 삭제
+              </dd>
+              <dd class="hyphen">
+                레포지토리 주소를 잘못 입력했을 경우에 사용
+              </dd>
             </div>
           </dl>
         </article>
@@ -253,10 +320,20 @@
 
           <p class="hidden">다음의 명령어를 입력한다.</p>
           <dl class="main-article-dl" aria-label="깃 푸시 명령어">
-            <dt class="command" aria-labelledby="git-push-command"><strong id="git-push-command" class="order">git push -u origin 브랜치명(default: master)</strong></dt>
-            <dd class="hyphen">스테이징한 파일들 서버에 업로드</dd>
-            <dd class="hyphen">웹 브라우저를 새로고침한다.</dd>
-            <dd class="hyphen">이 후에는 파일수정, git add, git status, git commit, git push를 반복한다.</dd>
+            <dt class="command" aria-labelledby="git-push-command">
+              <strong id="git-push-command" class="order">
+                git push -u origin 브랜치명(default: master)
+              </strong>
+            </dt>
+            <dd class="hyphen">
+              스테이징한 파일들 서버에 업로드
+            </dd>
+            <dd class="hyphen">
+              웹 브라우저를 새로고침한다.
+            </dd>
+            <dd class="hyphen">
+              이 후에는 파일수정, git add, git status, git commit, git push를 반복한다.
+            </dd>
           </dl>
         </article>
       </section>
