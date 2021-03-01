@@ -1,0 +1,46 @@
+/* Tablet Style
+min-width >=576px  */
+@media screen and (min-width: 576px) {
+  /* 2-management.html */
+  #commit-management,
+  #git-branch-management{
+    padding-top: 100px;
+  }
+
+  .file-state-image,
+  .git-reset-image{
+    padding-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Article - branch-necessity
+     Article - merge-branch */
+  .branch-necessity p,
+  .merge-branch p{
+    margin-bottom: 16px;
+  }
+}
+
+
+/* Desktop Style
+min-width >=768px  */
+@media screen and (min-width:768px) {
+  /* 2-management.html */
+  #commit-management,
+  #git-branch-management{
+    padding-top: 120px;
+  }
+
+  .file-state-image,
+  .git-reset-image{
+    padding-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  /* Article - branch-necessity
+     Article - merge-branch */
+  .branch-necessity p,
+  .merge-branch p{
+    margin-bottom: 24px;
+  }
+}

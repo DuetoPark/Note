@@ -1,0 +1,20 @@
+/* GIT-2-management.html */
+#commit-management,
+#git-branch-management{
+  padding-top: 80px;
+}
+
+.file-state-image,
+.git-reset-image{
+  width: 100%;
+  height: auto;
+  padding-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* Article - branch-necessity
+   Article - merge-branch */
+.branch-necessity p,
+.merge-branch p{
+  margin-bottom: 8px;
+}
