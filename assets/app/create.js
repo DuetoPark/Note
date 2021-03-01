@@ -29,21 +29,3 @@ let jsNav = new CreateNav("#go-to-page-javascript", state.네비게이션.javasc
 htmlNav.createList();
 cssNav.createList();
 jsNav.createList();
-
-
-
-// Main 탐색경로 목록 생성
-function navPath () {
-  let mainTag = document.querySelector("main");
-  let pageURL = document.URL;
-  let fileName = pageURL.substring(pageURL.lastIndexOf("/") + 1, pageURL.lastIndexOf("."));
-  console.log(fileName);
-  let folderName = document.URL.split("/").slice(-2)[0];
-
-  let divTag = document.createElement("div");
-  divTag.textContent = folderName + " > " + fileName;
-  divTag.className = "nav-path";
-  mainTag.append(divTag);
-};
-
-navPath();
