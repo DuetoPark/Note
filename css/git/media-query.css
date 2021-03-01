@@ -19,6 +19,13 @@ min-width >=576px  */
   .merge-branch p{
     margin-bottom: 16px;
   }
+
+  /* 3-error.html */
+  /* Article - merge-conflict */
+  .merge-rebase-diff-image{
+    width: 300px;
+    padding-top: 16px;
+  }
 }
 
 
@@ -42,5 +49,12 @@ min-width >=768px  */
   .branch-necessity p,
   .merge-branch p{
     margin-bottom: 24px;
+  }
+
+
+  /* 3-error.html */
+  /* Article - merge-conflict */
+  .merge-rebase-diff-image{
+    padding-top: 24px;
   }
 }

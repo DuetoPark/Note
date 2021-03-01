@@ -1,4 +1,4 @@
-/* GIT-2-management.html */
+/* 2-management.html */
 #commit-management,
 #git-branch-management{
   padding-top: 80px;
@@ -17,4 +17,13 @@
 .branch-necessity p,
 .merge-branch p{
   margin-bottom: 8px;
+}
+
+
+/* GIT-3-error.html */
+/* Article - merge-conflict */
+.merge-rebase-diff-image{
+  width: 100%;
+  height: auto;
+  padding-top: 8px;
 }
