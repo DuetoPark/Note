@@ -261,6 +261,10 @@ dfn.main-article-dt,
   margin-right: 4px;
 }
 
+.command{
+  margin-bottom: 6px;
+}
+
 /* Article - List */
 .main-article-list-items{
   margin-bottom: 4px;
