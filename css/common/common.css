@@ -283,7 +283,7 @@ dfn.main-article-dt,
 }
 
 .main-article-pre::before{
-  content: '✂️코드복사 원하면 클릭!✂️';
+  content: '✂️코드복사 원하면 클릭!✂️' / "";
   position: absolute;
   bottom: 10px;
   right: 10px;
