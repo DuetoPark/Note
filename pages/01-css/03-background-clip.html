@@ -97,15 +97,21 @@
       </div>
     </header>
 
-    <main class='note-main'>
+    <main class='note-main' aria-label="본문 영역">
       <section class='container'>
         <h2 class='main-title'>
-          <strong>🍕글자 안에 이미지🍕</strong>
+          <strong>
+            <span class='main-title' aria-hidden="true">🍕</span>
+            글자 안에 이미지
+            <span class='main-title' aria-hidden="true">🍕</span>
+          </strong>
         </h2>
 
-        <article class='background-clip'>
-          <h1 class='main-article-title'>⚾background-clip과 color</h1>
-
+        <article class='background-clip' aria-labelledby="background-clip-title">
+          <h3 id="background-clip-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">⚾</span>
+            background-clip과 color
+          </h3>
           <p>
             그림 위에 글자를 배치하기는 많이 해봤지만,<br/>
             글자 안에 이미지를 배치하는 건 안 해봤다.<br/>
@@ -113,6 +119,7 @@
             background image와 text의 color를 이용하면 되지 않을까?<br/>
             <br/>
             아니었다.
+            <span class="hidden-inline">예시 코드</span>
           </p>
 
           <pre class='main-article-pre background-white-radius'>
@@ -125,18 +132,23 @@
           </pre>
         </article>
 
-        <article class='background-clip-type-desc'>
-          <h3 class='main-article-subtitle'>🐛background-clip의 종류</h3>
-          <ul class='main-article-list background-clip-type'>
-            <li class='main-article-list-items type'>border-box</li>
-            <li class='main-article-list-items type'>padding-box</li>
-            <li class='main-article-list-items type'>content-box</li>
-            <li class='main-article-list-items type'>text</li>
+        <article class='background-clip-type' aria-labelledby="background-clip-type-title">
+          <h3 id="background-clip-type-title" class='main-article-subtitle'>
+            <span class='main-article-subtitle' aria-hidden="true">🐛</span>
+            background-clip의 종류
+          </h3>
+
+          <ul class='main-article-list background-clip-type' aria-label="종류">
+            <li class='main-article-list-items type' aria-label="보더 박스">border-box</li>
+            <li class='main-article-list-items type' aria-label="패딩 박스">padding-box</li>
+            <li class='main-article-list-items type' aria-label="콘텐트 박스">content-box</li>
+            <li class='main-article-list-items type' aria-label="텍스트">text</li>
           </ul>
 
           <div class='background-clip-image-group'>
             <div>
               <p class='background-clip-desc'>
+                <strong class="hidden-inline">border-box</strong>
                 배경이 테두리의 바깥 경계까지 차지
               </p>
               <img class='background-clip-image'
@@ -145,6 +157,7 @@
             </div>
             <div>
               <p class='background-clip-desc'>
+                <strong class="hidden-inline">padding-box</strong>
                 배경이 안쪽 여백의 바깥 경계까지 차지
               </p>
               <img class='background-clip-image'
@@ -153,6 +166,7 @@
             </div>
             <div>
               <p class='background-clip-desc'>
+                <strong class="hidden-inline">content-box</strong>
                 배경을 콘텐츠 상자에 맞춤
               </p>
               <img class='background-clip-image'
@@ -161,6 +175,7 @@
             </div>
             <div>
               <p class='background-clip-desc'>
+                <strong class="hidden-inline">text</strong>
                 배경을 전경 텍스트 위에만 그림
               </p>
               <img class='background-clip-image'
