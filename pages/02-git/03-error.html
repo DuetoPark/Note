@@ -126,25 +126,61 @@
           <p class="hidden">merge 충돌의 해결방법들을 목록으로 정래했다.</p>
           <dl class="main-article-dl" aria-label="해결방법">
             <div>
-              <dt class="main-article-dt" aria-labelledby="conflict-solution"><strong id="conflict-solution" class="order">merge conflict 해결방법</strong></dt>
-              <dd class="main-article-dd">merge 하다가 브랜치끼리 충돌하는 경우, 먼저 파일을 연다.</dd>
-              <dd class="main-article-dd">꺽쇠기호로 둘러쌓인 출돌 발생지점으로 이동한다.</dd>
-              <dd class="main-article-dd">해당 부분을 정상으로 수정하고 git add와 git commit을 진행한다.</dd>
-              <dd class="main-article-dd">에디터 창을 끄고 git merge로 병합한다.</dd>
+              <dt class="main-article-dt" aria-labelledby="conflict-solution">
+                <strong id="conflict-solution" class="order">
+                  merge conflict 해결방법
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                merge 하다가 브랜치끼리 충돌하는 경우, 먼저 파일을 연다.
+              </dd>
+              <dd class="main-article-dd">
+                꺽쇠기호로 둘러쌓인 출돌 발생지점으로 이동한다.
+              </dd>
+              <dd class="main-article-dd">
+                해당 부분을 정상으로 수정하고 git add와 git commit을 진행한다.
+              </dd>
+              <dd class="main-article-dd">
+                에디터 창을 끄고 git merge로 병합한다.
+              </dd>
             </div>
             <div>
-              <dt class="main-article-dt" aria-labelledby="another-conflict-solution"><strong  id="another-conflict-solution" class="order">merge conflict 다른 해결방법</strong></dt>
-              <dd class="main-article-dd">merge 하다가 브랜치끼리 충돌하는 경우, 먼저 파일을 연다.</dd>
-              <dd class="main-article-dd">꺽쇠기호로 둘러쌓인 출돌 발생지점으로 이동한다.</dd>
-              <dd class="main-article-dd">해당 부분을 정상으로 수정하고 git add 한다.</dd>
-              <dd class="main-article-dd">git commit 하지않고, git rebase --continue 브랜치명을 입력한다.</dd>
-              <dd class="main-article-dd">git rebase를 하면 중단된 rebase가 이어진다.</dd>
+              <dt class="main-article-dt" aria-labelledby="another-conflict-solution">
+                <strong  id="another-conflict-solution" class="order">
+                  merge conflict 다른 해결방법
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                merge 하다가 브랜치끼리 충돌하는 경우, 먼저 파일을 연다.
+              </dd>
+              <dd class="main-article-dd">
+                꺽쇠기호로 둘러쌓인 출돌 발생지점으로 이동한다.
+              </dd>
+              <dd class="main-article-dd">
+                해당 부분을 정상으로 수정하고 git add 한다.
+              </dd>
+              <dd class="main-article-dd">
+                git commit 하지않고, git rebase --continue 브랜치명을 입력한다.
+              </dd>
+              <dd class="main-article-dd">
+                git rebase를 하면 중단된 rebase가 이어진다.
+              </dd>
             </div>
             <div>
-              <dt class="main-article-dt" aria-labelledby="merge-rebase-diff"><strong id="merge-rebase-diff" class="order">git merge와 git rebase의 차이</strong></dt>
-              <dd class="main-article-dd">git merge는 직관적이다.</dd>
-              <dd class="main-article-dd">git rebase는 로그가 깔끔해진다.</dd>
-              <dd><img class="merge-rebase-diff-image" src="../../assets/images/merge-rebase.png" alt="merge와 rebase의 차이"></dd>
+              <dt class="main-article-dt" aria-labelledby="merge-rebase-diff">
+                <strong id="merge-rebase-diff" class="order">
+                  git merge와 git rebase의 차이
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                git merge는 직관적이다.
+              </dd>
+              <dd class="main-article-dd">
+                git rebase는 로그가 깔끔해진다.
+              </dd>
+              <dd>
+                <img class="merge-rebase-diff-image" src="../../assets/images/merge-rebase.png" alt="merge와 rebase의 차이">
+              </dd>
             </div>
           </dl>
         </article>
@@ -157,9 +193,17 @@
 
           <p class="hidden">허가 거부 에러의 해결방법을 목록으로 정리했다.</p>
           <dl class="main-article-dl" aria-label="denied 에러">
-            <dt class="main-article-dt" aria-labelledby="denied-error-solution"><strong id="denied-error-solution" class="order">cannot stat '파일경로' : Permission denied 에러</strong></dt>
-            <dd class="main-article-dd">Atom(또는 사용중인 IDE, 에디터)를 실행한 상태에서 git merge를 하면 나타나는 허가 거부 에러</dd>
-            <dd class="main-article-dd">에디터를 종료하고 git merge 명령하면 허가 거부 에러없이 마무리된다.</dd>
+            <dt class="main-article-dt" aria-labelledby="denied-error-solution">
+              <strong id="denied-error-solution" class="order">
+                cannot stat '파일경로' : Permission denied 에러
+              </strong>
+            </dt>
+            <dd class="main-article-dd">
+              Atom(또는 사용중인 IDE, 에디터)를 실행한 상태에서 git merge를 하면 나타나는 허가 거부 에러
+            </dd>
+            <dd class="main-article-dd">
+              에디터를 종료하고 git merge 명령하면 허가 거부 에러없이 마무리된다.
+            </dd>
           </dl>
         </article>
       </section>
