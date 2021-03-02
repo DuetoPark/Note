@@ -370,3 +370,17 @@
 .multiple-array p:last-child{
   margin-bottom: 0 !important;
 }
+
+
+/* 8-foreach-중첩반복문.html */
+/* Article - forEach-syntax
+   Article - loop-in-loop */
+.forEach-syntax p,
+.loop-in-loop p,
+.loop-in-loop pre{
+  margin-bottom: 8px;
+}
+
+.loop-in-loop p:last-child{
+  margin-bottom: 0 !important;
+}

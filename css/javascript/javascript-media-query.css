@@ -186,6 +186,16 @@ min-width >=576px  */
   .multiple-array pre{
     margin-bottom: 16px;
   }
+
+
+  /* 8-foreach-중첩반복문.html */
+  /* Article - forEach-syntax
+     Article - loop-in-loop */
+  .forEach-syntax p,
+  .loop-in-loop p,
+  .loop-in-loop pre{
+    margin-bottom: 16px;
+  }
 }
 
 
@@ -361,5 +371,15 @@ min-width >=768px  */
   .multiple-array p,
   .multiple-array pre{
     margin-bottom: 24px;
+  }
+
+
+  /* 8-foreach-중첩반복문.html */
+  /* Article - forEach-syntax
+     Article - loop-in-loop */
+  .forEach-syntax p,
+  .loop-in-loop p,
+  .loop-in-loop pre{
+    margin-bottom: 16px;
   }
 }
