@@ -384,3 +384,19 @@
 .loop-in-loop p:last-child{
   margin-bottom: 0 !important;
 }
+
+
+/* 9-array-fill.html */
+/* Article - array
+   Article - fill */
+.array p,
+.array dl,
+.array pre,
+.fill p,
+.fill dl{
+  margin-bottom: 8px;
+}
+
+.array p:last-child{
+  margin-bottom: 0 !important;
+}

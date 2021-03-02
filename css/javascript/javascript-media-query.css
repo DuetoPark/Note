@@ -196,6 +196,18 @@ min-width >=576px  */
   .loop-in-loop pre{
     margin-bottom: 16px;
   }
+
+
+  /* 9-array-fill.html */
+  /* Article - array
+     Article - fill */
+  .array p,
+  .array dl,
+  .array pre,
+  .fill p,
+  .fill dl{
+    margin-bottom: 16px;
+  }
 }
 
 
@@ -380,6 +392,17 @@ min-width >=768px  */
   .forEach-syntax p,
   .loop-in-loop p,
   .loop-in-loop pre{
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+  }
+
+  /* 9-array-fill.html */
+  /* Article - array
+     Article - fill */
+  .array p,
+  .array dl,
+  .array pre,
+  .fill p,
+  .fill dl{
+    margin-bottom: 24px;
   }
 }
