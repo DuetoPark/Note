@@ -1,4 +1,4 @@
-/* Javascript-1-Pseudo-Style.html */
+/* 1-Pseudo-Style.html */
 /* Article - Pseudo-Style */
 .pseudo-style > div{
   margin-bottom: 16px;
@@ -19,7 +19,7 @@
 
 
 
-/* Javascript-2-Toggle.html */
+/* 2-Toggle.html */
 .how-to-toggle > div,
 .my-top-secret > div{
   margin-bottom: 16px;
@@ -48,7 +48,7 @@
 
 
 
-/* Javascript-3-Copy.html */
+/* 3-Copy.html */
 /* Common */
 .main-article-modal-group > .show-code-button{
   margin-bottom: 16px;
@@ -178,7 +178,7 @@
 
 
 
-/* Javascript-4-e.target.html */
+/* 4-e.target.html */
 /* Common */
 .e-target-desc > p,
 .e-target-reason-image-group,
@@ -228,7 +228,7 @@
 
 
 
-/* Javascript-5-switch.html */
+/* 5-switch.html */
 /* common */
 .switch ul,
 .switch-syntax > p:first-of-type,
@@ -251,7 +251,7 @@
 }
 
 
-/* Javascript-6-timing-event.html */
+/* 6-timing-event.html */
 /* Article - timing-event */
 .timing-event .main-article-title,
 .timing-event-syntax .main-article-subtitle{
@@ -357,4 +357,16 @@
 .modal-sample-p{
   font-size: 20px;
   font-family: "MADE-Mirage-bold", serif;
+}
+
+
+/* 7-이차원배열.html */
+/* Article - multiple-array */
+.multiple-array p,
+.multiple-array pre{
+  margin-bottom: 8px;
+}
+
+.multiple-array p:last-child{
+  margin-bottom: 0 !important;
 }

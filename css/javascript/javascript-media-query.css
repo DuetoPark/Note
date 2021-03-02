@@ -178,6 +178,14 @@ min-width >=576px  */
   .modal-sample-date{
     font-size: 12px;
   }
+
+
+  /* 7-이차원배열.html */
+  /* Article - multiple-array */
+  .multiple-array p,
+  .multiple-array pre{
+    margin-bottom: 16px;
+  }
 }
 
 
@@ -345,5 +353,13 @@ min-width >=768px  */
   /* Article - timing-event (modal-sample) */
   .modal-sample{
     width: 550px;
+  }
+
+
+  /* 7-이차원배열.html */
+  /* Article - multiple-array */
+  .multiple-array p,
+  .multiple-array pre{
+    margin-bottom: 24px;
   }
 }
