@@ -208,6 +208,16 @@ min-width >=576px  */
   .fill dl{
     margin-bottom: 16px;
   }
+
+
+  /* 10-map.html */
+  /* Article - map-syntax
+     Article - map-example*/
+  .map-syntax p,
+  .map-example p,
+  .map-example pre{
+    margin-bottom: 16px;
+  }
 }
 
 
@@ -403,6 +413,16 @@ min-width >=768px  */
   .array pre,
   .fill p,
   .fill dl{
+    margin-bottom: 24px;
+  }
+
+
+  /* 10-map.html */
+  /* Article - map-syntax
+     Article - map-example*/
+  .map-syntax p,
+  .map-example p,
+  .map-example pre{
     margin-bottom: 24px;
   }
 }

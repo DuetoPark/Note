@@ -400,3 +400,17 @@
 .array p:last-child{
   margin-bottom: 0 !important;
 }
+
+
+/* 10-map.html */
+/* Article - map-syntax
+   Article - map-example*/
+.map-syntax p,
+.map-example p,
+.map-example pre{
+  margin-bottom: 8px;
+}
+
+.map-example pre:last-child{
+  margin-bottom: 0 !important;
+}
