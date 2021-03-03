@@ -430,3 +430,16 @@
 #sort{
   padding-top: 80px;
 }
+
+
+/* 12-splice.html */
+/* Article - splice-syntax
+   Article - splice-delete
+   Article - splice-add
+   Article - splice-delete */
+.splice-syntax p,
+.splice-delete-paragragh,
+.splice-add-paragragh,
+.splice-replace-paragragh{
+  margin-bottom: 8px;
+}
