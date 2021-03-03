@@ -218,6 +218,21 @@ min-width >=576px  */
   .map-example pre{
     margin-bottom: 16px;
   }
+
+
+  /* 11-slice-sort.html */
+  .slice-summary-image-group{
+    flex-direction: row;
+    margin-bottom: 16px;
+  }
+
+  .slice-summary-image{
+    width: 50%;
+  }
+
+  #sort{
+    padding-top: 100px;
+  }
 }
 
 
@@ -424,5 +439,15 @@ min-width >=768px  */
   .map-example p,
   .map-example pre{
     margin-bottom: 24px;
+  }
+
+
+  /* 11-slice-sort.html */
+  .slice-summary-image-group{
+    margin-bottom: 24px;
+  }
+
+  #sort{
+    padding-top: 120px;
   }
 }
