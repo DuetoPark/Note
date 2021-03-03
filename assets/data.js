@@ -27,6 +27,12 @@ let state = {
       {id: "04", href: "e.target"},
       {id: "05", href: "switch"},
       {id: "06", href: "timing-event"},
+      {id: "07", href: "이차원배열"},
+      {id: "08", href: "foreach-중첩반복문"},
+      {id: "09", href: "array-fill"},
+      {id: "10", href: "map"},
+      {id: "11", href: "slice-sort"},
+      {id: "12", href: "splice"},
     ],
   },
 };
