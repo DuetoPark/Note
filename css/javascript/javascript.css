@@ -443,3 +443,17 @@
 .splice-replace-paragragh{
   margin-bottom: 8px;
 }
+
+
+/* 13-split-join.html */
+/* Section - split
+   Section - join*/
+#split,
+#join{
+  padding-top: 80px;
+}
+
+.split-syntax-paragragh,
+.join-syntax-paragragh{
+  margin-bottom: 8px;
+}
