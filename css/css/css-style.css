@@ -420,6 +420,10 @@
   margin-bottom: 16px;
 }
 
+.padding-top-100 > p:last-of-type{
+  margin-bottom: 0 !important;
+}
+
 
 /* 10-direction.html */
 .direction > p,
