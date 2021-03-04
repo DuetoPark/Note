@@ -254,3 +254,12 @@
 .find-syntax-paragragh{
   margin-bottom: 8px;
 }
+
+
+/* 17-value-textcontent.html */
+/* common */
+.value-textContent-image{
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
