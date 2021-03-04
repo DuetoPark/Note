@@ -1,7 +1,7 @@
 /* Tablet Style
 min-width >=576px  */
 @media screen and (min-width:576px) {
-  /* CSS-1-link.html */
+  /* 1-link.html */
   /* Article - Css-Align */
   .css-align-order{
     margin-bottom: 24px; /* 미디어쿼리 36 */
@@ -24,7 +24,7 @@ min-width >=576px  */
 
 
 
-  /* CSS-2-stroke.html */
+  /* 2-stroke.html */
   .stroke > p,
   .stroke-cross-browsing > p,
   .stroke-animation > p{
@@ -38,7 +38,7 @@ min-width >=576px  */
 
 
 
-  /* CSS-3-background-clip.html */
+  /* 3-background-clip.html */
   /* Article - Background-Clip */
   .background-clip > p{
     margin-bottom: 16px;
@@ -58,7 +58,7 @@ min-width >=576px  */
   }
 
 
-  /* CSS-4-Line-Break.html */
+  /* 4-Line-Break.html */
   /* Article - Main-title */
   .line-break > p{
     margin-bottom: 16px; /* 미디어쿼리 변형 */
@@ -117,7 +117,7 @@ min-width >=576px  */
   }
 
 
-  /* CSS-5-Pseudo-Opacity.html */
+  /* 5-Pseudo-Opacity.html */
   /* Article - How-To-Set-Pseudo-Opacity */
   .pseudo-attribute-type,
   .how-to-set-pseudo-opacity .main-article-dl{
@@ -130,7 +130,7 @@ min-width >=576px  */
 
 
 
-  /* CSS-6-width.html */
+  /* 6-width.html */
   /* common */
   .width-calc > p,
   .width-calc-image-group,
@@ -154,7 +154,7 @@ min-width >=576px  */
 
 
 
-  /* CSS-7-main-tag-IE.html */
+  /* 7-main-tag-IE.html */
   /* Article - Main-tag-max-width */
   .main-tag-max-width > p,
   .main-tag-max-width > ul{
@@ -167,7 +167,7 @@ min-width >=576px  */
 
 
 
-  /* CSS-8-transform-origin.html */
+  /* 8-transform-origin.html */
   /* Article - transform-origin */
   .transform-origin > p,
   .transform-origin-syntax,
@@ -186,13 +186,13 @@ min-width >=576px  */
   }
 
 
-  /* CSS-9-padding-top.html */
+  /* 9-padding-top.html */
   .padding-top-100 > p{
     margin-bottom: 24px;
   }
 
 
-  /* CSS-10-direction.html */
+  /* 10-direction.html */
   .direction > p,
   .direction > ol{
     margin-bottom: 16px;
@@ -203,7 +203,7 @@ min-width >=576px  */
   }
 
 
-  /* CSS-11-텍스트숨기기.html */
+  /* 11-텍스트숨기기.html */
   /* Article - no-SEO-hidden */
   .no-SEO-hidden-list-items{
     margin-bottom: 32px;
@@ -213,12 +213,19 @@ min-width >=576px  */
   .SEO-hidden-zero-pixel > div{
     margin-bottom: 16px;
   }
+
+
+  /* 12-미디어쿼리-에러.html */
+  /* Article - media-query-error-solution */
+  .media-query-error-solution > p{
+    margin-bottom: 8px;
+  }
 }
 
 /* Desktop Style
 min-width >=768px  */
 @media screen and (min-width:768px) {
-  /* CSS-1-link.html */
+  /* 1-link.html */
   /* Article - Css-Align */
   .css-align-order{
     margin-bottom: 32px;
@@ -236,7 +243,7 @@ min-width >=768px  */
 
 
 
-  /* CSS-2-stroke.html */
+  /* 2-stroke.html */
   .stroke > p,
   .stroke-cross-browsing > p,
   .stroke-animation > p{
@@ -250,7 +257,7 @@ min-width >=768px  */
 
 
 
-  /* CSS-3-background-clip.html */
+  /* 3-background-clip.html */
   /* Article - Background-Clip */
   .background-clip > p{
     margin-bottom: 32px;
@@ -271,7 +278,7 @@ min-width >=768px  */
 
 
 
-  /* CSS-4-Line-Break.html */
+  /* 4-Line-Break.html */
   /* Article - Main-title */
   .line-break > p{
     margin-bottom: 24px; /* 미디어쿼리 변형 */
@@ -332,7 +339,7 @@ min-width >=768px  */
 
 
 
-  /* CSS-5-Pseudo-Opacity.html */
+  /* 5-Pseudo-Opacity.html */
   /* Article - How-To-Set-Pseudo-Opacity */
   .pseudo-attribute-type,
   .how-to-set-pseudo-opacity .main-article-dl{
@@ -345,7 +352,7 @@ min-width >=768px  */
 
 
 
-  /* CSS-6-width.html */
+  /* 6-width.html */
   /* common */
   .width-calc > p,
   .width-calc-image-group,
@@ -368,7 +375,7 @@ min-width >=768px  */
 
 
 
-  /* CSS-7-main-tag-IE.html */
+  /* 7-main-tag-IE.html */
   /* Article - Main-tag-max-width */
   .main-tag-max-width > p,
   .main-tag-max-width > ul{
@@ -381,7 +388,7 @@ min-width >=768px  */
 
 
 
-  /* CSS-8-transform-origin.html */
+  /* 8-transform-origin.html */
   /* Article - transform-origin */
   .transform-origin > p,
   .transform-origin-syntax,
@@ -397,12 +404,12 @@ min-width >=768px  */
   }
 
 
-  /* CSS-9-padding-top.html */
+  /* 9-padding-top.html */
   .padding-top-100 > p{
     margin-bottom: 36px;
   }
 
-  /* CSS-10-direction.html */
+  /* 10-direction.html */
   .direction > p,
   .direction > ol{
     margin-bottom: 24px;
@@ -413,7 +420,7 @@ min-width >=768px  */
   }
 
 
-  /* CSS-11-텍스트숨기기.html */
+  /* 11-텍스트숨기기.html */
   /* Article - no-SEO-hidden */
   .no-SEO-hidden-list-items{
     margin-bottom: 48px;
@@ -421,6 +428,13 @@ min-width >=768px  */
 
   .no-SEO-hidden-list-items > div > pre,
   .SEO-hidden-zero-pixel > div{
+    margin-bottom: 24px;
+  }
+
+
+  /* 12-미디어쿼리-에러.html */
+  /* Article - media-query-error-solution */
+  .media-query-error-solution p{
     margin-bottom: 24px;
   }
 }

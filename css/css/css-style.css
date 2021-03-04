@@ -1,4 +1,4 @@
-/* CSS-1-link.html */
+/* 1-link.html */
 /* Article - Css-Align */
 .css-align-order{
   margin-bottom: 16px;
@@ -48,7 +48,7 @@
 
 
 
-/* CSS-2-stroke.html */
+/* 2-stroke.html */
 /* Article - Stroke */
 .stroke > p,
 .stroke-cross-browsing > p,
@@ -62,7 +62,7 @@
 }
 
 
-/* CSS-3-background-clip.html */
+/* 3-background-clip.html */
 /* Article - Background-Clip */
 .background-clip > p{
   margin-bottom: 8px;
@@ -125,7 +125,7 @@
 }
 
 
-/* CSS-4-Line-Break.html */
+/* 4-Line-Break.html */
 /* Article - Main-title */
 .line-break > p{
   margin-bottom: 8px; /* 미디어쿼리 변형 */
@@ -270,7 +270,7 @@
 
 
 
-/* CSS-5-Pseudo-Opacity.html */
+/* 5-Pseudo-Opacity.html */
 /* Article - How-To-Set-Pseudo-Opacity */
 .pseudo-attribute-type,
 .how-to-set-pseudo-opacity .main-article-dl{
@@ -310,7 +310,7 @@
 
 
 
-/* CSS-6-width.html */
+/* 6-width.html */
 /* common */
 .width-calc > p,
 .width-calc-image-group,
@@ -341,7 +341,7 @@
 
 
 
-/* CSS-7-main-tag-IE.html */
+/* 7-main-tag-IE.html */
 /* Article - Main-tag-max-width */
 .main-tag-max-width > p,
 .main-tag-max-width > ul{
@@ -358,7 +358,7 @@
 
 
 
-/* CSS-8-transform-origin.html */
+/* 8-transform-origin.html */
 /* Article - transform-origin */
 .transform-origin > p,
 .transform-origin-syntax,
@@ -415,13 +415,13 @@
 }
 
 
-/* CSS-9-padding-top.html */
+/* 9-padding-top.html */
 .padding-top-100 > p{
   margin-bottom: 16px;
 }
 
 
-/* CSS-10-direction.html */
+/* 10-direction.html */
 .direction > p,
 .direction > ol{
   margin-bottom: 8px;
@@ -437,7 +437,7 @@
 }
 
 
-/* CSS-11-텍스트숨기기.html */
+/* 11-텍스트숨기기.html */
 /* Article - no-SEO-hidden */
 .no-SEO-hidden-list-items{
   margin-bottom: 24px;
@@ -450,5 +450,11 @@
 
 .no-SEO-hidden-list-items > div > pre,
 .SEO-hidden-zero-pixel > div{
+  margin-bottom: 8px;
+}
+
+/* 12-미디어쿼리-에러.html */
+/* Article - media-query-error-solution */
+.media-query-error-solution > p{
   margin-bottom: 8px;
 }
