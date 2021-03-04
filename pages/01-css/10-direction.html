@@ -98,15 +98,21 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h2 class='main-title'>
-          <strong>😏direction😏</strong>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">😏</span>
+            direction
+            <span class='main-title' aria-hidden="true">😏</span>
+          </strong>
         </h2>
 
-        <article class='direction-summary'>
-          <h3 class='main-article-title'>😳개요</h3>
-
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">😳</span>
+            개요
+          </h3>
           <p>
             select 스타일링을 하는데 글씨 방향이 잘 조절되지 않았다.
             헤헤 나는 구글링을 할 수 있지롱. 메롱메롱<br/>
@@ -118,18 +124,22 @@
           </p>
         </article>
 
-        <article class='direction'>
-          <h3 class='main-article-title'>😜direction</h3>
-
+        <article class='direction' aria-labelledby="direction-title">
+          <h3 id="direction-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">😜</span>
+            direction
+          </h3>
           <p>
             글씨의 방향을 정하는 속성이다.
           </p>
-
-          <ol class="main-article-list background-white-radius">
-            <li class='main-article-list-items hyphen'>ltr(left to right)</li>
-            <li class='main-article-list-items hyphen'>rtl(right to left)</li>
+          <ol class="main-article-list background-white-radius" aria-label="값 종류">
+            <li class='main-article-list-items hyphen' role="none">
+              ltr(left to right)
+            </li>
+            <li class='main-article-list-items hyphen' role="none">
+              rtl(right to left)
+            </li>
           </ol>
-
           <p>
             rtl로 하면, 이렇게 우측정렬이 된다.<br/>
           </p>
@@ -139,7 +149,6 @@
 
     <footer class='note-footer'>
       <div class='container'>
-        <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
           cite='https://www.w3schools.com/cssref/pr_text_direction.asp'>
           <strong class='note-footer-reference-name'>
