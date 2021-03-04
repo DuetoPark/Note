@@ -97,15 +97,21 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h2 class='main-title'>
-          <strong>💘width💘</strong>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">💘</span>
+            width
+            <span class='main-title' aria-hidden="true">💘</span>
+          </strong>
         </h2>
 
-        <article class='width-summary'>
-          <h3 class='main-article-title'>🌟개요</h3>
-
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌟</span>
+            개요
+          </h3>
           <p>
             클론 코딩중인데,<br/>
             breakpoint 확인하려고 화면 너비 늘렸다 줄였다 반복하다가 발견한게 있다.<br/>
@@ -116,13 +122,29 @@
           </p>
         </article>
 
-        <article class='width-calc'>
-          <h3 class='main-article-title'>✨width: calc();</h3>
-
+        <article class='width-calc' aria-labelledby="width-calc-title">
+          <h3 id="width-calc-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">✨</span>
+            width: calc();
+          </h3>
           <p>
-            어떻게 한거지? 이렇게 저렇게 계속 찾아보고 시도해보다가 <strong class='underline'>🔥calc🔥</strong>를 사용했다는 걸 알게되었다.
+            어떻게 한거지? 이렇게 저렇게 계속 찾아보고 시도해보다가 calc를 사용했다는 걸 알게되었다.
           </p>
-
+          <p>
+            calc에는 연산자를 다 쓸 수 있다.<br/>
+            대신, 연산자는 좌우 공백이 있어야 한다.<br/>
+            <br/>
+            width: calc((100% - 64px) / 3); 이렇게 사용한다.<br/>
+            여백 계산방법은 다음과 같다.
+          </p>
+          <ol class='main-article-list background-white-radius' aria-label="여백 계산방법">
+            <li class='main-article-list-items hyphen' role="none">
+              먼저, 전체 가로 길이(100% 또는 100vw)에서 요소의 여백의 합계를 뺀다.
+            </li>
+            <li class='main-article-list-items hyphen' role="none">
+              다음, 요소 갯수만큼 나눈다.
+            </li>
+          </ol>
           <div class="width-calc-image-group">
             <img class="width-calc-image"
               src="../../assets/images/width-calc-1.png"
@@ -131,56 +153,43 @@
               src="../../assets/images/width-calc-2.png"
               alt="width calc 지정 후 가로 늘림">
           </div>
-
-          <p>
-            연산자 다 쓸 수 있다.<br/>
-            대신, 연산자는 <span class='underline'>좌우 공백</span>이 있어야 한다.<br/>
-            <br/>
-            width: calc((100% - 64px) / 3); 이렇게 사용한다.<br/>
-            <br/>
-            여백 유지하고 싶으면,
-          </p>
-
-          <ol class='main-article-list background-white-radius'>
-            <li class='main-article-list-items hyphen'>
-              먼저, 전체 가로 길이(100% 또는 100vw)에서 요소의 여백의 합계를 뺀다.
-            </li>
-            <li class='main-article-list-items hyphen'>
-              다음, 요소 갯수만큼 나눈다.
-            </li>
-          </ol>
         </article>
 
-        <article class='width-group'>
-          <h3 class='main-article-title'>🎵width: auto/100%;</h3>
+        <article class='width-group' aria-labelledby="width-group-title">
+          <h3 id="width-group-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🎵</span>
+            width: auto/100%;
+          </h3>
           <p>
             그리고 width에 auto나 100%같이 유동적인 값을 줄 땐, 확인할 부분이 많다.<br/>
             <br/>
             뭔가 width 조정이 잘 안 될 때가 있는데,<br/>
             일단 화내지 말고 여러가지 확인을 해야한다.
           </p>
-
-          <ul class='main-article-list background-white-radius'>
-            <li class='main-article-list-items hyphen'>
+          <p>
+            <strong class="underline">
+              이 그룹의 width를 결정하는 요소는 어디에 있나?를 찾기 위함이다.
+            </strong>
+          </p>
+          <ul class='main-article-list background-white-radius' aria-label="확인">
+            <li class='main-article-list-items hyphen' role="none">
               자식요소의 display와 width
             </li>
-            <li class='main-article-list-items hyphen'>
+            <li class='main-article-list-items hyphen' role="none">
               해당요소의 display와 width
             </li>
-            <li class='main-article-list-items hyphen'>
+            <li class='main-article-list-items hyphen' role="none">
               부모요소의 display와 width
             </li>
           </ul>
-
           <p>
-            이 그룹의 <strong>width를 결정하는 요소</strong>는 어디에 있나?를 찾기 위함이다.
+            어느 요소에 영향을 받는지 확인했다면, 결론은 다음과 같다.
           </p>
-
-          <ol class='main-article-list background-white-radius'>
-            <li class='main-article-list-items hyphen'>
+          <ol class='main-article-list background-white-radius' aria-label="결론">
+            <li class='main-article-list-items hyphen' role="none">
               해당요소가 {width: 100%;}이면, 자식요소의 width가 그룹의 크기를 조절한다.
             </li>
-            <li class='main-article-list-items hyphen'>
+            <li class='main-article-list-items hyphen' role="none">
               자식요소가 {width: 100%;}이면, 해당요소의 width가 그룹의 크기를 조절한다.
             </li>
           </ol>
@@ -190,7 +199,6 @@
 
     <footer class='note-footer'>
       <div class='container'>
-        <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
           cite='https://developer.mozilla.org/ko/docs/Web/CSS/calc()'>
           <strong class='note-footer-reference-name'>
