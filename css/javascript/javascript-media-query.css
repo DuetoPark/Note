@@ -73,33 +73,14 @@ min-width >=576px  */
   }
 
 
-
-  /* Javascript-6-timing-event.html */
-    /* Article - timing-event (common) */
-  .timing-event-syntax,
-  .no-timing-event,
-  .apply-timing-event,
-  .no-timing-event > p,
-  .no-timing-event .main-article-list{
-    margin-bottom: 24px;
-  }
-
-  /* Article - timing-event (timing-event-syntax) */
-  .timing-event-syntax .background-white-radius{
-    padding: 15px 20px;
+  /* 6-timing-event.html */
+  /* Article - timing-event-syntax
+     Article - setInterval
+     Article - clearInterval */
+  .timing-event-syntax > p,
+  .setInterval > p,
+  .clearInterval > p{
     margin-bottom: 16px;
-  }
-
-  /* Article - timing-event (modal-sample) */
-  .modal-sample{
-    width: 450px;
-    right: 16px;
-    top: 16px;
-  }
-
-  .modal-sample-subtitle,
-  .modal-sample-date{
-    font-size: 12px;
   }
 
 
@@ -271,25 +252,14 @@ min-width >=768px  */
 
 
 
-  /* Javascript-6-timing-event.html */
-    /* Article - timing-event (common) */
-  .timing-event-syntax,
-  .no-timing-event,
-  .apply-timing-event,
-  .no-timing-event > p,
-  .no-timing-event .main-article-list{
-    margin-bottom: 36px;
-  }
-
-  /* Article - timing-event (timing-event-syntax) */
-  .timing-event-syntax .background-white-radius{
-    padding: 20px 40px;
-    margin-bottom: 36px;
-  }
-
-  /* Article - timing-event (modal-sample) */
-  .modal-sample{
-    width: 550px;
+  /* 6-timing-event.html */
+  /* Article - timing-event-syntax
+     Article - setInterval
+     Article - clearInterval */
+  .timing-event-syntax > p,
+  .setInterval > p,
+  .clearInterval > p{
+    margin-bottom: 24px;
   }
 
 

@@ -128,111 +128,13 @@
 
 
 /* 6-timing-event.html */
-/* Article - timing-event */
-.timing-event .main-article-title,
-.timing-event-syntax .main-article-subtitle{
-  text-transform: capitalize;
-}
-
-/* Article - timing-event (common) */
-.timing-event-syntax,
-.no-timing-event,
-.apply-timing-event,
-.no-timing-event > p,
-.no-timing-event .main-article-list{
-  margin-bottom: 16px;
-}
-
-.open-modal-sample{
-  display: block;
-  width: 150px;
-  height: 40px;
-  margin: 0 auto;
-  margin-bottom: 16px;
-  border-radius: 2px;
-  border: 1px solid #CCCCCC;
-  background-color: #FFF;
-  cursor: pointer;
-}
-
-.open-modal-sample:hover,
-.open-modal-sample:active,
-.open-modal-sample:focus{
-  border: 1px solid #CCCCCC;
-}
-
-/* Article - timing-event (timing-event-syntax) */
-.timing-event-syntax .background-white-radius{
-  padding: 10px 20px;
+/* Article - timing-event-syntax
+   Article - setInterval
+   Article - clearInterval */
+.timing-event-syntax > p,
+.setInterval > p,
+.clearInterval > p{
   margin-bottom: 8px;
-}
-
-.timing-event-syntax .background-white-radius:last-child{
-  margin-bottom: 0;
-}
-
-/* Article - timing-event (modal-sample) */
-.modal-sample{
-  position: fixed;
-  right: 0;
-  top: 0;
-  display: none;
-  width: 100%;
-  padding: 10px;
-  background-color: #FFF;
-}
-
-.close-modal-sample{
-  position: relative; top: 0;
-  left: 100%;
-  transform: translateX(-100%);
-  display: block;
-  width: 36px;
-  height: 36px;
-  background-color: rgba(0, 0, 0, 0);
-  background-image: url("../../assets/images/close.svg");
-  background-repeat: no-repeat;
-  background-size: 36px;
-  cursor: pointer;
-}
-
-.modal-sample-title{
-  padding-bottom: 24px;
-  text-transform: uppercase;
-  font-size: 30px;
-  font-family: "MADE-Mirage-Medium", serif;
-  border-bottom: 1px solid #727272;
-  color: #CB0000;
-}
-
-.modal-sample-content > div{
-  display: flex;
-  justify-content: space-between;
-  padding-top: 24px;
-  margin-bottom: 8px;
-}
-
-.modal-sample-subtitle,
-.modal-sample-date{
-  font-size: 10px;
-  text-transform: uppercase;
-  color: #333333;
-  letter-spacing: -0.05em;
-}
-
-.modal-sample-date{
-  color: #727272;
-}
-
-.modal-sample-image{
-  width: 100%;
-  height: auto;
-  margin-bottom: 16px;
-}
-
-.modal-sample-p{
-  font-size: 20px;
-  font-family: "MADE-Mirage-bold", serif;
 }
 
 
