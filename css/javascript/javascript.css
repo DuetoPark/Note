@@ -9,34 +9,13 @@
 }
 
 
-
 /* 2-Toggle.html */
-.how-to-toggle > div,
-.my-top-secret > div{
-  margin-bottom: 16px;
+/* Article - toggle-css
+   Article - toggle-javascript */
+.toggle-css p,
+.toggle-javascript p{
+  margin-bottom: 8px;
 }
-
-.how-to-toggle > div:last-child,
-.my-top-secret > div:last-child{
-  margin-bottom: 0;
-}
-
-
-/* Article - How-To-Toggle */
-.how-to-toggle > div > p{
-  margin-bottom: 16px;
-}
-
-.how-to-toggle > div:last-child > pre{
-  overflow-x: scroll;
-}
-
-
-/* Article - My-Top-Secret */
-.my-top-secret > div > ul.main-article-list.background-white-radius{
-  padding: 20px;
-}
-
 
 
 /* 3-Copy.html */

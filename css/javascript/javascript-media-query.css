@@ -8,28 +8,13 @@ min-width >=576px  */
   }
 
 
-  /* Javascript-2-Toggle.html */
-  .how-to-toggle > div,
-  .my-top-secret > div{
-    margin-bottom: 24px;
+  /* 2-Toggle.html */
+  /* Article - toggle-css
+     Article - toggle-javascript */
+  .toggle-css p,
+  .toggle-javascript p{
+    margin-bottom: 16px;
   }
-
-
-  /* Article - How-To-Toggle */
-  .how-to-toggle > div > p{
-    margin-bottom: 24px;
-  }
-
-  .how-to-toggle > div:last-child > pre{
-    overflow-x: hidden;
-  }
-
-
-  /* Article - My-Top-Secret */
-  .my-top-secret > div > ul.main-article-list.background-white-radius{
-    padding: 20px 40px;
-  }
-
 
 
   /* Javascript-3-Copy.html */
@@ -283,18 +268,13 @@ min-width >=768px  */
   }
 
 
-  /* Javascript-2-Toggle.html */
-  .how-to-toggle > div,
-  .my-top-secret > div{
-    margin-bottom: 36px;
+  /* 2-Toggle.html */
+  /* Article - toggle-css
+     Article - toggle-javascript */
+  .toggle-css p,
+  .toggle-javascript p{
+    margin-bottom: 24px;
   }
-
-
-  /* Article - How-To-Toggle */
-  .how-to-toggle > div > p{
-    margin-bottom: 36px;
-  }
-
 
 
     /* Javascript-3-Pseudo-Style.html */
