@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='ko'>
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -99,14 +99,21 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h1 class='main-title'>
-          <strong>👵클립보드 복사👵</strong>
-        </h1>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">👵</span>
+            클립보드 복사
+            <span class='main-title' aria-hidden="true">👵</span>
+          </strong>
+        </h2>
 
-        <article class='clipboard-copy-code'>
-          <h1 class='main-article-title'>👶클립보드 복사 코드</h1>
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👶</span>
+            개요
+          </h3>
           <p>
             웹 페이지의 코드를 손쉽게 복사하는 방법이 궁금해서 찾아봤다.<br/>
             드래그만 하면 자동으로 복사되는 기능이 있을까?ㅎㅎ<br/>
@@ -116,7 +123,13 @@
             <br/>
             사람들 생각하는 건 다 비슷하다는 것을 또 한번 느낀 시간이었다.
           </p>
+        </article>
 
+        <article class='clipboard-copy-code' aria-labelledby="clipboard-copy-code-title">
+          <h3 id="clipboard-copy-code-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🍞</span>
+            클립보드 복사 코드
+          </h3>
           <div class='main-article-modal-group'>
             <button class='transparent-button show-code-button' type='button'>
               예시 코드 보기
@@ -148,46 +161,77 @@
           </div>
         </article>
 
-        <article class='how-to-copy'>
-          <h1 class='main-article-title'>👮클립보드 복사하는 방법</h1>
-
-          <ol class='main-article-list'>
-            <li class='main-article-list-items hyphen'>
-              <a href='#textarea'>textarea 임시로 생성하여 복사</a>
+        <article class='how-to-copy' aria-labelledby="how-to-copy-title">
+          <h3 id="how-to-copy-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👮</span>
+            클립보드 복사하는 방법
+          </h3>
+          <ol class='main-article-list' aria-label="복사 방법 파트로 이동">
+            <li class='main-article-list-items hyphen' aria-label="textarea 사용">
+              <a href='#textarea'>
+                textarea 임시로 생성하여 복사
+              </a>
             </li>
-            <li class='main-article-list-items hyphen'>
-              <a href='#input'>input에서 복사</a>
+            <li class='main-article-list-items hyphen' aria-label="input 사용">
+              <a href='#input'>
+                input에서 복사
+              </a>
             </li>
-            <li class='main-article-list-items hyphen'>
-              <a href='#old-IE'>구식IE</a>
+            <li class='main-article-list-items hyphen' aria-label="구식IE">
+              <a href='#old-IE'>
+                구식IE
+              </a>
             </li>
-            <li class='main-article-list-items hyphen'>
-              <a href='#mix'>구식 자동/수동 혼합</a>
+            <li class='main-article-list-items hyphen' aria-label="구식 자동/수동 혼합">
+              <a href='#mix'>
+                구식 자동/수동 혼합
+              </a>
             </li>
           </ol>
         </article>
 
-        <article class='how-to-copy-textarea' id='textarea'>
-          <h1 class='main-article-title'>
-            👸textarea 임시로 생성하여 복사
-          </h1>
-
-          <h2 class='main-article-subtitle'>👩사용 메소드</h2>
-          <ol class='main-article-list'>
-            <li class='main-article-list-items hyphen'>createElement</li>
-            <li class='main-article-list-items hyphen'>select();</li>
-            <li class='main-article-list-items hyphen'>execCommand();</li>
-            <li class='main-article-list-items hyphen'>addEventListener</li>
-          </ol>
-
-          <h2 class='main-article-subtitle'>👨처리하는 순서</h2>
-          <ol class='main-article-list'>
-            <li class='main-article-list-items order'>input 생성</li>
-            <li class='main-article-list-items order'>input.value에 텍스트 저장</li>
-            <li class='main-article-list-items order'>select로 input.value 에 저장된 텍스트 선택</li>
-            <li class='main-article-list-items order'>execCommand로 선택된 텍스트 편집(복사)</li>
-          </ol>
-
+        <article id='textarea' class='how-to-copy-textarea'
+        aria-labelledby="how-to-copy-textarea-title">
+          <h3 id="how-to-copy-textarea-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👸</span>
+            textarea 임시로 생성하여 복사
+          </h3>
+          <dl class="main-article-dl" aria-label="사용 메소드 및 처리 순서">
+            <div>
+              <dt class="main-article-dt" aria-label="사용 메소드">
+                사용 메소드
+              </dt>
+              <dd class="main-article-dd">
+                createElement
+              </dd>
+              <dd class="main-article-dd">
+                select();
+              </dd>
+              <dd class="main-article-dd">
+                execCommand();
+              </dd>
+              <dd class="main-article-dd">
+                addEventListener
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="처리 순서">
+                처리하는 순서
+              </dt>
+              <dd class="main-article-dd">
+                input 생성
+              </dd>
+              <dd class="main-article-dd">
+                input.value에 텍스트 저장
+              </dd>
+              <dd class="main-article-dd">
+                select로 input.value 에 저장된 텍스트 선택
+              </dd>
+              <dd class="main-article-dd">
+                execCommand로 선택된 텍스트 편집(복사)
+              </dd>
+            </div>
+          </dl>
           <div class='main-article-modal-group'>
             <button class='transparent-button show-code-button' type="button">
               예시 코드 보기
@@ -217,101 +261,131 @@
               </pre>
             </div>
           </div>
-
-          <div class='createElement-desc'>
-            <h2 class='main-article-subtitle'>
-              🏀createElement()
-            </h2>
-            <p>
-              HTML문서에서, 지정한 tagName의 HTML 요소를 만들어 반환하는 메소드
-            </p>
-
-            <h3 class='main-article-subtitle hyphen'>syntax</h3>
-            <p class='background-white-radius'>
-                let element = document.createElement(tagName[, options]);
-            </p>
-
-            <h2 class='main-article-subtitle hyphen'>
-              createElement를 하는 이유
-            </h2>
-            <p>
-              처음에, 변수만 필요하면 될 줄 알았는데, execCommand메소드가 변수의 데이터를 인식하지 못했다. 대상을 명시적으로 표현하는 장치가 필요하다는 말인데, 이 때 필요한 게 select 메소드다. execCommand메소드를 선언하기 이전에 select메소드를 선언하면 된다.<br/>
-              하지만 인생이 이렇게 잘 풀릴리가 없다<br/>
-              <br/>
-              select메소드는 textarea나 input(type=text 또는 type=url)에서만 제 역할을 한다. input말고 다른 요소의 텍스트 가져다 쓰고싶다면, createElement메소드를 이용하면 된다.
-            </p>
-
-            <ol class='main-article-list'>
-              <li class='main-article-list-items order'>
-                createElement메소드로 태그 만들고
-              </li>
-              <li class='main-article-list-items order'>
-                append로 태그 추가하고
-              </li>
-              <li class='main-article-list-items order'>
-                input.value에 텍스트를 저장하고
-              </li>
-              <li class='main-article-list-items order'>
-                select를 input에 선언하고
-              </li>
-              <li class='main-article-list-items order'>
-                removeChild로 태그 삭제한다
-              </li>
-            </ol>
-          </div>
-
-          <div class='select-desc'>
-            <h2 class='main-article-subtitle'>
-              🏀select()
-            </h2>
-            <p>
-              textarea나 input(text, url 등 텍스트를 담아내는 타입)의 모든 텍스트를 선택하는 메소드
-            </p>
-
-            <h3 class='main-article-subtitle hyphen'>syntax</h3>
-            <p class='background-white-radius'>
-              InputElement.select();
-            </p>
-
-            <h3 class='main-article-subtitle hyphen'>
-              select가 먹히지 않는 브라우저에서 사용할 메소드
-            </h3>
-            <p class='background-white-radius'>
-              InputElement.setSelectionRange();<br/>
-            </p>
-            <p>
-              괄호 안에는 (시작점, 끝점) 입력한다.<br/>
-              예시)<br/>
-              this.setSelectionRange(0, this.value.length);
-            </p>
-
-            <h3 class='main-article-subtitle hyphen'>대상</h3>
-            <ul class='main-article-list select-target-type'>
-              <li class='main-article-list-items type'>textarea - 여백 유지</li>
-              <li class='main-article-list-items type'>input - 여백 취합</li>
-            </ul>
-          </div>
-
-          <div class='execCommand-desc'>
-            <h2 class='main-article-subtitle'>
-              🏀execCommand();
-            </h2>
-            <p>선택된 텍스트를 편집하는 메소드</p>
-
-            <h3 class='main-article-subtitle hyphen'>syntax</h3>
-            <p class='background-white-radius'>
-              document.execCommand(aCommandName, aShowDefaultUI, aValueArgument)
-            </p>
-          </div>
         </article>
 
-        <article class='how-to-copy-input' id='input'>
-          <h1 class='main-article-title'>👶input에서 복사</h1>
+        <article class='createElement' aria-labelledby="createElement-title">
+          <h3 id="createElement-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🏀</span>
+            createElement()
+          </h3>
+          <p>
+            HTML문서에서, 지정한 tagName의 HTML 요소를 만들어 반환하는 메소드
+          </p>
+          <dl class="main-article-dl" aria-label="createElement 설명">
+            <div>
+              <dt class="main-article-dt" aria-label="문법">
+                syntax
+              </dt>
+              <dd class="main-article-dd">
+                <strong class="order">
+                  let element = document.createElement(tagName[, options]);
+                </strong>
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="사용하는 이유">
+                createElement를 하는 이유
+              </dt>
+              <dd class="main-article-dd">
+                처음에, 변수만 필요하면 될 줄 알았는데, execCommand메소드가 변수의 데이터를 인식하지 못했다. 대상을 명시적으로 표현하는 장치가 필요하다는 말인데, 이 때 필요한 게 select 메소드다. execCommand메소드를 선언하기 이전에 select메소드를 선언하면 된다.<br/>
+                하지만 인생이 이렇게 잘 풀릴리가 없다<br/>
+                <br/>
+                select메소드는 textarea나 input(type=text 또는 type=url)에서만 제 역할을 한다. input말고 다른 요소의 텍스트 가져다 쓰고싶다면, createElement메소드를 이용하면 된다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="명령 순서">
+                명령 순서
+              </dt>
+              <dd class="main-article-dd">
+                createElement메소드로 태그 만들고
+              </dd>
+              <dd class="main-article-dd">
+                append로 태그 추가하고
+              </dd>
+              <dd class="main-article-dd">
+                input.value에 텍스트를 저장하고
+              </dd>
+              <dd class="main-article-dd">
+                select를 input에 선언하고
+              </dd>
+              <dd class="main-article-dd">
+                removeChild로 태그 삭제한다.
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class='select' aria-labelledby="select-title">
+          <h3 id="select-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🏀</span>
+            select()
+          </h3>
+          <p>
+            textarea나 input(text, url 등 텍스트를 담아내는 타입)의 모든 텍스트를 선택하는 메소드
+          </p>
+          <dl class="main-article-dl" aria-label="select 설명">
+            <div>
+              <dt class="main-article-dt" aria-label="문법">
+                syntax
+              </dt>
+              <dd class="main-article-dd">
+                <strong class="order">
+                  InputElement.select();
+                </strong>
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="크로스 브라우징">
+                크로스 브라우징
+              </dt>
+              <dd class="main-article-dd">
+                InputElement.setSelectionRange();
+              </dd>
+              <dd class="main-article-dd">
+                괄호 안에는 (시작점, 끝점) 입력한다.<br/>
+                예시)<br/>
+                this.setSelectionRange(0, this.value.length);
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="적용 대상">
+                적용 대상
+              </dt>
+              <dd class="main-article-dd">
+                textarea - 여백 유지
+              </dd>
+              <dd class="main-article-dd">
+                input - 여백 취합
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class='execCommand' aria-labelledby="execCommand-title">
+          <h3 id="execCommand-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🏀</span>
+            execCommand()
+          </h3>
+          <p>
+            선택된 텍스트를 편집하는 메소드<br/>
+            문법은 다음과 같다.<br/>
+            <br/>
+            <strong class="order">
+              document.execCommand(aCommandName, aShowDefaultUI, aValueArgument)
+            </strong>
+          </p>
+        </article>
+
+        <article class='how-to-copy-input' aria-labelledby="how-to-copy-input-title">
+          <h3 id="how-to-copy-input-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👶</span>
+            input에서 복사
+          </h3>
           <p>
             HTML의 input요소의 텍스트를 가져온다.<br/>
             IE 10+, Chrome 43+, Opera 29+, Firefox 가능
           </p>
-
           <div class='main-article-modal-group'>
             <button class='transparent-button show-code-button' type="button">
               예시 코드 보기
@@ -330,13 +404,15 @@
           </div>
         </article>
 
-        <article class='how-to-copy-old-IE' id='old-IE'>
-          <h1 class='main-article-title'>👲구식IE</h1>
+        <article class='how-to-copy-old-IE' aria-labelledby="how-to-copy-old-IE-title">
+          <h3 id="how-to-copy-old-IE-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👲</span>
+            구식IE
+          </h3>
           <p>
             인터넷 익스플로러만 가능<br/>
             Chrome 브라우저 같은 경우 보안상의 이유로 사용할 수 없다.
           </p>
-
           <div class='main-article-modal-group'>
             <button class='transparent-button show-code-button' type="button">
               예시 코드 보기
@@ -353,23 +429,24 @@
               </pre>
             </div>
           </div>
-
-          <div class='clipboardData-desc'>
-            <h2 class='main-article-subtitle'>
-              ⚾window.clipboardData.getData('Text')
-            </h2>
-            <p>
+          <dl class="main-article-dl" aria-label="예시코드 설명">
+            <dt class="main-article-dt" aria-label="clipboardData">
+              window.clipboardData.getData('Text')
+            </dt>
+            <dd class="main-article-dd">
               cut과 copy 이벤트 핸들러로부터 어떤 데이터가 클립보드에 들어있는지, 일반적으로 setData(format, data) 함수를 호출하여 확인한다.
-            </p>
-          </div>
+            </dd>
+          </dl>
         </article>
 
-        <article class='how-to-copy-mix' id='mix'>
-          <h1 class='main-article-title'>👷구식 자동/수동 혼합</h1>
+        <article class='how-to-copy-mix' aria-labelledby="how-to-copy-mix-title">
+          <h3 id="how-to-copy-mix-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👷</span>
+            구식 자동/수동 혼합
+          </h3>
           <p>
             익스플로러가 아닐 경우 prompt를 띄워 수동으로 복사 하도록 함
           </p>
-
           <div class='main-article-modal-group'>
             <button class='transparent-button show-code-button' type="button">
               예시 코드 보기
@@ -396,32 +473,38 @@
               </pre>
             </div>
           </div>
-
-          <div class='navigator-desc'>
-            <h2 class='main-article-subtitle'>🏉navigator</h2>
-            <p>
-              브라우저의 종류와 버전 등 웹브라우저 전반에 대한 정보를 제공하는 객체
-            </p>
-
-            <h2 class='main-article-subtitle'>🏉navigator.userAgent</h2>
-            <p>
-              navigator.userAgent : 브라우저가 User-Agent HTTP 헤더에 넣어 전송하는 문자열로 appName과 appVersion의 모든 정보를 포함하며 더 자세한 정보를 추가로 담고 있다.
-            </p>
-
-            <h2 class='main-article-subtitle'>
-              🏉navigator.userAgent.toLowerCase().indexOf()
-            </h2>
-            <p>
-              브라우저 종류 확인
-            </p>
-          </div>
+          <dl class="main-article-dl" aria-label="예시코드 설명">
+            <div>
+              <dt class="main-article-dt" aria-label="navigator">
+                navigator
+              </dt>
+              <dd class="main-article-dd">
+                브라우저의 종류와 버전 등 웹브라우저 전반에 대한 정보를 제공하는 객체
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="navigator.userAgent">
+                navigator.userAgent
+              </dt>
+              <dd class="main-article-dd">
+                브라우저가 User-Agent HTTP 헤더에 넣어 전송하는 문자열로 appName과 appVersion의 모든 정보를 포함하며 더 자세한 정보를 추가로 담고 있다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="브라우저 종류 확인">
+                navigator.userAgent.toLowerCase().indexOf()
+              </dt>
+              <dd class="main-article-dd">
+                브라우저 종류 확인하는 코드
+              </dd>
+            </div>
+          </dl>
         </article>
       </section>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
-        <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
           cite='https://www.w3schools.com/howto/howto_js_copy_clipboard.asp'>
           <strong class='note-footer-reference-name'>
