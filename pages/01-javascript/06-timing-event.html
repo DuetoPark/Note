@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='ko'>
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -98,15 +98,21 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h1 class='main-title'>
-          <strong>👀타이밍 이벤트👀</strong>
-        </h1>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">👀</span>
+            타이밍 이벤트
+            <span class='main-title' aria-hidden="true">👀</span>
+          </strong>
+        </h2>
 
-        <article class='timing-event-summary'>
-          <h2 class='main-article-title'>👸개요</h2>
-
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👸</span>
+            개요
+          </h3>
           <p>
             나는 모달을 만드는 건 자신있다.<br/>
             근데 효과 넣는 건 자신없다.<br/>
@@ -117,108 +123,123 @@
           </p>
         </article>
 
-        <article class='timing-event'>
-          <h2 class='main-article-title'>👮timing event</h2>
+        <article class="timing-event-syntax" aria-labelledby="timing-event-syntax-title">
+          <h3 id="timing-event-syntax-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">👮</span>
+            문법
+          </h3>
+          <p>
+            <strong class="order">
+              window.setTimeout(콜백함수, milliseconds);
+            </strong>
+          </p>
+          <p>
+            widdow 없이 함수 단독으로 나올 수 있다.<br/>
+            문법 해석은 목록으로 정리했다.
+          </p>
+          <dl class="main-article-dl" aria-label="문법 해석">
+            <div>
+              <dt class="main-article-dt" aria-label="콜백함수">
+                콜백함수
+              </dt>
+              <dd class="main-article-dd">
+                동작할 함수를 의미한다.
+              </dd>
+              <dd class="main-article-dd">
+                함수를 직접 입력하거나, 함수명을 입력한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="milliseconds">
+                milliseconds
+              </dt>
+              <dd class="main-article-dd">
+                지연할 만큼의 시간을 입력한다.
+              </dd>
+              <dd class="main-article-dd">
+                단위는 기입하지 않으며, 1000은 1초를 의미한다.
+              </dd>
+            </div>
+          </dl>
+        </article>
 
-          <div class='timing-event-syntax'>
-            <h3 class='main-article-subtitle'>timing event 문법</h3>
-            <p class='background-white-radius'>
-              <span class="error">window.setTimeout(function, milliseconds);</span><br/>
-              <br/>
-              메소드의 첫번째 변수에 실행할 함수명을 넣거나,<br/>
-              함수를 작성한다.<br/>
-              <br/>
-              메소드의 두번재 변수에는 지연할 만큼의 시간을 넣는다.<br/>
-              단위는 기입하지 않는다.<br/>
-              <br/>
-              window없이 setTimeout 메소드 단독으로 나올 수 있다.<br/>
-              <br/>
-              에잉, 이 함수 멈출래.<br/>
-              <span class="error">clearTimeout(function)</span><br/>
-              다른 버튼에 클릭 이벤트로 지정한다.
-            </p>
+        <article class='setInterval' aria-labelledby="setInterval-title">
+          <h3 id="setInterval-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🍤</span>
+            setInterval
+          </h3>
+          <p>
+            함수를 무한반복 실행할 때 사용하는 메소드다.
+            문법은 다음과 같다.
+          </p>
+          <p>
+            <strong class="order">
+              window.setInterval(function, milliseconds);
+            </strong>
+          </p>
+          <p>
+            문법은 목록으로 정리했다.
+          </p>
+          <dl class="main-article-dl" aria-label="문법 해석">
+            <div>
+              <dt class="main-article-dt" aria-label="콜백함수">
+                콜백함수
+              </dt>
+              <dd class="main-article-dd">
+                무한히 동작할 함수를 의미한다.
+              </dd>
+              <dd class="main-article-dd">
+                함수를 직접 입력하거나, 함수명을 입력한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="milliseconds">
+                milliseconds
+              </dt>
+              <dd class="main-article-dd">
+                입력한 시간 간격으로 동작이 실행된다.
+              </dd>
+              <dd class="main-article-dd">
+                생략하면 무한히 동작한다.
+              </dd>
+            </div>
+          </dl>
+        </article>
 
-            <p class='background-white-radius'>
-              여러번 진행됬으면 좋겠다.<br/>
-              <span class="error">window.setInterval(function, milliseconds);</span><br/>
-              <br/>
-              이것도 window없이 setInterval 메소드 단독으로 사용할 수 있다.<br/>
-              (기다리기)-(실행)-(기다리기)-(실행) 무한반복한다.<br/>
-              <br/>
-              으악, 이 함수 멈출래.<br/>
-              <span class="error">window.clearInterval(function);</span><br/>
-              다른 버튼에 클릭 이벤트로 지정한다.
-            </p>
-          </div>
-
-          <div class="no-timing-event">
-            <h3 class='main-article-subtitle'>👼타이밍 이벤트 적용 안 할 때</h3>
-
-            <button class="open-modal-sample"
-              type="button">모달열기</button>
-
-            <p>
-              용량이 큰 페이지에서 모달이 출력될 때,<br/>
-              애니메이션을 적용시키면 깜빡깜빡거리는 현상이 발생한다.<br/>
-              CSS 조작과 브라우저의 특징으로 인해 일어난다.<br/>
-              여기에서 말하는 브라우저의 특징이란, 코드가 작성된 순서대로 읽음을 의미한다.
-            </p>
-
-            <ol class="main-article-list">
-              <li class="main-article-list-items hyphen order">
-                애니메이션 실행 -(공백)- 클래스 추가
-              </li>
-              <li class="main-article-list-items hyphen order">
-                애니메이션 100%에서 {display: 1; opacity: 1;}
-              </li>
-              <li class="main-article-list-items hyphen order">
-                (공백)에서 {display: none; opacity:1;}
-              </li>
-              <li class="main-article-list-items hyphen order">
-                클래스 추가 {display: 1; opacity: 1;}
-              </li>
-            </ol>
-
-            <p>
-              공백일때 display가 none으로 변해서, 동작 도중에 깜빡깜빡하는 현상이 나타남.<br/>
-              <strong>setTimeout을 사용해서</strong> 애니메이션이 끝나기 전에 클래스를 추가하면 됨
-            </p>
-          </div>
-
-          <div class="apply-timing-event">
-            <h3 class='main-article-subtitle'>👵타이밍 이벤트 적용했을 때</h3>
-
-            <button class="open-modal-sample"
-              type="button">모달열기</button>
-          </div>
-
-          <div class="modal-sample">
-            <button class="close-modal-sample"
-              type="button"
-              aria-label="모달 닫기"></button>
-
-            <section class="modal-sample-content">
-              <h2 class='modal-sample-title'>sample</h2>
-              <div>
-                <h3 class="modal-sample-subtitle">note</h3>
-                <strong class="modal-sample-date">19th january 2021</strong>
-              </div>
-              <img class="modal-sample-image"
-                src="../../assets/images/썸네일.png"
-                alt="아무 의미없는 사진" />
-              <p class="modal-sample-p">
-                Modal, Javascript, Timing Event<br/>
-                I can do it
-              </p>
-            </section>
-          </div>
+        <article class='clearInterval' aria-labelledby="clearInterval-title">
+          <h3 id="clearInterval-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🍵</span>
+            clearInterval
+          </h3>
+          <p>
+            함수를 멈추는 메소드다.
+            문법은 다음과 같다.
+          </p>
+          <p>
+            <strong class="order">
+              window.clearInterval(function);
+            </strong>
+          </p>
+          <p>
+            문법은 목록으로 정리했다.
+          </p>
+          <dl class="main-article-dl" aria-label="문법 해석">
+            <dt class="main-article-dt" aria-label="콜백함수">
+              콜백함수
+            </dt>
+            <dd class="main-article-dd">
+              정지시킬 함수를 의미한다.
+            </dd>
+            <dd class="main-article-dd">
+              함수를 직접 입력하거나, 함수명을 입력한다.
+            </dd>
+          </dl>
         </article>
       </section>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
-        <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
           cite='https://www.w3schools.com/js/js_timing.asp'>
           <strong class='note-footer-reference-name'>
