@@ -98,96 +98,120 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h2 class='main-title'>
-          <strong>🌋transform-origin🌋</strong>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🌋</span>
+            transform-origin
+            <span class='main-title' aria-hidden="true">🌋</span>
+          </strong>
         </h2>
 
-        <article class='transform-origin-summary'>
-          <h3 class='main-article-title'>🌎개요</h3>
-
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌎</span>
+            개요
+          </h3>
           <p>
             transform rotate할 때마다 나는 화가났다.<br/>
             그래서 뿌시기로했다.
           </p>
         </article>
 
-        <article class='transform-origin'>
-          <h3 class='main-article-title'>🌜transform-origin</h3>
-
+        <article class='transform-origin' aria-labelledby="transform-origin-title">
+          <h3 id="transform-origin-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌜</span>
+            transform-origin
+          </h3>
           <p>
             transform의 기준점을 개발자가 지정할 수 있는 속성이다.<br/>
             기본 설정값은 x축: 50%, y축: 50%이다.<br/>
             기준은 x축, y축, z축. 총 3개.<br/>
           </p>
-
-          <div class="transform-origin-syntax">
-            <strong class='main-article-subtitle'>🌝문법</strong>
-            <p>
-              transform-origin: x-axis y-axis z-axis;
-            </p>
-          </div>
-
-          <div class="transform-origin-unit">
-            <strong class='main-article-subtitle'>🌚단위</strong>
-            <ul class="main-article-list">
-              <li class="main-article-list-items hyphen">%</li>
-              <li class="main-article-list-items hyphen">left</li>
-              <li class="main-article-list-items hyphen">right</li>
-              <li class="main-article-list-items hyphen">top</li>
-              <li class="main-article-list-items hyphen">bottom</li>
-              <li class="main-article-list-items hyphen">center</li>
-              <li class="main-article-list-items hyphen">length</li>
-            </ul>
-          </div>
         </article>
 
-        <article class='transform-origin-example'>
-          <h3 class='main-article-title'>⛅예시</h3>
-
-          <div>
-            <button class="transform-origin-example-start"
-              type="button"
-              value="1">애니메이션 시작</button>
-            <img class="transform-origin-image"
-              src="../../assets/images/퓨전.jpg"
-              alt="기준점 x축 center y축 center">
-            <strong class="transform-origin-desc">
-              transform-origin: center center;
+        <article class='transform-origin-syntax' aria-labelledby="transform-origin-syntax-title">
+          <h3 id="transform-origin-syntax-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌝</span>
+            문법
+          </h3>
+          <p class="order">
+            <strong>
+              transform-origin: x-축 y-축 z-축;
             </strong>
-          </div>
+          </p>
+          <ul class="main-article-list" aria-label="단위">
+            <li class="main-article-list-items hyphen" role="none">
+              %
+            </li>
+            <li class="main-article-list-items hyphen" role="none">
+              left
+            </li>
+            <li class="main-article-list-items hyphen" role="none">
+              right
+            </li>
+            <li class="main-article-list-items hyphen" role="none">
+              top
+            </li>
+            <li class="main-article-list-items hyphen" role="none">
+              bottom
+            </li>
+            <li class="main-article-list-items hyphen" role="none">
+              center
+            </li>
+            <li class="main-article-list-items hyphen" role="none">
+              length
+            </li>
+          </ul>
+        </article>
 
-          <div>
-            <button class="transform-origin-example-start"
-              type="button"
-              value="2">애니메이션 시작</button>
-            <img class="transform-origin-image"
-              src="../../assets/images/퓨전.jpg"
-              alt="기준점 x축 top y축 right">
-            <strong class="transform-origin-desc">
-              transform-origin: top right;
-            </strong>
-          </div>
-
-          <div>
-            <button class="transform-origin-example-start"
-              type="button"
-              value="3">애니메이션 시작</button>
-            <img class="transform-origin-image"
-              src="../../assets/images/퓨전.jpg"
-              alt="기준점 x축 bottom y축 left">
-            <strong class="transform-origin-desc">
-              transform-origin: bottom left;
-            </strong>
-          </div>
+        <article class='transform-origin-example' aria-labelledby="transform-origin-example-title">
+          <h3 id="transform-origin-example-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">⛅</span>
+            예시
+          </h3>
+          <ol class="transform-origin-example-list" aria-label="예시 애니메이션">
+            <li class="main-article-list-items" aria-label="기준점이 중앙">
+              <p class="hidden">
+                버튼을 누르면, 사진이 가로 세로 중앙점을 기준으로 빙글빙글 돈다.
+              </p>
+              <button class="transform-origin-example-start"
+                type="button"
+                value="1">애니메이션 시작</button>
+              <img class="transform-origin-image"
+                src="../../assets/images/퓨전.jpg"
+                alt="기준점 x축 center y축 center">
+            </li>
+            <li class="main-article-list-items" aria-label="기준점이 우측상단">
+              <p class="hidden">
+                버튼을 누르면, 사진이 우측상단을 기준으로 빙글빙글 돈다.
+              </p>
+              <button class="transform-origin-example-start"
+                type="button"
+                value="2">애니메이션 시작</button>
+              <img class="transform-origin-image"
+                src="../../assets/images/퓨전.jpg"
+                alt="기준점 x축 top y축 right">
+            </li>
+            <li class="main-article-list-items" aria-label="기준점이 좌측하단">
+              <p class="hidden">
+                버튼을 누르면, 사진이 좌측하단을 기준으로 빙글빙글 돈다.
+              </p>
+              <button class="transform-origin-example-start"
+                type="button"
+                value="3">애니메이션 시작</button>
+              <img class="transform-origin-image"
+                src="../../assets/images/퓨전.jpg"
+                alt="기준점 x축 bottom y축 left">
+            </li>
+          </ol>
         </article>
       </section>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
-        <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
           cite='https://www.w3schools.com/cssref/css3_pr_transform-origin.asp'>
           <strong class='note-footer-reference-name'>
