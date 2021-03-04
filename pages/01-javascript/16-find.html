@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="javascript, 딕셔너리 자료구조"/>
+    <meta name="description" content="객체를 다른 관점에서 봤을 때 어떠한 가에 대해서 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>find</title>
+
+    <!-- fine -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/common/font.css">
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript-media-query.css">
+
+    <!-- 데이터 -->
+    <script src='../../assets/data.js'></script>
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list" role="menu">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-js" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">📛</span>
+            find
+            <span class='main-title' aria-hidden="true">📛</span>
+          </strong>
+        </h2>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">📰</span>
+            개요
+          </h3>
+          <p>
+            Object.entires로 객체를 이차원 배열로 만들었으면, Object.keys[배열]을 사용하지 않고도 키를 가져다 쓸 수 있다.<br/>
+            해당 값이 들어간 배열을 찾아준다면, 배열을 찾고나면 키는 배열의 0 인덱스에 있으니까..!<br/>
+            이 때 사용하는 메소드가 find다.
+          </p>
+        </article>
+
+        <article class="find" aria-labelledby="find-title">
+          <h3 id="find-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">📚</span>
+            정의
+          </h3>
+          <p>
+            배열에서 특정한 값이 해당된 객체나 배열을 찾아주는 메소드다.<br/>
+            <strong class="underline">
+              find 자체가 반복문으로, 특정 값을 찾으면 return이 true가 되면서 동작을 멈춘다.
+            </strong>
+          </p>
+        </article>
+
+        <article class="find-syntax" aria-labelledby="find-syntax-title">
+          <h3 id="find-syntax-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">🔖</span>
+            문법
+          </h3>
+          <p class="find-syntax-paragragh">
+            <strong class="order">
+              배열.find(콜백함수, thisArg);
+            </strong><br/>
+            <br/>
+            문법 해석을 목록으로 정리했다.
+          </p>
+          <dl class="main-article-dl" aria-label="문법 해석">
+            <div>
+              <dt class="main-article-dt" aria-label="콜백함수">
+                콜백함수
+              </dt>
+              <dd class="main-article-dd">
+                배열의 각 값에 실행할 함수이다.
+              </dd>
+              <dd class="main-article-dd">
+                return 매개변수.키 === "찾고싶은 값";
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="thisArg">
+                thisArg
+              </dt>
+              <dd class="main-article-dd">
+                생략가능하며, 콜백이 호출될 때 this로 사용할 객체이다.
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="find-example" aria-labelledby="find-example-title">
+          <h3 id="find-example-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">🔭</span>
+            예시코드
+          </h3>
+          <pre class="main-article-pre background-white-radius">
+            <code>
+              var inventory = [
+                  {name: 'apples', quantity: 2},
+                  {name: 'bananas', quantity: 0},
+                  {name: 'cherries', quantity: 5}
+              ];
+
+              function findCherries(fruit) {
+                  return fruit.name === 'cherries';
+              }
+
+              console.log(inventory.find(findCherries));
+              // { name: 'cherries', quantity: 5 }
+            </code>
+          </pre>
+        </article>
+
+        <article class="findIndex" aria-labelledby="findIndex-title">
+          <h3 id="findIndex-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">📇</span>
+            findIndex
+          </h3>
+
+          <p>
+            findIndex메소드는 찾고자 하는 요소의 위치를 나타낸다.<br/>
+            <br/>
+            <strong class="order">
+              배열.indexOf(콜백함수);
+            </strong>
+          </p>
+        </article>
+
+        <article class="find-indexOf-diff" aria-labelledby="find-indexOf-diff-title">
+          <h3 id="find-indexOf-diff-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">📋</span>
+            indexOf와의 차이
+          </h3>
+          <p>
+            indexOf는 일차원 배열에 사용한다.<br/>
+            find와 findIndex는 이차원 배열에 사용한다.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://www.youtube.com/watch?v=eyGb5WDRM78&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=46'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "유튜브 - ZeroCho의 JS 초급 강좌 7-3. Object.entries, find, findIndex", 유튜브, 2021년 3월 4일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.youtube.com/watch?v=eyGb5WDRM78&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=46'>
+              https://www.youtube.com/watch?v=eyGb5WDRM78&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=46
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/find'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "MDN -Array.prototype.find()", MDN, 2021년 3월 4일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/find'>
+              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 3월 4일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <!-- 요소 생성 -->
+    <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
+    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/app/modal.js"></script>
+  </body>
+</html>
