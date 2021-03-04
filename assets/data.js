@@ -33,6 +33,12 @@ let state = {
       {id: "10", href: "map"},
       {id: "11", href: "slice-sort"},
       {id: "12", href: "splice"},
+      {id: "13", href: "split-join"},
+      {id: "14", href: "딕셔너리-자료구조"},
+      {id: "15", href: "object-entires"},
+      {id: "16", href: "find"},
+      {id: "17", href: "indexof"},
+      {id: "18", href: "value-textcontent"},
     ],
   },
 };
