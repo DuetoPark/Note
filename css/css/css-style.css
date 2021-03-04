@@ -340,22 +340,15 @@
 }
 
 
-
 /* 7-main-tag-IE.html */
 /* Article - Main-tag-max-width */
-.main-tag-max-width > p,
-.main-tag-max-width > ul{
+.main-tag-max-width > p{
   margin-bottom: 8px;
-}
-
-.main-tag-max-width > p:last-child{
-  margin-bottom: 0;
 }
 
 .main-tag-max-width > ul{
   padding: 10px 20px;
 }
-
 
 
 /* 8-transform-origin.html */

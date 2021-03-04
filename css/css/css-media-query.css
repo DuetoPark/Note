@@ -156,8 +156,7 @@ min-width >=576px  */
 
   /* 7-main-tag-IE.html */
   /* Article - Main-tag-max-width */
-  .main-tag-max-width > p,
-  .main-tag-max-width > ul{
+  .main-tag-max-width > p{
     margin-bottom: 16px;
   }
 
@@ -357,8 +356,7 @@ min-width >=768px  */
 
   /* 7-main-tag-IE.html */
   /* Article - Main-tag-max-width */
-  .main-tag-max-width > p,
-  .main-tag-max-width > ul{
+  .main-tag-max-width > p{
     margin-bottom: 24px;
   }
 
