@@ -97,15 +97,21 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h2 class='main-title'>
-          <strong>😇main 태그 margin😇</strong>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">😇</span>
+            main 태그 margin
+            <span class='main-title' aria-hidden="true">😇</span>
+          </strong>
         </h2>
 
-        <article class='main-tag-max-width-summary'>
-          <h3 class='main-article-title'>😈개요</h3>
-
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">😈</span>
+            개요
+          </h3>
           <p>
             클론 코딩을 하던 중, 문득 궁금해졌다.<br/>
             크롬은 잘 나오는데 인터넷 익스플로어는 잘 나올까?<br/>
@@ -117,36 +123,38 @@
           </p>
         </article>
 
-        <article class='main-tag-max-width'>
-          <h3 class='main-article-title'>😎IE와 main 태그</h3>
-
+        <article class='main-tag-max-width' aria-labelledby="main-tag-max-width-title">
+          <h3 id="main-tag-max-width-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">😎</span>
+            IE와 main 태그
+          </h3>
           <p>
             결론부터 말하자면, max-width문제가 아니다.<br/>
             그렇다면, 원인은 뭘까.<br/>
-            바로 IE11가 main 태그를 지원하지 않기 때문이었다.<br/>
-            <br/>
-            해결법은,
+            <strong class="underline">
+              <span class="hidden-inline">중요!</span>
+              바로 IE11가 main 태그를 지원하지 않기 때문이었다.
+            </strong><br/>
+            해결방법의 다음과 같다.
           </p>
-
-          <ul class='main-article-list background-white-radius'>
-            <li class='main-article-list-items hyphen'>
-              main 태그를 div 태그로 변경한다
+          <ul class="background-white-radius" aria-label="해결">
+            <li class="main-article-list-items hyphen" role="none">
+              main 태그를 div 태그로 변경하거나
             </li>
-            <li class='main-article-list-items hyphen'>
-              또는, main{display: block;}을 선언한다.
+            <li class="main-article-list-items hyphen" role="none">
+              <strong class="error">
+                <span class="hidden-inline">중요!</span>
+                main{display: block;}을 선언한다.
+              </strong>
             </li>
           </ul>
-
-          <p>
-            스택오버플로우 최고최고
-          </p>
+        </article>
         </article>
       </section>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
-        <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
           cite='https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11'>
           <strong class='note-footer-reference-name'>
