@@ -97,82 +97,74 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h2 class='main-title'>
-          <strong>🍕접근성을 고려한 텍스트 숨기기🍕</strong>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🍕</span>
+            접근성을 고려한 텍스트 숨기기
+            <span class='main-title' aria-hidden="true">🍕</span>
+          </strong>
         </h2>
 
-        <article class='SEO-hidden-summary'>
-          <h3 class='main-article-title'>🍹개요</h3>
-
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🍹</span>
+            개요
+          </h3>
           <p>
-            접근성과 최적화를 열심히 공부해두면 짱 멋있는 웹 프론트엔드 개발자가 될 것 같다는 느낌이 들었다.
+            접근성과 최적화를 열심히 공부해두면 짱 멋있는 웹 프론트엔드 개발자가 될 것 같다는 느낌이 들었다.<br/>
             그래서 접근성을 유지한 텍스트 숨김 방법을 공부해보기로 했다.
           </p>
         </article>
 
-        <article class='no-SEO-hidden'>
-          <h3 class='main-article-title'>🍺텍스트 숨기기</h3>
-
-          <ol>
-            <li class="no-SEO-hidden-list-items">
-              <div class="SEO-hidden-display">
-                <h4 class="main-article-subtitle">🍎display: none;</h4>
-
-                <pre class="main-article-pre background-white-radius">
-                  <code>
-                    display: none;
-                  </code>
-                </pre>
-
-                <p>
-                  display: none;은 <strong>정보를 표기하지 않겠다</strong>라는 의미이다.<br/>
-                  그러면 보조기기에 정보 전달을 하지 않음.<br/>
-                  즉, 내용을 숨겼다고 인식하는 게 아니라, 처음부터 없는 정보라고 인식.
-                </p>
-              </div>
-            </li>
-            <li class="no-SEO-hidden-list-items">
-              <div class="SEO-hidden-visibility">
-                <h4 class="main-article-subtitle">🍏visibility: hidden;</h4>
-
-                <pre class="main-article-pre background-white-radius">
-                  <code>
-                    visibility: hidden;
-                    position: absolute;
-                  </code>
-                </pre>
-
-                <p>
-                  display: none;와 동일하다.
-                </p>
-              </div>
-            </li>
-            <li class="no-SEO-hidden-list-items">
-              <div class="SEO-hidden-text-indent">
-                <h4 class="main-article-subtitle">🍊text-indent: -9999px;</h4>
-
-                <pre class="main-article-pre background-white-radius">
-                  <code>
-                    text-indent: -9999px;
-                  </code>
-                </pre>
-
-                <ul>
-                  <li class="main-article-list-items hyphen">
-                    구글 검색엔진에서 스팸으로 인식
-                  </li>
-                  <li class="main-article-list-items hyphen">
-                    VoiceOver로 초점 이동시키면, 초점이 잡히는 문제 발생
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="no-SEO-hidden-list-items">
-              <div class="SEO-hidden-zero-pixel">
-                <h4 class="main-article-subtitle">🍋zero-pixel</h4>
-
+        <article class='no-SEO-hidden' aria-labelledby="no-SEO-hidden-title">
+          <h3 id="no-SEO-hidden-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🍺</span>
+            접근성을 고려하지 않은 방법
+          </h3>
+          <dl class="main-article-dl" aria-label="숨기는 방법">
+            <div>
+              <dt class="main-article-dt order" aria-label="display none;">
+                display: none;
+              </dt>
+              <dd class="main-article-dd">
+                <strong>
+                  display: none;은 정보를 표기하지 않겠다라는 의미이다.
+                </strong>
+              </dd>
+              <dd class="main-article-dd">
+                그러면 보조기기에 정보 전달을 하지 않는다.
+              </dd>
+              <dd class="main-article-dd">
+                즉, 내용을 숨겼다고 인식하는 게 아니라, 처음부터 없는 정보라고 인식해서 보조기기와 스크린리더에 읽히지 않는다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt order" aria-label="visibility hidden">
+                visibility: hidden;
+              </dt>
+              <dd class="main-article-dd">
+                display: none;와 동일하다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt order" aria-label="text-indent -9999px;">
+                text-indent: -9999px;
+              </dt>
+              <dd class="main-article-dd">
+                구글 검색엔진에서 스팸으로 인식한다.
+              </dd>
+              <dd class="main-article-dd">
+                VoiceOver로 초점 이동시키면, 초점이 잡히는 문제가 발생한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt order" aria-label="zero-pixel">
+                zero-pixel
+              </dt>
+              <dd class="main-article-dd">
+                제로픽셀 코드<br/>
                 <pre class="main-article-pre background-white-radius">
                   <code>
                     width: 0;
@@ -180,59 +172,35 @@
                     font-size: 0;
                   </code>
                 </pre>
-
-                <div>
-                  <strong class="main-article-subtitle order">width와 height를 0으로 지정할 때</strong>
-                  <ul>
-                    <li class="main-article-list-items hyphen">
-                      NVDA와 VoiceOver는 contents를 읽음
-                    </li>
-                    <li class="main-article-list-items hyphen">
-                      VoiceOver로 초점 이동시키면, 초점이 잡히는 문제 발생
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <strong class="main-article-subtitle order">font-size를 0으로 지정할 때</strong>
-                  <ul>
-                    <li class="main-article-list-items hyphen">
-                      VoiceOver가 contents를 읽지 못함
-                    </li>
-                    <li class="main-article-list-items hyphen">
-                      구글 검색엔진에서 스팸으로 인식
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class="no-SEO-hidden-list-items">
-              <div class="SEO-hidden-opacity">
-                <h4 class="main-article-subtitle">🍉opacity: 0;</h4>
-
-                <pre class="main-article-pre background-white-radius">
-                  <code>
-                    opacity: 0;
-                  </code>
-                </pre>
-
-                <ul>
-                  <li class="main-article-list-items hyphen">
-                    VoiceOver로 초점 이동시키면, 초점이 잡히는 문제 발생
-                  </li>
-                  <li class="main-article-list-items hyphen">
-                    대화형 요소인 경우, 마우스가 반응함
-                  </li>
-                  <li class="main-article-list-items hyphen">
-                    VoiceOver가 읽지 못함
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="no-SEO-hidden-list-items">
-              <div class="SEO-hidden-position">
-                <h4 class="main-article-subtitle">🍓position: absolute;</h4>
-
+              </dd>
+              <dd class="main-article-dd">
+                width와 height를 0으로 지정하면, NVDA와 VoiceOver는 contents를 읽을 수는 있다.<br/>
+                하지만, VoiceOver로 초점 이동시키면 초점이 잡히는 문제가 발생한다.
+              </dd>
+              <dd class="main-article-dd">
+                font-size를 0으로 지정하면, VoiceOver가 contents를 읽지 못하며 구글 검색엔진에서 스팸으로 인식한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt order" aria-label="opacity 0">
+                opacity: 0;
+              </dt>
+              <dd class="main-article-dd">
+                VoiceOver로 초점 이동시키면, 초점이 잡히는 문제 발생한다.
+              </dd>
+              <dd class="main-article-dd">
+                대화형 요소인 경우, 마우스가 반응한다.
+              </dd>
+              <dd class="main-article-dd">
+                VoiceOver가 읽지 못한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt order" aria-label="position absolute">
+                position: absolute;
+              </dt>
+              <dd class="main-article-dd">
+                예시코드
                 <pre class="main-article-pre background-white-radius">
                   <code>
                     position: absolute;
@@ -240,23 +208,25 @@
                     left: -9999px;
                   </code>
                 </pre>
-
-                <ul>
-                  <li class="main-article-list-items hyphen">
-                    VoiceOver로 초점 이동시키면, 초점이 잡히는 문제 발생
-                  </li>
-                  <li class="main-article-list-items hyphen">
-                    스팸으로 인식
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ol>
+              </dd>
+              <dd class="main-article-dd">
+                VoiceOver로 초점 이동시키면, 초점이 잡히는 문제가 발생한다.
+              </dd>
+              <dd class="main-article-dd">
+                구글 검색엔진에서 스팸으로 인식하다.
+              </dd>
+            </div>
+          </dl>
         </article>
 
-        <article class='SEO-hidden'>
-          <h3 class='main-article-title'>🍸접근성을 고려한 숨기기</h3>
-
+        <article class='SEO-hidden' aria-labelledby="SEO-hidden-title">
+          <h3 id="SEO-hidden-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🍸</span>
+            접근성을 고려한 방법
+          </h3>
+          <p class="hidden">
+            예시코드
+          </p>
           <pre class="main-article-pre background-white-radius">
             <code>
               .hidden{
@@ -276,7 +246,6 @@
 
     <footer class='note-footer'>
       <div class='container'>
-        <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
           cite='https://mulder21c.github.io/2019/03/22/screen-hide-text/'>
           <strong class='note-footer-reference-name'>
