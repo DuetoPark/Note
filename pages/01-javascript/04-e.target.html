@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='ko'>
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -99,22 +99,34 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h1 class='main-title'>
-          <strong>👉e.target👈</strong>
-        </h1>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">👉</span>
+            e.target
+            <span class='main-title' aria-hidden="true">👈</span>
+          </strong>
+        </h2>
 
-        <article class='e-target'>
-          <h1 class='main-article-title'>🙌개요</h1>
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🙌</span>
+            개요
+          </h3>
           <p>
             1분코딩 자바스크립트 강의를 듣다가 e.target이 활용도가 높아서 매우매우매우 편하다는 말씀을 듣고 얼마나 편한지 궁금해졌다.<br/>
             <br/>
             그래서 javascript-3-copy.html 페이지에 클릭 이벤트를 추가해봤다.<br/>
           </p>
+        </article>
 
-          <h2 class='main-article-subtitle'>🙏이것만은 가져가고 만다</h2>
-          <ul class='main-article-list background-white-radius'>
+        <article class='goal' aria-labelledby="goal-title">
+          <h3 id="goal-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🙏</span>
+            이것만은 가져가고 만다
+          </h3>
+          <ul class='main-article-list'>
             <li class='main-article-list-items hyphen'>
               개발자도구-property 활용법
             </li>
@@ -124,81 +136,71 @@
           </ul>
         </article>
 
-        <article class='e-target-desc'>
-          <h1 class='main-article-title'>👸e.target</h1>
-
-          <h2 class='main-article-subtitle'>🐠특징</h2>
-          <ul class='main-article-list'>
-            <li class='main-article-list-items hyphen'>
-              addEventListener에 지정한 handler함수에는 event 변수가 자동으로 생성된다.
-            </li>
-            <li class='main-article-list-items hyphen'>
-              e.target에는 마우스의 위치, 선택한 요소 등등의 정보가 들어있다.
-            </li>
-            <li class='main-article-list-items hyphen'>
-              개발자도구에서 해당 요소의 자식 요소를 확인할 수 있다.
-            </li>
-          </ul>
-
-          <h2 class='main-article-subtitle'>🐳사용하는 이유</h2>
-          <p>
-            이거는 정말 신세계.
-            <strong>같은 그룹에 있는 요소에만 이벤트가 발생하게 만들 수 있다.</strong>
-          </p>
-          <p>
-            땅콩에 비유하자면,<br/>
-            땅콩의 왼쪽 알맹이를 누르면 오른쪽 알맹이가 팝콘처럼 터지는 함수를 만들었다고 치자.<br/>
-            함수의 동작은 왼쪽 알맹 꾹, 오른쪽 알맹 파사삭으로 구성되어있다.<br/>
-            1번 땅콩의 왼쪽 알맹만이 1번 땅콩의 오른쪽 알맹과 매치된다는 조건이 있다.
-          </p>
-          <div class='e-target-reason-image-group'>
-            <img class='e-target-reason-image'
-              src='../../assets/images/퓨전.jpg'
-              alt=''>
-          </div>
-
-          <p>
-            e.target 사용하지 않는다는 건,<br/>
-            땅콩 껍질 까서 하나의 병에 다 담아 놓은 모습과 유사하다.<br/>
-            알맹이마다 동작을 지정하고 몇번째 땅콩인지 인지해야 한다.<br/>
-            왜냐하면 땅콩이 막 섞여있으니까 짝꿍 알맹을 잃기 쉽다.
-          </p>
-          <div class='e-target-reason-image-group'>
-            <img class='e-target-reason-image'
-              src='../../assets/images/peanut.jpg'
-              alt=''>
-          </div>
-
-          <p>
-            e.target 사용한다는 건,<br/>
-            껍질 벗기지 않은 땅콩의 모습과 유사하다.<br/>
-            왼쪽 알맹과 오른쪽 알맹이 하나의 껍질로 묶여 있어서,<br/>
-            땅콩을 막 섞어도 알맹이들은 짝을 맞추고 있어서 몇번째 땅콩의 알맹이인지 알 필요 없다.
-          </p>
-          <div class='e-target-reason-image-group'>
-            <img class='e-target-reason-image'
-              src='../../assets/images/peanut2.jpg'
-              alt=''>
-          </div>
-
-          <p>
-            즉, e.target 사용안하면 dom 요소를 페이지 처음부터 끝까지 찾아내서 동작하게 만든다.<br/>
-            e.target 사용하면 해당 그룹 내에서 필요한 요소를 찾아내서 동작하게 만든다. 다른 그룹과의 간섭은 없다.<br/>
-            그룹에 이벤트를 지정해 놓기만 하면, 동작을 지정한 함수를 여기저기 막 가져다 쓸 수 있다.
-          </p>
+        <article class='e-target' aria-labelledby="e-target-title">
+          <h3 id="e-target-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👸</span>
+            e.target
+          </h3>
+          <dl class="main-article-dl" aria-label="특징과 사용하는 이유">
+            <div>
+              <dt class="main-article-dt" aria-label="특징">
+                특징
+              </dt>
+              <dd class="main-article-dd">
+                addEventListener에 지정한 handler함수에는 event 변수가 자동으로 생성된다.
+              </dd>
+              <dd class="main-article-dd">
+                e.target에는 마우스의 위치, 선택한 요소 등등의 정보가 들어있다.
+              </dd>
+              <dd class="main-article-dd">
+                개발자도구에서 해당 요소의 자식 요소를 확인할 수 있다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="사용하는 이유">
+                사용하는 이유
+              </dt>
+              <dd class="main-article-dd">
+                <strong>
+                  같은 그룹에 있는 요소에만 이벤트가 발생하게 만들 수 있다.
+                </strong>
+              <dd class="main-article-dd">
+                e.target 사용한다는 건, 껍질 벗기지 않은 땅콩의 모습과 유사하다.
+              </dd>
+              <dd class="main-article-dd">
+                왼쪽 알맹과 오른쪽 알맹이 하나의 껍질로 묶여 있어서, 땅콩을 막 섞어도 알맹이들은 짝을 맞추고 있어서 몇번째 땅콩의 알맹이인지 알 필요 없다.
+                <div class='e-target-reason-image-group'>
+                  <img class='e-target-reason-image'
+                    src='../../assets/images/peanut2.jpg'
+                    alt='땅콩사진'>
+                </div>
+              </dd>
+              <dd class="main-article-dd">
+                즉, e.target 사용안하면 dom 요소를 페이지 처음부터 끝까지 찾아내서 동작하게 만든다.
+              </dd>
+              <dd class="main-article-dd">
+                e.target 사용하면 해당 그룹 내에서 필요한 요소를 찾아내서 동작하게 만든다. 다른 그룹과의 간섭은 없다.
+              </dd>
+              <dd class="main-article-dd">
+                그룹에 이벤트를 지정해 놓기만 하면, 동작을 지정한 함수를 여기저기 막 가져다 쓸 수 있다.
+              </dd>
+            </div>
+          </dl>
         </article>
 
-        <article class='develop-tools-property'>
-          <h1 class='main-article-title'>🐲개발자도구 property</h1>
+        <article class='property' aria-labelledby="property-title">
+          <h3 id="property-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐲</span>
+            개발자도구 property
+          </h3>
           <p>
             이벤트 지정할 때 사용하기 좋은 정보들이 콸콸콸!
           </p>
           <img class='e-target-image'
             src='../../assets/images/develop-tools-property.png'
             alt=''/>
-
-          <h2 class='main-article-subtitle'>🐖주로 확인할 정보</h2>
-          <ul class='main-article-list background-white-radius'>
+          <p>주로 확인할 정보</p>
+          <ul class='main-article-list' aria-label="확인할 사항">
             <li class='main-article-list-items hyphen'>children</li>
             <li class='main-article-list-items hyphen'>classList</li>
             <li class='main-article-list-items hyphen'>innerText</li>
@@ -209,8 +211,11 @@
           </ul>
         </article>
 
-        <article class='e-target-nextElementSibling'>
-          <h1 class='main-article-title'>🌝nextElementSibling</h1>
+        <article class='nextElementSibling' aria-labelledby="nextElementSibling-title">
+          <h3 id="nextElementSibling-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌝</span>
+            nextElementSibling
+          </h3>
           <p>
             선택한 요소의 형재자매 요소
           </p>
@@ -219,23 +224,27 @@
             alt='개발자도구에서 nextElementSibling 확인하기'/>
         </article>
 
-        <article class='e-target-children'>
-          <h1 class='main-article-title'>🌳children</h1>
+        <article class='children' aria-labelledby="children-title">
+          <h3 id="children-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌳</span>
+            children
+          </h3>
           <p>
             선택한 요소의 자식 요소
-
-            이 요소가 자식요소로 어떤 애들을 가지는지 확인하는 용도로 사용하고 있다.
           </p>
           <img class='e-target-image'
             src='../../assets/images/children.png'
             alt='개발자도구에서 children 확인하기'/>
         </article>
 
-        <article class='e-target-parentElement'>
-          <h1 class='main-article-title'>🎁parentElement</h1>
+        <article class='parentElement' aria-labelledby="parentElement-title">
+          <h3 id="parentElement-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🎁</span>
+            parentElement
+          </h3>
           <p>
-            선택한 요소의 부모 요소
-
+            선택한 요소의 부모 요소<br/>
+            <br/>
             해당 요소에서 빠져나오는 이벤트를 지정할 때 사용하고 있다.
           </p>
           <img class='e-target-image'
@@ -247,7 +256,6 @@
 
     <footer class='note-footer'>
       <div class='container'>
-        <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
           cite='https://gist.github.com/rxaviers/7360908'>
           <strong class='note-footer-reference-name'>
