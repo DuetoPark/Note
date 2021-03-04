@@ -268,6 +268,13 @@ min-width >=576px  */
   .dictionary pre{
     margin-bottom: 16px;
   }
+
+
+  /* 16-find.html */
+  /* Article - find-syntax */
+  .find-syntax-paragragh{
+    margin-bottom: 16px;
+  }
 }
 
 
@@ -517,6 +524,13 @@ min-width >=768px  */
   /* Article - dictionary */
   .dictionary p,
   .dictionary pre{
+    margin-bottom: 24px;
+  }
+
+
+  /* 16-find.html */
+  /* Article - find-syntax */
+  .find-syntax-paragragh{
     margin-bottom: 24px;
   }
 }

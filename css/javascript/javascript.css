@@ -469,3 +469,10 @@
 .dictionary p:last-child{
   margin-bottom: 0 !important;
 }
+
+
+/* 16-find.html */
+/* Article - find-syntax */
+.find-syntax-paragragh{
+  margin-bottom: 8px;
+}
