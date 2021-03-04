@@ -42,39 +42,24 @@ min-width >=576px  */
   }
 
 
-  /* Javascript-4-e.target.html */
-  /* Common */
-  .e-target-desc > p,
-  .e-target-reason-image-group,
-  .develop-tools-property > p,
+  /* 4-e.target.html */
   .e-target-image,
-  .e-target-nextElementSibling > p,
-  .e-target-children > p,
-  .e-target-parentElement > p{
+  .e-target-reason-image{
+    width: 70%;
+    height: auto;
+  }
+
+  /* Article - property
+     Article - nextElementSibling
+     Article - children
+     Article - parentElement */
+  .property p,
+  .nextElementSibling p,
+  .children p,
+  .parentElement p{
     margin-bottom: 16px;
   }
 
-
-  /* Article - E-Target */
-  .e-target > p{
-    margin-bottom: 24px;
-  }
-
-  .e-target > ul{
-    padding: 15px 20px;
-  }
-
-
-  /* Article - E-Target-Desc */
-  .e-target-desc > ul{
-    margin-bottom: 24px;
-  }
-
-
-  /* Article - Develop-Tools-Property */
-  .develop-tools-property > ul.main-article-list.background-white-radius{
-    padding: 15px 20px;
-  }
 
 
 
@@ -273,49 +258,18 @@ min-width >=768px  */
   }
 
 
+  /* 4-e.target.html */
+  /* Article - property
+     Article - nextElementSibling
+     Article - children
+     Article - parentElement */
+  .property p,
+  .nextElementSibling p,
+  .children p,
+  .parentElement p{
+    margin-bottom: 16px;
+  }
 
-
-    /* Javascript-4-e.target.html */
-    /* Common */
-    .e-target-desc > p,
-    .e-target-reason-image-group,
-    .develop-tools-property > p,
-    .e-target-image,
-    .e-target-nextElementSibling > p,
-    .e-target-children > p,
-    .e-target-parentElement > p{
-      margin-bottom: 16px;
-    }
-
-
-    /* Article - E-Target */
-    .e-target > p{
-      margin-bottom: 36px;
-    }
-
-    .e-target > ul{
-      padding: 20px 40px;
-    }
-
-
-    /* Article - E-Target-Desc */
-    .e-target-desc > ul{
-      margin-bottom: 36px;
-    }
-
-    .e-target-reason-image{
-      width: 500px;
-    }
-
-
-    /* Article - Develop-Tools-Property */
-    .e-target-image{
-      width: 500px;
-    }
-
-    .develop-tools-property > ul.main-article-list.background-white-radius{
-      padding: 20px 40px;
-    }
 
   /* Javascript-5-switch.html */
   /* common */

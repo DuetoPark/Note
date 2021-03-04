@@ -92,53 +92,23 @@
 
 
 /* 4-e.target.html */
-/* Common */
-.e-target-desc > p,
-.e-target-reason-image-group,
-.develop-tools-property > p,
+/* common */
 .e-target-image,
-.e-target-nextElementSibling > p,
-.e-target-children > p,
-.e-target-parentElement > p{
-  margin-bottom: 8px;
-}
-
-
-/* Article - E-Target */
-.e-target > p{
-  margin-bottom: 16px;
-}
-
-.e-target > ul{
-  padding: 10px 20px;
-}
-
-
-/* Article - E-Target-Desc */
-.e-target-desc > p:last-child{
-  margin-bottom: 0;
-}
-
-.e-target-desc > ul{
-  margin-bottom: 16px;
-}
-
 .e-target-reason-image{
   width: 100%;
   height: auto;
 }
 
-
-/* Article - Develop-Tools-Property */
-.e-target-image{
-  width: 100%;
-  height: auto;
+/* Article - property
+   Article - nextElementSibling
+   Article - children
+   Article - parentElement */
+.property p,
+.nextElementSibling p,
+.children p,
+.parentElement p{
+  margin-bottom: 8px;
 }
-
-.develop-tools-property > ul.main-article-list.background-white-radius{
-  padding: 10px 20px;
-}
-
 
 
 /* 5-switch.html */
