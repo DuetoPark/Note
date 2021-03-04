@@ -55,17 +55,6 @@
   overflow-wrap: break-word;
 }
 
-
-/* Article - Clipboard-Copy-Code */
-.clipboard-copy-code > p{
-  margin-bottom: 8px;
-}
-
-.clipboard-copy-code .show-code-button{
-  margin-bottom: 0;
-}
-
-
 /* Article - How-To-Copy */
 .how-to-copy li.main-article-list-items.hyphen{
   position: relative;
@@ -94,58 +83,12 @@
 }
 
 
-/* Article - How-To-Copy-Textarea */
-.createElement-desc > p,
-.select-desc > p,
-.execCommand-desc > p,
-/* Article - How-To-Copy-input */
-.how-to-copy-input > p,
-/* Article - How-To-Copy-old-IE */
-.how-to-copy-old-IE > p,
-/* Article - How-To-Copy-Mix */
-.how-to-copy-mix > p,
-.navigator-desc > p{
+/* Article - createElement
+   Article - select*/
+.createElement > p,
+.select > p{
   margin-bottom: 8px;
 }
-
-
-/* Article - How-To-Copy-Textarea */
-.how-to-copy-textarea > ol,
-.createElement-desc,
-.select-desc{
-  margin-bottom: 16px;
-}
-
-.how-to-copy-textarea p.background-white-radius{
-  padding: 10px 20px;
-  overflow-x: scroll;
-}
-
-.select-target-type{
-  display: flex;
-}
-
-.select-target-type > li.main-article-list-items.type{
-  margin-right: 4px;
-  margin-bottom: 0;
-}
-
-.execCommand-desc > p:last-child{
-  margin-bottom: 0;
-}
-
-
-/* Article - How-To-Copy-input */
-.how-to-copy-input .show-code-button{
-  margin-bottom: 0;
-}
-
-
-/* Article - How-To-Copy-Mix */
-.navigator-desc > p:last-child{
-  margin-bottom: 0;
-}
-
 
 
 /* 4-e.target.html */
