@@ -112,25 +112,18 @@
 
 
 /* 5-switch.html */
-/* common */
-.switch ul,
-.switch-syntax > p:first-of-type,
-.switch-precautions > ul{
-  padding: 10px 20px;
-}
-
-
-/* Article - Switch-syntax */
-.switch-syntax > p:first-of-type,
+/* Article - switch-precautions */
 .switch-precautions > p,
 .switch-precautions > ul{
   margin-bottom: 8px;
 }
 
+.switch-precautions > ul{
+  padding: 10px 20px;
+}
 
-/* Article - Switch */
-.switch > p{
-  margin-bottom: 16px;
+.switch-precautions > p:last-of-type{
+  margin-bottom: 0 !important;
 }
 
 

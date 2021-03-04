@@ -61,28 +61,15 @@ min-width >=576px  */
   }
 
 
-
-
-  /* Javascript-5-switch.html */
-  /* common */
-  .switch ul,
-  .switch-syntax > p:first-of-type,
-  .switch-precautions > ul{
-    padding: 15px 20px;
-  }
-
-
-  /* Article - Switch-syntax */
-  .switch-syntax > p:first-of-type,
+  /* 5-switch.html */
+  /* Article - switch-precautions */
   .switch-precautions > p,
   .switch-precautions > ul{
     margin-bottom: 16px;
   }
 
-
-  /* Article - Switch */
-  .switch > p{
-    margin-bottom: 24px;
+  .switch-precautions > ul{
+    padding: 15px 20px;
   }
 
 
@@ -271,26 +258,15 @@ min-width >=768px  */
   }
 
 
-  /* Javascript-5-switch.html */
-  /* common */
-  .switch ul,
-  .switch-syntax > p:first-of-type,
-  .switch-precautions > ul{
-    padding: 20px 40px;
-  }
-
-
-  /* Article - Switch-syntax */
-  .switch-syntax > p:first-of-type,
+  /* 5-switch.html */
+  /* Article - switch-precautions */
   .switch-precautions > p,
   .switch-precautions > ul{
     margin-bottom: 24px;
   }
 
-
-  /* Article - Switch */
-  .switch > p{
-    margin-bottom: 36px;
+  .switch-precautions > ul{
+    padding: 20px 40px;;
   }
 
 
