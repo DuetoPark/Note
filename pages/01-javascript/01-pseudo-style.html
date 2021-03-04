@@ -98,56 +98,68 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h1 class='main-title'>
-          <strong>🙈클릭 이벤트 진행 중, 가상요소의 스타일 변화🙈</strong>
-        </h1>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🙈</span>
+            클릭 이벤트 진행 중, 가상요소의 스타일 변화
+            <span class='main-title' aria-hidden="true">🙈</span>
+          </strong>
+        </h2>
 
-        <article class='pseudo-style'>
-          <h1 class='main-article-title'>문제와 해결</h1>
-          <div class='pseudo-style-problem'>
-            <h2 class='main-article-subtitle'>💩문제</h2>
-            <p>
-              css의 가상요소는(::after, ::before) DOM의 일부가 아니므로 직접 선택하여 조작할 수 없다.
-            </p>
-          </div>
+        <article class="pseudo-problem" aria-labelledby="pseudo-problem-title">
+          <h3 id="pseudo-problem-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">💩</span>
+            문제
+          </h3>
+          <p>
+            css의 가상요소는(::after, ::before) DOM의 일부가 아니므로 직접 선택하여 조작할 수 없다.
+          </p>
+        </article>
 
-          <div class='pseudo-style-solution'>
-            <h2 class='main-article-subtitle'>😎해결</h2>
-            <p>
-              CSS- 해당 요소에 새로운 스타일의 클래스를 재정의<br/>
-              Javascript- 해당 요소에 새로운 클래스 추가
-            </p>
+        <article class="pseudo-solution" aria-labelledby="pseudo-solution-title">
+          <h3 id="pseudo-solution-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">😎</span>
+            해결
+          </h3>
+          <p>
+            CSS- 해당 요소에 새로운 스타일의 클래스를 재정의<br/>
+            Javascript- 해당 요소에 새로운 클래스 추가
+          </p>
+        </article>
 
-            <h3 class='main-article-subtitle'>CSS</h3>
-            <pre class='main-article-pre background-white-radius'>
-              <code>
-                p::before {
-                  /* 스타일 */
-                }
+        <article class="pseudo-code" aria-labelledby="pseudo-code-title">
+          <h3 id="pseudo-code-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">😎</span>
+            코드
+          </h3>
+          <p>CSS코드는 다음과 같다.</p>
+          <pre class='main-article-pre background-white-radius'>
+            <code>
+              p::before {
+                /* 스타일 */
+              }
 
-                p.special::before{
-                  /* 새로운 스타일 */
-                }
-              </code>
-            </pre>
+              p.special::before{
+                /* 새로운 스타일 */
+              }
+            </code>
+          </pre>
+          <p>Javascript코드는 다음과 같다.</p>
+          <pre class='main-article-pre background-white-radius'>
+            <code>
+              function toggle () {
+                document.querySelector('p').classList.add('special');
+              }
 
-            <h3 class='main-article-subtitle'>Javascript</h3>
-            <pre class='main-article-pre background-white-radius'>
-              <code>
-                function toggle () {
-                  document.querySelector('p').classList.add('special');
-                }
+              function clickHandler () {
+                toggle();
+              }
 
-                function clickHandler () {
-                  toggle();
-                }
-
-                document.querySelector('p').addEventListener('click', clickHandler);
-              </code>
-            </pre>
-          </div>
+              document.querySelector('p').addEventListener('click', clickHandler);
+            </code>
+          </pre>
         </article>
       </section>
     </main>
