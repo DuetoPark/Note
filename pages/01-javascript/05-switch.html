@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='ko'>
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -99,14 +99,21 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h1 class='main-title'>
-          <strong>👽switch👽</strong>
-        </h1>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">👽</span>
+            switch
+            <span class='main-title' aria-hidden="true">👽</span>
+          </strong>
+        </h2>
 
-        <article class='switch'>
-          <h2 class='main-article-title'>🙌개요</h2>
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🙌</span>
+            개요
+          </h3>
           <p>
             클론 코딩하면서, 많이 배운다.<br/>
             자바 스크립트는 하기 싫은데 막상 하면 재밌다.<br/>
@@ -114,89 +121,115 @@
             진짜 큰 똥 싼 느낌.<br/>
             어쨌든, 이번에는 스위치를 사용해봤다.<br/>
           </p>
+        </article>
 
-          <h2 class='main-article-subtitle'>🙏이것만은 가져가고 만다</h2>
-          <ul class='main-article-list background-white-radius'>
-            <li class='main-article-list-items hyphen'>
+        <article class='goal' aria-labelledby="goal-title">
+          <h3 id="goal-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🙏</span>
+            이것만은 가져가고 만다
+          </h3>
+          <ul class='main-article-list' aria-label="공부 목표">
+            <li class='main-article-list-items hyphen' role="none">
               스위치 개념 이해
             </li>
-            <li class='main-article-list-items hyphen'>
+            <li class='main-article-list-items hyphen' role="none">
               스위치 문법
             </li>
           </ul>
         </article>
 
-        <article class='switch-syntax'>
-          <h1 class='main-article-title'>💾Syntax</h1>
+        <article class='switch-syntax' aria-labelledby="switch-syntax-title">
+          <h3 id="switch-syntax-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💾</span>
+            문법
+          </h3>
+          <pre class="main-article-pre background-white-radius">
+            <code>
+              const <strong class='order'>expression</strong> = <span class='error'>'value2'</span>;</br>
+              switch (<span>expression</span>) {
 
-          <p class='background-white-radius'>
-            const <span class='text-blue'>expression</span> = <span class='text-red'>'value2'</span>;</br>
-            switch (<span>expression</span>) {</br>
-              case <span class='text-red'>value1</span>:</br>
-                원하는 동작</br>
-                [break;]</br>
-              case <span class='text-red'>value2</span>:</br>
-                원하는 동작</br>
-                [break;]</br>
-              ...</br>
-              case <span class='text-red'>valueN</span>:</br>
-                원하는 동작</br>
-                [break;]</br>
-              default:</br>
-                원하는 동작</br>
-                [break;]</br>
-            }
-          </p>
+                case <span class='error'>value1</span>:
+                  // 원하는 동작
+                  [break;]
 
-          <p>
-            스위치의 케이스 전체를 중괄호로 묶는다.</br>
-            break이나 default는 생략해도 된다.
-          </p>
-          </div>
+                case <span class='error'>value2</span>:
+                  // 원하는 동작
+                  [break;]
+
+                ...
+
+                case <span class='error'>valueN</span>:
+                  // 원하는 동작
+                  [break;]
+
+                default:
+                  // 원하는 동작
+                  [break;]
+              }
+            </code>
+          </pre>
         </article>
 
-        <article class='switch-expression'>
-          <h1 class='main-article-title'>📺expression</h1>
-
-          <p>
-            원하는 케이스를 선택할 때 사용한다.</br>
-            case clause와 동일한 값을 넣으면 해당 케이스 안의 내용을 실행한다.</br>
-            clause와 매칭되는 것이 없으면, default 안의 내용을 실행한다.</br>
-            </br>
-            리액트에서, 만들어놓은 컴포넌트를 해당 페이지에 선언해서 쓰는 것과 유사하다.
-          </p>
-          </div>
+        <article class='switch-syntax-desc' aria-labelledby="switch-syntax-desc-title">
+          <h3 id="switch-syntax-desc-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">📺</span>
+            문법 해석
+          </h3>
+          <dl class="main-article-dl" aria-label="문법 해석">
+            <div>
+              <dt class="main-article-dt" aria-label="expression">
+                expression
+              </dt>
+              <dd class="main-article-dd">
+                원하는 케이스를 선택할 때 사용한다.
+              </dd>
+              <dd class="main-article-dd">
+                case clause와 동일한 값을 넣으면 해당 케이스 안의 내용을 실행한다.
+              </dd>
+              <dd class="main-article-dd">
+                clause와 매칭되는 것이 없으면, default 안의 내용을 실행한다.
+              </dd>
+              <dd class="main-article-dd">
+                리액트에서, 만들어놓은 컴포넌트를 해당 페이지에 선언해서 쓰는 것과 유사하다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="case clause">
+                case clause
+              </dt>
+              <dd class="main-article-dd">
+                케이스를 구분하는 용도다. 조건문의 조건부와 비슷하다.
+              </dd>
+              <dd class="main-article-dd">
+                큰 따옴표로 묶어주며, 각각의 케이스는 엔터로 구분한다.
+              </dd>
+            </div>
+          </dl>
         </article>
 
-        <article class='switch-case-clause'>
-          <h1 class='main-article-title'>📞case clause</h1>
-
-          <p>
-            케이스를 구분하는 용도다. 조건문의 조건부와 비슷하다.</br>
-            큰 따옴표로 묶어주며, 각각의 케이스는 엔터로 구분한다.</br>
-            </br>
-          </p>
-          </div>
-        </article>
-
-        <article class='switch-precautions'>
-          <h2 class="main-article-title">📼주의 Mayday!!</h2>
-
+        <article class='switch-precautions' aria-labelledby="switch-precautions-title">
+          <h3 id="switch-precautions-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">📼</span>
+            주의 Mayday!!
+          </h3>
           <p>
             스위치에서 조심해야 될 부분이 있다.
           </p>
-
-          <ul class='main-article-list background-white-radius'>
-            <li class='main-article-list-items hyphen'>case clause 숫자값</li>
-            <li class='main-article-list-items hyphen'>반복문</li>
-            <li class='main-article-list-items hyphen'>변수</li>
+          <ul class='main-article-list background-white-radius' aria-label="주의할 점">
+            <li class='main-article-list-items hyphen' aria-label="case clause 숫자값">
+              case clause 숫자값
+            </li>
+            <li class='main-article-list-items hyphen' aria-label="반복문">
+              반복문
+            </li>
+            <li class='main-article-list-items hyphen' aria-label="변수">
+              변수
+            </li>
           </ul>
-
           <p>
             <span class="underline">값을 숫자로 지정할 때에도 따옴표로 묶어주어야 한다.</span></br>
-            어떻게 알았는지 물어보지 않았으면 좋겠다.</br>
+            왜 그런지 알고싶지 않았다.</br>
           </p>
-
           <p>
             반복문의 조건부를 제대로 적이 않았더니, 웹 페이지가 case에 선언한 동작을 계속 반복했다.</br>
             이러면, 새로고침이 안 되고 창도 닫히지 않는다.</br>
@@ -204,7 +237,6 @@
             괜히 헛소리하면 릴레이 잔소리하는 우리 가족같았다. 등에 땀이 나고 눈물이 줄줄.</br>
             <strong class="underline">꼭 동작을 확인하기 전에, 반복문의 조건부를 확인하자</strong>
           </p>
-
           <p>
             각각의 케이스에서 변수선언 할 때에는, <strong class="underline">변수명이 겹치지 않도록 한다.</strong></br>
             </br>
@@ -218,7 +250,6 @@
 
     <footer class='note-footer'>
       <div class='container'>
-        <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
           cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/switch'>
           <strong class='note-footer-reference-name'>
