@@ -98,15 +98,21 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h2 class='main-title'>
-          <strong>🏃padding-top: 100%;🏃</strong>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🏃</span>
+            padding-top: 100%;
+            <span class='main-title' aria-hidden="true">🏃</span>
+          </strong>
         </h2>
 
-        <article class='padding-top-100-summary'>
-          <h3 class='main-article-title'>👪개요</h3>
-
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👪</span>
+            개요
+          </h3>
           <p>
             나는 변태다.<br/>
             그래서 이상한 시도를 많이 해본다.<br/>
@@ -118,12 +124,18 @@
           </p>
         </article>
 
-        <article class='padding-top-100'>
-          <h3 class='main-article-title'>👯padding-top</h3>
-
+        <article class='padding-top-100' aria-labelledby="padding-top-100-title">
+          <h3 id="padding-top-100-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👯</span>
+            padding-top
+          </h3>
           <p>
-            공식 문서에 따르면,
-            padding-top이나 padding-bottom값을 퍼센트로 지정할 땐 <strong> 알맹이의 껍질을 기준</strong>으로 계산된다고 나와있다.
+            공식 문서에 따르면,<br/>
+            padding-top이나 padding-bottom값을 퍼센트로 지정할 땐
+            <strong class="error">
+              알맹이의 껍질을 기준
+            </strong>
+            으로 계산된다고 나와있다.
           </p>
           <p>
             현재 텍스트를 감싸는 요소. 혹은, 현재 요소를 감싸는 부모요소를 기준으로 하는구나 라고 생각하면 되겠다.
@@ -132,8 +144,7 @@
             더 정확히 말하자면, 부모요소의 width이다.
           </p>
           <p>
-            그래서 component(구성요소)에다가 {padding-top: 80%;}라고 설정하면,
-            부모요소의 width의 80%만큼이 padding-top되는 것이다.
+            그래서 component(구성요소)에다가 {padding-top: 80%;}라고 설정하면, 부모요소의 width의 80%만큼이 padding-top되는 것이다.
           </p>
         </article>
       </section>
@@ -141,7 +152,6 @@
 
     <footer class='note-footer'>
       <div class='container'>
-        <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
           cite='https://stackoverflow.com/questions/40106955/how-does-padding-top-100-work'>
           <strong class='note-footer-reference-name'>
