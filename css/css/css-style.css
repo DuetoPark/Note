@@ -360,32 +360,20 @@
 
 /* 8-transform-origin.html */
 /* Article - transform-origin */
-.transform-origin > p,
-.transform-origin-syntax,
-.transform-origin-example > div,
-.transform-origin-example-start{
-  margin-bottom: 16px;
+.transform-origin-syntax > p{
+  margin-bottom: 8px;
 }
 
 /* Article - transform-origin-example */
-.transform-origin-example > div:last-child{
-  margin-bottom: 0;
-}
-
 .transform-origin-example-start{
   display: block;
   width: 150px;
   height: 40px;
   margin: 0 auto;
+  margin-bottom: 4px;
   border: 1px solid #727272;
   background-color: #FFF;
   cursor: pointer;
-}
-
-.transform-origin-example-start:hover,
-.transform-origin-example-start:active,
-.transform-origin-example-start:focus{
-  border: 1px solid #727272;
 }
 
 .transform-origin-image{

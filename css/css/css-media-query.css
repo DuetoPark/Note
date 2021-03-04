@@ -166,18 +166,10 @@ min-width >=576px  */
   }
 
 
-
   /* 8-transform-origin.html */
   /* Article - transform-origin */
-  .transform-origin > p,
-  .transform-origin-syntax,
-  .transform-origin-example > div,
-  .transform-origin-example-start{
-    margin-bottom: 24px;
-  }
-
-  .transform-origin-example > div{
-    text-align: center;
+  .transform-origin-syntax > p{
+    margin-bottom: 16px;
   }
 
   /* Article - transform-origin-example */
@@ -378,13 +370,9 @@ min-width >=768px  */
 
   /* 8-transform-origin.html */
   /* Article - transform-origin */
-  .transform-origin > p,
-  .transform-origin-syntax,
-  .transform-origin-example > div,
-  .transform-origin-example-start{
-    margin-bottom: 36px;
+  .transform-origin-syntax > p{
+    margin-bottom: 24px;
   }
-
 
   /* Article - transform-origin-example */
   .transform-origin-image{
