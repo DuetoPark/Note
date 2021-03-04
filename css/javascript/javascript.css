@@ -1,20 +1,11 @@
 /* 1-Pseudo-Style.html */
-/* Article - Pseudo-Style */
-.pseudo-style > div{
-  margin-bottom: 16px;
+/* Article - pseudo-code */
+.pseudo-code pre{
+  margin-bottom: 8px;
 }
 
-.pseudo-style > div:last-child{
-  margin-bottom: 0;
-}
-
-.pseudo-style-solution > p,
-.pseudo-style-solution > pre{
-  margin-bottom: 16px;
-}
-
-.pseudo-style-solution > pre:last-child{
-  margin-bottom: 0;
+.pseudo-code pre:last-child{
+  margin-bottom: 0 !important;
 }
 
 

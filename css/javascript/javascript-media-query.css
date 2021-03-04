@@ -1,15 +1,10 @@
 /* Tablet Style
 min-width >=576px  */
 @media screen and (min-width:576px) {
-  /* Javascript-1-Pseudo-Style.html */
-  /* Article - Pseudo-Style */
-  .pseudo-style > div{
-    margin-bottom: 24px;
-  }
-
-  .pseudo-style-solution > p,
-  .pseudo-style-solution > pre{
-    margin-bottom: 24px;
+  /* 1-Pseudo-Style.html */
+  /* Article - pseudo-code */
+  .pseudo-code pre{
+    margin-bottom: 16px;
   }
 
 
@@ -281,17 +276,11 @@ min-width >=576px  */
 /* Desktop Style
 min-width >=768px  */
 @media screen and (min-width:768px) {
-  /* Javascript-1-Pseudo-Style.html */
-  /* Article - Pseudo-Style */
-  .pseudo-style > div{
-    margin-bottom: 36px;
+  /* 1-Pseudo-Style.html */
+  /* Article - pseudo-code */
+  .pseudo-code pre{
+    margin-bottom: 24px;
   }
-
-  .pseudo-style-solution > p,
-  .pseudo-style-solution > pre{
-    margin-bottom: 36px;
-  }
-
 
 
   /* Javascript-2-Toggle.html */
