@@ -117,11 +117,12 @@ min-width >=576px  */
   }
 
 
-  /* 5-Pseudo-Opacity.html */
-  /* Article - How-To-Set-Pseudo-Opacity */
+  /* Article - what-we-need
+     Article - How-To-Set-Pseudo-Opacity */
   .pseudo-attribute-type,
-  .how-to-set-pseudo-opacity .main-article-dl{
-    margin-bottom: 24px;
+  .how-to-set-pseudo-opacity > p,
+  .how-to-set-pseudo-opacity > .main-article-dl{
+    margin-bottom: 16px;
   }
 
   .pseudo-opacity-learned > ul.main-article-list.background-white-radius{
@@ -317,10 +318,12 @@ min-width >=768px  */
 
 
   /* 5-Pseudo-Opacity.html */
-  /* Article - How-To-Set-Pseudo-Opacity */
+  /* Article - what-we-need
+     Article - How-To-Set-Pseudo-Opacity */
   .pseudo-attribute-type,
-  .how-to-set-pseudo-opacity .main-article-dl{
-    margin-bottom: 32px;
+  .how-to-set-pseudo-opacity > p,
+  .how-to-set-pseudo-opacity > .main-article-dl{
+    margin-bottom: 24px;
   }
 
   .pseudo-opacity-learned > ul.main-article-list.background-white-radius{
