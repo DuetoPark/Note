@@ -12,15 +12,23 @@
   margin-bottom: 8px;
 }
 
-/* Article - branch-necessity
+/* Article - git-push-cancel */
+.git-push-cancel > ul{
+  padding: 10px 20px;;
+}
+
+/* Article - git-push-cancel
+   Article - branch-necessity
    Article - merge-branch */
+.git-push-cancel > p,
+.git-push-cancel > ul,
 .branch-necessity p,
 .merge-branch p{
   margin-bottom: 8px;
 }
 
 
-/* GIT-3-error.html */
+/* 3-error.html */
 /* Article - merge-conflict */
 .merge-rebase-diff-image{
   width: 100%;

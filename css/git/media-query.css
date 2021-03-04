@@ -13,12 +13,27 @@ min-width >=576px  */
     margin-bottom: 16px;
   }
 
-  /* Article - branch-necessity
+  /* Article - git-push-cancel */
+  .git-push-cancel > p,
+  .git-push-cancel > ul{
+    margin-bottom: 16px;
+  }
+
+  /* Article - git-push-cancel */
+  .git-push-cancel > ul{
+    padding: 15px 20px;;
+  }
+
+  /* Article - git-push-cancel
+     Article - branch-necessity
      Article - merge-branch */
+  .git-push-cancel > p,
+  .git-push-cancel > ul,
   .branch-necessity p,
   .merge-branch p{
     margin-bottom: 16px;
   }
+
 
   /* 3-error.html */
   /* Article - merge-conflict */
@@ -44,8 +59,16 @@ min-width >=768px  */
     margin-bottom: 24px;
   }
 
-  /* Article - branch-necessity
+  /* Article - git-push-cancel */
+  .git-push-cancel > ul{
+    padding: 20px 40px;;
+  }
+
+  /* Article - git-push-cancel
+     Article - branch-necessity
      Article - merge-branch */
+  .git-push-cancel > p,
+  .git-push-cancel > ul,
   .branch-necessity p,
   .merge-branch p{
     margin-bottom: 24px;
