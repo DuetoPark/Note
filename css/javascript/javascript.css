@@ -457,3 +457,15 @@
 .join-syntax-paragragh{
   margin-bottom: 8px;
 }
+
+
+/* 14-딕셔너리-자료구조.html */
+/* Article - dictionary */
+.dictionary p,
+.dictionary pre{
+  margin-bottom: 8px;
+}
+
+.dictionary p:last-child{
+  margin-bottom: 0 !important;
+}

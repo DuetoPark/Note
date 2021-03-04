@@ -260,6 +260,14 @@ min-width >=576px  */
   .join-syntax-paragragh{
     margin-bottom: 16px;
   }
+
+
+  /* 14-딕셔너리-자료구조.html */
+  /* Article - dictionary */
+  .dictionary p,
+  .dictionary pre{
+    margin-bottom: 16px;
+  }
 }
 
 
@@ -501,6 +509,14 @@ min-width >=768px  */
 
   .split-syntax-paragragh,
   .join-syntax-paragragh{
+    margin-bottom: 24px;
+  }
+
+
+  /* 14-딕셔너리-자료구조.html */
+  /* Article - dictionary */
+  .dictionary p,
+  .dictionary pre{
     margin-bottom: 24px;
   }
 }
