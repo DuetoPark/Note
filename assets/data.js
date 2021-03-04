@@ -14,11 +14,12 @@ let state = {
       {id: "04", href: "line-break"},
       {id: "05", href: "pseudo-opacity"},
       {id: "06", href: "width"},
-      {id: "07", href: "main-tag-IE"},
+      {id: "07", href: "main-tag"},
       {id: "08", href: "transform-origin"},
       {id: "09", href: "padding-top"},
       {id: "10", href: "direction"},
       {id: "11", href: "텍스트숨기기"},
+      {id: "12", href: "미디어쿼리-에러"},
     ],
     javascript: [
       {id: "01", href: "pseudo-style"},
