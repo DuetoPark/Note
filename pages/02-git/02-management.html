@@ -394,6 +394,71 @@
           </dl>
         </article>
 
+        <article class="git-push-cancel" aria-labelledby="git-push-cancel-title">
+          <h3 id="git-push-cancel-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌛</span>
+            git push 취소하기
+          </h3>
+          <p>
+            git push를 잘못했을 때 자신의 로컬 내용을 remote에 강제로 덮어쓰는 방법이다.<br/>
+            두 가지 주의할 점이 있다.
+          </p>
+          <ul class="background-white-radius" aria-label="주의할 점">
+            <li class="main-article-list-items hyphen" role="none">
+              git push를 되돌리면, 해당 커밋 이후의 모든 정보는 사라진다.
+            </li>
+            <li class="main-article-list-items hyphen" role="none">
+              협업중이라면 동기화 문제가 발생하므로 팀원과 상의 한 후 진행한다.
+            </li>
+          </ul>
+          <dl class="main-article-dl" aria-label="취소방법">
+            <div>
+              <dt class="main-article-dt" aria-label="가장 최근의 커밋을 취소한다.">
+                가장 최근의 커밋을 취소한다.
+              </dt>
+              <dd class="main-article-dd">
+                <strong class="order">
+                  git reset HEAD^
+                </strong>
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="원하는 시점으로 워킹 디렉토리를 되돌린다.">
+                원하는 시점으로 워킹 디렉토리를 되돌린다.
+              </dt>
+              <dd class="main-article-dd">
+                깃허브에서 해당 디렉토리의 커밋 아이디를 복사한다.
+              </dd>
+              <dd class="main-article-dd">
+                git bash에
+                <strong class="order">
+                  git reset 커밋 아이디
+                </strong>
+                를 입력한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="되돌아간 시점에서 add와 커밋 메세지를 입력한다.">
+                되돌아간 시점에서 add와 커밋 메세지를 입력한다.
+              </dt>
+              <dd class="main-article-dd order">
+                git add 파일이름
+              </dd>
+              <dd class="main-article-dd order">
+                git commit -m "커밋 메세지"
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="강제로 push한다.">
+                강제로 push한다.
+              </dt>
+              <dd class="main-article-dd order">
+                git push -f origin 브랜치명
+              </dd>
+            </div>
+          </dl>
+        </article>
+
         <article aria-labelledby="git-revert">
           <h3 id="git-revert" class='main-article-title'>
             <span class='main-article-title' aria-hidden="true">🌜</span>
@@ -555,6 +620,18 @@
 
     <footer class='note-footer'>
       <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://velog.io/@hidaehyunlee/Git-add-commit-push-%EC%B7%A8%EC%86%8C%ED%95%98%EA%B8%B0'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "hidaehunlee velog - Git add, commit, push 취소하기", velog, 2021년 3월 4일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://velog.io/@hidaehyunlee/Git-add-commit-push-%EC%B7%A8%EC%86%8C%ED%95%98%EA%B8%B0'>
+              https://velog.io/@hidaehyunlee/Git-add-commit-push-%EC%B7%A8%EC%86%8C%ED%95%98%EA%B8%B0
+            </a>
+          </cite>
+        </blockquote>
+
         <blockquote class='note-footer-reference'
           cite='https://gist.github.com/rxaviers/7360908'>
           <strong class='note-footer-reference-name'>
