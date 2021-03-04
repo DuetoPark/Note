@@ -129,11 +129,10 @@ min-width >=576px  */
   }
 
 
-
   /* 6-width.html */
   /* common */
   .width-calc > p,
-  .width-calc-image-group,
+  .width-calc > ol,
   .width-group > p,
   .width-group > ul{
     margin-bottom: 16px;
@@ -151,7 +150,6 @@ min-width >=576px  */
     margin: 0 auto;
     margin-bottom: 24px;
   }
-
 
 
   /* 7-main-tag-IE.html */
@@ -330,11 +328,10 @@ min-width >=768px  */
   }
 
 
-
   /* 6-width.html */
   /* common */
   .width-calc > p,
-  .width-calc-image-group,
+  .width-calc > ol,
   .width-group > p,
   .width-group > ul{
     margin-bottom: 24px;
@@ -353,7 +350,6 @@ min-width >=768px  */
   }
 
 
-
   /* 7-main-tag-IE.html */
   /* Article - Main-tag-max-width */
   .main-tag-max-width > p{
@@ -363,7 +359,6 @@ min-width >=768px  */
   .main-tag-max-width > ul{
     padding: 20px 40px;
   }
-
 
 
   /* 8-transform-origin.html */

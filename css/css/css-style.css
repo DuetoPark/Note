@@ -309,11 +309,10 @@
 }
 
 
-
 /* 6-width.html */
 /* common */
 .width-calc > p,
-.width-calc-image-group,
+.width-calc > ol,
 .width-group > p,
 .width-group > ul{
   margin-bottom: 8px;
