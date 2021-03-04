@@ -97,14 +97,21 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h2 class='main-title'>
-          <strong>🌹스르륵 나타나는 가상요소🌹</strong>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🌹</span>
+            스르륵 나타나는 가상요소
+            <span class='main-title' aria-hidden="true">🌹</span>
+          </strong>
         </h2>
 
-        <article class='pseudo-opacity'>
-          <h3 class='main-article-title'>🌲개요</h3>
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌲</span>
+            개요
+          </h3>
           <p>
             가상요소는 transition을 해도 animation을 해도 스르륵 효과가 먹히지 않길래, 이 친구는 거친 인생을 살아왔구나 라고 결론 지어왔었다.
           </p>
@@ -115,62 +122,91 @@
           </p>
         </article>
 
-        <article class='how-to-set-pseudo-opacity'>
-          <h3 class='main-article-title'>
-            🍄opacity, transition, hover
+        <article class='what-we-need' aria-labelledby="what-we-need-title">
+          <h3 id="what-we-need-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌴</span>
+            필요한 속성
           </h3>
-
-          <strong class='main-article-subtitle'>🌴필요한 속성</strong>
-          <ol class='main-article-list pseudo-attribute-type'>
-            <li class='main-article-list-items type'>content</li>
-            <li class='main-article-list-items type'>opacity</li>
-            <li class='main-article-list-items type'>transition</li>
+          <ol class='main-article-list pseudo-attribute-type' aria-label="속성">
+            <li class='main-article-list-items type' role="none">
+              content
+            </li>
+            <li class='main-article-list-items type' role="none">
+              opacity
+            </li>
+            <li class='main-article-list-items type' role="none">
+              transition
+            </li>
           </ol>
-
-          <div>
-            <h4 class='main-article-subtitle'>🌴순서</h4>
-            <strong class='main-article-subtitle order'>
-              element::after
-            </strong>
-            <dl class='main-article-dl'>
-              <div>
-                <dt class='main-article-dt'>content</dt>
-                <dd class='main-article-dd'>가상요소를 HTML에 출력하기 위해서 필요한 속성</dd>
-                <dd class='main-article-dd'>안 넣으면, transition과 animation이 먹히지 않는다</dd>
-                <dd class='main-article-dd'>content: '';으로 지정</dd>
-              </div>
-              <div>
-                <dt class='main-article-dt'>opacity</dt>
-                <dd class='main-article-dd'>가상요소의 투명도를 조절하는 속성</dd>
-                <dd class='main-article-dd'>transition 속성과 함께 사용하면 스르륵 나타나는 효과를 줄 수 있다</dd>
-                <dd class='main-article-dd'>속성값을 0으로 둔다</dd>
-              </div>
-              <div>
-                <dt class='main-article-dt'>transition</dt>
-                <dd class='main-article-dd'>요소가 부드럽게 전환되도록 만드는 속성</dd>
-                <dd class='main-article-dd'>opacity 속성값이 바뀜에 따라 부드럽게 전환한다</dd>
-              </div>
-            </dl>
-
-            <strong class='main-article-subtitle order'>
-              element.hover::after
-            </strong>
-            <p>
-              스타일 지정 후에 opacity 속성값을 1로 설정한다.
-            </p>
-          </div>
         </article>
 
-        <article class='pseudo-opacity-learned'>
-          <h3 class='main-article-title'>🐅배운점</h3>
-          <ul class='main-article-list background-white-radius'>
-            <li class='main-article-list-items hyphen'>
+        <article class='how-to-set-pseudo-opacity' aria-labelledby="how-to-set-pseudo-opacity-title">
+          <h3 id="how-to-set-pseudo-opacity-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌴</span>
+            순서
+          </h3>
+          <p>
+            다음의 속성 지정 대상은 요소의 가상요소이다.(element::after)
+          </p>
+          <dl class='main-article-dl' aria-label="가상요소에 지정할 속성">
+            <div>
+              <dt class='main-article-dt order' aria-label="content">
+                content
+              </dt>
+              <dd class='main-article-dd'>
+                가상요소를 HTML에 출력하기 위해서 필요한 속성
+              </dd>
+              <dd class='main-article-dd'>
+                안 넣으면, transition과 animation이 먹히지 않는다
+              </dd>
+              <dd class='main-article-dd'>
+                content: '';으로 지정
+              </dd>
+            </div>
+            <div>
+              <dt class='main-article-dt order' aria-label="opacity">
+                opacity
+              </dt>
+              <dd class='main-article-dd'>
+                가상요소의 투명도를 조절하는 속성
+              </dd>
+              <dd class='main-article-dd'>
+                transition 속성과 함께 사용하면 스르륵 나타나는 효과를 줄 수 있다.
+              </dd>
+              <dd class='main-article-dd'>
+                속성값을 0으로 둔다.
+              </dd>
+            </div>
+            <div>
+              <dt class='main-article-dt order' aria-label="transition">
+                transition
+              </dt>
+              <dd class='main-article-dd'>
+                요소가 부드럽게 전환되도록 만드는 속성
+              </dd>
+              <dd class='main-article-dd'>
+                opacity 속성값이 바뀜에 따라 부드럽게 전환한다
+              </dd>
+            </div>
+          </dl>
+          <p>
+            추가로, element.hover::after(요소가 호버될 때 가상요소)에 스타일을 지정하고나서 opacity 속성값을 1로 설정한다.
+          </p>
+        </article>
+
+        <article class='pseudo-opacity-learned' aria-labelledby="pseudo-opacity-learned-title">
+          <h3 id="pseudo-opacity-learned-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐅</span>
+            배운점
+          </h3>
+          <ul class='main-article-list background-white-radius' aria-label="배운점">
+            <li class='main-article-list-items hyphen' role="none">
               가상요소에 효과를 줄 때에는 기본 틀을 잘 지켜야 한다
             </li>
-            <li class='main-article-list-items hyphen'>
+            <li class='main-article-list-items hyphen' role="none">
               구글링에 너무 의존하지 않는것도 필요하다
             </li>
-            <li class='main-article-list-items hyphen'>
+            <li class='main-article-list-items hyphen' role="none">
               빨리 포기하면 죽을때까지 답을 모르게된다
             </li>
           </ul>
@@ -180,7 +216,6 @@
 
     <footer class='note-footer'>
       <div class='container'>
-        <strong>마지막 수정: 2021년 2월 25일</strong>
         <blockquote class='note-footer-reference'
           cite='https://gist.github.com/rxaviers/7360908'>
           <strong class='note-footer-reference-name'>
