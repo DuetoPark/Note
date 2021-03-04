@@ -17,3 +17,10 @@
 .no-response-solution > p:last-of-type{
   margin-bottom: 0 !important;
 }
+
+
+/* 2-단축키.html */
+/* Article - find-file */
+.find-file > p{
+  margin-bottom: 8px;
+}

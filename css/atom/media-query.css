@@ -15,6 +15,13 @@ min-width >=576px  */
   .no-response-solution > ol{
     padding: 15px 20px;
   }
+
+
+  /* 2-단축키.html */
+  /* Article - find-file */
+  .find-file > p{
+    margin-bottom: 16px;
+  }
 }
 
 /* Desktop Style
@@ -33,5 +40,12 @@ min-width >=768px  */
   .no-response-reason > ol,
   .no-response-solution > ol{
     padding: 20px 40px;
+  }
+
+
+  /* 2-단축키.html */
+  /* Article - find-file */
+  .find-file > p{
+    margin-bottom: 24px;
   }
 }
