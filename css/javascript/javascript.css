@@ -263,3 +263,18 @@
   height: auto;
   margin: 0 auto;
 }
+
+
+/* 19-include.html */
+/* Article - includes
+   Article - includes-example */
+.includes > p,
+.includes-example > p,
+.includes-example > pre{
+  margin-bottom: 8px;
+}
+
+.includes > p:last-of-type,
+.includes-example > p:last-of-type{
+  margin-bottom: 0 !important;
+}

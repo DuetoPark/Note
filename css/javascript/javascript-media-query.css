@@ -186,6 +186,16 @@ min-width >=576px  */
   .value-textContent-image{
     width: 300px;
   }
+
+
+  /* 19-include.html */
+  /* Article - includes
+     Article - includes-example */
+  .includes > p,
+  .includes-example > p,
+  .includes-example > pre{
+    margin-bottom: 16px;
+  }
 }
 
 
@@ -356,6 +366,15 @@ min-width >=768px  */
   /* 16-find.html */
   /* Article - find-syntax */
   .find-syntax-paragragh{
+    margin-bottom: 24px;
+  }
+
+  /* 19-include.html */
+  /* Article - includes
+     Article - includes-example */
+  .includes > p,
+  .includes-example > p,
+  .includes-example > pre{
     margin-bottom: 24px;
   }
 }
