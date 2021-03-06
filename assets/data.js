@@ -40,6 +40,11 @@ let state = {
       {id: "16", href: "find"},
       {id: "17", href: "indexof"},
       {id: "18", href: "value-textcontent"},
+      {id: "19", href: "includes"},
+      {id: "20", href: "event"},
+      {id: "21", href: "math"},
+      {id: "22", href: "concat"},
+      {id: "23", href: "filter"},
     ],
   },
 };
