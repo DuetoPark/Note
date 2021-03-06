@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="javascript, Math 객체"/>
+    <meta name="description" content="수학적인 속성과 메서드를 가진 Math 객체에 대해서 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>Math 객체</title>
+
+    <!-- Math 객체 -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/common/font.css">
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript-media-query.css">
+
+    <!-- 데이터 -->
+    <script src='../../assets/data.js'></script>
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list" role="menu">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-js" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🐑</span>
+            Math 객체
+            <span class='main-title' aria-hidden="true">🐑</span>
+          </strong>
+        </h2>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐸</span>
+            개요
+          </h3>
+          <p>
+            절대값, 올림, 반올림, 내림을 담당하는 메소드를 찾다가 알게된 Math 객체를 공부해보자.
+          </p>
+        </article>
+
+        <article class="math" aria-labelledby="math-title">
+          <h3 id="math-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">🐶</span>
+            정의
+          </h3>
+          <p>
+            수학과 관련한 메서드를 가진 내장 객체다. 함수 객체는 아니다.
+          </p>
+          <p>
+            <strong class="error">
+              다른 전역 객체와 달리 Math는 생성자가 아니다.
+            </strong>
+            파이, 사인, 절대값등의 값을 호출할 수 있다.
+          </p>
+          <p>
+            Number 자료형만 지원한다.
+          </p>
+        </article>
+
+        <article class="math-method" aria-labelledby="math-method-title">
+          <h3 id="math-method-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">🐯</span>
+            자주 사용하는 메소드
+          </h3>
+          <dl class="main-article-dl" aria-label="메소드">
+            <div>
+              <dt class="main-article-dt" aria-labelledby="abs">
+                <strong id="abs" class="order">
+                  Math.abs(x)
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                숫자의 절댓값을 반환한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-labelledby="ceil">
+                <strong id="ceil" class="order">
+                  Math.ceil(x)
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                인수의 올림값을 반환한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-labelledby="floor">
+                <strong id="floor" class="order">
+                  Math.floor(x)
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                인수의 내림값을 반환한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-labelledby="max">
+                <strong id="max" class="order">
+                  Math.max([x[, y[, …]]])
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                인수 중에 제일 큰 수를 반환한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-labelledby="min">
+                <strong id="min" class="order">
+                  Math.min([x[, y[, …]]])
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                인수 중에 제일 작은 수를 반환한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-labelledby="pow">
+                <strong id="pow" class="order">
+                  Math.pow(x, y)
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                x의 y 제곱을 반환한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-labelledby="random">
+                <strong id="random" class="order">
+                  Math.abs(x) Math.random()
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                0과 1 사이의 난수를 반환한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-labelledby="round">
+                <strong id="round" class="order">
+                  Math.round(x)
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                인수의 반올림값을 반환한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-labelledby="sqrt">
+                <strong id="sqrt" class="order">
+                  Math.sqrt(x)
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                인수의 제곱근을 반환한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-labelledby="trunc">
+                <strong id="trunc" class="order">
+                  Math.trunc(x)
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                숫자의 정수 부분을 반환한다.
+              </dd>
+            </div>
+          </dl>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - Math", MDN, 2021년 3월 6일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math'>
+              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github, 2021년 3월 6일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <!-- 요소 생성 -->
+    <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
+    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/app/modal.js"></script>
+  </body>
+</html>
