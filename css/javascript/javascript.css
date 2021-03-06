@@ -286,10 +286,8 @@
 }
 
 
-/* 20-event.html */
-/* Article - submit-event */
-.submit-event > p,
-.main-article-dd:last-child > p,
-.contextmenu-event > p{
+/* 22-concat.html */
+/* Article - concat-syntax */
+.concat-syntax > p{
   margin-bottom: 8px;
 }

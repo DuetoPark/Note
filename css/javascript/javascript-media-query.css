@@ -207,6 +207,13 @@ min-width >=576px  */
   .contextmenu-event > p{
     margin-bottom: 16px;
   }
+
+
+  /* 22-concat.html */
+  /* Article - concat-syntax */
+  .concat-syntax > p{
+    margin-bottom: 16px;
+  }
 }
 
 
@@ -398,6 +405,13 @@ min-width >=768px  */
   .submit-event > p,
   .main-article-dd:last-child > p,
   .contextmenu-event > p{
+    margin-bottom: 24px;
+  }
+
+
+  /* 22-concat.html */
+  /* Article - concat-syntax */
+  .concat-syntax > p{
     margin-bottom: 24px;
   }
 }
