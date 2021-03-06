@@ -52,11 +52,13 @@ min-width >=576px  */
   /* Article - property
      Article - nextElementSibling
      Article - children
-     Article - parentElement */
+     Article - parentElement
+     Article - currentTarget-diff */
   .property p,
   .nextElementSibling p,
   .children p,
-  .parentElement p{
+  .parentElement p
+  .currentTarget-diff p{
     margin-bottom: 16px;
   }
 
@@ -255,12 +257,14 @@ min-width >=768px  */
   /* Article - property
      Article - nextElementSibling
      Article - children
-     Article - parentElement */
+     Article - parentElement
+     Article - currentTarget-diff */
   .property p,
   .nextElementSibling p,
   .children p,
-  .parentElement p{
-    margin-bottom: 16px;
+  .parentElement p,
+  .currentTarget-diff p{
+    margin-bottom: 24px;
   }
 
 

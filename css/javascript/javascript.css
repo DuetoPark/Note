@@ -102,12 +102,18 @@
 /* Article - property
    Article - nextElementSibling
    Article - children
-   Article - parentElement */
+   Article - parentElement
+   Article - currentTarget-diff */
 .property p,
 .nextElementSibling p,
 .children p,
-.parentElement p{
+.parentElement p,
+.currentTarget-diff p{
   margin-bottom: 8px;
+}
+
+.currentTarget-diff > p:last-of-type{
+  margin-bottom: 0 !important;
 }
 
 
