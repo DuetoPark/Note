@@ -162,11 +162,68 @@
             </div>
           </dl>
         </article>
+
+        <article class="contextmenu-event" aria-labelledby="contextmenu-event-title">
+          <h3 id="contextmenu-event-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">🎅</span>
+            contextmenu 이벤트
+          </h3>
+          <p>
+            마우스 우클릭의 동작을 담당하는 contextmenu 이벤트의 적용대상과 특징을 목록으로 정리했다.
+          </p>
+          <dl class="main-article-dl" aria-label="적용대상과 특징">
+            <div>
+              <dt class="main-article-dt" aria-label="적용대상">
+                적용대상
+              </dt>
+              <dd class="main-article-dd">
+                마우스 우클릭으로 동작을 조작하려는 요소
+              </dd>
+              <dd class="main-article-dd order">
+                요소.addEventListener('contextmenu', 우클릭핸들러);
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="특징">
+                특징
+              </dt>
+              <dd class="main-article-dd">
+                마우스 우클릭하거나 context 메뉴 키를 누르면 실행한다.
+              </dd>
+              <dd class="main-article-dd">
+                context 메뉴 열림
+                <p>
+                  contextmenu 이벤트는 무조건 우클릭하면 나오는 뒤로/새로고침/다른 이름으로 저장 등의 컨텍스트 메뉴가 나타난다. 우클릭 기본동작을 원하지 않는다면, 핸들러에 이벤트변수를 적용한 후에 e.preventDefault();를 명령한다.
+                </p>
+                <pre class="main-article-pre background-white-radius">
+                  <code>
+                    function contextmenuHandler(e) {
+                      e.preventDefault();
+                      // 동작할 함수
+                    }
+                  </code>
+                </pre>
+              </dd>
+            </div>
+          </dl>
+        </article>
       </section>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - Element: contextmenu event", MDN, 2021년 3월 7일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event'>
+              https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event
+            </a>
+          </cite>
+        </blockquote>
+
         <blockquote class='note-footer-reference'
           cite='https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event'>
           <strong class='note-footer-reference-name'>
