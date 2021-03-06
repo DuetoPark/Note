@@ -265,15 +265,49 @@
             src='../../assets/images/parentElement2.png'
             alt='개발자도구에서 parentElement 확인하기'/>
         </article>
+
+        <article class='currentTarget-diff' aria-labelledby="currentTarget-diff-title">
+          <h3 id="currentTarget-diff-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐇</span>
+            e.target과 e.currentTarget의 차이
+          </h3>
+          <p>
+            e.target은 마우스로 선택된 요소를 가리킨다. 이벤트가 실제로 발생하는 요소이다.
+          </p>
+          <p>
+            <span class="hidden-inline">
+              중요!
+            </span>
+            <strong class="underline">
+              e.currentTarget은 이벤트리스너를 냅다 달아버리는 요소다.
+            </strong>
+          </p>
+          <p>
+            만약 테이블에 클릭이벤트를 지정했다면,<br/>
+            e.target은 td를 의미하고 e.currentTarget은 테이블을 의미한다.
+          </p>
+        </article>
       </section>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
         <blockquote class='note-footer-reference'
+          cite='https://www.youtube.com/watch?v=cUO4zW0r5tY&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=54'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "Youtube - ZeroCho의 JS 중급강좌 8-4. e.target vs e.currentTarget", Youtube, 2021년 3월 7일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.youtube.com/watch?v=cUO4zW0r5tY&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=54'>
+              https://www.youtube.com/watch?v=cUO4zW0r5tY&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=54
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
           cite='https://gist.github.com/rxaviers/7360908'>
           <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2020년 1월 3일 접속,
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 3월 7일 접속,
           </strong>
           <cite class='note-footer-reference-url'>
             <a href='https://gist.github.com/rxaviers/7360908'>
