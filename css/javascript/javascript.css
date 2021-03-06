@@ -289,6 +289,7 @@
 /* 20-event.html */
 /* Article - submit-event */
 .submit-event > p,
-.main-article-dd:last-child > p{
+.main-article-dd:last-child > p,
+.contextmenu-event > p{
   margin-bottom: 8px;
 }

@@ -203,7 +203,8 @@ min-width >=576px  */
   /* 20-event.html */
   /* Article - submit-event */
   .submit-event > p,
-  .main-article-dd:last-child > p{
+  .main-article-dd:last-child > p,
+  .contextmenu-event > p{
     margin-bottom: 16px;
   }
 }
@@ -395,7 +396,8 @@ min-width >=768px  */
   /* 20-event.html */
   /* Article - submit-event */
   .submit-event > p,
-  .main-article-dd:last-child > p{
+  .main-article-dd:last-child > p,
+  .contextmenu-event > p{
     margin-bottom: 24px;
   }
 }
