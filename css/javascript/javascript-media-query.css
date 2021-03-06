@@ -196,6 +196,14 @@ min-width >=576px  */
   .includes-example > pre{
     margin-bottom: 16px;
   }
+
+
+  /* 20-event.html */
+  /* Article - submit-event */
+  .submit-event > p,
+  .main-article-dd:last-child > p{
+    margin-bottom: 16px;
+  }
 }
 
 
@@ -369,12 +377,21 @@ min-width >=768px  */
     margin-bottom: 24px;
   }
 
+
   /* 19-include.html */
   /* Article - includes
      Article - includes-example */
   .includes > p,
   .includes-example > p,
   .includes-example > pre{
+    margin-bottom: 24px;
+  }
+
+
+  /* 20-event.html */
+  /* Article - submit-event */
+  .submit-event > p,
+  .main-article-dd:last-child > p{
     margin-bottom: 24px;
   }
 }

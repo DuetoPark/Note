@@ -278,3 +278,11 @@
 .includes-example > p:last-of-type{
   margin-bottom: 0 !important;
 }
+
+
+/* 20-event.html */
+/* Article - submit-event */
+.submit-event > p,
+.main-article-dd:last-child > p{
+  margin-bottom: 8px;
+}
