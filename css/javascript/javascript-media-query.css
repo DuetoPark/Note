@@ -221,6 +221,19 @@ min-width >=576px  */
   .filter-syntax > p{
     margin-bottom: 16px;
   }
+
+
+  /* 24-탬플릿리터럴.html */
+  /* Article - template-literals-syntax
+     Article - template-literals-expression */
+  .template-literals-syntax > pre,
+  .template-literals-expression > pre{
+    margin-bottom: 24px;
+  }
+
+  .template-literals-expression > p{
+    margin-bottom: 16px;
+  }
 }
 
 
@@ -426,6 +439,14 @@ min-width >=768px  */
   /* 23-filter.html */
   /* Article - filter-syntax */
   .filter-syntax > p{
+    margin-bottom: 24px;
+  }
+
+
+  /* 24-탬플릿리터럴.html */
+  /* Article - template-literals-syntax
+     Article - template-literals-expression */
+  .template-literals-expression > p{
     margin-bottom: 24px;
   }
 }
