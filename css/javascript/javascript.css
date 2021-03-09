@@ -1,22 +1,3 @@
-/* 1-Pseudo-Style.html */
-/* Article - pseudo-code */
-.pseudo-code pre{
-  margin-bottom: 8px;
-}
-
-.pseudo-code pre:last-child{
-  margin-bottom: 0 !important;
-}
-
-
-/* 2-Toggle.html */
-/* Article - toggle-css
-   Article - toggle-javascript */
-.toggle-css p,
-.toggle-javascript p{
-  margin-bottom: 8px;
-}
-
 
 /* 3-Copy.html */
 /* Common */
@@ -83,14 +64,6 @@
 }
 
 
-/* Article - createElement
-   Article - select*/
-.createElement > p,
-.select > p{
-  margin-bottom: 8px;
-}
-
-
 /* 4-e.target.html */
 /* common */
 .e-target-image,
@@ -99,112 +72,11 @@
   height: auto;
 }
 
-/* Article - property
-   Article - nextElementSibling
-   Article - children
-   Article - parentElement
-   Article - currentTarget-diff */
-.property p,
-.nextElementSibling p,
-.children p,
-.parentElement p,
-.currentTarget-diff p{
-  margin-bottom: 8px;
-}
-
-.currentTarget-diff > p:last-of-type{
-  margin-bottom: 0 !important;
-}
-
-
-/* 5-switch.html */
-/* Article - switch-precautions */
-.switch-precautions > p,
-.switch-precautions > ul{
-  margin-bottom: 8px;
-}
-
-.switch-precautions > ul{
-  padding: 10px 20px;
-}
-
-.switch-precautions > p:last-of-type{
-  margin-bottom: 0 !important;
-}
-
-
-/* 6-timing-event.html */
-/* Article - timing-event-syntax
-   Article - setInterval
-   Article - clearInterval */
-.timing-event-syntax > p,
-.setInterval > p,
-.clearInterval > p{
-  margin-bottom: 8px;
-}
-
-
-/* 7-이차원배열.html */
-/* Article - multiple-array */
-.multiple-array p,
-.multiple-array pre{
-  margin-bottom: 8px;
-}
-
-.multiple-array p:last-child{
-  margin-bottom: 0 !important;
-}
-
-
-/* 8-foreach-중첩반복문.html */
-/* Article - forEach-syntax
-   Article - loop-in-loop */
-.forEach-syntax p,
-.loop-in-loop p,
-.loop-in-loop pre{
-  margin-bottom: 8px;
-}
-
-.loop-in-loop p:last-child{
-  margin-bottom: 0 !important;
-}
-
-
-/* 9-array-fill.html */
-/* Article - array
-   Article - fill */
-.array p,
-.array dl,
-.array pre,
-.fill p,
-.fill dl{
-  margin-bottom: 8px;
-}
-
-.array p:last-child{
-  margin-bottom: 0 !important;
-}
-
-
-/* 10-map.html */
-/* Article - map-syntax
-   Article - map-example*/
-.map-syntax p,
-.map-example p,
-.map-example pre{
-  margin-bottom: 8px;
-}
-
-.map-example pre:last-child{
-  margin-bottom: 0 !important;
-}
-
 
 /* 11-slice-sort.html */
 .slice-summary-image-group{
   display: flex;
   flex-direction: column;
-  margin-bottom: 8px;
 }
 
 .slice-summary-image{
@@ -216,49 +88,12 @@
 }
 
 
-/* 12-splice.html */
-/* Article - splice-syntax
-   Article - splice-delete
-   Article - splice-add
-   Article - splice-delete */
-.splice-syntax p,
-.splice-delete-paragragh,
-.splice-add-paragragh,
-.splice-replace-paragragh{
-  margin-bottom: 8px;
-}
-
-
 /* 13-split-join.html */
 /* Section - split
    Section - join*/
 #split,
 #join{
   padding-top: 80px;
-}
-
-.split-syntax-paragragh,
-.join-syntax-paragragh{
-  margin-bottom: 8px;
-}
-
-
-/* 14-딕셔너리-자료구조.html */
-/* Article - dictionary */
-.dictionary p,
-.dictionary pre{
-  margin-bottom: 8px;
-}
-
-.dictionary p:last-child{
-  margin-bottom: 0 !important;
-}
-
-
-/* 16-find.html */
-/* Article - find-syntax */
-.find-syntax-paragragh{
-  margin-bottom: 8px;
 }
 
 
@@ -271,71 +106,9 @@
 }
 
 
-/* 19-include.html */
-/* Article - includes
-   Article - includes-example */
-.includes > p,
-.includes-example > p,
-.includes-example > pre{
-  margin-bottom: 8px;
-}
-
-.includes > p:last-of-type,
-.includes-example > p:last-of-type{
-  margin-bottom: 0 !important;
-}
-
-
-/* 22-concat.html */
-/* Article - concat-syntax */
-.concat-syntax > p{
-  margin-bottom: 8px;
-}
-
-
-/* 23-filter.html */
-/* Article - filter-syntax */
-.filter-syntax > p{
-  margin-bottom: 8px;
-}
-
-
-/* 24-탬플릿리터럴.html */
-/* Article - template-literals-syntax
-   Article - template-literals-expression */
-.template-literals-syntax > pre,
-.template-literals-expression > pre{
-  margin-bottom: 16px;
-}
-
-.template-literals-expression > p{
-  margin-bottom: 8px;
-}
-
-.template-literals-expression > pre:last-of-type{
-  margin-bottom: 0 !important;
-}
-
-
 /* 25-화살표함수.html */
 /* Article - arrow-function-feature */
 .arrow-function-feature dd span{
   display: inline-block;
   margin-bottom: 8px;
-}
-
-/* 26-scope.html */
-/* Article - scope
-   Article - scope-chain
-   Article - lexical-scope-example */
-.scope > p,
-.scope-chain > p,
-.lexical-scope-example p,
-.lexical-scope-example pre{
-  margin-bottom: 8px;
-}
-
-/* Article - lexical-scope-example */
-.lexical-scope-example > div{
-  margin-bottom: 16px;
 }

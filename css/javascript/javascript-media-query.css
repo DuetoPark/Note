@@ -1,22 +1,6 @@
 /* Tablet Style
 min-width >=576px  */
 @media screen and (min-width:576px) {
-  /* 1-Pseudo-Style.html */
-  /* Article - pseudo-code */
-  .pseudo-code pre{
-    margin-bottom: 16px;
-  }
-
-
-  /* 2-Toggle.html */
-  /* Article - toggle-css
-     Article - toggle-javascript */
-  .toggle-css p,
-  .toggle-javascript p{
-    margin-bottom: 16px;
-  }
-
-
   /* 3-Copy.html */
   /* Common */
   .main-article-modal-group > .show-code-button{
@@ -34,63 +18,12 @@ min-width >=576px  */
     transform: translate(-50%, 100%);
   }
 
-  /* Article - createElement
-     Article - select*/
-  .createElement > p,
-  .select > p{
-    margin-bottom: 16px;
-  }
-
 
   /* 4-e.target.html */
   .e-target-image,
   .e-target-reason-image{
     width: 70%;
     height: auto;
-  }
-
-  /* Article - property
-     Article - nextElementSibling
-     Article - children
-     Article - parentElement
-     Article - currentTarget-diff */
-  .property p,
-  .nextElementSibling p,
-  .children p,
-  .parentElement p
-  .currentTarget-diff p{
-    margin-bottom: 16px;
-  }
-
-
-  /* 5-switch.html */
-  /* Article - switch-precautions */
-  .switch-precautions > p,
-  .switch-precautions > ul{
-    margin-bottom: 16px;
-  }
-
-  .switch-precautions > ul{
-    padding: 15px 20px;
-  }
-
-
-  /* 6-timing-event.html */
-  /* Article - timing-event-syntax
-     Article - setInterval
-     Article - clearInterval */
-  .timing-event-syntax > p,
-  .setInterval > p,
-  .clearInterval > p{
-    margin-bottom: 16px;
-  }
-
-
-  /* 7-이차원배열.html */
-  /* Article - multiple-array */
-  .multiple-array p,
-  .multiple-array pre{
-    margin-bottom: 16px;
   }
 
 
@@ -104,32 +37,9 @@ min-width >=576px  */
   }
 
 
-  /* 9-array-fill.html */
-  /* Article - array
-     Article - fill */
-  .array p,
-  .array dl,
-  .array pre,
-  .fill p,
-  .fill dl{
-    margin-bottom: 16px;
-  }
-
-
-  /* 10-map.html */
-  /* Article - map-syntax
-     Article - map-example*/
-  .map-syntax p,
-  .map-example p,
-  .map-example pre{
-    margin-bottom: 16px;
-  }
-
-
   /* 11-slice-sort.html */
   .slice-summary-image-group{
     flex-direction: row;
-    margin-bottom: 16px;
   }
 
   .slice-summary-image{
@@ -141,19 +51,6 @@ min-width >=576px  */
   }
 
 
-  /* 12-splice.html */
-  /* Article - splice-syntax
-     Article - splice-delete
-     Article - splice-add
-     Article - splice-delete */
-  .splice-syntax p,
-  .splice-delete-paragragh,
-  .splice-add-paragragh,
-  .splice-replace-paragragh{
-    margin-bottom: 16px;
-  }
-
-
   /* 13-split-join.html */
   /* Section - split
      Section - join*/
@@ -162,94 +59,11 @@ min-width >=576px  */
     padding-top: 100px;
   }
 
-  .split-syntax-paragragh,
-  .join-syntax-paragragh{
-    margin-bottom: 16px;
-  }
-
-
-  /* 14-딕셔너리-자료구조.html */
-  /* Article - dictionary */
-  .dictionary p,
-  .dictionary pre{
-    margin-bottom: 16px;
-  }
-
-
-  /* 16-find.html */
-  /* Article - find-syntax */
-  .find-syntax-paragragh{
-    margin-bottom: 16px;
-  }
-
 
   /* 18-value-textcontent.html */
   /* common */
   .value-textContent-image{
     width: 300px;
-  }
-
-
-  /* 19-include.html */
-  /* Article - includes
-     Article - includes-example */
-  .includes > p,
-  .includes-example > p,
-  .includes-example > pre{
-    margin-bottom: 16px;
-  }
-
-
-  /* 20-event.html */
-  /* Article - submit-event */
-  .submit-event > p,
-  .main-article-dd:last-child > p,
-  .contextmenu-event > p{
-    margin-bottom: 16px;
-  }
-
-
-  /* 22-concat.html */
-  /* Article - concat-syntax */
-  .concat-syntax > p{
-    margin-bottom: 16px;
-  }
-
-
-  /* 23-filter.html */
-  /* Article - filter-syntax */
-  .filter-syntax > p{
-    margin-bottom: 16px;
-  }
-
-
-  /* 24-탬플릿리터럴.html */
-  /* Article - template-literals-syntax
-     Article - template-literals-expression */
-  .template-literals-syntax > pre,
-  .template-literals-expression > pre{
-    margin-bottom: 24px;
-  }
-
-  .template-literals-expression > p{
-    margin-bottom: 16px;
-  }
-
-
-  /* 26-scope.html */
-  /* Article - scope
-     Article - scope-chain
-     Article - lexical-scope-example */
-  .scope > p,
-  .scope-chain > p,
-  .lexical-scope-example p,
-  .lexical-scope-example pre{
-    margin-bottom: 16px;
-  }
-
-  /* Article - lexical-scope-example */
-  .lexical-scope-example > div{
-    margin-bottom: 32px;
   }
 }
 
@@ -257,22 +71,6 @@ min-width >=576px  */
 /* Desktop Style
 min-width >=768px  */
 @media screen and (min-width:768px) {
-  /* 1-Pseudo-Style.html */
-  /* Article - pseudo-code */
-  .pseudo-code pre{
-    margin-bottom: 24px;
-  }
-
-
-  /* 2-Toggle.html */
-  /* Article - toggle-css
-     Article - toggle-javascript */
-  .toggle-css p,
-  .toggle-javascript p{
-    margin-bottom: 24px;
-  }
-
-
   /* 3-Pseudo-Style.html */
   /* Common */
   .main-article-modal-group > .show-code-button{
@@ -290,111 +88,10 @@ min-width >=768px  */
     transform: translate(-50%, 100%);
   }
 
-  /* Article - createElement
-     Article - select*/
-  .createElement > p,
-  .select > p{
-    margin-bottom: 24px;
-  }
-
-
-  /* 4-e.target.html */
-  /* Article - property
-     Article - nextElementSibling
-     Article - children
-     Article - parentElement
-     Article - currentTarget-diff */
-  .property p,
-  .nextElementSibling p,
-  .children p,
-  .parentElement p,
-  .currentTarget-diff p{
-    margin-bottom: 24px;
-  }
-
-
-  /* 5-switch.html */
-  /* Article - switch-precautions */
-  .switch-precautions > p,
-  .switch-precautions > ul{
-    margin-bottom: 24px;
-  }
-
-  .switch-precautions > ul{
-    padding: 20px 40px;;
-  }
-
-
-
-  /* 6-timing-event.html */
-  /* Article - timing-event-syntax
-     Article - setInterval
-     Article - clearInterval */
-  .timing-event-syntax > p,
-  .setInterval > p,
-  .clearInterval > p{
-    margin-bottom: 24px;
-  }
-
-
-  /* 7-이차원배열.html */
-  /* Article - multiple-array */
-  .multiple-array p,
-  .multiple-array pre{
-    margin-bottom: 24px;
-  }
-
-
-  /* 8-foreach-중첩반복문.html */
-  /* Article - forEach-syntax
-     Article - loop-in-loop */
-  .forEach-syntax p,
-  .loop-in-loop p,
-  .loop-in-loop pre{
-    margin-bottom: 24px;
-  }
-
-  /* 9-array-fill.html */
-  /* Article - array
-     Article - fill */
-  .array p,
-  .array dl,
-  .array pre,
-  .fill p,
-  .fill dl{
-    margin-bottom: 24px;
-  }
-
-
-  /* 10-map.html */
-  /* Article - map-syntax
-     Article - map-example*/
-  .map-syntax p,
-  .map-example p,
-  .map-example pre{
-    margin-bottom: 24px;
-  }
-
 
   /* 11-slice-sort.html */
-  .slice-summary-image-group{
-    margin-bottom: 24px;
-  }
-
   #sort{
     padding-top: 120px;
-  }
-
-  /* 12-splice.html */
-  /* Article - splice-syntax
-     Article - splice-delete
-     Article - splice-add
-     Article - splice-delete */
-  .splice-syntax p,
-  .splice-delete-paragragh,
-  .splice-add-paragragh,
-  .splice-replace-paragragh{
-    margin-bottom: 24px;
   }
 
 
@@ -406,81 +103,5 @@ min-width >=768px  */
     padding-top: 120px;
   }
 
-  .split-syntax-paragragh,
-  .join-syntax-paragragh{
-    margin-bottom: 24px;
-  }
 
-
-  /* 14-딕셔너리-자료구조.html */
-  /* Article - dictionary */
-  .dictionary p,
-  .dictionary pre{
-    margin-bottom: 24px;
-  }
-
-
-  /* 16-find.html */
-  /* Article - find-syntax */
-  .find-syntax-paragragh{
-    margin-bottom: 24px;
-  }
-
-
-  /* 19-include.html */
-  /* Article - includes
-     Article - includes-example */
-  .includes > p,
-  .includes-example > p,
-  .includes-example > pre{
-    margin-bottom: 24px;
-  }
-
-
-  /* 20-event.html */
-  /* Article - submit-event */
-  .submit-event > p,
-  .main-article-dd:last-child > p,
-  .contextmenu-event > p{
-    margin-bottom: 24px;
-  }
-
-
-  /* 22-concat.html */
-  /* Article - concat-syntax */
-  .concat-syntax > p{
-    margin-bottom: 24px;
-  }
-
-
-  /* 23-filter.html */
-  /* Article - filter-syntax */
-  .filter-syntax > p{
-    margin-bottom: 24px;
-  }
-
-
-  /* 24-탬플릿리터럴.html */
-  /* Article - template-literals-syntax
-     Article - template-literals-expression */
-  .template-literals-expression > p{
-    margin-bottom: 24px;
-  }
-
-
-  /* 26-scope.html */
-  /* Article - scope
-     Article - scope-chain
-     Article - lexical-scope-example */
-  .scope > p,
-  .scope-chain > p,
-  .lexical-scope-example p,
-  .lexical-scope-example pre{
-    margin-bottom: 24px;
-  }
-
-  /* Article - lexical-scope-example */
-  .lexical-scope-example > div{
-    margin-bottom: 48px;
-  }
 }
