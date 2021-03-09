@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="javascript, 클로저"/>
+    <meta name="description" content="함수간의 관계를 의미하는 클로저에 대해 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>클로저</title>
+
+    <!-- 클로저 -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/common/font.css">
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript-media-query.css">
+
+    <!-- 데이터 -->
+    <script src='../../assets/data.js'></script>
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list" role="menu">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-js" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🍧</span>
+            클로저
+            <span class='main-title' aria-hidden="true">🍧</span>
+          </strong>
+        </h2>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🍲</span>
+            개요
+          </h3>
+          <p>
+            자바스크립트에서 무조건 알아야 하는 스코프, 실행콘텍스트, 프로토타입, 비동기, 클로저중에 클로저를 공부해보자.
+          </p>
+        </article>
+
+        <article class='closure' aria-labelledby="closure-title">
+          <h3 id="closure-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👙</span>
+            정의
+          </h3>
+          <p class="margin-8px">
+            함수간의 어떠한 관계를 클로저라고 한다.<br/>
+            함수와 함수가 접근할 수 있는 스코프가 클로저 관계를 맺는다.<br/>
+            예시를 먼저 보자.
+          </p>
+          <pre class="main-article-pre background-white-radius margin-16px">
+            <code>
+              var <span class="order">name</span> = '나는 고구마';
+
+              function log() {
+                console.log(<span class="order">name</span>); // 여기에 있는 name은 영원히 전역변수 name을 의미한다.
+              }
+
+              function wrapper() {
+                <span class="error">var name</span> = '나는 오이'; // wrapper함수에서 선언한 name은 전역변수 name과는 완전히 다른 변수이다.
+                log();
+              }
+              wrapper(); // name = '나는 고구마';
+            </code>
+          </pre>
+          <p class="margin-8px">
+            log 함수와 wrapper 함수는 클로저 관계다.<br/>
+            왜냐하면, 무슨 코드를 쓰든 모든 함수들이 클로저 관계를 형성시키기 때문이다.
+          </p>
+          <p class="margin-8px">
+            <strong class="order">
+              중요한 건 함수가 실행될 때 사용하는 변수값이 무엇인지 아는 것이다.
+            </strong>
+          </p>
+          <p class="margin-8px">
+            반복문과 비동기 함수가 만날 때 클로저 문제가 자주 발생한다.(for문 안에setTimeout함수 쓰는 것처럼)<br/>
+            여기에는 두 가지 이유가 있다.
+          </p>
+          <ol class="margin-8px" aria-label='이유'>
+            <li class="main-article-list-items hyphen">
+              컴퓨터가 코드를 위에서 아래로 코드를 읽어나간다.
+            </li>
+            <li class="main-article-list-items hyphen">
+              컴퓨터가 동기는 읽고 비동기는 실행되기 전에는 넘겨버린다.
+            </li>
+          </ol>
+          <p class="margin-8px">
+            for문 안의 비동기 함수는 주석 처리한 것처럼 넘어가 버린다.<br/>
+            더불어, for문은 for문대로 돌아가니 i가 마지막 숫자를 가리킨다.<br/>
+            임무를 마친 컴퓨터는 다음 코드를 찾아 떠난다.
+          </p>
+          <p class="margin-8px">
+            컴퓨터는 시킨대로 했고, 그 누구도 잘못하지 않았다. 하지만 원하는 동작을 구현하진 못한다. 왜냐하면 반복문 안의 비동기 함수를 실행했을 때 적용되는 i는 마지막 숫자만을 가리키기 때문이다.<br/>
+            <strong class="underline">
+              여기에서 포인트는 비동기 함수 안의 변수는 '실행'될 때 값을 가져온다는 점이다.<br/>
+              그러므로 비동기함수가 '실행되는 순간에 변수가 뭔지' 찾아야 한다.
+            </strong>
+          </p>
+          <p class="margin-8px">
+            여기서 잠깐 표현을 다시 정정해야 한다.<br/>
+            클로저 문제다. 클로저 문제가 발생했다.<br/>
+            이 표현들은 클로저의 특성을 사용해서 해결할 수 있는 문제라는 의미이다.
+          </p>
+        </article>
+
+        <article class='closure-example' aria-labelledby="closure-example-title">
+          <h3 id="closure-example-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💣</span>
+            예시 코드
+          </h3>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              for (var i=0; i<100; i++) {
+                setTimeout(function() {
+                  console.log(i);
+                }, i * 1000);
+              }
+            </code>
+          </pre>
+          <p class="margin-8px">
+            위의 코드를 풀어서쓰면 다음과 같다.
+          </p>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              setTimeout(function() {
+                console.log(i);
+              }, 0 * 1000);
+
+              setTimeout(function() {
+                console.log(i);
+              }, 1 * 1000);
+
+              setTimeout(function() {
+                console.log(i);
+              }, 2 * 1000);
+
+              setTimeout(function() {
+                console.log(i);
+              }, 3 * 1000);
+
+              setTimeout(function() {
+                console.log(i);
+              }, 4 * 1000);
+
+              setTimeout(function() {
+                console.log(i);
+              }, 5 * 1000);
+              //--------------------------
+              setTimeout(function() {
+                console.log(i);
+              }, 99 * 1000);
+            </code>
+          </pre>
+          <p class="margin-8px">
+            setTimeout 내부의 함수에서는 i가 실행되지 않는다!!!!<br/>
+            setTimeout 콜백함수 내부의 i는 콜백함수 내부에서 i를 찾아야 한다.<br/>
+            콜백함수 내에 i가 없으니까 한단계 위로 i를 찾아나서야 하는데, 비동기함수이므로 실행되는 순간이 되야지 i가 뭔지 찾는다.<br/>
+            실행될 때의 시점에서는 i가 100인 상태라서 그 값을 이용할 뿐이다.
+            클로저 문제를 해결하려면 다음의 코드처럼 수정해야한다.
+          </p>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              에러코드)
+              for (var i=0; i<100; i++) {
+                setTimeout(function() {
+                  console.log(i);
+                }, i * 1000);
+              }
+
+              해결책)
+              for (var i=0; i<100; i++) {
+                function 클로저(j) {
+                  setTimeout(function() {
+                    console.log(j);
+                  }, j * 1000);
+                }
+                클로저(i);
+              }
+            </code>
+          </pre>
+        </article>
+
+        <article class='closure-solution' aria-labelledby="closure-solution-title">
+          <h3 id="closure-solution-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🔨</span>
+            클로저 문제 해결 코드
+          </h3>
+          <p class='margin-8px'>
+            클로저 문제가 어떻게 해결되는지 다음의 코드를 보며 알아보자.
+          </p>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              function 클로저(j) {
+                setTimeout(function() {
+                  console.log(j); // 콜백함수 '실행'되는 순간, j=0 대입
+                }, 0 * 1000);
+              }
+              클로저(0); // j --> 0
+
+              function 클로저(j) {
+                setTimeout(function() {
+                  console.log(j); // 콜백함수 '실행'되는 순간, j=1 대입
+                }, 1 * 1000);
+              }
+              클로저(1); // j --> 1
+
+              function 클로저(j) {//729번줄에 의해 j는 3이다.(매개변수니까!)
+                setTimeout(function() {
+                  console.log(j); // 콜백함수 '실행'되는 순간, j=2 대입
+                }, 2 * 1000);
+              }
+              클로저(2); // j --> 2
+
+              function 클로저(j) {
+                setTimeout(function() {
+                  console.log(j); // 콜백함수 '실행'되는 순간, j=3 대입
+                }, 3 * 1000);
+              }
+              클로저(3); // j --> 3
+              //---------------------------
+              function 클로저(j) {
+                setTimeout(function() {
+                  console.log(j); // 콜백함수 '실행'되는 순간, j=99 대입
+                }, 99 * 1000);
+              }
+              클로저(99); // j --> 99
+            </code>
+          </pre>
+          <p class='margin-8px'>
+            보면, 클로저문제 해결에 매개변수와 렉시컬 스코프가 사용된다.
+          </p>
+          <p class='margin-8px'>
+            먼저, 클로저(0);로 인해 클로저 함수가 실행된다.<br/>
+            클로저 함수의 인자로 0이 들어가게 되면서 매개변수 j에 0이 저장된다.
+          </p>
+          <p class='margin-8px'>
+            setTimeout의 콜백함수가 '실행'되는 순간에 console.log에 들어가는 j를 찾는다.<br/>
+            이 때 j를 찾기위해 콜백함수를 둘러보지만 내부에는 j가 없다.<br/>
+            그래서 한단계 위로 올라가 j를 찾는다.<br/>
+            이 때, 렉시컬 스코핑에 의해 클로저 함수에 저장된 j = 0을 발견하곤 냅다 대입 해버리기~
+          </p>
+          <p class='margin-8px'>
+            정리하자면, 반복문 진행에 따라 i=1일 때 매개변수 j=1, i=2일 때 매개변수 j=2, ... 이렇게 j에 값이 저장된다.
+            비동기 함수가 '실행'되면 렉시컬 스코핑에 의해 변수를 찾아 저장된 값을 대입한다.
+          </p>
+
+
+
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://www.youtube.com/watch?v=h6ysIsRbnKg&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=61'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "Youtube - ZeroCho의 JS 중급 강좌 8-11. 클로저 문제 해결법", Youtube, 2021년 3월 10일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.youtube.com/watch?v=h6ysIsRbnKg&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=61'>
+              https://www.youtube.com/watch?v=h6ysIsRbnKg&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=61
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github, 2021년 3월 8일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <!-- 요소 생성 -->
+    <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
+    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/app/modal.js"></script>
+  </body>
+</html>
