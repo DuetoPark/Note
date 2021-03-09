@@ -189,7 +189,10 @@
             배열의 기존 요소 삭제
           </h3>
           <ul aria-label="삭제하는 방법">
-            <li class="main-article-list-items" aria-label="원하는 개수만큼 제거">
+            <li class="main-article-list-items" aria-describedby="delete-x-y">
+              <div id="delete-x-y" class="hidden">
+                원하는 개수만큼 제거하는 방법
+              </div>
               <p class="splice-delete-paragragh hyphen">
                 <strong class="order">
                   배열.splice(인덱스, 개수);
@@ -209,7 +212,10 @@
                 </code>
               </pre>
             </li>
-            <li class="main-article-list-items" aria-label="n번째에서 끝까지 제거">
+            <li class="main-article-list-items" aria-describedby="delete-x-end">
+              <div id="delete-x-end" class="hidden">
+                n번째에서 끝까지 제거하는 방법
+              </div>
               <p class="splice-delete-paragragh hyphen">
                 <strong class="order">
                   배열.splice(n);
@@ -231,7 +237,10 @@
                 </code>
               </pre>
             </li>
-            <li class="main-article-list-items" aria-label="무작위로 하나 제거">
+            <li class="main-article-list-items" aria-describedby="delete-random">
+              <div id="delete-random" class="hidden">
+                무작위로 하나 제거하는 방법
+              </div>
               <p class="splice-delete-paragragh hyphen">
                 <strong class="order">
                   배열.splice(Math.floor(Math.random * 9), 1)[1];
