@@ -323,3 +323,19 @@
   display: inline-block;
   margin-bottom: 8px;
 }
+
+/* 26-scope.html */
+/* Article - scope
+   Article - scope-chain
+   Article - lexical-scope-example */
+.scope > p,
+.scope-chain > p,
+.lexical-scope-example p,
+.lexical-scope-example pre{
+  margin-bottom: 8px;
+}
+
+/* Article - lexical-scope-example */
+.lexical-scope-example > div{
+  margin-bottom: 16px;
+}

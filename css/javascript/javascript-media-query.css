@@ -234,6 +234,23 @@ min-width >=576px  */
   .template-literals-expression > p{
     margin-bottom: 16px;
   }
+
+
+  /* 26-scope.html */
+  /* Article - scope
+     Article - scope-chain
+     Article - lexical-scope-example */
+  .scope > p,
+  .scope-chain > p,
+  .lexical-scope-example p,
+  .lexical-scope-example pre{
+    margin-bottom: 16px;
+  }
+
+  /* Article - lexical-scope-example */
+  .lexical-scope-example > div{
+    margin-bottom: 32px;
+  }
 }
 
 
@@ -448,5 +465,22 @@ min-width >=768px  */
      Article - template-literals-expression */
   .template-literals-expression > p{
     margin-bottom: 24px;
+  }
+
+
+  /* 26-scope.html */
+  /* Article - scope
+     Article - scope-chain
+     Article - lexical-scope-example */
+  .scope > p,
+  .scope-chain > p,
+  .lexical-scope-example p,
+  .lexical-scope-example pre{
+    margin-bottom: 24px;
+  }
+
+  /* Article - lexical-scope-example */
+  .lexical-scope-example > div{
+    margin-bottom: 48px;
   }
 }
