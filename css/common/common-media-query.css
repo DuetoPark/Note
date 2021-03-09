@@ -122,6 +122,20 @@ min-width >=576px  */
   .note-footer-reference-url > a{
     font-size: 13px;
   }
+
+
+  /* 여백 */
+  .background-white-radius{
+    padding: 15px 20px;
+  }
+
+  .margin-8px{
+    margin-bottom: 16px;
+  }
+
+  .margin-16px{
+    margin-bottom: 32px;
+  }
 }
 
 
@@ -215,5 +229,19 @@ min-width >=768px  */
   .note-footer-reference-name,
   .note-footer-reference-url > a{
     font-size: 13px;
+  }
+
+
+  /* 여백 */
+  .background-white-radius{
+    padding: 20px 40px;
+  }
+
+  .margin-8px{
+    margin-bottom: 24px;
+  }
+
+  .margin-16px{
+    margin-bottom: 48px;
   }
 }

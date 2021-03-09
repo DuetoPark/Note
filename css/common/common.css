@@ -460,6 +460,7 @@ button.toggle-button.new-style::after{
 .background-white-radius{
   background-color: #FFFFFF;
   border-radius: 10px;
+  padding: 10px 20px;
 }
 
 .background-white-square{
@@ -483,4 +484,13 @@ button.toggle-button.new-style::after{
 
 .hidden-inline{
   display: inline-block;
+}
+
+/* 여백 */
+.margin-8px{
+  margin-bottom: 8px;
+}
+
+.margin-16px{
+  margin-bottom: 16px;
 }
