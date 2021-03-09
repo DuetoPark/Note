@@ -126,18 +126,20 @@
             <span class='main-article-title' aria-hidden="true">🎼</span>
             Array
           </h3>
-          <p>
+          <p class="margin-16px">
             요소가 많은 배열을 만들때 사용하는 생성자이다.<br/>
             Array의 문법은 다음과 같다.<br/>
-            <br/>
+          </p>
+          <p class="margin-16px">
             <strong class="order">
               let 변수 = Array(arrayLength);
-            </strong><br/>
+            </strong>
+            <br/>
             <strong class="order">
               let 변수 = Array(요소1, 요소2, ... 요소n);
-            </strong><br/>
+            </strong>
           </p>
-          <dl class="main-article-dl" aria-label="문법 해석">
+          <dl class="main-article-dl margin-16px" aria-label="문법 해석">
             <div>
               <dt class="main-article-dt" aria-label="array length">
                 arrayLength
@@ -161,8 +163,8 @@
               </dd>
             </div>
           </dl>
-          <p>예시코드는 다음과 같다.</p>
-          <pre class="main-article-pre background-white-radius">
+          <p class="margin-8px">예시코드는 다음과 같다.</p>
+          <pre class="main-article-pre background-white-radius margin-16px">
             <code>
               let fruits = new Array(2)
 
@@ -180,7 +182,8 @@
             <strong class="underline">
               Array(arrayLength)를 명령하여 만들어진 배열은 값은 비어있는 빈 배열이다.<br/>
               빈배열은 console.log로 출력하면 [empty * 요소갯수]로 표시된다.
-            </strong><br/>
+            </strong>
+            <br/>
             이 상태로는 반복문이 먹히지 않는다.<br/>
             직접 입력하지 않는이상, 반복문을 이용하여 값을 넣을 수 없다는 의미다.<br/>
             이 불편함을 덜어주는 메소드가 바로 fill이다.
@@ -192,17 +195,17 @@
             <span class='main-article-title' aria-hidden="true">🎹</span>
             fill
           </h3>
-          <p>
+          <p class="margin-16px">
             배열의 모든 요소를 지정한 시작 인덱스부터 종료 인덱스까지 정적인 값으로 채우는 메서드다.<br/>
             빈 배열에 fill()을 해주면, 요소들이 모두 undefiened 되므로 반복문이 동작할 수 있게 된다.<br/>
             fill 메소드의 문법은 다음과 같다.
           </p>
-          <p>
+          <p class="margin-16px">
             <strong class="order">
               typedarray.fill(value, start, end);
             </strong>
           </p>
-          <dl class="main-article-dl" aria-label="문법 해석">
+          <dl class="main-article-dl margin-16px" aria-label="문법 해석">
             <div>
               <dt class="main-article-dt" aria-label="value">
                 value
@@ -237,7 +240,7 @@
               </dd>
             </div>
           </dl>
-          <p>
+          <p class="margin-8px">
             예시코드는 다음과 같다.
           </p>
           <pre class="main-article-pre background-white-radius">

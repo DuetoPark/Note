@@ -113,7 +113,7 @@
             <span class='main-article-title' aria-hidden="true">🍪</span>
             개요
           </h3>
-          <div class="slice-summary-image-group">
+          <div class="slice-summary-image-group margin-8px">
             <img class="slice-summary-image" src="../../assets/images/월레스와그로밋.jpg"
             alt="월레스와 그로밋">
             <img class="slice-summary-image" src="../../assets/images/치즈슬라이스.jpg"
@@ -145,11 +145,12 @@
             <span class='main-article-title' aria-hidden="true">🍟</span>
             slice 문법
           </h3>
-          <p>
+          <p class="margin-8px">
             <strong class="order">
               let 변수 = 배열.slice(시작 인덱스, 끝 인덱스);
-            </strong><br/>
-            <br/>
+            </strong>
+          </p>
+          <p class="margin-8px">
             문법을 목록으로 정리했다.
           </p>
           <dl class="main-article-dl" aria-label="문법 해석">
@@ -226,14 +227,16 @@
             <span class='main-article-title' aria-hidden="true">🎸</span>
             sort 문법
           </h3>
-          <p>
+          <p class="margin-16px">
             <strong class="order">
               배열.sort(콜백함수);
-            </strong><br/>
-            <br/>
+            </strong>
+          </p>
+          <p class="margin-8px">
             정말 작은 숫자부터 커지게 정렬하고 싶으면 다음의 함수를 추가하면 된다.<br/>
-            return값이 0보다 크면 순서를 바꾼다.<br/>
-            <br/>
+            return값이 0보다 크면 순서를 바꾼다.
+          </p>
+          <p>
             <strong>
               function compareNumber(a, b) {return a - b;} (오름차순)<br/>
               function compareNumber(a, b) {return b - a;} (내림차순)

@@ -126,18 +126,20 @@
             <span class='main-article-title' aria-hidden="true">🍇</span>
             정의
           </h3>
-          <p>
-            배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경한다.<br/>
-            <span class="hyphen">
-              해당 인덱스로부터 개수만큼 배열에서 요소를 뽑아낸다.
-            </span><br/>
-            <span class="hyphen">
-              가져온 요소는 가져온 배열에서 사라진다.
-            </span><br/>
-            <span class="hyphen">
-              뽑혀나온 값들은 배열 형태이다.
-            </span><br/>
+          <p class="margin-8px">
+            배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경한다.
           </p>
+          <ul aria-label="변경 사항">
+            <li class="main-article-list-items hyphen">
+              해당 인덱스로부터 개수만큼 배열에서 요소를 뽑아낸다.
+            </li>
+            <li class="main-article-list-items hyphen">
+              가져온 요소는 가져온 배열에서 사라진다.
+            </li>
+            <li class="main-article-list-items hyphen">
+              뽑혀나온 값들은 배열 형태이다.
+            </li>
+          </ul>
         </article>
 
         <article class="splice-syntax" aria-labelledby="splice-syntax-title">
@@ -145,11 +147,12 @@
             <span class='main-article-title' aria-hidden="true">🍑</span>
             문법
           </h3>
-          <p>
+          <p class="margin-16px">
             <strong class="order">
               배열.splice(시작 인덱스, 요소의 개수, 요소1, 요소2, ... , 요소n);
             </strong><br/>
-            <br/>
+          </p>
+          <p class="margin-16px">
             문법은 목록으로 정리했다.
           </p>
           <dl class="main-article-dl" aria-label="문법 해석">
@@ -189,15 +192,16 @@
             배열의 기존 요소 삭제
           </h3>
           <ul aria-label="삭제하는 방법">
-            <li class="main-article-list-items" aria-describedby="delete-x-y">
+            <li class="main-article-list-items margin-16px" aria-describedby="delete-x-y">
               <div id="delete-x-y" class="hidden">
                 원하는 개수만큼 제거하는 방법
               </div>
-              <p class="splice-delete-paragragh hyphen">
+              <p class="hyphen margin-8px">
                 <strong class="order">
                   배열.splice(인덱스, 개수);
-                </strong><br/>
-                <br/>
+                </strong>
+              </p>
+              <p class="margin-8px">
                 배열의 시작 인덱스부터 원하는 개수만큼 요소가 제거된다.<br/>
                 예시코드는 다음과 같다.
               </p>
@@ -212,15 +216,16 @@
                 </code>
               </pre>
             </li>
-            <li class="main-article-list-items" aria-describedby="delete-x-end">
+            <li class="main-article-list-items margin-16px" aria-describedby="delete-x-end">
               <div id="delete-x-end" class="hidden">
                 n번째에서 끝까지 제거하는 방법
               </div>
-              <p class="splice-delete-paragragh hyphen">
+              <p class="hyphen margin-8px">
                 <strong class="order">
                   배열.splice(n);
-                </strong><br/>
-                <br/>
+                </strong>
+              </p>
+              <p class="margin-8px">
                 n번 인덱스를 포함해서 이후의 모든 요소 제거한다.<br/>
                 예시코드는 다음과 같다.
               </p>
@@ -241,11 +246,12 @@
               <div id="delete-random" class="hidden">
                 무작위로 하나 제거하는 방법
               </div>
-              <p class="splice-delete-paragragh hyphen">
+              <p class="hyphen margin-8px">
                 <strong class="order">
                   배열.splice(Math.floor(Math.random * 9), 1)[1];
-                </strong><br/>
-                <br/>
+                </strong>
+              </p>
+              <p class="margin-8px">
                 무작위로 하나의 요소를 뽑아서 제거한다.<br/>
                 예시코드는 다음과 같다.
               </p>
@@ -270,11 +276,12 @@
             <span class='main-article-title' aria-hidden="true">🍈</span>
             배열의 기존 요소에 추가
           </h3>
-          <p class="splice-add-paragragh">
+          <p class="margin-16px">
             <strong class="order">
               배열.splice(인덱스, 0, 요소1, 요소2, ... , 요소n);
-            </strong><br/>
-            <br/>
+            </strong>
+          </p>
+          <p class="margin-8px">
             시작 인덱스부터 요소가 추가된다.<br/>
             예시코드는 다음과 같다.
           </p>
@@ -293,11 +300,12 @@
             <span class='main-article-title' aria-hidden="true">🍍</span>
             배열의 기존 요소에 변경
           </h3>
-          <p class="splice-replace-paragragh">
+          <p class="margin-16px">
             <strong class="order">
               배열.splice(인덱스, 제거할 요소 개수, 요소1, 요소2, ... , 요소n);
-            </strong><br/>
-            <br/>
+            </strong>
+          </p>
+          <p class="margin-8px">
             시작 인덱스부터 입력한 개수만큼 요소가 사라지고, 그 자리에 새로운 요소가 추가된다.<br/>
             예시코드는 다음과 같다.
           </p>

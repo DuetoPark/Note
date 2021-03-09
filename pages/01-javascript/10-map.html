@@ -137,13 +137,15 @@
             <span class='main-article-title' aria-hidden="true">💨</span>
             문법
           </h3>
-          <p>
-            문법은 다음과 같다.<br/>
-            <br/>
+          <p class="margin-16px">
+            문법은 다음과 같다.
+          </p>
+          <p class="margin-16px">
             <strong class="order">
               let 변수 = 배열.map(콜백함수(요소, 인덱스, 배열) { 동작}, thisArg);
-            </strong></br>
-            <br/>
+            </strong>
+          </p>
+          <p class="margin-8px">
             map의 문법을 목록으로 정리했다.
           </p>
           <dl class="main-article-dl" aria-label="문법 해석">
@@ -215,20 +217,20 @@
             <span class='main-article-title' aria-hidden="true">💤</span>
             예시
           </h3>
-          <p>
+          <p class="margin-8px">
             1에서 45까지의 숫자를 배열로 만드는 예시이다.
           </p>
-          <pre class="main-article-pre background-white-radius">
+          <pre class="main-article-pre background-white-radius margin-16px">
             <code>
               let 숫자배열 = Array(45).fill().map(function(요소, 인덱스) {
                 return 인덱스 + 1;
               });
             </code>
           </pre>
-          <p>
+          <p class="margin-8px">
             요소의 숫자를 제곱근으로 변형하여 배열로 만드는 예시
           </p>
-          <pre class="main-article-pre background-white-radius">
+          <pre class="main-article-pre background-white-radius margin-16px">
             <code>
               var numbers = [1, 4, 9];
               var roots = numbers.map(Math.sqrt);
@@ -237,7 +239,7 @@
               // numbers는 그대로 [1, 4, 9]
             </code>
           </pre>
-          <p>
+          <p class="margin-8px">
             요소의 숫자를 두배로 변형하여 배열로 만드는 예시
           </p>
           <pre class="main-article-pre background-white-radius">

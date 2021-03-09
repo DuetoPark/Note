@@ -212,10 +212,10 @@
             <span class='main-article-title' aria-hidden="true">📼</span>
             주의 Mayday!!
           </h3>
-          <p>
+          <p class="margin-8px">
             스위치에서 조심해야 될 부분이 있다.
           </p>
-          <ul class='main-article-list background-white-radius' aria-label="주의">
+          <ul class='main-article-list background-white-radius margin-8px' aria-label="주의">
             <li class='main-article-list-items hyphen'>
               case clause 숫자값
             </li>
@@ -226,23 +226,29 @@
               변수
             </li>
           </ul>
-          <p>
-            <span class="underline">값을 숫자로 지정할 때에도 따옴표로 묶어주어야 한다.</span></br>
-            왜 그런지 알고싶지 않았다.</br>
+          <p class="margin-8px">
+            <span class="underline">
+              값을 숫자로 지정할 때에도 따옴표로 묶어주어야 한다.
+            </span>
+            </br>
+            왜 그런지 알고싶지 않았다.
           </p>
-          <p>
+          <p class="margin-8px">
             반복문의 조건부를 제대로 적이 않았더니, 웹 페이지가 case에 선언한 동작을 계속 반복했다.</br>
             이러면, 새로고침이 안 되고 창도 닫히지 않는다.</br>
-            </br>
             괜히 헛소리하면 릴레이 잔소리하는 우리 가족같았다. 등에 땀이 나고 눈물이 줄줄.</br>
-            <strong class="underline">꼭 동작을 확인하기 전에, 반복문의 조건부를 확인하자</strong>
+            <strong class="underline">
+              꼭 동작을 확인하기 전에, 반복문의 조건부를 확인하자
+            </strong>
+          </p>
+          <p class="margin-8px">
+            각각의 케이스에서 변수선언 할 때에는, <strong class="underline">변수명이 겹치지 않도록 한다.</strong>
+          </p>
+          <p class="margin-8px">
+            그렇지 않으면, <span class='error'>Uncaught SyntaxError: Identifier 'message' has already been declared</span>가 나쁜 말로 할 때 잘하라며 쫒아올 것이다.</br>
           </p>
           <p>
-            각각의 케이스에서 변수선언 할 때에는, <strong class="underline">변수명이 겹치지 않도록 한다.</strong></br>
-            </br>
-            그렇지 않으면, <span class='error'>Uncaught SyntaxError: Identifier 'message' has already been declared</span>가 나쁜 말로 할 때 잘하라며 쫒아올 것이다.</br>
-            </br>
-            그래도 중복되는 변수명을 선언하고 싶다면, <strong class="underline">중괄호</span><span aria-hidden='true'>("{}")</span>로 묶어준다.
+            그래도 중복되는 변수명을 선언하고 싶다면, <strong class="underline">중괄호</strong><span aria-hidden='true'>("{}")</span>로 묶어준다.
           </p>
         </article>
       </section>
