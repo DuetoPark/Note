@@ -213,28 +213,88 @@
             setInterval을 멈추는 메소드다.<br/>
             문법은 목록으로 정리했다.
           </p>
+          <dl class="main-article-dl" aria-label="문법 해석">
+            <dt class="main-article-dt" aria-label="변수">
+              변수
+            </dt>
+            <dd class="main-article-dd">
+              여기에서의 변수는 setInterval을 저장한 것을 의미한다.<br/>
+            </dd>
+            <dd class="main-article-dd">
+              let 변수 = setInterval(콜백함수, milliseconds);
+            </dd>
+          </dl>
+        </article>
+
+        <article class='clearTimeout' aria-labelledby="clearTimeout-title">
+          <h3 id="clearTimeout-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐴</span>
+            clearTimeout
+          </h3>
           <p class="margin-16px">
             <strong class="order">
-              window.clearInterval(setInterval로 생성된 변수);
+              window.clearTimeout(변수);
             </strong>
           </p>
           <p class="margin-8px">
+            setTimeout을 멈추는 메소드다.<br/>
             문법은 목록으로 정리했다.
           </p>
           <dl class="main-article-dl" aria-label="문법 해석">
-            <dt class="main-article-dt" aria-label="setInterval로 생성된 변수">
-              setInterval로 생성된 변수
+            <dt class="main-article-dt" aria-label="변수">
+              변수
             </dt>
             <dd class="main-article-dd">
-              let 변수 = setInterval(콜백함수, milliseconds);에서의 변수를 의미한다.
+              여기에서의 변수는 setTimeout을 저장한 것을 의미한다.<br/>
+            </dd>
+            <dd class="main-article-dd">
+              let 변수 = setTimeout(콜백함수, milliseconds);
             </dd>
           </dl>
+        </article>
+
+        <article class='timing-method-scope' aria-labelledby="timing-method-scope-title">
+          <h3 id="timing-method-scope-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐋</span>
+            타이밍 메소드와 스코프
+          </h3>
+          <p class="margin-8px">
+            clearTimeout은 setTimeout과 스코프가 다르면 호출스텍 문제가 발생한다.
+          </p>
+          <p class="margin-8px">
+            이를 해결하려면 전역 함수에 변수를 빼내야 한다. 그 변수에 setTimeout를 저장하면 호출스택 문제는 해결된다.
+          </p>
+          <pre class="main-article-pre background-white-radius">
+            <code>
+              var 타임아웃 = "";
+
+              if (조건1) {
+                타임아웃 = setTimeout(function() {
+                  // 콜백함수 동작
+                }, 2000);
+              } else if (조건2) {
+                clearTimeout(타임아웃);
+              }
+            </code>
+          </pre>
         </article>
       </section>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://www.youtube.com/watch?v=OviFeiGJVm0&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=71'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "Youtube - ZeroCho의 JS 중급 강좌 9-5. 재귀, 비동기와 호출 스택", Youtube, 2021년 3월 10일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.youtube.com/watch?v=OviFeiGJVm0&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=71'>
+              https://www.youtube.com/watch?v=OviFeiGJVm0&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=71
+            </a>
+          </cite>
+        </blockquote>
+
         <blockquote class='note-footer-reference'
           cite='https://www.w3schools.com/js/js_timing.asp'>
           <strong class='note-footer-reference-name'>
