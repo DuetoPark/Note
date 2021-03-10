@@ -298,7 +298,7 @@ dfn.main-article-dt,
 .main-article-pre > code{
   width: 100%;
   font-size: 13px;
-  white-space: pre-line;
+  white-space: pre-wrap;
 }
 
 
