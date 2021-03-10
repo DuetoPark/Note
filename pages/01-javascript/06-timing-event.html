@@ -333,72 +333,10 @@
       </div>
     </footer>
 
-    <!-- 라이브러리 -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- 요소 생성 -->
     <script src='../../assets/app/create.js'></script>
     <!-- 동작 -->
     <script src='../../assets/app/app.js'></script>
     <script src="../../assets/app/modal.js"></script>
-    <script>
-      // Javascript-6-timing-event.html
-      // Modal event
-      const modalSample = document.querySelector(".modal-sample");
-      const openModalSample = document.querySelectorAll(".open-modal-sample");
-      const closeModalSample = document.querySelector(".close-modal-sample");
-
-
-      function openSampleError () {
-        modalSample.classList.add("modal-open-animation");
-        document.body.classList.add("body-scroll-off");
-        window.setTimeout(function () {
-          modalSample.classList.add("modal-active");
-        }, 300);
-        window.setTimeout(function () {
-          modalSample.classList.remove("modal-open-animation");
-        }, 300);
-      }
-
-      function openSample () {
-        modalSample.classList.add("modal-open-animation");
-        document.body.classList.add("body-scroll-off");
-        window.setTimeout(function () {
-          modalSample.classList.add("modal-active");
-        }, 200);
-        window.setTimeout(function () {
-          modalSample.classList.remove("modal-open-animation");
-        }, 300);
-      }
-
-      function closeSample () {
-        modalSample.classList.add("modal-close-animation");
-        window.setTimeout(function () {
-          modalSample.classList.remove("modal-active");
-          document.body.classList.remove("body-scroll-off");
-        }, 200);
-        window.setTimeout(function () {
-          modalSample.classList.remove("modal-close-animation");
-        }, 300);
-      }
-
-      function openSampleErrorHandler () {
-        openSampleError();
-      }
-
-      function openSampleHandler () {
-        openSample();
-      }
-
-      function closeSampleHandler (e) {
-        if (e.target.tagName === "BUTTON") {
-          closeSample();
-        }
-      }
-
-      openModalSample[0].addEventListener("click", openSampleErrorHandler);
-      openModalSample[1].addEventListener("click", openSampleHandler);
-      modalSample.addEventListener("click", closeSampleHandler);
-
-    </script>
   </body>
 </html>
