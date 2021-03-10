@@ -248,6 +248,7 @@
               }
 
               해결책)
+              // 함수를 실행하는 방식
               for (var i=0; i<100; i++) {
                 function 클로저(j) {
                   setTimeout(function() {
@@ -255,6 +256,15 @@
                   }, j * 1000);
                 }
                 클로저(i);
+              }
+
+              // 즉시 실행 함수를 사용하는 방식
+              for (var i=0; i<100; i++) {
+                (function 클로저(j) {
+                  setTimeout(function() {
+                    console.log(j);
+                  }, j * 1000);
+                })(i); //
               }
             </code>
           </pre>
@@ -270,48 +280,60 @@
           </p>
           <pre class="main-article-pre background-white-radius margin-8px">
             <code>
+              for (var i=0; i<100; i++) {
+                (function 클로저(j) {
+                  setTimeout(function() {
+                    console.log(j);
+                  }, j * 1000);
+                })(i);
+              }
+            </code>
+          </pre>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              // i = 0, j --> 0
               function 클로저(j) {
                 setTimeout(function() {
                   console.log(j); // 콜백함수 '실행'되는 순간, j=0 대입
                 }, 0 * 1000);
               }
-              클로저(0); // j --> 0
 
+              // i = 1, j --> 1
               function 클로저(j) {
                 setTimeout(function() {
                   console.log(j); // 콜백함수 '실행'되는 순간, j=1 대입
                 }, 1 * 1000);
               }
-              클로저(1); // j --> 1
 
+              // i = 2, j --> 2
               function 클로저(j) {//729번줄에 의해 j는 3이다.(매개변수니까!)
                 setTimeout(function() {
                   console.log(j); // 콜백함수 '실행'되는 순간, j=2 대입
                 }, 2 * 1000);
               }
-              클로저(2); // j --> 2
 
+              // i = 3, j --> 3
               function 클로저(j) {
                 setTimeout(function() {
                   console.log(j); // 콜백함수 '실행'되는 순간, j=3 대입
                 }, 3 * 1000);
               }
-              클로저(3); // j --> 3
+
               //---------------------------
+
+              // i = 99, j --> 99
               function 클로저(j) {
                 setTimeout(function() {
                   console.log(j); // 콜백함수 '실행'되는 순간, j=99 대입
                 }, 99 * 1000);
               }
-              클로저(99); // j --> 99
             </code>
           </pre>
           <p class='margin-8px'>
-            보면, 클로저문제 해결에 매개변수와 렉시컬 스코프가 사용된다.
+            보면, 클로저문제 해결에 즉시 실행 함수, 매개변수와 렉시컬 스코프가 사용된다.
           </p>
           <p class='margin-8px'>
-            먼저, 클로저(0);로 인해 클로저 함수가 실행된다.<br/>
-            클로저 함수의 인자로 0이 들어가게 되면서 매개변수 j에 0이 저장된다.
+            먼저, 즉시 실행 함수 인해 클로저 함수의 인자로 0이 들어가고 클로저(0)가 바로 실행된다. 이 때 매개변수 j = 0이 된다.
           </p>
           <p class='margin-8px'>
             setTimeout의 콜백함수가 '실행'되는 순간에 console.log에 들어가는 j를 찾는다.<br/>
@@ -347,7 +369,7 @@
         <blockquote class='note-footer-reference'
           cite='https://gist.github.com/rxaviers/7360908'>
           <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github, 2021년 3월 8일 접속,
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github, 2021년 3월 10일 접속,
           </strong>
           <cite class='note-footer-reference-url'>
             <a href='https://gist.github.com/rxaviers/7360908'>
