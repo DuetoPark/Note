@@ -345,9 +345,41 @@
             정리하자면, 반복문 진행에 따라 i=1일 때 매개변수 j=1, i=2일 때 매개변수 j=2, ... 이렇게 j에 값이 저장된다.
             비동기 함수가 '실행'되면 렉시컬 스코핑에 의해 변수를 찾아 저장된 값을 대입한다.
           </p>
+        </article>
 
-
-
+        <article class='immediately-invoked-function' aria-labelledby="immediately-invoked-function-title">
+          <h3 id="immediately-invoked-function-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true"></span>
+            즉시 실행 함수
+          </h3>
+          <p class="margin-8px">
+            함수 표현은 함수를 정의하고, 변수에 함수를 저장하고 싱행하는 과정을 거친다.<br/>
+            하지만 즉시 실행 함수는 함수를 정의하고 바로 실행하여 '저장'과정을 거치지 않는다. 정의하자마자 냅다 호출하는것을 즉시 실행 함수라고 한다.<br/>
+            즉기 실행 함수의 형태는 다음과 같다.
+          </p>
+          <pre class="main-article-pre background-white-radius margin-8px"
+            aria-hidden='true'>
+            <code>
+              <span class="order">(</span>function () {
+                //동작
+              }<span class="order">)</span><span class="error">()</span>;
+            </code>
+          </pre>
+          <pre class="hidden">
+            <code>
+              (function () {
+                //동작
+              })();
+            </code>
+          </pre>
+          <p class="margin-8px">
+            두 개의 괄호는 각각 다른 의미를 가진다.<br/>
+            <strong class="underline">
+              첫 번째 괄호는 익명함수를 둘러싼다. 이는 전역 스코프 변수로부터 즉시 실행 함수가 자유롭다는 것을 의미한다.
+            </strong>
+            <br/>
+            두 번째 괄호는 즉시 실행 함수를 생성하는 괄호이다.
+          </p>
         </article>
       </section>
     </main>
