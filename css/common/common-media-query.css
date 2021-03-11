@@ -43,6 +43,16 @@ min-width >=576px  */
   }
 
 
+  /* Header - Modal - go-to-pages*/
+  .go-to-pages{
+    width: 300px;
+  }
+
+  .go-to-page-list{
+    height: 600px;
+  }
+
+
   /* Main */
   .note-main{
     margin-bottom: 48px;
@@ -161,12 +171,6 @@ min-width >=768px  */
   /* Header - Navigation */
   .note-header-nav{
     width: 50%;
-  }
-
-
-  /* Header - Modal - go-to-pages*/
-  .go-to-pages{
-    width: 300px;
   }
 
 
