@@ -181,31 +181,33 @@
               a();
             </code>
           </pre>
-          <p class="margin-8px">
-            <strong class="underline">
-              비동기인 setTimeout이 실행될 땐 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버리는 특성이 있다. 기억해!
-            </strong>
-          </p>
-          <p class="margin-8px">
-            호출 스택에 다음과 같이 정렬된다.<br/>
-            a 함수-setTimeout<br/>
-            setTimeout이 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버린다.그러면 a 함수도 실행을 마쳤으므로 호출 스택에서 나간다.
-          </p>
-          <p class="margin-8px">
-            0밀리초뒤, 어딘가에 저장된 함수가 호출 스택이 들어온다.<br/>
-            호출 스택에 다음과 같이 정렬된다.<br/>
-            어딘가에 있던 setTimeout의 익명함수(콜백함수)-a-setTimeout<br/>
-            setTimeout이 실행될 땐 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버린다.그러면 a도 실행을 마쳤으므로 호출스텍에서 나간다. 익명함수도 할 일 마쳤으니 호출스텍이서 나간다.<br/>
-          </p>
-          <p class="margin-8px">
-            다시 0밀리초뒤, 어딘가에 저장된 함수가 호출 스택이 들어온다.<br/>
-            호출 스택에 다음과 같이 정렬된다.<br/>
-            어딘가에 있던 setTimeout의 익명함수(콜백함수)-a-setTimeout<br/>
-            setTimeout이 실행될 땐 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버린다.그러면 a도 실행을 마쳤으므로 호출스텍에서 나간다. 익명함수도 할 일 마쳤으니 호출스텍이서 나간다.<br/>
-          </p>
-          <p class="margin-8px">
-            이렇게 호출스택이 채워졌다 비워졌다를 반복하므로 콜스택 터지는 에러가 발생하지 않게된다.
-          </p>
+          <div class="code-desc">
+            <p class="margin-8px">
+              <strong class="underline">
+                비동기인 setTimeout이 실행될 땐 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버리는 특성이 있다. 기억해!
+              </strong>
+            </p>
+            <p class="margin-8px">
+              호출 스택에 다음과 같이 정렬된다.<br/>
+              a 함수-setTimeout<br/>
+              setTimeout이 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버린다.그러면 a 함수도 실행을 마쳤으므로 호출 스택에서 나간다.
+            </p>
+            <p class="margin-8px">
+              0밀리초뒤, 어딘가에 저장된 함수가 호출 스택이 들어온다.<br/>
+              호출 스택에 다음과 같이 정렬된다.<br/>
+              어딘가에 있던 setTimeout의 익명함수(콜백함수)-a-setTimeout<br/>
+              setTimeout이 실행될 땐 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버린다.그러면 a도 실행을 마쳤으므로 호출스텍에서 나간다. 익명함수도 할 일 마쳤으니 호출스텍이서 나간다.<br/>
+            </p>
+            <p class="margin-8px">
+              다시 0밀리초뒤, 어딘가에 저장된 함수가 호출 스택이 들어온다.<br/>
+              호출 스택에 다음과 같이 정렬된다.<br/>
+              어딘가에 있던 setTimeout의 익명함수(콜백함수)-a-setTimeout<br/>
+              setTimeout이 실행될 땐 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버린다.그러면 a도 실행을 마쳤으므로 호출스텍에서 나간다. 익명함수도 할 일 마쳤으니 호출스텍이서 나간다.<br/>
+            </p>
+            <p class="margin-8px">
+              이렇게 호출스택이 채워졌다 비워졌다를 반복하므로 콜스택 터지는 에러가 발생하지 않게된다.
+            </p>
+          </div>
         </article>
       </section>
     </main>
