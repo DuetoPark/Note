@@ -112,3 +112,15 @@
   display: inline-block;
   margin-bottom: 8px;
 }
+
+
+/* 30-참조-복사.html */
+/* Article - copy-reference */
+.primitive-value-assignment{
+  margin-bottom: 48px;
+}
+
+.list-item-title{
+  font-weight: 500;
+  margin-bottom: 4px;
+}
