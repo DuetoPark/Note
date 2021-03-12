@@ -422,12 +422,30 @@
               var 오이친구 = ["옥수수", "당근", "고구마"];
             </code>
           </pre>
-          <p class="margin-8px">
-            위의 코드처럼 객체 안에 객체가 없는 것을 1단계 객체라고 표현한다.
-          </p>
-          <p>
-            forEach와 slice는 1단계는 깊은 복사하고 나머지(객체 안의 객체)는 얕은 복사한다. 그러므로 1단계 객체를 대상으로 깊은 복사를 해야한다면  forEach와 slice를 이용하자.
-          </p>
+          <div class="code-desc margin-8px">
+            <p class="margin-8px">
+              위의 코드처럼 객체 안에 객체가 없는 것을 1단계 객체라고 표현한다.
+            </p>
+            <p>
+              forEach와 slice는 1단계는 깊은 복사하고 나머지(객체 안의 객체)는 얕은 복사한다. 그러므로 1단계 객체를 대상으로 깊은 복사를 해야한다면 forEach와 slice를 이용하자.
+            </p>
+          </div>
+          <div class="another-way">
+            <p class="margin-8px">
+              forEach와 유사한 방법으로 Object.assign이 있다. 1단계 깊은 복사 하는 간결한 명령어다.<br/>
+            </p>
+            <pre class="main-article-pre background-white-radius">
+              <code>
+                //forEach 문
+                Object.keys(obj).forEach(function(key) {
+                  obj2[key] = obj [key];
+                });
+
+                //Object.assign 문
+                Object.assign(obj2, obj);
+              </code>
+            </pre>
+          </div>
         </article>
       </section>
     </main>
