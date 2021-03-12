@@ -52,6 +52,9 @@ let state = {
       {id: "28", href: "call-stack"},
       {id: "29", href: "false"},
       {id: "30", href: "참조-복사"},
+      {id: "31", href: "팩토리패턴-프로토타입"},
+      {id: "32", href: "call-by-value"},
+      {id: "33", href: "constructor"},
     ],
   },
 };
