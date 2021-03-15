@@ -65,13 +65,6 @@ min-width >=576px  */
   .value-textContent-image{
     width: 300px;
   }
-
-
-  /* 30-참조-복사.html */
-  /* Article - copy-reference */
-  .list-item-title{
-    margin-bottom: 8px;
-  }
 }
 
 
@@ -109,6 +102,4 @@ min-width >=768px  */
   #join{
     padding-top: 120px;
   }
-
-
 }

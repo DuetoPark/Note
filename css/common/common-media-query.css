@@ -105,6 +105,10 @@ min-width >=576px  */
     margin-bottom: 8px;
   }
 
+  .list-item-title{
+    margin-bottom: 8px;
+  }
+
 
   /* Article - Table */
   .main-article-table td,

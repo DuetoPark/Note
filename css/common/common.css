@@ -301,6 +301,12 @@ dfn.main-article-dt,
   margin-bottom: 0;
 }
 
+.list-item-title{
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+
 /* Article - Preformatted Text */
 .main-article-pre{
   position: relative;
