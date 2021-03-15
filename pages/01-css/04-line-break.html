@@ -97,30 +97,49 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h2 class='main-title'>
-          <strong>💜줄 바꿈, 여백 처리💜</strong>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">💜</span>
+            줄 바꿈, 여백 처리
+            <span class='main-title' aria-hidden="true">💜</span>
+          </strong>
         </h2>
 
-        <article class='line-break'>
-          <h3 class='main-article-title'>🙏줄바꿈 속성 종류</h3>
+        <article class='line-break-type' aria-labelledby="line-break-type-title">
+          <h3 id="line-break-type-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🙏</span>
+            줄바꿈 속성 종류
+          </h3>
           <p>
             내 페이지를 어지럽히는 몇몇 친구들. 절교하자.
           </p>
-          <ul class='main-article-list background-white-radius'>
-            <li class='main-article-list-items hyphen'>줄바꿈 되지 않고 터져 나가는 url</li>
-            <li class='main-article-list-items hyphen'>댕강 썰리는 한국어 단어</li>
-            <li class='main-article-list-items hyphen'>그대로 노출되는 연속 스페이스</li>
+          <ul class='main-article-list background-white-radius' aria-label="css 교란종">
+            <li class='main-article-list-items hyphen'>
+              줄바꿈 되지 않고 터져 나가는 url
+            </li>
+            <li class='main-article-list-items hyphen'>
+              댕강 썰리는 한국어 단어
+            </li>
+            <li class='main-article-list-items hyphen'>
+              그대로 노출되는 연속 스페이스
+            </li>
           </ul>
           <p>
             궁금했다. 나. 이것도 처리 가능한지. css의 속성으로. 미안한 해석. 구글번역 사용했다.<br/>
             마침내 나는 찾았다 그것을. 종류가 여러개.
           </p>
-          <ol class='main-article-list line-break-type'>
-            <li class='main-article-list-items type'>word-wrap</li>
-            <li class='main-article-list-items type'>word-break</li>
-            <li class='main-article-list-items type'>white-space</li>
+          <ol class='main-article-list line-break-type' aria-label="줄바꿈 속성">
+            <li class='main-article-list-items type'>
+              word-wrap
+            </li>
+            <li class='main-article-list-items type'>
+              word-break
+            </li>
+            <li class='main-article-list-items type'>
+              white-space
+            </li>
           </ol>
         </article>
 
