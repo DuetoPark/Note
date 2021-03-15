@@ -97,11 +97,15 @@
       </div>
     </header>
 
-    <main class='note-main'>
-      <section class='container'>
-        <h1 class='main-title'>
-          <strong>🐸<span>list</span> 자식요소🐸</strong>
-        </h1>
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🐸</span>
+            목록 태그의 자식요소
+            <span class='main-title' aria-hidden="true">🐸</span>
+          </strong>
+        </h2>
 
         <article class='list-child-element-summary'>
           <h1 class='main-article-title'>🐻개요</h1>
