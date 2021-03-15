@@ -55,6 +55,9 @@ let state = {
       {id: "31", href: "팩토리패턴-프로토타입"},
       {id: "32", href: "call-by-value"},
       {id: "33", href: "constructor"},
+      {id: "34", href: "property-attribute"},
+      {id: "35", href: "append-appendChild"},
+      {id: "36", href: "table-display-data"},
     ],
   },
 };
