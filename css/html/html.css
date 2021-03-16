@@ -63,6 +63,7 @@
   margin-bottom: 30px;
 }
 
+/* Article - name-type */
 .name-types{
   display: flex;
   flex-wrap: wrap;
@@ -77,8 +78,6 @@
   margin-right: 0;
 }
 
-
-/* HTML-2-pre.html */
 
 
 /* HTML-3-inline-block.html */
@@ -97,11 +96,6 @@
 .block-element li.main-article-list-items.type:last-child,
 .inline-element li.main-article-list-items.type:last-child{
   margin-right: 0;
-}
-
-/* Article - Block-Element */
-.block-element > p{
-  margin-bottom: 8px; /* 미티어쿼리 변경값*/
 }
 
 /* animation */
@@ -190,21 +184,10 @@
   animation-iteration-count: 2;
 }
 
-
 /* Article - Inline-Element */
-.inline-element p{
-  margin-bottom: 8px; /* 미티어쿼리 변경값*/
-}
-
-.inline-element > p{
-  margin-bottom: 16px; /* 미티어쿼리 변경값*/
-}
-
 .inline-element-image-group{
   overflow-x: scroll;
-  margin-bottom: 8px;
 }
-
 
 
 /* HTML-5-list-child-element.html */
@@ -212,17 +195,4 @@
   font-size: 18px;
   font-weight: 700;
   text-transform: capitalize;
-}
-
-.list-child-element > p,
-.list-child-element > ul{
-  margin-bottom: 8px;
-}
-
-.list-child-element > p:last-child{
-  margin-bottom: 0;
-}
-
-.list-child-element > ul{
-  padding: 10px 20px;
 }

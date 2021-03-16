@@ -17,42 +17,15 @@ min-width >=576px  */
   }
 
 
-  /* HTML-2-pre.html */
-
-
   /* HTML-3-inline-block.html */
   /* Article - Block-Element */
-  .block-element > p{
-    margin-bottom: 16px; /* 미티어쿼리 변경값*/
-  }
-
   .p-tag-image{
     width: 400px; /* 미티어쿼리 변경값*/
   }
 
   /* Article - Inline-Element */
-  .inline-element p{
-    margin-bottom: 16px; /* 미티어쿼리 변경값*/
-  }
-
-  .inline-element > p{
-    margin-bottom: 24px; /* 미티어쿼리 변경값*/
-  }
-
   .inline-element-image-group{
     overflow-x: hidden;
-    margin-bottom: 16px;
-  }
-
-
-  /* HTML-5-list-child-element.html */
-  .list-child-element > p,
-  .list-child-element > ul{
-    margin-bottom: 16px;
-  }
-
-  .list-child-element > ul{
-    padding: 15px 20px;
   }
 }
 
@@ -65,37 +38,4 @@ min-width >=768px  */
     margin-bottom: 48px; /* 미티어쿼리 변경값*/
   }
 
-
-  /* HTML-2-pre.html */
-
-
-  /* HTML-3-inline-block.html */
-  /* Article - Block-Element */
-  .block-element > p{
-    margin-bottom: 32px; /* 미티어쿼리 변경값*/
-  }
-
-  /* Article - Inline-Element */
-  .inline-element p{
-    margin-bottom: 24px; /* 미티어쿼리 변경값*/
-  }
-
-  .inline-element > p{
-    margin-bottom: 32px; /* 미티어쿼리 변경값*/
-  }
-
-  .inline-element-image-group{
-    margin-bottom: 24px;
-  }
-
-
-  /* HTML-5-list-child-element.html */
-  .list-child-element > p,
-  .list-child-element > ul{
-    margin-bottom: 24px;
-  }
-
-  .list-child-element > ul{
-    padding: 20px 40px;
-  }
 }
