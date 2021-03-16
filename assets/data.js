@@ -4,8 +4,9 @@ let state = {
       {id: "01", href: "meta"},
       {id: "02", href: "pre"},
       {id: "03", href: "inline-block"},
-      {id: "04", href: "picture"},
-      {id: "05", href: "list-child-element"},
+      {id: "04", href: "responsive-image"},
+      {id: "05", href: "list-tag-children"},
+      {id: "06", href: "wai-aria-location"},
     ],
     css: [
       {id: "01", href: "link"},
