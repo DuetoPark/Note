@@ -45,22 +45,6 @@ min-width >=576px  */
   }
 
 
-  /* HTML-4-Picture.html */
-  /* common */
-  .picture > p,
-  .picture-syntax > p,
-  .picture-operating-principle > p,
-  .picture-example > pre {
-    margin-bottom: 24px;
-  }
-
-  /* Article - Picture-Syntax */
-  .picture-syntax ul{
-    padding: 15px 20px;
-  }
-
-
-
   /* HTML-5-list-child-element.html */
   .list-child-element > p,
   .list-child-element > ul{
@@ -103,23 +87,6 @@ min-width >=768px  */
   .inline-element-image-group{
     margin-bottom: 24px;
   }
-
-
-
-  /* HTML-4-Picture.html */
-  /* common */
-  .picture > p,
-  .picture-syntax > p,
-  .picture-operating-principle > p,
-  .picture-example > pre {
-    margin-bottom: 36px;
-  }
-
-  /* Article - Picture-Syntax */
-  .picture-syntax ul{
-    padding: 20px 40px;
-  }
-
 
 
   /* HTML-5-list-child-element.html */

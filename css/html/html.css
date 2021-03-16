@@ -207,34 +207,6 @@
 
 
 
-/* HTML-4-Picture.html */
-/* Common */
-.picture > p,
-.picture > dl,
-.picture-syntax > p,
-.picture-operating-principle > p,
-.picture-example > pre {
-  margin-bottom: 16px;
-}
-
-/* Article - Picture-Syntax */
-.picture-syntax ul{
-  padding: 10px 20px;
-}
-
-/* Article - Picture-Operating-Principle */
-.picture-operating-principle > p:last-child{
-  margin-bottom: 0;
-}
-
-/* Article - Picture-Example */
-.picture-image{
-  width: 100%;
-  border-radius: 4px;
-}
-
-
-
 /* HTML-5-list-child-element.html */
 .main-title > strong > span{
   font-size: 18px;
