@@ -107,8 +107,11 @@
           </strong>
         </h2>
 
-        <article class='list-child-element-summary'>
-          <h1 class='main-article-title'>🐻개요</h1>
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐻</span>
+            개요
+          </h3>
           <p>
             외교부 홈페이지를 보다가, 작은 배너가 ul-div-div-li구조로 되어 있는것을 발견했다. 이래도 되나..?<br/>
             <br/>
@@ -123,15 +126,17 @@
           </p>
         </article>
 
-        <article class='list-child-element'>
-          <h2 class='main-article-title'>🐮리스트 자식요소</h2>
-          <p>
+        <article class='list-child-element' aria-labelledby="list-child-element-title">
+          <h3 id="list-child-element-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐮</span>
+            리스트 자식요소
+          </h3>
+          <p class="margin-8px">
             결론부터 말하자면, 그럴 수 없다.<br/>
             <br/>
             많은 개발자들이 ul과 ol의 자식요소로 div를 쓰지 않는 이유를 설명해줬다.
           </p>
-
-          <ul class="main-article-list background-white-radius">
+          <ul class="main-article-list background-white-radius margin-8px">
             <li class="main-article-list-items hyphen">
               주제가 여러개라면, ul이나 ol 태그를 주제에 맞게 여러개 사용하면 됩니다.
             </li>
@@ -139,7 +144,6 @@
               하나의 큰 주제를 유지하고 싶다면, ul-li-ul-li처럼 중첩해서 사용하면 됩니다. 중첩 리스트 사용시 혼란스럽다면, 주석을 써서 구분해주세요.
             </li>
           </ul>
-
           <p>
             <strong class="underline">태그의 용도를 알고 그에 맞게 사용하는 것</strong>. 김버그님도 이고잉님도 첫 강의에서 강조한 사항이었는데 까먹고 있었다.<br/>
             <br/>
