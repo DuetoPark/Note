@@ -7,6 +7,8 @@ let state = {
       {id: "04", href: "responsive-image"},
       {id: "05", href: "list-tag-children"},
       {id: "06", href: "wai-aria-location"},
+      {id: "07", href: "article"},
+      {id: "08", href: "time"},
     ],
     css: [
       {id: "01", href: "link"},
