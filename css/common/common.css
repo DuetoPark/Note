@@ -238,6 +238,16 @@ body{
   font-weight: 700;
 }
 
+.time,
+.time > time{
+  font-size: 11px;
+}
+
+.time{
+  text-align: right;
+  transform: translateY(-150%);
+}
+
 
 /* Article */
 .note-main .container > article{

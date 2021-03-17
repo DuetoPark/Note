@@ -177,6 +177,15 @@ min-width >=768px  */
     width: 50%;
   }
 
+  .time,
+  .time > time{
+    font-size: 13px;
+  }
+
+  .time{
+    transform: translateY(-150%);
+  }
+
 
   /* Main */
   .note-main{
