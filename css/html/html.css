@@ -196,3 +196,11 @@
   font-weight: 700;
   text-transform: capitalize;
 }
+
+
+/* HTML-6-article.html */
+/* Artcie - article */
+.article > picture > img{
+  margin: 0 auto;
+  margin-bottom: 8px;
+}
