@@ -157,6 +157,41 @@
             </ul>
           </div>
         </article>
+
+        <article class='this-deeping' aria-labelledby="this-deeping-title">
+          <h3 id="this-deeping-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true"></span>
+            심화
+          </h3>
+          <p>
+            <strong>
+              '클릭 이벤트 속에 생성된 함수'의 this는 뭘까?
+              정답은 window다.
+            </strong>
+            <br/>
+            위에 정리했듯이, 함수의 this는 window다. 이벤트 리스너가 따로 처리를 못 한 모양이다.
+          </p>
+          <p>
+            이 상황에서 window말고 자기 자신을 가져오고 싶다면, 화살표 함수를 쓰면 된다.
+          </p>
+          <pre class="main-article-pre background-white-radius">
+            <code>
+              const div = document.querySelector('div');
+
+              div.eventListener('click', function() {
+                console.log(this); // div
+
+                const test = function() {
+                  console.log(this); // window
+                };
+
+                const inner = () => {
+                  console.log(this); // div
+                };
+              });
+            </code>
+          </pre>
+        </article>
       </section>
     </main>
 
