@@ -126,3 +126,15 @@
   display: inline-block;
   margin-bottom: 4px;
 }
+
+
+/* 37-this.html */
+/* Article - what-is-this */
+.what-is-this{
+  display: flex;
+  flex-direction: column;
+}
+
+.what-is-this > div:first-of-type{
+  margin-bottom: 8px;
+}

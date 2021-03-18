@@ -65,6 +65,27 @@ min-width >=576px  */
   .value-textContent-image{
     width: 300px;
   }
+
+
+  /* 37-this.html */
+  /* Article - what-is-this */
+  .what-is-this{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #what-is-this-title{
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .what-is-this > div{
+    width: 50%;
+  }
+
+  .what-is-this > div:first-of-type{
+    margin-bottom: 0;
+  }
 }
 
 
