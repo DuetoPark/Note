@@ -109,7 +109,7 @@
         </h2>
         <div class="time">
           작성 날짜: <time datetime='2021-3-6'>2021년 03월 06일</time><br/>
-          수정 날짜: <time datetime='2021-3-17'>2021년 03월 17일</time>
+          수정 날짜: <time datetime='2021-3-18'>2021년 03월 18일</time>
         </div>
 
         <article class='summary' aria-labelledby="summary-title">
@@ -283,11 +283,67 @@
             </div>
           </dl>
         </article>
+
+        <aside class="event-property" aria-labelledby="event-property-title">
+          <h3 id="event-property-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">😇</span>
+            이벤트 속성
+          </h3>
+
+          <dl class="main-article-dl" aria-label="속성 소개">
+            <div>
+              <dt class="main-article-dt" aria-label="shiftKey 정의">
+                <strong class="order">
+                  shiftKey 속성
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                shift키를 누른 상태로 마우스 클릭을 했을 때, 특정 동작을 지정할 때 사용하는 속성이다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="적용대상">
+                적용대상
+              </dt>
+              <dd class="main-article-dd">
+                shift키와 마우스 클릭으로 조작을 원하는 모든 대상.(input 체크박스 등등)
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="특징">
+                특징
+              </dt>
+              <dd class="main-article-dd">
+                shift 키를 누르고 있으면 true를 반환한다.
+              </dd>
+              <dd class="main-article-dd">
+                shift 키에서 손 떼면 false를 반환한다.
+              </dd>
+              <dd class="main-article-dd">
+                <strong class="underline">
+                  click 이벤트에 존재한다.(change 이벤트에는 shiftKey 속성이 없다.)
+                </strong>
+              </dd>
+            </div>
+          </dl>
+        </aside>
       </section>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/shiftKey'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - MouseEvent.shiftKey", MDN, 2021년 3월 18일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/shiftKey'>
+              https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/shiftKey
+            </a>
+          </cite>
+        </blockquote>
+
         <blockquote class='note-footer-reference'
           cite='http://www.w3bai.com/ko/jsref/event_transitionend.html'>
           <strong class='note-footer-reference-name'>
