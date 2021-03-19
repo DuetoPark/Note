@@ -61,6 +61,10 @@ let state = {
       {id: "34", href: "property-attribute"},
       {id: "35", href: "append-appendChild"},
       {id: "36", href: "table-display-data"},
+      {id: "37", href: "this"},
+      {id: "38", href: "drag-direction"},
+      {id: "39", href: "논리연산자"},
+      {id: "40", href: "fragment"},
     ],
   },
 };
