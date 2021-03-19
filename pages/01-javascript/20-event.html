@@ -109,7 +109,7 @@
         </h2>
         <div class="time">
           작성 날짜: <time datetime='2021-3-6'>2021년 03월 06일</time><br/>
-          수정 날짜: <time datetime='2021-3-18'>2021년 03월 18일</time>
+          수정 날짜: <time datetime='2021-3-20'>2021년 03월 20일</time>
         </div>
 
         <article class='summary' aria-labelledby="summary-title">
@@ -122,24 +122,34 @@
           </p>
         </article>
 
-        <article class="submit-event" aria-labelledby="submit-event-title">
-          <h3 id="submit-event-title" class="main-article-title">
+        <article class="form-event" aria-labelledby="form-event-title">
+          <h3 id="form-event-title" class="main-article-title">
             <span class='main-article-title' aria-hidden="true">🔥</span>
-            submit 이벤트
+            폼 이벤트
           </h3>
           <p class="margin-8px">
-            폼 요소에 주로 사용하는 submit 이벤트의 적용대상과 특징을 목록으로 정리했다.
+            폼 이벤트의 종류와 특징을 목록으로 정리했다.
           </p>
-          <dl class="main-article-dl" aria-label="적용대상과 특징">
+          <h4 class="main-article-subtitle order">Submit 이벤트</h4>
+          <dl class="main-article-dl" aria-label="정의 및 특징">
             <div>
-              <dt class="main-article-dt" aria-label="적용대상">
-                적용대상
+              <dt class="main-article-dt" aria-label="정의">
+                정의
               </dt>
               <dd class="main-article-dd">
-                form 요소
+                <strong>
+                  <span class="underline">input을 submit</span>했을 때 특정 동작을 실행한다.
+                </strong>
               </dd>
-              <dd class="main-article-dd order">
-                폼.addEventListener('submit', submit핸들러);
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="문법">
+                문법
+              </dt>
+              <dd class="main-article-dd">
+                <strong>
+                  폼.addEventListener('submit', submitHandler);
+                </strong>
               </dd>
             </div>
             <div>
@@ -175,16 +185,25 @@
           <p class="margin-8px">
             마우스 우클릭의 동작을 담당하는 contextmenu 이벤트의 적용대상과 특징을 목록으로 정리했다.
           </p>
-          <dl class="main-article-dl" aria-label="적용대상과 특징">
+          <dl class="main-article-dl" aria-label="적용대상 및 특징">
             <div>
               <dt class="main-article-dt" aria-label="적용대상">
                 적용대상
               </dt>
               <dd class="main-article-dd">
-                마우스 우클릭으로 동작을 조작하려는 요소
+                <strong>
+                  <span class="underline">마우스 우클릭</span>으로 동작을 조작하려는 요소
+                </strong>
               </dd>
-              <dd class="main-article-dd order">
-                요소.addEventListener('contextmenu', 우클릭핸들러);
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="문법">
+                문법
+              </dt>
+              <dd class="main-article-dd">
+                <strong class="order">
+                  요소.addEventListener('contextmenu', contextmenuHandler);
+                </strong>
               </dd>
             </div>
             <div>
@@ -212,55 +231,94 @@
           </dl>
         </article>
 
-        <article class="keydown-event" aria-labelledby="keydown-event-title">
-          <h3 id="keydown-event-title" class="main-article-title">
+        <article class="keyboard-event" aria-labelledby="keyboard-event-title">
+          <h3 id="keyboard-event-title" class="main-article-title">
             <span class='main-article-title' aria-hidden="true">🌐</span>
-            keydown 이벤트
+            키보드 이벤트
           </h3>
           <p class="margin-8px">
-            키보트의 자판이 눌렸을 때 동작을 제어하는 keydown 이벤트의 적용대상과 특징을 목록으로 정리했다.
+            키보드 이벤트의 종류와 특징을 목록으로 정리했다.
           </p>
-          <dl class="main-article-dl" aria-label="적용대상과 특징">
-            <div>
-              <dt class="main-article-dt" aria-label="적용대상">
-                적용대상
-              </dt>
-              <dd class="main-article-dd">
-                모든 요소에 가능하며, 키보드로 조작하고자 하는 요소에 적용한다.
-              </dd>
-              <dd class="main-article-dd order">
-                요소.addEventListener('keydown', keydownHandler);
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="특징">
-                특징
-              </dt>
-              <dd class="main-article-dd">
-                e.keyCode를 사용하여 특정한 자판에만 동작하도록 선언할 수 있다.
-              </dd>
-            </div>
-          </dl>
+          <div id='keydown-event' class="margin-16px">
+            <h4 class="main-article-subtitle order">Keydown 이벤트</h4>
+            <dl class="main-article-dl" aria-label="keydown 정의">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    키보트의 <span class="underline">자판이 눌렸을 때</span> 특정 동작을 실행한다.
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="문법">
+                  문법
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    요소.addEventListener('keydown', keydownHandler);
+                  </strong>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div id='keyup-event' class="margin-16px">
+            <h4 class="main-article-subtitle order">Keyup 이벤트</h4>
+            <dl class="main-article-dl" aria-label="keyup 정의">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    키보트의 <span class="underline">자판에서 손을 떼면</span> 특정 동작을 실행한다.
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="문법">
+                  문법
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    요소.addEventListener('keyup', keydownHandler);
+                  </strong>
+                </dd>
+              </div>
+            </dl>
+          </div>
         </article>
 
-        <article class="transitionend-event" aria-labelledby="transitionend-event-title">
-          <h3 id="transitionend-event-title" class="main-article-title">
+        <article class="css-event" aria-labelledby="css-event-title">
+          <h3 id="css-event-title" class="main-article-title">
             <span class='main-article-title' aria-hidden="true">💰</span>
-            transitionend 이벤트
+            CSS 이벤트
           </h3>
           <p class="margin-8px">
             CSS 전환이 종료되는 시점에서 이벤트를 실행하는 transitionend 이벤트의 적용대상과 특징을 목록으로 정리했다.
           </p>
-          <dl class="main-article-dl" aria-label="적용대상과 특징">
+          <h4 class="main-article-subtitle order">transitionend 이벤트</h4>
+          <dl class="main-article-dl" aria-label="적용대상 및 특징">
             <div>
               <dt class="main-article-dt" aria-label="적용대상">
                 적용대상
               </dt>
               <dd class="main-article-dd">
-                CSS transition이 끝나면 이벤트를 발생시킬 요소
+                <strong>
+                  <span class="underline">CSS transition이 끝나면</span> 특정 동작을 실행할 요소
+                </strong>
               </dd>
-              <dd class="main-article-dd order">
-                요소.addEventListener('transitionend', transitionendHandler);
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="문법">
+                문법
+              </dt>
+              <dd class="main-article-dd">
+                <strong>
+                  요소.addEventListener('transitionend', transitionendHandler);
+                </strong>
               </dd>
             </div>
             <div>
@@ -284,49 +342,230 @@
           </dl>
         </article>
 
-        <aside class="event-property" aria-labelledby="event-property-title">
-          <h3 id="event-property-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">😇</span>
-            이벤트 속성
+        <article class="click-event" aria-labelledby="click-event-title">
+          <h3 id="click-event-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">🙌</span>
+            클릭 이벤트
           </h3>
+          <p class="margin-8px">
+            클릭 이벤트의 종류와 특징을 목록으로 정리했다.
+          </p>
+          <div id='mousedown-event' class="margin-16px">
+            <h4 class="main-article-subtitle order">Mousedown 이벤트</h4>
+            <dl class="main-article-dl" aria-label="정의 및 문법">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    마우스가 <span class="underline">눌렸을 때</span> 특정 동작을 실행한다.
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="문법">
+                  문법
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    요소.addEventListener('mousedown', mousedownHandler);
+                  </strong>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div id='mouseup-event' class="margin-16px">
+            <h4 class="main-article-subtitle order">Mouseup 이벤트</h4>
+            <dl class="main-article-dl" aria-label="정의 및 문법">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    <span class="underline">마우스에서 손을 떼면</span> 특정 동작을 실행한다.
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="문법">
+                  문법
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    요소.addEventListener('mouseup', mouseupHandler);
+                  </strong>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div id='mousemove-event' class="margin-16px">
+            <h4 class="main-article-subtitle order">Mousemove 이벤트</h4>
+            <dl class="main-article-dl" aria-label="정의 및 문법">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    <span class="underline">마우스가 움직일 때</span> 특정 동작을 실행한다.
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="문법">
+                  문법
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    요소.addEventListener('mousemove', mousemoveHandler);
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="특징">
+                  특징
+                </dt>
+                <dd class="main-article-dd">
+                  드래그 하는 동안에만 동작을 실행하려면 플래그를 사용한다. mousedown에는 플래그를 true로 전환하고 mouseup에는 플래그를 false로 설정한다.
+                </dd>
+                <dd class="main-article-dd">
+                  플래그가 true일 때 mousemove동작을 하게끔 설정한다.
+                </dd>
+              </div>
+            </dl>
+          </div>
 
-          <dl class="main-article-dl" aria-label="속성 소개">
-            <div>
-              <dt class="main-article-dt" aria-label="shiftKey 정의">
-                <strong class="order">
-                  shiftKey 속성
-                </strong>
-              </dt>
-              <dd class="main-article-dd">
-                shift키를 누른 상태로 마우스 클릭을 했을 때, 특정 동작을 지정할 때 사용하는 속성이다.
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="적용대상">
-                적용대상
-              </dt>
-              <dd class="main-article-dd">
-                shift키와 마우스 클릭으로 조작을 원하는 모든 대상.(input 체크박스 등등)
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="특징">
-                특징
-              </dt>
-              <dd class="main-article-dd">
-                shift 키를 누르고 있으면 true를 반환한다.
-              </dd>
-              <dd class="main-article-dd">
-                shift 키에서 손 떼면 false를 반환한다.
-              </dd>
-              <dd class="main-article-dd">
-                <strong class="underline">
-                  click 이벤트에 존재한다.(change 이벤트에는 shiftKey 속성이 없다.)
-                </strong>
-              </dd>
-            </div>
-          </dl>
-        </aside>
+          <aside class="click-event-property"
+            aria-labelledby="click-event-property-title">
+            <h3 id="click-event-property-title" class="main-article-title">
+              <span class='main-article-title' aria-hidden="true">💡</span>
+              클릭 이벤트 속성
+            </h3>
+
+            <h4 class="main-article-subtitle order">ShiftKey 속성</h4>
+            <dl class="main-article-dl" aria-label="속성 소개">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  shift키를 누른 상태로 마우스 클릭을 했을 때, 특정 동작을 지정할 때 사용하는 속성이다.
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="적용대상">
+                  적용대상
+                </dt>
+                <dd class="main-article-dd">
+                  shift키와 마우스 클릭으로 조작을 원하는 모든 대상.(input 체크박스 등등)
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="특징">
+                  특징
+                </dt>
+                <dd class="main-article-dd">
+                  shift 키를 누르고 있으면 true를 반환한다.
+                </dd>
+                <dd class="main-article-dd">
+                  shift 키에서 손 떼면 false를 반환한다.
+                </dd>
+                <dd class="main-article-dd">
+                  <strong class="underline">
+                    click 이벤트에 존재한다.(change 이벤트에는 shiftKey 속성이 없다.)
+                  </strong>
+                </dd>
+              </div>
+            </dl>
+          </aside>
+        </article>
+
+        <article class="video-event" aria-labelledby="video-event-title">
+          <h3 id="video-event-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">👀</span>
+            비디오 이벤트
+          </h3>
+          <p class="margin-8px">
+            비디오 이벤트의 종류와 특징을 목록으로 정리했다.
+          </p>
+          <div id="play-event" class="margin-16px">
+            <h4 class="main-article-subtitle order">Play 이벤트</h4>
+            <dl class="main-article-dl" aria-label="정의 및 문법">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    <span class="underline">video가 플레이될 때</span> 특정 동작을 실행한다.
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="문법">
+                  문법
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    폼.addEventListener('play', playHandler);
+                  </strong>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div id="pause-event" class="margin-16px">
+            <h4 class="main-article-subtitle order">pause 이벤트</h4>
+            <dl class="main-article-dl" aria-label="정의 및 문법">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    <span class="underline">video가 멈췄을 때</span> 특정 동작을 실행한다.
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="문법">
+                  문법
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    폼.addEventListener('pause', pauseHandler);
+                  </strong>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div id="timeupdate-event" class="margin-16px">
+            <h4 class="main-article-subtitle order">timeupdate 이벤트</h4>
+            <dl class="main-article-dl" aria-label="정의 및 문법">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    <span class="underline">video의 시간이 갱신되면</span> 특정 동작을 실행한다.
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="문법">
+                  문법
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    폼.addEventListener('timeupdate', timeupdateHandler);
+                  </strong>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </article>
       </section>
     </main>
 
