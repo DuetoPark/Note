@@ -109,7 +109,7 @@
         </h2>
         <div class="time">
           작성 날짜: <time datetime='2021-3-8'>2021년 03월 08일</time><br/>
-          수정 날짜: <time datetime='2021-3-17'>2021년 03월 17일</time>
+          수정 날짜: <time datetime='2021-3-19'>2021년 03월 19일</time>
         </div>
 
         <article class='summary' aria-labelledby="summary-title">
@@ -150,11 +150,11 @@
                 </span>
                 <pre class="main-article-pre background-white-radius">
                   <code>
-                    let sum = (a, b) => a + b;
+                    const sum = (a, b) => a + b;
 
                     /* 위 화살표 함수는 아래 함수의 축약 버전입니다.
 
-                    let sum = function(a, b) {
+                    const sum = function(a, b) {
                       return a + b;
                     };
                     */
@@ -182,13 +182,13 @@
               <dd class="main-article-dd">
                 인수가 하나밖에 없다면 인수를 감싸는 괄호를 생략할 수 있다.
               </dd>
-              <dd class="main-article-dd">
-                <span>
+              <dd>
+                <span class="hyphen">
                   인수가 하나도 없을 땐 괄호를 비워놓으면 된다. 대신, 괄호는 생략할 수 없다. 그 녀석의 팔을 꼭 잡고 놓아주지 말도록 하자.
                 </span>
                 <pre class="main-article-pre background-white-radius">
                   <code>
-                    let sayHi = () => alert("오이하세요!");
+                    const sayHi = () => alert("오이하세요!");
 
                     sayHi();
                   </code>
@@ -197,11 +197,87 @@
             </div>
           </dl>
         </article>
+
+        <article class='arrow-function-example' aria-labelledby="arrow-function-example-title">
+          <h3 id="arrow-function-example-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">😊</span>
+            예시
+          </h3>
+          <ul>
+            <li id="" class="main-article-list-items">
+              <h4 class='main-article-subtitle'>매개변수가 하나</h4>
+              <pre class="main-article-pre background-white-radius">
+                <code>
+                  const times = n => n * 2;
+
+                  times(2); // 4
+                </code>
+              </pre>
+            </li>
+            <li id="" class="main-article-list-items">
+              <h4 class='main-article-subtitle'>매개변수가 둘 이상</h4>
+              <pre class="main-article-pre background-white-radius">
+                <code>
+                  const sum = (a, b) => a + b;
+
+                  sum(52, 79); // 131
+                </code>
+              </pre>
+            </li>
+            <li id="" class="main-article-list-items">
+              <h4 class='main-article-subtitle'>삼항연산자</h4>
+              <pre class="main-article-pre background-white-radius">
+                <code>
+                  const cucumber = 52;
+
+                  const check = (cucumber > 79) ?
+                  () => alert('오이 친구 맞아요') :
+                  () => alert('오이 친구 아닙니다');
+                </code>
+              </pre>
+            </li>
+            <li id="" class="main-article-list-items">
+              <h4 class='main-article-subtitle'>본문이 여러 줄인 화살표</h4>
+              <pre class="main-article-pre background-white-radius">
+                <code>
+                  const sum = (a, b) => {
+                    const result = a + b;
+                    return result;
+                  };
+
+                  alert(sum(Math.ceil(Math.random * 10), 3)); // 0~10 아무숫자 + 3
+                </code>
+              </pre>
+            </li>
+          </ul>
+        </article>
+
+        <article class='arrow-function-caution' aria-labelledby="arrow-function-caution-title">
+          <h3 id="arrow-function-caution-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">😊</span>
+            주의
+          </h3>
+          <p>
+            메소드 함수가 아닌 곳에 가장 적합하며 생성자로서 사용할 수 없다.
+          </p>
+        </article>
       </section>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Arrow_functions'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - 화살표 함수", MDN, 2021년 3월 19일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Arrow_functions'>
+              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+            </a>
+          </cite>
+        </blockquote>
+
         <blockquote class='note-footer-reference'
           cite='https://ko.javascript.info/arrow-functions-basics'>
           <strong class='note-footer-reference-name'>
