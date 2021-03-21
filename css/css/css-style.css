@@ -430,3 +430,47 @@
 .media-query-error-solution > p{
   margin-bottom: 8px;
 }
+
+
+/* 13-input-styling.html */
+/* Article - build */
+#build-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.build-input{
+  width: 340px;
+  height: 45px;
+  padding: 0 12px;
+  margin-bottom: 12px;
+  line-height: 45px;
+  border-radius: 0.3em;
+  border: 1px solid #ced0da;
+}
+
+.build-input:hover{
+  border: 1px solid #337ee3;
+}
+
+.build-input:active,
+.build-input:focus{
+  border: 1px solid #337ee3;
+  box-shadow: 0px 0px 0px 4px rgba(96, 154, 233, 0.25);
+}
+
+#login{
+  margin: 12px 0;
+  border: 1px solid #609ae9;
+  background-color: #609ae9;
+  color: #fff;
+  transition: background-color 250ms ease-in-out;
+  cursor: pointer;
+}
+
+#login:hover,
+#login:active,
+#login:focus{
+  border: 1px solid #337ee3;
+  background-color: #337ee3;
+}
