@@ -66,6 +66,17 @@ let state = {
       {id: "38", href: "drag-direction"},
       {id: "39", href: "논리연산자"},
       {id: "40", href: "fragment"},
+      {id: "41", href: "메소드호출-삼항연산자"},
+    ],
+    atom: [
+      {id: "01", href: "no-response"},
+      {id: "02", href: "단축키"},
+    ],
+    git: [
+      {id: "01", href: "upload"},
+      {id: "02", href: "management"},
+      {id: "03", href: "error"},
+      {id: "04", href: "github-gist"},
     ],
   },
 };
