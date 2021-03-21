@@ -23,6 +23,7 @@ let state = {
       {id: "10", href: "direction"},
       {id: "11", href: "텍스트숨기기"},
       {id: "12", href: "미디어쿼리-에러"},
+      {id: "13", href: "input-styling"},
     ],
     javascript: [
       {id: "01", href: "pseudo-style"},
