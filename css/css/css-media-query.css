@@ -397,4 +397,11 @@ min-width >=768px  */
   .media-query-error-solution p{
     margin-bottom: 24px;
   }
+
+
+  /* 13-input-styling.html */
+  /* Article - build */
+  #input-style-code .main-article-list-items > p{
+    margin-bottom: 16px;
+  }
 }

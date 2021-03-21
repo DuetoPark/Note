@@ -474,3 +474,7 @@
   border: 1px solid #337ee3;
   background-color: #337ee3;
 }
+
+#input-style-code .main-article-list-items > p{
+  margin-bottom: 8px;
+}
