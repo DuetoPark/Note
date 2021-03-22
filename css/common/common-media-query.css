@@ -35,7 +35,7 @@ min-width >=576px  */
     height: 14px;
   }
 
-  button.toggle-button.new-style::after{
+  button.toggle-button.button-toggled::after{
     left: 3px;
     transform: translate(16px,-50%);
     width: 14px;
