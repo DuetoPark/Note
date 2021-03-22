@@ -29,6 +29,45 @@ function toggleHandler() {
 toggleButton.addEventListener('click', toggleHandler);
 
 
+// 네비게이션 탭 클릭 이벤트
+const tabButtons = document.querySelectorAll('.note-header-nav-list-items > button');
+const navigations = document.querySelectorAll('[role=tabpanel]');
+const navigationWrapper = document.querySelector('#go-to-pages');
+const navigationCloseButton = document.querySelector('.go-to-pages-close');
+const menuTitle = ['html', 'css', 'js'];
+let isActived = false;
+
+function toggleWrapper() {
+  navigationWrapper.classList.toggle("hidden");
+  navigationWrapper.classList.toggle("go-to-pages");
+}
+function showNavigation(elem) {
+  navigations.forEach(tabPanel => tabPanel.classList.add('hidden'));
+  const tabPanel = document.querySelector(`#go-to-page-div-${elem.dataset.tabname}`);
+  tabPanel.classList.remove('hidden');
+}
+function tabHandler(e) {
+  isActived = !isActived;
+  if (isActived) {
+    toggleWrapper();
+    showNavigation(this);
+  } else {
+    toggleWrapper();
+  }
+}
+function navigationCloseHandler() {
+  toggleWrapper();
+  isActived = !isActived;
+}
+
+navigationCloseButton.addEventListener('click', navigationCloseHandler);
+tabButtons.forEach((button, index) => {
+  button.setAttribute('data-tabname', menuTitle[index]);
+  button.addEventListener('click', tabHandler);
+});
+
+
+
 // Copy ClickEvent
 let noteMain = document.querySelector('.note-main');
 
