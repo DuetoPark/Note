@@ -109,7 +109,7 @@
         </h2>
         <div class="time">
           작성 날짜: <time datetime='2021-3-3'>2021년 03월 03일</time><br/>
-          수정 날짜: <time datetime='2021-3-17'>2021년 03월 17일</time>
+          수정 날짜: <time datetime='2021-3-22'>2021년 03월 22일</time>
         </div>
 
         <article class='summary' aria-labelledby="summary-title">
@@ -207,18 +207,22 @@
               </p>
               <p class="margin-8px">
                 배열의 시작 인덱스부터 원하는 개수만큼 요소가 제거된다.<br/>
+                개수에 음수가 나오면 아무 요소도 제거되지 않는다.<br/>
                 예시코드는 다음과 같다.
               </p>
-              <pre class="main-article-pre background-white-radius">
-                <code>
-                  let A = ["안", "녕", "오", "이", "친", "구"];
-                  let B = A.splice(2, 2);
+              <div id="splice-delete-example">
+                <pre class="main-article-pre background-white-radius margin-8px">
+                  <code>
+                    let A = ["안", "녕", "오", "이", "친", "구"];
+                    let B = A.splice(2, 2);
 
-                  결과)
-                  A = ["안", "녕", "친", "구"];
-                  B = ["오", "이"];
-                </code>
-              </pre>
+                    결과)
+                    A = ["안", "녕", "친", "구"];
+                    B = ["오", "이"];
+                  </code>
+                </pre>
+                <script src="https://gist.github.com/DuetoPark/72823cbd9af81055810c72103d6977b0.js"></script>
+              </div>
             </li>
             <li class="main-article-list-items margin-16px" aria-describedby="delete-x-end">
               <div id="delete-x-end" class="hidden">
