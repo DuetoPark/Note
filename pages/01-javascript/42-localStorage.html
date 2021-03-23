@@ -239,11 +239,59 @@
           <img src="../../assets/images/localstorage-dev-tools.png"
             alt="개발자도구 application 탭">
         </article>
+
+        <article class='JSON-parse-stringify'
+          aria-labelledby="JSON-parse-stringify-title">
+          <h3 id="JSON-parse-stringify-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💩</span>
+            JSON 겉핥기
+          </h3>
+          <div id="JSON-stringify" class="margin-16px">
+            <p class="margin-8px">
+              로컬스토리지에 객체를 저장하려면 JSON.stringify 과정을 거쳐야 한다.
+            </p>
+            <p class="margin-8px">
+              일단 먼저 로컬 스토리지에 객체가 들어왔을 때 브라우저는 굉장히 난감해 한다. 객체의 우왕좌왕하다가 객체를 열지 못하고 글자인 "[Object Object]"로 바꾼다.
+            </p>
+            <p>
+              브라우저가 객체 안의 글자를 읽을 수 있게 객체를 JSON 문자열로 변환하는 작업이 필요하다. 이 작업을 <strong class="underline">JSON.stringify</strong>가 담당한다.
+            </p>
+          </div>
+          <div id="JSON-parse">
+            <p class="margin-8px">
+              문자열로 변환된 객체를 원 상태로 되돌리는 명령어는 <strong class="underline">JSON.parse</strong>이다. JSON 문자열의 구문을 분석하고 ,그 결과에서 Javascript 값이나 객체를 생성한다.
+            </p>
+          </div>
+        </article>
       </section>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - JSON.stringify()", MDN, 2021년 3월 23일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify'>
+              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - JSON.parse()", MDN, 2021년 3월 23일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse'>
+              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+            </a>
+          </cite>
+        </blockquote>
+
         <blockquote class='note-footer-reference'
           cite='https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage'>
           <strong class='note-footer-reference-name'>
