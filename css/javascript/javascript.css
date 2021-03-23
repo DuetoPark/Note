@@ -138,3 +138,25 @@
 .what-is-this > div:first-of-type{
   margin-bottom: 8px;
 }
+
+
+/* 42-localStorage.html */
+/* Article - localStorage-example */
+input[name=item],
+input[type=submit]{
+  line-height: 40px;
+  padding: 0 10px;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
+input[name=item]:active,
+input[name=item]:focus{
+  box-shadow: 0px 0px 0px 3px #ffa5007a;
+}
+
+input[type=submit]{
+  margin-right: 0;
+  background-color: #ffa500;
+  cursor: pointer;
+}
