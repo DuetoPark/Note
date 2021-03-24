@@ -30,12 +30,20 @@ toggleButton.addEventListener('click', toggleHandler);
 
 
 // 네비게이션 조작
-const tabButtons = document.querySelectorAll('.note-header-nav-list-items > button');
+const tabButtons = document.querySelectorAll('[role=tab]');
 const navigations = document.querySelectorAll('[role=tabpanel]');
 const navigationWrapper = document.querySelector('#go-to-pages');
 const navigationCloseButton = document.querySelector('.go-to-pages-close');
-const menuTitle = ['html', 'css', 'js'];
+const menuTitle = ['html', 'css', 'javascript'];
 let isActived = false;
+let isClickedSubject = "";
+let tabList = [];
+let tabListIndex = 0;
+const keyCode = {
+  esc: 27,
+  tab: 9,
+  shift:16,
+}
 
 function toggleWrapper() {
   navigationWrapper.classList.toggle("hidden");
@@ -47,11 +55,19 @@ function showNavigation(elem) {
   navigations.forEach(tabPanel => tabPanel.classList.add('hidden'));
   // 선택한 tabPanel 보여주기
   const tabname = elem.dataset.tabname;
-  const isclicked = document.querySelector(`#go-to-page-div-${tabname}`);
-  isclicked.classList.remove('hidden');
+  const isclickedTab = document.querySelector(`#go-to-page-div-${tabname}`);
+  isclickedTab.classList.remove('hidden');
+
+  // 탭 포커스 이동을 위한 탭 리스트 저장
+  tabList = [];
+  tabListIndex = 0;
+  isClickedSubject = elem.dataset.tabname;
+  const pageAnchors = Array.from(document.querySelectorAll('a'));
+  tabList.push(navigationCloseButton);
+  tabList.push(...pageAnchors.filter(anchor => anchor.dataset.subject === isClickedSubject));
 }
 
-function tabHandler(e) {
+function tabHandler() {
   isActived = !isActived;
   if (isActived) {
     toggleWrapper();
@@ -62,13 +78,25 @@ function tabHandler(e) {
 }
 
 function navigationCloseHandler(e) {
-  const isPressedEscKey = isActived && e.keyCode === 27;
+  const isPressedEscKey = isActived && e.keyCode === keyCode.esc;
   const isClickedCloseButton = e.target === navigationCloseButton;
   if (isPressedEscKey || isClickedCloseButton) {
     toggleWrapper();
     isActived = !isActived;
   } else {
     return;
+  }
+}
+
+// 탭 포커스 이동
+function tabFocusHandler(e) {
+  if (e.keyCode === keyCode.tab) {
+    tabList[tabListIndex].focus();
+    if (tabListIndex === tabList.length -1) {
+      tabListIndex = 0;
+    } else {
+      tabListIndex+=1;
+    }
   }
 }
 
@@ -79,19 +107,8 @@ tabButtons.forEach((button, index) => {
   button.addEventListener('click', tabHandler);
 });
 
+window.addEventListener('keyup', tabFocusHandler);
 
-// 탭 포커스 이동
-let tabList = [];
-function tabFocusHandler(e) {
-  if (e.keyCode === 9) {
-    const pageAnchors = document.querySelectorAll('a');
-    const pageButtons = document.querySelectorAll('button');
-
-    console.log(pageAnchors, pageButtons);
-  }
-}
-
-window.addEventListener('keydown', tabFocusHandler);
 
 
 
