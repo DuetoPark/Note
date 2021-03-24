@@ -34,15 +34,16 @@ const tabButtons = document.querySelectorAll('[role=tab]');
 const navigations = document.querySelectorAll('[role=tabpanel]');
 const navigationWrapper = document.querySelector('#go-to-pages');
 const navigationCloseButton = document.querySelector('.go-to-pages-close');
+const navigationAllAnchors = document.querySelectorAll('nav a');
 const menuTitle = ['html', 'css', 'javascript'];
 let isActived = false;
-let isClickedSubject = "";
+let tabname;
+let nextIndex = 0;
 let tabList = [];
-let tabListIndex = 0;
 const keyCode = {
   esc: 27,
   tab: 9,
-  shift:16,
+  enter: 13,
 }
 
 function toggleWrapper() {
@@ -54,17 +55,19 @@ function showNavigation(elem) {
   // 모든 tabPanel 숨기기
   navigations.forEach(tabPanel => tabPanel.classList.add('hidden'));
   // 선택한 tabPanel 보여주기
-  const tabname = elem.dataset.tabname;
+  tabname = elem.dataset.tabname;
   const isclickedTab = document.querySelector(`#go-to-page-div-${tabname}`);
   isclickedTab.classList.remove('hidden');
 
-  // 탭 포커스 이동을 위한 탭 리스트 저장
+  // 탭 포커스 이동할 요소들 저장
   tabList = [];
-  tabListIndex = 0;
-  isClickedSubject = elem.dataset.tabname;
-  const pageAnchors = Array.from(document.querySelectorAll('a'));
+  nextIndex = 0;
   tabList.push(navigationCloseButton);
-  tabList.push(...pageAnchors.filter(anchor => anchor.dataset.subject === isClickedSubject));
+  const isGoingToShowItems = isclickedTab.querySelectorAll('a');
+  isGoingToShowItems.forEach(item =>{
+    tabList.push(item);
+    item.setAttribute('tabIndex', 1);
+  });
 }
 
 function tabHandler() {
@@ -89,19 +92,42 @@ function navigationCloseHandler(e) {
   }
 }
 
-// 탭 포커스 이동
-function tabFocusHandler(e) {
-  if (e.keyCode === keyCode.tab) {
-    tabList[tabListIndex].focus();
-    if (tabListIndex === tabList.length -1) {
-      tabListIndex = 0;
+// 탭 포커스
+function initializeTabIndex(focus) {
+  navigationAllAnchors.forEach(anchor => {anchor.setAttribute('tabIndex', -1)});
+  navigationCloseButton.setAttribute('tabIndex', focus ? 1 : -1);
+  tabList.forEach(item => item.setAttribute('tabIndex', focus ? 1 : -1));
+}
+
+function focusElement(event) {
+  const currentIndex = tabList.indexOf(event.target);
+  if (nextIndex != 0 && event.shiftKey) {
+    nextIndex = currentIndex;
+    tabList[currentIndex].focus();
+  } else {
+    nextIndex += 1;
+    if (nextIndex > tabList.length - 1) {
+      toggleWrapper();
+      isActived = !isActived;
+      initializeTabIndex(isActived);
+      nextIndex = 0;
+      tabname = '';
     } else {
-      tabListIndex+=1;
+      tabList[nextIndex].focus();
     }
   }
 }
+function tabFocusHandler(e) {
+  if (!tabname) { // navigationWrapper가 열리기 전
+    initializeTabIndex(isActived);
+    return;
+  } else if (e.keyCode === keyCode.tab) { // navigationWrapper가 열린 후
+    initializeTabIndex(isActived);
+    focusElement(e);
+  }
+}
 
-navigationWrapper.addEventListener('click', navigationCloseHandler);
+navigationCloseButton.addEventListener('click', navigationCloseHandler);
 window.addEventListener('keyup', navigationCloseHandler);
 tabButtons.forEach((button, index) => {
   button.setAttribute('data-tabname', menuTitle[index]);
