@@ -29,7 +29,7 @@ function toggleHandler() {
 toggleButton.addEventListener('click', toggleHandler);
 
 
-// 네비게이션 탭 클릭 이벤트
+// 네비게이션 조작
 const tabButtons = document.querySelectorAll('.note-header-nav-list-items > button');
 const navigations = document.querySelectorAll('[role=tabpanel]');
 const navigationWrapper = document.querySelector('#go-to-pages');
@@ -41,6 +41,7 @@ function toggleWrapper() {
   navigationWrapper.classList.toggle("hidden");
   navigationWrapper.classList.toggle("go-to-pages");
 }
+
 function showNavigation(elem) {
   // 모든 tabPanel 숨기기
   navigations.forEach(tabPanel => tabPanel.classList.add('hidden'));
@@ -49,6 +50,7 @@ function showNavigation(elem) {
   const isclicked = document.querySelector(`#go-to-page-div-${tabname}`);
   isclicked.classList.remove('hidden');
 }
+
 function tabHandler(e) {
   isActived = !isActived;
   if (isActived) {
@@ -58,12 +60,20 @@ function tabHandler(e) {
     toggleWrapper();
   }
 }
-function navigationCloseHandler() {
-  toggleWrapper();
-  isActived = !isActived;
+
+function navigationCloseHandler(e) {
+  const isPressedEscKey = isActived && e.keyCode === 27;
+  const isClickedCloseButton = e.target === navigationCloseButton;
+  if (isPressedEscKey || isClickedCloseButton) {
+    toggleWrapper();
+    isActived = !isActived;
+  } else {
+    return;
+  }
 }
 
-navigationCloseButton.addEventListener('click', navigationCloseHandler);
+navigationWrapper.addEventListener('click', navigationCloseHandler);
+window.addEventListener('keyup', navigationCloseHandler);
 tabButtons.forEach((button, index) => {
   button.setAttribute('data-tabname', menuTitle[index]);
   button.addEventListener('click', tabHandler);
