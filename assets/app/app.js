@@ -79,10 +79,11 @@ function tabHandler() {
 
 function navigationCloseHandler(e) {
   const isPressedEscKey = isActived && e.keyCode === keyCode.esc;
-  const isClickedCloseButton = e.target === navigationCloseButton;
+  const isClickedCloseButton = e.target && !e.keyCode;
   if (isPressedEscKey || isClickedCloseButton) {
     toggleWrapper();
     isActived = !isActived;
+    tabname = "";
   } else {
     return;
   }
