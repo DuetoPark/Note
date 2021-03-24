@@ -80,6 +80,20 @@ tabButtons.forEach((button, index) => {
 });
 
 
+// 탭 포커스 이동
+let tabList = [];
+function tabFocusHandler(e) {
+  if (e.keyCode === 9) {
+    const pageAnchors = document.querySelectorAll('a');
+    const pageButtons = document.querySelectorAll('button');
+
+    console.log(pageAnchors, pageButtons);
+  }
+}
+
+window.addEventListener('keydown', tabFocusHandler);
+
+
 
 // Copy ClickEvent
 let noteMain = document.querySelector('.note-main');
