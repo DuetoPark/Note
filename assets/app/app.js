@@ -42,9 +42,12 @@ function toggleWrapper() {
   navigationWrapper.classList.toggle("go-to-pages");
 }
 function showNavigation(elem) {
+  // 모든 tabPanel 숨기기
   navigations.forEach(tabPanel => tabPanel.classList.add('hidden'));
-  const tabPanel = document.querySelector(`#go-to-page-div-${elem.dataset.tabname}`);
-  tabPanel.classList.remove('hidden');
+  // 선택한 tabPanel 보여주기
+  const tabname = elem.dataset.tabname;
+  const isclicked = document.querySelector(`#go-to-page-div-${tabname}`);
+  isclicked.classList.remove('hidden');
 }
 function tabHandler(e) {
   isActived = !isActived;
