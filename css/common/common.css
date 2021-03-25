@@ -252,11 +252,13 @@ body{
 
 
 /* Article */
-.note-main .container > article{
+.note-main .container > article,
+.note-main .container > section{
   margin-bottom: 48px;
 }
 
-.note-main .container > article:last-child{
+.note-main .container > article:last-child,
+.note-main .container > section:last-child{
   margin-bottom: 0;
 }
 

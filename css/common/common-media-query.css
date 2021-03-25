@@ -63,7 +63,8 @@ min-width >=576px  */
   }
 
   /* Article */
-  .note-main .container > article{
+  .note-main .container > article,
+  .note-main .container > section{
     margin-bottom: 64px;
   }
 
@@ -193,7 +194,8 @@ min-width >=768px  */
 
 
   /* Article */
-  .note-main .container > article{
+  .note-main .container > article,
+  .note-main .container > section{
     margin-bottom: 88px;
   }
 
