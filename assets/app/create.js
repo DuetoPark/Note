@@ -1,8 +1,6 @@
 // Header navigation 목록 생성
-let navigationKey = Object.keys(state.네비게이션);
-
-
-function CreateNav (list, dataArray, key) {
+const bodyData = document.body.dataset.home;
+function CreateNav (list, dataArray, subject) {
   this.goToPageList = document.querySelector(list);
   this.dataArray = dataArray;
 
@@ -14,17 +12,24 @@ function CreateNav (list, dataArray, key) {
 
       let goToPageAnchor = document.createElement("a");
       goToPageAnchor.className = "go-to-page-anchor";
-      goToPageAnchor.href = "../01-" + key + "/" + this.dataArray[i].id + "-" + this.dataArray[i].href + ".html";
-      goToPageAnchor.setAttribute("role", "menuitem");
+
+      if (bodyData) { // home 일때 앵커 링크
+        goToPageAnchor.href = "./pages/01-" + subject + "/" + this.dataArray[i].id + "-" + this.dataArray[i].href + ".html";
+      } else { // home 아닐 때 앵커 링크
+        goToPageAnchor.href = "../01-" + subject + "/" + this.dataArray[i].id + "-" + this.dataArray[i].href + ".html";
+        goToPageAnchor.setAttribute("data-subject", subject);
+        goToPageAnchor.setAttribute("role", "menuitem");
+      }
+
       goToPageAnchor.textContent = this.dataArray[i].id + "-" + this.dataArray[i].href;
       goToPageListItem.append(goToPageAnchor);
     }
   };
 }
 
-let htmlNav = new CreateNav("#go-to-page-html", state.네비게이션.html, navigationKey[0]);
-let cssNav = new CreateNav("#go-to-page-css", state.네비게이션.css, navigationKey[1]);
-let jsNav = new CreateNav("#go-to-page-javascript", state.네비게이션.javascript, navigationKey[2]);
+let htmlNav = new CreateNav("#go-to-page-html", state.네비게이션.html, "html");
+let cssNav = new CreateNav("#go-to-page-css", state.네비게이션.css, "css");
+let jsNav = new CreateNav("#go-to-page-javascript", state.네비게이션.javascript, "javascript");
 
 htmlNav.createList();
 cssNav.createList();
