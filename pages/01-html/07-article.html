@@ -99,7 +99,7 @@
     </header>
 
     <main class='note-main' aria-label="본문 영역">
-      <section class='container' aria-labelledby="main-title">
+      <article class='container' aria-labelledby="main-title">
         <h2 id="main-title" class='main-title'>
           <strong>
             <span class='main-title' aria-hidden="true">😵</span>
@@ -109,9 +109,10 @@
         </h2>
         <div class="time">
           작성 날짜: <time datetime='2021-3-17'>2021년 03월 17일</time>
+          수정 날짜: <time datetime='2021-3-25'>2021년 03월 25일</time>
         </div>
 
-        <article class='summary' aria-labelledby="summary-title">
+        <section class='summary' aria-labelledby="summary-title">
           <h3 id="summary-title" class='main-article-title'>
             <span class='main-article-title' aria-hidden="true">💬</span>
             개요
@@ -121,18 +122,15 @@
             페이지를 형성할 때 아티클 단위로 나누는 연습을 하라는 사람도 있었다.<br/>
             시멘틱 마크업을 담당하는 아티클 태그를 정리해볼까 한다.
           </p>
-        </article>
+        </section>
 
-        <article class='article' aria-labelledby="article-title">
+        <section class='article' aria-labelledby="article-title">
           <h3 id="article-title" class='main-article-title'>
             <span class='main-article-title' aria-hidden="true">🐻</span>
             특징
           </h3>
           <p class="margin-8px">
-            나에게 Section 태그는 팔레트이고 Article 태그는 물감같다. 물감의 색은 다 다르지만, 물감이라는 공통점 하나로 팔레트에 담기니까. Article 끼리의 정보들은 개연성이 없지만, 유사한 기능을 띄므로 section으로 묶어주는 게 꽤나 비슷하다고 느꼈다.
-          </p>
-          <p class="margin-8px">
-            찾아보니 article 태그에는 아주 독립적이고 여기 저기에 붙여도 손색이 없는 정보를 담는다고 한다.
+            article 태그에는 아주 독립적이고 여기 저기에 붙여도 손색이 없는 정보를 담는다고 한다.
           </p>
           <picture>
             <source
@@ -149,17 +147,58 @@
             참조, 출처 등등은 article에 작성하지 않는데, 왜냐하면 이들은 footer 태그에 적합한 내용이기 때문이다.
           </p>
           <p class="margin-8px">
-            article 태그에는 header, footer 등의 태그를 가질 수 있다.
+            article 태그에는 header, footer 등의 태그를 선언할 수 있다.
+          </p>
+          <p class="margin-8px">
+            포럼글, 잡지, 뉴스, 블로그, 댓글(자기 할 말 하니까) 등등에 선언한다.
           </p>
           <p>
-            여기 노트 페이지처럼 주제별로 묶어서 작성하는게 좋다. 글 보면서 내가 그동안 잘못된 코딩을 한 건 아닌지 걱정했는데 잘 하고 있어서 다행이었다. 페이지를 엉망으로 짜서 이번 달 초에 고생을 좀 했다. 또다시 대참사가 일어나지 않도록 노력하자.
+            내 note 페이지는 article과 section을 반대로 작성했다. 일단 이 페이지는 고쳐놨지만 모든 페이지를 다 수정하기엔 페이지가 60개 이상이라서 엄두가 나지 않는다. 흑흑.
           </p>
-        </article>
-      </section>
+        </section>
+
+        <section class='article-section-diff'
+          aria-labelledby="article-section-diff-title">
+          <h3 id="article-section-diff-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">➿</span>
+            Section 태그와의 차이점
+          </h3>
+          <p class="margin-8px">
+            나에게 article 태그는 팔레트 위의 물감같다.<br/>
+            물감의 색은 다 다르니까.<br/>
+            이처럼, <strong class="order">정보들이 개연성이 없으면 article로 묶는 게 맞다.</strong>
+          </p>
+          <p class="margin-8px">
+            section 태그는 서가에 꽂힌 책과 같다.<br/>
+            '원예' 서가의 책들은 모두 원예에 대한 내용을 담아내니까.<br/>
+            이처럼, <strong class="order">정보들이 개연성과 연관성을 가지면 section으로 묶는 게 맞다.</strong>
+          </p>
+          <p class="margin-8px">
+            사과-(풋사과, 빨간 사과, 사과 재배법, 사과 유통, 사과 요리법)에서 각각의 요소를 section 태그로 묶는다. '사과'라는 연관성이 있기 때문이다.<br/>
+            트위터-(풋사과 글, 그림 글, 연예인 글, 생활꿀팁 글 등등)에서 각각의 요소를 article 태그로 묶는다. 글에는 아무런 연관성이 없기 때문이다.
+          </p>
+          <p>
+            추가로, ul과 ol태그도 연관성이 있는 정보를 담아내는 요소이다.<br/>
+            그러므로, li태그 안에 section 태그를 선언한다. article 태그는 선언하지 않는다.
+          </p>
+        </section>
+      </article>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://www.w3.org/TR/2013/CR-html5-20130806/sections.html#the-article-element'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "W3C - HTML5/4.4 Sections/4.4.2 The article element", W3C,  2021년 3월 25일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href="https://www.w3.org/TR/2013/CR-html5-20130806/sections.html#the-article-element">
+              https://www.w3.org/TR/2013/CR-html5-20130806/sections.html#the-article-element
+            </a>
+          </cite>
+        </blockquote>
+
         <blockquote class='note-footer-reference'
           cite='https://www.internetingishard.com/html-and-css/semantic-html/'>
           <strong class='note-footer-reference-name'>
