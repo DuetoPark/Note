@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="css, inline element, line-height"/>
+    <meta name="description" content="inline 요소에 line-height가 먹히지 않으면 어떻게 해결해야 하는지 알아봅시다."/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>inline 요소 line-height</title>
+
+    <!-- inline 요소 line-height -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/common/font.css">
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/css/css-style.css">
+    <link rel="stylesheet" href="../../css/css/css-media-query.css">
+
+    <!-- 데이터 -->
+    <script src='../../assets/data.js'></script>
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items' role="none">
+              <button type='button' role="tab" aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list" role="menu">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" role="tabpanel" aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🐩</span>
+            inline 요소 line-height
+            <span class='main-title' aria-hidden="true">🐩</span>
+          </strong>
+        </h2>
+        <div class="time">
+          작성 날짜: <time datetime='2021-3-29'>2021년 03월 29일</time>
+        </div>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌞</span>
+            개요
+          </h3>
+          <p>
+            anchor 요소에 line-height를 선언했는데 아무 반응이 없었다.<br/>
+            어떻게 해결해야 하는지 알아보자.
+          </p>
+        </article>
+
+        <article class='inline-lineheight' aria-labelledby="inline-lineheight-title">
+          <h3 id="inline-lineheight-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌰</span>
+            inline 요소에 lineheight 적용하기
+          </h3>
+          <p class="margin-8px">
+            <strong class="order">
+              line-height를 선언한 상태에서 'padding-top/bottom' 속성을 추가한다.
+            </strong>
+          </p>
+          <p>
+            원래 inline 요소는 padding-left/right만 먹힌다. 텍스트니까.<br/>
+            하지만 line-height를 선언하면 padding-top/bottom이 적용된다.<br/>
+            흑마법 주문인가 보다.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://stackoverflow.com/questions/22816123/why-cant-you-set-line-height-on-an-anchor-element-with-a-background'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "Stackoverflow - Why can't you set line-height on an anchor element with a background?", Stackoverflow, 2021년 3월 29일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://stackoverflow.com/questions/22816123/why-cant-you-set-line-height-on-an-anchor-element-with-a-background'>
+              https://stackoverflow.com/questions/22816123/why-cant-you-set-line-height-on-an-anchor-element-with-a-background
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 3월 21일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <!-- 요소 생성 -->
+    <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>
