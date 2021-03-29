@@ -9,6 +9,8 @@ let state = {
       {id: "06", href: "wai-aria-location"},
       {id: "07", href: "article"},
       {id: "08", href: "time"},
+      {id: "09", href: "data-attribute"},
+      {id: "10", href: "anchor"},
     ],
     css: [
       {id: "01", href: "link"},
@@ -24,6 +26,7 @@ let state = {
       {id: "11", href: "텍스트숨기기"},
       {id: "12", href: "미디어쿼리-에러"},
       {id: "13", href: "input-styling"},
+      {id: "14", href: "inline-lineheight"},
     ],
     javascript: [
       {id: "01", href: "pseudo-style"},
@@ -67,6 +70,8 @@ let state = {
       {id: "39", href: "논리연산자"},
       {id: "40", href: "fragment"},
       {id: "41", href: "메소드호출-삼항연산자"},
+      {id: "42", href: "localStorage"},
+      {id: "43", href: "tab-control"},
     ],
     atom: [
       {id: "01", href: "no-response"},
