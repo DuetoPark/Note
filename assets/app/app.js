@@ -49,6 +49,13 @@ const keyCode = {
 function toggleWrapper() {
   navigationWrapper.classList.toggle("hidden");
   navigationWrapper.classList.toggle("go-to-pages");
+
+  const ariaHidden = navigationWrapper.getAttribute('aria-hidden');
+  if (ariaHidden) {
+    navigationWrapper.setAttribute('aria-hidden', false);
+  } else {
+    navigationWrapper.setAttribute('aria-hidden', true);
+  }
 }
 
 function showNavigation(elem) {
