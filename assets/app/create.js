@@ -18,7 +18,6 @@ function CreateNav (list, dataArray, subject) {
       } else { // home 아닐 때 앵커 링크
         goToPageAnchor.href = "../01-" + subject + "/" + this.dataArray[i].id + "-" + this.dataArray[i].href + ".html";
         goToPageAnchor.setAttribute("data-subject", subject);
-        goToPageAnchor.setAttribute("role", "menuitem");
       }
 
       goToPageAnchor.textContent = this.dataArray[i].id + "-" + this.dataArray[i].href;
