@@ -30,8 +30,8 @@ toggleButton.addEventListener('click', toggleHandler);
 
 
 // 네비게이션 조작
-const tabButtons = document.querySelectorAll('[role=tab]');
-const navigations = document.querySelectorAll('[role=tabpanel]');
+const tabButtons = document.querySelectorAll('[data-role=tab]');
+const navigations = document.querySelectorAll('[data-role=tabpanel]');
 const navigationWrapper = document.querySelector('#go-to-pages');
 const navigationCloseButton = document.querySelector('.go-to-pages-close');
 const navigationAllAnchors = document.querySelectorAll('nav a');
