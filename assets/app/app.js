@@ -59,11 +59,11 @@ function toggleWrapper() {
 }
 
 function showNavigation(elem) {
-  // 모든 tabPanel 숨기기
+  // 모든 tabPanel 숨기고 선택한 tabPanel 보여주기
   navigations.forEach(tabPanel => tabPanel.classList.add('hidden'));
-  // 선택한 tabPanel 보여주기
+
   tabname = elem.dataset.tabname;
-  const isclickedTab = document.querySelector(`#go-to-page-div-${tabname}`);
+  const isclickedTab = navigationWrapper.querySelector(`#go-to-page-div-${tabname}`);
   isclickedTab.classList.remove('hidden');
 
   // 탭 포커스 이동할 요소들 저장
@@ -71,13 +71,10 @@ function showNavigation(elem) {
   nextIndex = 0;
   tabList.push(navigationCloseButton);
   const isGoingToShowItems = isclickedTab.querySelectorAll('a');
-  isGoingToShowItems.forEach(item =>{
-    tabList.push(item);
-    item.setAttribute('tabIndex', 1);
-  });
+  isGoingToShowItems.forEach(item => tabList.push(item));
 }
 
-function tabHandler() {
+function navigationHandler() {
   isActived = !isActived;
   if (isActived) {
     toggleWrapper();
@@ -87,7 +84,7 @@ function tabHandler() {
   }
 }
 
-function navigationCloseHandler(e) {
+function closeNavigationHandler(e) {
   const isPressedEscKey = isActived && e.keyCode === keyCode.esc;
   const isClickedCloseButton = e.target && !e.keyCode;
   if (isPressedEscKey || isClickedCloseButton) {
@@ -100,20 +97,21 @@ function navigationCloseHandler(e) {
 }
 
 // 탭 포커스
-function initializeTabIndex(focus) {
+function initializeTabIndex(isActived) {
+  // nav의 모든 anchor 태그는 탭 금지, 선택한 탭의 anchor 태그는 탭 포커스 허용
   navigationAllAnchors.forEach(anchor => {anchor.setAttribute('tabIndex', -1)});
-  navigationCloseButton.setAttribute('tabIndex', focus ? 1 : -1);
-  tabList.forEach(item => item.setAttribute('tabIndex', focus ? 1 : -1));
+  navigationCloseButton.setAttribute('tabIndex', isActived ? 1 : -1);
+  tabList.forEach(item => item.setAttribute('tabIndex', isActived ? 1 : -1));
 }
 
 function focusElement(event) {
   const currentIndex = tabList.indexOf(event.target);
-  if (nextIndex != 0 && event.shiftKey) {
+  if (nextIndex != 0 && event.shiftKey) { // tab키 + shift 키 누르면,
     nextIndex = currentIndex;
     tabList[currentIndex].focus();
   } else {
     nextIndex += 1;
-    if (nextIndex > tabList.length - 1) {
+    if (nextIndex > tabList.length - 1) { // 탭 목록 마지막 요소에서 tab키 누르면,
       toggleWrapper();
       isActived = !isActived;
       initializeTabIndex(isActived);
@@ -134,11 +132,12 @@ function tabFocusHandler(e) {
   }
 }
 
-navigationCloseButton.addEventListener('click', navigationCloseHandler);
-window.addEventListener('keyup', navigationCloseHandler);
+navigationCloseButton.addEventListener('click', closeNavigationHandler);
+window.addEventListener('keyup', closeNavigationHandler);
+
 tabButtons.forEach((button, index) => {
   button.setAttribute('data-tabname', menuTitle[index]);
-  button.addEventListener('click', tabHandler);
+  button.addEventListener('click', navigationHandler);
 });
 
 window.addEventListener('keyup', tabFocusHandler);
