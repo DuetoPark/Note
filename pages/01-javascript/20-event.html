@@ -109,7 +109,7 @@
         </h2>
         <div class="time">
           작성 날짜: <time datetime='2021-3-6'>2021년 03월 06일</time><br/>
-          수정 날짜: <time datetime='2021-3-20'>2021년 03월 20일</time>
+          수정 날짜: <time datetime='2021-4-1'>2021년 4월 1일</time>
         </div>
 
         <article class='summary' aria-labelledby="summary-title">
@@ -177,6 +177,104 @@
           </dl>
         </article>
 
+        <article class="mouse-event" aria-labelledby="mouse-event-title">
+          <h3 id="mouse-event-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">🔥</span>
+            마우스 이벤트
+          </h3>
+          <p class="margin-8px">
+            마우스 이벤트의 종류와 특징을 목록으로 정리했다.
+          </p>
+          <div id='mousemove-event' class="margin-24px">
+            <h4 class="main-article-subtitle order">Mousemove 이벤트</h4>
+            <dl class="main-article-dl" aria-label="정의 및 문법">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    <span class="underline">마우스가 움직일 때</span> 특정 동작을 실행한다.
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="문법">
+                  문법
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    요소.addEventListener('mousemove', mousemoveHandler);
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="특징">
+                  특징
+                </dt>
+                <dd class="main-article-dd">
+                  드래그 하는 동안에만 동작을 실행하려면 플래그를 사용한다. mousedown에는 플래그를 true로 전환하고 mouseup에는 플래그를 false로 설정한다.
+                </dd>
+                <dd class="main-article-dd">
+                  플래그가 true일 때 mousemove동작을 하게끔 설정한다.
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div id='mouseenter-event' class="margin-24px">
+            <h4 class="main-article-subtitle order">Mouseenter 이벤트</h4>
+            <dl class="main-article-dl" aria-label="정의 및 문법">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    <span class="underline">마우스가 요소 안에 들어갔을 때</span> 특정 동작을 실행한다.
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="문법">
+                  문법
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    요소.addEventListener('mouseenter', mouseenterHandler);
+                  </strong>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div id='mouseleave-event' class="margin-24px">
+            <h4 class="main-article-subtitle order">Mouseleave 이벤트</h4>
+            <dl class="main-article-dl" aria-label="정의 및 문법">
+              <div>
+                <dt class="main-article-dt" aria-label="정의">
+                  정의
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    <span class="underline">마우스가 요소를 빠져나올 때</span> 특정 동작을 실행한다.
+                  </strong>
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="문법">
+                  문법
+                </dt>
+                <dd class="main-article-dd">
+                  <strong>
+                    요소.addEventListener('mouseleave', mouseleaveHandler);
+                  </strong>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+
         <article class="contextmenu-event" aria-labelledby="contextmenu-event-title">
           <h3 id="contextmenu-event-title" class="main-article-title">
             <span class='main-article-title' aria-hidden="true">🎅</span>
@@ -239,7 +337,7 @@
           <p class="margin-8px">
             키보드 이벤트의 종류와 특징을 목록으로 정리했다.
           </p>
-          <div id='keydown-event' class="margin-16px">
+          <div id='keydown-event' class="margin-24px">
             <h4 class="main-article-subtitle order">Keydown 이벤트</h4>
             <dl class="main-article-dl" aria-label="keydown 정의">
               <div>
@@ -264,7 +362,7 @@
               </div>
             </dl>
           </div>
-          <div id='keyup-event' class="margin-16px">
+          <div id='keyup-event' class="margin-24px">
             <h4 class="main-article-subtitle order">Keyup 이벤트</h4>
             <dl class="main-article-dl" aria-label="keyup 정의">
               <div>
@@ -350,7 +448,7 @@
           <p class="margin-8px">
             클릭 이벤트의 종류와 특징을 목록으로 정리했다.
           </p>
-          <div id='mousedown-event' class="margin-16px">
+          <div id='mousedown-event' class="margin-24px">
             <h4 class="main-article-subtitle order">Mousedown 이벤트</h4>
             <dl class="main-article-dl" aria-label="정의 및 문법">
               <div>
@@ -375,7 +473,7 @@
               </div>
             </dl>
           </div>
-          <div id='mouseup-event' class="margin-16px">
+          <div id='mouseup-event' class="margin-24px">
             <h4 class="main-article-subtitle order">Mouseup 이벤트</h4>
             <dl class="main-article-dl" aria-label="정의 및 문법">
               <div>
@@ -396,42 +494,6 @@
                   <strong>
                     요소.addEventListener('mouseup', mouseupHandler);
                   </strong>
-                </dd>
-              </div>
-            </dl>
-          </div>
-          <div id='mousemove-event' class="margin-16px">
-            <h4 class="main-article-subtitle order">Mousemove 이벤트</h4>
-            <dl class="main-article-dl" aria-label="정의 및 문법">
-              <div>
-                <dt class="main-article-dt" aria-label="정의">
-                  정의
-                </dt>
-                <dd class="main-article-dd">
-                  <strong>
-                    <span class="underline">마우스가 움직일 때</span> 특정 동작을 실행한다.
-                  </strong>
-                </dd>
-              </div>
-              <div>
-                <dt class="main-article-dt" aria-label="문법">
-                  문법
-                </dt>
-                <dd class="main-article-dd">
-                  <strong>
-                    요소.addEventListener('mousemove', mousemoveHandler);
-                  </strong>
-                </dd>
-              </div>
-              <div>
-                <dt class="main-article-dt" aria-label="특징">
-                  특징
-                </dt>
-                <dd class="main-article-dd">
-                  드래그 하는 동안에만 동작을 실행하려면 플래그를 사용한다. mousedown에는 플래그를 true로 전환하고 mouseup에는 플래그를 false로 설정한다.
-                </dd>
-                <dd class="main-article-dd">
-                  플래그가 true일 때 mousemove동작을 하게끔 설정한다.
                 </dd>
               </div>
             </dl>
@@ -490,7 +552,7 @@
           <p class="margin-8px">
             비디오 이벤트의 종류와 특징을 목록으로 정리했다.
           </p>
-          <div id="play-event" class="margin-16px">
+          <div id="play-event" class="margin-24px">
             <h4 class="main-article-subtitle order">Play 이벤트</h4>
             <dl class="main-article-dl" aria-label="정의 및 문법">
               <div>
@@ -515,7 +577,7 @@
               </div>
             </dl>
           </div>
-          <div id="pause-event" class="margin-16px">
+          <div id="pause-event" class="margin-24px">
             <h4 class="main-article-subtitle order">pause 이벤트</h4>
             <dl class="main-article-dl" aria-label="정의 및 문법">
               <div>
@@ -540,7 +602,7 @@
               </div>
             </dl>
           </div>
-          <div id="timeupdate-event" class="margin-16px">
+          <div id="timeupdate-event" class="margin-24px">
             <h4 class="main-article-subtitle order">timeupdate 이벤트</h4>
             <dl class="main-article-dl" aria-label="정의 및 문법">
               <div>
@@ -571,6 +633,30 @@
 
     <footer class='note-footer'>
       <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - Element: mouseleave event", MDN, 2021년 4월 1일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event'>
+              https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - Element: mouseenter event", MDN, 2021년 4월 1일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event'>
+              https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event
+            </a>
+          </cite>
+        </blockquote>
+
         <blockquote class='note-footer-reference'
           cite='https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/shiftKey'>
           <strong class='note-footer-reference-name'>
