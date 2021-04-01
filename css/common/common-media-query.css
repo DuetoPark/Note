@@ -80,7 +80,7 @@ min-width >=576px  */
 
   /* Article - Definition List */
   .main-article-dl > div{
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   dfn.main-article-dt{
@@ -141,6 +141,10 @@ min-width >=576px  */
 
   .margin-16px{
     margin-bottom: 24px;
+  }
+
+  .margin-24px{
+    margin-bottom: 48px;
   }
 }
 

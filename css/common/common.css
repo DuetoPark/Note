@@ -548,3 +548,7 @@ button.toggle-button.button-toggled::after{
 .margin-16px{
   margin-bottom: 16px;
 }
+
+.margin-24px{
+  margin-bottom: 24px;
+}
