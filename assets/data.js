@@ -77,6 +77,8 @@ let state = {
       {id: "45", href: "getBoundingClientRect"},
       {id: "46", href: "bubbling-capturing"},
       {id: "47", href: "navigator"},
+      {id: "48", href: "promise"},
+      {id: "49", href: "bind-apply-call"},
     ],
     atom: [
       {id: "01", href: "no-response"},
