@@ -27,6 +27,7 @@ let state = {
       {id: "12", href: "미디어쿼리-에러"},
       {id: "13", href: "input-styling"},
       {id: "14", href: "inline-lineheight"},
+      {id: "15", href: "flex-grow-flex-shrink"},
     ],
     javascript: [
       {id: "01", href: "pseudo-style"},
@@ -72,6 +73,10 @@ let state = {
       {id: "41", href: "메소드호출-삼항연산자"},
       {id: "42", href: "localStorage"},
       {id: "43", href: "tab-control"},
+      {id: "44", href: "speechSynthesis"},
+      {id: "45", href: "getBoundingClientRect"},
+      {id: "46", href: "bubbling-capturing"},
+      {id: "47", href: "navigator"},
     ],
     atom: [
       {id: "01", href: "no-response"},
