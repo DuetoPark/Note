@@ -127,40 +127,53 @@
             <span class='main-article-title' aria-hidden="true">👮</span>
             setTimeout
           </h3>
-          <p class="margin-8px">
-            <strong class="order">
-              window.setTimeout(콜백함수, milliseconds);
-            </strong>
-          </p>
-          <p class="margin-8px">
-            동작을 지연시키는 매소드다.<br/>
-            window 없이 함수 단독으로 나올 수 있다.<br/>
-            문법 해석은 목록으로 정리했다.
-          </p>
-          <dl class="main-article-dl" aria-label="문법 해석">
-            <div>
-              <dt class="main-article-dt" aria-label="콜백함수">
-                콜백함수
-              </dt>
-              <dd class="main-article-dd">
-                동작할 함수를 의미한다.
-              </dd>
-              <dd class="main-article-dd">
-                함수를 직접 입력하거나, 함수명을 입력한다.
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="milliseconds">
-                milliseconds
-              </dt>
-              <dd class="main-article-dd">
-                지연할 만큼의 시간을 입력한다.
-              </dd>
-              <dd class="main-article-dd">
-                단위는 기입하지 않으며, 1000은 1초를 의미한다.
-              </dd>
-            </div>
-          </dl>
+          <div id="setTimeout-desc" class="margin-24px">
+            <p class="margin-8px">
+              <strong class="order">
+                window.setTimeout(콜백함수, milliseconds);
+              </strong>
+            </p>
+            <p class="margin-8px">
+              동작을 지연시키는 매소드다.<br/>
+              window 없이 함수 단독으로 나올 수 있다.<br/>
+              문법 해석은 목록으로 정리했다.
+            </p>
+            <dl class="main-article-dl" aria-label="문법 해석">
+              <div>
+                <dt class="main-article-dt" aria-label="콜백함수">
+                  콜백함수
+                </dt>
+                <dd class="main-article-dd">
+                  동작할 함수를 의미한다.
+                </dd>
+                <dd class="main-article-dd">
+                  함수를 직접 입력하거나, 함수명을 입력한다.
+                </dd>
+              </div>
+              <div>
+                <dt class="main-article-dt" aria-label="milliseconds">
+                  milliseconds
+                </dt>
+                <dd class="main-article-dd">
+                  지연할 만큼의 시간을 입력한다.
+                </dd>
+                <dd class="main-article-dd">
+                  단위는 기입하지 않으며, 1000은 1초를 의미한다.
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div id="setTimeout-example">
+            <h4 class="main-article-subtitle">
+              <span aria-hidden="true">👉</span>사용 예시
+            </h4>
+            <p class="margin-8px">
+              setTimeout은 CSS와 함께 사용하면 정확한 동작을 구현할 수 있다.<br/>
+              예를 들어, display와 opacity 속성을 같이 조작할 때 유용하다.<br/>
+              display는 trasition 속성이 적용되지 않는 특성을 가진다. 이런 이유로 opacity 효과를 살리지 못하는 경우가 발생한다. 이를 보완하기 위해서, setTimeout을 이용해서 display 속성을 변경하는 동작과 opacity 속성을 변경하는 동작을 시간차를 두어 실행한다.
+            </p>
+            <script src="https://gist.github.com/DuetoPark/2e68de64d9fc860b7455132363795f77.js"></script>
+          </div>
         </section>
 
         <section class='setInterval' aria-labelledby="setInterval-title">
