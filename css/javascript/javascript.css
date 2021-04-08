@@ -167,3 +167,11 @@ input[type=submit]{
 #role-tab{
   margin-bottom: 24px;
 }
+
+/* 50-slider.html */
+/* Section - slider-keywords
+   Section - slider-build */
+.slider-keywords .type::before,
+.slider-build .type::before{
+  
+}
