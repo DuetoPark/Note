@@ -529,3 +529,51 @@
 #nth-of-type-multiple p:nth-of-type(n+2):nth-of-type(-n+3){
   background-color: rgba(30, 144, 255, 0.5);
 }
+
+
+/* 17-transform-rotate.html */
+/* Section - rotate-example */
+.wrapper{
+  display: flex;
+  max-width: 600px;
+  padding: 50px;
+  margin: 0 auto;
+  border: 1px solid #333;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow-x: auto;
+  perspective: 300px;
+}
+
+.item{
+  flex: 1 0 200px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.5);
+  font-size: 40px;
+  color: #fff;
+}
+
+.item:nth-child(4n+1) { background-color: mistyrose; }
+.item:nth-child(4n+2) { background-color: lightblue; }
+.item:nth-child(4n+3) { background-color: seagreen; }
+.item:nth-child(4n+4) { background-color: orange; }
+
+.item:nth-child(odd) { transform: scaleX(1.31) rotateY(-40deg); }
+.item:nth-child(even) { transform: scaleX(1.31) rotateY(40deg); }
+
+/* Section - perspective-markup */
+.perspective-markup{
+  display: flex;
+  flex-direction: column;
+}
+
+.perspective-markup{
+  display: flex;
+  flex-direction: column;
+}
+
+.perspective-markup > dl{
+  order: 1;
+}
