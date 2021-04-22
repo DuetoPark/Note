@@ -29,7 +29,7 @@ let state = {
       {id: "14", href: "inline-lineheight"},
       {id: "15", href: "flex-grow-flex-shrink"},
       {id: "16", href: "css-selector"},
-
+      {id: "17", href: "perspective"},
     ],
     javascript: [
       {id: "01", href: "pseudo-style"},
@@ -81,6 +81,7 @@ let state = {
       {id: "47", href: "navigator"},
       {id: "48", href: "promise"},
       {id: "49", href: "bind-apply-call"},
+      {id: "50", href: "slider"},
     ],
     atom: [
       {id: "01", href: "no-response"},
