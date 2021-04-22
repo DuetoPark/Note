@@ -563,6 +563,54 @@
 .item:nth-child(odd) { transform: scaleX(1.31) rotateY(-40deg); }
 .item:nth-child(even) { transform: scaleX(1.31) rotateY(40deg); }
 
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.card-perspective,
+.card{
+  position: relative;
+  width: 200px;
+  height: 300px;
+}
+
+.card-perspective{
+  perspective: 400px;
+}
+
+.card-inner{
+  transform-style: preserve-3d;
+  transition: transform 250ms ease-out;
+}
+
+.card-perspective.flipped .card-inner,
+.card.flipped .card-inner{
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 300px;
+  backface-visibility: hidden;
+  background-color: dodgerblue;
+  cursor: pointer;
+}
+
+.card-back{
+  transform: rotateY(180deg);
+  background-color: lightblue;
+}
+
 /* Section - perspective-markup */
 .perspective-markup{
   display: flex;
