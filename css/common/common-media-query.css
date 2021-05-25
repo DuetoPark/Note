@@ -251,4 +251,16 @@ min-width >=768px  */
   .background-white-radius{
     padding: 20px 40px;
   }
+
+  .margin-8px{
+    margin-bottom: 16px;
+  }
+
+  .margin-16px{
+    margin-bottom: 24px;
+  }
+
+  .margin-24px{
+    margin-bottom: 48px;
+  }
 }
