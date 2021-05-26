@@ -172,8 +172,8 @@
                 <dt class="main-article-dt background-white-radius">
                   <strong>npm init -y</strong>
                 </dt>
-                <dd>npm 초기 설치를 의미</dd>
-                <dd>작업 폴더에 package.json 파일이 생성</dd>
+                <dd class="main-article-dd">npm 초기 설치를 의미</dd>
+                <dd class="main-article-dd">작업 폴더에 package.json 파일이 생성</dd>
               </dl>
             </li>
             <li class="main-article-list-items">
@@ -181,11 +181,11 @@
                 <dt class="main-article-dt background-white-radius">
                   <strong>npm install --save-dev @babel/cli</strong>
                 </dt>
-                <dd>컴파일을 담당하는 패키지</dd>
-                <dd>'--save-dev': 로컬(작업 폴더)에 설치</dd>
-                <dd>구 버전: babel-cli</dd>
-                <dd>최신 버전: @babel/cli</dd>
-                <dd>package.json 파일 devDependencies에 내역이 남는다</dd>
+                <dd class="main-article-dd">컴파일을 담당하는 패키지</dd>
+                <dd class="main-article-dd">'--save-dev': 로컬(작업 폴더)에 설치</dd>
+                <dd class="main-article-dd">구 버전: babel-cli</dd>
+                <dd class="main-article-dd">최신 버전: @babel/cli</dd>
+                <dd class="main-article-dd">package.json 파일 devDependencies에 내역이 남는다</dd>
               </dl>
             </li>
             <li class="main-article-list-items">
@@ -198,7 +198,7 @@
                 <dt class="main-article-dt background-white-radius">
                   <strong>npm install --save-dev @babel/preset-env</strong>
                 </dt>
-                <dd>es5 문법으로 바꿔주는 패키지</dd>
+                <dd class="main-article-dd">es5 문법으로 바꿔주는 패키지</dd>
               </dl>
             </li>
             <li class="main-article-list-items">
@@ -206,8 +206,8 @@
                 <dt class="main-article-dt background-white-radius">
                   <strong>npm install --save-dev babel-preset-minify</strong>
                 </dt>
-                <dd>파일 크기를 압축 패키지</dd>
-                <dd>선택사항</dd>
+                <dd class="main-article-dd">파일 크기를 압축 패키지</dd>
+                <dd class="main-article-dd">선택사항</dd>
               </dl>
             </li>
             <li class="main-article-list-items">
@@ -215,8 +215,8 @@
                 <dt class="main-article-dt background-white-radius">
                   <strong>.babelrc 파일 생성</strong>
                 </dt>
-                <dd>작업 폴더에 생성</dd>
-                <dd>
+                <dd class="main-article-dd">작업 폴더에 생성</dd>
+                <dd class="main-article-dd">
                   <pre>
                     <code>
                       {
@@ -225,10 +225,10 @@
                     </code>
                   </pre>
                 </dd>
-                <dd>
+                <dd class="main-article-dd">
                   ["minify", {builtIns: false, evaluate: false, mangle: false}],
                 </dd>
-                <dd>
+                <dd class="main-article-dd">
                   ["@babel/preset-env", {"targets": ">= 0.25%, not dead", "useBuiltIns":"entry", "corejs":3}],
                 </dd>
               </dl>
@@ -238,16 +238,16 @@
                 <dt class="main-article-dt background-white-radius">
                   <strong>package.json 파일 수정</strong>
                 </dt>
-                <dd>
+                <dd class="main-article-dd">
                   <pre>
                     <code>
                       "scripts" : {},
                     </code>
                   </pre>
                 </dd>
-                <dd>"build": "babel ./assets/src -d ./assets/lib -w"</dd>
-                <dd>'-d' 왼쪽 경로: 원본 파일/폴더 경로</dd>
-                <dd>'-d' 오른쪽 경로: es5코드로 변형된 코드가 저장될 경로</dd>
+                <dd class="main-article-dd">"build": "babel ./assets/src -d ./assets/lib -w"</dd>
+                <dd class="main-article-dd">'-d' 왼쪽 경로: 원본 파일/폴더 경로</dd>
+                <dd class="main-article-dd">'-d' 오른쪽 경로: es5코드로 변형된 코드가 저장될 경로</dd>
               </dl>
             </li>
             <li class="main-article-list-items">
@@ -255,9 +255,9 @@
                 <dt class="main-article-dt background-white-radius">
                   <strong>npm run build</strong>
                 </dt>
-                <dd>프롬프트 또는 git bash에 입력</dd>
-                <dd>babel 컴파일 실행됨</dd>
-                <dd>명령 취소: ctrl + c</dd>
+                <dd class="main-article-dd">프롬프트 또는 git bash에 입력</dd>
+                <dd class="main-article-dd">babel 컴파일 실행됨</dd>
+                <dd class="main-article-dd">명령 취소: ctrl + c</dd>
               </dl>
             </li>
             <li class="main-article-list-items">
@@ -265,7 +265,7 @@
                 <dt class="main-article-dt background-white-radius">
                   <strong>.gitignore 파일 생성</strong>
                 </dt>
-                <dd>node_modules/ 입력</dd>
+                <dd class="main-article-dd">node_modules/ 입력</dd>
               </dl>
             </li>
           </ol>
