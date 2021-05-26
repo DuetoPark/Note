@@ -204,15 +204,13 @@ input[type=submit]{
   color: #1E90FF;
 }
 
-.babel-install-step dd{
-  padding-left: 16px;
-}
-
-.babel-install-step dd::before{
-  content: '-';
-  margin-right: 4px;
-}
-
 dt.main-article-dt.background-white-radius{
   width: 100%;
+}
+
+
+/* 52-npm.html */
+/* Section - npm.command */
+.npm-install-option{
+  padding-left: 16px;
 }
