@@ -625,3 +625,10 @@
 .perspective-markup > dl{
   order: 1;
 }
+
+
+/* 19-gulp.html */
+/* Section - gulp-install */
+.gulp-install-step dt.main-article-dt.background-white-radius{
+  width: 100%;
+}
