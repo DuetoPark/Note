@@ -298,6 +298,10 @@ dfn.main-article-dt,
   font-weight: 500;
 }
 
+.main-article-dd{
+  padding-left: 16px;
+}
+
 .main-article-dd::before{
   content: '-' / "";
   margin-right: 4px;
