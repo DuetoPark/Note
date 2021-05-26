@@ -173,5 +173,46 @@ input[type=submit]{
    Section - slider-build */
 .slider-keywords .type::before,
 .slider-build .type::before{
-  
+
+}
+
+/* 51-babel.html */
+/* Section - babel */
+.babel .desc{
+  padding-left: 16px;
+}
+
+.syntax-type{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 16px;
+}
+
+.syntax-type > *{
+  width: auto;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+/* Section - babel-install */
+.node-install{
+  text-decoration: underline;
+  transition: color 250ms ease-in-out;
+}
+
+.node-install:hover{
+  color: #1E90FF;
+}
+
+.babel-install-step dd{
+  padding-left: 16px;
+}
+
+.babel-install-step dd::before{
+  content: '-';
+  margin-right: 4px;
+}
+
+dt.main-article-dt.background-white-radius{
+  width: 100%;
 }
