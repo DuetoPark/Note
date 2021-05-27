@@ -37,8 +37,15 @@
 }
 
 
-/* 3-error.html */
+/* 5-gitignore.html */
 /* Section - gitignore */
 .build-gitignore li > p{
   padding-left: 16px;
+}
+
+
+/* 6-merge-error.html */
+/* Section - merge-cancel */
+dt.main-article-dt.background-white-radius{
+  width: 100%;
 }
