@@ -214,3 +214,11 @@ dt.main-article-dt.background-white-radius{
 .npm-install-option{
   padding-left: 16px;
 }
+
+
+/* 53-회계형표현.html */
+/* Section - account-exp */
+.numberFormat p,
+.account-exp .toLocaleString p{
+  padding-left: 16px;
+}
