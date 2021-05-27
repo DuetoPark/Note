@@ -208,6 +208,11 @@ dt.main-article-dt.background-white-radius{
   width: 100%;
 }
 
+/* Section - babel-error */
+.babel-error dl p{
+  padding-left: 16px;
+}
+
 
 /* 52-npm.html */
 /* Section - npm.command */
