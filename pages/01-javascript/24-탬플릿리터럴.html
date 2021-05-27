@@ -99,7 +99,7 @@
     </header>
 
     <main class='note-main' aria-label="본문 영역">
-      <section class='container' aria-labelledby="main-title">
+      <article class='container' aria-labelledby="main-title">
         <h2 id="main-title" class='main-title'>
           <strong>
             <span class='main-title' aria-hidden="true">🌟</span>
@@ -109,10 +109,10 @@
         </h2>
         <div class="time">
           작성 날짜: <time datetime='2021-3-8'>2021년 03월 08일</time><br/>
-          수정 날짜: <time datetime='2021-3-17'>2021년 03월 17일</time>
+          수정 날짜: <time datetime='2021-5-27'>2021년 05월 27일</time>
         </div>
 
-        <article class='summary' aria-labelledby="summary-title">
+        <section class='summary' aria-labelledby="summary-title">
           <h3 id="summary-title" class='main-article-title'>
             <span class='main-article-title' aria-hidden="true">✨</span>
             개요
@@ -129,9 +129,9 @@
             배운 것들을 정리하려 한다.<br/>
             오늘은 두시 전에 잘 수 있을까?
           </p>
-        </article>
+        </section>
 
-        <article class='template-literals' aria-labelledby="template-literals-title">
+        <section class='template-literals' aria-labelledby="template-literals-title">
           <h3 id="template-literals-title" class='main-article-title'>
             <span class='main-article-title' aria-hidden="true">❗</span>
             정의
@@ -139,9 +139,9 @@
           <p>
             내장된 표현식을 허용하는 문자열을 의미한다.
           </p>
-        </article>
+        </section>
 
-        <article class='template-literals-syntax' aria-labelledby="template-literals-syntax-title">
+        <section class='template-literals-syntax' aria-labelledby="template-literals-syntax-title">
           <h3 id="template-literals-syntax-title" class='main-article-title'>
             <span class='main-article-title' aria-hidden="true">❓</span>
             문법
@@ -172,9 +172,9 @@
               코드가 읽기 쉽게 변한다.
             </li>
           </ul>
-        </article>
+        </section>
 
-        <article class='template-literals-expression' aria-labelledby="template-literals-expression-title">
+        <section class='template-literals-expression' aria-labelledby="template-literals-expression-title">
           <h3 id="template-literals-expression-title" class='main-article-title'>
             <span class='main-article-title' aria-hidden="true">💫</span>
             표현식 삽입법
@@ -206,8 +206,28 @@
               // 한국어로는 오이라는 뜻이야. 까불지마."
             </code>
           </pre>
-        </article>
-      </section>
+        </section>
+
+        <section class='literals-error' aria-labelledby="literals-error-title">
+          <h3 id="literals-error-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💫</span>
+            에러
+          </h3>
+          <ul>
+            <li>
+              <h4 class='main-article-subtitle error'>줄바꿈</h4>
+              <p class='margin-8px'>
+                innerHTML 작성할 때, 백틱(`)입력 후에 줄바꿈하면 결과가 출력되지 않는다.<br/>
+                백틱 뒤에 바로 입력해야 한다.
+              </p>
+              <p class='margin-8px'>
+                일반 문자열은 줄바꿈해도 출력된다. 줄바꿈이 반영된다.
+              </p>
+              <script src="https://gist.github.com/DuetoPark/401b5384dcaf94f19dc9154c16e9a6f2.js"></script>
+            </li>
+          </ul>
+        </section>
+      </article>
     </main>
 
     <footer class='note-footer'>
