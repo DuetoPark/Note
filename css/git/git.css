@@ -35,3 +35,10 @@
   height: auto;
   padding-top: 8px;
 }
+
+
+/* 3-error.html */
+/* Section - gitignore */
+.build-gitignore li > p{
+  padding-left: 16px;
+}
