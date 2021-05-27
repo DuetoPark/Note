@@ -109,6 +109,7 @@
         </h2>
         <div class="time">
           작성 날짜: <time datetime='2021-5-26'>2021년 05월 26일</time>
+          수정 날짜: <time datetime='2021-5-27'>2021년 05월 27일</time>
         </div>
 
         <section class='summary' aria-labelledby="summary-title">
@@ -269,6 +270,29 @@
               </dl>
             </li>
           </ol>
+        </section>
+
+        <section class='babel-error' aria-labelledby="babel-error-title">
+          <h3 id="babel-error-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🦄</span>
+            에러
+          </h3>
+
+          <p class="margin-16px">Babel 설정하면 자동으로 엄격모드가 된다. 문법을 제대로 지키지 않아서 발생한 오류가 많았다. 흑흑</p>
+
+          <dl aria-label='에러 종류'>
+            <div>
+              <dt class="main-article-dt main-article-subtitle">변수 에러</dt>
+              <dd class="main-article-dd">변수 선언 방식(const, let, var 예약어)을 지키지 않은 경우</dd>
+              <dd class="main-article-dd">
+                for 문의 괄호 안에 변수 선언 방식을 지키지 않은 경우
+                <p>
+                  ex- for (key in object) {}<br/>
+                  for (const key in object) {}로 변경한다.
+                </p>
+              </dd>
+            </div>
+          </dl>
         </section>
       </article>
     </main>
