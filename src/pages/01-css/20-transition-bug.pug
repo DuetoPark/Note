@@ -1,0 +1,67 @@
+extends ../../templates/layout
+
+block append head
+  meta(name="keyword", content="css, transition, error, bug")
+  meta(name="description", content="transition을 선언해서 적용이 안 될 때 어떻게 해야하는지 알아봅시다.")
+
+  title Transition bug
+
+  link(rel="stylesheet", href="../../css/style-css.css")
+  link(rel="stylesheet", href="../../css/responsive/style-css.css")
+
+block content
+  main.note-main(aria-label="본문 영역")
+    article.container(aria-labelledby="main-title")
+      h2#main-title.main-title
+        strong
+          span.main-title(aria-hidden="true") 👋
+          | Transition bug
+          span.main-title(aria-hidden="true") 👋
+      div.time 작성 날짜: <time datetime='2021-5-28'>2021년 05월 28일</time>
+
+      section.summary(aria-labelledby="summary-title")
+        h3#summary-title.main-article-title
+          span.main-article-title(aria-hidden="true") 💩
+          | 개요
+        p
+        |  클래스명에 지정한 대부분의 프로퍼티는 다 잘 동작하는데,<br/>
+        | transition만 동작하지않을 때가 있다.<br/>
+        |  어떻게 대처해야 하는지 알아봅시다.
+
+      section.transition-error(aria-labelledby="transition-error-title")
+        h3#transition-error-title.main-article-title
+          span.main-article-title(aria-hidden="true") 🎵
+          | 해결 방법
+        p.margin-8px
+          strong.order 선택자를 변경한다.
+        p.margin-8px
+          | 클래스에서 동작이 안 되고, 아이디로 변경해도 달라지는 건 없었다.<br/>
+          | 다중 클래스(.style.class)나, 아이디와 클래스 동시 호출(#style.class)도 동작하지 않았다.<br/>
+          | 아직 이유는 모르겠다...???ㅠㅠㅠ
+        p.margin-8px
+          | 대신, <strong class="order">다른 attribute로 호출했더니 동작했다.</strong><br/>
+          | 예를 들면, button[type='button'] 혹은 button[data-login='true'] 처럼.
+        p
+          | 위치를 나타내는 가상 선택자를 이용하는 방법도 있지만, 요소를 더해줄 때마다 선택자도 변경해야하는 상황이 발생할 수 있으므로 좋은 방법은 아닌듯 하다.
+
+  footer.note-footer
+  div.container
+    blockquote.note-footer-reference(cite='https://github.com/wesbos/JavaScript30')
+      strong.note-footer-reference-name 정보 출처: "github / wesbos / JavaScript30 - 27-Click and Drag", github, 2021년 4월 10일 접속,
+      cite.note-footer-reference-url
+        a(href='https://github.com/wesbos/JavaScript30') https://github.com/wesbos/JavaScript30
+
+    blockquote.note-footer-reference(cite='https://www.w3schools.com/cssref/css3_pr_perspective.asp')
+      strong.note-footer-reference-name 정보 출처: "MDN- CSS perspective Property", MDN, 2021년 4월 10일 접속,
+      cite.note-footer-reference-url
+        a(href='https://www.w3schools.com/cssref/css3_pr_perspective.asp') https://www.w3schools.com/cssref/css3_pr_perspective.asp
+
+    blockquote.note-footer-reference(cite='https://gist.github.com/rxaviers/7360908')
+      strong.note-footer-reference-name 이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 4월 10일 접속,
+      cite.note-footer-reference-url
+        a(href='https://gist.github.com/rxaviers/7360908') https://gist.github.com/rxaviers/7360908
+
+block script
+  script(src='../../assets/data.js')
+  script(src='../../assets/app/create.js')
+  script(src='../../assets/app/app.js')
