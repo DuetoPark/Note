@@ -1,0 +1,51 @@
+header.note-header(aria-label="페이지 조작 영역")
+  div.container
+    // 홈으로 이동 
+    h1.note-header-title(aria-labelledby="go-to-home")
+      a#go-to-home
+        span(aria-hidden="true") 🔥
+        | 기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+        span(aria-hidden="true") 🔥
+
+    //야간 모드로 전환
+    section.toggle-button-group(aria-labelledby="toggle-button")
+      span.toggle-button-title(aria-hidden="true") Day/Night Switch
+      button#toggle-button.toggle-button(type='button', aria-label="야간모드 켜기", aria-controls="page-mode-state")
+      p#page-mode-state.hidden(aria-live="polite") 야간 모드 꺼짐
+
+    // 다른 페이지로 이동
+    nav.note-header-nav(aria-labelledby="note-header-nav-title")
+      h2#note-header-nav-title.hidden.note-header-nav-title(aria-hidden="true") 다른 페이지로 이동
+      ol.note-header-nav-list(aria-label="주제 선택", role="tablist")
+        li.note-header-nav-list-items
+          button(type='button', data-role='tab', aria-controls="go-to-page-div-html") html
+        li.note-header-nav-list-items
+          button(type='button', data-role='tab', aria-controls="go-to-page-div-css") css
+        li.note-header-nav-list-items
+          button(type='button', data-role='tab', aria-controls="go-to-page-div-js") javascript
+
+      article#go-to-pages.hidden(aria-hidden="true", aria-labelledby="select-chapter")
+        h2#select-chapter.hidden 챕터 선택 모달 열림
+
+        button.go-to-pages-close(type="button", aria-label="모달 닫기")
+
+        div#go-to-page-div-html.go-to-page-div.hidden(data-role='tabpanel', aria-labelledby="html-button")
+          h3.go-to-page-title(aria-hidden="true")
+            span(aria-hidden="true") 😈
+            |  html
+          ol#go-to-page-html.go-to-page-list(role="menu")
+            // ../../assets/app/create.js (state.네비게이션.html)
+
+        div#go-to-page-div-css.go-to-page-div.hidden(data-role='tabpanel', aria-labelledby="css-button")
+          h3.go-to-page-title
+            span(aria-hidden="true") 😇
+            |  CSS
+          ol#go-to-page-css.go-to-page-list
+            // ../../assets/app/create.js (state.네비게이션.css)
+
+        div#go-to-page-div-javascript.go-to-page-div.hidden(data-role='tabpanel', aria-labelledby="js-button")
+          h3.go-to-page-title
+            span(aria-hidden="true") 😎
+            |  Javascript
+          ol#go-to-page-javascript.go-to-page-list
+            // ../../assets/app/create.js (state.네비게이션.javascript)
