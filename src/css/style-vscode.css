@@ -1,0 +1,13 @@
+/* 1-extention */
+.extension > div {
+  padding-left: 16px;
+}
+
+.extension #search > p {
+  margin-bottom: 8px;
+}
+
+.extension-list > li:before {
+  content: "-";
+  margin-right: 8px;
+}
