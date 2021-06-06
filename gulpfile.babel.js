@@ -8,6 +8,7 @@ import miniCSS from "gulp-csso";
 import gimage from "gulp-image";
 import bro from "gulp-bro";
 import babelify from "babelify";
+import ghPage from "gulp-gh-pages";
 
 const routes = {
   pug: {
@@ -32,7 +33,7 @@ const routes = {
   }
 };
 
-const clean = () => del(["build/"]);
+const clean = () => del([".publish"]);
 
 const webserver = () => 
     gulp
@@ -93,6 +94,8 @@ const js = () =>
     )
     .pipe(gulp.dest(routes.js.dest));
 
+const gh = () => gulp.src('build/**/*').pipe(ghPage());
+
 const watch = () => {
   gulp.watch(routes.img.watch, img);
   gulp.watch("src/pages/**/*.html", html);
@@ -107,3 +110,4 @@ const live = gulp.series([webserver, watch]);
 
 export const build = gulp.series([prepare, assets]);
 export const dev = gulp.series([build, live]);
+export const deploy = gulp.series([build, gh, clean]);
