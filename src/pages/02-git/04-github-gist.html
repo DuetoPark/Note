@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="git, GitHub Gist"/>
+    <meta name="description" content="내가 짠 코드를 짱 멋지게 보여주고 싶을 때 사용하는 git gist에 대해 알아보자"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>GitHub Gist</title>
+
+    <!-- GitHub Gist -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/style-common.css">
+    <link rel="stylesheet" href="../../css/responsive/style-common.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/style-git.css">
+    <link rel="stylesheet" href="../../css/responsive/style-git.css">
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../index.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🌏</span>
+            Github Gist
+            <span class='main-title' aria-hidden="true">🌏</span>
+          </strong>
+        </h2>
+        <div class="time">
+          작성 날짜: <time datetime='2021-3-21'>2021년 03월 21일</time>
+        </div>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">⛅</span>
+            개요
+          </h3>
+          <p>
+            정말 어쩌다가 발견한 git gist.<br/>
+            생각보다 엄청나고 대단하다.<br/>
+            git gist의 사용법을 알아보자.
+          </p>
+        </article>
+
+        <article class='github-gist' aria-labelledby="github-gist-title">
+          <h3 id="github-gist-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🎃</span>
+            정의
+          </h3>
+          <div id='github-gist-desc'class=" margin-8px">
+            <p class="margin-8px">
+              <strong class="order">
+                코드를 에디터에서 작성한 것처럼 보여주는 도구
+              </strong>
+            </p>
+            <p>
+              확장자명에 따라 코드의 하이라이트가 다르게 보인다.
+              또한 수정한 내용이 즉시 반영된다.
+            </p>
+            <p>
+              Github Gist에서 관리할 수 있다.
+            </p>
+          </div>
+          <div id="github-gist-example">
+            <div class="hidden">예시</div>
+            <script src="https://gist.github.com/DuetoPark/1a02284c27ba7e1836bb99304921eff0.js"></script>
+          </div>
+        </article>
+
+        <article class='how-to-use-github-gist'
+          aria-labelledby="how-to-use-github-gist-title">
+          <h3 id="how-to-use-github-gist-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🎄</span>
+            사용 방법
+          </h3>
+          <ol aria-labelledby="how-to-use-github-gist-title">
+            <li class='main-article-list-items'>
+              <p>
+                <strong>
+                  1. 우층 상단 프로필 사진 옆의 '+' 아이콘을 누른다.
+                </strong>
+              </p>
+              <p class="desc margin-8px">
+                깃허브에서 실행한다면 메뉴 중에 'New gist'를 클릭한다.<br/>
+                깃허브 지스트에서는 '+'를 누르면 바로 코드 입력 화면이 나온다.
+              </p>
+              <img src="../../assets/images/github-gist-new.png" alt="깃허브 지스트 생성하기">
+            </li>
+            <li class='main-article-list-items'>
+              <p>
+                <strong>
+                  2. 코드 설명, 파일명, 코드를 입력한다.
+                </strong>
+              </p>
+              <p class="desc margin-8px">
+                <strong>
+                  확장자를 꼭 입력해야한다. 확장자를 입력하지 않으면 하이라이트 효과가 활성화되지 않는다.
+                </strong>
+              </p>
+              <img src="../../assets/images/github-gist-write.png" alt="깃허브 지스트 작성하기">
+            </li>
+            <li class='main-article-list-items'>
+              <p>
+                <strong>
+                  3. Create 버튼을 누른다.
+                </strong>
+              </p>
+              <p class="desc margin-8px">
+                Create secret gist는 검색엔진이 탐색하지 못한다. 하지만 URL을 알면 누구나 볼 수 있다. secret 옵션이 기본 설정이다.<br/>
+                Create public gist는 세상 모든 사람들이 볼 수 있다. 인터넷을 사용하는 강아지, 고양이, 외계인도 볼 수 있다.
+              </p>
+              <img src="../../assets/images/github-gist-save.png" alt="깃허브 지스트 저장하기">
+            </li>
+            <li class='main-article-list-items'>
+              <p>
+                <strong>
+                  4. 우측 상단 Embed의 주소를 복사, 원하는 페이지에 붙여넣기 한다.
+                </strong>
+              </p>
+              <p class="desc margin-8px">
+                일반 페이지를 만들 때에는 주소 그대로 붙여넣기 한다.<br/>
+                velog나 tistory 같은 블로그는 따옴표 안의 주소만을 복사 붙여넣기 한다.<br/>
+                추가로, 편집(edit)과 삭제(delete) 버튼으로 gist를 관리할 수 있다. 버튼은 해당 gist에 들어가면 페이지 우측 상단 프로필 사진의 바로 아래에 있다.
+              </p>
+              <img src="../../assets/images/github-gist-usage.png" alt="깃허브 지스트 사용하기">
+            </li>
+          </ol>
+        </article>
+
+        <article class='github-gist-pre-diff'
+          aria-labelledby="github-gist-pre-diff-title">
+          <h3 id="github-gist-pre-diff-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👻</span>
+            pre 태그와 비교
+          </h3>
+          <ol aria-labelledby="github-gist-pre-diff-title">
+            <li class='main-article-list-items'>
+              <p>
+                <strong class="order">
+                  1. 스크린리더가 코드를 읽을 때, pre 태그는 문단처럼 읽고 Github Gist는 table 형식으로 읽어나간다.
+                </strong>
+              </p>
+              <p class="desc">
+                pre 태그는 코드를 줄 글 읽듯이 진행한다. 중간에 쉬지않고 처음부터 끝까지 쭉 진행되므로 중간에 놓치면 처음부터 다시 읽어야 한다.<br/>
+                Github Gist는 코드 한 줄이 표의 행이된다. 특정 줄만 반복해서 읽을 수 있다.
+              </p>
+            </li>
+            <li class='main-article-list-items'>
+              <p>
+                <strong class="order">
+                  2. pre 태그를 읽을 때 발음 정확도가 높다.
+                </strong>
+              </p>
+              <p class="desc">
+                input id="form-input"를 읽을 때, pre 태그는 '인풋 아이디 이콜 폼 인풋'으로 발음한다.<br/>
+                Github gist는 '인푸티드 이콜 포민풋'으로 발음한다. 띄어쓰기와 '-'를 제껴버리는 느낌이다. 페이지 언어를 영어로 바꾸고 해당 스크립트 언어로 영어로 바꿔봤지만 개선되진 않았다.
+              </p>
+            </li>
+            <li class='main-article-list-items'>
+              <p>
+                <strong class="order">
+                  3. Github Gist는 하이라이트 기능이 있다.
+                </strong>
+              </p>
+              <p class="desc">
+                속성이나 변수명등의 색상이 표시되므로 코드를 이해하는데 많은 도움이 된다. pre는 하이라이트 기능이 없다. HTML 태그 선언과 CSS 설정을 해야한다.
+              </p>
+            </li>
+          </ol>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 3월 21일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href="https://gist.github.com/rxaviers/7360908">
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/data.js'></script>
+    <script src='../../assets/app/create.js'></script>
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

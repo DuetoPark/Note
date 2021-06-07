@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="javascript, bubbling, event capture, propagation"/>
+    <meta name="description" content="계층구조의 버블링과 이벤트의 동작 순서인 이벤트 캡쳐, 버블링을 없애주는 propagation에 대해 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>Bubbling, capture, propagation</title>
+
+    <!-- Bubbling, capture, propagation -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/style-common.css">
+    <link rel="stylesheet" href="../../css/style-html.css">
+    <link rel="stylesheet" href="../../css/responsive/style-common.css">
+    <link rel="stylesheet" href="../../css/responsive/style-html.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/animation/animation.css">
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../index.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <section id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </section>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <article class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">👶</span>
+            버블링과 캡처링(Bubbling and Capturing)
+            <span class='main-title' aria-hidden="true">👶</span>
+          </strong>
+        </h2>
+        <div class="time">
+          작성 날짜: <time datetime='2021-4-5'>2021년 04월 05일</time>
+        </div>
+
+        <section class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👸</span>
+            개요
+          </h3>
+          <p>
+            브라우저가 클릭 이벤트를 2회 이상 반복해서 보여줄 때가 있었다.<br/>
+            막연히 코드를 잘못 짜서 그렇다며 미래의 나에게 미션을 넘겼었다.<br/>
+            지금의 내가 그걸 넘겨받았다.
+          </p>
+        </section>
+
+        <section class='bubbling' aria-labelledby="bubbling-title">
+          <h3 id="bubbling-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👩</span>
+            버블링(Bubbling)
+          </h3>
+          <div id="bubbling-desc" class="margin-8px">
+            <p class="margin-8px">
+              버블링을 알기 전에 이벤트가 '계층구조'에서 '어떤 순서'로 실행되는가를 알아야 한다.<br/>
+              <strong class="order">
+                '가장 안에 있는 요소'에서 시작하여 부모 요소로 '거슬러 올라가며' 핸들러를 실행한다.
+              </strong>
+            </p>
+            <p class="margin-8px">
+              마우스로 요소를 클릭하면'클릭된 요소'의 핸들러를 동작한다. <span aria-hidden="true">👉</span>이벤트를 종료한 뒤, 부모 요소의 핸들러를 실행한다. <span aria-hidden="true">👉</span> 가장 최상단의 조상 요소를 만날 때까지 이 과정을 반복하면서 각각의 요소에 할당된 핸들러를 동작한다.
+            </p>
+            <p class="margin-8px">
+              이런 흐름을 '이벤트 버블링'이라고 부른다. 이벤트가 제일 깊은 곳에 있는 요소에서 시작해 부모 요소를 거슬러 올라가며 발생하는 모양이 마치 거품과 닮았기 때문이다.
+            </p>
+            <p>
+              순서는 안에서 바깥으로(아래에서 위로) 진행된다.
+            </p>
+          </div>
+          <picture id="bubbling-img">
+            <source midea="(max-width: 576px)"
+              srcset="../../assets/images/bubbling-mobile.png"/>
+            <source midea="(min-width: 577px)"
+              srcset="../../assets/images/bubbling-desktop.png"/>
+            <img src="../../assets/images/bubbling-desktop.png"
+              alt="버블링">
+          </picture>
+        </section>
+
+        <section class='capturing' aria-labelledby="capturing-title">
+          <h3 id="capturing-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💇</span>
+            캡쳐링(Capturing)
+          </h3>
+          <p class="margin-8px">
+            버블링과 반대로, 이벤트가 '조상 요소'로부터 시작해서 하위 요소로 전파되는 것을 의미한다.
+          </p>
+          <p class="margin-8px">
+            특정 요소를 클릭하면 이벤트가 최상위 조상에서 시작해 아래로 전파되고(캡처링 단계), 이벤트가 타깃 요소에 도착해 실행된 후(타깃 단계), 다시 위로 전파된다(버블링 단계). 이런 과정을 통해 요소에 할당된 이벤트 핸들러가 호출된다.
+          </p>
+          <p class="margin-8px">
+            on'event' 속성이나 addEventListener를 이용해 할당된 핸들러는 타깃 단계와 버블링 단계에서만 동작한다.<br/>
+            캡처링 단계에서 이벤트를 실행하고자 한다면 addEventListener의 capture 속성을 true로 한다.(default값은 false다.)
+          </p>
+          <p>
+            elem.addEventListener(..., {capture: true})
+          </p>
+        </section>
+
+        <section class='remove-bubbling'
+          aria-labelledby="remove-bubbling-title">
+          <h3 id="remove-bubbling-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👨</span>
+            버블링 없애기
+          </h3>
+          <p>
+            '핸들러'에 e.stopPropagation()을 사용한다.
+          </p>
+          <p>
+            addEventListener에서 capture 속성이 false로 지정되어 있어야 각각의 핸들러가 독립적으로 실행된다. true 상태이면 조상 요소의 핸들러만이 실행된다.
+          </p>
+        </section>
+
+        <aside class='event-flow-and-once'
+          aria-labelledby="event-flow-and-once-title">
+          <h4 id="event-flow-and-once-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👼</span>
+            이벤트 흐름과 이벤트 제거
+          </h4>
+          <div id="event-flow" class="margin-24px">
+            <h5 class="main-article-subtitle">
+              <span class="main-article-subtitle" aria-hidden="true">👉</span>이벤트 흐름
+            </h5>
+            <p class="margin-8px">
+              이벤트 흐름엔 3가지 단계가 있다.
+            </p>
+            <dl class="main-article-dl" aria-label="단계">
+              <div id='capturing-step'>
+                <dt class="main-article-dt" aria-label="캡처링 단계">
+                  캡처링 단계
+                </dt>
+                <dd class="main-article-dd">
+                  이벤트가 하위 요소로 전파되는 단계
+                </dd>
+              </div>
+              <div id='target-step'>
+                <dt class="main-article-dt" aria-label="타깃 단계">
+                  타깃 단계
+                </dt>
+                <dd class="main-article-dd">
+                  이벤트가 실제 타깃 요소에 전파되는 단계
+                </dd>
+              </div>
+              <div id='bubbling-step'>
+                <dt class="main-article-dt" aria-label="버블링 단계">
+                  버블링 단계
+                </dt>
+                <dd class="main-article-dd">
+                  이벤트가 상위 요소로 전파되는 단계
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div id="once">
+            <h5 class="main-article-subtitle">
+              <span class="main-article-subtitle" aria-hidden="true">👉</span>이벤트 제거(once 속성)
+            </h5>
+            <p class="margin-8px">
+              핸들러를 '한 번만 실행'한 뒤 이벤트를 실행하지 못하도록 만들고자 한다면 once 속성을 사용한다.
+            </p>
+            <p class="margin-8px">
+              elem.addEventListener(..., {once: true})
+            </p>
+            <p class="margin-8px">
+              true로 설정해야 속성이 적용된다. default값은 false다.
+            </p>
+            <p>
+              removeEventListener과 동일하다.
+            </p>
+          </div>
+        </aside>
+      </article>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://ko.javascript.info/bubbling-and-capturing'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "모던자바스크립- 버블링과 캡처링", 모던자바스크립트, 2021년 4월 5일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://ko.javascript.info/bubbling-and-capturing'>
+              https://ko.javascript.info/bubbling-and-capturing
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github, 2021년 4월 5일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/data.js'></script>
+    <script src='../../assets/app/create.js'></script>
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

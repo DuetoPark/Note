@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="css, width, calc, 100%, 100vw, auto"/>
+    <meta name="description" content="요소의 가로 폭을 조절하는 속성인 width의 값을 calc로 지정했을 때, 100%/100vw/auto로 지정했을 때 어떻게 달라지는 지 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>width 100% auto 100vw</title>
+
+    <!-- width -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/style-common.css">
+    <link rel="stylesheet" href="../../css/style-css.css">
+    <link rel="stylesheet" href="../../css/responsive/style-common.css">
+    <link rel="stylesheet" href="../../css/responsive/style-css.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../index.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list" role="menu">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">💘</span>
+            width
+            <span class='main-title' aria-hidden="true">💘</span>
+          </strong>
+        </h2>
+        <div class="time">
+          수정 날짜: <time datetime='2021-3-17'>2021년 03월 17일</time>
+        </div>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌟</span>
+            개요
+          </h3>
+          <p>
+            클론 코딩중인데,<br/>
+            breakpoint 확인하려고 화면 너비 늘렸다 줄였다 반복하다가 발견한게 있다.<br/>
+            <br/>
+            뷰포트의 가로 길이가 변하면, 요소의 여백은 유지되고 요소의 너비만 조절되는 매직 쇼.<br/>
+            <br/>
+            마법의 주문.. 아직 배워야 할 게 넘모 많습니다..
+          </p>
+        </article>
+
+        <article class='width-calc' aria-labelledby="width-calc-title">
+          <h3 id="width-calc-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">✨</span>
+            width: calc();
+          </h3>
+          <p>
+            어떻게 한거지? 이렇게 저렇게 계속 찾아보고 시도해보다가 calc를 사용했다는 걸 알게되었다.
+          </p>
+          <p>
+            calc에는 연산자를 다 쓸 수 있다.<br/>
+            대신, 연산자는 좌우 공백이 있어야 한다.<br/>
+            <br/>
+            width: calc((100% - 64px) / 3); 이렇게 사용한다.<br/>
+            여백 계산방법은 다음과 같다.
+          </p>
+          <ol class='main-article-list background-white-radius' aria-label="여백 계산방법">
+            <li class='main-article-list-items hyphen' role="none">
+              먼저, 전체 가로 길이(100% 또는 100vw)에서 요소의 여백의 합계를 뺀다.
+            </li>
+            <li class='main-article-list-items hyphen' role="none">
+              다음, 요소 갯수만큼 나눈다.
+            </li>
+          </ol>
+          <div class="width-calc-image-group">
+            <img class="width-calc-image"
+              src="../../assets/images/width-calc-1.png"
+              alt="width calc 지정">
+            <img class="width-calc-image"
+              src="../../assets/images/width-calc-2.png"
+              alt="width calc 지정 후 가로 늘림">
+          </div>
+        </article>
+
+        <article class='width-group' aria-labelledby="width-group-title">
+          <h3 id="width-group-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🎵</span>
+            width: auto/100%;
+          </h3>
+          <p>
+            그리고 width에 auto나 100%같이 유동적인 값을 줄 땐, 확인할 부분이 많다.<br/>
+            <br/>
+            뭔가 width 조정이 잘 안 될 때가 있는데,<br/>
+            일단 화내지 말고 여러가지 확인을 해야한다.
+          </p>
+          <p>
+            <strong class="underline">
+              이 그룹의 width를 결정하는 요소는 어디에 있나?를 찾기 위함이다.
+            </strong>
+          </p>
+          <ul class='main-article-list background-white-radius' aria-label="확인">
+            <li class='main-article-list-items hyphen' role="none">
+              자식요소의 display와 width
+            </li>
+            <li class='main-article-list-items hyphen' role="none">
+              해당요소의 display와 width
+            </li>
+            <li class='main-article-list-items hyphen' role="none">
+              부모요소의 display와 width
+            </li>
+          </ul>
+          <p>
+            어느 요소에 영향을 받는지 확인했다면, 결론은 다음과 같다.
+          </p>
+          <ol class='main-article-list background-white-radius' aria-label="결론">
+            <li class='main-article-list-items hyphen' role="none">
+              해당요소가 {width: 100%;}이면, 자식요소의 width가 그룹의 크기를 조절한다.
+            </li>
+            <li class='main-article-list-items hyphen' role="none">
+              자식요소가 {width: 100%;}이면, 해당요소의 width가 그룹의 크기를 조절한다.
+            </li>
+          </ol>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Web/CSS/calc()'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "MDN - calc()", MDN, 2021년 1월 10일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Web/CSS/calc()'>
+              https://developer.mozilla.org/ko/docs/Web/CSS/calc()
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 1월 10일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/data.js'></script>
+    <script src='../../assets/app/create.js'></script>
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

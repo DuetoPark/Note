@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="아톰, atom, 단축키"/>
+    <meta name="description" content="아톰 단축키. 알고있으면 그냥 그렇지만, 모르다면 너를 아주 화나게 만들지롱"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>아톰 단축키</title>
+
+    <!-- 아톰 단축키 -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/style-common.css">
+    <link rel="stylesheet" href="../../css/style-atom.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/responsive/style-common.css">
+    <link rel="stylesheet" href="../../css/responsive/style-atom.css">
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../index.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🐲</span>
+            단축키
+            <span class='main-title' aria-hidden="true">🐲</span>
+          </strong>
+        </h2>
+        <div class="time">
+          작성 날짜: <time datetime='2021-2-28'>2021년 02월 28일</time>
+        </div>
+
+        <article class='summary' aria-labelledby="summary">
+          <h3 id="summary" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐡</span>
+            개요
+          </h3>
+          <p>
+            아톰 단축키.<br/>
+            알면 슴슴하지만, 모르면 조금 불편하고 불편하고 불편하다.<br/>
+            매번 찾아보기 귀찮아서 여기에 모아보려고 한다.
+          </p>
+        </article>
+
+        <article class='find-file' aria-labelledby="find-file-title">
+          <h3 id="find-file-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐊</span>            파일 찾기
+          </h3>
+          <p>
+            단축키 목록 중에 원하는 걸 선택해서 사용하면 된다.
+          </p>
+          <ol aria-label="단축키">
+            <li class="main-article-list-items">
+              <strong class="order">ctrl + p</strong>
+            </li>
+            <li class="main-article-list-items">
+              <strong class="order">ctrl + t</strong>
+            </li>
+          </ol>
+        </article>
+
+        <article class='show-in-browser' aria-labelledby="show-in-browser-title">
+          <h3 id="show-in-browser-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐩</span>
+            브라우저 창에 띄우기
+          </h3>
+          <ol aria-label="창 띄우기 순서">
+            <li class="main-article-list-items hyphen">
+              에디터 트리뷰에서 열고싶은 파일 우클릭
+            </li>
+            <li class="main-article-list-items hyphen">
+              Show in Explorer 클릭
+            </li>
+            <li class="main-article-list-items hyphen">
+              해당 파일이 속한 폴더가 열리면, 파일을 찾고 우클릭
+            </li>
+            <li class="main-article-list-items hyphen">
+              연결-크롬(자주 사용하는 브라우저) 클릭하면 브라우저에 파일이 열린다.
+            </li>
+          </ol>
+        </article>
+
+        <article class='indent-unindent' aria-labelledby="indent-unindent-title">
+          <h3 id="indent-unindent-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐩</span>
+            들여쓰기 내어쓰기
+          </h3>
+          <dl class="main-article-dl" aria-label="단축키">
+            <div>
+              <dt class="main-article-dt" aria-label="들여쓰기">
+                들여쓰기
+              </dt>
+              <dd class="main-article-dd">
+                <strong class="order" aria-describedby='indent'>
+                  ctrl + ] (대괄호 닫기 부호)
+                </strong>
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="내어쓰기">
+                내어쓰기
+              </dt>
+              <dd class="main-article-dd order">
+                <strong class="order" aria-hidden='true'>
+                  ctrl + [ (대괄호 열기 부호)
+                </strong>
+              </dd>
+            </div>
+          </dl>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://nhj12311.tistory.com/64'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "tistory - nhj12311 atom 안 열릴 때(atom not opening)", 개인 페이지, 2021년 2월 28일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://nhj12311.tistory.com/64'>
+              https://nhj12311.tistory.com/64
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 2월 28일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/data.js'></script>
+    <script src='../../assets/app/create.js'></script>
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

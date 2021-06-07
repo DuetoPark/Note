@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="css, 3D property"/>
+    <meta name="description" content="3d 효과를 표현하는 속성들에 대해 알아봅시다."/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>3D 속성</title>
+
+    <!-- 3D 속성 -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/style-common.css">
+    <link rel="stylesheet" href="../../css/style-css.css">
+    <link rel="stylesheet" href="../../css/responsive/style-common.css">
+    <link rel="stylesheet" href="../../css/responsive/style-css.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../index.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role="tab" aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role="tab" aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role="tab" aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <article class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">👋</span>
+            3D Property
+            <span class='main-title' aria-hidden="true">👋</span>
+          </strong>
+        </h2>
+        <div class="time">
+          작성 날짜: <time datetime='2021-4-22'>2021년 04월 22일</time>
+        </div>
+
+        <section class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🙌</span>
+            개요
+          </h3>
+          <p>
+            카드 넘기는 효과(flip)을 구현하면서 3D 표현하는 속성을 알게되었다.<br/>
+            속성에 대해 알아보자.
+          </p>
+        </section>
+
+        <section class='property-type'
+          aria-labelledby="property-type-title">
+          <h3 id="property-type-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💁</span>
+            프로퍼티 종류
+          </h3>
+          <dl class='main-article-dl' aria-label="속성 종류">
+            <div id="perspective">
+              <dt class='main-article-dt' aria-label="perspective">
+                perspective
+              </dt>
+              <dd class='main-article-dd'>
+                원근법과 시점을 설정하는 속성
+              </dd>
+              <dd class='main-article-dd'>
+                값이 적을수록 입체적이고 값이 커질수록 평면에 가까워진다.
+              </dd>
+            </div>
+            <div id="transform-style">
+              <dt class='main-article-dt' aria-label="transform-style">
+                transform-style
+              </dt>
+              <dd class='main-article-dd'>
+                자식요소를 평면 또는 입체 공간에 둘 지 결정하는 속성
+              </dd>
+              <dd class='main-article-dd'>
+                자식요소를 감싸는 부모요소에 선언한다.
+              </dd>
+              <dd class='main-article-dd'>
+                속성값 flat - 자식요소를 평면에 둔다.
+              </dd>
+              <dd class='main-article-dd'>
+                속성값 preserve-3d - 자식요소를 입체 공간에 둔다.
+              </dd>
+            </div>
+            <div id="backface-visibility">
+              <dt class='main-article-dt' aria-label="backface-visibility">
+                backface-visibility
+              </dt>
+              <dd class='main-article-dd'>
+                요소의 뒷면이 사용자를 향할 때 보일지 말지 결정하는 속성
+              </dd>
+              <dd class='main-article-dd'>
+                속성값 visible - 뒷면이 보인다.
+              </dd>
+              <dd class='main-article-dd'>
+                속성값 hidden - 뒷면이 보이지 않는다.
+              </dd>
+              <dd class='main-article-dd'>
+                육면체를 구현할 때 backface-visibility: hidden; 처리하면 육면체의 덩어리감이 부각된다.
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </article>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Web/CSS/backface-visibility'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - backface-visibility", MDN, 2021년 4월 22일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Web/CSS/backface-visibility'>
+              https://developer.mozilla.org/ko/docs/Web/CSS/backface-visibility
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - transform-style", MDN, 2021년 4월 22일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style'>
+              https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://www.w3schools.com/cssref/css3_pr_perspective.asp'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "w3schools - CSS perspective Property", w3schools, 2021년 4월 22일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.w3schools.com/cssref/css3_pr_perspective.asp'>
+              https://www.w3schools.com/cssref/css3_pr_perspective.asp
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 4월 22일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/data.js'></script>
+    <script src='../../assets/app/create.js'></script>
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="javascript, slice, sort"/>
+    <meta name="description" content="배열을 잘라내는 slice와 배열의 요소를 정렬하는 sort에 대해서 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>slice와 sort</title>
+
+    <!-- slice와 sort -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/style-common.css">
+    <link rel="stylesheet" href="../../css/style-html.css">
+    <link rel="stylesheet" href="../../css/responsive/style-common.css">
+    <link rel="stylesheet" href="../../css/responsive/style-html.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/animation/animation.css">
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../index.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">💅</span>
+            slice
+            <span class='main-title' aria-hidden="true">💅</span>
+          </strong>
+        </h2>
+        <div class="time">
+          수정 날짜: <time datetime='2021-4-21'>2021년 04월 21일</time>
+        </div>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🍪</span>
+            개요
+          </h3>
+          <div class="slice-summary-image-group margin-8px">
+            <img class="slice-summary-image" src="../../assets/images/월레스와그로밋.jpg"
+            alt="월레스와 그로밋">
+            <img class="slice-summary-image" src="../../assets/images/치즈슬라이스.jpg"
+            alt="월레스의 달 치즈 먹방">
+          </div>
+          <p>
+            월레스와 그로밋을 본 90년대생들 여기 다 붙어~~<br/>
+            초등학교 저학년때의 내 꿈은 달에 날아가서 슬라이스한 치즈를 빵 위에 얹어 먹는 것이었다.<br/>
+            달은 치즈다.. 치즈를 슬라이스.. 슬라이스?<br/>
+            배열을 중간만 떼어서 쓰는 slice 메소드와 배열의 정렬을 책임지는 sort 메소드에 대해 알아보자.
+          </p>
+        </article>
+
+        <article class="slice" aria-labelledby="slice-title">
+          <h3 id="slice-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">🍦</span>
+            slice 정의
+          </h3>
+          <p>
+            <strong>
+              말 그대로 배열을 지정해놓은 시작점부터 끝점까지 잘라내여 복사본을 만드는 메소드이다.
+            </strong><br/>
+            만든 복사본은 새로운 배열이며 원본 배열은 바뀌지 않는다.
+          </p>
+        </article>
+
+        <article class="slice-syntax" aria-labelledby="slice-syntax-title">
+          <h3 id="slice-syntax-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">🍟</span>
+            slice 문법
+          </h3>
+          <p class="margin-8px">
+            <strong class="order">
+              let 변수 = 배열.slice(시작 인덱스, 끝 인덱스);
+            </strong>
+          </p>
+          <dl class="main-article-dl" aria-label="문법 해석">
+            <div>
+              <dt class="main-article-dt" aria-label="변수">
+                변수
+              </dt>
+              <dd class="main-article-dd">
+                슬라이스는 새로운 변수에다가 대입하여 사용한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="시작 인덱스">
+                시작 인덱스
+              </dt>
+              <dd class="main-article-dd">
+                시작 인덱스가 undefined면 자동으로 0을 시작점으로 한다.
+              </dd>
+              <dd class="main-article-dd">
+                정수가 들어가며, 음수는 배열의 끝에서부터의 길이를 의미한다. (slice(-2)는 배열에서 마지막 두개의 엘리먼트를 추출한다.)
+              </dd>
+              <dd class="main-article-dd">
+                배열의 길이보다 큰 숫자를 넣으면 빈 배열을 반환한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="끝 인덱스">
+                끝 인덱스
+              </dt>
+              <dd class="main-article-dd">
+                추출을 종료할 기준 인덱스를 의미한다.
+              </dd>
+              <dd class="main-article-dd">
+                <strong class="underline">
+                  end 인덱스를 제외하고 추출한다.
+                </strong>
+                예를들어, slice(1, 4)는 두번째 요소와 세번째 요소만을 추출한다.
+              </dd>
+              <dd class="main-article-dd">
+                음수를 넣으면, 배열 끝에서부터의 길이를 나타낸다. slice(2, -1)은 세번째 요소부터 끝에서 두번째 요소까지 추출한다.
+              </dd>
+              <dd class="main-article-dd">
+                끝 인덱스를 생략하면 자동으로 배열 끝까지 추출한다.
+              </dd>
+              <dd class="main-article-dd">
+                slice(4)는 4번 인덱스부터 끝가지 추출한다.
+              </dd>
+            </div>
+          </dl>
+        </article>
+      </section>
+
+      <section id="sort" class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">👓</span>
+            sort
+            <span class='main-title' aria-hidden="true">👓</span>
+          </strong>
+        </h2>
+
+        <article class="sort" aria-labelledby="sort-title">
+          <h3 id="sort-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">🌂</span>
+            sort 정의
+          </h3>
+          <p>
+            배열의 요소를 아름답게 정렬하는 메소드다.<br/>
+            글자와 숫자에 모두 적용된다.<br/>
+            아무 함수를 지정하지 않으면, 숫자의 맨 앞숫자가 작은 순서대로 정렬된다. 12, 24, 28, 3, 48 이렇게<br/>
+            처음에 정렬된 걸 보고나서 어떤 변태가 이런 짓을.. 라는 생각을 했다.
+          </p>
+        </article>
+
+        <article class="sort-syntax" aria-labelledby="sort-syntax-title">
+          <h3 id="sort-syntax-title" class="main-article-title">
+            <span class='main-article-title' aria-hidden="true">🎸</span>
+            sort 문법
+          </h3>
+          <p class="margin-16px">
+            <strong class="order">
+              배열.sort(콜백함수);
+            </strong>
+          </p>
+          <p class="margin-8px">
+            정말 작은 숫자부터 커지게 정렬하고 싶으면 다음의 함수를 추가하면 된다.<br/>
+            return값이 0보다 크면 순서를 바꾼다.
+          </p>
+          <p>
+            <strong>
+              function compareNumber(a, b) {return a - b;} (오름차순)<br/>
+              function compareNumber(a, b) {return b - a;} (내림차순)
+            </strong>
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://www.youtube.com/watch?v=aTEl5hUijIA&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=40'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "유튜브 - ZeroCho의 JS 초급 강좌 6-3. 배열 slice & sort", 유튜브, 2021년 3월 3일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.youtube.com/watch?v=aTEl5hUijIA&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=40'>
+              https://www.youtube.com/watch?v=aTEl5hUijIA&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=40
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/slice'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "MDN - Array.prototype.slice()", MDN, 2021년 3월 3일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/slice'>
+              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "MDN - Array.prototype.sort()", MDN, 2021년 3월 3일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'>
+              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 3월 3일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='../../assets/data.js'></script>
+    <script src='../../assets/app/create.js'></script>
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

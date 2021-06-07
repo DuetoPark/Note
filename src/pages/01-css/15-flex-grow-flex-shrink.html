@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="css, flex-grow, flex-shrink"/>
+    <meta name="description" content="남은 여백을 채워주는 flex-grow 속성과 부족한 자리를 위해 너비를 줄여주는 flex-shrink에 대해 알아봅시다."/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>flex-grow와 flex-shrink</title>
+
+    <!-- flex-grow와 flex-shrink -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/style-common.css">
+    <link rel="stylesheet" href="../../css/style-css.css">
+    <link rel="stylesheet" href="../../css/responsive/style-common.css">
+    <link rel="stylesheet" href="../../css/responsive/style-css.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../index.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role="tab" aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role="tab" aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role="tab" aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">💪</span>
+            flex-grow와 flex-shrink
+            <span class='main-title' aria-hidden="true">💪</span>
+          </strong>
+        </h2>
+        <div class="time">
+          작성 날짜: <time datetime='2021-3-31'>2021년 03월 31일</time>
+        </div>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💘</span>
+            개요
+          </h3>
+          <p>
+            flex-grow와 flex-shrink를 더 이상 미룰 수 없어서 정리했다.<br/>
+            오늘도 열심히 공부하자.
+          </p>
+        </article>
+
+        <article class='flex-grow' aria-labelledby="flex-grow-title">
+          <h3 id="flex-grow-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🍟</span>
+            flex-grow
+          </h3>
+          <div class="desc margin-8px">
+            <p class="margin-8px">
+              <strong class="order">
+                부모 요소에 '남은 여백'을 요소들이 채우게 명령하는 속성이다.
+              </strong>
+            </p>
+            <p class="margin-8px">
+              flex grow는 flex item에 적용한다.
+            </p>
+            <p class="margin-8px">
+              선언한 값의 비율만큼 여백의 너비를 채운다.
+            </p>
+            <p class="margin-8px">
+              예를들어 부모 요소의 너비가 600px이고 남은 여백이 200px 이다.<br/>
+              .b1{flex-grow: 3}<br/>
+              .b2{flex-grow: 1}이면,<br/>
+              b1의 너비는 150px만큼 늘어나고 b2의 너비는 50px만큼 늘어나서 부모 요소의 여백을 채운다.
+            </p>
+            <p>
+              사실은 flex-grow를 쓸 때, 선언한 값 만큼 (요소의 너비 * n)이 되는 줄 알았다. 그게 아니라 '부모 요소의 남은 여백'을 채운다. 기억하자!
+            </p>
+          </div>
+          <picture>
+            <source media='(max-width: 640px)' srcset='../../assets/images/flex-grow-mobile.png'>
+            <source media='(mix-width: 641px)' srcset='../../assets/images/flex-grow-desktop.png'>
+            <img src="../../assets/images/flex-grow-desktop.png" alt="flex-grow와 여백">
+          </picture>
+        </article>
+
+        <article class='flex-grow-direction-column'
+          aria-labelledby="flex-grow-direction-column-title">
+          <h3 id="flex-grow-direction-column-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💩</span>
+            flex-grow와 flex-direction: column
+          </h3>
+          <div class="desc margin-8px">
+            <p>
+              flex-direction: column;일 때, flex-grow가 안 먹힌다.<br/>
+              이유: <strong class="underline">부모 요소에 height 속성이 없기 때문이다.</strong><br/>
+              해결: min-height를 부모 요소에 선언한다.
+            </p>
+          </div>
+          <ol aria-label='min-height과 height 비교'>
+            <li class="main-article-list-items">
+              <h4 class="main-article-subtitle">
+                <span class='main-article-title' aria-hidden="true">👉</span>
+                min-height를 선언했을 때
+              </h4>
+              <p>
+                <span class="hyphen">flex-grow가 잘 반영된다.</span><br/>
+                <span class="hyphen">flex-wrap: wrap;으로 선언하면 한 줄로 출력한다.</span>
+              </p>
+            </li>
+            <li class="main-article-list-items">
+              <h4 class="main-article-subtitle">
+                <span class='main-article-title' aria-hidden="true">👉</span>
+                height를 선언했을 때
+              </h4>
+              <p>
+                <span class="hyphen">flex-grow가 잘 반영된다.</span><br/>
+                <span class="hyphen">flex-wrap: wrap;으로 선언하면 부모 요소의 height를 넘치면 줄바꿈 한다.</span>
+              </p>
+            </li>
+          </ol>
+        </article>
+
+        <article class='flex-shrink' aria-labelledby="flex-shrink-title">
+          <h3 id="flex-shrink-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🍕</span>
+            flex-shrink
+          </h3>
+          <div class="desc margin-8px">
+            <p class="margin-8px">
+              <strong class="order">
+                부모 요소에 자리가 부족할 때 요소들을 '일정 비율로' 줄어들도록 명령하는 속성이다.
+              </strong>
+            </p>
+            <p class="margin-8px">
+              flex shrink는 flex item에 적용한다.
+            </p>
+            <p class="margin-8px">
+              선언한 값의 비율만큼 여백의 너비를 줄인다.
+            </p>
+            <p class="margin-8px">
+              예를들어<br/>
+              .b1{flex-shrink: 1}<br/>
+              .b2{flex-shrink: 3}이면,<br/>
+              b1의 너비가 10px만큼 줄어들 때 b2의 너비는 30px만큼 줄어든다.
+            </p>
+            <p>
+              flex-shrink: 0;은 부모 요소의 너비가 아무리 작아져도 해당 요소는 원래의 크기를 유지한다.
+            </p>
+          </div>
+          <picture>
+            <source media='(max-width: 640px)' srcset='../../assets/images/flex-shrink-mobile.png'>
+            <source media='(mix-width: 641px)' srcset='../../assets/images/flex-shrink-desktop.png'>
+            <img src="../../assets/images/flex-shrink-desktop.png" alt="flex-shrink와 줄어드는 비율">
+          </picture>
+        </article>
+
+        <article class='flex-shrink-flex-basis' aria-labelledby="flex-shrink-flex-basis-title">
+          <h3 id="flex-shrink-flex-basis-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🍖</span>
+            flex-shrink와 flex-basis
+          </h3>
+          <p>
+            flex-basis만 선언한 뒤에 부모요소나 브라우저의 너비를 줄이면 flex items의 너비가 줄어든다. flex-shrink가 자동으로 지정된다!
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://flexbox.io/'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "Flexbox(what the flexbox) - How Flexbox's Flex-Basis and Wrapping Work Together", Flexbox, 2021년 3월 31일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://flexbox.io/'>
+              https://flexbox.io/
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 3월 31일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <script src='../../assets/data.js'></script>
+    <script src='../../assets/app/create.js'></script>
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>
