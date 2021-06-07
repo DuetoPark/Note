@@ -4,25 +4,19 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="css, gulp, cross-browsing"/>
-    <meta name="description" content="autoprefix를 제공하는 gulp에 대해 알아봅시다."/>
+    <meta name="keywords" content="cross-browsing, gulp"/>
+    <meta name="description" content="크로스 브라우징을 돕는 gulp(꿀꺽)에 대해 알아봅시다."/>
     <meta name="Location" content="포도와 고구마의 고장"/>
 
     <title>Gulp</title>
 
     <!-- Gulp -->
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/common/font.css">
-    <link rel="stylesheet" href="../../css/default/reset-css.css">
-    <link rel="stylesheet" href="../../css/common/grid.min.css">
-    <link rel="stylesheet" href="../../css/common/common.css">
-    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/style-common.css">
+    <link rel="stylesheet" href="../../css/style-cross-browsing.css">
+    <link rel="stylesheet" href="../../css/responsive/style-common.css">
+    <link rel="stylesheet" href="../../css/responsive/style-cross-browsing.css">
     <link rel="stylesheet" href="../../css/animation/modal-animation.css">
-    <link rel="stylesheet" href="../../css/css/css-style.css">
-    <link rel="stylesheet" href="../../css/css/css-media-query.css">
-
-    <!-- 데이터 -->
-    <script src='../../assets/data.js'></script>
   </head>
 
   <body>
@@ -30,7 +24,7 @@
       <div class='container'>
         <!-- 홈으로 이동 -->
         <h1 class='note-header-title' aria-labelledby="go-to-home">
-          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+          <a id="go-to-home" href='../../index.html'>
             <span aria-hidden="true">🔥</span>
             기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
             <span aria-hidden="true">🔥</span>
@@ -108,7 +102,7 @@
           </strong>
         </h2>
         <div class="time">
-          작성 날짜: <time datetime='2021-5-26'>2021년 05월 26일</time>
+          수정 날짜: <time datetime='2021-6-7'>2021년 06월 07일</time>
         </div>
 
         <section class='summary' aria-labelledby="summary-title">
@@ -118,7 +112,7 @@
           </h3>
           <p>
             크로스 브라우징을 돕는 많은 도구들이 존재한다.<br/>
-            그 중 하나인 gulp에 대해 알아봅시다.
+            그 중 하나인 gulp 사용법에 대해 알아봅시다.
           </p>
         </section>
 
@@ -129,6 +123,10 @@
           </h3>
           <p class="margin-8px">
             (참고) 아래의 명령어는 프롬프트나 작업 폴더의 git bash에 다음의 명령어를 입력한다.
+          </p>
+
+          <p class="margin-8px">
+            (참고) 전역 설치 경로 C://사용자/win10/AppData/Roaming/npm/node-modules(자동으로 됨)
           </p>
 
           <ol class='gulp-install-step' aria-label='설치 방법'>
@@ -194,16 +192,16 @@
                 <dt class="main-article-dt background-white-radius">
                   <strong>gulpfile.js 설정</strong>
                 </dt>
-                <dd class="main-article-dd">var gulp = require('gulp');</dd>
-                <dd class="main-article-dd">var gulp = require('gulp-autoprefixer');</dd>
-                <dd class="main-article-dd">
-                  코드 추가
-                  <pre>
+                <dd class="main-article-dd">코드 추가
+                  <pre class="main-article-pre">
                     <code>
-                      gulp.task('styles'), function() {
-                        gulp.src('./assets/src/*')
+                      var gulp = require('gulp');
+                      var autoprefixer = require('gulp-autoprefixer');
+
+                      gulp.task('styles', async function() {
+                        gulp.src('./css/**/*.css')
                           .pipe(autoprefixer('last 2 versions'))
-                          .pipe(gulp.dest('build'))
+                          .pipe(gulp.dest('./css/build'));
                       });
                     </code>
                   </pre>
@@ -211,43 +209,147 @@
                 <dd class="main-article-dd">task: 실행 명령어 설정</dd>
                 <dd class="main-article-dd">src: 작업 파일/폴더 경로</dd>
                 <dd class="main-article-dd">dest: 폴더 생성, 변경 내용 저장</dd>
+                <dd class="main-article-dd">
+                  <span class="error">babel 설치+동작 추가 할 예정</span>이라면, 아래의 코드를 사용해도 상관없다.<br/> (단, package.json에 scripts 수정 필수)
+                  <div class="code">
+                    <span class="highlight">gulpfile.js</span>
+                    <pre class="main-article-pre">
+                      <code>
+                        import gulp from "gulp";
+                        import autoprefixer from "gulp-autoprefixer";
+  
+                        const styles = () =>
+                          gulp
+                            .src("./css/**/*.css")
+                            .pipe(autoprefixer())
+                            .pipe(gulp.dest("build/css"));
+  
+                        export const dev = gulp.series([styles]);
+                      </code>
+                    </pre>
+                  </div>
+                  <div class="code">
+                    <span class="highlight">package.json</span>
+                    <pre class="main-article-pre">
+                      <code>
+                        {
+                          "scripts": {
+                            "dev": "gulp dev",
+                          },
+                        }
+                      </code>
+                    </pre>
+                  </div>
+                </dd>
               </dl>
             </li>
             <li class="main-article-list-items">
               <dl aria-label='명령어'>
                 <dt class="main-article-dt background-white-radius">
-                  <strong>gulp styles</strong>
+                  <strong>gulp styles 또는 gulp dev</strong>
                 </dt>
                 <dd class="main-article-dd">gulp 실행</dd>
-                <dd class="main-article-dd">오류 발생시, function 앞에 'async' 쓴다.</dd>
-              </dl>
-            </li>
-            <li class="main-article-list-items">
-              <dl aria-label='명령어'>
-                <dt class="main-article-dt background-white-radius">
-                  <strong>자동갱신</strong>
-                </dt>
-                <dd class="main-article-dd">
-                  코드
-                  <pre>
-                    <code>
-                      gulp.task('watch'), function() {
-                        gulp.watch('./assets/src/*', gulp.series('build'));
-                      });
-                    </code>
-                  </pre>
-                </dd>
-                <dd class="main-article-dd">gulp.watch('작업파일 경로', gulp.series('변경파일 저장 경로 또는 파일명'));</dd>
+                <dd class="main-article-dd">async 오류 발생시, function 앞에 'async' 쓴다.</dd>
               </dl>
             </li>
           </ol>
         </section>
 
+        <section class='gulp-write' aria-labelledby="gulp-write-title">
+          <h3 id="gulp-write-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">📌</span>
+            자동갱신 (Watch)
+          </h3>
+          <p class="margin-8px">
+            다음의 코드를 gulpfile.js에 추가한다.
+          </p>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              gulp.task('watch', function() {
+                gulp.watch('./css/**/*.css', ['styles']);
+              });
+            </code>
+          </pre>
+          <p class="desc margin-8px">
+            gulp.watch('실시간 작업 추적 파일 경로', ['명령어']);
+          </p>
+          <p class="margin-8px">
+            <span class="error">babel 설치+동작 추가 할 예정</span>이라면, 아래의 코드를 사용해도 상관없다.<br/> 
+          </p>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              const live = {
+                gulp.watch('./css/**/*.css', styles);
+              }
+
+              export const dev = gulp.series([styles, live]);
+            </code>
+          </pre>
+          <p class="desc">
+            gulp.watch('실시간 작업 추적 파일 경로', 명령어);
+          </p>
+        </section>
+
+        <section class='gulp-package' aria-labelledby="gulp-package-title">
+          <h3 id="gulp-package-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">📌</span>
+            패키지
+          </h3>
+          <p class=margin-8px>
+            Autoprefixer외에 지원 패키지가 다양하다.<br/>
+            이미지 최적화, Pug를 HTML로 변환, minify, 배포 등등<br/>
+          </p>
+          <p>
+            사용할 땐, 다음 목록 순서대로 진행한다.
+          </p>
+          <ol id="gulp-package-usage" aria-label="패키지 적용 순서">
+            <li><strong>로컬 저장(--save-dev)</strong></li>
+            <li><strong>gulpfile.js에 import</strong></li>
+            <li><strong>함수 선언</strong></li>
+            <li><strong>series 선언</strong></li>
+          </ol>
+        </section>
       </article>
     </main>
 
     <footer class='note-footer'>
       <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://gulpjs.com/docs/en/api/watch/'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "Gulp / watch()", Gulp 공식문서, 2021년 6월 7일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gulpjs.com/docs/en/api/watch/'>
+              https://gulpjs.com/docs/en/api/watch/
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://inseok9068.github.io/others/gulp/'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "Github / inseok9068.github.io / [Gulp] 빌드 자동화툴 Gulp 사용법", Github, 2021년 6월 7일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://inseok9068.github.io/others/gulp/'>
+              https://inseok9068.github.io/others/gulp/
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://www.youtube.com/watch?v=VeK3a29x1hE'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "Youtube / 1분코딩 / 자바스크립트 Babel(바벨) 튜토리얼", Youtube, 2021년 5월 26일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.youtube.com/watch?v=VeK3a29x1hE'>
+              https://www.youtube.com/watch?v=VeK3a29x1hE
+            </a>
+          </cite>
+        </blockquote>
+
         <blockquote class='note-footer-reference'
           cite='https://gist.github.com/rxaviers/7360908'>
           <strong class='note-footer-reference-name'>
@@ -262,9 +364,8 @@
       </div>
     </footer>
 
-    <!-- 요소 생성 -->
+    <script src='../../assets/data.js'></script>
     <script src='../../assets/app/create.js'></script>
-    <!-- 동작 -->
     <script src='../../assets/app/app.js'></script>
   </body>
 </html>
