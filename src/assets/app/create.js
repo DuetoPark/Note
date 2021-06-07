@@ -1,5 +1,5 @@
 // Header navigation 목록 생성
-const bodyData = document.body.dataset.home;
+const bodyData = document.body.dataset.body;
 function CreateNav (list, dataArray, subject) {
   this.goToPageList = document.querySelector(list);
   this.dataArray = dataArray;
@@ -13,9 +13,11 @@ function CreateNav (list, dataArray, subject) {
       let goToPageAnchor = document.createElement("a");
       goToPageAnchor.className = "go-to-page-anchor";
 
-      if (bodyData) { // home 일때 앵커 링크
+      if (bodyData === "index") { // index.html 앵커 링크
+        goToPageAnchor.href = "./src/pages/01-" + subject + "/" + this.dataArray[i].id + "-" + this.dataArray[i].href + ".html";
+      } else if (bodyData === "main") { // 기초튼튼이가탄.html 앵커 링크
         goToPageAnchor.href = "./pages/01-" + subject + "/" + this.dataArray[i].id + "-" + this.dataArray[i].href + ".html";
-      } else { // home 아닐 때 앵커 링크
+      } else { // 그 외 페이지 앵커 링크
         goToPageAnchor.href = "../01-" + subject + "/" + this.dataArray[i].id + "-" + this.dataArray[i].href + ".html";
         goToPageAnchor.setAttribute("data-subject", subject);
       }
