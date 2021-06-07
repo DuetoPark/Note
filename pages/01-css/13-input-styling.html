@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="css, input"/>
+    <meta name="description" content="input요소의 hover, active, focus 효과를 구현해봅시다."/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>input 스타일링</title>
+
+    <!-- input 스타일링 -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/common/font.css">
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/css/css-style.css">
+    <link rel="stylesheet" href="../../css/css/css-media-query.css">
+
+    <!-- 데이터 -->
+    <script src='../../assets/data.js'></script>
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list" role="menu">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">😇</span>
+            input 스타일링
+            <span class='main-title' aria-hidden="true">😇</span>
+          </strong>
+        </h2>
+        <div class="time">
+          작성 날짜: <time datetime='2021-3-20'>2021년 03월 21일</time>
+        </div>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">😭</span>
+            개요
+          </h3>
+          <p>
+            인풋 요소에는 간단하고 확실한 강조 효과를 넣어야 한다.<br/>
+            나는 이 부분에 약하다.<br/>
+            연습을 미뤄오다가, 구름에듀의 로그인 창을 보고 지금 당장 구현해보자고 마음먹게 되었다.
+          </p>
+        </article>
+
+        <article class='input-style' aria-labelledby="input-style-title">
+          <h3 id="input-style-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">😪</span>
+            구현
+          </h3>
+          <div id="build" class="margin-16px">
+            <form id="build-form" action="" method="GET">
+              <input id="user-id" class="build-input"
+                type="email" placeholder="이메일"/>
+              <input id="user-pw" class="build-input"
+                type="password" placeholder="비밀번호"/>
+              <button id="login" class="build-input" type="submit">로그인</button>
+            </form>
+          </div>
+          <div id="way">
+            <div id="input-style-object" class="margin-16px">
+              <h4 class="main-article-subtitle">
+                <span aria-hidden="true">👉</span>
+                목표
+              </h4>
+              <p>
+                <strong>
+                  사용자가 정보 입력을 하기 '전'과 '하는 중'에 '무엇'을 하고 있는지 인식하도록 만들자.
+                </strong>
+              </p>
+            </div>
+            <div id="input-style-motion" class="margin-16px">
+              <h4 id="input-style-motion-title"  class="main-article-subtitle">
+                <span aria-hidden="true">👉</span>
+                동작
+              </h4>
+              <ol aria-labelledby="input-style-motion-title">
+                <li>
+                  사용자가 정보를 입력하기 '전'에는 어떤 요소 위에 마우스를 대고 있는지 알린다.
+                </li>
+                <li>
+                  사용자가 정보를 입력하고 있으면 어느 요소 위에서 동작하는 중인지 알린다.
+                </li>
+              </ol>
+            </div>
+            <div id='input-style-usage-property' class="margin-16px">
+              <h4 id='input-style-usage-property-title'
+                class="main-article-subtitle">
+                <span aria-hidden="true">👉</span>
+                사용한 속성
+              </h4>
+              <dl class="main-article-dl"
+                aria-labelledby="input-style-usage-property-title">
+                <div>
+                  <dt class="main-article-dt" aria-label="border(테두리)">
+                    <strong class="order">
+                      border(테두리)
+                    </strong>
+                  </dt>
+                  <dd class="main-article-dd">
+                    요소 위에 마우스를 올렸을 때 테두리의 색을 바꾼다.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="main-article-dt" aria-label="box-shadow(그림자)">
+                    <strong class="order">
+                      box-shadow(그림자)
+                    </strong>
+                  </dt>
+                  <dd class="main-article-dd">
+                    포커스 된 요소에만 box-shadow를 활성화한다.
+                  </dd>
+                  <dd class="main-article-dd">
+                    반대로 포커스가 되지 않은 요소는 원래 상태로 돌아간다.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <div id="input-style-code">
+              <h4 id="input-style-code-title" class="main-article-subtitle">
+                <span aria-hidden="true">👉</span>
+                코드
+              </h4>
+              <ul aria-labelledby="input-style-code-title">
+                <li class="main-article-list-items">
+                  <p class="hyphen">HTML 코드</p>
+                  <script lang="en" src="https://gist.github.com/DuetoPark/1a02284c27ba7e1836bb99304921eff0.js"></script>
+                </li>
+                <li class="main-article-list-items">
+                  <p class="hyphen">CSS 코드</p>
+                  <script lang="en" src="https://gist.github.com/DuetoPark/196688e4f07f1c2c138f5c023e08fd18.js"></script>
+                  <div class="code-desc">
+                    <p class="hyphen">
+                      <strong class="underline">
+                        box-shadow는 그림자의 크기(spread-radius)만을 이용한다.
+                      </strong>
+                    </p>
+                    <p class="hyphen">
+                      모서리의 border-radius가 그림자 크기에 비례하며 커진다.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class='box-shadow' aria-labelledby="box-shadow-title">
+          <h3 id="box-shadow-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">😋</span>
+            box-shadow
+          </h3>
+          <p class="margin-8px">
+            <strong class="order">
+              box-shadow: offset-X offset-Y (blur-radius) (spread-radius) color;
+            </strong>
+          </p>
+          <p>
+            처음에는 포커스 된 모습을 보곤 테두리 위에 '테두리'가 또 쌓이네 라고 인식했다.<br/>
+            이것저것 해보면서 강조 효과에는 뭐가 있었는지 상기했다.<br/>
+            점 선 면으로 생각을 확장하다가 처음부터 발상이 잘못되었음을 깨달았다.<br/>
+            '면을 선처럼 보이도록' 만들어야 하는구나.<br/>
+            바로 box-shadow가 떠올랐고 30분 만에 삽질은 끝이 났다.<br/>
+            평소에 spread-radius를 쓰는 이유가 궁금했었는데, 이럴 때 쓰는 거였구나.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Web/CSS/box-shadow'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - box-shadow", MDN, 2021년 3월 21일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Web/CSS/box-shadow'>
+              https://developer.mozilla.org/ko/docs/Web/CSS/box-shadow
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 3월 21일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <!-- 요소 생성 -->
+    <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

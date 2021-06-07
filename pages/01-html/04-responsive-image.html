@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="html, 반응형 이미지, responsive images, picture tag, 픽쳐 태그"/>
+    <meta name="description" content="기기의 크기에 맞춰 반응형 이미지를 유연하게 구현하는 여거 방법들을 알아봅시다!!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>반응형 이미지</title>
+
+    <!-- 반응형 이미지 -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/common/font.css">
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/html/html.css">
+    <link rel="stylesheet" href="../../css/html/html-media-query.css">
+
+    <!-- 데이터 -->
+    <script src='../../assets/data.js'></script>
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">👏</span>
+            반응형 이미지
+            <span class='main-title' aria-hidden="true">👏</span>
+          </strong>
+        </h2>
+        <div class="time">
+          작성 날짜: <time datetime='2021-01-06'>2021년 01월 06일</time><br/>
+          수정 날짜: <time datetime='2021-3-16'>2021년 03월 16일</time>
+        </div>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💜</span>
+            개요
+          </h3>
+          <p class="margin-8px">
+            이미지 태그에는 항상 아쉬움이 남았다.<br/>
+            기기 크기마다 다른 이미지를 출력하고 싶으면 JS로 조작하거나 div 태그에 CSS의 background-image 속성을 사용해야 했다.<br/>
+            이러면 이미지 수정을 할 때마다 다른 파일들을 뒤적뒤적 하게된다. html파일에 딱 묶어놓고 쓰면 한눈에 확인하기 좋을텐데!
+          </p>
+          <p>
+            정말 우연한 기회로 클론 코딩을 하다가 picture 태그를 알게 되었다. 찾았어 나의 데스티니. 반응형 이미지를 구현하는 픽쳐 태그와  이미지 최적화 방법을 알아보자.
+          </p>
+        </article>
+
+        <article class='problem' aria-labelledby="problem-title">
+          <h3 id="problem-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🔥</span>
+            이미지 구현 문제
+          </h3>
+          <div id='pixelated' class="margin-8px">
+            <p class="margin-8px">
+              이미지 파일마다 정해진 크기가 있다. 그래서 가로가 500px인 이미지를 1000px만큼 늘려서 넣으면 이미지 파일은 네모네모 모자이크 빔을 냅다 맞아버린다. 마인크래프트처럼 변한다. 악 진짜 싫어.
+              참고로 이 현상을 'pixelated'라고 표현한다.
+            </p>
+            <p class="margin-8px">
+              특히, 다음에 오는 세 가지 주의요소는 반응형 이미지 구현을 더더더더 어렵게 만든다.
+            </p>
+            <ul aria-label="주의사항">
+              <li class="main-article-list-items hyphen">
+                기기의 크기
+              </li>
+              <li class="main-article-list-items hyphen">
+                이미지의 크기
+              </li>
+              <li class="main-article-list-items hyphen">
+                기기의 screen resolution
+              </li>
+            </ul>
+          </div>
+          <div id="object">
+            <p class="margin-8px">
+              실제 해결할 문제는 두 가지다.
+            </p>
+            <ul class="background-white-radius" aria-label="해결할 문제">
+              <li class="main-article-list-items hyphen">
+                고유한 크기를 유지하면서 이미지를 모바일 레이아웃에 맞게 만들어야 한다.
+              </li>
+              <li class="main-article-list-items hyphen">
+                사용자가 불필요하게 큰 이미지 파일을 다운로드 하지 않도록 해야한다.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class='setup' aria-labelledby="setup-title">
+          <h3 id="setup-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👉</span>
+            준비 환경
+          </h3>
+          <p class="margin-8px">
+            반응형 이미지를 구현할 파일을 준비한다.
+          </p>
+          <p>
+            <strong class="underline">
+              파일명은 정체성과 일관성을 띄게 지어주면 좋다.
+            </strong>
+            <br/>
+            예를 들면 illustration-big.png와 illustration-small.png.
+          </p>
+        </article>
+
+        <article class='retina-screen'
+          aria-labelledby="retina-screen-title">
+          <h3 id="retina-screen-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💪</span>
+            고유한 크기 유지(레티나 스크린의 문제)
+          </h3>
+          <div id="retina-screen-problem" class="margin-8px">
+            <p class="margin-8px">
+              레티나 스크린은 일반 스크린보다 인치당 두 배 더 많은 픽셀이 있는 스크린을 의미한다.
+            </p>
+            <p class="margin-8px">
+              <strong class="underline">여기서 문제점은, 인치당 들어가는 픽셀이 많다는 것이다.</strong> 일반 스크린에는 1개의 픽셀이 들어가지만, 동일 면적에 레티나 스크린은 4개의 픽셀이 들어간다.
+            </p>
+            <picture>
+              <source
+                media="(max-width: 576px)"
+                srcset="../../assets/images/retina-resolution-small.png">
+              <source
+                media="(mix-width: 577px)"
+                srcset="../../assets/images/retina-resolution.png">
+              <img
+                class="margin-8px"
+                src="../../assets/images/retina-resolution.png"
+                alt="일반 스크린과 레티나 스크린 비교"/>
+            </picture>
+            <p class="margin-8px">
+              일반 스크린에 비해 상하좌우가 50% 작아진 크기로 이미지가 화면에 구현된다. 그러므로 정확한 확인을 위해 파일의 가로세로 크기를 두배로 늘려주는 작업이 필요하다.
+            </p>
+            <p>
+              더 환장하는 건 아이폰 6 플러스는 3배 더 오밀조밀 하지롱.
+            </p>
+          </div>
+          <div id="retina-screen-solution">
+            <p>
+              <strong class="order">svg 이미지를 사용하면 문제는 해결된다.</strong> 하지만 파이어폭스 외의 브라우저는 크기 자동 조정 기능이 없다. CSS파일에 width와 max-width속성을 추가해야 한다.
+            </p>
+          </div>
+        </article>
+
+        <article class='srcset' aria-labelledby="srcset-title">
+          <h3 id="srcset-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💁</span>
+            고해상도 이미지 최적화(srcset 속성)
+          </h3>
+          <div id="srcset-problem" class="margin-8px">
+            <p class="margin-8px">
+              고해상도 이미지는 크기가 커서 페이지를 느리게 만든다. <strong class="order">요소에 srcset속성을 추가하면 레티나 장치에만 고해상도 이미지를 표시할 수 있다.</strong>
+            </p>
+          </div>
+          <div id="srcset-solution">
+            <p class="margin-8px">
+              구분을 위해 이미지 경로 옆에 descriptors를 추가한다. 표준 해상도 이미지 경로에는 '1x' 레티나 고화질 이미지 경로에는 '2x'를 표시한다.
+            </p>
+            <div class="hidden">예시 코드</div>
+            <pre class="main-article-pre background-white-radius margin-8px">
+              <code>
+                srcset='images/illustration-small.png <strong class="order">1x</strong>,<br/>
+                srcset='images/illustration-big.png <strong class="order">2x</strong>,
+              </code>
+            </pre>
+            <p>
+              대신, 모바일 가로 크기가 500px미만이므로 레티나 버전이 아닌 이미지를 다운받는다. 도움!
+            </p>
+          </div>
+        </article>
+
+        <article class='picture' aria-labelledby="picture-title">
+          <h3 id="picture-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💀</span>
+            srcset 개선(picture 태그, source 태그)
+          </h3>
+          <p class="margin-8px">
+            picture 태그는 감싸주는 용도다. 가독성 업업.<br/>
+            source 태그가 중요 역할을 한다. 미디어 쿼리를 기반으로 조건부로 이미지를 로드한다.
+          </p>
+          <p class="margin-8px">
+            source 속성으로는 media와 srcset이 있다.<br/>
+            media에는 파일의 크기를 지정하고, srcset에는 크기에 맞춘 이미지 경로를 선언한다.
+          </p>
+          <div class="hidden">예시 코드</div>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              < picture>
+                < source media='(min-width: 401px)'
+                        srcset='images/photo-big.jpg'/>
+                < source media='(max-width: 400px)'
+                        srcset='images/photo-tall.jpg'/>
+                < img src='images/photo-small.jpg'/>
+              < /picture>
+            </code>
+          </pre>
+          <p class="margin-8px">
+            img 태그에는 저해상도 이미지를 넣는다.
+            source 태그 안의 srcset에는 고해상도 이미지를 넣는다.
+          </p>
+          <p>
+            모바일 문제가 해결된 듯 보이지만, 레티나 스크린 문제는 그대로다.
+            아니 뭐 어떡하라는 거야 라고 생각하겠지만 그만큼 반응형 구현이 어렵다는 말이다.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://www.internetingishard.com/html-and-css/responsive-images/'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "Internetingishard - responsive images", Internetingishard,  2021년 3월 16일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href="https://www.internetingishard.com/html-and-css/responsive-images/">
+              https://www.internetingishard.com/html-and-css/responsive-images/
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://www.internetingishard.com/html-and-css/responsive-images/'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: internetingishard "chapter11 - responsive images", internetingishard,  2021년 3월 2일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href="https://www.internetingishard.com/html-and-css/responsive-images/">
+              https://www.internetingishard.com/html-and-css/responsive-images/
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://www.w3schools.com/tags/tag_picture.asp'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "w3schools - HTML &lt;picture&gt;태그", w3schools,  2021년 1월 6일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href="https://www.w3schools.com/tags/tag_picture.asp">
+              https://www.w3schools.com/tags/tag_picture.asp
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 01월 06일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href="https://gist.github.com/rxaviers/7360908">
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <!-- 요소 생성 -->
+    <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

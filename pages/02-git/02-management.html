@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="git, github, commit message, 깃허브 관리"/>
+    <meta name="description" content="github의 업로드, 커밋 메세지, 브랜치 관리하는 방법에 대해 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>github 관리하기</title>
+
+    <!-- management -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/git/git.css">
+    <link rel="stylesheet" href="../../css/git/media-query.css">
+
+    <!-- 데이터 -->
+    <script src='../../assets/data.js'></script>
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section id="file-management" class='container' aria-labelledby="file-management-title">
+        <h2 id="file-management-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🐲</span>
+            git 파일관리
+            <span class='main-title' aria-hidden="true">🐲</span>
+          </strong>
+        </h2>
+
+        <article aria-labelledby="git-file-management-summary">
+          <h3 id="git-file-management-summary" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐪</span>
+            개요
+          </h3>
+          <p>
+            파일 관리하는 깃 명령어를 정리해봤다.
+          </p>
+        </article>
+
+        <article aria-labelledby="git-pull">
+          <h3 id="git-pull" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐆</span>
+            git pull
+          </h3>
+
+          <p class="hidden">
+            git pull의 정확한 명령어와 기능을 목록으로 정리했다.
+          </p>
+          <dl class="main-article-dl" aria-label="git pull 명령어">
+            <dt class="main-article-dt" aria-labelledby="git-pull-command">
+              <strong id="git-pull-command" class="order">
+                git pull origin master
+              </strong>
+            </dt>
+            <dd class="main-article-dd">
+              다른 사람이 PR을 통해서 코드를 업데이트 했거나 github를 통해서 커밋했을 때, 그 내용을 클라이언트로 내려받는 명령어
+            </dd>
+            <dd class="main-article-dd">
+              하나의 레포지토리를 다른 사람과 함께 작업하게 되면 작업자마다 변경된 사항이 다르게 되는데, 모든 작업자의 변경 사항이 적용된 파일을 다운받은 후에 작업해야 코드상의 혼선을 막을 수 있다. 이 때 사용하는 명령어이다.
+            </dd>
+          </dl>
+        </article>
+
+        <article aria-labelledby="git-clone">
+          <h3 id="git-clone" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐖</span>
+            git clone
+          </h3>
+
+          <p class="hidden">
+            git clone 정확한 명령어와 기능, git clone과 git pull의 차이를 목록으로 정리했다.
+          </p>
+          <dl class="main-article-dl" aria-label="git clone 명령어">
+            <div>
+              <dt class="main-article-dt" aria-labelledby="git-clone-command">
+                <strong id="git-clone-command" class="order">
+                  git clone 저장소 주소
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                클라이언트 상에 아무것도 없을 때, 서버의 프로젝트를 내려받는 명령어
+              </dd>
+              <dd class="main-article-dd">
+                빈 폴더 생성 후 bash에 두 명령어를 입력한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt underline" aria-labelledby="clone-pull-diff">
+                <strong id="clone-pull-diff">
+                  git clone와 git pull의 차이
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                작업물의 유무로 구분하여 사용한다.
+              </dd>
+              <dd class="main-article-dd">
+                사용하는 컴퓨터에 기존 작업물이 존재하면, git pull 명령어를 사용한다.
+              </dd>
+              <dd class="main-article-dd">
+                사용하는 컴퓨터에 기존 작업물이 없거나 주 작업장이 아니라면, git clone을 사용한다.
+              </dd>
+            </div>
+          </dl>
+        </article>
+      </section>
+
+      <section id="commit-management" class='container' aria-labelledby="commit-management-title">
+        <h2 id="commit-management-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">🌝</span>
+            git commit 관리
+            <span class='main-title' aria-hidden="true">🌝</span>
+          </strong>
+        </h2>
+
+        <article aria-labelledby="git-commit-management-summary">
+          <h3 id="git-commit-management-summary" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌚</span>
+            개요
+          </h3>
+          <p>
+            git commit을 확인하고 수정하는 명령어를 정리해봤다.
+          </p>
+        </article>
+
+        <article aria-labelledby="file-state">
+          <h3 id="file-state" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌓</span>
+            git 파일 상태
+          </h3>
+
+          <img class="file-state-image" src="../../assets/images/git-파일상태.png" alt="깃 파일 상태">
+
+          <p class="hidden">
+            git 파일의 상태 종류를 목록으로 정리했다.
+          </p>
+          <dl class="main-article-dl" aria-label="파일 상태 종류">
+            <div>
+              <dt class="main-article-dt underline" aria-label="언모디파이드">
+                <span class="hidden-inline">1</span>
+                Unmodified
+              </dt>
+              <dd class="main-article-dd">
+                commit 후 변경사항이 없음을 의미한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt underline" aria-label="모디파이드">
+                <span class="hidden-inline">2</span>
+                Modified
+              </dt>
+              <dd class="main-article-dd">
+                파일 내용이 변경되었음을 의미한다.
+              </dd>
+              <dd class="main-article-dd">
+                git add 경로/파일명으로 스테이징한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt underline" aria-label="스테이지드">
+                <span class="hidden-inline">3</span>
+                Staged
+              </dt>
+              <dd class="main-article-dd">
+                git add를 하고 난 직후의 상태임을 의미한다.
+              </dd>
+              <dd class="main-article-dd">
+                commit 될 준비가 되었음을 의미하기도 한다.
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+        <article aria-labelledby="git-diff">
+          <h3 id="git-diff" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌔</span>
+            git diff
+          </h3>
+
+          <p class="hidden">
+            git diff 정확한 명령어와 기능을 목록으로 정리했다.
+          </p>
+          <dl class="main-article-dl" aria-label="git diff 명령어">
+            <dt class="main-article-dt order" aria-labelledby="git-diff-command">
+              <strong id="git-diff-command">
+                git diff 경로/파일명
+              </strong>
+            </dt>
+            <dd class="main-article-dd">
+              파일의 변경부분을 출력한다.
+            </dd>
+          </dl>
+        </article>
+
+        <article aria-labelledby="git-checkout">
+          <h3 id="git-checkout" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌖</span>
+            git checkout
+          </h3>
+
+          <p class="hidden">
+            git checkout의 기능을 목록으로 정리했다.
+          </p>
+          <dl class="main-article-dl" aria-label="git checkout 명령어">
+            <dt class="main-article-dt order" aria-labelledby="git-checkout-command">
+              <strong id="git-checkout-command">
+                git checkout
+              </strong>
+            </dt>
+            <dd class="main-article-dd">
+              수정을 잘못해서 파일을 원상태로 돌릴 때 사용하는 명령어
+            </dd>
+            <dd class="main-article-dd">
+              파일의 상태가 Modified에서 Unmodified로 변경된다.
+            </dd>
+            <dd class="main-article-dd">
+              git checkout하고나서 git diff 명령어를 입력하면 아무것도 뜨지않아야 한다.
+            </dd>
+          </dl>
+        </article>
+
+        <article aria-labelledby="git-reset">
+          <h3 id="git-reset" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌘</span>
+            git reset
+          </h3>
+
+          <p>
+            파일을 잘못 스테이징 했거나(git add) 커밋을 잘못 입력했을 때, 되돌리는 명령어
+            <span class="hidden">
+              git reset의 종류와 정확한 명령어, 기능을 목록으로 정리했다. 필요에 따라 명령어를 선택하여 입력한다.
+            </span>
+          </p>
+          <dl class="main-article-dl" aria-label="git reset 명령어">
+            <div>
+              <dt class="main-article-dt order" aria-labelledby="reset-soft-command">
+                <strong id="reset-soft-command">
+                  <span class="hidden-inline">1</span>
+                  git reset --soft 경로/파일명
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                해당 파일의 commit만 취소된다.
+              </dd>
+              <dd class="main-article-dd">
+                Unmodified에서 Staged로 되돌린다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt order" aria-labelledby="reset-mixed-command">
+                <strong id="reset-mixed-command">
+                  <span class="hidden-inline">2</span>
+                  git reset (--mixed) 경로/파일명
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                해당 파일의 add와 commit이 취소된다.
+              </dd>
+              <dd class="main-article-dd">
+                git reset의 디폴트 값이다.
+              </dd>
+              <dd class="main-article-dd">
+                Unmodified에서 Modified로 되돌린다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt order" aria-labelledby="reset-hard-command">
+                <strong id="reset-hard-command">
+                  <span class="hidden-inline">3</span>
+                  git reset --hard 경로/파일명
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                해당 파일의 파일 수정, add, commit이 취소된다.
+              </dd>
+              <dd class="main-article-dd">
+                Unmodified에서 Unmodified로 되돌린다.
+              </dd>
+              <dd class="main-article-dd">
+                변경사항도 모두 되돌리므로 사용에 주의를 기울여야 한다.
+              </dd>
+            </div>
+          </dl>
+
+          <img class="git-reset-image" src="../../assets/images/git-reset.png" alt="soft, mixed, hard의 차이">
+
+          <p class="hidden">
+            git reset의 HEAD 조작 명령어의 종류와 기능을 목록으로 정리했다.
+          </p>
+          <dl class="main-article-dl" aria-label="git reset HEAD 명령어">
+            <div>
+              <dt class="main-article-dt order" aria-labelledby="reset-head-command">
+                <strong id="reset-head-command">
+                  git reset (옵션) HEAD
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                현재 HEAD의 모든 add와 commit이 취소된다.
+              </dd>
+              <dd class="main-article-dd">
+                git reset과 동일하다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt order" aria-labelledby="reset-ahead-command">
+                <strong id="reset-ahead-command">
+                  git reset (옵션) HEAD^1
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                바로 전 HEAD의 모든 add와 commit이 취소된다.
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="git-push-cancel" aria-labelledby="git-push-cancel-title">
+          <h3 id="git-push-cancel-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌛</span>
+            git push 취소하기
+          </h3>
+          <p>
+            git push를 잘못했을 때 자신의 로컬 내용을 remote에 강제로 덮어쓰는 방법이다.<br/>
+            두 가지 주의할 점이 있다.
+          </p>
+          <ul class="background-white-radius" aria-label="주의할 점">
+            <li class="main-article-list-items hyphen" role="none">
+              git push를 되돌리면, 해당 커밋 이후의 모든 정보는 사라진다.
+            </li>
+            <li class="main-article-list-items hyphen" role="none">
+              협업중이라면 동기화 문제가 발생하므로 팀원과 상의 한 후 진행한다.
+            </li>
+          </ul>
+          <dl class="main-article-dl" aria-label="취소방법">
+            <div>
+              <dt class="main-article-dt" aria-label="가장 최근의 커밋을 취소한다.">
+                가장 최근의 커밋을 취소한다.
+              </dt>
+              <dd class="main-article-dd">
+                <strong class="order">
+                  git reset HEAD^
+                </strong>
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="원하는 시점으로 워킹 디렉토리를 되돌린다.">
+                원하는 시점으로 워킹 디렉토리를 되돌린다.
+              </dt>
+              <dd class="main-article-dd">
+                깃허브에서 해당 디렉토리의 커밋 아이디를 복사한다.
+              </dd>
+              <dd class="main-article-dd">
+                git bash에
+                <strong class="order">
+                  git reset 커밋 아이디
+                </strong>
+                를 입력한다.
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="되돌아간 시점에서 add와 커밋 메세지를 입력한다.">
+                되돌아간 시점에서 add와 커밋 메세지를 입력한다.
+              </dt>
+              <dd class="main-article-dd order">
+                git add 파일이름
+              </dd>
+              <dd class="main-article-dd order">
+                git commit -m "커밋 메세지"
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt" aria-label="강제로 push한다.">
+                강제로 push한다.
+              </dt>
+              <dd class="main-article-dd order">
+                git push -f origin 브랜치명
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+        <article aria-labelledby="git-commit-cancel">
+          <h3 id="git-commit-cancel" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌜</span>
+            git commit 취소하기
+          </h3>
+
+          <p class="hidden">git revert의 정확한 명령어와 기능, git reset과의 차이점을 목록으로 정리했다.</p>
+          <dl class="main-article-dl" aria-label="git revert와 git reset 비교">
+            <div>
+              <dt class="main-article-dt order" aria-labelledby="git-reset-command">
+                <strong id="git-reset-command">
+                  git reset --soft 커밋로그
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                커밋 메세지만을 수정할 수 있는 명령어이다. push하기 전에 실행한다.
+              </dd>
+              <dd class="main-article-dd">
+                git reset 하는 방법
+                <p>
+                  git reset --soft 커밋로그 입력<br/>
+                  git log로 커밋이 취소됐는지 확인 후에 git commit -m '커밋메세지'를 명령한다.<br/>
+                  다시 git log를 명령하여 수정된 커밋 메세지를 확인한다.
+                </p>
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt order" aria-labelledby="git-revert-command">
+                <strong id="git-revert-command">
+                  git revert 커밋로그
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                push해서 서버에 업로드한 상태라면 커밋메세지를 수정할 수 없다. 대신, 해당 커밋의 바로 뒤에 변경한 메세지를 덧붙여서 올바른 커밋을 표현할 수 있다. 이 때 이용하는 명령어이다.
+              </dd>
+              <dd class="main-article-dd">
+                git revert 하는 방법
+                <p>
+                  git revert 커밋로그 입력<br/>
+                  화면이 바뀌면 Revert "수정할 커밋메세지"를 맨  윗줄에 쓴다.<br/>
+                  :wq를 입력해서 창을 빠져나온 후, git log로 변경사항을 확인한다.
+                </p>
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt order" aria-labelledby="revert-reset-diff">
+                <strong id="revert-reset-diff">
+                  git revert와 git reset의 차이
+                </strong>
+              </dt>
+              <dd class="main-article-dd">
+                push의 유무로 구분한다.
+              </dd>
+              <dd class="main-article-dd">
+                서버에 push하기 전에 커밋메세지를 수정하고싶다면, git reset을 사용한다.
+              </dd>
+              <dd class="main-article-dd">
+                서버에 push했는데 커밋메세지를 수정하고싶다면, git revert를 사용한다.
+              </dd>
+            </div>
+          </dl>
+        </article>
+      </section>
+
+      <section id="git-branch-management" class='container' aria-labelledby="git-branch-management-title">
+        <h2 id="git-branch-management-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">👽</span>
+            git branch 관리
+            <span class='main-title' aria-hidden="true">👽</span>
+          </strong>
+        </h2>
+
+        <article aria-labelledby="branch-management-summary">
+          <h3 id="branch-management-summary" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💜</span>
+            개요
+          </h3>
+          <p>
+            git branch 생성, 이동, 삭제, 병합하는 명령어를 정리해봤다.
+          </p>
+        </article>
+
+        <article class="branch-necessity" aria-labelledby="branch-necessity-title">
+          <h3 id="branch-necessity-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💛</span>
+            branch를 생성해야 하는 이유
+          </h3>
+          <p>
+            <strong class="underline">
+              협업하기 위해 브랜치를 생성한다.
+            </strong><br/>
+            여러 팀원들이 각자 다른 파일을 작업할 땐 괜찮다.<br/>
+            문제는 '같은'파일을 작업하면 문제가 발생한다.<br/>
+            push할 때 현제 헤더상에서 commit 충돌이 일어나기 때문이다.<br/>
+            팀원마다 다른 브랜치를 형성하면 충돌 문제를 해결할 수 있다.<br/>
+            또한, commit관리에도 용이하다.
+          </p>
+          <p>
+            A 직원과 B 직원이 같은 파일을 작업하고 각각 상이한 작업 내용을 commit한다.<br/>
+            A 직원의 작업물에는 B 직원의 작업내용이 반영되지 않는다.<br/>
+            B 직원의 상황도 마찬가지다.<br/>
+            이 상태에서 push를 하면?<br/>
+            서버 입장에서는 현재 헤더에서 작업 내용과 commit이 제각각이니 push에러가 발생한다.<br/>
+            각자 다른 브랜치를 사용하여 헤더를 분리시켜야할 필요가 있다.<br/>
+            작업물을 반영하고 싶다면, push 한 뒤에 master 브랜치에 해당 브랜치를 병한다.
+          </p>
+        </article>
+
+        <article aria-labelledby="create-branch">
+          <h3 id="create-branch" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💙</span>
+            branch 생성
+          </h3>
+
+          <p class="hidden">git branch의 정확한 명령어와 기능을 목록으로 정리했다.</p>
+          <dl class="main-article-dl" aria-label="git branch 명령어">
+            <div>
+              <dt class="main-article-dt order" aria-label="깃 브랜치 브랜치명">
+                git branch 브랜치명
+              </dt>
+              <dd class="main-article-dd">
+                새로운 브랜치 생성하는 명령어
+              </dd>
+            </div>
+            <div>
+              <dt class="main-article-dt order" aria-label="깃 브랜치">
+                git branch
+              </dt>
+              <dd class="main-article-dd">
+                브랜치 목록 확인
+              </dd>
+              <dd class="main-article-dd">
+                현재 HEAD가 있는 브랜치는 *표시가 되어있다.
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+        <article aria-labelledby="change-branch">
+          <h3 id="change-branch" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">❤️</span>
+            branch 전환
+          </h3>
+
+          <strong class="order">git checkout 브랜치명</strong>
+        </article>
+
+        <article class="merge-branch" aria-labelledby="merge-branch-title">
+          <h3 id="merge-branch-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💞</span>
+            branch 병합
+          </h3>
+
+          <p>
+            각자의 branch에서 작업하던 것을 master 브랜치에 합쳐서 실제로 사용할 수 있는 코드로 만든다.<br/>
+            <span class="underline">master 브랜치로 전환한 상태에서 명령한다.</span>
+            <span class="hidden-inline">git merge 정확한 명령어와 기능을 목록으로 정리했다.</span>
+          </p>
+          <dl class="main-article-dl" aria-label="git merge 명령어">
+            <dt class="main-article-dt order" aria-label="git merge 브랜치명">
+              git merge 브랜치명
+            </dt>
+            <dd class="main-article-dd">
+              브랜치 내용을 병합하는 명령어
+            </dd>
+            <dd class="main-article-dd">
+              merge전에는 HEAD의 위치가 master에 있는지 확인한다.
+            </dd>
+            <dd class="main-article-dd">
+              브랜치 명에는 내용을 합칠 브랜치 이름을 입력해야 한다.
+            </dd>
+          </dl>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://velog.io/@hidaehyunlee/Git-add-commit-push-%EC%B7%A8%EC%86%8C%ED%95%98%EA%B8%B0'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "hidaehunlee velog - Git add, commit, push 취소하기", velog, 2021년 3월 4일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://velog.io/@hidaehyunlee/Git-add-commit-push-%EC%B7%A8%EC%86%8C%ED%95%98%EA%B8%B0'>
+              https://velog.io/@hidaehyunlee/Git-add-commit-push-%EC%B7%A8%EC%86%8C%ED%95%98%EA%B8%B0
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 3월 1일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <!-- 요소 생성 -->
+    <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="javascript, 콜스택, 호출 스택"/>
+    <meta name="description" content="함수의 실행 순서를 의미하는 호출스택에 대해 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>호출스택(콜스택)</title>
+
+    <!-- 호출스택(콜스택) -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/common/font.css">
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript-media-query.css">
+
+    <!-- 데이터 -->
+    <script src='../../assets/data.js'></script>
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">💐</span>
+            호출스택(Call stack)
+            <span class='main-title' aria-hidden="true">💐</span>
+          </strong>
+        </h2>
+        <div class="time">
+          작성 날짜: <time datetime='2021-3-10'>2021년 03월 10일</time><br/>
+          수정 날짜: <time datetime='2021-3-17'>2021년 03월 17일</time>
+        </div>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌵</span>
+            개요
+          </h3>
+          <p>
+            자바스크립트에서 무조건 알아야 하는 스코프, 실행콘텍스트, 프로토타입, 비동기, 클로저중에 클로저를 공부해보자.
+          </p>
+        </article>
+
+        <article class='call-stack' aria-labelledby="call-stack-title">
+          <h3 id="call-stack-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌸</span>
+            정의
+          </h3>
+          <p class="margin-8px">
+            호출 스택은 여러 함수들을 호출하는 스크립트에서 현재 어떤 함수가 동작하고 있는 지, 다음에 어떤 함수가 호출되어야 하는지를 제어하는 메커니즘이다.
+          </p>
+          <p class="margin-8px">
+            Last In First Out(LIFO)형식이라는 것을 기억하자.
+          </p>
+          <p class="margin-8px">
+            <strong class="underline">
+              렉시컬 스코프에서는 함수의 '선언'이 중요했다면, 호출 스택에서는 '호출(실행)'이 중요하다.
+            </strong>
+            <br/>
+            뭐가 먼저 실행되고 뭐가 나중에 실행되는지 그 관계를 아는 것이 중요하다는 의미이다.
+          </p>
+        </article>
+
+        <article class='call-stack-feature' aria-labelledby="call-stack-feature-title">
+          <h3 id="call-stack-feature-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌿</span>
+            특징
+          </h3>
+          <ul aria-label="특징">
+            <li class="main-article-list-items hyphen">
+              호출스택에 의해 함수가 끝나면, 함수가 사라지면서 함수 안의 변수가 날아가버린다. 하지만 이 문제는 스코프로 해결할 수 있다.
+            </li>
+            <li class="main-article-list-items hyphen">
+              스택은 유한하다. 그래서 할당된 공간보다 많은 공간을 차지하면 'stack overflow' 에러가 발생한다.
+            </li>
+            <li class="main-article-list-items hyphen">
+              스크립터의 함수 호출-호출 스택에 함수 추가-함수 실행의 과정으로 진행된다. 해당 함수에 의해 호출되는 모든 함수는 호출 스택에 추가되고 마지막 함수부터 차례로 실행한다.
+            </li>
+            <li class="main-article-list-items hyphen">
+              함수의 실행이 끝나면 호출 스택에서 빠져나간다. 넣기-쌓기-실행-빠짐의 반복이다. 개발자는 함수가 빠져 나감을 기준으로 함수의 실행 순서를 파악하면 된다.
+            </li>
+          </ul>
+        </article>
+
+        <article class='call-stack-recursion' aria-labelledby="call-stack-recursion-title">
+          <h3 id="call-stack-recursion-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌋</span>
+            호출 스택과 재귀 함수
+          </h3>
+          <p class="margin-8px">
+            재귀 함수를 실행하면 호출 스택이 터져버린다.<br/>
+            함수가 실행을 할수록 호출 스택에 쌓이기만 하기 때문이다.<br/>
+            사파리 외에는 대부분의 브라우저에서는 무조건 콜스텍이 터진다.<br/>
+            하지만, 비동기함수 특징을 이용한 꼼수를 쓰면 스택오버플로우를 해결할 수 있다.
+          </p>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              function a() {
+                  setTimeout(function() {
+                      a();
+                  }, 0);
+              }
+
+              a();
+            </code>
+          </pre>
+          <div class="code-desc">
+            <p class="margin-8px">
+              <strong class="underline">
+                비동기인 setTimeout이 실행될 땐 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버리는 특성이 있다. 기억해!
+              </strong>
+            </p>
+            <p class="margin-8px">
+              호출 스택에 다음과 같이 정렬된다.<br/>
+              a 함수-setTimeout<br/>
+              setTimeout이 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버린다.그러면 a 함수도 실행을 마쳤으므로 호출 스택에서 나간다.
+            </p>
+            <p class="margin-8px">
+              0밀리초뒤, 어딘가에 저장된 함수가 호출 스택이 들어온다.<br/>
+              호출 스택에 다음과 같이 정렬된다.<br/>
+              어딘가에 있던 setTimeout의 익명함수(콜백함수)-a-setTimeout<br/>
+              setTimeout이 실행될 땐 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버린다.그러면 a도 실행을 마쳤으므로 호출스텍에서 나간다. 익명함수도 할 일 마쳤으니 호출스텍이서 나간다.<br/>
+            </p>
+            <p class="margin-8px">
+              다시 0밀리초뒤, 어딘가에 저장된 함수가 호출 스택이 들어온다.<br/>
+              호출 스택에 다음과 같이 정렬된다.<br/>
+              어딘가에 있던 setTimeout의 익명함수(콜백함수)-a-setTimeout<br/>
+              setTimeout이 실행될 땐 어딘가에 함수를 저장하고 자기 할 일 끝났다며 나가버린다.그러면 a도 실행을 마쳤으므로 호출스텍에서 나간다. 익명함수도 할 일 마쳤으니 호출스텍이서 나간다.<br/>
+            </p>
+            <p class="margin-8px">
+              이렇게 호출스택이 채워졌다 비워졌다를 반복하므로 콜스택 터지는 에러가 발생하지 않게된다.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://developer.mozilla.org/ko/docs/Glossary/Call_stack'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "MDN - 호출 스택", MDN, 2021년 3월 10일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://developer.mozilla.org/ko/docs/Glossary/Call_stack'>
+              https://developer.mozilla.org/ko/docs/Glossary/Call_stack
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://www.youtube.com/watch?v=OviFeiGJVm0&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=71'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "Youtube - ZeroCho의 JS 중급 강좌 9-5. 재귀, 비동기와 호출 스택. 클로저 문제 해결법", Youtube, 2021년 3월 10일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.youtube.com/watch?v=OviFeiGJVm0&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=71'>
+              https://www.youtube.com/watch?v=OviFeiGJVm0&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=71
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github, 2021년 3월 10일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <!-- 요소 생성 -->
+    <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

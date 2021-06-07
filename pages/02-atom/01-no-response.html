@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="아톰, atom, no response, 반응없음"/>
+    <meta name="description" content="아톰이 반응없는 이유와 그 해결방법을 알아보자"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>아톰 먹통</title>
+
+    <!-- no-response -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/atom/atom.css">
+    <link rel="stylesheet" href="../../css/atom/media-query.css">
+
+    <!-- 데이터 -->
+    <script src='../../assets/data.js'></script>
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">👋</span>
+            아톰 반응 없음
+            <span class='main-title' aria-hidden="true">👋</span>
+          </strong>
+        </h2>
+
+        <article class='summary' aria-labelledby="summary">
+          <h3 id="summary" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐷</span>
+            개요
+          </h3>
+          <p>
+            아톰을 쓰다보면 반응이 없을 때가 있다.<br/>
+            화면은 켜지지만 폴더가 열리지 않는 상황이다.<br/>
+            다른 에디터를 쓰자니,<br/>
+            다운받고 설정하는게 귀찮다.<br/>
+            <br/>
+            그래서 왜 이런 형상이 일어나는지, 그리고 어떻게 하면 해결할 수 있는지 알아보았다.
+          </p>
+        </article>
+
+        <article class="no-response-reason" aria-labelledby="no-response-reason">
+          <h3 id="no-response-reason" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐯</span>
+            이유
+          </h3>
+          <p>
+            찾아본 바에 의하면, 아래의 두가지 때문이다.
+          </p>
+          <ol class="background-white-radius" aria-label="원인">
+            <li class="main-article-list-items hyphen">
+              <strong>
+                설정 파일에 엉뚱한 내용을 넣어둔 채로 저장.
+              </strong>
+            </li>
+            <li class="main-article-list-items hyphen">
+              <strong>
+                compile-cache 폴더에 문제 발생.
+              </strong>
+            </li>
+          </ol>
+          <p>
+            여기서 compile-cache 폴더에 문제 발생이란게 무슨뜻이냐면, 편집을 위해 과도하게 많은 창을 켜놓은 그대로 에디터를 종료한 경우이다.<br/>
+          </p>
+          <p>
+            저 폴더의 입장을 대변하자면,<br/>
+            아니 이렇게 많은 창을 다 켜놓고 에디터를 끄시면 어떡해요. 선생님께서 다음에 에디터 켜실 때 제가 이 파일들 한꺼번에 다시 열어야 되는데, 열다가 분명히 문제 있을거란 말이에요?? 비유를 하자면 한명 두명 문으로 나가는 건 문제 없지만 백명이 한꺼번에 나간다고 생각해보세요. 모두가 술술 잘 나가겠어요? 그러다가 누군가는 다칠거잖아요. 그게 저라고는 생각 못 하셨어요? 선생님께서는 항상 제 마음을 몰라주시는 것 같아 너무 서운합니다. 그렇게 상처주시고 폴더 다시 열려고 하면, 제가 순순히 협조할 거라고 생각하신거에요 선생님?
+          </p>
+        </article>
+
+        <article class='no-response-solution'
+        aria-labelledby="no-response-solution-title">
+          <h3 id="no-response-solution-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐼</span>
+            해결
+          </h3>
+          <p>
+            해결방법은 아주 쉽다.
+          </p>
+          <ol class="background-white-radius" aria-label="해결">
+            <li class="main-article-list-items hyphen">
+              <strong>
+                설정 파일에 엉뚱한 내용을 넣어둔 채로 저장했을 경우에는, 해당 부분을 지우고나서 에티터를 켜면 된다.
+              </strong>
+            </li>
+            <li class="main-article-list-items hyphen">
+              <strong>
+                compile-cache 폴더에 문제 발생한 경우에는, 파일이나 폴더를 삭제하고 에디터를 켜면 된다.
+              </strong>
+            </li>
+          </ol>
+          <p>
+            삭제하는게 조심스럽다면, 파일명을 바꿔주는 것도 괜찮다. 에디터를 종료 할 당시에 켜져있던 파일을 창을 줄이기 위함이다.<br/>
+            조금씩 삭제하다보면 에디터가 정상 동작하는 걸 볼 수 있다. 삭제한 파일은 다시 복구하면 된다.
+          </p>
+        </article>
+
+        <article class='slice-stylesheet' aria-labelledby="prevention">
+          <h3 id="prevention" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🐨</span>
+            예방
+          </h3>
+          <p>
+            <strong class="error">
+              작업이 끝난 창은 꼭 닫는 습관을 들이는 것이 좋다.
+            </strong>
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://nhj12311.tistory.com/64'>
+          <strong class='note-footer-reference-name'>
+            자료 출처: "tistory - nhj12311 atom 안 열릴 때(atom not opening)", 개인 페이지, 2021년 2월 28일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://nhj12311.tistory.com/64'>
+              https://nhj12311.tistory.com/64
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 2월 28일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <!-- 요소 생성 -->
+    <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

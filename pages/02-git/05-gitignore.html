@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="git, gitignore"/>
+    <meta name="description" content="원격 저장소 관리의 또다른 방법인 gitignore에 대해 알아보자"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>Gitignore</title>
+
+    <!-- Gitignore -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/git/git.css">
+    <link rel="stylesheet" href="../../css/git/media-query.css">
+
+    <!-- 데이터 -->
+    <script src='../../assets/data.js'></script>
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <article class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">☁️</span>
+            Gitignore
+            <span class='main-title' aria-hidden="true">☁️</span>
+          </strong>
+        </h2>
+        <div class="time">
+          작성 날짜: <time datetime='2021-5-27'>2021년 05월 27일</time>
+        </div>
+
+        <section class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">⚡</span>
+            개요
+          </h3>
+          <p>
+            원격 저장소에서 관리하지 말았으면 하는 파일들이 있다.<br/>
+            가끔 페이지 구상을 파워포인트로 할 때가 있다.<br/>
+            구상 파일을 작업 폴더에 넣어놓고 싶은데, 원격 저장소에 올라가지 않았으면 한다.<br/>
+            이런 파일들을 git에서 추적하지 않게 만드는 장치가 gitignore이다.
+          </p>
+        </section>
+
+        <section class='gitignore' aria-labelledby="gitignore-title">
+          <h3 id="gitignore-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🌊</span>
+            gitignore 구현
+          </h3>
+          <p class="margin-16px">
+            전문적으로 'git에서 파일 트랙킹을 멈춘다'라고 표현한다.<br/>
+            파일을 .gitignore에 설정하면, 파일의 업로드/수정/제거/커밋 등을 무시한다.<br/>
+          </p>
+
+          <ol class="build-gitignore" aria-label='구현 방법'>
+            <li class="background-white-radius margin-8px">
+              작업 폴더에 .gitignore 파일 생성
+            </li>
+            <li class="background-white-radius margin-8px">
+              .gitignore 파일에 원하는 파일/폴더명 입력
+            </li>
+            <li class="background-white-radius margin-8px">
+              git rm --cached -- 파일/폴더 경로
+            </li>
+            <li class="background-white-radius margin-8px">
+              git add .
+            </li>
+            <li class="background-white-radius margin-8px">
+              git commit 커밋 메시지
+            </li>
+            <li class="background-white-radius margin-8px">
+              git push -u origin {브랜치명}
+            </li>
+          </ol>
+        </section>
+
+        <section class='gitignore-pattern' aria-labelledby="gitignore-pattern-title">
+          <h3 id="gitignore-pattern-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">⛄</span>
+            작성 패턴
+          </h3>
+          <dl class='gitignore-pattern-list' aria-label='패턴'>
+            <div class="">
+              <dt class="main-article-dt">
+                <strong class="type">*.class</strong>
+              </dt>
+              <dd class="main-article-dd">모든 .class 파일 무시</dd>
+            </div>
+            <div class="">
+              <dt class="main-article-dt">
+                <strong class="type">!</strong>
+              </dt>
+              <dd class="main-article-dd">dependencies 객체에 패키지 정보 추가</dd>
+            </div><div class="">
+              <dt class="main-article-dt">
+                <strong class="type">-*</strong>
+              </dt>
+              <dd class="main-article-dd">해당 패키지가 존재하더라도 원격 저장소에 있는 패키지를 가져온다.</dd>
+            </div><div class="">
+              <dt class="main-article-dt">
+                <strong class="type">-g</strong>
+              </dt>
+              <dd class="main-article-dd">전역 폴더에 설치</dd>
+              <dd class="main-article-dd">위치: c:/사용자/win10/AppData/Roaming/npm/node_modules</dd>
+            </div>
+          </dl>
+        </section>
+      </article>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 5월 27일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href="https://gist.github.com/rxaviers/7360908">
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <!-- 요소 생성 -->
+    <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>

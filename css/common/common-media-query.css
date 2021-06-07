@@ -1,0 +1,266 @@
+/* Custom Grid System */
+@media screen and (min-width: 1200px) {
+  .container{
+    max-width: 960px !important;
+  }
+}
+
+
+/* Tablet Style
+min-width >=576px  */
+@media screen and (min-width:576px) {
+  /* Header */
+  .note-header{
+    margin-bottom: 32px;
+  }
+
+  /* Header - Toggle-Button */
+  .toggle-button-group{
+    bottom: -4px;
+  }
+
+  .toggle-button-title{
+    font-size: 13px;
+    margin-right: 8px;
+  }
+
+  .toggle-button{
+    width: 36px;
+    height: 20px;
+  }
+
+  .toggle-button::after{
+    left: 3px;
+    width: 14px;
+    height: 14px;
+  }
+
+  button.toggle-button.button-toggled::after{
+    left: 3px;
+    transform: translate(16px,-50%);
+    width: 14px;
+    height: 14px;
+  }
+
+
+  /* Header - Modal - go-to-pages*/
+  .go-to-pages{
+    width: 300px;
+  }
+
+  .go-to-page-list{
+    height: 600px;
+  }
+
+
+  /* Main */
+  .note-main{
+    margin-bottom: 48px;
+  }
+
+  .main-title{
+    margin-bottom: 48px;
+  }
+
+  /* Article */
+  .note-main .container > article,
+  .note-main .container > section{
+    margin-bottom: 64px;
+  }
+
+  /* Article - Title */
+  .main-article-title{
+    margin-bottom: 24px;
+  }
+
+  .main-image{
+    padding: 30px;
+    margin-bottom: 48px;
+  }
+
+  /* Article - Definition List */
+  .main-article-dl > div{
+    margin-bottom: 16px;
+  }
+
+  dfn.main-article-dt{
+    margin-bottom: 8px;
+  }
+
+  .main-article-dt{
+    margin-bottom: 8px;
+  }
+
+  .command{
+    margin-bottom: 12px;
+  }
+
+
+  /* Article - List */
+  .list-item-title{
+    margin-bottom: 8px;
+  }
+
+
+  /* Article - Table */
+  .main-article-table td,
+  .main-article-table th,
+  .main-article-table tr{
+    padding: 8px 12px;
+  }
+
+  /* Article - button */
+  /* Common-Button */
+  .transparent-button{
+    width: 200px;
+    padding: 10px 0;
+  }
+
+
+
+  /* Footer */
+  .note-footer-reference{
+    padding: 16px 0;
+  }
+
+
+  .note-footer-reference-name,
+  .note-footer-reference-url > a{
+    font-size: 13px;
+  }
+
+
+  /* 여백 */
+  .background-white-radius{
+    padding: 15px 20px;
+  }
+
+  .margin-8px{
+    margin-bottom: 16px;
+  }
+
+  .margin-16px{
+    margin-bottom: 24px;
+  }
+
+  .margin-24px{
+    margin-bottom: 48px;
+  }
+}
+
+
+/* Desktop Style
+min-width >=768px  */
+@media screen and (min-width:768px) {
+  /* Header */
+  .note-header{
+    margin-bottom: 48px;
+  }
+
+  .note-header > div.container{
+    flex-direction: row; /* 미디어쿼리 작성 */
+    justify-content: space-between; /* 미디어쿼리 작성 */
+    align-items: center;
+  }
+
+  .note-header-title > a{
+    margin-bottom: 0; /* 미디어쿼리 작성 */
+  }
+
+
+  /* Header - Navigation */
+  .note-header-nav{
+    width: 50%;
+  }
+
+  .time,
+  .time > time{
+    font-size: 13px;
+  }
+
+  .time{
+    transform: translateY(-150%);
+  }
+
+
+  /* Main */
+  .note-main{
+    margin-bottom: 72px;
+  }
+
+  .main-title{
+    margin-bottom: 72px;
+  }
+
+  .main-title > strong{
+    font-size: 22px;
+  }
+
+
+  /* Article */
+  .note-main .container > article,
+  .note-main .container > section{
+    margin-bottom: 88px;
+  }
+
+  /* Article - Title */
+  .main-article-title{
+    font-size: 18px;
+  }
+
+  .main-article-subtitle{
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+
+  .main-image{
+    width: 70%;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 72px;
+  }
+
+
+  /* Article - Definition List */
+  .main-article-dl > div{
+    margin-bottom: 32px;
+  }
+
+
+  /* Article - List */
+  .main-article-list-items{
+    margin-bottom: 16px;
+  }
+
+
+  /* Article - Table */
+  .main-article-table td,
+  .main-article-table th,
+  .main-article-table tr{
+    padding: 10px 15px;
+  }
+
+  /* Footer */
+  .note-footer-reference-name,
+  .note-footer-reference-url > a{
+    font-size: 13px;
+  }
+
+
+  /* 여백 */
+  .background-white-radius{
+    padding: 20px 40px;
+  }
+
+  .margin-8px{
+    margin-bottom: 16px;
+  }
+
+  .margin-16px{
+    margin-bottom: 24px;
+  }
+
+  .margin-24px{
+    margin-bottom: 48px;
+  }
+}

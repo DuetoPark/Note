@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="dueto park"/>
+    <meta name="keywords" content="javascript, 팩토리패턴, 프로토타입"/>
+    <meta name="description" content="중복코드를 효율적으로 사용하는 방법인 팩토리 패턴과 프로토 타입에 대해 알아봅시다!"/>
+    <meta name="Location" content="포도와 고구마의 고장"/>
+
+    <title>팩토리 패턴과 프로토타입</title>
+
+    <!-- 팩토리 패턴과 프로토타입 -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../css/common/font.css">
+    <link rel="stylesheet" href="../../css/default/reset-css.css">
+    <link rel="stylesheet" href="../../css/common/grid.min.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/common-media-query.css">
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript.css">
+    <link rel="stylesheet" href="../../css/javascript/javascript-media-query.css">
+
+    <!-- 데이터 -->
+    <script src='../../assets/data.js'></script>
+  </head>
+
+  <body>
+    <header class='note-header' aria-label="페이지 조작 영역">
+      <div class='container'>
+        <!-- 홈으로 이동 -->
+        <h1 class='note-header-title' aria-labelledby="go-to-home">
+          <a id="go-to-home" href='../../기초튼튼이가탄.html'>
+            <span aria-hidden="true">🔥</span>
+            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
+            <span aria-hidden="true">🔥</span>
+          </a>
+        </h1>
+
+        <!-- 야간 모드로 전환 -->
+        <section class='toggle-button-group' aria-labelledby="toggle-button">
+          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
+          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+          <p id="page-mode-state" class="hidden" aria-live="polite">
+            야간 모드 꺼짐
+          </p>
+        </section>
+
+        <!-- 다른 페이지로 이동 -->
+        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
+          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
+          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            </li>
+            <li class='note-header-nav-list-items'>
+              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            </li>
+          </ol>
+
+
+          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+
+            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+
+            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+              <h3 class="go-to-page-title" aria-hidden="true">
+                <span aria-hidden="true">😈</span>html
+              </h3>
+              <ol id="go-to-page-html" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😇</span>CSS
+              </h3>
+              <ol id="go-to-page-css" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
+              </ol>
+            </div>
+
+            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+              <h3 class="go-to-page-title">
+                <span aria-hidden="true">😎</span>Javascript
+              </h3>
+              <ol id="go-to-page-javascript" class="go-to-page-list">
+                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
+              </ol>
+            </div>
+          </article>
+        </nav>
+      </div>
+    </header>
+
+    <main class='note-main' aria-label="본문 영역">
+      <section class='container' aria-labelledby="main-title">
+        <h2 id="main-title" class='main-title'>
+          <strong>
+            <span class='main-title' aria-hidden="true">👰</span>
+            팩토리 패턴과 프로토타입
+            <span class='main-title' aria-hidden="true">👰</span>
+          </strong>
+        </h2>
+        <div class="time">
+          작성 날짜: <time datetime='2021-3-12'>2021년 03월 12일</time><br/>
+          수정 날짜: <time datetime='2021-4-15'>2021년 04월 15일</time>
+        </div>
+
+        <article class='summary' aria-labelledby="summary-title">
+          <h3 id="summary-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">💃</span>
+            개요
+          </h3>
+          <p>
+            레진코믹스랑 무비 페이지를 구현할 때 형태와 데이터 중복되는 화면 구현을 진행했었다.<br/>
+            생성자 외에 효율적인 방법이 하나 더 있었다.<br/>
+            중복되는 코드를 보다 잘 써먹을 수 있는 팩토리패턴과 프로토타입에 대해 알아보자.
+          </p>
+        </article>
+
+        <article class='factory-pattern' aria-labelledby="factory-pattern-title">
+          <h3 id="factory-pattern-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🙅</span>
+            팩토리 패턴
+          </h3>
+          <p class="margin-8px">
+            <strong class="underline">
+              팩토리패턴은 객체를 리턴하는 함수를 의미한다.
+            </strong>
+            <br/>
+            구성은 매개변수(값이 달라지는 부분)와 프로토타입(객체의 중복되는 부분)이다.<br/>
+            예시코드는 다음과 같다.
+          </p>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              function 붕어빵(이름, 재료, 가격) { //매개변수와 중복내용의 콜라보
+                return {
+                  name: 이름,
+                  ingredient: 재료,
+                  price: 가격,
+                  type: '붕어빵',
+                  attack: function() {},
+                  defend: function() {},
+                }
+              }
+
+              var 오이 = 붕어빵("오붕", "오이", 1000);
+              console.log(오이);
+              // {name: "오붕", ingredient: "오이", price: 1000, type: '붕어빵', attack:f(), defend:f()};
+
+              var 슈크림 = 붕어빵("슈붕", "슈크림", 1500);
+              console.log(슈크림);
+              // {name: "슈붕", ingredient: "슈크림", price: 1500, type: '붕어빵', attack:f(), defend:f()};
+
+              var 엉덩이 = 붕어빵("엉붕", "엉덩이", 15000);
+              console.log(엉덩이);
+              // {name: "엉붕", ingredient: "엉덩이", price: 15000, type: '붕어빵', attack:f(), defend:f()};
+            </code>
+          </pre>
+        </article>
+
+        <article class='prototype' aria-labelledby="prototype-title">
+          <h3 id="prototype-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🙌</span>
+            프로토타입
+          </h3>
+          <p class="margin-8px">
+            프로토타입은 중복되는 객체를 담고있는 객체를 의미한다.<br/>
+            예시는 다음과 같다.
+          </p>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              var prototype = { // 프로토타입(객체에 들어갈 중복내용)
+                type: '붕어빵',
+                attack: function() {},
+                defend: function() {},
+              }
+
+              var 팥 = { // 고유한 값만
+                name: "팥붕",
+                ingredient: "팥",
+                price: 1000,
+              }
+
+              팥.__proto__ = prototype; // 객체에 추가
+
+              console.log(팥.__proto__.type); // 붕어빵
+              console.log(팥.type); // 붕어빵
+              팥.__proto__.__proto__.toString() // 메소드 실행
+              팥.toString() // 메소드 실행
+            </code>
+          </pre>
+          <div class="code-desc">
+            <p class="hyphen">
+              프로토타입을 객체에 추가할 때에는 "변수.__proto__ = prototype변수"를 입력한다.
+            </p>
+            <p class="hyphen">
+              어떻게 접근하냐면 객체의 값을 호출하듯이 '변수.객체'를 명령한다.
+            </p>
+            <p class="hyphen">
+              __proto__는 생략가능하다.<br/>
+              왜 생략가능하냐면 자바스크립트가 똑똑하기 때문이다.<br/>
+              <strong>
+                원리: 자바스크립트가 객체의 속성을 찾을 때 1단계에서 찾는다. 없으면 알아서 proto 열고 속성을 찾는다. 또 없으면 proto 열어서 찾는다. 찾을 때까지 열고 들어간다.<br/>
+                결국에 없어서 못찾으면 undefined를 출력한다.
+              </strong>
+            </p>
+          </div>
+        </article>
+
+        <article class='mix-factory-pattern-prototype'
+          aria-labelledby="mix-factory-pattern-prototype-title">
+          <h3 id="mix-factory-pattern-prototype-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🏃</span>
+            팩토리 패턴과 프로토타입 결합
+          </h3>
+          <p class="margin-8px">
+            대단하진 않지만 엄청난 둘의 결합을 코드로 확인해보자.
+          </p>
+          <pre class="main-article-pre background-white-radius margin-8px">
+            <code>
+              var prototype = { // 프로토타입(객체에 들어갈 중복내용)
+                type: '붕어빵',
+                attack: function() {},
+                defend: function() {},
+              }
+
+              function 붕어빵틀(이름, 재료, 가격) {
+                var 붕어빵 = { // 고유한 값
+                  name: 이름,
+                  ingredient: 재료,
+                  price: 가격,
+                }
+                붕어빵.__proto__ = prototype; // 중복내용을 추가함.
+                return 붕어빵;
+              }
+
+              const 간식55 = 붕어빵틀("팥붕", "팥", 1000);
+              const 간식66 = 붕어빵틀("오붕", "오이", 500);
+              const 간식77 = 붕어빵틀("귤붕", "귤", 5000);
+
+              console.log(간식55);
+              // {name: "팥붕", ingredient: "팥", price: 1000}
+              console.log(간식66);
+              // {name: "오붕", ingredient: "오이", price: 500}
+              console.log(간식77);
+              // {name: "귤붕", ingredient: "귤", price: 5000}
+            </code>
+          </pre>
+        </article>
+
+        <article class='reason-to-use-the-prototype'
+          aria-labelledby="reason-to-use-the-prototype-title">
+          <h3 id="reason-to-use-the-prototype-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">🙇</span>
+            프로토타입을 사용하는 이유
+          </h3>
+          <p class="margin-8px">
+            <strong class="order">
+              한번에 수정하기 위함이다.
+            </strong>
+            <br/>
+            예시를 보자.
+          </p>
+          <div class="problem margin-8px">
+            <div class="hidden">문제코드</div>
+            <pre class="main-article-pre background-white-radius margin-8px">
+              <code>
+                var 간식 = {
+                  type: '붕어빵',
+                  ingredient: '고구마',
+                };
+
+                var 간식2 = {
+                  type: '붕어빵',
+                  ingredient: '포도',
+                };
+
+                ...
+
+                var 간식9999999 = {
+                  type: '붕어빵',
+                  ingredient: '인삼',
+                };
+              </code>
+            </pre>
+            <p class="margin-8px">
+              짠 다 만들었다.<br/>
+              이제 재앙이 시작된다.<br/>
+              위에서 type을 '호떡'으로 바꾸라는 지시가 내려왔다고 생각해보자.<br/>
+              따로 방법이 없으니 울면서 하나하나 바꿀 뿐이다.<br/>
+              다음에 오는 코드처럼 정말 값을 하나하나 바꿔줘야 한다.
+            </p>
+            <pre class="main-article-pre background-white-radius margin-8px">
+              <code>
+                간식.type = "호떡";
+                간식2.type = "호떡";
+                간식3.type = "호떡";
+                ...
+                간식9999999.type = "호떡";
+              </code>
+            </pre>
+            <p>
+              객체 연습한다고 비슷한 상황을 겪었다.<br/>
+              54번째 값 바꾸다가 정말 눈물이 났다.<br/>
+              중복내용이 들어가는 객체를 프로토타입으로 만들었다면 좋았을텐데.<br/>
+              프로토타입의 효율성은 다음 코드에서 명확히 보여진다.
+            </p>
+          </div>
+          <div class="solution">
+            <div class="hidden">해결코드</div>
+            <pre class="main-article-pre background-white-radius margin-8px">
+              <code>
+                var prototype = { // 객체에 들어갈 중복내용
+                  type: '붕어빵',
+                  attack: function() {},
+                  defend: function() {},
+                }
+
+                function 붕어빵틀(이름, 재료, 가격) {
+                  var 붕어빵 = {
+                    name: 이름,
+                    ingredient: 재료,
+                    price: 가격,
+                  }
+                  붕어빵.__proto__ = prototype;
+                  return 붕어빵;
+                }
+              </code>
+            </pre>
+            <div class="code-desc margin-8px">
+              <p>
+                팩토리와 프로토타입은 참조관계다.<br/>
+                객체인 prototype을 대입해서 얕은 복사를 했기 때문이다.<br/>
+                이제 prototype에서 값을 바꾸면 다른 한 쪽에 반영된다.
+              </p>
+              <p>
+                값을 추가하고, 수정하고, 삭제하라고 누군가 지시한다면,<br/>
+                단 몇 줄로 몇 억개의 값을 변경할 수 있다.<br/>
+                이제 눈물은 베이베이.
+                다음은 9999999개의 값을 쓱싹 해버리는 코드다.
+              </p>
+            </div>
+            <pre class="main-article-pre background-white-radius margin-8px">
+              <code>
+                var 간식 = 붕어빵틀("고구마", 10, 1000);
+                var 간식2 = 붕어빵틀("포도", 10, 1500);
+                var 간식3 = 붕어빵틀("귤", 10, 5000);
+                ...
+                var 간식9999999 = 붕어빵틀("인삼", 20, 100000);
+
+                prototype.type = '호떡';
+
+                console.log(간식.type); // 호떡
+                console.log(간식2.type); // 호떡
+                console.log(간식3.type); // 호떡
+                console.log(간식9999999.type); // 호떡
+              </code>
+            </pre>
+            <div class="code-desc">
+              <p>
+                딱 한 줄 작성했고 9999999개가 수정됐다.<br/>
+                마! 이게 바로 중복을 최대한 효율적으로 처리하는 방법이다!
+              </p>
+              <p>
+                중량을 추가하고싶다면, prototype.weight = 50;을 작성한다.<br/>
+                이 한 줄이 9999999개의 객체에 속성과 값을 추가한다.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class='object-create'
+          aria-labelledby="object-create-title">
+          <h3 id="object-create-title" class='main-article-title'>
+            <span class='main-article-title' aria-hidden="true">👧</span>
+            Object.create()
+          </h3>
+          <p class="problem margin-8px">
+            그런데 실무에서는 proto타입을 추가할 때 __proto__는 비표준 방법이니까 다른 방법을 권장하셨다.<br/>
+            __proto__대신 Object.create(prototype);을 사용하자.
+          </p>
+          <div class="solution">
+            <p class="margin-8px">
+              Object.create(prototype)을 하면 빈 객체를 만들어낸다.<br/>
+              그리고 빈 객체에 자동으로 __proto__가 생성된다.<br/>
+              __proto__를 열면 우리의 prototype이 들어있다.<br/>
+              정리하면 다음에 오는 예시가 된다.
+            </p>
+            <pre class="main-article-pre background-white-radius margin-8px">
+              <code>
+                var prototype = {
+                  type: '붕어빵',
+                  attack: function() {},
+                  defend: function() {},
+                }
+
+                function 붕어빵틀(이름, 재료, 가격) {
+                  var 붕어빵 = Object.create(prototype);
+                  붕어빵.name = 이름;
+                  붕어빵.ingredient = 재료;
+                  붕어빵.price = 가격;
+                  return 붕어빵;
+                }
+
+                let 간식 = 붕어빵틀("멋쟁이토마토", "토마토", 2000);
+                let 간식2 = 붕어빵틀("콜붕", "콜라", 1000);
+
+                console.log(간식.type); // 붕어빵
+                console.log(간식2.type); // 붕어빵
+              </code>
+            </pre>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class='note-footer'>
+      <div class='container'>
+        <blockquote class='note-footer-reference'
+          cite='https://www.youtube.com/watch?v=Hp138V-CKHc&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=83'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "Youtube - ZeroCho의 JS 중급 강좌 11-10. Object.create()", Youtube, 2021년 3월 12일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.youtube.com/watch?v=Hp138V-CKHc&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=83'>
+              https://www.youtube.com/watch?v=Hp138V-CKHc&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=83
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://www.youtube.com/watch?v=GmmZwOSpk0g&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=82'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "Youtube - ZeroCho의 JS 중급 강좌 11-9. 프로토타입을 쓰는 이유", Youtube, 2021년 3월 12일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.youtube.com/watch?v=GmmZwOSpk0g&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=82'>
+              https://www.youtube.com/watch?v=GmmZwOSpk0g&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=82
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://www.youtube.com/watch?v=amK0Zob3lvs&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=81'>
+          <strong class='note-footer-reference-name'>
+            정보 출처: "Youtube - ZeroCho의 JS 중급 강좌 11-8. 팩토리 패턴과 프로토타입", Youtube, 2021년 3월 12일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://www.youtube.com/watch?v=amK0Zob3lvs&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=81'>
+              https://www.youtube.com/watch?v=amK0Zob3lvs&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=81
+            </a>
+          </cite>
+        </blockquote>
+
+        <blockquote class='note-footer-reference'
+          cite='https://gist.github.com/rxaviers/7360908'>
+          <strong class='note-footer-reference-name'>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github, 2021년 3월 12일 접속,
+          </strong>
+          <cite class='note-footer-reference-url'>
+            <a href='https://gist.github.com/rxaviers/7360908'>
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <!-- 요소 생성 -->
+    <script src='../../assets/app/create.js'></script>
+    <!-- 동작 -->
+    <script src='../../assets/app/app.js'></script>
+  </body>
+</html>
