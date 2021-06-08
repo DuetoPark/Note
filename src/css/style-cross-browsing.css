@@ -1,7 +1,33 @@
 /* 1-gulp.html */
+/* Section - gulp */
+.gulp {
+  display: flex;
+  flex-direction: column;
+}
+
+.gulp .desc {
+  order: 2;
+}
+
+.gulp .desc > p {
+  margin-bottom: 8px;
+}
+
+.gulp-image {
+  order: 1;
+  width: 300px;
+  margin-bottom: 8px;
+}
+
 /* Section - gulp-install */
 .gulp-install-step dt.main-article-dt.background-white-radius {
   width: 100%;
+}
+
+.gulp-install-step .touch p.error {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
 }
 
 /* Section - gulp-package */
