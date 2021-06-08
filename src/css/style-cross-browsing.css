@@ -39,3 +39,9 @@
   content: "-";
   margin-right: 8px;
 }
+
+/* 3-npm.html */
+/* Section - npm.command */
+.npm-install-option {
+  padding-left: 16px;
+}

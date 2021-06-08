@@ -1,10 +1,10 @@
 /* 3-Copy.html */
 /* Common */
-.main-article-modal-group > .show-code-button{
+.main-article-modal-group > .show-code-button {
   margin-bottom: 16px;
 }
 
-.main-article-modal-group .modal-code{
+.main-article-modal-group .modal-code {
   display: none;
   width: 100vw;
   height: 100vh;
@@ -18,7 +18,7 @@
   animation-timing-function: ease-in-out;
 }
 
-.modal-code > pre.main-article-pre.background-white-radius{
+.modal-code > pre.main-article-pre.background-white-radius {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -31,24 +31,24 @@
 }
 
 .clipboardData-desc .main-article-subtitle,
-.navigator-desc .main-article-subtitle{
+.navigator-desc .main-article-subtitle {
   overflow-wrap: break-word;
 }
 
 /* Article - How-To-Copy */
-.how-to-copy li.main-article-list-items.hyphen{
+.how-to-copy li.main-article-list-items.hyphen {
   position: relative;
   top: 0;
   left: 0;
 }
 
-.how-to-copy li.main-article-list-items.hyphen::after{
-  content: '';
+.how-to-copy li.main-article-list-items.hyphen::after {
+  content: "";
   opacity: 0;
 }
 
-.how-to-copy li.main-article-list-items.hyphen:hover::after{
-  content: '👇해당 영역으로 이동👇';
+.how-to-copy li.main-article-list-items.hyphen:hover::after {
+  content: "👇해당 영역으로 이동👇";
   position: absolute;
   z-index: 1;
   bottom: -2px;
@@ -57,114 +57,104 @@
   padding: 4px;
   white-space: nowrap;
   border-radius: 4px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   opacity: 1;
   transition: opacity 250ms ease-in;
 }
 
-
 /* 4-e.target.html */
 /* common */
 .e-target-image,
-.e-target-reason-image{
+.e-target-reason-image {
   width: 100%;
   height: auto;
 }
 
-
 /* 11-slice-sort.html */
-.slice-summary-image-group{
+.slice-summary-image-group {
   display: flex;
   flex-direction: column;
 }
 
-.slice-summary-image{
+.slice-summary-image {
   width: 100%;
 }
 
-#sort{
+#sort {
   padding-top: 80px;
 }
-
 
 /* 13-split-join.html */
 /* Section - split
    Section - join*/
 #split,
-#join{
+#join {
   padding-top: 80px;
 }
 
-
 /* 18-value-textcontent.html */
 /* common */
-.value-textContent-image{
+.value-textContent-image {
   width: 200px;
   height: auto;
   margin: 0 auto;
 }
 
-
 /* 25-화살표함수.html */
 /* Article - arrow-function-feature */
-.arrow-function-feature dd span{
+.arrow-function-feature dd span {
   display: inline-block;
   margin-bottom: 8px;
 }
 
-
 /* 30-참조-복사.html */
 /* Article - copy-reference */
-.primitive-value-assignment{
+.primitive-value-assignment {
   margin-bottom: 48px;
 }
 
-
 /* 36-table-display-data.html */
 /* Article - display-data-matching */
-.main-article-dd > span{
+.main-article-dd > span {
   display: inline-block;
   margin-bottom: 4px;
 }
 
-
 /* 37-this.html */
 /* Article - what-is-this */
-.what-is-this{
+.what-is-this {
   display: flex;
   flex-direction: column;
 }
 
-.what-is-this > div:first-of-type{
+.what-is-this > div:first-of-type {
   margin-bottom: 8px;
 }
 
-
 /* 42-localStorage.html */
 /* Article - localStorage-example */
-input[name=item],
-input[type=submit]{
+input[name="item"],
+input[type="submit"] {
   line-height: 40px;
   padding: 0 10px;
   margin-right: 8px;
   border-radius: 4px;
 }
 
-input[name=item]:active,
-input[name=item]:focus{
+input[name="item"]:active,
+input[name="item"]:focus {
   box-shadow: 0px 0px 0px 3px #ffa5007a;
 }
 
-input[type=submit]{
+input[type="submit"] {
   margin-right: 0;
   background-color: #ffa500;
   cursor: pointer;
 }
 
-
 /* 43-tab-control.html */
 /* Section - tab-control-materials */
-#role-tab{
+#role-tab {
   margin-bottom: 24px;
 }
 
@@ -172,58 +162,49 @@ input[type=submit]{
 /* Section - slider-keywords
    Section - slider-build */
 .slider-keywords .type::before,
-.slider-build .type::before{
-
+.slider-build .type::before {
 }
 
 /* 51-babel.html */
 /* Section - babel */
-.babel .desc{
+.babel .desc {
   padding-left: 16px;
 }
 
-.syntax-type{
+.syntax-type {
   display: flex;
   flex-wrap: wrap;
   padding-left: 16px;
 }
 
-.syntax-type > *{
+.syntax-type > * {
   width: auto;
   margin-right: 4px;
   margin-bottom: 4px;
 }
 
 /* Section - babel-install */
-.node-install{
+.node-install {
   text-decoration: underline;
   transition: color 250ms ease-in-out;
 }
 
-.node-install:hover{
-  color: #1E90FF;
+.node-install:hover {
+  color: #1e90ff;
 }
 
-dt.main-article-dt.background-white-radius{
+dt.main-article-dt.background-white-radius {
   width: 100%;
 }
 
 /* Section - babel-error */
-.babel-error dl p{
+.babel-error dl p {
   padding-left: 16px;
 }
-
-
-/* 52-npm.html */
-/* Section - npm.command */
-.npm-install-option{
-  padding-left: 16px;
-}
-
 
 /* 53-회계형표현.html */
 /* Section - account-exp */
 .numberFormat p,
-.account-exp .toLocaleString p{
+.account-exp .toLocaleString p {
   padding-left: 16px;
 }
