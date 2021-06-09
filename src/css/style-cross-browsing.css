@@ -45,3 +45,7 @@
 .npm-install-option {
   padding-left: 16px;
 }
+
+.npm-command .background-white-radius {
+  width: 100%;
+}
