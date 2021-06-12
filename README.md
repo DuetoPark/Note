@@ -1,6 +1,6 @@
 # Note
-Note 페이지에 공부한 기록들을 담았다.  
-> 정말 집에 종이가 없어서 시작되으며, 종이가 없어도 굴하지 않는 정신이 깃들어 있다.
+Note 페이지에 공부한 기록들을 담았습니다.  
+> 정말 집에 종이가 없어서 시작되으며, 종이가 없어도 굴하지 않는 정신이 깃들어 있습니다.
 <br/>
   
 ![main-page-mobile](https://user-images.githubusercontent.com/69448900/113871875-4de81c80-97ee-11eb-8bf3-21d57be4dc65.PNG)
@@ -15,7 +15,7 @@ Note 페이지에 공부한 기록들을 담았다.
 
 ## 언어
 * HTML
-* CSS(반응형 디자인 구현)
+* CSS
 * Javascript
 <br/>
 
