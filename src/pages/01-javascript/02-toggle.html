@@ -1,30 +1,55 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang="ko">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="javascript, 토글, toggle"/>
-    <meta name="description" content="자바스크립트로 토글하는 방법, 내가 토글을 잘 못했던 이유, 토글을 연습하면서 배운 점을 정리해봤다!"/>
-    <meta name="Location" content="포도와 고구마의 고장"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dueto park" />
+    <meta name="keywords" content="javascript, 토글, toggle" />
+    <meta
+      name="description"
+      content="자바스크립트로 토글하는 방법, 내가 토글을 잘 못했던 이유, 토글을 연습하면서 배운 점을 정리해봤다!"
+    />
+    <meta name="Location" content="포도와 고구마의 고장" />
 
     <title>토글(Toggle)</title>
 
     <!-- 토글(Toggle) -->
-    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/style-common.css">
-    <link rel="stylesheet" href="../../css/style-javascript.css">
-    <link rel="stylesheet" href="../../css/responsive/style-common.css">
-    <link rel="stylesheet" href="../../css/responsive/style-javascript.css">
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../../site.webmanifest" />
+    <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../css/style-common.css" />
+    <link rel="stylesheet" href="../../css/style-javascript.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-javascript.css" />
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
   </head>
 
   <body>
-    <header class='note-header' aria-label="페이지 조작 영역">
-      <div class='container'>
+    <header class="note-header" aria-label="페이지 조작 영역">
+      <div class="container">
         <!-- 홈으로 이동 -->
-        <h1 class='note-header-title' aria-labelledby="go-to-home">
-          <a id="go-to-home" href='../../index.html'>
+        <h1 class="note-header-title" aria-labelledby="go-to-home">
+          <a id="go-to-home" href="../../index.html">
             <span aria-hidden="true">🔥</span>
             기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
             <span aria-hidden="true">🔥</span>
@@ -32,36 +57,85 @@
         </h1>
 
         <!-- 야간 모드로 전환 -->
-        <section class='toggle-button-group' aria-labelledby="toggle-button">
-          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
-          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+        <section class="toggle-button-group" aria-labelledby="toggle-button">
+          <span class="toggle-button-title" aria-hidden="true"
+            >Day/Night Switch</span
+          >
+          <button
+            id="toggle-button"
+            class="toggle-button"
+            type="button"
+            aria-label="야간모드 켜기"
+            aria-controls="page-mode-state"
+          ></button>
           <p id="page-mode-state" class="hidden" aria-live="polite">
             야간 모드 꺼짐
           </p>
         </section>
 
         <!-- 다른 페이지로 이동 -->
-        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
-          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
+          <h2
+            id="note-header-nav-title"
+            class="hidden note-header-nav-title"
+            aria-hidden="true"
+          >
+            다른 페이지로 이동
+          </h2>
+          <ol
+            class="note-header-nav-list"
+            aria-label="주제 선택"
+            role="tablist"
+          >
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-html"
+              >
+                html
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-css"
+              >
+                css
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-js"
+              >
+                javascript
+              </button>
             </li>
           </ol>
 
-
-          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+          <article
+            id="go-to-pages"
+            class="hidden"
+            aria-hidden="true"
+            aria-labelledby="select-chapter"
+          >
             <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
 
-            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+            <button
+              class="go-to-pages-close"
+              type="button"
+              aria-label="모달 닫기"
+            ></button>
 
-            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+            <div
+              id="go-to-page-div-html"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="html-button"
+            >
               <h3 class="go-to-page-title" aria-hidden="true">
                 <span aria-hidden="true">😈</span>html
               </h3>
@@ -70,7 +144,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+            <div
+              id="go-to-page-div-css"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="css-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😇</span>CSS
               </h3>
@@ -79,7 +158,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+            <div
+              id="go-to-page-div-javascript"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="js-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😎</span>Javascript
               </h3>
@@ -92,40 +176,44 @@
       </div>
     </header>
 
-    <main class='note-main' aria-label="본문 영역">
-      <section class='container' aria-labelledby="main-title">
-        <h2 id="main-title" class='main-title'>
+    <main class="note-main" aria-label="본문 영역">
+      <section class="container" aria-labelledby="main-title">
+        <h2 id="main-title" class="main-title">
           <strong>
-            <span class='main-title' aria-hidden="true">🙋</span>
+            <span class="main-title" aria-hidden="true">🙋</span>
             토글 (Toggle)
-            <span class='main-title' aria-hidden="true">🎂</span>
+            <span class="main-title" aria-hidden="true">🎂</span>
           </strong>
         </h2>
         <div class="time">
-          수정 날짜: <time datetime='2021-5-18'>2021년 05월 18일</time>
+          수정 날짜: <time datetime="2021-5-18">2021년 05월 18일</time>
         </div>
 
-        <article class='toggle-html' aria-labelledby="toggle-html-title">
-          <h3 id="toggle-html-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">👶</span>
+        <article class="toggle-html" aria-labelledby="toggle-html-title">
+          <h3 id="toggle-html-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">👶</span>
             토글하는 방법 - HTML
           </h3>
           <p>
-            꼭 지켜야 하는게 있다면, <strong class='underline'>클래스 선언할 때 이름에 규칙을 세우는 것</strong>
+            꼭 지켜야 하는게 있다면,
+            <strong class="underline"
+              >클래스 선언할 때 이름에 규칙을 세우는 것</strong
+            >
           </p>
         </article>
 
-        <article class='toggle-css' aria-labelledby="toggle-css-title">
-          <h3 id="toggle-css-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🍝</span>
+        <article class="toggle-css" aria-labelledby="toggle-css-title">
+          <h3 id="toggle-css-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🍝</span>
             토글하는 방법 - CSS
           </h3>
           <p class="margin-8px">
-            웹 페이지를 만들 때, 반복되는 스타일은 별개의 파일을 만들어서 그 파일에 작성했었는데 관리하기 쉽지 않았다. 흑흑<br/>
-            그래서 방법을 바꿔봤다.<br/>
+            웹 페이지를 만들 때, 반복되는 스타일은 별개의 파일을 만들어서 그
+            파일에 작성했었는데 관리하기 쉽지 않았다. 흑흑<br />
+            그래서 방법을 바꿔봤다.<br />
             최근에는 다음과 같이 토글하고 있다.
           </p>
-          <pre class='main-article-pre background-white-radius margin-8px'>
+          <pre class="main-article-pre background-white-radius margin-8px">
             <code>
               .background.toggle{
                 background-color: #525252;
@@ -134,16 +222,19 @@
             </code>
           </pre>
           <p class="margin-8px">
-            토글이라는 클래스에 스타일을 따로 지정하지 않는다.<br/>
-            대신, <strong class="underline">공백없이 클래스를 이어서 쓴다.</strong><br/>
-            이러면 한 요소에 여러 개의 클래스가 적용된 모양이 된다.<br/>
-            이 때의 스타일을 지정하면 클래스명을 넣었다 빼는 동작으로 토글을 구현할 수 있다.<br/>
+            토글이라는 클래스에 스타일을 따로 지정하지 않는다.<br />
+            대신,
+            <strong class="underline">공백없이 클래스를 이어서 쓴다.</strong
+            ><br />
+            이러면 한 요소에 여러 개의 클래스가 적용된 모양이 된다.<br />
+            이 때의 스타일을 지정하면 클래스명을 넣었다 빼는 동작으로 토글을
+            구현할 수 있다.<br />
           </p>
           <p class="margin-8px">
-            이 방식의 장점은 toggle이라는 클래스명을 여기저기 사용할 수 있다는 것이다.
-            그리고 스타일을 더 유연하게 지정할 수 있다.
+            이 방식의 장점은 toggle이라는 클래스명을 여기저기 사용할 수 있다는
+            것이다. 그리고 스타일을 더 유연하게 지정할 수 있다.
           </p>
-          <pre class='main-article-pre background-white-radius margin-8px'>
+          <pre class="main-article-pre background-white-radius margin-8px">
             <code>
               .background.toggle{
                 background-color: #525252;
@@ -163,18 +254,21 @@
           </pre>
         </article>
 
-        <article class='toggle-javascript' aria-labelledby="toggle-javascript-title">
-          <h3 id="toggle-javascript-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">👞</span>
+        <article
+          class="toggle-javascript"
+          aria-labelledby="toggle-javascript-title"
+        >
+          <h3 id="toggle-javascript-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">👞</span>
             토글하는 방법 - Javascript
           </h3>
           <p class="margin-8px">
-            작성한 스타일을 추가하는 함수(toggled();)를 만든다.<br/>
-            핸들러(toggleHandler)에 함수(toggled();)를 선언한다.<br/>
-            이벤트를 줄 요소에 addEventListener 메소드를 선언한다.<br/>
+            작성한 스타일을 추가하는 함수(toggled();)를 만든다.<br />
+            핸들러(toggleHandler)에 함수(toggled();)를 선언한다.<br />
+            이벤트를 줄 요소에 addEventListener 메소드를 선언한다.<br />
             css코드는 다음과 같다.
           </p>
-          <pre class='main-article-pre background-white-radius'>
+          <pre class="main-article-pre background-white-radius">
             <code>
               function toggled () {
                 document.body.classList.add('background-toggled');
@@ -189,19 +283,23 @@
           </pre>
         </article>
 
-        <article class='my-top-secret' aria-labelledby="my-top-secret-title">
-          <h3 id="my-top-secret-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🎉</span>
+        <article class="my-top-secret" aria-labelledby="my-top-secret-title">
+          <h3 id="my-top-secret-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🎉</span>
             나 사실 토글 잘 못한다!!!
           </h3>
           <dl class="main-article-dl" aria-label="나의 비밀">
             <div>
-              <dt class="main-article-dt" aria-label="내가 토글을 잘 못했던 이유">
+              <dt
+                class="main-article-dt"
+                aria-label="내가 토글을 잘 못했던 이유"
+              >
                 내가 토글을 잘 못했던 이유
               </dt>
               <dd class="main-article-dd">
-                <strong class='underline'>
-                  단독적인 토클 스타일을 지정하는 클래스를 만들려고 했다! ex) background-toggled
+                <strong class="underline">
+                  단독적인 토클 스타일을 지정하는 클래스를 만들려고 했다! ex)
+                  background-toggled
                 </strong>
               </dd>
               <dd class="main-article-dd">
@@ -213,8 +311,9 @@
                 그래서 어떻게 했냐면
               </dt>
               <dd class="main-article-dd">
-                <strong class='underline'>
-                  class 값이 여러개인 요소를 선택하는 방식을 사용했다. ex) .background.toggle
+                <strong class="underline">
+                  class 값이 여러개인 요소를 선택하는 방식을 사용했다. ex)
+                  .background.toggle
                 </strong>
               </dd>
               <dd class="main-article-dd">
@@ -224,18 +323,18 @@
           </dl>
         </article>
 
-        <article class='learn' aria-labelledby="learn-title">
-          <h3 id="learn-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🎬</span>
+        <article class="learn" aria-labelledby="learn-title">
+          <h3 id="learn-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🎬</span>
             토글을 연습하면서 배운 점
           </h3>
-          <ul class='main-article-list' aria-label="배운 점">
-            <li class='main-article-list-items hyphen'>
+          <ul class="main-article-list" aria-label="배운 점">
+            <li class="main-article-list-items hyphen">
               classList.add()는 진짜 편하다
             </li>
-            <li class='main-article-list-items hyphen'>
+            <li class="main-article-list-items hyphen">
               부모요소에 이벤트를 지정하면 반복문의 사용을 줄일 수 있다.
-              <pre class='main-article-pre background-white-radius'>
+              <pre class="main-article-pre background-white-radius">
                 <code>
                   .background.toggle a{
                     background-color: #525252;
@@ -253,23 +352,27 @@
                 </code>
               </pre>
             </li>
-            <li class='main-article-list-items hyphen'>
-              두렵다고 피하면 그 상황이 오래갈 뿐이다. 조금 망하면 어때 라는 마음가짐으로 몸통박치기를 해보자. 홀가분하다
+            <li class="main-article-list-items hyphen">
+              두렵다고 피하면 그 상황이 오래갈 뿐이다. 조금 망하면 어때 라는
+              마음가짐으로 몸통박치기를 해보자. 홀가분하다
             </li>
           </ul>
         </article>
       </section>
     </main>
 
-    <footer class='note-footer'>
-      <div class='container'>
-        <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
-          <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2020년 12월 29일 접속,
+    <footer class="note-footer">
+      <div class="container">
+        <blockquote
+          class="note-footer-reference"
+          cite="https://gist.github.com/rxaviers/7360908"
+        >
+          <strong class="note-footer-reference-name">
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
+            2020년 12월 29일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://gist.github.com/rxaviers/7360908'>
+          <cite class="note-footer-reference-url">
+            <a href="https://gist.github.com/rxaviers/7360908">
               https://gist.github.com/rxaviers/7360908
             </a>
           </cite>
@@ -278,8 +381,8 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='../../assets/data.js'></script>
-    <script src='../../assets/app/create.js'></script>
-    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/data.js"></script>
+    <script src="../../assets/app/create.js"></script>
+    <script src="../../assets/app/app.js"></script>
   </body>
 </html>

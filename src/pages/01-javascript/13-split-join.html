@@ -1,31 +1,56 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang="ko">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="javascript, split, join"/>
-    <meta name="description" content="배열 메소드 split과 join에 대해서 알아봅시다!"/>
-    <meta name="Location" content="포도와 고구마의 고장"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dueto park" />
+    <meta name="keywords" content="javascript, split, join" />
+    <meta
+      name="description"
+      content="배열 메소드 split과 join에 대해서 알아봅시다!"
+    />
+    <meta name="Location" content="포도와 고구마의 고장" />
 
     <title>split과 join</title>
 
     <!-- split과 join -->
-    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/style-common.css">
-    <link rel="stylesheet" href="../../css/style-html.css">
-    <link rel="stylesheet" href="../../css/responsive/style-common.css">
-    <link rel="stylesheet" href="../../css/responsive/style-html.css">
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
-    <link rel="stylesheet" href="../../css/animation/animation.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../../site.webmanifest" />
+    <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../css/style-common.css" />
+    <link rel="stylesheet" href="../../css/style-html.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
+    <link rel="stylesheet" href="../../css/animation/animation.css" />
   </head>
 
   <body>
-    <header class='note-header' aria-label="페이지 조작 영역">
-      <div class='container'>
+    <header class="note-header" aria-label="페이지 조작 영역">
+      <div class="container">
         <!-- 홈으로 이동 -->
-        <h1 class='note-header-title' aria-labelledby="go-to-home">
-          <a id="go-to-home" href='../../index.html'>
+        <h1 class="note-header-title" aria-labelledby="go-to-home">
+          <a id="go-to-home" href="../../index.html">
             <span aria-hidden="true">🔥</span>
             기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
             <span aria-hidden="true">🔥</span>
@@ -33,36 +58,85 @@
         </h1>
 
         <!-- 야간 모드로 전환 -->
-        <section class='toggle-button-group' aria-labelledby="toggle-button">
-          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
-          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+        <section class="toggle-button-group" aria-labelledby="toggle-button">
+          <span class="toggle-button-title" aria-hidden="true"
+            >Day/Night Switch</span
+          >
+          <button
+            id="toggle-button"
+            class="toggle-button"
+            type="button"
+            aria-label="야간모드 켜기"
+            aria-controls="page-mode-state"
+          ></button>
           <p id="page-mode-state" class="hidden" aria-live="polite">
             야간 모드 꺼짐
           </p>
         </section>
 
         <!-- 다른 페이지로 이동 -->
-        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
-          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
+          <h2
+            id="note-header-nav-title"
+            class="hidden note-header-nav-title"
+            aria-hidden="true"
+          >
+            다른 페이지로 이동
+          </h2>
+          <ol
+            class="note-header-nav-list"
+            aria-label="주제 선택"
+            role="tablist"
+          >
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-html"
+              >
+                html
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-css"
+              >
+                css
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-js"
+              >
+                javascript
+              </button>
             </li>
           </ol>
 
-
-          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+          <article
+            id="go-to-pages"
+            class="hidden"
+            aria-hidden="true"
+            aria-labelledby="select-chapter"
+          >
             <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
 
-            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+            <button
+              class="go-to-pages-close"
+              type="button"
+              aria-label="모달 닫기"
+            ></button>
 
-            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+            <div
+              id="go-to-page-div-html"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="html-button"
+            >
               <h3 class="go-to-page-title" aria-hidden="true">
                 <span aria-hidden="true">😈</span>html
               </h3>
@@ -71,7 +145,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+            <div
+              id="go-to-page-div-css"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="css-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😇</span>CSS
               </h3>
@@ -80,7 +159,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+            <div
+              id="go-to-page-div-javascript"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="js-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😎</span>Javascript
               </h3>
@@ -93,89 +177,87 @@
       </div>
     </header>
 
-    <main class='note-main' aria-label="본문 영역">
-      <section class='container' aria-labelledby="main-title">
-        <h2 id="main-title" class='main-title'>
+    <main class="note-main" aria-label="본문 영역">
+      <section class="container" aria-labelledby="main-title">
+        <h2 id="main-title" class="main-title">
           <strong>
-            <span class='main-title' aria-hidden="true">🚥</span>
-              split와 join
-            <span class='main-title' aria-hidden="true">🚥</span>
+            <span class="main-title" aria-hidden="true">🚥</span>
+            split와 join
+            <span class="main-title" aria-hidden="true">🚥</span>
           </strong>
         </h2>
         <div class="time">
-          수정 날짜: <time datetime='2021-3-17'>2021년 03월 17일</time>
+          수정 날짜: <time datetime="2021-3-17">2021년 03월 17일</time>
         </div>
 
-        <article class='summary' aria-labelledby="summary-title">
-          <h3 id="summary-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🚩</span>
+        <article class="summary" aria-labelledby="summary-title">
+          <h3 id="summary-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🚩</span>
             개요
           </h3>
           <p>
-            숫자야구 게임 만들다가 나는 생각했다.<br/>
-            어.. 입력값하고 숫자배열 어떻게 구분하지<br/>
-            입력값은 숫자형이고 숫자배열은 배열이다.<br/>
-            <br/>
-            String(숫자배열[0])+String(숫자배열[1])+...<br/>
-            <br/>
-            찝찝하고 눈물나고 방구뀌고<br/>
-            이때 사용하는 배열/문자 변환 메소드가 split과 join이다.<br/>
+            숫자야구 게임 만들다가 나는 생각했다.<br />
+            어.. 입력값하고 숫자배열 어떻게 구분하지<br />
+            입력값은 숫자형이고 숫자배열은 배열이다.<br />
+            <br />
+            String(숫자배열[0])+String(숫자배열[1])+...<br />
+            <br />
+            찝찝하고 눈물나고 방구뀌고<br />
+            이때 사용하는 배열/문자 변환 메소드가 split과 join이다.<br />
           </p>
         </article>
       </section>
 
-      <section id="split" class='container' aria-labelledby="main-title">
-        <h2 id="main-title" class='main-title'>
+      <section id="split" class="container" aria-labelledby="main-title">
+        <h2 id="main-title" class="main-title">
           <strong>
-            <span class='main-title' aria-hidden="true">💈</span>
-              split
-            <span class='main-title' aria-hidden="true">💈</span>
+            <span class="main-title" aria-hidden="true">💈</span>
+            split
+            <span class="main-title" aria-hidden="true">💈</span>
           </strong>
         </h2>
 
         <article class="split" aria-labelledby="split-title">
           <h3 id="split-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">🚧</span>
+            <span class="main-article-title" aria-hidden="true">🚧</span>
             split 정의
           </h3>
           <p>
-            <strong>
-              문자를 배열로 만드는 메서드다.
-            </strong>
+            <strong> 문자를 배열로 만드는 메서드다. </strong>
           </p>
           <p>
-            공식 문서에는 String객체를 지정한 구분자를 이용하여 여러 개의 문자열로 나눈다고 정의한다.<br/>
-            문자를 구분자가 있는 곳에서 쓱싹 해체쇼를 진행한 뒤, 잘 모아서 배열로 묶는 행위로 이해하면 쉽다.
+            공식 문서에는 String객체를 지정한 구분자를 이용하여 여러 개의
+            문자열로 나눈다고 정의한다.<br />
+            문자를 구분자가 있는 곳에서 쓱싹 해체쇼를 진행한 뒤, 잘 모아서
+            배열로 묶는 행위로 이해하면 쉽다.
           </p>
         </article>
 
         <article class="split-syntax" aria-labelledby="split-syntax-title">
           <h3 id="split-syntax-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">⛽</span>
+            <span class="main-article-title" aria-hidden="true">⛽</span>
             split 문법
           </h3>
           <p class="margin-16px">
-            <strong class="order">
-              문자.split(구분자, 정수);
-            </strong>
+            <strong class="order"> 문자.split(구분자, 정수); </strong>
           </p>
-          <p class="margin-8px">
-            문법을 목록으로 정리했다.
-          </p>
+          <p class="margin-8px">문법을 목록으로 정리했다.</p>
           <dl class="main-article-dl margin-16px" aria-label="문법 해석">
             <div>
-              <dt class="main-article-dt" aria-label="구분자">
-                구분자
-              </dt>
+              <dt class="main-article-dt" aria-label="구분자">구분자</dt>
               <dd class="main-article-dd">
                 원본 문자열을 끝어야 할 부분을 의미한다.
               </dd>
               <dd class="main-article-dd">
-                기호와 단어, 숫자 모두 가능하고 두글자 이상의 문자열도 가능하다. 대신, 구분자가 두글자 이상일 경우에는 문자열 전체가 일치해야 끊어진다.
+                기호와 단어, 숫자 모두 가능하고 두글자 이상의 문자열도 가능하다.
+                대신, 구분자가 두글자 이상일 경우에는 문자열 전체가 일치해야
+                끊어진다.
               </dd>
               <dd class="main-article-dd">
-                구분자를 생략하면, 원본 문자열 전체가 하나의 요소인 배열로 출력된다. 다음의 예시코드를 통해 구분자 유무의 차이를 알아보자.<br/>
-                <br/>
+                구분자를 생략하면, 원본 문자열 전체가 하나의 요소인 배열로
+                출력된다. 다음의 예시코드를 통해 구분자 유무의 차이를
+                알아보자.<br />
+                <br />
                 <pre class="main-article-pre background-white-radius">
                   <code>
                     //구분자 생략
@@ -193,9 +275,7 @@
               </dd>
             </div>
             <div>
-              <dt class="main-article-dt" aria-label="정수">
-                정수
-              </dt>
+              <dt class="main-article-dt" aria-label="정수">정수</dt>
               <dd class="main-article-dd">
                 끊어진 문자열의 최대 개수를 나타내는 정수다.
               </dd>
@@ -204,9 +284,7 @@
               </dd>
             </div>
           </dl>
-          <p class="margin-8px">
-            예시코드는 다음과 같다.
-          </p>
+          <p class="margin-8px">예시코드는 다음과 같다.</p>
           <pre class="main-article-pre background-white-radius">
             <code>
               let 문자 = "https://www.example.com/get/thisfolder/thanks/html";
@@ -219,34 +297,30 @@
         </article>
       </section>
 
-      <section id="join" class='container' aria-labelledby="main-title">
-        <h2 id="main-title" class='main-title'>
+      <section id="join" class="container" aria-labelledby="main-title">
+        <h2 id="main-title" class="main-title">
           <strong>
-            <span class='main-title' aria-hidden="true">🎪</span>
-              join
-            <span class='main-title' aria-hidden="true">🎪</span>
+            <span class="main-title" aria-hidden="true">🎪</span>
+            join
+            <span class="main-title" aria-hidden="true">🎪</span>
           </strong>
         </h2>
 
         <article class="join" aria-labelledby="join-title">
           <h3 id="join-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">🚏</span>
+            <span class="main-article-title" aria-hidden="true">🚏</span>
             join 정의
           </h3>
-          <p>
-            배열을 문자열로 변환하는 메서드다.
-          </p>
+          <p>배열을 문자열로 변환하는 메서드다.</p>
         </article>
 
         <article class="join-syntax" aria-labelledby="join-syntax-title">
           <h3 id="join-syntax-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">🎰</span>
+            <span class="main-article-title" aria-hidden="true">🎰</span>
             join 문법
           </h3>
           <p class="margin-8px">
-            <strong class="order">
-              배열.join(구분자);
-            </strong>
+            <strong class="order"> 배열.join(구분자); </strong>
           </p>
           <pre class="main-article-pre background-white-radius">
             <code>
@@ -261,51 +335,68 @@
       </section>
     </main>
 
-    <footer class='note-footer'>
-      <div class='container'>
-        <blockquote class='note-footer-reference'
-          cite='https://www.youtube.com/watch?v=5a8gm9FnaiU&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=30'>
-          <strong class='note-footer-reference-name'>
-            자료 출처: "유튜브 - ZeroCho의 JS 초급 강좌 4-4. split & join", 유튜브, 2021년 3월 3일 접속,
+    <footer class="note-footer">
+      <div class="container">
+        <blockquote
+          class="note-footer-reference"
+          cite="https://www.youtube.com/watch?v=5a8gm9FnaiU&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=30"
+        >
+          <strong class="note-footer-reference-name">
+            자료 출처: "유튜브 - ZeroCho의 JS 초급 강좌 4-4. split & join",
+            유튜브, 2021년 3월 3일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://www.youtube.com/watch?v=5a8gm9FnaiU&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=30'>
+          <cite class="note-footer-reference-url">
+            <a
+              href="https://www.youtube.com/watch?v=5a8gm9FnaiU&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=30"
+            >
               https://www.youtube.com/watch?v=5a8gm9FnaiU&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=30
             </a>
           </cite>
         </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/split'>
-          <strong class='note-footer-reference-name'>
-            자료 출처: "MDN - String.prototype.split()", MDN, 2021년 3월 3일 접속,
+        <blockquote
+          class="note-footer-reference"
+          cite="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/split"
+        >
+          <strong class="note-footer-reference-name">
+            자료 출처: "MDN - String.prototype.split()", MDN, 2021년 3월 3일
+            접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/split'>
+          <cite class="note-footer-reference-url">
+            <a
+              href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/split"
+            >
               https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/split
             </a>
           </cite>
         </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/join'>
-          <strong class='note-footer-reference-name'>
+        <blockquote
+          class="note-footer-reference"
+          cite="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/join"
+        >
+          <strong class="note-footer-reference-name">
             자료 출처: "MDN - Array.prototype.join()", MDN, 2021년 3월 3일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/join'>
+          <cite class="note-footer-reference-url">
+            <a
+              href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/join"
+            >
               https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/join
             </a>
           </cite>
         </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
-          <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 3월 3일 접속,
+        <blockquote
+          class="note-footer-reference"
+          cite="https://gist.github.com/rxaviers/7360908"
+        >
+          <strong class="note-footer-reference-name">
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
+            2021년 3월 3일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://gist.github.com/rxaviers/7360908'>
+          <cite class="note-footer-reference-url">
+            <a href="https://gist.github.com/rxaviers/7360908">
               https://gist.github.com/rxaviers/7360908
             </a>
           </cite>
@@ -314,8 +405,8 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='../../assets/data.js'></script>
-    <script src='../../assets/app/create.js'></script>
-    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/data.js"></script>
+    <script src="../../assets/app/create.js"></script>
+    <script src="../../assets/app/app.js"></script>
   </body>
 </html>

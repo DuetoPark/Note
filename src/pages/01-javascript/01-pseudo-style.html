@@ -1,30 +1,58 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang="ko">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="javascript, Selecting qseudo-elements, 가상요소 선택, 가상요소 클릭 이벤트"/>
-    <meta name="description" content="자바스트립트 클릭 이벤트를 통해 가상요소의 스타일 변화주기"/>
-    <meta name="Location" content="포도와 고구마의 고장"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dueto park" />
+    <meta
+      name="keywords"
+      content="javascript, Selecting qseudo-elements, 가상요소 선택, 가상요소 클릭 이벤트"
+    />
+    <meta
+      name="description"
+      content="자바스트립트 클릭 이벤트를 통해 가상요소의 스타일 변화주기"
+    />
+    <meta name="Location" content="포도와 고구마의 고장" />
 
     <title>가상요소 선택</title>
 
     <!-- 가상요소 선택 -->
-    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/style-common.css">
-    <link rel="stylesheet" href="../../css/style-javascript.css">
-    <link rel="stylesheet" href="../../css/responsive/style-common.css">
-    <link rel="stylesheet" href="../../css/responsive/style-javascript.css">
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../../site.webmanifest" />
+    <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../css/style-common.css" />
+    <link rel="stylesheet" href="../../css/style-javascript.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-javascript.css" />
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
   </head>
 
   <body>
-    <header class='note-header' aria-label="페이지 조작 영역">
-      <div class='container'>
+    <header class="note-header" aria-label="페이지 조작 영역">
+      <div class="container">
         <!-- 홈으로 이동 -->
-        <h1 class='note-header-title' aria-labelledby="go-to-home">
-          <a id="go-to-home" href='../../index.html'>
+        <h1 class="note-header-title" aria-labelledby="go-to-home">
+          <a id="go-to-home" href="../../index.html">
             <span aria-hidden="true">🔥</span>
             기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
             <span aria-hidden="true">🔥</span>
@@ -32,36 +60,85 @@
         </h1>
 
         <!-- 야간 모드로 전환 -->
-        <section class='toggle-button-group' aria-labelledby="toggle-button">
-          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
-          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+        <section class="toggle-button-group" aria-labelledby="toggle-button">
+          <span class="toggle-button-title" aria-hidden="true"
+            >Day/Night Switch</span
+          >
+          <button
+            id="toggle-button"
+            class="toggle-button"
+            type="button"
+            aria-label="야간모드 켜기"
+            aria-controls="page-mode-state"
+          ></button>
           <p id="page-mode-state" class="hidden" aria-live="polite">
             야간 모드 꺼짐
           </p>
         </section>
 
         <!-- 다른 페이지로 이동 -->
-        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
-          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
+          <h2
+            id="note-header-nav-title"
+            class="hidden note-header-nav-title"
+            aria-hidden="true"
+          >
+            다른 페이지로 이동
+          </h2>
+          <ol
+            class="note-header-nav-list"
+            aria-label="주제 선택"
+            role="tablist"
+          >
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-html"
+              >
+                html
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-css"
+              >
+                css
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-js"
+              >
+                javascript
+              </button>
             </li>
           </ol>
 
-
-          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+          <article
+            id="go-to-pages"
+            class="hidden"
+            aria-hidden="true"
+            aria-labelledby="select-chapter"
+          >
             <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
 
-            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+            <button
+              class="go-to-pages-close"
+              type="button"
+              aria-label="모달 닫기"
+            ></button>
 
-            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+            <div
+              id="go-to-page-div-html"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="html-button"
+            >
               <h3 class="go-to-page-title" aria-hidden="true">
                 <span aria-hidden="true">😈</span>html
               </h3>
@@ -70,7 +147,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+            <div
+              id="go-to-page-div-css"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="css-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😇</span>CSS
               </h3>
@@ -79,7 +161,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+            <div
+              id="go-to-page-div-javascript"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="js-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😎</span>Javascript
               </h3>
@@ -92,47 +179,51 @@
       </div>
     </header>
 
-    <main class='note-main' aria-label="본문 영역">
-      <section class='container' aria-labelledby="main-title">
-        <h2 id="main-title" class='main-title'>
+    <main class="note-main" aria-label="본문 영역">
+      <section class="container" aria-labelledby="main-title">
+        <h2 id="main-title" class="main-title">
           <strong>
-            <span class='main-title' aria-hidden="true">🙈</span>
+            <span class="main-title" aria-hidden="true">🙈</span>
             클릭 이벤트 진행 중, 가상요소의 스타일 변화
-            <span class='main-title' aria-hidden="true">🙈</span>
+            <span class="main-title" aria-hidden="true">🙈</span>
           </strong>
         </h2>
         <div class="time">
-          수정 날짜: <time datetime='2021-3-17'>2021년 03월 17일</time>
+          수정 날짜: <time datetime="2021-3-17">2021년 03월 17일</time>
         </div>
 
         <article class="pseudo-problem" aria-labelledby="pseudo-problem-title">
           <h3 id="pseudo-problem-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">💩</span>
+            <span class="main-article-title" aria-hidden="true">💩</span>
             문제
           </h3>
           <p>
-            css의 가상요소는(::after, ::before) DOM의 일부가 아니므로 직접 선택하여 조작할 수 없다.
+            css의 가상요소는(::after, ::before) DOM의 일부가 아니므로 직접
+            선택하여 조작할 수 없다.
           </p>
         </article>
 
-        <article class="pseudo-solution" aria-labelledby="pseudo-solution-title">
+        <article
+          class="pseudo-solution"
+          aria-labelledby="pseudo-solution-title"
+        >
           <h3 id="pseudo-solution-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">😎</span>
+            <span class="main-article-title" aria-hidden="true">😎</span>
             해결
           </h3>
           <p>
-            CSS- 해당 요소에 새로운 스타일의 클래스를 재정의<br/>
+            CSS- 해당 요소에 새로운 스타일의 클래스를 재정의<br />
             Javascript- 해당 요소에 새로운 클래스 추가
           </p>
         </article>
 
         <article class="pseudo-code" aria-labelledby="pseudo-code-title">
           <h3 id="pseudo-code-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">😎</span>
+            <span class="main-article-title" aria-hidden="true">😎</span>
             코드
           </h3>
           <p class="margin-8px">CSS코드는 다음과 같다.</p>
-          <pre class='main-article-pre background-white-radius margin-16px'>
+          <pre class="main-article-pre background-white-radius margin-16px">
             <code>
               p::before {
                 /* 스타일 */
@@ -144,7 +235,7 @@
             </code>
           </pre>
           <p class="margin-8px">Javascript코드는 다음과 같다.</p>
-          <pre class='main-article-pre background-white-radius'>
+          <pre class="main-article-pre background-white-radius">
             <code>
               function toggle () {
                 document.querySelector('p').classList.add('special');
@@ -161,27 +252,36 @@
       </section>
     </main>
 
-    <footer class='note-footer'>
-      <div class='container'>
-        <blockquote class='note-footer-reference'
-          cite='https://stackoverflow.com/questions/5041494/selecting-and-manipulating-css-pseudo-elements-such-as-before-and-after-usin/21709814#21709814'>
-          <strong class='note-footer-reference-name'>
-            자료 출처: "stackoverflow - selecting and manipulating CSS pseudo-elements such as ::before and ::after using javascript (or jQuery)", stackoverflow, 2021년 1월 2일 접속,
+    <footer class="note-footer">
+      <div class="container">
+        <blockquote
+          class="note-footer-reference"
+          cite="https://stackoverflow.com/questions/5041494/selecting-and-manipulating-css-pseudo-elements-such-as-before-and-after-usin/21709814#21709814"
+        >
+          <strong class="note-footer-reference-name">
+            자료 출처: "stackoverflow - selecting and manipulating CSS
+            pseudo-elements such as ::before and ::after using javascript (or
+            jQuery)", stackoverflow, 2021년 1월 2일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://stackoverflow.com/questions/5041494/selecting-and-manipulating-css-pseudo-elements-such-as-before-and-after-usin/21709814#21709814'>
+          <cite class="note-footer-reference-url">
+            <a
+              href="https://stackoverflow.com/questions/5041494/selecting-and-manipulating-css-pseudo-elements-such-as-before-and-after-usin/21709814#21709814"
+            >
               https://stackoverflow.com/questions/5041494/selecting-and-manipulating-css-pseudo-elements-such-as-before-and-after-usin/21709814#21709814
             </a>
           </cite>
         </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
-          <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2020년 12월 29일 접속,
+        <blockquote
+          class="note-footer-reference"
+          cite="https://gist.github.com/rxaviers/7360908"
+        >
+          <strong class="note-footer-reference-name">
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
+            2020년 12월 29일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://gist.github.com/rxaviers/7360908'>
+          <cite class="note-footer-reference-url">
+            <a href="https://gist.github.com/rxaviers/7360908">
               https://gist.github.com/rxaviers/7360908
             </a>
           </cite>
@@ -190,8 +290,8 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='../../assets/data.js'></script>
-    <script src='../../assets/app/create.js'></script>
-    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/data.js"></script>
+    <script src="../../assets/app/create.js"></script>
+    <script src="../../assets/app/app.js"></script>
   </body>
 </html>

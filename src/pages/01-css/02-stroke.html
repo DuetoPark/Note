@@ -1,30 +1,58 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang="ko">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="css, stroke, text-shadow, -webkit-text-stroke, 텍스트 외곽선"/>
-    <meta name="description" content="텍스트에 외곽선을 넣는 속성인 stroke를 의 사용법과 stroke의 웹 크로스 브라우징에 대해 알아봅시다!"/>
-    <meta name="Location" content="포도와 고구마의 고장"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dueto park" />
+    <meta
+      name="keywords"
+      content="css, stroke, text-shadow, -webkit-text-stroke, 텍스트 외곽선"
+    />
+    <meta
+      name="description"
+      content="텍스트에 외곽선을 넣는 속성인 stroke를 의 사용법과 stroke의 웹 크로스 브라우징에 대해 알아봅시다!"
+    />
+    <meta name="Location" content="포도와 고구마의 고장" />
 
     <title>텍스트 외곽선(stroke)</title>
 
     <!-- stroke -->
-    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/style-common.css">
-    <link rel="stylesheet" href="../../css/style-css.css">
-    <link rel="stylesheet" href="../../css/responsive/style-common.css">
-    <link rel="stylesheet" href="../../css/responsive/style-css.css">
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../../site.webmanifest" />
+    <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../css/style-common.css" />
+    <link rel="stylesheet" href="../../css/style-css.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-css.css" />
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
   </head>
 
   <body>
-    <header class='note-header' aria-label="페이지 조작 영역">
-      <div class='container'>
+    <header class="note-header" aria-label="페이지 조작 영역">
+      <div class="container">
         <!-- 홈으로 이동 -->
-        <h1 class='note-header-title' aria-labelledby="go-to-home">
-          <a id="go-to-home" href='../../index.html'>
+        <h1 class="note-header-title" aria-labelledby="go-to-home">
+          <a id="go-to-home" href="../../index.html">
             <span aria-hidden="true">🔥</span>
             기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
             <span aria-hidden="true">🔥</span>
@@ -32,36 +60,85 @@
         </h1>
 
         <!-- 야간 모드로 전환 -->
-        <section class='toggle-button-group' aria-labelledby="toggle-button">
-          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
-          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+        <section class="toggle-button-group" aria-labelledby="toggle-button">
+          <span class="toggle-button-title" aria-hidden="true"
+            >Day/Night Switch</span
+          >
+          <button
+            id="toggle-button"
+            class="toggle-button"
+            type="button"
+            aria-label="야간모드 켜기"
+            aria-controls="page-mode-state"
+          ></button>
           <p id="page-mode-state" class="hidden" aria-live="polite">
             야간 모드 꺼짐
           </p>
         </section>
 
         <!-- 다른 페이지로 이동 -->
-        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
-          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
+          <h2
+            id="note-header-nav-title"
+            class="hidden note-header-nav-title"
+            aria-hidden="true"
+          >
+            다른 페이지로 이동
+          </h2>
+          <ol
+            class="note-header-nav-list"
+            aria-label="주제 선택"
+            role="tablist"
+          >
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-html"
+              >
+                html
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-css"
+              >
+                css
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-js"
+              >
+                javascript
+              </button>
             </li>
           </ol>
 
-
-          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+          <article
+            id="go-to-pages"
+            class="hidden"
+            aria-hidden="true"
+            aria-labelledby="select-chapter"
+          >
             <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
 
-            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+            <button
+              class="go-to-pages-close"
+              type="button"
+              aria-label="모달 닫기"
+            ></button>
 
-            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+            <div
+              id="go-to-page-div-html"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="html-button"
+            >
               <h3 class="go-to-page-title" aria-hidden="true">
                 <span aria-hidden="true">😈</span>html
               </h3>
@@ -70,7 +147,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+            <div
+              id="go-to-page-div-css"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="css-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😇</span>CSS
               </h3>
@@ -79,7 +161,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+            <div
+              id="go-to-page-div-javascript"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="js-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😎</span>Javascript
               </h3>
@@ -92,55 +179,61 @@
       </div>
     </header>
 
-    <main class='note-main' aria-label="본문 영역">
-      <section class='container'>
-        <h2 class='main-title'>
+    <main class="note-main" aria-label="본문 영역">
+      <section class="container">
+        <h2 class="main-title">
           <strong>
-            <span class='main-title' aria-hidden="true">⚠️</span>
+            <span class="main-title" aria-hidden="true">⚠️</span>
             텍스트 외곽선
-            <span class='main-title' aria-hidden="true">⚠️</span>
+            <span class="main-title" aria-hidden="true">⚠️</span>
           </strong>
         </h2>
         <div class="time">
-          수정 날짜: <time datetime='2021-3-17'>2021년 03월 17일</time>
+          수정 날짜: <time datetime="2021-3-17">2021년 03월 17일</time>
         </div>
 
-        <article class='stroke' aria-labelledby="stroke-title">
-          <h3 id="stroke-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🎉</span>
+        <article class="stroke" aria-labelledby="stroke-title">
+          <h3 id="stroke-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🎉</span>
             stroke
           </h3>
           <p>
-            텍스트에 외곽선을 넣는 이유는 텍스트를 강조하기 위함이다.<br/>
+            텍스트에 외곽선을 넣는 이유는 텍스트를 강조하기 위함이다.<br />
             css의 stroke 속성를 이용한다.
             <span class="hidden">예시 코드</span>
           </p>
-          <pre class='main-article-pre background-white-radius'>
+          <pre class="main-article-pre background-white-radius">
             <code>
               -webkit-text-fill-color: white;//투명도 가능
               -webkit-text-stroke: 1px #000;
             </code>
           </pre>
-          <strong class='underline'>
+          <strong class="underline">
             <span aria-hidden="true">🔥</span>
-            대신, 표준방법이 아니라서 웹킷 및 모질라 계열의 브라우저에서만 적용된다.
+            대신, 표준방법이 아니라서 웹킷 및 모질라 계열의 브라우저에서만
+            적용된다.
             <span aria-hidden="true">🔥</span>
           </strong>
-          <img class='can-i-use-image'
-            src='../../assets/images/stroke-가능한-브라우저.png'
-            alt='can i use 캡쳐 화면'>
+          <img
+            class="can-i-use-image"
+            src="../../assets/images/stroke-가능한-브라우저.png"
+            alt="can i use 캡쳐 화면"
+          />
         </article>
 
-        <article class='stroke-cross-browsing' aria-labelledby="stroke-cross-browsing-title">
-          <h3 id="stroke-cross-browsing-title" class='main-article-title'>
-            <span aria-hidden="true" class='main-article-title'>🌏</span>
+        <article
+          class="stroke-cross-browsing"
+          aria-labelledby="stroke-cross-browsing-title"
+        >
+          <h3 id="stroke-cross-browsing-title" class="main-article-title">
+            <span aria-hidden="true" class="main-article-title">🌏</span>
             웹 크로스 브라우징
           </h3>
           <p>
             text-shadow를 이용한다.
             <span class="hidden">예시 코드</span>
           </p>
-          <pre class='main-article-pre background-white-radius'>
+          <pre class="main-article-pre background-white-radius">
             <code>
               .text-stroke {
                 color: #f00;
@@ -152,21 +245,26 @@
               }
             </code>
           </pre>
-          <img class='can-i-use-image'
-            src='../../assets/images/text-shadow-가능한-브라우저.png'
-            alt='can i use 캡쳐 화면'>
+          <img
+            class="can-i-use-image"
+            src="../../assets/images/text-shadow-가능한-브라우저.png"
+            alt="can i use 캡쳐 화면"
+          />
         </article>
 
-        <aside class='stroke-animation' aria-labelledby="stroke-animation-title">
-          <h3 id="stroke-animation-title" class='main-article-subtitle'>
-            <span aria-hidden="true" class='main-article-subtitle'>🔇</span>
+        <aside
+          class="stroke-animation"
+          aria-labelledby="stroke-animation-title"
+        >
+          <h3 id="stroke-animation-title" class="main-article-subtitle">
+            <span aria-hidden="true" class="main-article-subtitle">🔇</span>
             애니메이션
           </h3>
           <p>
             색만 바뀌고 두께는 변하지 않는다.
             <span class="hidden">예시 코드</span>
           </p>
-          <pre class='main-article-pre background-white-radius'>
+          <pre class="main-article-pre background-white-radius">
             <code>
               /* Only the color will change, not the width */
               @keyframes colorchange {
@@ -179,39 +277,50 @@
       </section>
     </main>
 
-    <footer class='note-footer'>
-      <div class='container'>
-        <blockquote class='note-footer-reference'
-          cite='https://webisfree.com/2017-09-01/css-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%99%B8%EA%B3%BD%EC%84%A0-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0-stroke/'>
-          <strong class='note-footer-reference-name'>
-            자료 출처: "webisfree-css-텍스트-외곽선-처리하기", 개인 페이지,  2020년 12월 29일 접속,
+    <footer class="note-footer">
+      <div class="container">
+        <blockquote
+          class="note-footer-reference"
+          cite="https://webisfree.com/2017-09-01/css-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%99%B8%EA%B3%BD%EC%84%A0-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0-stroke/"
+        >
+          <strong class="note-footer-reference-name">
+            자료 출처: "webisfree-css-텍스트-외곽선-처리하기", 개인 페이지,
+            2020년 12월 29일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://webisfree.com/2017-09-01/css-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%99%B8%EA%B3%BD%EC%84%A0-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0-stroke'>
+          <cite class="note-footer-reference-url">
+            <a
+              href="https://webisfree.com/2017-09-01/css-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%99%B8%EA%B3%BD%EC%84%A0-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0-stroke"
+            >
               https://webisfree.com/2017-09-01/css-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%99%B8%EA%B3%BD%EC%84%A0-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0-stroke
             </a>
           </cite>
         </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://css-tricks.com/adding-stroke-to-web-text/'>
-          <strong class='note-footer-reference-name'>
-            자료 출처: "CSS-TRICKS-Adding stroke to Web Text", CSS-TRICKS,  2020년 12월 29일 접속,
+        <blockquote
+          class="note-footer-reference"
+          cite="https://css-tricks.com/adding-stroke-to-web-text/"
+        >
+          <strong class="note-footer-reference-name">
+            자료 출처: "CSS-TRICKS-Adding stroke to Web Text", CSS-TRICKS,
+            2020년 12월 29일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://css-tricks.com/adding-stroke-to-web-text/'>
+          <cite class="note-footer-reference-url">
+            <a href="https://css-tricks.com/adding-stroke-to-web-text/">
               https://css-tricks.com/adding-stroke-to-web-text/
             </a>
           </cite>
         </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
-          <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2020년 12월 29일 접속,
+        <blockquote
+          class="note-footer-reference"
+          cite="https://gist.github.com/rxaviers/7360908"
+        >
+          <strong class="note-footer-reference-name">
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
+            2020년 12월 29일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://gist.github.com/rxaviers/7360908'>
+          <cite class="note-footer-reference-url">
+            <a href="https://gist.github.com/rxaviers/7360908">
               https://gist.github.com/rxaviers/7360908
             </a>
           </cite>
@@ -219,8 +328,8 @@
       </div>
     </footer>
 
-    <script src='../../assets/data.js'></script>
-    <script src='../../assets/app/create.js'></script>
-    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/data.js"></script>
+    <script src="../../assets/app/create.js"></script>
+    <script src="../../assets/app/app.js"></script>
   </body>
 </html>

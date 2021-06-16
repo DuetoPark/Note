@@ -1,30 +1,55 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang="ko">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="html, div, ol, ul, li, child element"/>
-    <meta name="description" content="목록을 나타내는 ol과 ul태그의 자식요소에는 div가 올 수 있을까?"/>
-    <meta name="Location" content="포도와 고구마의 고장"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dueto park" />
+    <meta name="keywords" content="html, div, ol, ul, li, child element" />
+    <meta
+      name="description"
+      content="목록을 나타내는 ol과 ul태그의 자식요소에는 div가 올 수 있을까?"
+    />
+    <meta name="Location" content="포도와 고구마의 고장" />
 
     <title>목록 태그의 자식요소</title>
 
     <!-- 목록 태그의 자식요소 -->
-    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/style-common.css">
-    <link rel="stylesheet" href="../../css/style-html.css">
-    <link rel="stylesheet" href="../../css/responsive/style-common.css">
-    <link rel="stylesheet" href="../../css/responsive/style-html.css">
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../../site.webmanifest" />
+    <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../css/style-common.css" />
+    <link rel="stylesheet" href="../../css/style-html.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
   </head>
 
   <body>
-    <header class='note-header' aria-label="페이지 조작 영역">
-      <div class='container'>
+    <header class="note-header" aria-label="페이지 조작 영역">
+      <div class="container">
         <!-- 홈으로 이동 -->
-        <h1 class='note-header-title' aria-labelledby="go-to-home">
-          <a id="go-to-home" href='../../index.html'>
+        <h1 class="note-header-title" aria-labelledby="go-to-home">
+          <a id="go-to-home" href="../../index.html">
             <span aria-hidden="true">🔥</span>
             기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
             <span aria-hidden="true">🔥</span>
@@ -32,36 +57,85 @@
         </h1>
 
         <!-- 야간 모드로 전환 -->
-        <section class='toggle-button-group' aria-labelledby="toggle-button">
-          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
-          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+        <section class="toggle-button-group" aria-labelledby="toggle-button">
+          <span class="toggle-button-title" aria-hidden="true"
+            >Day/Night Switch</span
+          >
+          <button
+            id="toggle-button"
+            class="toggle-button"
+            type="button"
+            aria-label="야간모드 켜기"
+            aria-controls="page-mode-state"
+          ></button>
           <p id="page-mode-state" class="hidden" aria-live="polite">
             야간 모드 꺼짐
           </p>
         </section>
 
         <!-- 다른 페이지로 이동 -->
-        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
-          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
+          <h2
+            id="note-header-nav-title"
+            class="hidden note-header-nav-title"
+            aria-hidden="true"
+          >
+            다른 페이지로 이동
+          </h2>
+          <ol
+            class="note-header-nav-list"
+            aria-label="주제 선택"
+            role="tablist"
+          >
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-html"
+              >
+                html
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-css"
+              >
+                css
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-js"
+              >
+                javascript
+              </button>
             </li>
           </ol>
 
-
-          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+          <article
+            id="go-to-pages"
+            class="hidden"
+            aria-hidden="true"
+            aria-labelledby="select-chapter"
+          >
             <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
 
-            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+            <button
+              class="go-to-pages-close"
+              type="button"
+              aria-label="모달 닫기"
+            ></button>
 
-            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+            <div
+              id="go-to-page-div-html"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="html-button"
+            >
               <h3 class="go-to-page-title" aria-hidden="true">
                 <span aria-hidden="true">😈</span>html
               </h3>
@@ -70,7 +144,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+            <div
+              id="go-to-page-div-css"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="css-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😇</span>CSS
               </h3>
@@ -79,7 +158,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+            <div
+              id="go-to-page-div-javascript"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="js-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😎</span>Javascript
               </h3>
@@ -92,87 +176,105 @@
       </div>
     </header>
 
-    <main class='note-main' aria-label="본문 영역">
-      <section class='container' aria-labelledby="main-title">
-        <h2 id="main-title" class='main-title'>
+    <main class="note-main" aria-label="본문 영역">
+      <section class="container" aria-labelledby="main-title">
+        <h2 id="main-title" class="main-title">
           <strong>
-            <span class='main-title' aria-hidden="true">🐸</span>
+            <span class="main-title" aria-hidden="true">🐸</span>
             목록 태그의 자식요소
-            <span class='main-title' aria-hidden="true">🐸</span>
+            <span class="main-title" aria-hidden="true">🐸</span>
           </strong>
         </h2>
         <div class="time">
-          수정 날짜: <time datetime='2021-3-16'>2021년 03월 16일</time>
+          수정 날짜: <time datetime="2021-3-16">2021년 03월 16일</time>
         </div>
 
-        <article class='summary' aria-labelledby="summary-title">
-          <h3 id="summary-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🐻</span>
+        <article class="summary" aria-labelledby="summary-title">
+          <h3 id="summary-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🐻</span>
             개요
           </h3>
           <p>
-            외교부 홈페이지를 보다가, 작은 배너가 ul-div-div-li구조로 되어 있는것을 발견했다. 이래도 되나..?<br/>
-            <br/>
-            혼란스러웠다.<br/>
-            <br/>
-            외교부 페이지니까 맞는거 아니야?<br/>
-            공식 문서에는 div 안 된다는데?<br/>
-            근데 정부 공식 페이지면 맞는거 아니야?<br/>
-            공식 문서에 바뀐 내용이 있나?<br/>
-            <br/>
-            ??????? 그래서 찾아봤다.<br/>
+            외교부 홈페이지를 보다가, 작은 배너가 ul-div-div-li구조로 되어
+            있는것을 발견했다. 이래도 되나..?<br />
+            <br />
+            혼란스러웠다.<br />
+            <br />
+            외교부 페이지니까 맞는거 아니야?<br />
+            공식 문서에는 div 안 된다는데?<br />
+            근데 정부 공식 페이지면 맞는거 아니야?<br />
+            공식 문서에 바뀐 내용이 있나?<br />
+            <br />
+            ??????? 그래서 찾아봤다.<br />
           </p>
         </article>
 
-        <article class='list-child-element' aria-labelledby="list-child-element-title">
-          <h3 id="list-child-element-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🐮</span>
+        <article
+          class="list-child-element"
+          aria-labelledby="list-child-element-title"
+        >
+          <h3 id="list-child-element-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🐮</span>
             리스트 자식요소
           </h3>
           <p class="margin-8px">
-            결론부터 말하자면, 그럴 수 없다.<br/>
-            <br/>
-            많은 개발자들이 ul과 ol의 자식요소로 div를 쓰지 않는 이유를 설명해줬다.
+            결론부터 말하자면, 그럴 수 없다.<br />
+            <br />
+            많은 개발자들이 ul과 ol의 자식요소로 div를 쓰지 않는 이유를
+            설명해줬다.
           </p>
           <ul class="main-article-list background-white-radius margin-8px">
             <li class="main-article-list-items hyphen">
-              주제가 여러개라면, ul이나 ol 태그를 주제에 맞게 여러개 사용하면 됩니다.
+              주제가 여러개라면, ul이나 ol 태그를 주제에 맞게 여러개 사용하면
+              됩니다.
             </li>
             <li class="main-article-list-items hyphen">
-              하나의 큰 주제를 유지하고 싶다면, ul-li-ul-li처럼 중첩해서 사용하면 됩니다. 중첩 리스트 사용시 혼란스럽다면, 주석을 써서 구분해주세요.
+              하나의 큰 주제를 유지하고 싶다면, ul-li-ul-li처럼 중첩해서
+              사용하면 됩니다. 중첩 리스트 사용시 혼란스럽다면, 주석을 써서
+              구분해주세요.
             </li>
           </ul>
           <p>
-            <strong class="underline">태그의 용도를 알고 그에 맞게 사용하는 것</strong>. 김버그님도 이고잉님도 첫 강의에서 강조한 사항이었는데 까먹고 있었다.<br/>
-            <br/>
-            자신감 압수<br/>
-            <br/>
-            앞으로 html 마크업에 있어서 이건 왜 안되지 라는 생각이 들 땐, 공식문서에서 태그의 용도부터 확인해야겠다.
+            <strong class="underline"
+              >태그의 용도를 알고 그에 맞게 사용하는 것</strong
+            >. 김버그님도 이고잉님도 첫 강의에서 강조한 사항이었는데 까먹고
+            있었다.<br />
+            <br />
+            자신감 압수<br />
+            <br />
+            앞으로 html 마크업에 있어서 이건 왜 안되지 라는 생각이 들 땐,
+            공식문서에서 태그의 용도부터 확인해야겠다.
           </p>
         </article>
       </section>
     </main>
 
-    <footer class='note-footer'>
-      <div class='container'>
-        <blockquote class='note-footer-reference'
-          cite='https://www.w3schools.com/html/html_lists.asp'>
-          <strong class='note-footer-reference-name'>
-            자료 출처: "w3schools - HTML Lists", w3schools,  2021년 1월 28일 접속,
+    <footer class="note-footer">
+      <div class="container">
+        <blockquote
+          class="note-footer-reference"
+          cite="https://www.w3schools.com/html/html_lists.asp"
+        >
+          <strong class="note-footer-reference-name">
+            자료 출처: "w3schools - HTML Lists", w3schools, 2021년 1월 28일
+            접속,
           </strong>
-          <cite class='note-footer-reference-url'>
+          <cite class="note-footer-reference-url">
             <a href="https://www.w3schools.com/html/html_lists.asp">
               https://www.w3schools.com/html/html_lists.asp
             </a>
           </cite>
         </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
-          <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 1월 28일 접속,
+        <blockquote
+          class="note-footer-reference"
+          cite="https://gist.github.com/rxaviers/7360908"
+        >
+          <strong class="note-footer-reference-name">
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
+            2021년 1월 28일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
+          <cite class="note-footer-reference-url">
             <a href="https://gist.github.com/rxaviers/7360908">
               https://gist.github.com/rxaviers/7360908
             </a>
@@ -181,8 +283,8 @@
       </div>
     </footer>
 
-    <script src='../../assets/data.js'></script>
-    <script src='../../assets/app/create.js'></script>
-    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/data.js"></script>
+    <script src="../../assets/app/create.js"></script>
+    <script src="../../assets/app/app.js"></script>
   </body>
 </html>

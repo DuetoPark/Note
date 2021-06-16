@@ -1,31 +1,56 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang="ko">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="javascript, splice"/>
-    <meta name="description" content="배열의 기존 요소를 추가/삭제/대체하는 splice에 대해서 알아봅시다!"/>
-    <meta name="Location" content="포도와 고구마의 고장"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dueto park" />
+    <meta name="keywords" content="javascript, splice" />
+    <meta
+      name="description"
+      content="배열의 기존 요소를 추가/삭제/대체하는 splice에 대해서 알아봅시다!"
+    />
+    <meta name="Location" content="포도와 고구마의 고장" />
 
     <title>splice</title>
 
     <!-- splice -->
-    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/style-common.css">
-    <link rel="stylesheet" href="../../css/style-html.css">
-    <link rel="stylesheet" href="../../css/responsive/style-common.css">
-    <link rel="stylesheet" href="../../css/responsive/style-html.css">
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
-    <link rel="stylesheet" href="../../css/animation/animation.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../../site.webmanifest" />
+    <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../css/style-common.css" />
+    <link rel="stylesheet" href="../../css/style-html.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
+    <link rel="stylesheet" href="../../css/animation/animation.css" />
   </head>
 
   <body>
-    <header class='note-header' aria-label="페이지 조작 영역">
-      <div class='container'>
+    <header class="note-header" aria-label="페이지 조작 영역">
+      <div class="container">
         <!-- 홈으로 이동 -->
-        <h1 class='note-header-title' aria-labelledby="go-to-home">
-          <a id="go-to-home" href='../../index.html'>
+        <h1 class="note-header-title" aria-labelledby="go-to-home">
+          <a id="go-to-home" href="../../index.html">
             <span aria-hidden="true">🔥</span>
             기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
             <span aria-hidden="true">🔥</span>
@@ -33,36 +58,85 @@
         </h1>
 
         <!-- 야간 모드로 전환 -->
-        <section class='toggle-button-group' aria-labelledby="toggle-button">
-          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
-          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+        <section class="toggle-button-group" aria-labelledby="toggle-button">
+          <span class="toggle-button-title" aria-hidden="true"
+            >Day/Night Switch</span
+          >
+          <button
+            id="toggle-button"
+            class="toggle-button"
+            type="button"
+            aria-label="야간모드 켜기"
+            aria-controls="page-mode-state"
+          ></button>
           <p id="page-mode-state" class="hidden" aria-live="polite">
             야간 모드 꺼짐
           </p>
         </section>
 
         <!-- 다른 페이지로 이동 -->
-        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
-          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
+          <h2
+            id="note-header-nav-title"
+            class="hidden note-header-nav-title"
+            aria-hidden="true"
+          >
+            다른 페이지로 이동
+          </h2>
+          <ol
+            class="note-header-nav-list"
+            aria-label="주제 선택"
+            role="tablist"
+          >
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-html"
+              >
+                html
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-css"
+              >
+                css
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-js"
+              >
+                javascript
+              </button>
             </li>
           </ol>
 
-
-          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+          <article
+            id="go-to-pages"
+            class="hidden"
+            aria-hidden="true"
+            aria-labelledby="select-chapter"
+          >
             <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
 
-            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+            <button
+              class="go-to-pages-close"
+              type="button"
+              aria-label="모달 닫기"
+            ></button>
 
-            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+            <div
+              id="go-to-page-div-html"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="html-button"
+            >
               <h3 class="go-to-page-title" aria-hidden="true">
                 <span aria-hidden="true">😈</span>html
               </h3>
@@ -71,7 +145,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+            <div
+              id="go-to-page-div-css"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="css-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😇</span>CSS
               </h3>
@@ -80,7 +159,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+            <div
+              id="go-to-page-div-javascript"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="js-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😎</span>Javascript
               </h3>
@@ -93,39 +177,41 @@
       </div>
     </header>
 
-    <main class='note-main' aria-label="본문 영역">
-      <section class='container' aria-labelledby="main-title">
-        <h2 id="main-title" class='main-title'>
+    <main class="note-main" aria-label="본문 영역">
+      <section class="container" aria-labelledby="main-title">
+        <h2 id="main-title" class="main-title">
           <strong>
-            <span class='main-title' aria-hidden="true">🍠</span>
+            <span class="main-title" aria-hidden="true">🍠</span>
             slice
-            <span class='main-title' aria-hidden="true">🍠</span>
+            <span class="main-title" aria-hidden="true">🍠</span>
           </strong>
         </h2>
         <div class="time">
-          수정 날짜: <time datetime='2021-3-22'>2021년 03월 22일</time>
+          수정 날짜: <time datetime="2021-3-22">2021년 03월 22일</time>
         </div>
 
-        <article class='summary' aria-labelledby="summary-title">
-          <h3 id="summary-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🍏</span>
+        <article class="summary" aria-labelledby="summary-title">
+          <h3 id="summary-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🍏</span>
             개요
           </h3>
           <p>
-            배열을 쓱싹 자르면 원하는 배열을 만들 수 있다.<br/>
-            하지만 중간 부분을 빼내고 다른 요소를 추가해주기에는 많은 동작이 필요하다.<br/>
-            이걸 단 한줄로 줄여주는 메소드가 있다.<br/>
+            배열을 쓱싹 자르면 원하는 배열을 만들 수 있다.<br />
+            하지만 중간 부분을 빼내고 다른 요소를 추가해주기에는 많은 동작이
+            필요하다.<br />
+            이걸 단 한줄로 줄여주는 메소드가 있다.<br />
             splice 메소드에 대해 알아보자.
           </p>
         </article>
 
         <article class="splice" aria-labelledby="splice-title">
           <h3 id="splice-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">🍇</span>
+            <span class="main-article-title" aria-hidden="true">🍇</span>
             정의
           </h3>
           <p class="margin-8px">
-            배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경한다.
+            배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의
+            내용을 변경한다.
           </p>
           <ul aria-label="변경 사항">
             <li class="main-article-list-items hyphen">
@@ -142,17 +228,15 @@
 
         <article class="splice-syntax" aria-labelledby="splice-syntax-title">
           <h3 id="splice-syntax-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">🍑</span>
+            <span class="main-article-title" aria-hidden="true">🍑</span>
             문법
           </h3>
           <p class="margin-16px">
             <strong class="order">
-              배열.splice(시작 인덱스, 요소의 개수, 요소1, 요소2, ... , 요소n);
-            </strong><br/>
+              배열.splice(시작 인덱스, 요소의 개수, 요소1, 요소2, ... , 요소n); </strong
+            ><br />
           </p>
-          <p class="margin-16px">
-            문법은 목록으로 정리했다.
-          </p>
+          <p class="margin-16px">문법은 목록으로 정리했다.</p>
           <dl class="main-article-dl" aria-label="문법 해석">
             <div>
               <dt class="main-article-dt" aria-label="시작 인덱스">
@@ -170,15 +254,15 @@
                 선택적 기재 사항이며, 삭제할 요소의 개수를 의미한다.
               </dd>
               <dd class="main-article-dd">
-                생략하면 자동으로 0값이 설정되므로 아무런 요소도 제거되지 않는다.
+                생략하면 자동으로 0값이 설정되므로 아무런 요소도 제거되지
+                않는다.
               </dd>
             </div>
             <div>
-              <dt class="main-article-dt" aria-label="요소">
-                요소
-              </dt>
+              <dt class="main-article-dt" aria-label="요소">요소</dt>
               <dd class="main-article-dd">
-                선택적 기재 사항이며, 시작점으로부터 추가할 요소를 원하는 만큼 입력한다.
+                선택적 기재 사항이며, 시작점으로부터 추가할 요소를 원하는 만큼
+                입력한다.
               </dd>
             </div>
           </dl>
@@ -186,26 +270,29 @@
 
         <article class="splice-delete" aria-labelledby="splice-delete-title">
           <h3 id="splice-delete-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">🍐</span>
+            <span class="main-article-title" aria-hidden="true">🍐</span>
             배열의 기존 요소 삭제
           </h3>
           <ul aria-label="삭제하는 방법">
-            <li class="main-article-list-items margin-16px" aria-describedby="delete-x-y">
+            <li
+              class="main-article-list-items margin-16px"
+              aria-describedby="delete-x-y"
+            >
               <div id="delete-x-y" class="hidden">
                 원하는 개수만큼 제거하는 방법
               </div>
               <p class="hyphen margin-8px">
-                <strong class="order">
-                  배열.splice(인덱스, 개수);
-                </strong>
+                <strong class="order"> 배열.splice(인덱스, 개수); </strong>
               </p>
               <p class="margin-8px">
-                배열의 시작 인덱스부터 원하는 개수만큼 요소가 제거된다.<br/>
-                개수에 음수가 나오면 아무 요소도 제거되지 않는다.<br/>
+                배열의 시작 인덱스부터 원하는 개수만큼 요소가 제거된다.<br />
+                개수에 음수가 나오면 아무 요소도 제거되지 않는다.<br />
                 예시코드는 다음과 같다.
               </p>
               <div id="splice-delete-example">
-                <pre class="main-article-pre background-white-radius margin-8px">
+                <pre
+                  class="main-article-pre background-white-radius margin-8px"
+                >
                   <code>
                     let A = ["안", "녕", "오", "이", "친", "구"];
                     let B = A.splice(2, 2);
@@ -218,17 +305,18 @@
                 <script src="https://gist.github.com/DuetoPark/72823cbd9af81055810c72103d6977b0.js"></script>
               </div>
             </li>
-            <li class="main-article-list-items margin-16px" aria-describedby="delete-x-end">
+            <li
+              class="main-article-list-items margin-16px"
+              aria-describedby="delete-x-end"
+            >
               <div id="delete-x-end" class="hidden">
                 n번째에서 끝까지 제거하는 방법
               </div>
               <p class="hyphen margin-8px">
-                <strong class="order">
-                  배열.splice(n);
-                </strong>
+                <strong class="order"> 배열.splice(n); </strong>
               </p>
               <p class="margin-8px">
-                n번 인덱스를 포함해서 이후의 모든 요소 제거한다.<br/>
+                n번 인덱스를 포함해서 이후의 모든 요소 제거한다.<br />
                 예시코드는 다음과 같다.
               </p>
               <pre class="main-article-pre background-white-radius">
@@ -244,7 +332,10 @@
                 </code>
               </pre>
             </li>
-            <li class="main-article-list-items" aria-describedby="delete-random">
+            <li
+              class="main-article-list-items"
+              aria-describedby="delete-random"
+            >
               <div id="delete-random" class="hidden">
                 무작위로 하나 제거하는 방법
               </div>
@@ -254,7 +345,7 @@
                 </strong>
               </p>
               <p class="margin-8px">
-                무작위로 하나의 요소를 뽑아서 제거한다.<br/>
+                무작위로 하나의 요소를 뽑아서 제거한다.<br />
                 예시코드는 다음과 같다.
               </p>
               <pre class="main-article-pre background-white-radius">
@@ -275,7 +366,7 @@
 
         <article class="splice-add" aria-labelledby="splice-add-title">
           <h3 id="splice-add-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">🍈</span>
+            <span class="main-article-title" aria-hidden="true">🍈</span>
             배열의 기존 요소에 추가
           </h3>
           <p class="margin-16px">
@@ -284,7 +375,7 @@
             </strong>
           </p>
           <p class="margin-8px">
-            시작 인덱스부터 요소가 추가된다.<br/>
+            시작 인덱스부터 요소가 추가된다.<br />
             예시코드는 다음과 같다.
           </p>
           <pre class="main-article-pre background-white-radius">
@@ -299,7 +390,7 @@
 
         <article class="splice-replace" aria-labelledby="splice-replace-title">
           <h3 id="splice-replace-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">🍍</span>
+            <span class="main-article-title" aria-hidden="true">🍍</span>
             배열의 기존 요소에 변경
           </h3>
           <p class="margin-16px">
@@ -308,7 +399,8 @@
             </strong>
           </p>
           <p class="margin-8px">
-            시작 인덱스부터 입력한 개수만큼 요소가 사라지고, 그 자리에 새로운 요소가 추가된다.<br/>
+            시작 인덱스부터 입력한 개수만큼 요소가 사라지고, 그 자리에 새로운
+            요소가 추가된다.<br />
             예시코드는 다음과 같다.
           </p>
           <pre class="main-article-pre background-white-radius">
@@ -323,39 +415,52 @@
       </section>
     </main>
 
-    <footer class='note-footer'>
-      <div class='container'>
-        <blockquote class='note-footer-reference'
-          cite='https://www.youtube.com/watch?v=hXmDikSEmbI&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=29'>
-          <strong class='note-footer-reference-name'>
-            자료 출처: "유튜브 - ZeroCho의 JS 초급 강좌 4-3. 배열 splice", 유튜브, 2021년 3월 3일 접속,
+    <footer class="note-footer">
+      <div class="container">
+        <blockquote
+          class="note-footer-reference"
+          cite="https://www.youtube.com/watch?v=hXmDikSEmbI&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=29"
+        >
+          <strong class="note-footer-reference-name">
+            자료 출처: "유튜브 - ZeroCho의 JS 초급 강좌 4-3. 배열 splice",
+            유튜브, 2021년 3월 3일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://www.youtube.com/watch?v=hXmDikSEmbI&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=29'>
+          <cite class="note-footer-reference-url">
+            <a
+              href="https://www.youtube.com/watch?v=hXmDikSEmbI&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=29"
+            >
               https://www.youtube.com/watch?v=hXmDikSEmbI&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=29
             </a>
           </cite>
         </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice'>
-          <strong class='note-footer-reference-name'>
-            자료 출처: "MDN - Array.prototype.splice()", MDN, 2021년 3월 3일 접속,
+        <blockquote
+          class="note-footer-reference"
+          cite="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"
+        >
+          <strong class="note-footer-reference-name">
+            자료 출처: "MDN - Array.prototype.splice()", MDN, 2021년 3월 3일
+            접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice'>
+          <cite class="note-footer-reference-url">
+            <a
+              href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"
+            >
               https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
             </a>
           </cite>
         </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
-          <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 3월 3일 접속,
+        <blockquote
+          class="note-footer-reference"
+          cite="https://gist.github.com/rxaviers/7360908"
+        >
+          <strong class="note-footer-reference-name">
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
+            2021년 3월 3일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://gist.github.com/rxaviers/7360908'>
+          <cite class="note-footer-reference-url">
+            <a href="https://gist.github.com/rxaviers/7360908">
               https://gist.github.com/rxaviers/7360908
             </a>
           </cite>
@@ -364,8 +469,8 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='../../assets/data.js'></script>
-    <script src='../../assets/app/create.js'></script>
-    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/data.js"></script>
+    <script src="../../assets/app/create.js"></script>
+    <script src="../../assets/app/app.js"></script>
   </body>
 </html>

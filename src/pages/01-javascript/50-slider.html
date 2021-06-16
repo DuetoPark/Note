@@ -1,31 +1,59 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang="ko">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="javascript, slider, mousedown, mouseleave, mousemove, mouseup, drag, flag"/>
-    <meta name="description" content="슬라이더를 구현하는 방법과 슬라이더 라이브러리에는 무엇이 있는지 알아봅시다!"/>
-    <meta name="Location" content="포도와 고구마의 고장"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dueto park" />
+    <meta
+      name="keywords"
+      content="javascript, slider, mousedown, mouseleave, mousemove, mouseup, drag, flag"
+    />
+    <meta
+      name="description"
+      content="슬라이더를 구현하는 방법과 슬라이더 라이브러리에는 무엇이 있는지 알아봅시다!"
+    />
+    <meta name="Location" content="포도와 고구마의 고장" />
 
     <title>Slider</title>
 
     <!-- Slider -->
-    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/style-common.css">
-    <link rel="stylesheet" href="../../css/style-html.css">
-    <link rel="stylesheet" href="../../css/responsive/style-common.css">
-    <link rel="stylesheet" href="../../css/responsive/style-html.css">
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
-    <link rel="stylesheet" href="../../css/animation/animation.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../../site.webmanifest" />
+    <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../css/style-common.css" />
+    <link rel="stylesheet" href="../../css/style-html.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
+    <link rel="stylesheet" href="../../css/animation/animation.css" />
   </head>
 
   <body>
-    <header class='note-header' aria-label="페이지 조작 영역">
-      <div class='container'>
+    <header class="note-header" aria-label="페이지 조작 영역">
+      <div class="container">
         <!-- 홈으로 이동 -->
-        <h1 class='note-header-title' aria-labelledby="go-to-home">
-          <a id="go-to-home" href='../../index.html'>
+        <h1 class="note-header-title" aria-labelledby="go-to-home">
+          <a id="go-to-home" href="../../index.html">
             <span aria-hidden="true">🔥</span>
             기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
             <span aria-hidden="true">🔥</span>
@@ -33,36 +61,85 @@
         </h1>
 
         <!-- 야간 모드로 전환 -->
-        <section class='toggle-button-group' aria-labelledby="toggle-button">
-          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
-          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+        <section class="toggle-button-group" aria-labelledby="toggle-button">
+          <span class="toggle-button-title" aria-hidden="true"
+            >Day/Night Switch</span
+          >
+          <button
+            id="toggle-button"
+            class="toggle-button"
+            type="button"
+            aria-label="야간모드 켜기"
+            aria-controls="page-mode-state"
+          ></button>
           <p id="page-mode-state" class="hidden" aria-live="polite">
             야간 모드 꺼짐
           </p>
         </section>
 
         <!-- 다른 페이지로 이동 -->
-        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
-          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
+          <h2
+            id="note-header-nav-title"
+            class="hidden note-header-nav-title"
+            aria-hidden="true"
+          >
+            다른 페이지로 이동
+          </h2>
+          <ol
+            class="note-header-nav-list"
+            aria-label="주제 선택"
+            role="tablist"
+          >
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-html"
+              >
+                html
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-css"
+              >
+                css
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-js"
+              >
+                javascript
+              </button>
             </li>
           </ol>
 
-
-          <section id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+          <section
+            id="go-to-pages"
+            class="hidden"
+            aria-hidden="true"
+            aria-labelledby="select-chapter"
+          >
             <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
 
-            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+            <button
+              class="go-to-pages-close"
+              type="button"
+              aria-label="모달 닫기"
+            ></button>
 
-            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+            <div
+              id="go-to-page-div-html"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="html-button"
+            >
               <h3 class="go-to-page-title" aria-hidden="true">
                 <span aria-hidden="true">😈</span>html
               </h3>
@@ -71,7 +148,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+            <div
+              id="go-to-page-div-css"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="css-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😇</span>CSS
               </h3>
@@ -80,7 +162,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+            <div
+              id="go-to-page-div-javascript"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="js-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😎</span>Javascript
               </h3>
@@ -93,60 +180,67 @@
       </div>
     </header>
 
-    <main class='note-main' aria-label="본문 영역">
-      <article class='container' aria-labelledby="main-title">
-        <h2 id="main-title" class='main-title'>
+    <main class="note-main" aria-label="본문 영역">
+      <article class="container" aria-labelledby="main-title">
+        <h2 id="main-title" class="main-title">
           <strong>
-            <span class='main-title' aria-hidden="true">👻</span>
+            <span class="main-title" aria-hidden="true">👻</span>
             Slider
-            <span class='main-title' aria-hidden="true">👻</span>
+            <span class="main-title" aria-hidden="true">👻</span>
           </strong>
         </h2>
         <div class="time">
-          작성 날짜: <time datetime='2021-4-8'>2021년 04월 08일</time>
+          작성 날짜: <time datetime="2021-4-8">2021년 04월 08일</time>
         </div>
 
-        <section class='summary' aria-labelledby="summary-title">
-          <h3 id="summary-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🎁</span>
+        <section class="summary" aria-labelledby="summary-title">
+          <h3 id="summary-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🎁</span>
             개요
           </h3>
           <p>
-            처음 만들었던 내 소개 페이지에 슬라이더를 넣었었다. 그땐 라이브러리를 이용했었는데 이번엔 직접 구현을 해봤다.<br/>
-            사실은 오늘 본 강의 내용이다.<br/>
+            처음 만들었던 내 소개 페이지에 슬라이더를 넣었었다. 그땐
+            라이브러리를 이용했었는데 이번엔 직접 구현을 해봤다.<br />
+            사실은 오늘 본 강의 내용이다.<br />
             추가로 라이브러리의 종류와 사용법도 정리해보려고 한다.
           </p>
         </section>
 
-        <section class='slider' aria-labelledby="slider-title">
-          <h3 id="slider-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">👔</span>
+        <section class="slider" aria-labelledby="slider-title">
+          <h3 id="slider-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">👔</span>
             동작
           </h3>
-          <p>
-            '드래그'로 슬라이더를 넘긴다.
-          </p>
+          <p>'드래그'로 슬라이더를 넘긴다.</p>
         </section>
 
-        <section class='slider-structure' aria-labelledby="slider-structure-title">
-          <h3 id="slider-structure-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🃏</span>
+        <section
+          class="slider-structure"
+          aria-labelledby="slider-structure-title"
+        >
+          <h3 id="slider-structure-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🃏</span>
             구조
           </h3>
-          <ul aria-label='문서 구조'>
+          <ul aria-label="문서 구조">
             <li class="main-aria-list-items hyphen">slider-container</li>
-            <li class="main-aria-list-items hyphen">slider-items(원하는 만큼)</li>
+            <li class="main-aria-list-items hyphen">
+              slider-items(원하는 만큼)
+            </li>
           </ul>
         </section>
 
-        <section class='slider-keywords' aria-labelledby="slider-keywords-title">
-          <h3 id="slider-keywords-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🚴</span>
+        <section
+          class="slider-keywords"
+          aria-labelledby="slider-keywords-title"
+        >
+          <h3 id="slider-keywords-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🚴</span>
             키워드
           </h3>
           <div id="event-list" class="margin-24px">
             <h4 class="main-article-subtitle error">이벤트</h4>
-            <ul aria-label='필요한 이벤트'>
+            <ul aria-label="필요한 이벤트">
               <li class="main-aria-list-items hyphen">mousedown</li>
               <li class="main-aria-list-items hyphen">mouseup</li>
               <li class="main-aria-list-items hyphen">mousemove</li>
@@ -155,37 +249,48 @@
           </div>
           <div id="coords-list" class="margin-24px">
             <h4 class="main-article-subtitle error">좌표</h4>
-            <ul aria-label='필요한 좌표'>
+            <ul aria-label="필요한 좌표">
               <li class="main-aria-list-items hyphen">startX: 드래그 시작</li>
-              <li class="main-aria-list-items hyphen">scrollLeft: 스크롤 위치</li>
+              <li class="main-aria-list-items hyphen">
+                scrollLeft: 스크롤 위치
+              </li>
               <li class="main-aria-list-items hyphen">lastX: 드래그 끝</li>
               <li class="main-aria-list-items hyphen">walk: 마우스 이동거리</li>
             </ul>
           </div>
           <div id="flag">
             <h4 class="main-article-subtitle error">플래그</h4>
-            <p class="hyphen">isDown: 마우스를 누르고 드래그 할 때에만 동작함</p>
+            <p class="hyphen">
+              isDown: 마우스를 누르고 드래그 할 때에만 동작함
+            </p>
           </div>
         </section>
 
-        <section class='slider-build' aria-labelledby="slider-build-title">
-          <h3 id="slider-build-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">👑</span>
+        <section class="slider-build" aria-labelledby="slider-build-title">
+          <h3 id="slider-build-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">👑</span>
             구현
           </h3>
           <div id="slider-mousedown" class="margin-24px">
             <h4 class="main-article-subtitle error">mousedown</h4>
-            <ol aria-label='동작'>
+            <ol aria-label="동작">
               <li class="main-aria-list-items margin-8px">
                 1. 플래그를 true로 변경한다.
               </li>
               <li class="main-aria-list-items margin-8px">
                 2. startX의 좌표를 구한다.
                 <p class="desc">
-                  <span class="hyphen">startX = event.clientX - slider.offsetLeft</span>
-                  <br/>
-                  <span class="hyphen">slider.offsetLeft: slider-container의 x좌표 위치</span>
-                  <span class="hyphen">slider-container의 margin 부분에서는 동작하지 않도록 하기 위함이다. (동작 범위: content부터 border까지)</span>
+                  <span class="hyphen"
+                    >startX = event.clientX - slider.offsetLeft</span
+                  >
+                  <br />
+                  <span class="hyphen"
+                    >slider.offsetLeft: slider-container의 x좌표 위치</span
+                  >
+                  <span class="hyphen"
+                    >slider-container의 margin 부분에서는 동작하지 않도록 하기
+                    위함이다. (동작 범위: content부터 border까지)</span
+                  >
                 </p>
               </li>
               <li class="main-aria-list-items margin-8px">
@@ -197,66 +302,85 @@
             </ol>
           </div>
           <div id="mouseleave-mouseup" class="margin-24px">
-            <h4 class="main-article-subtitle error">mouseleave &amp; mouseup</h4>
+            <h4 class="main-article-subtitle error">
+              mouseleave &amp; mouseup
+            </h4>
             <p class="desc">
-              플래그를 flase로 바꾼다.<br/>
+              플래그를 flase로 바꾼다.<br />
               <span class="hyphen">동작을 제한하기 위함이다.</span>
             </p>
           </div>
           <div id="mousemove" class="margin-24px">
             <h4 class="main-article-subtitle error">mousemove</h4>
-            <ol aria-label='동작'>
+            <ol aria-label="동작">
               <li class="main-aria-list-items margin-8px">
                 1. isDown이 false면 함수 동작을 멈춘다.
                 <p class="desc">
                   <span class="hyphen">if (!isDown) return;</span>
-                  <br/>
-                  <span class="hyphen">마우스에서 손을 떼거나 슬라이더 바깥으로 마우스 포인터가 나갔을 때 슬라이더의 동작을 멈춘다.</span>
+                  <br />
+                  <span class="hyphen"
+                    >마우스에서 손을 떼거나 슬라이더 바깥으로 마우스 포인터가
+                    나갔을 때 슬라이더의 동작을 멈춘다.</span
+                  >
                 </p>
               </li>
               <li class="main-aria-list-items margin-8px">
                 2. lastX 좌표를 구한다.
                 <p class="desc">
-                  <span class="hyphen">lastX = event.clientX - slider.offsetLeft</span>
-                  <br/>
-                  <span class="hyphen">slider.offsetLeft: slider-container의 x좌표 위치</span>
-                  <span class="hyphen">slider-container 내부에서의 실시간 위치를 의미한다.</span>
+                  <span class="hyphen"
+                    >lastX = event.clientX - slider.offsetLeft</span
+                  >
+                  <br />
+                  <span class="hyphen"
+                    >slider.offsetLeft: slider-container의 x좌표 위치</span
+                  >
+                  <span class="hyphen"
+                    >slider-container 내부에서의 실시간 위치를 의미한다.</span
+                  >
                 </p>
               </li>
               <li class="main-aria-list-items margin-8px">
                 3. walk를 구한다.
                 <p class="desc">
                   <span class="hyphen">walk = lastX - startX;</span>
-                  <span class="hyphen">마우스를 누른 순간부터 현재 위치까지의 거리이다.</span>
-                  <span class="hyphen">슬라이더를 휙휙 넘기거 싶다면 walk 값에 n배수 처리한다.((lastX - startX) * n)</span>
+                  <span class="hyphen"
+                    >마우스를 누른 순간부터 현재 위치까지의 거리이다.</span
+                  >
+                  <span class="hyphen"
+                    >슬라이더를 휙휙 넘기거 싶다면 walk 값에 n배수
+                    처리한다.((lastX - startX) * n)</span
+                  >
                 </p>
               </li>
               <li class="main-aria-list-items">
                 4. slider.scrollLeft를 변경한다.
                 <p class="desc">
-                  <span class="hyphen">slider.scrollLeft = scrollLeft - walk;</span>
-                  <span class="hyphen">scrollLeft: mousedown 이벤트에서 저장했던 slider의 스크롤 위치</span>
+                  <span class="hyphen"
+                    >slider.scrollLeft = scrollLeft - walk;</span
+                  >
+                  <span class="hyphen"
+                    >scrollLeft: mousedown 이벤트에서 저장했던 slider의 스크롤
+                    위치</span
+                  >
                 </p>
               </li>
             </ol>
           </div>
         </section>
 
-        <section class='slider-library' aria-labelledby="slider-library-title">
-          <h3 id="slider-library-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">😊</span>
+        <section class="slider-library" aria-labelledby="slider-library-title">
+          <h3 id="slider-library-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">😊</span>
             라이브러리
           </h3>
-          <p class="margin-8px">
-            유명한 Slider 라이브러리는 다음과 같다.
-          </p>
-          <ul aria-label='종류'>
+          <p class="margin-8px">유명한 Slider 라이브러리는 다음과 같다.</p>
+          <ul aria-label="종류">
             <li class="main-aria-list-items hyphen">
               <a href="https://kenwheeler.github.io/slick/">Slick</a>
             </li>
             <li class="main-aria-list-items hyphen">
               <a href="https://swiperjs.com/">Swiper</a>
-              </li>
+            </li>
             <li class="main-aria-list-items hyphen">
               <a href="https://flickity.metafizzy.co/">Flickity</a>
             </li>
@@ -266,27 +390,32 @@
           </ul>
         </section>
 
-        <aside class='carousel' aria-labelledby="carousel-title">
-          <h3 id="carousel-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">👽</span>
+        <aside class="carousel" aria-labelledby="carousel-title">
+          <h3 id="carousel-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">👽</span>
             명명
           </h3>
           <p>
-            라이브러리를 찾아보면서 알게 된 것인데, slider를 캐러셀(Carousel)이라 부른다. 더 다양한 슬라이더 라이브러리를 사용하고자 한다면, 구글에 'carousel library'라고 검색하면 된다.
+            라이브러리를 찾아보면서 알게 된 것인데, slider를
+            캐러셀(Carousel)이라 부른다. 더 다양한 슬라이더 라이브러리를
+            사용하고자 한다면, 구글에 'carousel library'라고 검색하면 된다.
           </p>
         </aside>
       </article>
     </main>
 
-    <footer class='note-footer'>
-      <div class='container'>
-        <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
-          <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github, 2021년 4월 8일 접속,
+    <footer class="note-footer">
+      <div class="container">
+        <blockquote
+          class="note-footer-reference"
+          cite="https://gist.github.com/rxaviers/7360908"
+        >
+          <strong class="note-footer-reference-name">
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
+            2021년 4월 8일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://gist.github.com/rxaviers/7360908'>
+          <cite class="note-footer-reference-url">
+            <a href="https://gist.github.com/rxaviers/7360908">
               https://gist.github.com/rxaviers/7360908
             </a>
           </cite>
@@ -294,8 +423,8 @@
       </div>
     </footer>
 
-    <script src='../../assets/data.js'></script>
-    <script src='../../assets/app/create.js'></script>
-    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/data.js"></script>
+    <script src="../../assets/app/create.js"></script>
+    <script src="../../assets/app/app.js"></script>
   </body>
 </html>

@@ -1,30 +1,55 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang="ko">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="git, git bash error"/>
-    <meta name="description" content="git bash 에러가 발생했을 때 어떻게 대응해야 하는지 알아봅시다!"/>
-    <meta name="Location" content="포도와 고구마의 고장"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dueto park" />
+    <meta name="keywords" content="git, git bash error" />
+    <meta
+      name="description"
+      content="git bash 에러가 발생했을 때 어떻게 대응해야 하는지 알아봅시다!"
+    />
+    <meta name="Location" content="포도와 고구마의 고장" />
 
     <title>Git Bash Error</title>
 
     <!-- Git Bash Error -->
-    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/style-common.css">
-    <link rel="stylesheet" href="../../css/responsive/style-common.css">
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
-    <link rel="stylesheet" href="../../css/style-git.css">
-    <link rel="stylesheet" href="../../css/responsive/style-git.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../../site.webmanifest" />
+    <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../css/style-common.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
+    <link rel="stylesheet" href="../../css/style-git.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-git.css" />
   </head>
 
   <body>
-    <header class='note-header' aria-label="페이지 조작 영역">
-      <div class='container'>
+    <header class="note-header" aria-label="페이지 조작 영역">
+      <div class="container">
         <!-- 홈으로 이동 -->
-        <h1 class='note-header-title' aria-labelledby="go-to-home">
-          <a id="go-to-home" href='../../index.html'>
+        <h1 class="note-header-title" aria-labelledby="go-to-home">
+          <a id="go-to-home" href="../../index.html">
             <span aria-hidden="true">🔥</span>
             기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
             <span aria-hidden="true">🔥</span>
@@ -32,36 +57,85 @@
         </h1>
 
         <!-- 야간 모드로 전환 -->
-        <section class='toggle-button-group' aria-labelledby="toggle-button">
-          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
-          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+        <section class="toggle-button-group" aria-labelledby="toggle-button">
+          <span class="toggle-button-title" aria-hidden="true"
+            >Day/Night Switch</span
+          >
+          <button
+            id="toggle-button"
+            class="toggle-button"
+            type="button"
+            aria-label="야간모드 켜기"
+            aria-controls="page-mode-state"
+          ></button>
           <p id="page-mode-state" class="hidden" aria-live="polite">
             야간 모드 꺼짐
           </p>
         </section>
 
         <!-- 다른 페이지로 이동 -->
-        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
-          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
+          <h2
+            id="note-header-nav-title"
+            class="hidden note-header-nav-title"
+            aria-hidden="true"
+          >
+            다른 페이지로 이동
+          </h2>
+          <ol
+            class="note-header-nav-list"
+            aria-label="주제 선택"
+            role="tablist"
+          >
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-html"
+              >
+                html
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-css"
+              >
+                css
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-js"
+              >
+                javascript
+              </button>
             </li>
           </ol>
 
-
-          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+          <article
+            id="go-to-pages"
+            class="hidden"
+            aria-hidden="true"
+            aria-labelledby="select-chapter"
+          >
             <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
 
-            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+            <button
+              class="go-to-pages-close"
+              type="button"
+              aria-label="모달 닫기"
+            ></button>
 
-            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+            <div
+              id="go-to-page-div-html"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="html-button"
+            >
               <h3 class="go-to-page-title" aria-hidden="true">
                 <span aria-hidden="true">😈</span>html
               </h3>
@@ -70,7 +144,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+            <div
+              id="go-to-page-div-css"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="css-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😇</span>CSS
               </h3>
@@ -79,7 +158,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+            <div
+              id="go-to-page-div-javascript"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="js-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😎</span>Javascript
               </h3>
@@ -92,33 +176,31 @@
       </div>
     </header>
 
-    <main class='note-main' aria-label="본문 영역">
-      <article class='container' aria-labelledby="git-error-title">
-        <h2 id="git-error-title" class='main-title'>
+    <main class="note-main" aria-label="본문 영역">
+      <article class="container" aria-labelledby="git-error-title">
+        <h2 id="git-error-title" class="main-title">
           <strong>
-            <span class='main-title' aria-hidden="true">👔</span>
+            <span class="main-title" aria-hidden="true">👔</span>
             Git Bash 에러
-            <span class='main-title' aria-hidden="true">👔</span>
+            <span class="main-title" aria-hidden="true">👔</span>
           </strong>
         </h2>
         <div class="time">
-          수정 날짜: <time datetime='2021-4-8'>2021년 04월 08일</time>
+          수정 날짜: <time datetime="2021-4-8">2021년 04월 08일</time>
         </div>
 
         <section aria-labelledby="git-error-summary">
-          <h3 id="git-error-summary" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">👕</span>
+          <h3 id="git-error-summary" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">👕</span>
             개요
           </h3>
-          <p>
-            Git Bash 에러가 발생했을 때 해결하는 방법에 대해 알아봅시다.
-          </p>
+          <p>Git Bash 에러가 발생했을 때 해결하는 방법에 대해 알아봅시다.</p>
         </section>
 
         <section aria-labelledby="merge-conflict">
-          <h3 id="merge-conflict" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">👢</span>
-             merge 충돌
+          <h3 id="merge-conflict" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">👢</span>
+            merge 충돌
           </h3>
 
           <dl class="main-article-dl" aria-label="해결방법">
@@ -142,8 +224,11 @@
               </dd>
             </div>
             <div>
-              <dt class="main-article-dt" aria-labelledby="another-conflict-solution">
-                <strong  id="another-conflict-solution" class="order">
+              <dt
+                class="main-article-dt"
+                aria-labelledby="another-conflict-solution"
+              >
+                <strong id="another-conflict-solution" class="order">
                   merge conflict 다른 해결방법
                 </strong>
               </dt>
@@ -169,23 +254,23 @@
                   git merge와 git rebase의 차이
                 </strong>
               </dt>
-              <dd class="main-article-dd">
-                git merge는 직관적이다.
-              </dd>
-              <dd class="main-article-dd">
-                git rebase는 로그가 깔끔해진다.
-              </dd>
+              <dd class="main-article-dd">git merge는 직관적이다.</dd>
+              <dd class="main-article-dd">git rebase는 로그가 깔끔해진다.</dd>
               <dd>
-                <img class="merge-rebase-diff-image" src="../../assets/images/merge-rebase.png" alt="merge와 rebase의 차이">
+                <img
+                  class="merge-rebase-diff-image"
+                  src="../../assets/images/merge-rebase.png"
+                  alt="merge와 rebase의 차이"
+                />
               </dd>
             </div>
           </dl>
         </section>
 
         <section aria-labelledby="denied-error">
-          <h3 id="denied-error" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">👖</span>
-             cannot stat '파일경로' : Permission denied 에러
+          <h3 id="denied-error" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">👖</span>
+            cannot stat '파일경로' : Permission denied 에러
           </h3>
 
           <dl class="main-article-dl" aria-label="denied 에러">
@@ -195,18 +280,20 @@
               </strong>
             </dt>
             <dd class="main-article-dd">
-              Atom(또는 사용중인 IDE, 에디터)를 실행한 상태에서 git merge를 하면 나타나는 허가 거부 에러
+              Atom(또는 사용중인 IDE, 에디터)를 실행한 상태에서 git merge를 하면
+              나타나는 허가 거부 에러
             </dd>
             <dd class="main-article-dd">
-              '에디터를 종료'하고 git merge 명령하면 허가 거부 에러없이 마무리된다.
+              '에디터를 종료'하고 git merge 명령하면 허가 거부 에러없이
+              마무리된다.
             </dd>
           </dl>
         </section>
 
         <section aria-labelledby="push-error">
-          <h3 id="push-error" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">👋</span>
-             failed to push some refs to '폴더/파일명'
+          <h3 id="push-error" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">👋</span>
+            failed to push some refs to '폴더/파일명'
           </h3>
 
           <dl class="main-article-dl" aria-label="denied 에러">
@@ -219,7 +306,9 @@
               로컬과 remote의 버전이 다른 상태에서 push할 때 발생하는 에러
             </dd>
             <dd class="main-article-dd">
-              github에서 readme를 작성하거나, remote에 내가 받지 않은 파일의 변경사항이 있는데 그걸 무시하고 내 파일을 remote에 올리면 remote에 있는 변경사항이 없어지게 되므로 git에서 push를 막는다.
+              github에서 readme를 작성하거나, remote에 내가 받지 않은 파일의
+              변경사항이 있는데 그걸 무시하고 내 파일을 remote에 올리면 remote에
+              있는 변경사항이 없어지게 되므로 git에서 push를 막는다.
             </dd>
             <dd class="main-article-dd">
               'pull'한 뒤에 push하면 된다. (git pull origin master)
@@ -229,27 +318,33 @@
       </article>
     </main>
 
-    <footer class='note-footer'>
-      <div class='container'>
-        <blockquote class='note-footer-reference'
-          cite='https://gamtoggi.tistory.com/83'>
-          <strong class='note-footer-reference-name'>
-            정보 출처: "Gamtoggi.tistory - [Git] Git Push 에러 해결하기 (error: failed to push some refs to...)", Tistory, 2021년 4월 8일 접속,
+    <footer class="note-footer">
+      <div class="container">
+        <blockquote
+          class="note-footer-reference"
+          cite="https://gamtoggi.tistory.com/83"
+        >
+          <strong class="note-footer-reference-name">
+            정보 출처: "Gamtoggi.tistory - [Git] Git Push 에러 해결하기 (error:
+            failed to push some refs to...)", Tistory, 2021년 4월 8일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://gamtoggi.tistory.com/83'>
+          <cite class="note-footer-reference-url">
+            <a href="https://gamtoggi.tistory.com/83">
               https://gamtoggi.tistory.com/83
             </a>
           </cite>
         </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
-          <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 3월 1일 접속,
+        <blockquote
+          class="note-footer-reference"
+          cite="https://gist.github.com/rxaviers/7360908"
+        >
+          <strong class="note-footer-reference-name">
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
+            2021년 3월 1일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://gist.github.com/rxaviers/7360908'>
+          <cite class="note-footer-reference-url">
+            <a href="https://gist.github.com/rxaviers/7360908">
               https://gist.github.com/rxaviers/7360908
             </a>
           </cite>
@@ -257,8 +352,8 @@
       </div>
     </footer>
 
-    <script src='../../assets/data.js'></script>
-    <script src='../../assets/app/create.js'></script>
-    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/data.js"></script>
+    <script src="../../assets/app/create.js"></script>
+    <script src="../../assets/app/app.js"></script>
   </body>
 </html>

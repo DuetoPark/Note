@@ -1,32 +1,60 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang="ko">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="git"/>
-    <meta name="description" content="원격 저장소 관리의 또다른 방법인 gitignore에 대해 알아보자"/>
-    <meta name="description" content="실수로 한 merge와 pull 취소하는 방법에 대해 알아보자"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dueto park" />
+    <meta name="keywords" content="git" />
+    <meta
+      name="description"
+      content="원격 저장소 관리의 또다른 방법인 gitignore에 대해 알아보자"
+    />
+    <meta
+      name="description"
+      content="실수로 한 merge와 pull 취소하는 방법에 대해 알아보자"
+    />
 
-    <meta name="Location" content="포도와 고구마의 고장"/>
+    <meta name="Location" content="포도와 고구마의 고장" />
 
     <title>merge, pull 취소하기</title>
 
     <!-- merge, pull 취소하기 -->
-    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/style-common.css">
-    <link rel="stylesheet" href="../../css/responsive/style-common.css">
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
-    <link rel="stylesheet" href="../../css/style-git.css">
-    <link rel="stylesheet" href="../../css/responsive/style-git.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../../site.webmanifest" />
+    <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../css/style-common.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
+    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
+    <link rel="stylesheet" href="../../css/style-git.css" />
+    <link rel="stylesheet" href="../../css/responsive/style-git.css" />
   </head>
 
   <body>
-    <header class='note-header' aria-label="페이지 조작 영역">
-      <div class='container'>
+    <header class="note-header" aria-label="페이지 조작 영역">
+      <div class="container">
         <!-- 홈으로 이동 -->
-        <h1 class='note-header-title' aria-labelledby="go-to-home">
-          <a id="go-to-home" href='../../index.html'>
+        <h1 class="note-header-title" aria-labelledby="go-to-home">
+          <a id="go-to-home" href="../../index.html">
             <span aria-hidden="true">🔥</span>
             기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
             <span aria-hidden="true">🔥</span>
@@ -34,36 +62,85 @@
         </h1>
 
         <!-- 야간 모드로 전환 -->
-        <section class='toggle-button-group' aria-labelledby="toggle-button">
-          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
-          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
+        <section class="toggle-button-group" aria-labelledby="toggle-button">
+          <span class="toggle-button-title" aria-hidden="true"
+            >Day/Night Switch</span
+          >
+          <button
+            id="toggle-button"
+            class="toggle-button"
+            type="button"
+            aria-label="야간모드 켜기"
+            aria-controls="page-mode-state"
+          ></button>
           <p id="page-mode-state" class="hidden" aria-live="polite">
             야간 모드 꺼짐
           </p>
         </section>
 
         <!-- 다른 페이지로 이동 -->
-        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
-          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
+        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
+          <h2
+            id="note-header-nav-title"
+            class="hidden note-header-nav-title"
+            aria-hidden="true"
+          >
+            다른 페이지로 이동
+          </h2>
+          <ol
+            class="note-header-nav-list"
+            aria-label="주제 선택"
+            role="tablist"
+          >
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-html"
+              >
+                html
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-css"
+              >
+                css
+              </button>
             </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
+            <li class="note-header-nav-list-items">
+              <button
+                type="button"
+                data-role="tab"
+                aria-controls="go-to-page-div-js"
+              >
+                javascript
+              </button>
             </li>
           </ol>
 
-
-          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
+          <article
+            id="go-to-pages"
+            class="hidden"
+            aria-hidden="true"
+            aria-labelledby="select-chapter"
+          >
             <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
 
-            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+            <button
+              class="go-to-pages-close"
+              type="button"
+              aria-label="모달 닫기"
+            ></button>
 
-            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
+            <div
+              id="go-to-page-div-html"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="html-button"
+            >
               <h3 class="go-to-page-title" aria-hidden="true">
                 <span aria-hidden="true">😈</span>html
               </h3>
@@ -72,7 +149,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
+            <div
+              id="go-to-page-div-css"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="css-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😇</span>CSS
               </h3>
@@ -81,7 +163,12 @@
               </ol>
             </div>
 
-            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
+            <div
+              id="go-to-page-div-javascript"
+              class="go-to-page-div hidden"
+              data-role="tabpanel"
+              aria-labelledby="js-button"
+            >
               <h3 class="go-to-page-title">
                 <span aria-hidden="true">😎</span>Javascript
               </h3>
@@ -94,47 +181,55 @@
       </div>
     </header>
 
-    <main class='note-main' aria-label="본문 영역">
-      <article class='container' aria-labelledby="main-title">
-        <h2 id="main-title" class='main-title'>
+    <main class="note-main" aria-label="본문 영역">
+      <article class="container" aria-labelledby="main-title">
+        <h2 id="main-title" class="main-title">
           <strong>
-            <span class='main-title' aria-hidden="true">✨</span>
+            <span class="main-title" aria-hidden="true">✨</span>
             Git merge, pull 취소하기
-            <span class='main-title' aria-hidden="true">✨</span>
+            <span class="main-title" aria-hidden="true">✨</span>
           </strong>
         </h2>
         <div class="time">
-          작성 날짜: <time datetime='2021-5-27'>2021년 05월 27일</time>
+          작성 날짜: <time datetime="2021-5-27">2021년 05월 27일</time>
         </div>
 
-        <section class='summary' aria-labelledby="summary-title">
-          <h3 id="summary-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🤔</span>
+        <section class="summary" aria-labelledby="summary-title">
+          <h3 id="summary-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">🤔</span>
             개요
           </h3>
           <p>
-            master 브랜치의 커밋과 작업 중인 브랜치의 커밋이 다른 경우, merge 할 때 오류가 발생한다.<br/>
-            예를 들면, <strong class="highlight">작업 중인 브랜치</strong>에 <strong class="highlight">readme 커밋</strong>을 <strong class="highlight">pull하지 않은 상태</strong>로 <strong class="highlight">새로운 커밋을 작성</strong>한 경우이다. master 브랜치에서 merge하면 오류메시지가 뜬다.<br/>
-            <br/>
-            해당 작업을 한 지 얼마 안 되었을 때에 적용 가능한 방법을 정리해보려 한다.
-            <br/>
-            오류를 방지하는 위해서, 작업을 시작하기 전에 master 브랜치를 pull하는 습관을 들이면 좋다. 흑흑
+            master 브랜치의 커밋과 작업 중인 브랜치의 커밋이 다른 경우, merge 할
+            때 오류가 발생한다.<br />
+            예를 들면, <strong class="highlight">작업 중인 브랜치</strong>에
+            <strong class="highlight">readme 커밋</strong>을
+            <strong class="highlight">pull하지 않은 상태</strong>로
+            <strong class="highlight">새로운 커밋을 작성</strong>한 경우이다.
+            master 브랜치에서 merge하면 오류메시지가 뜬다.<br />
+            <br />
+            해당 작업을 한 지 얼마 안 되었을 때에 적용 가능한 방법을 정리해보려
+            한다.
+            <br />
+            오류를 방지하는 위해서, 작업을 시작하기 전에 master 브랜치를
+            pull하는 습관을 들이면 좋다. 흑흑
           </p>
         </section>
 
-        <section class='error-fix-step' aria-labelledby="error-fix-step-title">
-          <h3 id="error-fix-step-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">💪</span>
+        <section class="error-fix-step" aria-labelledby="error-fix-step-title">
+          <h3 id="error-fix-step-title" class="main-article-title">
+            <span class="main-article-title" aria-hidden="true">💪</span>
             취소 방법
           </h3>
 
           <p class="margin-16px">
-            취소 과정에서 변경된 작업물과 커밋 메시지가 삭제되므로, 따로 파일에 저장해 놓는다.
+            취소 과정에서 변경된 작업물과 커밋 메시지가 삭제되므로, 따로 파일에
+            저장해 놓는다.
           </p>
 
-          <ol class="build-gitignore" aria-label='구현 방법'>
+          <ol class="build-gitignore" aria-label="구현 방법">
             <li class="main-article-list-items">
-              <dl aria-label='명령어'>
+              <dl aria-label="명령어">
                 <dt class="main-article-dt background-white-radius">
                   <strong>git checkout {브랜치명}</strong>
                 </dt>
@@ -143,43 +238,61 @@
               </dl>
             </li>
             <li class="main-article-list-items">
-              <dl aria-label='명령어'>
+              <dl aria-label="명령어">
                 <dt class="main-article-dt background-white-radius">
                   <strong>git reset --hard commit 주소</strong>
                 </dt>
-                <dd class="main-article-dd">'--hard': log에서, 해당 커밋 이후의 내용 모두 삭제</dd>
-                <dd class="main-article-dd">'commit 주소': pull 하기 전 단계 주소</dd>
-                <dd class="main-article-dd">log에서 삭제한 커밋은 복구하기 어려우므로, 사용에 주의한다.(git reset --hard 자체를 취소할 수 없다.)</dd>
+                <dd class="main-article-dd">
+                  '--hard': log에서, 해당 커밋 이후의 내용 모두 삭제
+                </dd>
+                <dd class="main-article-dd">
+                  'commit 주소': pull 하기 전 단계 주소
+                </dd>
+                <dd class="main-article-dd">
+                  log에서 삭제한 커밋은 복구하기 어려우므로, 사용에
+                  주의한다.(git reset --hard 자체를 취소할 수 없다.)
+                </dd>
               </dl>
             </li>
             <li class="main-article-list-items">
-              <dl aria-label='명령어'>
+              <dl aria-label="명령어">
                 <dt class="main-article-dt background-white-radius">
                   <strong>git pull origin master</strong>
                 </dt>
-                <dd class="main-article-dd">readme 커밋을 작업 중인 브랜치에 pull한다.</dd>
+                <dd class="main-article-dd">
+                  readme 커밋을 작업 중인 브랜치에 pull한다.
+                </dd>
               </dl>
             </li>
             <li class="main-article-list-items">
-              <dl aria-label='작업'>
+              <dl aria-label="작업">
                 <dt class="main-article-dt background-white-radius">
                   <strong>파일 작업 & 커밋 메시지 입력</strong>
                 </dt>
-                <dd class="main-article-dd">미리 저장한 작업물 복사+붙여넣기</dd>
-                <dd class="main-article-dd">파일 작업 한 게 없으면 건너뛴다.</dd>
+                <dd class="main-article-dd">
+                  미리 저장한 작업물 복사+붙여넣기
+                </dd>
+                <dd class="main-article-dd">
+                  파일 작업 한 게 없으면 건너뛴다.
+                </dd>
               </dl>
             </li>
             <li class="main-article-list-items">
-              <dl aria-label='명령어'>
+              <dl aria-label="명령어">
                 <dt class="main-article-dt background-white-radius">
                   <strong>git push -f 파일/폴더 경로</strong>
                 </dt>
-                <dd class="main-article-dd">'-f': 현재 로그 상태 그대로 푸시. force의 약자.</dd>
-                <dd class="main-article-dd">서버에 push된 커밋 중에, git reset --hard 명령한 커밋 이후의 커밋들은 서버에서 삭제되므로 사용에 주의한다.</dd>
+                <dd class="main-article-dd">
+                  '-f': 현재 로그 상태 그대로 푸시. force의 약자.
+                </dd>
+                <dd class="main-article-dd">
+                  서버에 push된 커밋 중에, git reset --hard 명령한 커밋 이후의
+                  커밋들은 서버에서 삭제되므로 사용에 주의한다.
+                </dd>
               </dl>
             </li>
             <li class="main-article-list-items">
-              <dl aria-label='명령어'>
+              <dl aria-label="명령어">
                 <dt class="main-article-dt background-white-radius">
                   <strong>git checkout master</strong>
                 </dt>
@@ -187,17 +300,24 @@
               </dl>
             </li>
             <li class="main-article-list-items">
-              <dl aria-label='명령어'>
+              <dl aria-label="명령어">
                 <dt class="main-article-dt background-white-radius">
                   <strong>git reset --hard commit 주소</strong>
                 </dt>
-                <dd class="main-article-dd">'--hard': log에서, 해당 커밋 이후의 내용 모두 삭제</dd>
-                <dd class="main-article-dd">'commit 주소': pull 하기 전 단계 주소</dd>
-                <dd class="main-article-dd">log에서 삭제한 커밋은 복구하기 어려우므로, 사용에 주의한다.(git reset --hard 자체를 취소할 수 없다.)</dd>
+                <dd class="main-article-dd">
+                  '--hard': log에서, 해당 커밋 이후의 내용 모두 삭제
+                </dd>
+                <dd class="main-article-dd">
+                  'commit 주소': pull 하기 전 단계 주소
+                </dd>
+                <dd class="main-article-dd">
+                  log에서 삭제한 커밋은 복구하기 어려우므로, 사용에
+                  주의한다.(git reset --hard 자체를 취소할 수 없다.)
+                </dd>
               </dl>
             </li>
             <li class="main-article-list-items">
-              <dl aria-label='명령어'>
+              <dl aria-label="명령어">
                 <dt class="main-article-dt background-white-radius">
                   <strong>git merge {브랜치명}</strong>
                 </dt>
@@ -205,12 +325,17 @@
               </dl>
             </li>
             <li class="main-article-list-items">
-              <dl aria-label='명령어'>
+              <dl aria-label="명령어">
                 <dt class="main-article-dt background-white-radius">
                   <strong>git push -f 파일/폴더 경로</strong>
                 </dt>
-                <dd class="main-article-dd">'-f': 현재 로그 상태 그대로 푸시. force의 약자.</dd>
-                <dd class="main-article-dd">서버에 push된 커밋 중에, git reset --hard 명령한 커밋 이후의 커밋들은 서버에서 삭제되므로 사용에 주의한다.</dd>
+                <dd class="main-article-dd">
+                  '-f': 현재 로그 상태 그대로 푸시. force의 약자.
+                </dd>
+                <dd class="main-article-dd">
+                  서버에 push된 커밋 중에, git reset --hard 명령한 커밋 이후의
+                  커밋들은 서버에서 삭제되므로 사용에 주의한다.
+                </dd>
               </dl>
             </li>
           </ol>
@@ -218,14 +343,17 @@
       </article>
     </main>
 
-    <footer class='note-footer'>
-      <div class='container'>
-        <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
-          <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 5월 27일 접속,
+    <footer class="note-footer">
+      <div class="container">
+        <blockquote
+          class="note-footer-reference"
+          cite="https://gist.github.com/rxaviers/7360908"
+        >
+          <strong class="note-footer-reference-name">
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
+            2021년 5월 27일 접속,
           </strong>
-          <cite class='note-footer-reference-url'>
+          <cite class="note-footer-reference-url">
             <a href="https://gist.github.com/rxaviers/7360908">
               https://gist.github.com/rxaviers/7360908
             </a>
@@ -234,8 +362,8 @@
       </div>
     </footer>
 
-    <script src='../../assets/data.js'></script>
-    <script src='../../assets/app/create.js'></script>
-    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/data.js"></script>
+    <script src="../../assets/app/create.js"></script>
+    <script src="../../assets/app/app.js"></script>
   </body>
 </html>
