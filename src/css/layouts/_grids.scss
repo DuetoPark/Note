@@ -67,7 +67,7 @@ $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
     }
   }
 
-  @media screen and (min-width: $sm-breakpoint) {
+  @include responsive(M) {
     padding: 0 $sm-margin;
 
     @for $i from 1 through $sm-columns {
@@ -77,7 +77,7 @@ $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
     }
   }
 
-  @media screen and (min-width: $md-breakpoint) {
+  @include responsive(T) {
     max-width: $md-max-container;
     padding: 0 $md-margin;
 
@@ -88,7 +88,7 @@ $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
     }
   }
 
-  @media screen and (min-width: $lg-breakpoint) {
+  @include responsive(D) {
     max-width: $lg-max-container;
     padding: 0;
 
