@@ -1,6 +1,5 @@
-@import "./_reset.css";
-@import "./_grid.min.css";
-@import "./_font.css";
+@import './_reset.css';
+@import './_font.css';
 
 /* Mobile Style
 max-width < 576px */
@@ -92,19 +91,19 @@ body {
 }
 
 .note-header-nav-list-items:first-child > button::after {
-  content: "html";
+  content: 'html';
 }
 
 .note-header-nav-list-items:nth-child(2) > button::after {
-  content: "css";
+  content: 'css';
 }
 
 .note-header-nav-list-items:last-child > button::after {
-  content: "javascript";
+  content: 'javascript';
 }
 
 .note-header-nav-list-items > button::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -153,7 +152,7 @@ body {
 
 .go-to-pages-close::before,
 .go-to-pages-close::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
@@ -246,7 +245,7 @@ body {
 }
 
 .toggle-button::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 2px;
   top: 50%;
@@ -335,7 +334,7 @@ dfn.main-article-dt,
 }
 
 .main-article-dd::before {
-  content: "-" / "";
+  content: '-' / '';
   margin-right: 4px;
 }
 
@@ -365,7 +364,7 @@ dfn.main-article-dt,
 }
 
 .main-article-pre::before {
-  content: "✂️코드복사 원하면 클릭!✂️" / "";
+  content: '✂️코드복사 원하면 클릭!✂️' / '';
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -476,7 +475,7 @@ button.toggle-button.button-toggled {
 }
 
 button.toggle-button.button-toggled::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 2px;
   top: 50%;
@@ -511,7 +510,7 @@ button.toggle-button.button-toggled::after {
 
 .type::before,
 .highlight::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -536,7 +535,7 @@ button.toggle-button.button-toggled::after {
 }
 
 .hyphen::before {
-  content: "-" / "";
+  content: '-' / '';
   margin-right: 4px;
 }
 
