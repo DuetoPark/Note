@@ -47,4 +47,6 @@
   @if (type of($color) == color) {
     color: $color;
   }
+
+  letter-spacing: $letter-spacing;
 }
