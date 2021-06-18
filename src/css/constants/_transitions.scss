@@ -1,0 +1,8 @@
+$timing-option: 200ms ease-in-out;
+
+$transition-bg-color: background-color $timing-option;
+$transition-color: color $timing-option;
+$transition-width: width $timing-option;
+$transition-transform: transform $timing-option;
+$transition-opacity: opacity $timing-option;
+$transition-border: border $timing-option;
