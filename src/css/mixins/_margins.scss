@@ -1,4 +1,11 @@
+%margin-base {
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
 @mixin margin-8() {
+  @extend %margin-base;
   margin-bottom: 8px;
 
   @include responsive(T) {
@@ -7,6 +14,7 @@
 }
 
 @mixin margin-16() {
+  @extend %margin-base;
   margin-bottom: 16px;
 
   @include responsive(T) {
@@ -15,6 +23,7 @@
 }
 
 @mixin margin-24() {
+  @extend %margin-base;
   margin-bottom: 24px;
 
   @include responsive(T) {
