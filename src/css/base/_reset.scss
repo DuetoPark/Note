@@ -2,7 +2,7 @@
   margin: 0;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   letter-spacing: $letter-spacing;
-  color: $primary;
+  // color: $primary;
   box-sizing: border-box;
 }
 
@@ -55,4 +55,8 @@ ol {
 
 i {
   font-style: normal;
+}
+
+strong {
+  font-weight: 400;
 }
