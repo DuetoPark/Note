@@ -4,7 +4,7 @@
   "description": "Note 페이지에 공부한 기록들을 담았습니다.  \r > 정말 집에 종이가 없어서 시작되으며, 종이가 없어도 굴하지 않는 정신이 깃들어 있습니다.\r <br/>",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass -wr src/css/main.scss style.css"
+    "sass": "node-sass -wr --source-map true src/css/main.scss src/css/style.css"
   },
   "repository": {
     "type": "git",
