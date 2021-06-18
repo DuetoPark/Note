@@ -1,0 +1,26 @@
+.mode-day {
+  color: $primary;
+  background-color: $background;
+  transition: $transition-bg-color, $transition-color;
+}
+
+.mode-night {
+  color: $white;
+  background-color: $gray-dark;
+
+  button {
+    color: $white;
+  }
+
+  .header-switch {
+    button {
+      background-color: $white;
+    }
+  }
+
+  .header-nav {
+    .menu-button {
+      color: $white;
+    }
+  }
+}
