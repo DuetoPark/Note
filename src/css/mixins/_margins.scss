@@ -1,0 +1,37 @@
+@mixin margin-8() {
+  margin-bottom: 8px;
+
+  @include responsive(T) {
+    margin-bottom: 16px;
+  }
+}
+
+@mixin margin-16() {
+  margin-bottom: 16px;
+
+  @include responsive(T) {
+    margin-bottom: 24px;
+  }
+}
+
+@mixin margin-24() {
+  margin-bottom: 24px;
+
+  @include responsive(T) {
+    margin-bottom: 48px;
+  }
+}
+
+@mixin margin($size) {
+  @if ($size == 8) {
+    @include margin-8;
+  }
+
+  @if ($size == 16) {
+    @include margin-16;
+  }
+
+  @if ($size == 24) {
+    @include margin-24;
+  }
+}
