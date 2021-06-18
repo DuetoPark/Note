@@ -1,0 +1,64 @@
+$margin-dt: 4px;
+$margin-div: 12px;
+$margin-item: 8px;
+
+%definition-list-base {
+  dt {
+    display: inline-block;
+    margin-bottom: $margin-dt;
+    font-weight: 500;
+
+    @include responsive(T) {
+      margin-bottom: $margin-dt * 2;
+    }
+
+    @include responsive(D) {
+      margin-bottom: $margin-dt * 3;
+    }
+  }
+
+  dd {
+    padding-left: 16px;
+
+    &::before {
+      margin-right: 4px;
+      content: '-' / '';
+    }
+  }
+}
+
+.main-dfn {
+  @extend %definition-list-base;
+}
+
+.main-dl {
+  @extend %definition-list-base;
+
+  div {
+    margin-bottom: $margin-div;
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    @include responsive(T) {
+      margin-bottom: $margin-div * 2;
+    }
+
+    @include responsive(D) {
+      margin-bottom: $margin-div * 3;
+    }
+  }
+}
+
+.main-item {
+  margin-bottom: $margin-item;
+
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  @include responsive(T) {
+    margin-bottom: $margin-item * 2;
+  }
+}
