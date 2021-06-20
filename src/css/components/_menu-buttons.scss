@@ -1,0 +1,38 @@
+.menu-button {
+  @include text-style(14, $primary);
+  position: relative;
+  padding: 0 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: $transition-color;
+
+  &::after {
+    @include pos-left;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    font-weight: 600;
+    color: transparent;
+    text-transform: uppercase;
+    background-color: $white;
+    transition: $transition-width;
+    -webkit-text-stroke: 1px $black;
+  }
+
+  $subject: 'html', 'css', 'javascript', 'cross-browsing', 'atom', 'git',
+    'vscode';
+
+  @each $item in $subject {
+    &.is-#{$item} {
+      &::after {
+        content: '#{$item}';
+      }
+    }
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
