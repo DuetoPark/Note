@@ -22,3 +22,19 @@
     transform: translate(-50%, -50%);
   }
 }
+
+@mixin pos-left($type: absolute) {
+  @if ($type == absolute or $type == fixed) {
+    position: $type;
+    top: 0;
+    left: 0;
+  }
+}
+
+@mixin pos-right($type: absolute) {
+  @if ($type == absolute or $type == fixed) {
+    position: $type;
+    top: 0;
+    right: 0;
+  }
+}
