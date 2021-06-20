@@ -1,0 +1,36 @@
+%animation-base {
+  $duration: 200ms;
+  $timing-function: ease-in-out;
+
+  animation-duration: $duration;
+  animation-timing-function: $timing-function;
+}
+
+@keyframes modal-open {
+  0% {
+    opacity: 0.1;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes modal-close {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0.1;
+    transform: translateX(100%);
+  }
+}
+
+@mixin animation($name) {
+  @extend %animation-base;
+  animation-name: $name;
+}
