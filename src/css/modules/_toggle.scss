@@ -18,9 +18,12 @@
     }
   }
 
-  .header-nav {
-    .menu-button {
-      color: $white;
+  .menu {
+    .nav {
+      .nav-title,
+      a {
+        color: $primary;
+      }
     }
   }
 }
