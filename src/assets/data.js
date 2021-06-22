@@ -31,6 +31,8 @@ let state = {
       { id: '16', href: 'css-selector' },
       { id: '17', href: 'perspective' },
       { id: '18', href: '3d-property' },
+      { id: '20', href: 'transition-bug' },
+      { id: '21', href: 'bootstrap-width' },
     ],
     javascript: [
       { id: '01', href: 'pseudo-style' },
@@ -83,6 +85,7 @@ let state = {
       { id: '48', href: 'promise' },
       { id: '49', href: 'bind-apply-call' },
       { id: '50', href: 'slider' },
+      { id: '53', href: '회계형표현' },
     ],
     atom: [
       { id: '01', href: 'no-response' },
@@ -93,6 +96,19 @@ let state = {
       { id: '02', href: 'management' },
       { id: '03', href: 'error' },
       { id: '04', href: 'github-gist' },
+      { id: '05', href: 'gitignore' },
+      { id: '06', href: 'merge-error' },
+      { id: '07', href: 'return-commit' },
+      { id: '08', href: 'delete-branch' },
+      { id: '09', href: 'pull' },
+      { id: '10', href: 'config-email' },
+    ],
+    vscode: [{ id: '01', href: 'extention' }],
+    'cross-browsing': [
+      { id: '01', href: 'gulp' },
+      { id: '02', href: 'babel' },
+      { id: '03', href: 'npm' },
+      { id: '04', href: 'nvm' },
     ],
   },
 };
