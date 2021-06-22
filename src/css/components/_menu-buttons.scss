@@ -19,10 +19,7 @@
     -webkit-text-stroke: 1px $black;
   }
 
-  $subject: 'html', 'css', 'javascript', 'cross-browsing', 'atom', 'git',
-    'vscode';
-
-  @each $item in $subject {
+  @each $item in $menu {
     &.is-#{$item} {
       &::after {
         content: '#{$item}';
