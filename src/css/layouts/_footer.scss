@@ -1,0 +1,24 @@
+.note-footer {
+  @include text-style(13);
+  padding: 16px 0;
+  border-top: 1px solid $gray-light;
+
+  .reference {
+    padding: 8px 0;
+
+    &-url {
+      a {
+        word-wrap: break-word;
+        transition: $transition-color;
+
+        &:hover {
+          color: $blue-light;
+        }
+      }
+    }
+  }
+
+  @include responsive(M) {
+    padding: 32px 0;
+  }
+}
