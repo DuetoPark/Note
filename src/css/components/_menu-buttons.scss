@@ -1,7 +1,7 @@
 .menu-button {
   @include text-style(14, $primary);
   position: relative;
-  padding: 0 4px;
+  padding: 4px;
   text-transform: uppercase;
   cursor: pointer;
   transition: $transition-color;
@@ -22,6 +22,7 @@
   @each $item in $menu {
     &.is-#{$item} {
       &::after {
+        @include inline-flexbox;
         content: '#{$item}';
       }
     }
