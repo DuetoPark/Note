@@ -21,9 +21,26 @@ function setNavClass(button) {
 }
 
 function setLink(link) {
-  return isBody === 'index'
-    ? `./src/pages/01-${navCurrent}/${link.id}-${link.href}.html`
-    : `../01-${navCurrent}/${link.id}-${link.href}.html`;
+  let path;
+  let number;
+
+  if (
+    navCurrent === 'atom' ||
+    navCurrent === 'git' ||
+    navCurrent === 'vscode'
+  ) {
+    number = '02';
+  } else {
+    number = '01';
+  }
+
+  if (isBody === 'index') {
+    path = `./src/pages/${number}-${navCurrent}/${link.id}-${link.href}.html`;
+  } else {
+    path = `../${number}-${navCurrent}/${link.id}-${link.href}.html`;
+  }
+
+  return path;
 }
 
 function populateNavItems() {
