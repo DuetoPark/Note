@@ -7,16 +7,11 @@
 .header-title {
   a {
     @include text-style(24);
-    margin-bottom: 4px;
     font-weight: 400;
-  }
-
-  @include responsive(T) {
-    margin-bottom: 0;
   }
 }
 
-.header-nav-title {
+.nav-title {
   @include text-style(16);
   margin-bottom: 8px;
   font-weight: 500;
