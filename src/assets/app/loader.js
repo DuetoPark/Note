@@ -10,15 +10,11 @@ function setLink(file) {
   let path;
   let isIndexPage = document.body.dataset.page === 'index';
 
-  if (isIndexPage) {
-    path = file === 'data' ? './src/assets/' : './src/assets/app/';
-  } else {
-    path = file === 'data' ? '../assets/' : '../assets/app/';
-  }
+  path = isIndexPage ? './src/assets/app/' : '../assets/app/';
 
   return path;
 }
 
-const files = ['data', 'menu-buttons', 'nav', 'app'];
+const files = ['menu-buttons', 'nav', 'app'];
 
 load(files);
