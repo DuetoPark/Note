@@ -8,21 +8,37 @@
   color: $white;
   background-color: $gray-dark;
 
-  button {
-    color: $white;
-  }
-
-  .header-switch {
+  .note-header {
     button {
-      background-color: $white;
+      color: $white;
+    }
+
+    .toggle {
+      .toggle-button {
+        background-color: $white;
+
+        &::after {
+          transform: translate(0, -50%);
+        }
+      }
+    }
+
+    .menu {
+      .nav {
+        .nav-title,
+        a {
+          color: $primary;
+        }
+      }
     }
   }
 
-  .menu {
-    .nav {
-      .nav-title,
-      a {
-        color: $primary;
+  @include responsive(M) {
+    .toggle {
+      .toggle-button {
+        &::after {
+          transform: translate(6px, -50%);
+        }
       }
     }
   }
