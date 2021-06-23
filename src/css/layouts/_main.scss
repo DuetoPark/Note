@@ -1,0 +1,30 @@
+.note-main {
+  padding: 48px 0;
+
+  article,
+  section {
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  @include responsive(M) {
+    padding: 64px 0;
+
+    article,
+    section {
+      margin-bottom: 64px;
+    }
+  }
+
+  @include responsive(T) {
+    padding: 88px 0;
+
+    article,
+    section {
+      margin-bottom: 88px;
+    }
+  }
+}
