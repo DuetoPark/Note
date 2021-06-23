@@ -55,6 +55,7 @@ $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
   .row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   [class^='col-'] {
