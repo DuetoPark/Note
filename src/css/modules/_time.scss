@@ -1,0 +1,21 @@
+%time-base {
+  @include text-style(11);
+
+  @include responsive(M) {
+    @include text-style(13);
+  }
+}
+
+.time {
+  @extend %time-base;
+
+  .time-upload,
+  .time-last {
+    margin-right: 16px;
+    text-align: right;
+
+    @include responsive(T) {
+      margin-right: 0;
+    }
+  }
+}
