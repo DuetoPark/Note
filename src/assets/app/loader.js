@@ -15,6 +15,6 @@ function setLink(file) {
   return path;
 }
 
-const files = ['menu-buttons', 'nav', 'app'];
+const files = ['menu-buttons', 'nav', 'app', 'toggle'];
 
 load(files);
