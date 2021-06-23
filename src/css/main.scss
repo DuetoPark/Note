@@ -20,8 +20,15 @@
 @import './modules/title';
 @import './modules/highlights';
 @import './modules/lists';
+@import './modules/time';
+@import './modules/pre';
+@import './modules/table';
+@import './modules/images';
 
 @import './components/nav';
 @import './components/menu-buttons';
 
 @import './layouts/grids';
+@import './layouts/header';
+@import './layouts/main';
+@import './layouts/footer';
