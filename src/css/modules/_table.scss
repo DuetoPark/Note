@@ -1,0 +1,32 @@
+.main-table {
+  @include text-style(14);
+  margin-bottom: 30px;
+  white-space: nowrap;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  td,
+  th,
+  tr {
+    padding: 5px 10px;
+    border: 1px solid $orange;
+  }
+
+  @include responsive(M) {
+    td,
+    th,
+    tr {
+      padding: 8px 12px;
+    }
+  }
+
+  @include responsive(M) {
+    td,
+    th,
+    tr {
+      padding: 10px 15px;
+    }
+  }
+}
