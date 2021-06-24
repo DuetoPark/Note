@@ -10,7 +10,7 @@ const key = {
   esc: 27,
 };
 
-// NOTE: Nav 열기
+// NOTE: Nav Item 생성
 function setLink(link) {
   let path;
   let pathLeft;
@@ -40,6 +40,26 @@ function setLink(link) {
   return path;
 }
 
+(function populateNavItems() {
+  const keys = Object.keys(navData);
+
+  keys.forEach((key) => {
+    const ol = nav.querySelector(`.nav-${key} .nav-list`);
+    const frag = document.createDocumentFragment();
+
+    state.nav[key].forEach((link) => {
+      const li = document.createElement('li');
+      li.setAttribute('class', 'nav-item');
+      li.innerHTML = `<a href='${setLink(link)}'>${link.id}-${link.href}</a>`;
+
+      frag.appendChild(li);
+    });
+
+    ol.appendChild(frag);
+  });
+})();
+
+// NOTE: Nav Item 생성
 function saveSelectedMenu(button) {
   selectedMenu = button.textContent.replace(/^\s+|\s+$/gm, '');
 }
@@ -48,19 +68,10 @@ function setNavClass() {
   nav.setAttribute('class', `nav select-${selectedMenu}`);
 }
 
-function populateNavItems() {
-  const ol = nav.querySelector(`.nav-${selectedMenu} .nav-list`);
-  const frag = document.createDocumentFragment();
-
-  state.nav[selectedMenu].forEach((link) => {
-    const li = document.createElement('li');
-    li.setAttribute('class', 'nav-item');
-    li.innerHTML = `<a href='${setLink(link)}'>${link.id}-${link.href}</a>`;
-
-    frag.appendChild(li);
+function rejectMenuButtonClick() {
+  menuButtons.forEach((button) => {
+    button.setAttribute('disabled', true);
   });
-
-  ol.appendChild(frag);
 }
 
 function focusOnCloseButton() {
@@ -70,23 +81,31 @@ function focusOnCloseButton() {
 function handleMenu(e) {
   saveSelectedMenu(e.currentTarget);
   setNavClass();
-  populateNavItems();
+  rejectMenuButtonClick();
   focusOnCloseButton();
 }
 
 menuButtons.forEach((button) => button.addEventListener('click', handleMenu));
 
 // NOTE: Nav 닫기 - 클릭
+function allowMenuButtonClick() {
+  menuButtons.forEach((button) => {
+    button.removeAttribute('disabled');
+  });
+}
+
+function focusOnMenuButton() {
+  menuButtons[0].focus();
+}
+
 function closeNav() {
   nav.classList.add('is-closed');
   setTimeout(function () {
     nav.setAttribute('class', 'nav');
   }, 180); // 애니메이션 duration보다 짧게
-  focusOnMenuButton();
-}
 
-function focusOnMenuButton() {
-  menuButtons[0].focus();
+  allowMenuButtonClick();
+  focusOnMenuButton();
 }
 
 navCloseButton.addEventListener('click', closeNav);
