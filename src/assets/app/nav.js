@@ -5,49 +5,54 @@ const navCloseButton = document.querySelector('.nav-close');
 
 const navData = state.nav;
 
-let navCurrent;
+let selectedMenu;
 const key = {
   esc: 27,
 };
 
 // NOTE: Nav 열기
-function setNavClass(button) {
-  const key = button.textContent.replace(/^\s+|\s+$/gm, ''); // 공백 삭제
-
-  nav.classList.remove(`select-${navCurrent}`);
-  nav.classList.add(`select-${key}`);
-
-  navCurrent = key;
-}
-
 function setLink(link) {
   let path;
+  let pathLeft;
+  let pathRight;
   let number;
 
   if (
-    navCurrent === 'atom' ||
-    navCurrent === 'git' ||
-    navCurrent === 'vscode'
+    selectedMenu === 'atom' ||
+    selectedMenu === 'git' ||
+    selectedMenu === 'vscode'
   ) {
     number = '02';
   } else {
     number = '01';
   }
 
+  pathRight = `${number}-${selectedMenu}/${link.id}-${link.href}.html`;
+
   if (isBody === 'index') {
-    path = `./src/pages/${number}-${navCurrent}/${link.id}-${link.href}.html`;
+    pathLeft = `./src/pages/`;
   } else {
-    path = `../${number}-${navCurrent}/${link.id}-${link.href}.html`;
+    pathLeft = `../`;
   }
+
+  path = [pathLeft, pathRight].join('');
 
   return path;
 }
 
+function saveSelectedMenu(button) {
+  selectedMenu = button.textContent.replace(/^\s+|\s+$/gm, '');
+}
+
+function setNavClass() {
+  nav.setAttribute('class', `nav select-${selectedMenu}`);
+}
+
 function populateNavItems() {
-  const ol = nav.querySelector(`.nav-${navCurrent} .nav-list`);
+  const ol = nav.querySelector(`.nav-${selectedMenu} .nav-list`);
   const frag = document.createDocumentFragment();
 
-  state.nav[navCurrent].forEach((link) => {
+  state.nav[selectedMenu].forEach((link) => {
     const li = document.createElement('li');
     li.setAttribute('class', 'nav-item');
     li.innerHTML = `<a href='${setLink(link)}'>${link.id}-${link.href}</a>`;
@@ -58,30 +63,30 @@ function populateNavItems() {
   ol.appendChild(frag);
 }
 
-function focusCloseButton() {
+function focusOnCloseButton() {
   navCloseButton.focus();
 }
 
 function handleMenu(e) {
-  setNavClass(e.currentTarget);
+  saveSelectedMenu(e.currentTarget);
+  setNavClass();
   populateNavItems();
-  focusCloseButton();
+  focusOnCloseButton();
 }
 
 menuButtons.forEach((button) => button.addEventListener('click', handleMenu));
 
 // NOTE: Nav 닫기 - 클릭
-function focusMenuButton() {
-  menuButtons[0].focus();
-}
-
 function closeNav() {
   nav.classList.add('is-closed');
   setTimeout(function () {
-    nav.classList.remove(`select-${navCurrent}`);
-    nav.classList.remove('is-closed');
+    nav.setAttribute('class', 'nav');
   }, 180); // 애니메이션 duration보다 짧게
-  focusMenuButton();
+  focusOnMenuButton();
+}
+
+function focusOnMenuButton() {
+  menuButtons[0].focus();
 }
 
 navCloseButton.addEventListener('click', closeNav);
