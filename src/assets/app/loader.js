@@ -10,7 +10,7 @@ function setLink(file) {
   let path;
   let isIndexPage = document.body.dataset.page === 'index';
 
-  path = isIndexPage ? './src/assets/app/' : '../assets/app/';
+  path = isIndexPage ? './src/assets/app/' : '../../assets/app/';
 
   return path;
 }
