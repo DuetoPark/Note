@@ -1,4 +1,5 @@
 .note-main {
+  @include text-style(14, $primary);
   padding: 48px 0;
 
   article,
@@ -6,7 +7,7 @@
     margin-bottom: 48px;
 
     &:last-child {
-      margin-bottom: 0 !important;
+      margin-bottom: 0;
     }
   }
 
