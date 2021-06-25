@@ -16,10 +16,24 @@ $border-radius: 4px;
 
 .highlight {
   @extend %block-box;
-  background: $yellow;
+  background-color: $yellow;
+}
+
+.highlight-red {
+  @extend %block-box;
+  background-color: $white;
+  border: 2px solid $red;
+}
+
+.highlight-blue {
+  @extend %block-box;
+  background-color: $white;
+  border: 2px solid $blue;
 }
 
 .box-white {
+  display: block;
+  width: 100%;
   padding: 10px 20px;
   color: $primary !important;
   background-color: $white;
@@ -36,4 +50,8 @@ $border-radius: 4px;
 
 .underline {
   text-decoration: underline;
+}
+
+.error {
+  color: $red;
 }
