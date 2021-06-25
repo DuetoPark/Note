@@ -1,0 +1,93 @@
+%margin-8-all {
+  > * {
+    @include margin(8);
+  }
+}
+
+// NOTE: 01-gulp
+.gulp {
+  @extend %margin-8-all;
+  @include column-flexbox(center, start);
+
+  .desc {
+    order: 2;
+    margin-bottom: 8px;
+  }
+
+  .gulp-image {
+    order: 1;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+}
+
+.gulp-install {
+  @extend %margin-8-all;
+
+  .gulp-install-step {
+    .node-install {
+      transition: $transition-color;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    .gulp-setting {
+      @extend %margin-8-all;
+
+      .main-code {
+        margin: 8px 0;
+      }
+
+      .extra-code {
+        @extend %margin-8-all;
+        padding-left: 16px;
+      }
+    }
+  }
+}
+
+.gulp-write {
+  > div {
+    @extend %margin-8-all;
+    @include margin(24);
+
+    .desc {
+      &::before {
+        margin-right: 4px;
+        content: '-';
+      }
+    }
+  }
+}
+
+.gulp-package {
+  div {
+    @extend %margin-8-all;
+    @include margin(16);
+  }
+}
+
+// NOTE: 02-babel
+.babel-install,
+.babel-error {
+  p {
+    @include margin(8);
+  }
+}
+
+// NOTE: 03-npm
+.npm-command {
+  .options {
+    padding-left: 16px;
+  }
+}
+
+// NOTE: 04-nvm
+.nvm-install {
+  > div {
+    @extend %margin-8-all;
+  }
+}
