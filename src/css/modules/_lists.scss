@@ -1,20 +1,10 @@
 $margin-dt: 4px;
-$margin-div: 12px;
-$margin-item: 8px;
 
 %definition-list-base {
   dt {
+    @include margin(8);
     display: inline-block;
-    margin-bottom: $margin-dt;
     font-weight: 500;
-
-    @include responsive(T) {
-      margin-bottom: $margin-dt * 2;
-    }
-
-    @include responsive(D) {
-      margin-bottom: $margin-dt * 3;
-    }
   }
 
   dd {
@@ -34,32 +24,20 @@ $margin-item: 8px;
 .main-dl {
   @extend %definition-list-base;
 
-  div {
-    margin-bottom: $margin-div;
+  > div {
+    @include margin(16);
 
     &:last-child {
-      margin-bottom: 0 !important;
-    }
-
-    @include responsive(T) {
-      margin-bottom: $margin-div * 2;
-    }
-
-    @include responsive(D) {
-      margin-bottom: $margin-div * 3;
+      margin-bottom: 0;
     }
   }
 }
 
 .main-item {
-  margin-bottom: $margin-item;
+  @include margin(8);
 
   &:last-child {
-    margin-bottom: 0 !important;
-  }
-
-  @include responsive(T) {
-    margin-bottom: $margin-item * 2;
+    margin-bottom: 0;
   }
 }
 
