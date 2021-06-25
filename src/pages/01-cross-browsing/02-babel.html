@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="dueto park" />
-    <meta name="keywords" content="javascript, babel, cross-browsing" />
+    <meta
+      name="keywords"
+      content="build-system, javascript, babel, cross-browsing"
+    />
     <meta
       name="description"
       content="바벨 설치 방법과 오류 발생 상황에 대해 알아봅시다!"
@@ -37,143 +40,127 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <section
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </section>
-        </nav>
+        <div class="time">
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-5-27">2021년 05월 27일</time>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -181,20 +168,18 @@
       <article class="container" aria-labelledby="main-title">
         <h2 id="main-title" class="main-title">
           <strong>
-            <span class="main-title" aria-hidden="true">🙌</span>
+            <i aria-hidden="true">🙌</i>
             Babel
-            <span class="main-title" aria-hidden="true">🙌</span>
+            <i aria-hidden="true">🙌</i>
           </strong>
         </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-5-27">2021년 05월 27일</time>
-        </div>
 
         <section class="summary" aria-labelledby="summary-title">
           <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🤑</span>
+            <i aria-hidden="true">🤑</i>
             개요
           </h3>
+
           <p>
             자바스크립트 크로스 브라우징을 도와주는 여러가지 도구 중의 하나,
             babel을 알아봅시다.
@@ -203,114 +188,109 @@
 
         <section class="babel" aria-labelledby="babel-title">
           <h3 id="babel-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🏋️‍</span>
+            <i aria-hidden="true">🏋️‍</i>
             정의
           </h3>
-          <dl class="main-article-dl" aria-label="정의">
-            <dt class="main-article-dt">babel</dt>
-            <dd class="main-article-dd">
-              자바스크립트 컴파일러(transcompiler)
-            </dd>
-            <dd class="main-article-dd">하위 호환성을 맞추기 위한 도구</dd>
-            <dd class="main-article-dd">
-              매년 자바스크립트에는 새로운 스펙과 기능이 추가된다.<br />
-              <span class="desc"
-                >최신 문법을 이해하지 못하는 구형의 브라우저를 위해,
+
+          <dl class="main-dl" aria-label="정의">
+            <div>
+              <dt>babel</dt>
+              <dd>자바스크립트 컴파일러(transcompiler)</dd>
+              <dd>하위 호환성을 맞추기 위한 도구</dd>
+              <dd>
+                매년 자바스크립트에는 새로운 스펙과 기능이 추가된다.<br />
+              </dd>
+              <dd>
+                최신 문법을 이해하지 못하는 구형의 브라우저를 위해,
                 <strong class="error"
                   >새로운 문법을 기존의 문법으로 변환해주는 역할을 한다.</strong
-                ></span
-              >
-            </dd>
-            <dd class="main-article-dd">
-              지원하는 최신 문법
-              <ol class="syntax-type" aria-label="최신 문법">
-                <li class="type">화살표 함수</li>
-                <li class="type">classes</li>
-                <li class="type">enhanced object literals</li>
-                <li class="type">템플릿 스트링스</li>
-                <li class="type">destructuring</li>
-                <li class="type">let & const</li>
-              </ol>
-            </dd>
+                >
+              </dd>
+            </div>
+            <div>
+              <dt>Babel에서 지원하는 최신 문법</dt>
+              <dd>화살표 함수</dd>
+              <dd>classes</dd>
+              <dd>enhanced object literals</dd>
+              <dd>템플릿 스트링스</dd>
+              <dd>destructuring</dd>
+              <dd>let & const</dd>
+            </div>
           </dl>
         </section>
 
         <section class="babel-install" aria-labelledby="babel-install-title">
           <h3 id="babel-install-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">📌</span>
+            <i aria-hidden="true">📌</i>
             설치
           </h3>
-          <p class="margin-8px">
+
+          <p>
             (참고) 아래의 명령어는 프롬프트나 작업 폴더의 git bash에 다음의
             명령어를 입력한다.
           </p>
 
           <ol class="babel-install-step" aria-label="설치 방법">
-            <li class="main-article-list-items">
-              <p class="background-white-radius margin-8px">
-                <a class="node-install" href="https://nodejs.org/ko/"
-                  >node.js</a
-                >
+            <li class="main-item">
+              <p class="box-white">
+                <a class="node-install" href="https://nodejs.org/ko/">
+                  node.js
+                </a>
                 설치<br />
               </p>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>npm init -y</strong>
                 </dt>
-                <dd class="main-article-dd">npm 초기 설치를 의미</dd>
-                <dd class="main-article-dd">
-                  작업 폴더에 package.json 파일이 생성
-                </dd>
+                <dd>npm 초기 설치를 의미</dd>
+                <dd>작업 폴더에 package.json 파일이 생성</dd>
               </dl>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>npm install --save-dev @babel/cli</strong>
                 </dt>
-                <dd class="main-article-dd">컴파일을 담당하는 패키지</dd>
-                <dd class="main-article-dd">
-                  '--save-dev': 로컬(작업 폴더)에 설치
-                </dd>
-                <dd class="main-article-dd">구 버전: babel-cli</dd>
-                <dd class="main-article-dd">최신 버전: @babel/cli</dd>
-                <dd class="main-article-dd">
-                  package.json 파일 devDependencies에 내역이 남는다
-                </dd>
+                <dd>컴파일을 담당하는 패키지</dd>
+                <dd>'--save-dev': 로컬(작업 폴더)에 설치</dd>
+                <dd>구 버전: babel-cli</dd>
+                <dd>최신 버전: @babel/cli</dd>
+                <dd>package.json 파일 devDependencies에 내역이 남는다</dd>
               </dl>
             </li>
-            <li class="main-article-list-items">
-              <p class="background-white-radius margin-8px">
+            <li class="main-item">
+              <p class="box-white">
                 <strong>npm install --save-dev @babel/core</strong>
               </p>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>npm install --save-dev @babel/preset-env</strong>
                 </dt>
-                <dd class="main-article-dd">es5 문법으로 바꿔주는 패키지</dd>
+                <dd>es5 문법으로 바꿔주는 패키지</dd>
               </dl>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>npm install --save-dev babel-preset-minify</strong>
                 </dt>
-                <dd class="main-article-dd">파일 크기를 압축 패키지</dd>
-                <dd class="main-article-dd">선택사항</dd>
+                <dd>파일 크기를 압축 패키지</dd>
+                <dd>선택사항</dd>
               </dl>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>.babelrc 파일 생성</strong>
                 </dt>
-                <dd class="main-article-dd">작업 폴더에 생성</dd>
-                <dd class="main-article-dd">
-                  <pre>
+                <dd>작업 폴더에 생성</dd>
+                <dd>
+                  코드
+                  <pre class="main-code">
                     <code>
                       {
                         "presets": [],
@@ -318,54 +298,49 @@
                     </code>
                   </pre>
                 </dd>
-                <dd class="main-article-dd">
+                <dd>
                   ["minify", {builtIns: false, evaluate: false, mangle: false}],
                 </dd>
-                <dd class="main-article-dd">
+                <dd>
                   ["@babel/preset-env", {"targets": ">= 0.25%, not dead",
                   "useBuiltIns":"entry", "corejs":3}],
                 </dd>
               </dl>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>package.json 파일 수정</strong>
                 </dt>
-                <dd class="main-article-dd">
-                  <pre>
+                <dd>
+                  코드
+                  <pre class="main-code">
                     <code>
                       "scripts" : {},
                     </code>
                   </pre>
                 </dd>
-                <dd class="main-article-dd">
-                  "build": "babel ./assets/src -d ./assets/lib -w"
-                </dd>
-                <dd class="main-article-dd">
-                  '-d' 왼쪽 경로: 원본 파일/폴더 경로
-                </dd>
-                <dd class="main-article-dd">
-                  '-d' 오른쪽 경로: es5코드로 변형된 코드가 저장될 경로
-                </dd>
+                <dd>"build": "babel ./assets/src -d ./assets/lib -w"</dd>
+                <dd>'-d' 왼쪽 경로: 원본 파일/폴더 경로</dd>
+                <dd>'-d' 오른쪽 경로: es5코드로 변형된 코드가 저장될 경로</dd>
               </dl>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>npm run build</strong>
                 </dt>
-                <dd class="main-article-dd">프롬프트 또는 git bash에 입력</dd>
-                <dd class="main-article-dd">babel 컴파일 실행됨</dd>
-                <dd class="main-article-dd">명령 취소: ctrl + c</dd>
+                <dd>프롬프트 또는 git bash에 입력</dd>
+                <dd>babel 컴파일 실행됨</dd>
+                <dd>명령 취소: ctrl + c</dd>
               </dl>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>.gitignore 파일 생성</strong>
                 </dt>
-                <dd class="main-article-dd">node_modules/ 입력</dd>
+                <dd>node_modules/ 입력</dd>
               </dl>
             </li>
           </ol>
@@ -373,22 +348,20 @@
 
         <section class="babel-error" aria-labelledby="babel-error-title">
           <h3 id="babel-error-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🦄</span>
+            <i aria-hidden="true">🦄</i>
             에러
           </h3>
 
-          <p class="margin-16px">
+          <p>
             Babel 설정하면 자동으로 엄격모드가 된다. 문법을 제대로 지키지 않아서
             발생한 오류가 많았다. 흑흑
           </p>
 
-          <dl aria-label="에러 종류">
+          <dl class="main-dl" aria-label="에러 종류">
             <div>
-              <dt class="main-article-dt main-article-subtitle">변수 에러</dt>
-              <dd class="main-article-dd">
-                변수 선언 방식(const, let, var 예약어)을 지키지 않은 경우
-              </dd>
-              <dd class="main-article-dd">
+              <dt>변수 에러</dt>
+              <dd>변수 선언 방식(const, let, var 예약어)을 지키지 않은 경우</dd>
+              <dd>
                 for 문의 괄호 안에 변수 선언 방식을 지키지 않은 경우
                 <p>
                   ex- for (key in object) {}<br />
@@ -403,54 +376,59 @@
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
-            2021년 5월 26일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
-        <blockquote
-          class="note-footer-reference"
-          cite="https://bravenamme.github.io/2020/02/12/what-is-babel/"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "bravenamme github", Github, 2021년 5월 26일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://bravenamme.github.io/2020/02/12/what-is-babel/">
-              https://bravenamme.github.io/2020/02/12/what-is-babel/
-            </a>
-          </cite>
-        </blockquote>
-        <blockquote
-          class="note-footer-reference"
-          cite="https://ljs0705.medium.com/babel-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-a1d0e6bd021a"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "ljs0705 github | Babel 이해하기", Medium, 2021년 5월
-            26일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://ljs0705.medium.com/babel-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-a1d0e6bd021a"
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
             >
-              https://ljs0705.medium.com/babel-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-a1d0e6bd021a
-            </a>
-          </cite>
-        </blockquote>
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                Github, 2021년 5월 26일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://bravenamme.github.io/2020/02/12/what-is-babel/"
+            >
+              <strong>
+                정보 출처: "bravenamme github", Github, 2021년 5월 26일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://bravenamme.github.io/2020/02/12/what-is-babel/"
+                >
+                  bravenamme github
+                </a>
+              </cite>
+            </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://ljs0705.medium.com/babel-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-a1d0e6bd021a"
+            >
+              <strong>
+                정보 출처: "ljs0705 github | Babel 이해하기", Medium, 2021년 5월
+                26일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://ljs0705.medium.com/babel-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-a1d0e6bd021a"
+                >
+                  Babel 이해하기
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

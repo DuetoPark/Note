@@ -34,145 +34,127 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-cross-browsing.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link
-      rel="stylesheet"
-      href="../../css/responsive/style-cross-browsing.css"
-    />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <section
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </section>
-        </nav>
+        <div class="time">
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-6-10">2021년 6월 10일</time>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -180,100 +162,91 @@
       <article class="container" aria-labelledby="main-title">
         <h2 id="main-title" class="main-title">
           <strong>
-            <span class="main-title" aria-hidden="true">💇</span>
+            <i aria-hidden="true">💇</i>
             NPM
-            <span class="main-title" aria-hidden="true">💇</span>
+            <i aria-hidden="true">💇</i>
           </strong>
         </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-6-10">2021년 6월 10일</time>
-        </div>
 
         <section class="summary" aria-labelledby="summary-title">
           <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">👶</span>
+            <i aria-hidden="true">👶</i>
             개요
           </h3>
+
           <p>npm 명령어를 알아봅시다.</p>
         </section>
 
         <section class="npm-command" aria-labelledby="npm-command-title">
           <h3 id="npm-command-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🙈</span>
+            <i aria-hidden="true">🙈</i>
             명령어
           </h3>
-          <dl aria-label="명령어">
-            <div class="margin-16px">
-              <dt class="main-article-dt background-white-radius">
+
+          <dl class="main-dl" aria-label="명령어">
+            <div>
+              <dt class="box-white">
                 <strong>npm install [package]</strong>
               </dt>
-              <dd class="main-article-dd">라이브러리/패키지 설치</dd>
-              <dd class="main-article-dd">npm i: npm install의 줄인 명령어</dd>
-              <dd class="main-article-dd">
+              <dd>라이브러리/패키지 설치</dd>
+              <dd>npm i: npm install의 줄인 명령어</dd>
+              <dd>
                 옵션
-                <dl class="npm-install-option" aria-label="옵션">
-                  <div class="">
-                    <dt class="main-article-dt">
-                      <strong class="type">--save--dev</strong>
+                <dl class="main-dl options" aria-label="옵션">
+                  <div>
+                    <dt>
+                      <strong class="highlight">--save--dev</strong>
                     </dt>
-                    <dd class="main-article-dd">
-                      package.json 파일에 의존성 내용을 추가
-                    </dd>
-                    <dd class="main-article-dd">
-                      devDependencies 객체에 패키지 정보 추가
-                    </dd>
+                    <dd>package.json 파일에 의존성 내용을 추가</dd>
+                    <dd>devDependencies 객체에 패키지 정보 추가</dd>
                   </div>
-                  <div class="">
-                    <dt class="main-article-dt">
-                      <strong class="type">--save</strong>
+                  <div>
+                    <dt>
+                      <strong class="highlight">--save</strong>
                     </dt>
-                    <dd class="main-article-dd">
-                      dependencies 객체에 패키지 정보 추가
-                    </dd>
+                    <dd>dependencies 객체에 패키지 정보 추가</dd>
                   </div>
-                  <div class="">
-                    <dt class="main-article-dt">
-                      <strong class="type">--force</strong>
+                  <div>
+                    <dt>
+                      <strong class="highlight">--force</strong>
                     </dt>
-                    <dd class="main-article-dd">
+                    <dd>
                       해당 패키지가 존재하더라도 원격 저장소에 있는 패키지를
                       가져온다.
                     </dd>
                   </div>
-                  <div class="">
-                    <dt class="main-article-dt">
-                      <strong class="type">-g</strong>
+                  <div>
+                    <dt>
+                      <strong class="highlight">-g</strong>
                     </dt>
-                    <dd class="main-article-dd">전역 폴더에 설치</dd>
-                    <dd class="main-article-dd">
+                    <dd>전역 폴더에 설치</dd>
+                    <dd>
                       위치: c:/사용자/win10/AppData/Roaming/npm/node_modules
                     </dd>
                   </div>
                 </dl>
               </dd>
             </div>
-            <div class="">
-              <dt class="main-article-dt background-white-radius">
+            <div>
+              <dt class="box-white">
                 <strong>npm ls</strong>
               </dt>
-              <dd class="main-article-dd">npm package 설치 리스트</dd>
-              <dd class="main-article-dd">
+              <dd>npm package 설치 리스트</dd>
+              <dd>
                 옵션
-                <dl class="npm-install-option" aria-label="옵션">
-                  <div class="">
-                    <dt class="main-article-dt">
-                      <strong class="type">-g</strong>
+                <dl class="main-dl options" aria-label="옵션">
+                  <div>
+                    <dt>
+                      <strong class="highlight">-g</strong>
                     </dt>
-                    <dd class="main-article-dd">global(전역) 설치 확인</dd>
-                    <dd class="main-article-dd">
-                      수많은 dependencies까지 보인다.
-                    </dd>
+                    <dd>global(전역) 설치 확인</dd>
+                    <dd>수많은 dependencies까지 보인다.</dd>
                   </div>
-                  <div class="">
-                    <dt class="main-article-dt">
-                      <strong class="type">--depth=0</strong>
+                  <div>
+                    <dt>
+                      <strong class="highlight">--depth=0</strong>
                     </dt>
-                    <dd class="main-article-dd">설치한 모듈만 확인</dd>
+                    <dd>설치한 모듈만 확인</dd>
                   </div>
                 </dl>
               </dd>
@@ -283,16 +256,16 @@
 
         <section class="npm-error" aria-labelledby="npm-error-title">
           <h3 id="npm-error-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🛀</span>
+            <i aria-hidden="true">🛀</i>
             에러
           </h3>
 
           <ul>
-            <li class="main-article-list-items">
+            <li class="main-item">
               <h4 class="main-article-subtitle error">
                 Error: ENOENT: no such file or directory, open
               </h4>
-              <p class="solution background-white-radius">
+              <p class="solution box-white">
                 rm -rf node_modules package-lock.json<br />
                 npm install --save-dev 패키지명
               </p>
@@ -304,99 +277,104 @@
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://doozi316.github.io/errorlog/2020/07/10/error6/"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "Doozi316.github.io / Error: ENOENT: no such file or
-            directory", 개인 페이지, 2021년 6월 10일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://doozi316.github.io/errorlog/2020/07/10/error6/">
-              https://doozi316.github.io/errorlog/2020/07/10/error6/
-            </a>
-          </cite>
-        </blockquote>
-        <blockquote
-          class="note-footer-reference"
-          cite="https://icarus8050.tistory.com/27"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "Tistory / icarus8050 / npm 설치 항목 목록 보는 방법",
-            Tistory, 2021년 6월 8일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://icarus8050.tistory.com/27">
-              https://icarus8050.tistory.com/27
-            </a>
-          </cite>
-        </blockquote>
-        <blockquote
-          class="note-footer-reference"
-          cite="https://backback.tistory.com/357"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "Tistory / backback / Node - npm 설치 항목 목록 보는법",
-            Tistory, 2021년 6월 8일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://backback.tistory.com/357">
-              https://backback.tistory.com/357
-            </a>
-          </cite>
-        </blockquote>
-        <blockquote
-          class="note-footer-reference"
-          cite="https://kyoung-jnn.tistory.com/entry/Nodejs-npm-%EC%84%A4%EC%B9%98-%ED%95%AD%EB%AA%A9-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "Tistory / kyoung-jnn / npm 설치 항목 확인을 위해서는
-            Node.js 의 설치가 필요합니다.", Tistory, 2021년 6월 8일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://kyoung-jnn.tistory.com/entry/Nodejs-npm-%EC%84%A4%EC%B9%98-%ED%95%AD%EB%AA%A9-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0"
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://doozi316.github.io/errorlog/2020/07/10/error6/"
             >
-              https://kyoung-jnn.tistory.com/entry/Nodejs-npm-%EC%84%A4%EC%B9%98-%ED%95%AD%EB%AA%A9-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0
-            </a>
-          </cite>
-        </blockquote>
-        <blockquote
-          class="note-footer-reference"
-          cite="https://chimimode.github.io/2019-07-03-npm-install-option/"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "chimimode github - npm install 명령어에 있는 option들",
-            Github, 2021년 5월 26일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://chimimode.github.io/2019-07-03-npm-install-option/"
+              <strong>
+                정보 출처: "Doozi316.github.io / Error: ENOENT: no such file or
+                directory", 개인 페이지, 2021년 6월 10일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://doozi316.github.io/errorlog/2020/07/10/error6/"
+                >
+                  Error: ENOENT: no such file or directory
+                </a>
+              </cite>
+            </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://icarus8050.tistory.com/27"
             >
-              https://chimimode.github.io/2019-07-03-npm-install-option/
-            </a>
-          </cite>
-        </blockquote>
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
-            2021년 5월 26일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+              <strong>
+                정보 출처: "Tistory / icarus8050 / npm 설치 항목 목록 보는
+                방법", Tistory, 2021년 6월 8일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://icarus8050.tistory.com/27">
+                  npm 설치 항목 목록 보는 방법
+                </a>
+              </cite>
+            </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://backback.tistory.com/357"
+            >
+              <strong>
+                정보 출처: "Tistory / backback / Node - npm 설치 항목 목록
+                보는법", Tistory, 2021년 6월 8일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://backback.tistory.com/357">
+                  Node - npm 설치 항목 목록 보는법
+                </a>
+              </cite>
+            </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://kyoung-jnn.tistory.com/entry/Nodejs-npm-%EC%84%A4%EC%B9%98-%ED%95%AD%EB%AA%A9-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0"
+            >
+              <strong>
+                정보 출처: "Tistory / kyoung-jnn / npm 설치 항목 확인을 위해서는
+                Node.js 의 설치가 필요합니다.", Tistory, 2021년 6월 8일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://kyoung-jnn.tistory.com/entry/Nodejs-npm-%EC%84%A4%EC%B9%98-%ED%95%AD%EB%AA%A9-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0"
+                >
+                  npm 설치 항목 확인을 위해서는 Node.js 의 설치가 필요합니다.
+                </a>
+              </cite>
+            </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://chimimode.github.io/2019-07-03-npm-install-option/"
+            >
+              <strong>
+                정보 출처: "chimimode github - npm install 명령어에 있는
+                option들", Github, 2021년 5월 26일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://chimimode.github.io/2019-07-03-npm-install-option/"
+                >
+                  npm install 명령어에 있는 option들
+                </a>
+              </cite>
+            </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                Github, 2021년 5월 26일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

@@ -37,141 +37,130 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-cross-browsing.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link
-      rel="stylesheet"
-      href="../../css/responsive/style-cross-browsing.css"
-    />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol class="note-header-nav-list" aria-label="주제 선택">
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2020-12-29">2020년 12월 29일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-6-8">2021년 06월 08일</time>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -179,18 +168,15 @@
       <article class="container" aria-labelledby="main-title">
         <h2 id="main-title" class="main-title">
           <strong>
-            <span class="main-title" aria-hidden="true">🙇</span>
+            <i aria-hidden="true">🙇</i>
             Gulp
-            <span class="main-title" aria-hidden="true">🙇</span>
+            <i aria-hidden="true">🙇</i>
           </strong>
         </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-6-8">2021년 06월 08일</time>
-        </div>
 
         <section class="summary" aria-labelledby="summary-title">
           <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">👧</span>
+            <i aria-hidden="true">👧</i>
             개요
           </h3>
           <p>
@@ -201,21 +187,21 @@
 
         <section class="gulp" aria-labelledby="gulp-title">
           <h3 id="gulp-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">👿</span>
+            <i aria-hidden="true">👿</i>
             gulp란?
           </h3>
           <div class="desc">
             <p>
               타입스크립트로 코드를 작성하면, 브라우저는 코드를 해석하지 못한다.
               그러므로,
-              <strong class="error">자바스크립트로 컴파일</strong>(컴퓨터 언어로
-              번역) 해야한다. 또한 html을 pug로 작성하고, CSS를 scss로
-              작성한다면 똑같이 컴파일 해야한다.
+              <strong class="highlight-red">자바스크립트로 컴파일</strong
+              >(컴퓨터 언어로 번역) 해야한다. 또한 html을 pug로 작성하고, CSS를
+              scss로 작성한다면 똑같이 컴파일 해야한다.
             </p>
             <p>
               이런 컴파일을 해소해 주는 것을
-              <strong class="error">빌드 시스템(Build system)</strong>이라 한다.
-              Gulp는 그 많은 빌드 시스템 중 하나이다.
+              <strong class="highlight-red">빌드 시스템(Build system)</strong
+              >이라 한다. Gulp는 그 많은 빌드 시스템 중 하나이다.
             </p>
           </div>
           <img
@@ -227,125 +213,120 @@
 
         <section class="gulp-install" aria-labelledby="gulp-install-title">
           <h3 id="gulp-install-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">📌</span>
+            <i aria-hidden="true">📌</i>
             설치
           </h3>
-          <p class="margin-8px">
+          <p>
             (참고) 아래의 명령어는 프롬프트나 작업 폴더의 git bash에 다음의
             명령어를 입력한다.
           </p>
 
-          <p class="margin-8px">
+          <p>
             (참고) 전역 설치 경로
             C://사용자/win10/AppData/Roaming/npm/node-modules(자동으로 됨)
           </p>
 
           <ol class="gulp-install-step" aria-label="설치 방법">
-            <li class="main-article-list-items">
-              <p class="background-white-radius margin-8px">
-                <a class="gulp-install" href="https://nodejs.org/ko/"
-                  >node.js</a
-                >
-                설치<br />
+            <li class="main-item">
+              <p class="box-white">
+                <a class="node-install" href="https://nodejs.org/ko/">
+                  node.js
+                </a>
+                설치
               </p>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>npm init -y</strong>
                 </dt>
-                <dd class="main-article-dd">npm 초기 설치를 의미</dd>
-                <dd class="main-article-dd">
-                  작업 폴더에 package.json 파일이 생성
-                </dd>
+                <dd>npm 초기 설치를 의미</dd>
+                <dd>작업 폴더에 package.json 파일이 생성</dd>
               </dl>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>npm install gulp -g</strong>
                 </dt>
-                <dd class="main-article-dd">전역 폴더에 gulp 설치</dd>
-                <dd class="main-article-dd">
+                <dd>전역 폴더에 gulp 설치</dd>
+                <dd>
                   mac이면 명령어 앞에 'sudo'를 붙인다.(윈도우는 'sudo' 붙이면
                   에러발생)
                 </dd>
               </dl>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>npm install --save-dev gulp</strong>
                 </dt>
-                <dd class="main-article-dd">로컬(작업 폴더)에 gulp 설치</dd>
-                <dd class="main-article-dd">
-                  package.json 파일 devDependencies에 내역이 남는다.
-                </dd>
+                <dd>로컬(작업 폴더)에 gulp 설치</dd>
+                <dd>package.json 파일 devDependencies에 내역이 남는다.</dd>
               </dl>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>npm install --save-dev gulp-autoprefixer</strong>
                 </dt>
-                <dd class="main-article-dd">
-                  로컬(작업 폴더)에 gulp-autoprefixer 설치
-                </dd>
-                <dd class="main-article-dd">
-                  package.json 파일 devDependencies에 내역이 남는다.
-                </dd>
-                <dd class="main-article-dd">
-                  크로스 브라우징을 위한 코드(prefix)를 생성
-                </dd>
+                <dd>로컬(작업 폴더)에 gulp-autoprefixer 설치</dd>
+                <dd>package.json 파일 devDependencies에 내역이 남는다.</dd>
+                <dd>크로스 브라우징을 위한 코드(prefix)를 생성</dd>
               </dl>
             </li>
-            <li class="touch main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>touch gulpfile.js</strong>
                 </dt>
-                <dd class="main-article-dd">gulp 설정 파일 생성</dd>
-                <dd class="main-article-dd">
-                  오류발생 시
-                  <p class="error">
-                    <strong
-                      >git bash에 명령어 입력 또는 직접 폴더 내에 파일
-                      생성</strong
-                    >
-                  </p>
+                <dd>gulp 설정 파일 생성</dd>
+                <dd>
+                  오류발생 시:
+                  <strong class="error"
+                    >git bash에 명령어 입력 또는 직접 폴더 내에 파일
+                    생성</strong
+                  >
                 </dd>
               </dl>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
-                  <strong>gulpfile.js 설정</strong>
-                </dt>
-                <dd class="main-article-dd">
-                  코드 추가
-                  <pre class="main-article-pre">
-                    <code>
-                      var gulp = require('gulp');
-                      var autoprefixer = require('gulp-autoprefixer');
+            <li class="gulp-setting main-item">
+              <div>
+                <dl class="main-dl" aria-label="명령어">
+                  <dt class="box-white">
+                    <strong>gulpfile.js 설정</strong>
+                  </dt>
+                  <dd>
+                    코드
+                    <pre class="main-code">
+                      <code>
+                        var gulp = require('gulp');
+                        var autoprefixer = require('gulp-autoprefixer');
+  
+                        gulp.task('styles', async function() {
+                          gulp.src('./css/**/*.css')
+                            .pipe(autoprefixer('last 2 versions'))
+                            .pipe(gulp.dest('./css/build'));
+                        });
+                      </code>
+                    </pre>
+                  </dd>
+                  <dd>task: 실행 명령어 설정</dd>
+                  <dd>src: 작업 파일/폴더 경로</dd>
+                  <dd>dest: 폴더 생성, 변경 내용 저장</dd>
+                </dl>
+              </div>
 
-                      gulp.task('styles', async function() {
-                        gulp.src('./css/**/*.css')
-                          .pipe(autoprefixer('last 2 versions'))
-                          .pipe(gulp.dest('./css/build'));
-                      });
-                    </code>
-                  </pre>
-                </dd>
-                <dd class="main-article-dd">task: 실행 명령어 설정</dd>
-                <dd class="main-article-dd">src: 작업 파일/폴더 경로</dd>
-                <dd class="main-article-dd">dest: 폴더 생성, 변경 내용 저장</dd>
-                <dd class="main-article-dd">
+              <div class="extra-code">
+                <p>
                   <span class="error">babel 설치+동작 추가 할 예정</span>이라면,
                   아래의 코드를 사용해도 상관없다.<br />
                   (단, package.json에 scripts 수정 필수)
-                  <div class="code">
-                    <span class="highlight">gulpfile.js</span>
-                    <pre class="main-article-pre">
+                </p>
+
+                <div>
+                  <span class="highlight">gulpfile.js</span>
+                  <pre class="main-code">
                       <code>
                         import gulp from "gulp";
                         import autoprefixer from "gulp-autoprefixer";
@@ -359,10 +340,11 @@
                         export const dev = gulp.series([styles]);
                       </code>
                     </pre>
-                  </div>
-                  <div class="code">
-                    <span class="highlight">package.json</span>
-                    <pre class="main-article-pre">
+                </div>
+
+                <div>
+                  <span class="highlight">package.json</span>
+                  <pre class="main-code">
                       <code>
                         {
                           "scripts": {
@@ -371,19 +353,16 @@
                         }
                       </code>
                     </pre>
-                  </div>
-                </dd>
-              </dl>
+                </div>
+              </div>
             </li>
-            <li class="main-article-list-items">
-              <dl aria-label="명령어">
-                <dt class="main-article-dt background-white-radius">
+            <li class="main-item">
+              <dl class="main-dl" aria-label="명령어">
+                <dt class="box-white">
                   <strong>gulp styles 또는 gulp dev</strong>
                 </dt>
-                <dd class="main-article-dd">gulp 실행</dd>
-                <dd class="main-article-dd">
-                  async 오류 발생시, function 앞에 'async' 쓴다.
-                </dd>
+                <dd>gulp 실행</dd>
+                <dd>async 오류 발생시, function 앞에 'async' 쓴다.</dd>
               </dl>
             </li>
           </ol>
@@ -391,51 +370,59 @@
 
         <section class="gulp-write" aria-labelledby="gulp-write-title">
           <h3 id="gulp-write-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">📌</span>
+            <i aria-hidden="true">📌</i>
             자동갱신 (Watch)
           </h3>
-          <p class="margin-8px">다음의 코드를 gulpfile.js에 추가한다.</p>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              gulp.task('watch', function() {
-                gulp.watch('./css/**/*.css', ['styles']);
-              });
-            </code>
-          </pre>
-          <p class="desc margin-8px">
-            gulp.watch('실시간 작업 추적 파일 경로', ['명령어']);
-          </p>
-          <p class="margin-8px">
-            <span class="error">babel 설치+동작 추가 할 예정</span>이라면,
-            아래의 코드를 사용해도 상관없다.<br />
-          </p>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              const live = {
-                gulp.watch('./css/**/*.css', styles);
-              }
-
-              export const dev = gulp.series([styles, live]);
-            </code>
-          </pre>
-          <p class="desc">gulp.watch('실시간 작업 추적 파일 경로', 명령어);</p>
+          <div>
+            <p>다음의 코드를 gulpfile.js에 추가한다.</p>
+            <pre class="main-code">
+              <code>
+                gulp.task('watch', function() {
+                  gulp.watch('./css/**/*.css', ['styles']);
+                });
+              </code>
+            </pre>
+            <p class="desc">
+              gulp.watch('실시간 작업 추적 파일 경로', ['명령어']);
+            </p>
+          </div>
+          <div>
+            <p>
+              <span class="error">babel 설치+동작 추가 할 예정</span>이라면,
+              아래의 코드를 사용해도 상관없다.<br />
+            </p>
+            <pre class="main-code">
+              <code>
+                const live = {
+                  gulp.watch('./css/**/*.css', styles);
+                }
+  
+                export const dev = gulp.series([styles, live]);
+              </code>
+            </pre>
+            <p class="desc">
+              gulp.watch('실시간 작업 추적 파일 경로', 명령어);
+            </p>
+          </div>
         </section>
 
         <section class="gulp-package" aria-labelledby="gulp-package-title">
           <h3 id="gulp-package-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">📌</span>
+            <i aria-hidden="true">📌</i>
             패키지
           </h3>
-          <p class="margin-8px">
-            Autoprefixer외에 지원 패키지가 다양하다.<br />
-            이미지 최적화, Pug를 HTML로 변환, minify, 배포 등등<br />
-          </p>
-          <p>사용할 땐, 다음 목록 순서대로 진행한다.</p>
-          <ol id="gulp-package-usage" aria-label="패키지 적용 순서">
-            <li><strong>로컬 저장(--save-dev)</strong></li>
-            <li><strong>gulpfile.js에 import</strong></li>
-            <li><strong>함수 선언</strong></li>
-            <li><strong>series 선언</strong></li>
+          <div>
+            <p>
+              Autoprefixer외에 지원 패키지가 다양하다.<br />
+              이미지 최적화, Pug를 HTML로 변환, minify, 배포 등등<br />
+            </p>
+            <p>사용할 땐, 다음 목록 순서대로 진행한다.</p>
+          </div>
+          <ol class="box-white" aria-label="패키지 적용 순서">
+            <li class="main-item"><strong>로컬 저장(--save-dev)</strong></li>
+            <li class="main-item"><strong>gulpfile.js에 import</strong></li>
+            <li class="main-item"><strong>함수 선언</strong></li>
+            <li class="main-item"><strong>series 선언</strong></li>
           </ol>
         </section>
       </article>
@@ -444,15 +431,15 @@
     <footer class="note-footer">
       <div class="container">
         <blockquote
-          class="note-footer-reference"
+          class="reference"
           cite="https://kamang-it.tistory.com/entry/GulpGulp%EB%9E%80-%EA%B8%B0%EB%B3%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0ver391%EA%B5%AC%EB%B2%84%EC%A0%841"
         >
-          <strong class="note-footer-reference-name">
+          <strong>
             정보 출처: "Tistory / kamang-it /
             [BuildSystem][TaskRunner][Gulp]Gulp란? 설치하기, 기본 프로젝트
             만들기:ver3.9.1-구버전(1)", Tistory, 2021년 6월 8일 접속,
           </strong>
-          <cite class="note-footer-reference-url">
+          <cite class="reference-url">
             <a
               href="https://kamang-it.tistory.com/entry/GulpGulp%EB%9E%80-%EA%B8%B0%EB%B3%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0ver391%EA%B5%AC%EB%B2%84%EC%A0%841"
             >
@@ -462,13 +449,13 @@
         </blockquote>
 
         <blockquote
-          class="note-footer-reference"
+          class="reference"
           cite="https://gulpjs.com/docs/en/api/watch/"
         >
-          <strong class="note-footer-reference-name">
+          <strong>
             정보 출처: "Gulp / watch()", Gulp 공식문서, 2021년 6월 7일 접속,
           </strong>
-          <cite class="note-footer-reference-url">
+          <cite class="reference-url">
             <a href="https://gulpjs.com/docs/en/api/watch/">
               https://gulpjs.com/docs/en/api/watch/
             </a>
@@ -476,14 +463,14 @@
         </blockquote>
 
         <blockquote
-          class="note-footer-reference"
+          class="reference"
           cite="https://inseok9068.github.io/others/gulp/"
         >
-          <strong class="note-footer-reference-name">
+          <strong>
             정보 출처: "Github / inseok9068.github.io / [Gulp] 빌드 자동화툴
             Gulp 사용법", Github, 2021년 6월 7일 접속,
           </strong>
-          <cite class="note-footer-reference-url">
+          <cite class="reference-url">
             <a href="https://inseok9068.github.io/others/gulp/">
               https://inseok9068.github.io/others/gulp/
             </a>
@@ -491,14 +478,14 @@
         </blockquote>
 
         <blockquote
-          class="note-footer-reference"
+          class="reference"
           cite="https://www.youtube.com/watch?v=VeK3a29x1hE"
         >
-          <strong class="note-footer-reference-name">
+          <strong>
             정보 출처: "Youtube / 1분코딩 / 자바스크립트 Babel(바벨) 튜토리얼",
             Youtube, 2021년 5월 26일 접속,
           </strong>
-          <cite class="note-footer-reference-url">
+          <cite class="reference-url">
             <a href="https://www.youtube.com/watch?v=VeK3a29x1hE">
               https://www.youtube.com/watch?v=VeK3a29x1hE
             </a>
@@ -506,14 +493,14 @@
         </blockquote>
 
         <blockquote
-          class="note-footer-reference"
+          class="reference"
           cite="https://gist.github.com/rxaviers/7360908"
         >
-          <strong class="note-footer-reference-name">
+          <strong>
             이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
             2021년 5월 26일 접속,
           </strong>
-          <cite class="note-footer-reference-url">
+          <cite class="reference-url">
             <a href="https://gist.github.com/rxaviers/7360908">
               https://gist.github.com/rxaviers/7360908
             </a>
@@ -523,7 +510,6 @@
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>
