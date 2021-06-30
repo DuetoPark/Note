@@ -1,0 +1,185 @@
+%margin-8-div {
+  > div {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+%image-size {
+  img {
+    width: 100%;
+
+    @include responsive(T) {
+      width: 300px;
+    }
+
+    @include responsive(T) {
+      width: 400px;
+    }
+  }
+}
+
+// NOTE: 01-link
+.link-recommendations {
+  @extend %margin-8-div;
+}
+
+// NOTE: 02-stroke
+.stroke,
+.stroke > div,
+.stroke-cross-browsing,
+.stroke-animation {
+  @extend %margin-8-div;
+}
+
+// NOTE: 03-background-clip
+.background-clip {
+  @extend %margin-8-div;
+}
+
+.background-clip-type {
+  ul {
+    .main-item {
+      @extend %margin-8-div;
+      @extend %image-size;
+    }
+  }
+}
+
+// NOTE: 04-line-break
+.white-space-summary {
+  table {
+    td {
+      text-align: center;
+    }
+  }
+}
+
+.hyphens {
+  @extend %margin-8-div;
+}
+
+// NOTE: 05-pseudo-opacity
+.how-to-set-pseudo-opacity {
+  @extend %margin-8-div;
+}
+
+// NOTE: 06-width
+.calc {
+  @extend %margin-8-div;
+
+  .width-calc-image-group {
+    @extend %image-size;
+    @include column-flexbox;
+  }
+}
+
+// NOTE: 07-main-tag
+.main-tag {
+  @extend %margin-8-div;
+}
+
+// NOTE: 08-transform-origin
+.transform-origin-example {
+  ol {
+    .main-item {
+      @extend %image-size;
+
+      .btn-fill {
+        margin-bottom: 4px;
+      }
+
+      img {
+        @include animation(rotate-45deg, 'long');
+
+        &.is-top-right {
+          transform-origin: top right;
+        }
+
+        &.is-bottom-left {
+          transform-origin: bottom left;
+        }
+      }
+    }
+  }
+}
+
+// NOTE: 09-padding-top
+.padding-top-100 {
+  @extend %margin-8-div;
+}
+
+// NOTE: 10-direction
+.direction {
+  @extend %margin-8-div;
+}
+
+// NOTE: 12-미디어쿼리-에러
+.media-query-error-solution {
+  @extend %margin-8-div;
+}
+
+// NOTE: 13-input-styling
+.input-style,
+.box-shadow {
+  @extend %margin-8-div;
+}
+
+.input-style {
+  &-example {
+    .btn-fill {
+      width: 340px;
+      padding: 0 12px;
+      margin-bottom: 12px;
+      transition: $transition-border;
+
+      &:hover {
+        border: 1px solid $blue;
+      }
+
+      &:active,
+      &:focus {
+        border: 1px solid $blue;
+        box-shadow: 0 0 0 4px $blue-light;
+      }
+    }
+  }
+}
+
+// NOTE: 14-inline-lineheight
+.inline-lineheight {
+  @extend %margin-8-div;
+}
+
+// NOTE: 15-flex-grow-flex-shrink
+.flex-grow,
+.flex-grow-bug,
+.flex-shrink {
+  @extend %margin-8-div;
+}
+
+.flex-grow {
+  @extend %image-size;
+}
+
+// NOTE: 17-perspective
+.perspective-example {
+  &-slider,
+  &-flip {
+    @extend %margin-8-div;
+  }
+
+  &-flip {
+    .cards {
+      .card-perspective {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// NOTE: 20-transition-bug
+.transition-error {
+  @extend %margin-8-div;
+}
