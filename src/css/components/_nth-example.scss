@@ -1,0 +1,91 @@
+.nth-child-parameter {
+  dl {
+    dd {
+      .nth-child-example {
+        padding-left: 16px;
+
+        .btn-30 {
+          @include inline-flexbox;
+        }
+      }
+    }
+
+    .nth-child-example {
+      &.is-2n-positive {
+        *:nth-child(2n + 5) {
+          background-color: $orange;
+        }
+      }
+
+      &.is-2n-negative {
+        *:nth-child(-2n + 5) {
+          background-color: $orange;
+        }
+      }
+
+      &.is-n-positive {
+        *:nth-child(n + 5) {
+          background-color: $orange;
+        }
+      }
+
+      &.is-n-negative {
+        *:nth-child(-n + 5) {
+          background-color: $orange;
+        }
+      }
+
+      &.is-multiple {
+        *:nth-child(n + 3):nth-child(-n + 8) {
+          background-color: $orange;
+        }
+      }
+
+      &.is-odd {
+        *:nth-child(odd) {
+          background-color: $orange;
+        }
+      }
+
+      &.is-even {
+        *:nth-child(even) {
+          background-color: $orange;
+        }
+      }
+    }
+  }
+}
+
+.nth-of-type-parameter {
+  dl {
+    dd {
+      .nth-of-type-example {
+        padding-left: 16px;
+
+        .btn-30 {
+          @include inline-flexbox;
+        }
+      }
+    }
+
+    .nth-of-type-example {
+      &.is-first {
+        p:first-of-type {
+          background-color: $orange;
+        }
+      }
+
+      &.is-2n {
+        p:nth-of-type(2n + 3) {
+          background-color: $orange;
+        }
+      }
+
+      &.is-multiple {
+        p:nth-of-type(n + 2):nth-of-type(-n + 3) {
+          background-color: $orange;
+        }
+      }
+    }
+  }
+}
