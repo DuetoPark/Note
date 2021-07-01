@@ -1,18 +1,33 @@
-.main-image {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 4px;
+%image-base {
   margin: 0 auto;
 
   img {
     width: 100%;
   }
+}
+
+.img-background {
+  @extend %image-base;
+  width: 100%;
 
   @include responsive(M) {
     width: 300px;
   }
 
   @include responsive(T) {
-    width: 400px;
+    width: 500px;
+  }
+}
+
+.img-60 {
+  @extend %image-base;
+  width: 60px;
+
+  @include responsive(M) {
+    width: 100px;
+  }
+
+  @include responsive(T) {
+    width: 200px;
   }
 }
