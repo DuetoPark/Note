@@ -37,271 +37,281 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-3-10">2021년 03월 10일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-6-30">2021년 06월 30일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
-      <section class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">🐦</span>
-            wai-aria 작성위치
-            <span class="main-title" aria-hidden="true">🐦</span>
-          </strong>
-        </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-3-16">2021년 03월 16일</time>
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">🐦</i>
+                wai-aria 작성위치
+                <i aria-hidden="true">🐦</i>
+              </strong>
+            </h2>
+
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">🐶</i>
+                개요
+              </h3>
+
+              <p>
+                2/27부터 3/1일까지 3일동안 note 레포지토리를 수정하는 중이다.<br />
+                파일 하나하나에 헤더 wai-aria 추가 작업을 하다가 효율적인 방법이
+                없나 궁금해졌다.<br />
+                그냥 javascript파일로 attribute를 추가하면 안 되나??<br />
+                그에 대한 답을 알아보자.
+              </p>
+            </section>
+
+            <section
+              class="wai-aria-location"
+              aria-labelledby="wai-aria-location-title"
+            >
+              <h3 id="wai-aria-location-title" class="main-article-title">
+                <i aria-hidden="true">🐹</i>
+                wai-aria 작성 위치
+              </h3>
+
+              <div>
+                <p class="box-white">
+                  <strong>
+                    결론부터 말하자면, wai-aria는 HTML파일에 작성하는 것이 옳다.
+                  </strong>
+                </p>
+
+                <p>
+                  효율적인 면으로 보면 자바스크립트 파일로 attribute를 추가하는
+                  것이 옳은 방향이다.<br />
+                  하지만 자바스크립트 파일에 오류가 발생하면 wai-aria는 제대로
+                  동작하지 않게된다. 그리고 접근성이 낮아진다.
+                </p>
+
+                <p>
+                  <strong>
+                    안정적인 접근성 유지를 위해서는 wai-aria를 html 파일에
+                    작성하도록 하자.
+                  </strong>
+                </p>
+              </div>
+            </section>
+
+            <section
+              class="wai-aria-javascript"
+              aria-labelledby="wai-aria-javascript-title"
+            >
+              <h3 id="wai-aria-javascript-title" class="main-article-title">
+                <i aria-hidden="true">🐰</i>
+                javascript로 선언한 aria attribute
+              </h3>
+
+              <div>
+                <p>
+                  wai-aria의 role이나 aria로 시작되는 attribute를 자바스크립트로
+                  선언할 경우, 간혹 제대로 동작하지 않는다.
+                </p>
+
+                <p>
+                  그럼에도 불구하고 자바스크립트를 꼭 이용하고 싶다면,<br />
+                  html파일에 선언한 wai-aria에 접근하고 속성값을 변화시키는
+                  용도로만 사용하는 편이 좋다.<br />
+                </p>
+
+                <p>
+                  더불어, 마크업에 신경쓰면 불필요한 작업을 줄일 수 있다.<br />
+                  div에 role="button"을 선언하지 않고, button태그를 마크업 하면
+                  된다.
+                </p>
+              </div>
+            </section>
+          </div>
         </div>
-
-        <article class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🐶</span>
-            개요
-          </h3>
-          <p>
-            2/27부터 3/1일까지 3일동안 note 레포지토리를 수정하는 중이다.<br />
-            파일 하나하나에 헤더 wai-aria 추가 작업을 하다가 효율적인 방법이
-            없나 궁금해졌다.<br />
-            그냥 javascript파일로 attribute를 추가하면 안 되나??<br />
-            그에 대한 답을 알아보자.
-          </p>
-        </article>
-
-        <article
-          class="wai-aria-location"
-          aria-labelledby="wai-aria-location-title"
-        >
-          <h3 id="wai-aria-location-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🐹</span>
-            wai-aria 작성 위치
-          </h3>
-          <p>
-            결론부터 말하자면, wai-aria는 HTML파일에 작성하는 것이 옳다.<br />
-            효율적인 면으로 보면 자바스크립트 파일로 attribute를 추가하는 것이
-            옳은 방향이다.<br />
-            하지만 자바스크립트 파일에 오류가 발생하면 wai-aria는 제대로
-            동작하지 않게된다. 그리고 접근성이 낮아진다.<br />
-            <strong class="underline">
-              안정적인 접근성 유지를 위해서는 wai-aria를 html 파일에 작성하도록
-              하자.
-            </strong>
-          </p>
-        </article>
-
-        <article
-          class="wai-aria-javascript"
-          aria-labelledby="wai-aria-javascript-title"
-        >
-          <h3 id="wai-aria-javascript-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🐰</span>
-            javascript로 선언한 aria attribute
-          </h3>
-          <p class="margin-8px">
-            wai-aria의 role이나 aria로 시작되는 attribute를 자바스크립트로
-            선언할 경우, 간혹 제대로 동작하지 않는다.
-          </p>
-          <p class="margin-8px">
-            그럼에도 불구하고 자바스크립트를 꼭 이용하고 싶다면,<br />
-            html파일에 선언한 wai-aria에 접근하고 속성값을 변화시키는 용도로만
-            사용하는 편이 좋다.<br />
-          </p>
-          <p>
-            더불어, 마크업에 신경쓰면 불필요한 작업을 줄일 수 있다.<br />
-            div에 role="button"을 선언하지 않고, button태그를 마크업 하면 된다.
-          </p>
-        </article>
-      </section>
+      </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://stackoverflow.com/questions/38112014/adding-wai-aria-attributes-with-js"
-        >
-          <strong class="note-footer-reference-name">
-            자료 출처: "stackoverflow - Adding WAI-ARIA attributes with JS",
-            stackoverflow, 2021년 3월 10일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://stackoverflow.com/questions/38112014/adding-wai-aria-attributes-with-js"
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://stackoverflow.com/questions/38112014/adding-wai-aria-attributes-with-js"
             >
-              https://stackoverflow.com/questions/38112014/adding-wai-aria-attributes-with-js
-            </a>
-          </cite>
-        </blockquote>
+              <strong>
+                자료 출처: "stackoverflow - Adding WAI-ARIA attributes with JS",
+                stackoverflow, 2021년 3월 10일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://stackoverflow.com/questions/38112014/adding-wai-aria-attributes-with-js"
+                >
+                  stackoverflow - Adding WAI-ARIA attributes with JS
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://w3c.github.io/using-aria/#inline"
-        >
-          <strong class="note-footer-reference-name">
-            자료 출처: "w3c - Using Aria 2.7 Add ARIA Inline or via Script?",
-            W3C Editor's Draft, 2021년 3월 10일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://w3c.github.io/using-aria/#inline">
-              https://w3c.github.io/using-aria/#inline
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://w3c.github.io/using-aria/#inline"
+            >
+              <strong>
+                자료 출처: "w3c - Using Aria 2.7 Add ARIA Inline or via
+                Script?", W3C Editor's Draft, 2021년 3월 10일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://w3c.github.io/using-aria/#inline">
+                  w3c - Using Aria 2.7 Add ARIA Inline or via Script?
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
-            2021년 3월 10일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                github, 2021년 3월 10일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

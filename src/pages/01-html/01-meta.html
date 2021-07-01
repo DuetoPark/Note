@@ -40,363 +40,347 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2020-12-29">2020년 12월 29일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-6-30">2021년 06월 30일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
-      <section class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">🎄</span>
-            메타(meta) 태그
-            <span class="main-title" aria-hidden="true">🎄</span>
-          </strong>
-        </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-3-16">2021년 03월 16일</time>
-        </div>
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">🎄</i>
+                메타(meta) 태그
+                <i aria-hidden="true">🎄</i>
+              </strong>
+            </h2>
 
-        <article
-          class="meta-definition"
-          aria-labelledby="meta-definition-title"
-        >
-          <h3 id="meta-definition-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🎃</span>
-            메타 태그
-          </h3>
-          <dl class="main-article-dl margin-8px" aria-label="태그 정의">
-            <div>
-              <dfn class="main-article-dt" aria-label="메타 태그란?">
-                메타 태그란?
-              </dfn>
-              <dd class="main-article-dd">
-                data에 대한
-                <span
-                  ><strong class="underline">정보를 나타내는 태그</strong></span
-                >이다.
-              </dd>
-              <dd class="main-article-dd">
-                우리가 만든 서비스를 최대한 노출 시키고 싶을 때 이용하는
-                태그이다.
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="메타 태그의 위치">
-                메타 태그의 위치
-              </dt>
-              <dd class="main-article-dd">
-                html파일의 <span aria-hidden="true">&lt;</span>head<span
-                  aria-hidden="true"
-                  >&gt;</span
-                >
-                태그 안에 들어간다.
-              </dd>
-            </div>
-          </dl>
-          <section
-            class="meta-definition-animation"
-            aria-label="메타 묘사 애니메이션"
-          >
-            <div class="data-image-group">
-              <img
-                class="data-image"
-                src="../../assets/images/super-man.png"
-                alt="사람"
-              />
-              <span class="text-meta">meta(data)</span>
-            </div>
-            <div class="box-image-group">
-              <img
-                class="box-image"
-                src="../../assets/images/box.jpg"
-                alt="상자"
-              />
-              <span class="text-head">&lt;head&gt;</span>
-            </div>
-          </section>
-        </article>
+            <section class="meta" aria-labelledby="meta-title">
+              <h3 id="meta-title" class="main-article-title">
+                <i aria-hidden="true">🎃</i>
+                메타 태그
+              </h3>
 
-        <article class="meta-attribute" aria-labelledby="meta-attribute-title">
-          <h3 id="meta-attribute-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">😎</span>
-            메타태그의 속성
-          </h3>
-          <dl
-            class="main-article-dl meta-attribute-type"
-            aria-label="속성 종류"
-          >
-            <div>
-              <dt class="main-article-dt type" aria-label="charset">charset</dt>
-              <dd class="main-article-dd">
-                html5 부터 나온 태그, UTF-8로 HTML문서를 인코딩 하자!라는 의미
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt type" aria-label="name">name</dt>
-              <dd class="main-article-dd">데이터의 종류</dd>
-            </div>
-            <div>
-              <dt class="main-article-dt type" aria-label="content">content</dt>
-              <dd class="main-article-dd">데이터의 값</dd>
-            </div>
-            <div>
-              <dt
-                class="main-article-dt type"
-                aria-label="http-equiv='refresh'"
-              >
-                http-equiv='refresh'
-              </dt>
-              <dd class="main-article-dd">페이지 새로 고침</dd>
-              <dd class="main-article-dd">content='시간'과 함께 쓰임</dd>
-            </div>
-          </dl>
-        </article>
+              <div>
+                <dl class="main-dl" aria-label="태그 정의">
+                  <dfn aria-label="메타 태그란?">메타 태그란?</dfn>
+                  <dd>
+                    <strong class="underline">
+                      페이지에 대한 정보를 나타내는 태그
+                    </strong>
+                  </dd>
+                  <dd>우리가 만든 서비스를 최대한 노출 시키고 싶을 때 이용</dd>
+                  <dd>
+                    위치:
+                    <span aria-label="헤드 태그">&lt;head&gt; 태그</span> 내부
+                  </dd>
+                </dl>
 
-        <article class="name-type" aria-labelledby="name-type-title">
-          <h3 id="name-type-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">👻</span>
-            name의 종류
-          </h3>
-          <ul class="main-article-list name-types" aria-label="종류">
-            <li class="main-article-list-items type">viewport</li>
-            <li class="main-article-list-items type">author</li>
-            <li class="main-article-list-items type">keyword</li>
-            <li class="main-article-list-items type">description</li>
-            <li class="main-article-list-items type">Location</li>
-            <li class="main-article-list-items type">Reply-To</li>
-          </ul>
-        </article>
+                <div class="meta-animation">
+                  <p class="visually-hidden">
+                    헤드 태그 안으로 들어가는 메타 태그
+                  </p>
 
-        <article class="meta-utilize" aria-labelledby="meta-utilize-title">
-          <h3 id="meta-utilize-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🔥</span>
-            좀 더 멋지게 meta 태그 사용하기
-          </h3>
-          <p class="margin-8px">
-            페이스북, 카카오톡, 트위터에
-            <strong class="underline"
-              >링크 공유하면 링크 대신 사진과 글귀가 나오게 할 때</strong
+                  <div class="img-60 is-meta">
+                    <img
+                      src="../../assets/images/super-man.png"
+                      alt="메타 태그 역할인 사람"
+                    />
+                    <strong>meta(data)</strong>
+                  </div>
+
+                  <div class="img-background is-head">
+                    <img
+                      src="../../assets/images/box.jpg"
+                      alt="헤드태그 역할인 상자"
+                    />
+                    <strong aria-label="헤드 태그">&lt;head&gt;</strong>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="meta-attribute"
+              aria-labelledby="meta-attribute-title"
             >
-            meta태그를 정의한다. 카카오톡, 페이스북
-          </p>
-          <div class="hidden">예시 코드</div>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              < meta property='og:title' content='test'/>
-              < meta property='og:type' content='article'/>
-              < meta property='og:url' content='https://hanjungv.github.io/'/>
-              < meta property='og:description' content='설명을 적어보자!'/>
-              < meta property='og:image' content='/post_img/201702/16/1.png'/>
-              < meta property='og:image:width' content='1200' />
-              < meta property='og:image:height' content='627' />
-            </code>
-          </pre>
-          <span>트위터</span>
-          <pre class="main-article-pre background-white-radius">
-            <code>
-              < meta name='twitter:card' content='summary'>
-              < meta name='twitter:url' content='https://hanjungv.github.io/'>
-              < meta name='twitter:title' content='test'>
-              < meta name='twitter:description' content='설명을 적어보자!'>
-              < meta name='twitter:image' content='/post_img/201702/16/1.png'>
-            </code>
-          </pre>
-        </article>
+              <h3 id="meta-attribute-title" class="main-article-title">
+                <i aria-hidden="true">😎</i>
+                메타태그의 속성
+              </h3>
 
-        <article class="tip" aria-labelledby="tip-title">
-          <h3 id="tip-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">✨</span>
-            팁
-          </h3>
-          <ul class="main-article-list" aria-label="꿀팁">
-            <li class="main-article-list-items">
-              설명(description)은 간결하고 그 페이지를 명확하게 나타내주는
-              글로(1~2줄)
-            </li>
-            <li class="main-article-list-items">
-              가능하다면 페이지마다 다르게하자. 그게 정체성을 더 나타낼 것
-            </li>
-            <li class="main-article-list-items">
-              description을 수정한다면 바로 웹페이지에 반영되지 않는다.
-              주기적으로 업데이트가 되는 시점 이후에 반영이 된다.
-            </li>
-          </ul>
-        </article>
-      </section>
+              <dl class="main-dl" aria-label="속성 종류">
+                <div>
+                  <dt class="highlight">charset</dt>
+                  <dd>
+                    html5 부터 나온 태그, UTF-8로 HTML문서를 인코딩 하자!라는
+                    의미
+                  </dd>
+                </div>
+                <div>
+                  <dt class="highlight">name</dt>
+                  <dd>데이터의 종류</dd>
+                  <dd>
+                    값
+                    <ul class="types" aria-label="종류">
+                      <li class="main-item">viewport</li>
+                      <li class="main-item">author</li>
+                      <li class="main-item">keyword</li>
+                      <li class="main-item">description</li>
+                      <li class="main-item">Location</li>
+                      <li class="main-item">Reply-To</li>
+                    </ul>
+                  </dd>
+                </div>
+                <div>
+                  <dt class="highlight">content</dt>
+                  <dd>데이터의 값</dd>
+                </div>
+                <div>
+                  <dt class="highlight">http-equiv='refresh'</dt>
+                  <dd>페이지 새로 고침</dd>
+                  <dd>content='시간'과 함께 쓰임</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section
+              class="meta-property"
+              aria-labelledby="meta-property-title"
+            >
+              <h3 id="meta-property-title" class="main-article-title">
+                <i aria-hidden="true">🔥</i>
+                좀 더 멋지게 meta 태그 사용하기
+              </h3>
+
+              <div>
+                <p>
+                  페이스북, 카카오톡, 트위터에
+                  <strong class="underline">
+                    링크 공유하면 링크 대신 사진과 글귀가 나오게 할 때
+                  </strong>
+                  meta태그를 정의한다.
+                </p>
+
+                <div>
+                  <h4 class="main-article-subtitle">카카오톡, 페이스북</h4>
+
+                  <pre class="main-code">
+                    <code>
+                      < meta property='og:title' content='test'/>
+                      < meta property='og:type' content='article'/>
+                      < meta property='og:url' content='https://hanjungv.github.io/'/>
+                      < meta property='og:description' content='설명을 적어보자!'/>
+                      < meta property='og:image' content='/post_img/201702/16/1.png'/>
+                      < meta property='og:image:width' content='1200' />
+                      < meta property='og:image:height' content='627' />
+                    </code>
+                  </pre>
+                </div>
+
+                <div>
+                  <h4 class="main-article-subtitle">트위터</h4>
+
+                  <pre class="main-code">
+                    <code>
+                      < meta name='twitter:card' content='summary'>
+                      < meta name='twitter:url' content='https://hanjungv.github.io/'>
+                      < meta name='twitter:title' content='test'>
+                      < meta name='twitter:description' content='설명을 적어보자!'>
+                      < meta name='twitter:image' content='/post_img/201702/16/1.png'>
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </section>
+
+            <section class="meta-tip" aria-labelledby="meta-tip-title">
+              <h3 id="meta-tip-title" class="main-article-title">
+                <i aria-hidden="true">✨</i>
+                팁
+              </h3>
+
+              <ul aria-label="꿀팁">
+                <li class="main-item">
+                  설명(description)은 간결하고 명확하게 1~2줄
+                </li>
+                <li class="main-item">페이지마다 정체성을 담아 다르게</li>
+                <li class="main-item">
+                  description을 수정해도 바로 웹페이지에 반영되지 않음.
+                  주기적으로 업데이트가 되는 시점 이후에 반영
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://hanjungv.github.io/2017-02-16-1_HTML_metadata/"
-        >
-          <strong class="note-footer-reference-name">
-            자료 출처: "HANDEVBLOG", github 개인 페이지, 2020년 12월 29일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://hanjungv.github.io/2017-02-16-1_HTML_metadata/">
-              https://hanjungv.github.io/2017-02-16-1_HTML_metadata/
-            </a>
-          </cite>
-        </blockquote>
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://hanjungv.github.io/2017-02-16-1_HTML_metadata/"
+            >
+              <strong>
+                자료 출처: "HANDEVBLOG", github 개인 페이지, 2020년 12월 29일
+                접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://hanjungv.github.io/2017-02-16-1_HTML_metadata/"
+                >
+                  HANDEVBLOG
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
-            2020년 12월 29일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                github, 2020년 12월 29일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>
