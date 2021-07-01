@@ -1,0 +1,187 @@
+%margin-8px-div {
+  > div {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+%block-white {
+  padding: 0 4px;
+  background-color: $white;
+  border-radius: 4px;
+}
+
+// NOTE: 01-meta
+.meta {
+  @extend %margin-8px-div;
+
+  &-animation {
+    @include flexbox;
+    position: relative;
+
+    .is-meta {
+      @include animation(to-the-right, 2000ms);
+      position: absolute;
+      animation-iteration-count: infinite;
+    }
+
+    strong {
+      @include pos-center;
+      @extend %block-white;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.meta-property {
+  @extend %margin-8px-div;
+}
+
+// NOTE: 03-inline-block
+.block-element {
+  @extend %margin-8px-div;
+
+  &-animation {
+    position: relative;
+
+    .is-inline {
+      img {
+        transform: rotateY(180deg);
+      }
+
+      .tag {
+        @include pos-center-Y;
+        right: 10%;
+      }
+
+      &::after {
+        @include pos-center-Y;
+        @extend %block-white;
+        right: 10%;
+        color: #dc7646;
+        content: 'block 요소 우엑!';
+        transform: translateY(100%);
+      }
+    }
+
+    .is-block {
+      @include pos-center-Y;
+      @include animation(to-the-right, 4000ms);
+      font-size: 30px;
+      text-align: center;
+      animation-iteration-count: 2;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+    }
+
+    .tag {
+      @extend %block-white;
+      font-size: 14px;
+      word-break: keep-all;
+    }
+  }
+}
+
+.inline-element {
+  .desc {
+    p {
+      @include margin(8);
+    }
+  }
+}
+
+.inline-in-inline {
+  div,
+  p {
+    @include margin(8);
+  }
+
+  .inline-image-group {
+    @include column-flexbox(center, start);
+    overflow: auto;
+  }
+}
+
+// NOTE: 04-responsive-image
+.pixelated,
+.retina-screen,
+.srcset {
+  @extend %margin-8px-div;
+
+  &-problem,
+  &-solution {
+    .desc,
+    p {
+      @include margin(8);
+    }
+  }
+}
+
+.setup {
+  @extend %margin-8px-div;
+}
+
+.srcset {
+  .main-code {
+    @include margin(8);
+  }
+}
+
+.picture {
+  .desc,
+  p {
+    @include margin(8);
+  }
+}
+
+// NOTE: 05-list-tag-children
+.list-children {
+  @extend %margin-8px-div;
+}
+
+// note: 06-wai-aria-location
+.wai-aria-location,
+.wai-aria-javascript {
+  @extend %margin-8px-div;
+}
+
+// NOTE: 07-article
+.article,
+.article-section {
+  @extend %margin-8px-div;
+}
+
+// NOTE: 08-time
+.time-syntax {
+  @extend %margin-8px-div;
+}
+
+// NOTE: 09-data-attribute
+.data-attribute {
+  ol {
+    .desc {
+      p {
+        @include margin(8);
+      }
+    }
+  }
+}
+
+// NOTE: 10-anchor
+.anchor-markup,
+.anchor-tag-disadvantage {
+  @extend %margin-8px-div;
+}
+
+.anchor-markup {
+  .desc,
+  .code {
+    p {
+      @include margin(8);
+    }
+  }
+}
