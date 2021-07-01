@@ -1,0 +1,11 @@
+%margin-8-div {
+  > div {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+.extention-search {
+  @extend %margin-8-div;
+}
