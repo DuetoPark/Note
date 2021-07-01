@@ -1,0 +1,18 @@
+%margin-8-div {
+  > div {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 01-no-response
+.no-response-reason,
+.no-response-solution {
+  @extend %margin-8-div;
+}
+
+// NOTE: 02-단축키
+.find-file {
+  @extend %margin-8-div;
+}
