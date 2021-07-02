@@ -1,0 +1,134 @@
+%margin-8-div {
+  > div {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+%margin-8-p {
+  p {
+    @include margin(8);
+  }
+}
+
+%margin-8-children {
+  > * {
+    @include margin(8);
+  }
+}
+
+// NOTE: 02-management
+.git-status,
+.git-reset,
+.git-push-cancel,
+.git-branch,
+.merge-branch {
+  @extend %margin-8-div;
+}
+
+.merge-branch {
+  .note {
+    @extend %margin-8-children;
+  }
+}
+
+// NOTE: 4-github-gist
+.github-gist-order {
+  ol {
+    .main-item {
+      @extend %margin-8-children;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @include responsive(M) {
+    ol {
+      .main-item {
+        img {
+          width: 200px;
+        }
+      }
+    }
+  }
+
+  @include responsive(T) {
+    ol {
+      .main-item {
+        img {
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+
+.github-gist-pre-diff {
+  ol {
+    .main-item {
+      @extend %margin-8-children;
+    }
+  }
+}
+
+// NOTE: 5-gitignore
+.gitignore {
+  @extend %margin-8-div;
+
+  .note {
+    @extend %margin-8-p;
+  }
+}
+
+// NOTE: 6-merge-error
+.error-fix-step {
+  @extend %margin-8-div;
+}
+
+// NOTE: 7-return-commit
+.git-reset,
+.github-commit {
+  @extend %margin-8-div;
+
+  .note,
+  ol > .main-item {
+    @extend %margin-8-p;
+  }
+}
+
+// NOTE: 8-delete-branch
+.delete-branch {
+  @extend %margin-8-div;
+
+  .note {
+    @extend %margin-8-p;
+  }
+}
+
+// NOTE: 9-pull
+.git-pull {
+  @extend %margin-8-div;
+
+  .note,
+  .desc {
+    @extend %margin-8-p;
+  }
+}
+
+// NOTE: 10-config-email
+.git-config {
+  @extend %margin-8-div;
+
+  .note,
+  .config-local,
+  .config-global {
+    @extend %margin-8-p;
+  }
+}
+
+.git-config-result {
+  @extend %margin-8-div;
+}
