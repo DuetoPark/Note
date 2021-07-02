@@ -189,29 +189,31 @@
               </h3>
     
               <div>
-                <p>
-                  결론부터 말하자면, max-width문제가 아니었다.<br/>
-                </p>
+                <div>
+                  <p>
+                    결론부터 말하자면, max-width문제가 아니었다.<br/>
+                  </p>
+        
+                  <p>
+                    <strong class="underline">
+                      IE11가 main 태그를 지원하지 않았기 때문이었다.
+                    </strong>
+                    <br/>
+                    해결방법의 다음과 같다.
+                  </p>
+                </div>
       
-                <p>
-                  <strong class="underline">
-                    IE11가 main 태그를 지원하지 않았기 때문이었다.
-                  </strong>
-                  <br/>
-                  해결방법의 다음과 같다.
-                </p>
+                <ul aria-label="해결">
+                  <li class="main-item box-white">
+                    main 태그를 div 태그로 변경하거나
+                  </li>
+                  <li class="main-item box-white">
+                    <strong class="error">
+                      main{display: block;}을 선언한다.
+                    </strong>
+                  </li>
+                </ul>
               </div>
-    
-              <ul aria-label="해결">
-                <li class="main-item box-white">
-                  main 태그를 div 태그로 변경하거나
-                </li>
-                <li class="main-item box-white">
-                  <strong class="error">
-                    main{display: block;}을 선언한다.
-                  </strong>
-                </li>
-              </ul>
             </section>
           </div>
         </div>
