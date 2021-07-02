@@ -37,280 +37,285 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-git.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-git.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-6-15">2021년 06월 15일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-1">2021년 07월 01일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
       <article class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">👽</span>
-            Git Config
-            <span class="main-title" aria-hidden="true">👽</span>
-          </strong>
-        </h2>
-        <div class="time">
-          작성 날짜: <time datetime="2021-6-15">2021년 06월 15일</time>
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">👽</i>
+                Git Config
+                <i aria-hidden="true">👽</i>
+              </strong>
+            </h2>
+
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">🐴</i>
+                개요
+              </h3>
+
+              <p>
+                github 계정을 정리했다.<br />
+                setting에서 계정 이메일을 변경하고, 로컬의 이메일도 수정했다.<br />
+                로컬 이메일은 어떻게 수정하는지 알아보자.
+              </p>
+            </section>
+
+            <section class="git-config" aria-labelledby="git-config-title">
+              <h3 id="git-config-title" class="main-article-title">
+                <i aria-hidden="true">🎉</i>
+                git config
+              </h3>
+
+              <div>
+                <div class="note">
+                  <p>
+                    (참고) 이 방법은 깃허브 계정에 등록된 email 주소만을 바꾸는
+                    과정입니다. 계정 자체를 변경하고자 한다면 이 글을
+                    참고해주세요.
+                    <a
+                      class="error"
+                      href="https://meaownworld.tistory.com/78"
+                      target="_blank"
+                      >git 계정 변경</a
+                    >
+                  </p>
+
+                  <p>
+                    (참고) github 이메일 계정 관리: [Github
+                    페이지]-[Settings]-[Emails]
+                  </p>
+
+                  <p>
+                    (참고) 로컬 이메일 수정: 프로젝트 폴더 git bash 또는
+                    terminal
+                  </p>
+                </div>
+
+                <div class="config-local">
+                  <p class="box-white">
+                    <strong>git config user.email</strong>
+                  </p>
+
+                  <p>프로젝트에 등록된 email 확인</p>
+                </div>
+
+                <div class="config-global">
+                  <p class="box-white">
+                    <strong>git config --global user.email 이메일주소</strong>
+                  </p>
+
+                  <p class="desc">
+                    <strong
+                      >Github 계정에 등록된 주소 중에 원하는 메일 주소
+                      입력</strong
+                    >
+                    <br />
+                    제발!! Github 계정에 등록한 이메일만 사용
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="git-config-result"
+              aria-labelledby="git-config-result-title"
+            >
+              <h3 id="git-config-result-title" class="main-article-title">
+                <i aria-hidden="true">👻</i>
+                결과
+              </h3>
+
+              <div>
+                <p>
+                  깃 이메일(user.email)을 수정해도 잔디밭은 그대로 유지된다.
+                  계정(user.name)을 변경하지 않았기 때문이다.
+                </p>
+
+                <p>
+                  <strong class="error">
+                    push 했는데 레포지토리에 커밋이 등록되지 않는다면, 수정한
+                    이메일 주소를 확인하자.
+                  </strong>
+                  <br />
+                  주소에 오타가 있으면, 레포지토리에 제대로 반영되지 않는다.<br />
+                </p>
+              </div>
+            </section>
+          </div>
         </div>
-
-        <section class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🐴</span>
-            개요
-          </h3>
-          <p>
-            github 계정을 정리했다.<br />
-            setting에서 계정 이메일을 변경하고, 로컬의 이메일도 수정했다.<br />
-            로컬 이메일은 어떻게 수정하는지 알아보자.
-          </p>
-        </section>
-
-        <section class="git-config" aria-labelledby="git-config-title">
-          <h3 id="git-config-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🎉</span>
-            git config
-          </h3>
-
-          <p class="margin-8px">
-            (참고) 이 방법은 깃허브 계정에 등록된 email 주소만을 바꾸는
-            과정입니다. 계정 자체를 변경하고자 한다면 이 글을 참고해주세요.
-            <a
-              class="error"
-              href="https://meaownworld.tistory.com/78"
-              target="_blank"
-              >git 계정 변경</a
-            >
-          </p>
-
-          <p class="margin-8px">
-            (참고) github 이메일 계정 관리: [Github 페이지]-[Settings]-[Emails]
-          </p>
-
-          <p class="margin-8px">
-            (참고) 로컬 이메일 수정: 프로젝트 폴더 git bash 또는 terminal
-          </p>
-
-          <div class="margin-8px">
-            <p class="margin-8px background-white-radius">
-              <strong>git config user.email</strong>
-            </p>
-
-            <p>프로젝트에 등록된 email 확인<br /></p>
-          </div>
-
-          <div>
-            <p class="margin-8px background-white-radius">
-              <strong>git config --global user.email 이메일주소</strong>
-            </p>
-
-            <p class="margin-8px">
-              <strong
-                >Github 계정에 등록된 주소 중에 원하는 메일 주소 입력</strong
-              >
-              <br />
-              제발!! Github 계정에 등록한 이메일만 사용
-            </p>
-          </div>
-        </section>
-
-        <section
-          class="git-config-result"
-          aria-labelledby="git-config-result-title"
-        >
-          <h3 id="git-config-result-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">👻</span>
-            결과
-          </h3>
-
-          <p class="margin-8px">
-            깃 이메일(user.email)을 수정해도 잔디밭은 그대로 유지된다.
-            계정(user.name)을 변경하지 않았기 때문이다.
-          </p>
-
-          <p class="margin-8px">
-            <strong class="order"
-              >push 했는데 레포지토리에 커밋이 등록되지 않는다면, 수정한 이메일
-              주소를 확인하자.</strong
-            >
-            주소에 오타가 있으면, 레포지토리에 제대로 반영되지 않는다.<br />
-          </p>
-        </section>
       </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://velog.io/@winteri/git-github-%EC%9E%94%EB%94%94%EC%8B%AC%EA%B8%B0"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "Velog / winteri / [git] github 잔디심기", Velog, 2021년
-            6월 15일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://velog.io/@winteri/git-github-%EC%9E%94%EB%94%94%EC%8B%AC%EA%B8%B0"
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://velog.io/@winteri/git-github-%EC%9E%94%EB%94%94%EC%8B%AC%EA%B8%B0"
             >
-              https://velog.io/@winteri/git-github-%EC%9E%94%EB%94%94%EC%8B%AC%EA%B8%B0
-            </a>
-          </cite>
-        </blockquote>
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
-            github, 2021년 6월 15일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+              <strong>
+                정보 출처: "Velog / winteri / [git] github 잔디심기", Velog,
+                2021년 6월 15일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://velog.io/@winteri/git-github-%EC%9E%94%EB%94%94%EC%8B%AC%EA%B8%B0"
+                >
+                  [git] github 잔디심기
+                </a>
+              </cite>
+            </blockquote>
+
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                github, github, 2021년 6월 15일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>
