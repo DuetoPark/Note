@@ -1,0 +1,281 @@
+// NOTE: 01-pseudo-style
+.pseudo-code {
+  ul {
+    li {
+      .code {
+        > * {
+          @include margin(8);
+        }
+      }
+    }
+  }
+}
+
+// NOTE: 05-switch
+.switch-precautions {
+  .desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 06-timing-method
+.setTimeout {
+  .code {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+.timing-method-scope {
+  .desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 08-foreach-중첩반복문
+.loop-in-loop {
+  .desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 09-array-fill
+.array {
+  .code,
+  .code-desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 10-map
+.map {
+  dl {
+    .is-map-callback {
+      > * {
+        @include margin(8);
+      }
+    }
+  }
+}
+
+.map-example {
+  ul {
+    li {
+      > * {
+        @include margin(8);
+      }
+    }
+  }
+}
+
+// NOTE: 14-딕셔너리-자료구조
+.dictionary {
+  .desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 24-템플릿리터럴
+.literals-error {
+  ul {
+    li {
+      > div,
+      .desc {
+        > * {
+          @include margin(8);
+        }
+      }
+    }
+  }
+}
+
+// NOTE: 26-scope
+.lexical-scope-example {
+  .code,
+  .code-desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 27-closure
+.closure,
+.closure-example,
+.closure-solution,
+.immediately-invoked-function {
+  .code,
+  .code-desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 28-call-stack
+.call-stack-recursion {
+  .code,
+  .code-desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 30-참조-복사
+.copy-reference,
+.object-copy {
+  ul {
+    li {
+      > * {
+        @include margin(8);
+      }
+    }
+  }
+}
+
+.reference-check {
+  .desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 31-팩토리패턴-프로토타입
+.prototype-effect,
+.object-create {
+  .desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 32-call-by-value
+.call-by-value {
+  div {
+    &[class*='is-'] {
+      .code,
+      .code-desc > p {
+        @include margin(8);
+      }
+    }
+  }
+}
+
+// NOTE: 37-this
+.this-deeping {
+  .desc {
+    p {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 39-논리연산자
+.or-operator {
+  &-plus {
+    dd {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 42-localStorage
+.localStorage-example {
+  .implement {
+    input {
+      padding: 0 10px;
+      margin-right: 8px;
+      line-height: 40px;
+      border-radius: 4px;
+
+      &[name='item'] {
+        &:active,
+        &:focus {
+          box-shadow: 0px 0px 0px 3px #ffa5007a;
+        }
+      }
+
+      &[type='submit'] {
+        margin-right: 0;
+        cursor: pointer;
+        background-color: #ffa500;
+      }
+    }
+  }
+}
+
+.JSON-parse-stringify {
+  .JSON-stringify {
+    p {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 45-getBoundingClientRect
+.getBoundingClientRect {
+  .desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 46-bubbling-capturing
+.bubbling {
+  .desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+.bubbling-etc {
+  div {
+    &[class*='bubbling-etc'] {
+      @include margin(24);
+    }
+  }
+}
+
+// NOTE: 47-navigator
+
+.navigator {
+  .desc {
+    > * {
+      @include margin(8);
+    }
+  }
+}
+
+// NOTE: 49-bind-apply-call
+.call-function,
+.bind {
+  .desc,
+  .desc > * {
+    @include margin(8);
+  }
+}
+
+// NOTE: 53-회계형표현
+.account-exp {
+  .function {
+    div {
+      @include margin(8);
+    }
+  }
+}
