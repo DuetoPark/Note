@@ -40,277 +40,264 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-3-15">2021년 03월 15일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-2">2021년 07월 02일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
-      <section class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">😂</span>
-            표의 화면과 데이터 매칭
-            <span class="main-title" aria-hidden="true">😂</span>
-          </strong>
-        </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-3-17">2021년 03월 17일</time>
-        </div>
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">😂</i>
+                표의 화면과 데이터 매칭
+                <i aria-hidden="true">😂</i>
+              </strong>
+            </h2>
 
-        <article class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">💩</span>
-            개요
-          </h3>
-          <p>
-            표에서 데이터와 화면을 매칭시키려고만 하면 계속 삽질을 한다. 그래서
-            아예 정리해놓고 외우려고 한다. 또 이 거지같은 섬에 남겨지지
-            말아야지.
-          </p>
-        </article>
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">💩</i>
+                개요
+              </h3>
 
-        <article
-          class="display-data-matching"
-          aria-labelledby="display-data-matching-title"
-        >
-          <h3 id="display-data-matching-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">👽</span>
-            매칭 방법
-          </h3>
-          <div class="hidden">코드</div>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              var tdData = []; // 데이터 저장할 배열
+              <p>
+                표에서 데이터와 화면을 매칭시키려고만 하면 계속 삽질을 한다.
+                그래서 아예 정리해놓고 외우려고 한다. 또 이 거지같은 섬에
+                남겨지지 말아야지.
+              </p>
+            </section>
 
-              const table = document.querySelector('table');
+            <section
+              class="display-data-matching"
+              aria-labelledby="display-data-matching-title"
+            >
+              <h3 id="display-data-matching-title" class="main-article-title">
+                <i aria-hidden="true">👽</i>
+                매칭 방법
+              </h3>
 
-              for (let i = 0; i < 3; i+= 1) {
-                var tr = document.createElement('tr');
-                tdData.push([]); // 새로운 배열 생성
+              <div>
+                <dl class="main-dl" aria-label="코드 해석">
+                  <div>
+                    <dt>빈 배열 생성</dt>
+                    <dd>표의 칸 데이터를 담아낼 빈 배열을 만든다.</dd>
+                    <dd>tdData.push([]);</dd>
+                    <dd>이 배열은 줄 단위로 이차원 배열이 된다.</dd>
+                  </div>
+                  <div>
+                    <dt>첫 번째 반복문</dt>
+                    <dd>
+                      표의 줄을 생성할 때마다 tdData 배열에 빈 배열을 만든다.
+                    </dd>
+                    <dd>
+                      해당 배열은 줄 단위로 데이터를 구분하는 역할을 한다.
+                    </dd>
+                    <dd>
+                      <span>데이터 형태</span>
+                      <pre class="main-code">
+                        <code>
+                          console.log(tdData); // [ [], [], [] ]
+      
+                          // 원하는 결과
+                          [
+                            [1-1번칸, 1-2번칸, 1-3번칸],
+                            [2-1번칸, 2-2번칸, 2-3번칸],
+                            [3-1번칸, 3-2번칸, 3-3번칸]
+                          ]
+                        </code>
+                      </pre>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>두 번째 반복문</dt>
+                    <dd>tdData 배열에 값을 push 한다.</dd>
+                    <dd>
+                      <strong class="underline"
+                        >tdData 배열의 인덱스에 주의한다.</strong
+                      >
+                      이 부분에서 계속 삽질했다.ㅠㅠ
+                    </dd>
+                    <dd>
+                      데이터를 넣으려고 빈 배열을 만든거니까 인자는 j가 아니라
+                      i여야 한다.
+                    </dd>
+                  </div>
+                </dl>
 
-                for (let j = 0; j < 3; j += 1) {
-                  var td = document.createElement('td');
-                  tr.appendChild(td);
-                  tdData[i].push(td); // <span class="order">인자가 i이다.</span>
-                }
-              }
-            </code>
-          </pre>
-          <dl class="main-article-dl margin-16px" aria-label="코드 해석">
-            <div>
-              <dt class="main-article-dt" aria-label="빈 배열 생성">
-                빈 배열 생성
-              </dt>
-              <dd class="main-article-dd">
-                표의 칸 데이터를 담아낼 빈 배열을 만든다.
-              </dd>
-              <dd class="main-article-dd">tdData.push([]);</dd>
-              <dd class="main-article-dd">
-                이 배열은 줄 단위로 이차원 배열이 된다.
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="첫 번째 반복문">
-                첫 번째 반복문
-              </dt>
-              <dd class="main-article-dd">
-                표의 줄을 생성할 때마다 tdData 배열에 빈 배열을 만든다.
-              </dd>
-              <dd class="main-article-dd">
-                해당 배열은 줄 단위로 데이터를 구분하는 역할을 한다.
-              </dd>
-              <dd class="main-article-dd">
-                <span>데이터 형태</span>
-                <pre class="main-article-pre background-white-radius">
+                <pre class="main-code">
                   <code>
-                    console.log(tdData); // [[], [], []]
-
-                    // 원하는 결과
-                    [
-                      [1-1번칸, 1-2번칸, 1-3번칸],
-                      [2-1번칸, 2-2번칸, 2-3번칸],
-                      [3-1번칸, 3-2번칸, 3-3번칸]
-                    ]
+                    var tdData = []; // 데이터 저장할 배열
+      
+                    const table = document.querySelector('table');
+      
+                    for (let i = 0; i < 3; i+= 1) {
+                      var tr = document.createElement('tr');
+                      tdData.push([]); // 새로운 배열 생성
+      
+                      for (let j = 0; j < 3; j += 1) {
+                        var td = document.createElement('td');
+                        tr.appendChild(td);
+                        tdData[i].push(td); // <span class="order">인자가 i이다.</span>
+                      }
+                    }
                   </code>
                 </pre>
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="두 번째 반복문">
-                두 번째 반복문
-              </dt>
-              <dd class="main-article-dd">tdData 배열에 값을 push 한다.</dd>
-              <dd class="main-article-dd">
-                <strong class="order">tdData 배열의 인덱스에 주의한다.</strong>
-                이 부분에서 계속 삽질했다.
-              </dd>
-              <dd class="main-article-dd">
-                데이터를 넣으려고 빈 배열을 만든거니까 인자는 j가 아니라 i여야
-                한다.
-              </dd>
-            </div>
-          </dl>
-        </article>
-      </section>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
-            2021년 3월 15일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                Github, 2021년 3월 15일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

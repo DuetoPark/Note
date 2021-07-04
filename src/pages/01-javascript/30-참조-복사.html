@@ -37,562 +37,510 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-3-11">2021년 03월 11일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-3">2021년 07월 03일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
-      <section class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">👿</span>
-            참조와 복사
-            <span class="main-title" aria-hidden="true">👿</span>
-          </strong>
-        </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-3-17">2021년 03월 17일</time>
-        </div>
-
-        <article class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">👽</span>
-            개요
-          </h3>
-          <p>
-            참조와 복사의 차이, 참조를 끊고 객체를 복사하는 방법에 대해
-            알아보자.
-          </p>
-        </article>
-
-        <article class="copy-reference" aria-labelledby="copy-reference-title">
-          <h3 id="copy-reference-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🙋</span>
-            복사와 참조
-          </h3>
-          <div class="primitive-value-assignment">
-            <p class="margin-8px">
-              원시값(숫자, 문자형, 불린)을 저장하는 예시를 보자.
-            </p>
-            <pre class="main-article-pre background-white-radius margin-8px">
-              <code>
-                var 원본 = '나는 오이';
-                var 복사 = 값;
-
-                console.log(복사); // 나는 오이
-                복사 = '고구만데요?'
-                console.log(복사); // 고구만데요?
-                console.log(원본); // 나는 오이
-              </code>
-            </pre>
-            <p>
-              숫자, 문자형, 불린은 대입하면 값을 복사한다. 그리고 변수마다
-              각자의 일을 한다.<br />
-            </p>
-          </div>
-          <div class="object-assignment">
-            <p class="margin-8px">객체(객체, 배열, 함수)일때에는 다르다.</p>
-            <p class="margin-16px">
-              <strong class="underline">
-                객체는 대입하면 참조 관계가 된다. 참조 관계는 한 쪽 변수의 특정
-                값을 수정하면 나머지 변수에 수정사항이 반영됨을 의미한다.
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">👿</i>
+                참조와 복사
+                <i aria-hidden="true">👿</i>
               </strong>
-              <br />
-              다음의 예시를 보면 이해가 쉽다.
-            </p>
-            <ol aria-label="객체 세 가지 예시">
-              <li class="main-article-list-items margin-16px">
-                <div class="list-item-title">
-                  <span aria-hidden="true">&lt;</span>
-                  객체 예시
-                  <span aria-hidden="true">&gt;</span>
-                </div>
-                <pre
-                  class="main-article-pre background-white-radius margin-8px"
-                >
-                  <code>
-                    var 오이 = {
-                      친구: "고구마",
-                    };
+            </h2>
 
-                    var 귤 = 오이;
-                    console.log(귤.친구); // 고구마
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">👽</i>
+                개요
+              </h3>
 
-                    귤.친구 = "저는 친구 없어요";
-
-                    console.log(귤.친구); // 저는 친구 없어요
-                    console.log(오이.친구); // 저는 친구 없어요
-                  </code>
-                </pre>
-                <div class="code-desc">
-                  <p class="hyphen">
-                    귤에 오이를 대입했다. 객체를 대입했으므로 참조 관계가 된다.
-                  </p>
-                  <p class="hyphen">
-                    귤의 '친구'속성 값을 변경하면, 오이의 '친구'속성 값도
-                    변경된다.
-                  </p>
-                </div>
-              </li>
-              <li class="main-article-list-items margin-16px">
-                <div class="list-item-title">
-                  <span aria-hidden="true">&lt;</span>
-                  배열 예시
-                  <span aria-hidden="true">&gt;</span>
-                </div>
-                <pre
-                  class="main-article-pre background-white-radius margin-8px"
-                >
-                  <code>
-                    var 쌉니다싸요 = ["포도", "오렌지", "수박"];
-
-                    var 살래요 = 쌉니다싸요;
-                    console.log(살래요); // ["포도", "오렌지", "수박"]
-
-                    살래요[0] = '사과';
-
-                    console.log(살래요); // ["사과", "오렌지", "수박"]
-                    console.log(쌉니다싸요); // ["사과", "오렌지", "수박"]
-                  </code>
-                </pre>
-                <div class="code-desc">
-                  <p class="hyphen">
-                    살래요에 쌉니다싸요를 대입했다. 객체(배열)를 대입했으므로
-                    참조 관계가 된다.
-                  </p>
-                  <p class="hyphen">
-                    살래요의 0번 요소를 '사과'로 수정해서, 쌉니다싸요의 0번
-                    요소도 '사과'로 변한다.
-                  </p>
-                </div>
-              </li>
-              <li class="main-article-list-items">
-                <div class="list-item-title">
-                  <span aria-hidden="true">&lt;</span>
-                  함수 예시
-                  <span aria-hidden="true">&gt;</span>
-                </div>
-                <pre
-                  class="main-article-pre background-white-radius margin-8px"
-                >
-                  <code>
-                    var 기영이 = function() {};
-                    기영이.바나나 = '고소한 맛이 나고';
-
-                    var 기철이 = 기영이;
-                    console.log(기철이.바나나); // 고소한 맛이 나고
-
-                    기철이.바나나 = '만찐두빵으로 바꿔줘요';
-                    console.log(기철이.바나나); // 만찐두빵으로 바꿔줘요
-                    console.log(기영이.바나나); // 만찐두빵으로 바꿔줘요
-                  </code>
-                </pre>
-                <div class="code-desc">
-                  <p class="hyphen">
-                    기철이에 기영이를 대입했다. 객체(함수)를 대입했으므로 참조
-                    관계가 된다.
-                  </p>
-                  <p class="hyphen">
-                    기철이의 '바나나'속성 값을 '만찐두빵으로 바꿔줘요'로
-                    수정해서, 기영이의 '바나나'속성 값도 '만찐두빵으로
-                    바꿔줘요'가 된다.
-                  </p>
-                </div>
-              </li>
-            </ol>
-          </div>
-        </article>
-
-        <article class="object-copy" aria-labelledby="object-copy-title">
-          <h3 id="object-copy-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">💌</span>
-            객체 복사
-          </h3>
-          <p class="margin-8px">
-            세 가지 방법이 있다.<br />
-            값을 직접 넣는 방법, forEach를 사용하는 방법, JSON을 사용하는
-            방법이다.
-          </p>
-          <p class="margin-8px">
-            <strong class="underline">
-              예시를 보기 전에, 빈 객체 선언은 '이건 독립된 객체입니다'라는
-              의미를 내포한다는 점을 기억하자.
-            </strong>
-          </p>
-          <p class="margin-8px">
-            그리고 객체에 '값'을 대입하는 건 복사가 된다.<br />
-            아래에 예시를 보면 이해하기 쉽다.
-          </p>
-          <ol aria-label="객체 복사 방법">
-            <li class="main-article-list-items margin-16px">
-              <div class="list-item-title">
-                <span aria-hidden="true">&lt;</span>
-                값 직접 넣기
-                <span aria-hidden="true">&gt;</span>
-              </div>
-              <pre class="main-article-pre background-white-radius">
-                <code>
-                  var 원본 = {a: 1, b: 2};
-                  var 복사본 = {};
-                  복사본.a = 원본.a;
-                  복사본.b = 원본.b;
-                  console.log(복사본.a, 복사본.b); // 1 2
-
-                  복사본.a = 3;
-                  console.log(복사본.a); // 3
-                  console.log(원본.a); // 1
-                </code>
-              </pre>
-            </li>
-            <li class="main-article-list-items margin-16px">
-              <div class="list-item-title">
-                <span aria-hidden="true">&lt;</span>
-                forEach 사용하기
-                <span aria-hidden="true">&gt;</span>
-              </div>
-              <pre class="main-article-pre background-white-radius margin-8px">
-                <code>
-                  var 원본 = {a: 1, b: 2, c: 3};
-                  var 복사본 = {};
-                  console.log(Object.keys(원본));
-                  // ["a", "b", "c"]
-                  // Object.keys는 객체의 속성명을 배열로 바꿔준다.
-
-                  Object.keys(원본).forEach(function(키) {
-                    복사본[키] = 원본[키];
-                  });
-
-                  복사본.a = 77;
-                  console.log(복사본.a); // 77
-                  console.log(원본.a); // 1
-                </code>
-              </pre>
-              <p class="margin-8px">
-                하지만 forEach도 완전한 방법은 아니다. 다음 예시를 보면서 왜
-                완전하지 않은지 확인해보자.
+              <p>
+                참조와 복사의 차이, 참조를 끊고 객체를 복사하는 방법에 대해
+                알아보자.
               </p>
-              <pre class="main-article-pre background-white-radius margin-8px">
-                <code>
-                  var 오이 = {a: 1, b: {c: 1}};
-                  var 토마토 = {}; // 빈 객체 선언
-                  Object.keys(오이).forEach(function(키) {
-                    토마토[키] = 오이[키];
-                  });
+            </section>
 
-                  토마토.a = 7;
-                  console.log(토마토.a); // 7
-                  console.log(오이.a); // 1
+            <section
+              class="copy-reference"
+              aria-labelledby="copy-reference-title"
+            >
+              <h3 id="copy-reference-title" class="main-article-title">
+                <i aria-hidden="true">🙋</i>
+                복사와 참조
+              </h3>
 
-                  토마토.b.c = "똥";
-                  console.log(토마토.b.c); //똥
-                  console.log(오이.b.c); //똥
-                </code>
-              </pre>
-              <div class="code-desc">
-                <p class="margin-8px">
-                  똥이 나왔다. 오이.b.c는 1이 나와야 하는데!<br />
-                  코드를 풀어서 써보자.<br />
-                  토마토.a = 오이.a; // a속성의 값은 원시값이라 복사됨.<br />
-                  토마토.b = 오이.b; // b속성의 값은 객체라서 참조됨.
-                </p>
+              <div>
+                <dl class="main-dl">
+                  <div>
+                    <dt>복사</dt>
+                    <dd>변수의 대상: 숫자형, 문자형, 불린(Boolean)</dd>
+                    <dd>변수는 독립적 동작</dd>
+                    <dd>깊은 복사</dd>
+                  </div>
+                  <div>
+                    <dt>참조</dt>
+                    <dd>변수의 대상: 객체(객체, 배열, 함수)</dd>
+                    <dd>
+                      힌 쪽의 변수를 수정하면 다른 한 쪽의 변수도 자동으로
+                      수정됨
+                    </dd>
+                    <dd>얕은 복사</dd>
+                  </div>
+                </dl>
+
+                <ul
+                  class="copy-reference-example"
+                  aria-label="복사와 참조 예시"
+                >
+                  <li class="main-item">
+                    <p>
+                      <strong>복사</strong>
+                      <span class="visually-hidden">예시 코드</span>
+                    </p>
+
+                    <pre class="main-code">
+                      <code>
+                        var 원본 = '나는 오이';
+                        var 복사 = 값;
+        
+                        console.log(복사); // 나는 오이
+                        복사 = '고구만데요?'
+                        console.log(복사); // 고구만데요?
+                        console.log(원본); // 나는 오이
+                      </code>
+                    </pre>
+                  </li>
+                  <li class="main-item">
+                    <p>
+                      <strong>참조-객체</strong>
+                      <span class="visually-hidden">예시 코드</span>
+                    </p>
+
+                    <pre class="main-code">
+                      <code>
+                        var 오이 = {
+                          친구: "고구마",
+                        };
+    
+                        var 귤 = 오이;
+                        console.log(귤.친구); // 고구마
+    
+                        귤.친구 = "저는 친구 없어요";
+    
+                        console.log(귤.친구); // 저는 친구 없어요
+                        console.log(오이.친구); // 저는 친구 없어요
+                      </code>
+                    </pre>
+                  </li>
+                  <li class="main-item">
+                    <p>
+                      <strong>참조-배열</strong>
+                      <span class="visually-hidden">예시 코드</span>
+                    </p>
+
+                    <pre class="main-code">
+                      <code>
+                        var 쌉니다싸요 = ["포도", "오렌지", "수박"];
+    
+                        var 살래요 = 쌉니다싸요;
+                        console.log(살래요); // ["포도", "오렌지", "수박"]
+    
+                        살래요[0] = '사과';
+    
+                        console.log(살래요); // ["사과", "오렌지", "수박"]
+                        console.log(쌉니다싸요); // ["사과", "오렌지", "수박"]
+                      </code>
+                    </pre>
+                  </li>
+                  <li class="main-item">
+                    <p>
+                      <strong>참조-함수</strong>
+                      <span class="visually-hidden">예시 코드</span>
+                    </p>
+
+                    <pre class="main-code">
+                      <code>
+                        var 기영이 = function() {};
+                        기영이.바나나 = '고소한 맛이 나고';
+    
+                        var 기철이 = 기영이;
+                        console.log(기철이.바나나); // 고소한 맛이 나고
+    
+                        기철이.바나나 = '만찐두빵으로 바꿔줘요';
+                        console.log(기철이.바나나); // 만찐두빵으로 바꿔줘요
+                        console.log(기영이.바나나); // 만찐두빵으로 바꿔줘요
+                      </code>
+                    </pre>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="object-copy" aria-labelledby="object-copy-title">
+              <h3 id="object-copy-title" class="main-article-title">
+                <i aria-hidden="true">💌</i>
+                객체 복사 방법
+              </h3>
+
+              <div>
                 <p>
-                  데이터가 계층구조(객체안에 객체)이면, forEach를 해도 완전히
-                  복사되지 않는다.<br />
-                  <strong class="underline">
-                    원시값은 복사되고 객체는 참조된다는 특성 때문이다.
+                  <strong>
+                    (참고) 빈 객체 선언은 '이건 독립된 객체입니다'라는 의미를
+                    내포한다.
                   </strong>
-                  <br />
-                  이 문제는 JSON을 사용하는 방법으로 해소할 수 있다.
                 </p>
+
+                <dl class="main-dl" aria-label="객체 복사 방법">
+                  <div>
+                    <dt>값 직접 넣기</dt>
+                    <dd>복사본 객체의 속성에 원본의 값을 저장하는 방식</dd>
+                    <dd>속성의 개수만큼 명령해야 하므로 비효율적</dd>
+                  </div>
+                  <div>
+                    <dt>forEach를 사용</dt>
+                    <dd>반복문 사용으로 효율적인 값 넣기를 구현한 방식</dd>
+                    <dd>일차원 객체는 깊은 복사</dd>
+                    <dd>이차원 객체부터 얕은 복사</dd>
+                    <dd>
+                      <strong class="underline">
+                        원시값은 복사되고 객체는 참조된다는 특성으로 인해 일차원
+                        객체에서만 깊은 복사가 이루어진다.
+                      </strong>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>JSON을 사용</dt>
+                    <dd>참조관계를 끊어내고 복사하는 방식</dd>
+                    <dd>성능 최악</dd>
+                    <dd>원본 객체가 이차원 이상이면 사용한다.</dd>
+                  </div>
+                </dl>
+
+                <ul aria-label="객체 복사 방법">
+                  <li class="main-item">
+                    <p>
+                      값 직접 넣기
+                      <span class="visually-hidden">예시 코드</span>
+                    </p>
+
+                    <pre class="main-code">
+                      <code>
+                        var 원본 = {a: 1, b: 2};
+                        var 복사본 = {};
+                        복사본.a = 원본.a;
+                        복사본.b = 원본.b;
+                        console.log(복사본.a, 복사본.b); // 1 2
+      
+                        복사본.a = 3;
+                        console.log(복사본.a); // 3
+                        console.log(원본.a); // 1
+                      </code>
+                    </pre>
+                  </li>
+                  <li class="main-item">
+                    <p>
+                      forEach 사용하기
+                      <span class="visually-hidden">예시 코드</span>
+                    </p>
+
+                    <div>
+                      <pre class="main-code">
+                        <code>
+                          var 오이 = {a: 1, b: {c: 1}};
+                          var 토마토 = {}; // 빈 객체 선언
+                          Object.keys(오이).forEach(function(키) {
+                            토마토[키] = 오이[키];
+                          });
+        
+                          토마토.a = 7;
+                          console.log(토마토.a); // 7
+                          console.log(오이.a); // 1
+        
+                          토마토.b.c = "똥";
+                          console.log(토마토.b.c); //똥
+                          console.log(오이.b.c); //똥
+                        </code>
+                      </pre>
+
+                      <div class="code-desc">
+                        <p>
+                          똥이 나왔다. 오이.b.c는 1이 나와야 하는데!<br />
+                          코드를 풀어서 써보자.<br />
+                          토마토.a = 오이.a; // a속성의 값은 원시값이라
+                          복사됨.<br />
+                          토마토.b = 오이.b; // b속성의 값은 객체라서 참조됨.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="main-item">
+                    <p>
+                      JSON 사용하기
+                      <span class="visually-hidden">예시 코드</span>
+                    </p>
+
+                    <pre class="main-code">
+                      <code>
+                        var 원본 = {a: 1, b: {c: 1}};
+                        var 복사본 = JSON.parse(JSON.stringify(원본));
+                      </code>
+                    </pre>
+                  </li>
+                </ul>
               </div>
-            </li>
-            <li class="main-article-list-items">
-              <div class="list-item-title">
-                <span aria-hidden="true">&lt;</span>
-                JSON 사용하기
-                <span aria-hidden="true">&gt;</span>
+            </section>
+
+            <section
+              class="reference-check"
+              aria-labelledby="reference-check-title"
+            >
+              <h3 id="reference-check-title" class="main-article-title">
+                <i aria-hidden="true">💧</i>
+                참조관계인지 확인
+              </h3>
+
+              <div>
+                <div class="desc">
+                  <p>
+                    변수들이 참조관계인지 알고싶다면 비교연산자로 비교하면된다.
+                    true면 참조관계다.
+                  </p>
+                  <p>
+                    <strong class="box-white">
+                      console.log(원본 === 복사본); //true
+                    </strong>
+                  </p>
+                  <p>
+                    모양이 같아도 위의 코드가 모두 true를 출력하진 않는다.
+                    <br />
+                    위에서 언급했듯이 객체는 괄호를 써넣는 순간에 서로 다른
+                    객체라는 의미를 내포한다.
+                  </p>
+                  <p>객체를 대입하면 참조관계로 변환된다.</p>
+                </div>
+
+                <div class="code">
+                  <pre class="main-code">
+                    <code>
+                      var 포도 = {a: 1, b: 2, c: 3};
+                      var 망고 = {a: 1, b: 2, c: 3};
+        
+                      console.log(포도 === 망고); //false
+        
+                      망고 = 포도;
+        
+                      console.log(포도 === 망고); //true
+                    </code>
+                  </pre>
+                </div>
               </div>
-              <pre class="main-article-pre background-white-radius margin-8px">
-                <code>
-                  var 원본 = {a: 1, b: {c: 1}};
-                  var 복사본 = JSON.parse(JSON.stringify(원본));
-                </code>
-              </pre>
-              <div class="code-desc">
-                <p class="hyphen">참조관계를 끊고 복사한다.</p>
-                <p class="hyphen">
-                  이것도 완전하진 않다. 그래도 원본객체가 2단계 이상이면
-                  사용하도록 하자.
-                </p>
-                <p class="hyphen">성능이 최악이니 최대한 안 쓰는게 좋다.</p>
+            </section>
+
+            <section class="shallow-copy" aria-labelledby="shallow-copy-title">
+              <h3 id="shallow-copy-title" class="main-article-title">
+                <i aria-hidden="true">💬</i>
+                얕은 복사 방법
+              </h3>
+
+              <div>
+                <ul class="types">
+                  <li>ForEach</li>
+                  <li>slice</li>
+                  <li>Object.assign</li>
+                </ul>
+
+                <div class="code">
+                  <pre class="main-code">
+                    <code>
+                      //forEach 문
+                      Object.keys(origin).forEach(function(key) {
+                        copy[key] = origin[key];
+                      });
+
+                      //slice (배열)
+                      var copy2 = origin.slice();
+      
+                      //Object.assign 문
+                      Object.assign(copy3, origin);
+                    </code>
+                  </pre>
+                </div>
               </div>
-            </li>
-          </ol>
-        </article>
-
-        <article
-          class="reference-check"
-          aria-labelledby="reference-check-title"
-        >
-          <h3 id="reference-check-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">💧</span>
-            참조관계인지 확인
-          </h3>
-          <p class="margin-8px">
-            변수들이 참조관계인지 알고싶다면 비교연산자로 비교하면된다. true면
-            참조관계다.
-          </p>
-          <p class="margin-8px">
-            <strong class="order">
-              console.log(원본 === 복사본); //true
-            </strong>
-          </p>
-          <p class="margin-8px">
-            모양이 같아도 위의 코드가 모두 true를 출력하진 않는다.
-          </p>
-          <p class="margin-8px">
-            위에서 언급했듯이 객체는 괄호를 써넣는 순간에 서로 다른 객체라는
-            의미를 내포한다.
-          </p>
-          <p class="margin-8px">객체를 대입하면 참조관계로 변환된다.</p>
-          <pre class="main-article-pre background-white-radius">
-            <code>
-              var 포도 = {a: 1, b: 2, c: 3};
-              var 망고 = {a: 1, b: 2, c: 3};
-
-              console.log(포도 === 망고); //false
-
-              망고 = 포도;
-
-              console.log(포도 === 망고); //true
-            </code>
-          </pre>
-        </article>
-
-        <article
-          class="shallow-deep-copy"
-          aria-labelledby="shallow-deep-copy-title"
-        >
-          <h3 id="shallow-deep-copy-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">💬</span>
-            얕은 복사 깊은 복사
-          </h3>
-          <p class="margin-8px">
-            <strong class="underline">
-              앞으로 참조는 '얕은 복사', 복사는 '깊은 복사'라 표현하자.
-            </strong>
-          </p>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              var 오이 = {친구: "고구마", 특징: "오이다"};
-              var 오이친구 = ["옥수수", "당근", "고구마"];
-            </code>
-          </pre>
-          <div class="code-desc margin-8px">
-            <p class="margin-8px">
-              위의 코드처럼 객체 안에 객체가 없는 것을 1단계 객체라고 표현한다.
-            </p>
-            <p>
-              forEach와 slice는 1단계는 깊은 복사하고 나머지(객체 안의 객체)는
-              얕은 복사한다. 그러므로 1단계 객체를 대상으로 깊은 복사를
-              해야한다면 forEach와 slice를 이용하자.
-            </p>
+            </section>
           </div>
-          <div class="another-way">
-            <p class="margin-8px">
-              forEach와 유사한 방법으로 Object.assign이 있다. 1단계 깊은 복사
-              하는 간결한 명령어다.<br />
-            </p>
-            <pre class="main-article-pre background-white-radius">
-              <code>
-                //forEach 문
-                Object.keys(obj).forEach(function(key) {
-                  obj2[key] = obj [key];
-                });
-
-                //Object.assign 문
-                Object.assign(obj2, obj);
-              </code>
-            </pre>
-          </div>
-        </article>
-      </section>
+        </div>
+      </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://www.youtube.com/watch?v=vV6Le05CJ1U&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=78"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "Youtube - ZeroCho의 JS 중급 강좌 11-5. 참조와 복사",
-            Youtube, 2021년 3월 11일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://www.youtube.com/watch?v=vV6Le05CJ1U&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=78"
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://www.youtube.com/watch?v=vV6Le05CJ1U&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=78"
             >
-              https://www.youtube.com/watch?v=vV6Le05CJ1U&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=78
-            </a>
-          </cite>
-        </blockquote>
+              <strong>
+                정보 출처: "Youtube - ZeroCho의 JS 중급 강좌 11-5. 참조와 복사",
+                Youtube, 2021년 3월 11일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://www.youtube.com/watch?v=vV6Le05CJ1U&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=78"
+                >
+                  Youtube - ZeroCho의 JS 중급 강좌 11-5. 참조와 복사
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
-            2021년 3월 11일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                Github, 2021년 3월 11일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

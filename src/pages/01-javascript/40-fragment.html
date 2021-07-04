@@ -37,278 +37,323 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-3-19">2021년 03월 19일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-2">2021년 07월 02일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
-      <section class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">📝</span>
-            fragment
-            <span class="main-title" aria-hidden="true">📝</span>
-          </strong>
-        </h2>
-        <div class="time">
-          작성 날짜: <time datetime="2021-3-19">2021년 03월 19일</time>
-        </div>
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">📝</i>
+                fragment
+                <i aria-hidden="true">📝</i>
+              </strong>
+            </h2>
 
-        <article class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🎽</span>
-            개요
-          </h3>
-          <p>
-            제로초님 게임 만들기 강좌에서 테이블 형성할 때 fragment에 대해
-            언급하셨다.<br />
-            구글에 검색해보니까 다큐먼트 조각, 메모리, 성능 등의 단어가 많이
-            나왔다.<br />
-            엄청나진 않지만 대단한 fragment에 대해 정리해보려 한다.
-          </p>
-        </article>
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">🎽</i>
+                개요
+              </h3>
 
-        <article class="fragment" aria-labelledby="fragment-title">
-          <h3 id="fragment-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🎲</span>
-            정의
-          </h3>
-          <p class="margin-8px">
-            <strong>
-              documentFragment는 아주아주아주 작은 document 객체를 나타낸다.
-              <span class="order">document의 경량화된 버전</span>으로 사용된다.
-            </strong>
-          </p>
-          <p>
-            <strong>
-              <span class="order"
-                >활성화된 문서 트리 구조의 일부가 아니므로</span
-              >
-              fragment를 변경해도 문서에 영향을 미치지 않는다. 성능에도 영향이
-              없다!! reflow 개선에 효과적이다.
-            </strong>
-          </p>
-        </article>
+              <p>
+                제로초님 게임 만들기 강좌에서 테이블 형성할 때 fragment에 대해
+                언급하셨다.<br />
+                구글에 검색해보니까 다큐먼트 조각, 메모리, 성능 등의 단어가 많이
+                나왔다.<br />
+                엄청나진 않지만 대단한 fragment에 대해 정리해보려 한다.
+              </p>
+            </section>
 
-        <article
-          class="how-to-use-fragment"
-          aria-labelledby="how-to-use-fragment-title"
-        >
-          <h3 id="how-to-use-fragment-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">💎</span>
-            사용법
-          </h3>
-          <p class="margin-8px">
-            fragment를 생성하고 그 안에다가 DOM 하위 트리를 9999999개 만든다.
-            그리고 appendChild나 insertBefore와 같은 메소드로 뭐가 가득 담긴
-            fragment를 DOM에 삽입한다.
-          </p>
-          <p class="margin-8px">
-            <strong class="order">모든 노드가 한 번에 문서에 삽입된다.</strong>
-            노드를 하나씩 삽입하면 노드 하나당 리플로우와 렌더링이 발생하지만
-            <strong class="underline"
-              >한꺼번에 삽입하면 리플로우와 렌더링이 단 한 번만
-              발생한다.</strong
+            <section class="fragment" aria-labelledby="fragment-title">
+              <h3 id="fragment-title" class="main-article-title">
+                <i aria-hidden="true">🎲</i>
+                정의
+              </h3>
+
+              <dl class="main-dl">
+                <dt>
+                  <strong>documentFragment()</strong>
+                </dt>
+                <dd><strong class="underline">document의 경량화된 버전</strong></dd>
+                <dd>활성화된 문서 트리 구조의 일부가 아님</dd>
+                <dd>DOM 트리처럼 동작 (메모리 상에서만 존재하는 빈 문서 템플릿과 유사)</dd>
+                <dd><strong class="underline">자식 노드를 메모리상에서 조작한 후, 라이브 DOM에 추가</strong></dd>
+                <dd>인수로 전달하면, 자식 노드 구조 전체가 삽입(documentFragment 노드 자체는 무시)</dd>
+                <dd>reflow 개선에 효과적</dd>
+              </dl>
+            </section>
+
+            <section
+              class="how-to-use-fragment"
+              aria-labelledby="how-to-use-fragment-title"
             >
-          </p>
-          <p class="margin-8px">
-            documentFragment는 document.createDocumentFragment() 메서드로
-            만든다.
-          </p>
-          <div class="hidden">예시 코드</div>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              const table = document.querySelector("#table")
-              const fragment = document.createDocumentFragment();
+              <h3 id="how-to-use-fragment-title" class="main-article-title">
+                <i aria-hidden="true">💎</i>
+                사용법
+              </h3>
+              
+              <div>
+                <ol>
+                  <li class="main-item ">
+                    <dl class="main-dl" aria-label="프레그먼트 생성">
+                      <dt class="box-white">fragment 생성</dt>
+                      <dd>
+                        <strong>메소드: createDocumentFragment</strong>
+                      </dd>
+                      <dd>
+                        예시: var frag = document.createDocumentFragment();
+                      </dd>
+                      <dd>메모리상에서 노드를 생성한 형태</dd>
+                      <dd>라이브 DOM에 삽입하는 것 보다 가볍고 빠름</dd>
+                    </dl>
+                  </li>
 
-              for (let i = 0; i < 3; i++) {
-                const tr = document.createElement('tr');
-                for (let j = 0; j < 9999999; j++) {
-                  const td = document.createElement('td');
-                  tr.appendChild(td);
-                }
-                fragment.appendChild(tr);
-              }
-              table.appendChild(fragment); // 실제 노드에 있는 요소에 넣어버리기
-            </code>
-          </pre>
-        </article>
+                  <li class="main-item">
+                    <dl class="main-dl" aria-label="자식요소 생성">
+                      <dt class="box-white">자식요소 생성</dt>
+                      <dd>
+                        <strong>메소드: createElement</strong>
+                      </dd>
+                      <dd>
+                        예시: var div = document.createElement('div');
+                      </dd>
+                    </dl>
+                  </li>
+
+                  <li class="main-item">
+                    <dl class="main-dl" aria-label="자식요소 삽입">
+                      <dt class="box-white">fragment에 자식요소 삽입 생성</dt>
+                      <dd>
+                        <strong>메소드: appendChild</strong>
+                      </dd>
+                      <dd>
+                        예시: frag.appendChild(div);
+                      </dd>
+                    </dl>
+                  </li>
+                  <li class="main-item">
+                    <dl class="main-dl" aria-label="라이브 DOM에 삽입">
+                      <dt class="box-white">라이브 DOM에 삽입</dt>
+                      <dd>
+                        <strong>메소드: appendChild</strong>
+                      </dd>
+                      <dd>
+                        예시: section.appendChild(frag);
+                      </dd>
+                      <dd>
+                        fragment의 자식 요소 개수에 상관없이 단 한번으로 라이브 DOM에 삽입
+                      </dd>
+                      <dd>fragment는 무시되고, 자식 노드만이 삽입</dd>
+                    </dl>
+                  </li>
+                </ol>
+                
+                <pre class="main-code">
+                  <code>
+                    const table = document.querySelector("#table")
+                    const fragment = document.createDocumentFragment();
+      
+                    for (let i = 0; i < 3; i++) {
+                      const tr = document.createElement('tr');
+                      for (let j = 0; j < 9999999; j++) {
+                        const td = document.createElement('td');
+                        tr.appendChild(td);
+                      }
+                      fragment.appendChild(tr);
+                    }
+                    table.appendChild(fragment); // 실제 노드에 있는 요소에 넣어버리기
+                  </code>
+                </pre>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://developer.mozilla.org/ko/docs/Web/API/DocumentFragment"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "MDN - DocumentFragment", MDN, 2021년 3월 19일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://developer.mozilla.org/ko/docs/Web/API/DocumentFragment"
-            >
-              https://developer.mozilla.org/ko/docs/Web/API/DocumentFragment
-            </a>
-          </cite>
-        </blockquote>
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+            class="reference"
+            cite="https://developer.mozilla.org/ko/docs/Web/API/DocumentFragment"
+          >
+            <strong>
+              정보 출처: "DOM을 깨우치다", 코디 린들리, 2013년 11월 22일 발행,
+            </strong>
+            <cite class="reference-url">
+              <a
+                href="https://developer.mozilla.org/ko/docs/Web/API/DocumentFragment"
+              >
+              DOM을 깨우치다
+              </a>
+            </cite>
+          </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
-            2021년 3월 19일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://developer.mozilla.org/ko/docs/Web/API/DocumentFragment"
+            >
+              <strong>
+                정보 출처: "MDN - DocumentFragment", MDN, 2021년 3월 19일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://developer.mozilla.org/ko/docs/Web/API/DocumentFragment"
+                >
+                MDN - DocumentFragment
+                </a>
+              </cite>
+            </blockquote>
+
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
+                2021년 3월 19일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

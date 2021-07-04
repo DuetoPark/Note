@@ -37,509 +37,529 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-3-10">2021년 03월 10일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-3">2021년 07월 03일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
-      <section class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">🍧</span>
-            클로저
-            <span class="main-title" aria-hidden="true">🍧</span>
-          </strong>
-        </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-3-17">2021년 03월 17일</time>
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">🍧</i>
+                클로저
+                <i aria-hidden="true">🍧</i>
+              </strong>
+            </h2>
+
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">🍲</i>
+                개요
+              </h3>
+
+              <p>
+                자바스크립트에서 무조건 알아야 하는 스코프, 실행콘텍스트,
+                프로토타입, 비동기, 클로저중에 클로저를 공부해보자.
+              </p>
+            </section>
+
+            <section class="closure" aria-labelledby="closure-title">
+              <h3 id="closure-title" class="main-article-title">
+                <i aria-hidden="true">👙</i>
+                정의
+              </h3>
+
+              <div>
+                <dl class="main-dl">
+                  <dt>클로저(Closure)</dt>
+                  <dd>함수간의 어떠한 관계</dd>
+                  <dd>클로저 관계: 함수와 함수가 접근할 수 있는 스코프</dd>
+                </dl>
+
+                <pre class="main-code">
+                  <code>
+                    var <span class="highlight-red">name</span> = '나는 고구마';
+      
+                    function log() {
+                      console.log(<span class="highlight-red">name</span>); // 여기에 있는 name은 영원히 전역변수 name을 의미한다.
+                    }
+      
+                    function wrapper() {
+                      var <span class="highlight-blue">name</span> = '나는 오이'; // wrapper함수에서 선언한 name은 전역변수 name과는 완전히 다른 변수이다.
+                      log();
+                    }
+                    wrapper(); // name = '나는 고구마';
+                  </code>
+                </pre>
+
+                <div class="code-desc">
+                  <p>
+                    log 함수와 wrapper 함수는 클로저 관계다.<br />
+                    왜냐하면, 무슨 코드를 쓰든 모든 함수들이 클로저 관계를
+                    형성시키기 때문이다.
+                  </p>
+
+                  <p>
+                    <strong class="highlight">
+                      중요한 건 함수가 실행될 때 사용하는 변수값이 무엇인지 아는
+                      것이다.
+                    </strong>
+                  </p>
+
+                  <p>
+                    반복문과 비동기 함수가 만날 때 클로저 문제가 자주
+                    발생한다.(for문 안에setTimeout함수 쓰는 것처럼)<br />
+                    여기에는 두 가지 이유가 있다.
+                  </p>
+
+                  <ul class="box-white" aria-label="이유">
+                    <li class="main-item">
+                      컴퓨터가 코드를 위에서 아래로 코드를 읽어나간다.
+                    </li>
+                    <li class="main-item">
+                      컴퓨터가 동기는 읽고 비동기는 실행되기 전에는 넘겨버린다.
+                    </li>
+                  </ul>
+
+                  <p>
+                    for문 안의 비동기 함수는 주석 처리한 것처럼 넘어가
+                    버린다.<br />
+                    더불어, for문은 for문대로 돌아가니 i가 마지막 숫자를
+                    가리킨다.<br />
+                    임무를 마친 컴퓨터는 다음 코드를 찾아 떠난다.
+                  </p>
+
+                  <p>
+                    컴퓨터는 시킨대로 했고, 그 누구도 잘못하지 않았다. 하지만
+                    원하는 동작을 구현하진 못한다. 왜냐하면 반복문 안의 비동기
+                    함수를 실행했을 때 적용되는 i는 마지막 숫자만을 가리키기
+                    때문이다.<br />
+                    <strong class="underline">
+                      여기에서 포인트는 비동기 함수 안의 변수는 '실행'될 때 값을
+                      가져온다는 점이다.<br />
+                      그러므로 비동기함수가 '실행되는 순간에 변수가 뭔지' 찾아야
+                      한다.
+                    </strong>
+                  </p>
+                  <p>
+                    여기서 잠깐 표현을 다시 정정해야 한다.<br />
+                    "클로저 문제다. 클로저 문제가 발생했다."<br />
+                    이 표현들은 클로저의 특성을 사용해서 해결할 수 있는 문제라는
+                    의미이다.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="closure-example"
+              aria-labelledby="closure-example-title"
+            >
+              <h3 id="closure-example-title" class="main-article-title">
+                <i aria-hidden="true">💣</i>
+                예시 코드
+              </h3>
+
+              <div>
+                <div class="code">
+                  <pre class="main-code">
+                    <code>
+                      for (var i=0; i<100; i++) {
+                        setTimeout(function() {
+                          console.log(i);
+                        }, i * 1000);
+                      }
+                    </code>
+                  </pre>
+                </div>
+
+                <p>위의 코드를 풀어서쓰면 다음과 같다.</p>
+
+                <div class="code">
+                  <pre class="main-code">
+                    <code>
+                      setTimeout(function() {
+                        console.log(i);
+                      }, 0 * 1000);
+        
+                      setTimeout(function() {
+                        console.log(i);
+                      }, 1 * 1000);
+        
+                      setTimeout(function() {
+                        console.log(i);
+                      }, 2 * 1000);
+        
+                      setTimeout(function() {
+                        console.log(i);
+                      }, 3 * 1000);
+        
+                      setTimeout(function() {
+                        console.log(i);
+                      }, 4 * 1000);
+        
+                      setTimeout(function() {
+                        console.log(i);
+                      }, 5 * 1000);
+                      //--------------------------
+                      setTimeout(function() {
+                        console.log(i);
+                      }, 99 * 1000);
+                    </code>
+                  </pre>
+
+                  <p class="code-desc">
+                    setTimeout 내부의 함수에서는 i가 실행되지 않는다!!!!<br />
+                    setTimeout 콜백함수 내부의 i는 콜백함수 내부에서 i를 찾아야
+                    한다.<br />
+                    콜백함수 내에 i가 없으니까 한단계 위로 i를 찾아나서야
+                    하는데, 비동기함수이므로 실행되는 순간이 되야지 i가 뭔지
+                    찾는다.<br />
+                    실행될 때의 시점에서는 i가 100인 상태라서 그 값을 이용할
+                    뿐이다. 클로저 문제를 해결하려면 다음의 코드처럼
+                    수정해야한다.
+                  </p>
+                </div>
+
+                <div class="code">
+                  <pre class="main-code">
+                    <code>
+                      에러코드)
+                      for (var i=0; i<100; i++) {
+                        setTimeout(function() {
+                          console.log(i);
+                        }, i * 1000);
+                      }
+        
+                      해결책)
+                      // 함수를 실행하는 방식
+                      for (var i=0; i<100; i++) {
+                        function 클로저(j) {
+                          setTimeout(function() {
+                            console.log(j);
+                          }, j * 1000);
+                        }
+                        클로저(i);
+                      }
+        
+                      // 즉시 실행 함수를 사용하는 방식
+                      for (var i=0; i<100; i++) {
+                        (function 클로저(j) {
+                          setTimeout(function() {
+                            console.log(j);
+                          }, j * 1000);
+                        })(i); //
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="closure-solution"
+              aria-labelledby="closure-solution-title"
+            >
+              <h3 id="closure-solution-title" class="main-article-title">
+                <i aria-hidden="true">🔨</i>
+                클로저 문제 해결법
+              </h3>
+
+              <div>
+                <ul class="types" aria-label="클로저 문제 해결법">
+                  <li>즉시 실행 함수</li>
+                  <li>매개변수</li>
+                  <li>렉시컬 스코프</li>
+                </ul>
+
+                <div class="code">
+                  <pre class="main-code">
+                    <code>
+                      for (var i=0; i<100; i++) {
+                        (function 클로저(j) {
+                          setTimeout(function() {
+                            console.log(j);
+                          }, j * 1000);
+                        })(i);
+                      }
+                    </code>
+                  </pre>
+
+                  <div class="code-desc">
+                    <p>
+                      먼저, 즉시 실행 함수 인해 인자로 들어간 값이 매개 클로저
+                      함수의 매개변수가 된다.
+                    </p>
+
+                    <p>
+                      진행에 따라 i=1일 때 매개변수 j=1, i=2일 때 매개변수 j=2,
+                      ... 이렇게 j에 값이 저장된다.
+                      <br />
+                      비동기 함수가 '실행'되면 렉시컬 스코핑에 의해 변수를 찾아
+                      저장된 값을 대입한다.
+                    </p>
+                  </div>
+                </div>
+
+                <pre class="main-code">
+                  <code>
+                    // i = 0, j --> 0
+                    function 클로저(j) {
+                      setTimeout(function() {
+                        console.log(j); // 콜백함수 '실행'되는 순간, j=0 대입
+                      }, 0 * 1000);
+                    }
+      
+                    // i = 1, j --> 1
+                    function 클로저(j) {
+                      setTimeout(function() {
+                        console.log(j); // 콜백함수 '실행'되는 순간, j=1 대입
+                      }, 1 * 1000);
+                    }
+      
+                    // i = 2, j --> 2
+                    function 클로저(j) {// j는 3이다.(매개변수니까!)
+                      setTimeout(function() {
+                        console.log(j); // 콜백함수 '실행'되는 순간, j=2 대입
+                      }, 2 * 1000);
+                    }
+      
+                    // i = 3, j --> 3
+                    function 클로저(j) {
+                      setTimeout(function() {
+                        console.log(j); // 콜백함수 '실행'되는 순간, j=3 대입
+                      }, 3 * 1000);
+                    }
+      
+                    //---------------------------
+      
+                    // i = 99, j --> 99
+                    function 클로저(j) {
+                      setTimeout(function() {
+                        console.log(j); // 콜백함수 '실행'되는 순간, j=99 대입
+                      }, 99 * 1000);
+                    }
+                  </code>
+                </pre>
+              </div>
+            </section>
+
+            <section
+              class="immediately-invoked-function"
+              aria-labelledby="immediately-invoked-function-title"
+            >
+              <h3
+                id="immediately-invoked-function-title"
+                class="main-article-title"
+              >
+                <i aria-hidden="true">😚</i>
+                즉시 실행 함수
+              </h3>
+
+              <div>
+                <p>
+                  함수 표현은 함수를 정의하고, 변수에 함수를 저장하고 실행하는
+                  과정을 거친다.<br />
+                  하지만 즉시 실행 함수는 함수를 정의하고 바로 실행하여
+                  '저장'과정을 거치지 않는다. 정의하자마자 냅다 호출하는것을
+                  즉시 실행 함수라고 한다.<br />
+                  즉시 실행 함수의 형태는 다음과 같다.
+                </p>
+
+                <div class="code">
+                  <pre class="main-code" aria-hidden="true">
+                    <code>
+                      <span class="highlight-red">(</span>function () {
+                        //동작
+                      }<span class="highlight-red">)</span><span class="highlight-blue">()</span>;
+                    </code>
+                  </pre>
+
+                  <div class="code-desc">
+                    <p>
+                      두 개의 괄호는 각각 다른 의미를 가진다.<br />
+                      <strong class="underline">
+                        첫 번째 괄호는 익명함수를 둘러싼다. 이는 전역 스코프
+                        변수로부터 즉시 실행 함수가 자유롭다는 것을 의미한다.
+                      </strong>
+                      <br />
+                      두 번째 괄호는 즉시 실행 함수를 생성하는 괄호이다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
-
-        <article class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🍲</span>
-            개요
-          </h3>
-          <p>
-            자바스크립트에서 무조건 알아야 하는 스코프, 실행콘텍스트,
-            프로토타입, 비동기, 클로저중에 클로저를 공부해보자.
-          </p>
-        </article>
-
-        <article class="closure" aria-labelledby="closure-title">
-          <h3 id="closure-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">👙</span>
-            정의
-          </h3>
-          <p class="margin-8px">
-            함수간의 어떠한 관계를 클로저라고 한다.<br />
-            함수와 함수가 접근할 수 있는 스코프가 클로저 관계를 맺는다.<br />
-            예시를 먼저 보자.
-          </p>
-          <pre class="main-article-pre background-white-radius margin-16px">
-            <code>
-              var <span class="order">name</span> = '나는 고구마';
-
-              function log() {
-                console.log(<span class="order">name</span>); // 여기에 있는 name은 영원히 전역변수 name을 의미한다.
-              }
-
-              function wrapper() {
-                <span class="error">var name</span> = '나는 오이'; // wrapper함수에서 선언한 name은 전역변수 name과는 완전히 다른 변수이다.
-                log();
-              }
-              wrapper(); // name = '나는 고구마';
-            </code>
-          </pre>
-          <div class="code-desc">
-            <p class="margin-8px">
-              log 함수와 wrapper 함수는 클로저 관계다.<br />
-              왜냐하면, 무슨 코드를 쓰든 모든 함수들이 클로저 관계를 형성시키기
-              때문이다.
-            </p>
-            <p class="margin-8px">
-              <strong class="order">
-                중요한 건 함수가 실행될 때 사용하는 변수값이 무엇인지 아는
-                것이다.
-              </strong>
-            </p>
-            <p class="margin-8px">
-              반복문과 비동기 함수가 만날 때 클로저 문제가 자주 발생한다.(for문
-              안에setTimeout함수 쓰는 것처럼)<br />
-              여기에는 두 가지 이유가 있다.
-            </p>
-            <ol class="margin-8px" aria-label="이유">
-              <li class="main-article-list-items hyphen">
-                컴퓨터가 코드를 위에서 아래로 코드를 읽어나간다.
-              </li>
-              <li class="main-article-list-items hyphen">
-                컴퓨터가 동기는 읽고 비동기는 실행되기 전에는 넘겨버린다.
-              </li>
-            </ol>
-            <p class="margin-8px">
-              for문 안의 비동기 함수는 주석 처리한 것처럼 넘어가 버린다.<br />
-              더불어, for문은 for문대로 돌아가니 i가 마지막 숫자를 가리킨다.<br />
-              임무를 마친 컴퓨터는 다음 코드를 찾아 떠난다.
-            </p>
-            <p class="margin-8px">
-              컴퓨터는 시킨대로 했고, 그 누구도 잘못하지 않았다. 하지만 원하는
-              동작을 구현하진 못한다. 왜냐하면 반복문 안의 비동기 함수를
-              실행했을 때 적용되는 i는 마지막 숫자만을 가리키기 때문이다.<br />
-              <strong class="underline">
-                여기에서 포인트는 비동기 함수 안의 변수는 '실행'될 때 값을
-                가져온다는 점이다.<br />
-                그러므로 비동기함수가 '실행되는 순간에 변수가 뭔지' 찾아야 한다.
-              </strong>
-            </p>
-            <p class="margin-8px">
-              여기서 잠깐 표현을 다시 정정해야 한다.<br />
-              클로저 문제다. 클로저 문제가 발생했다.<br />
-              이 표현들은 클로저의 특성을 사용해서 해결할 수 있는 문제라는
-              의미이다.
-            </p>
-          </div>
-        </article>
-
-        <article
-          class="closure-example"
-          aria-labelledby="closure-example-title"
-        >
-          <h3 id="closure-example-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">💣</span>
-            예시 코드
-          </h3>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              for (var i=0; i<100; i++) {
-                setTimeout(function() {
-                  console.log(i);
-                }, i * 1000);
-              }
-            </code>
-          </pre>
-          <p class="margin-8px">위의 코드를 풀어서쓰면 다음과 같다.</p>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              setTimeout(function() {
-                console.log(i);
-              }, 0 * 1000);
-
-              setTimeout(function() {
-                console.log(i);
-              }, 1 * 1000);
-
-              setTimeout(function() {
-                console.log(i);
-              }, 2 * 1000);
-
-              setTimeout(function() {
-                console.log(i);
-              }, 3 * 1000);
-
-              setTimeout(function() {
-                console.log(i);
-              }, 4 * 1000);
-
-              setTimeout(function() {
-                console.log(i);
-              }, 5 * 1000);
-              //--------------------------
-              setTimeout(function() {
-                console.log(i);
-              }, 99 * 1000);
-            </code>
-          </pre>
-          <p class="code-desc margin-8px">
-            setTimeout 내부의 함수에서는 i가 실행되지 않는다!!!!<br />
-            setTimeout 콜백함수 내부의 i는 콜백함수 내부에서 i를 찾아야 한다.<br />
-            콜백함수 내에 i가 없으니까 한단계 위로 i를 찾아나서야 하는데,
-            비동기함수이므로 실행되는 순간이 되야지 i가 뭔지 찾는다.<br />
-            실행될 때의 시점에서는 i가 100인 상태라서 그 값을 이용할 뿐이다.
-            클로저 문제를 해결하려면 다음의 코드처럼 수정해야한다.
-          </p>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              에러코드)
-              for (var i=0; i<100; i++) {
-                setTimeout(function() {
-                  console.log(i);
-                }, i * 1000);
-              }
-
-              해결책)
-              // 함수를 실행하는 방식
-              for (var i=0; i<100; i++) {
-                function 클로저(j) {
-                  setTimeout(function() {
-                    console.log(j);
-                  }, j * 1000);
-                }
-                클로저(i);
-              }
-
-              // 즉시 실행 함수를 사용하는 방식
-              for (var i=0; i<100; i++) {
-                (function 클로저(j) {
-                  setTimeout(function() {
-                    console.log(j);
-                  }, j * 1000);
-                })(i); //
-              }
-            </code>
-          </pre>
-        </article>
-
-        <article
-          class="closure-solution"
-          aria-labelledby="closure-solution-title"
-        >
-          <h3 id="closure-solution-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🔨</span>
-            클로저 문제 해결 코드
-          </h3>
-          <p class="margin-8px">
-            클로저 문제가 어떻게 해결되는지 다음의 코드를 보며 알아보자.
-          </p>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              for (var i=0; i<100; i++) {
-                (function 클로저(j) {
-                  setTimeout(function() {
-                    console.log(j);
-                  }, j * 1000);
-                })(i);
-              }
-            </code>
-          </pre>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              // i = 0, j --> 0
-              function 클로저(j) {
-                setTimeout(function() {
-                  console.log(j); // 콜백함수 '실행'되는 순간, j=0 대입
-                }, 0 * 1000);
-              }
-
-              // i = 1, j --> 1
-              function 클로저(j) {
-                setTimeout(function() {
-                  console.log(j); // 콜백함수 '실행'되는 순간, j=1 대입
-                }, 1 * 1000);
-              }
-
-              // i = 2, j --> 2
-              function 클로저(j) {// j는 3이다.(매개변수니까!)
-                setTimeout(function() {
-                  console.log(j); // 콜백함수 '실행'되는 순간, j=2 대입
-                }, 2 * 1000);
-              }
-
-              // i = 3, j --> 3
-              function 클로저(j) {
-                setTimeout(function() {
-                  console.log(j); // 콜백함수 '실행'되는 순간, j=3 대입
-                }, 3 * 1000);
-              }
-
-              //---------------------------
-
-              // i = 99, j --> 99
-              function 클로저(j) {
-                setTimeout(function() {
-                  console.log(j); // 콜백함수 '실행'되는 순간, j=99 대입
-                }, 99 * 1000);
-              }
-            </code>
-          </pre>
-          <div class="code-desc">
-            <p class="margin-8px">
-              보면, 클로저문제 해결에 즉시 실행 함수, 매개변수와 렉시컬 스코프가
-              사용된다.
-            </p>
-            <p class="margin-8px">
-              먼저, 즉시 실행 함수 인해 클로저 함수의 인자로 0이 들어가고
-              클로저(0)가 바로 실행된다. 이 때 매개변수 j = 0이 된다.
-            </p>
-            <p class="margin-8px">
-              setTimeout의 콜백함수가 '실행'되는 순간에 console.log에 들어가는
-              j를 찾는다.<br />
-              이 때 j를 찾기위해 콜백함수를 둘러보지만 내부에는 j가 없다.<br />
-              그래서 한단계 위로 올라가 j를 찾는다.<br />
-              이 때, 렉시컬 스코핑에 의해 클로저 함수에 저장된 j = 0을 발견하곤
-              냅다 대입 해버리기~
-            </p>
-            <p class="margin-8px">
-              정리하자면, 반복문 진행에 따라 i=1일 때 매개변수 j=1, i=2일 때
-              매개변수 j=2, ... 이렇게 j에 값이 저장된다. 비동기 함수가
-              '실행'되면 렉시컬 스코핑에 의해 변수를 찾아 저장된 값을 대입한다.
-            </p>
-          </div>
-        </article>
-
-        <article
-          class="immediately-invoked-function"
-          aria-labelledby="immediately-invoked-function-title"
-        >
-          <h3
-            id="immediately-invoked-function-title"
-            class="main-article-title"
-          >
-            <span class="main-article-title" aria-hidden="true">😚</span>
-            즉시 실행 함수
-          </h3>
-          <p class="margin-8px">
-            함수 표현은 함수를 정의하고, 변수에 함수를 저장하고 실행하는 과정을
-            거친다.<br />
-            하지만 즉시 실행 함수는 함수를 정의하고 바로 실행하여 '저장'과정을
-            거치지 않는다. 정의하자마자 냅다 호출하는것을 즉시 실행 함수라고
-            한다.<br />
-            즉시 실행 함수의 형태는 다음과 같다.
-          </p>
-          <pre
-            class="main-article-pre background-white-radius margin-8px"
-            aria-hidden="true"
-          >
-            <code>
-              <span class="order">(</span>function () {
-                //동작
-              }<span class="order">)</span><span class="error">()</span>;
-            </code>
-          </pre>
-          <pre class="hidden">
-            <code>
-              (function () {
-                //동작
-              })();
-            </code>
-          </pre>
-          <div class="code-desc">
-            <p class="margin-8px">
-              두 개의 괄호는 각각 다른 의미를 가진다.<br />
-              <strong class="underline">
-                첫 번째 괄호는 익명함수를 둘러싼다. 이는 전역 스코프 변수로부터
-                즉시 실행 함수가 자유롭다는 것을 의미한다.
-              </strong>
-              <br />
-              두 번째 괄호는 즉시 실행 함수를 생성하는 괄호이다.
-            </p>
-          </div>
-        </article>
-      </section>
+      </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://www.youtube.com/watch?v=h6ysIsRbnKg&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=61"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "Youtube - ZeroCho의 JS 중급 강좌 8-11. 클로저 문제
-            해결법", Youtube, 2021년 3월 10일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://www.youtube.com/watch?v=h6ysIsRbnKg&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=61"
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://www.youtube.com/watch?v=h6ysIsRbnKg&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=61"
             >
-              https://www.youtube.com/watch?v=h6ysIsRbnKg&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=61
-            </a>
-          </cite>
-        </blockquote>
+              <strong>
+                정보 출처: "Youtube - ZeroCho의 JS 중급 강좌 8-11. 클로저 문제
+                해결법", Youtube, 2021년 3월 10일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://www.youtube.com/watch?v=h6ysIsRbnKg&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=61"
+                >
+                  Youtube - ZeroCho의 JS 중급 강좌 8-11. 클로저 문제 해결법
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
-            2021년 3월 10일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                Github, 2021년 3월 10일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

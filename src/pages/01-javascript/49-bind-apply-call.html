@@ -37,280 +37,300 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <section
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </section>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-4-7">2021년 04월 07일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-2">2021년 07월 02일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
       <article class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">🌏</span>
-            Bind, Apply, Call 메소드
-            <span class="main-title" aria-hidden="true">🌏</span>
-          </strong>
-        </h2>
-        <div class="time">
-          작성 날짜: <time datetime="2021-4-7">2021년 04월 07일</time>
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">🌏</i>
+                Bind, Apply, Call 메소드
+                <i aria-hidden="true">🌏</i>
+              </strong>
+            </h2>
+
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">🌌</i>
+                개요
+              </h3>
+
+              <p>
+                악 지원할 시기가 다가오는데 자꾸 모르는 개념들이 나온다.<br />
+                오늘은 함수의 기본 메소드인 bind, apply, call을 공부하려한다.
+              </p>
+            </section>
+
+            <section
+              class="call-function"
+              aria-labelledby="call-function-title"
+            >
+              <h3 id="call-function-title" class="main-article-title">
+                <i aria-hidden="true">⛅</i>
+                apply와 call
+              </h3>
+
+              <div>
+                <div class="call-function-definition">
+                  <div class="desc">
+                    <p>
+                      함수를 호출하는 방법으로 함수명 뒤에 ()를 붙이는 것과
+                      call, apply하는 방법이 있다.
+                    </p>
+
+                    <p>
+                      call에는 인자를 넣고, apply에는 인자를 하나로 묶어 놓은
+                      배열을 넣는다. 'a'pply는 'a'rray를 넣는다.
+                    </p>
+                  </div>
+
+                  <div class="code">
+                    <script src="https://gist.github.com/DuetoPark/9b1c55cb84297e094eaeb8469e5122e9.js"></script>
+                  </div>
+                </div>
+
+                <div class="call-function-parameter">
+                  <div class="desc">
+                    <p>
+                      call과 apply에 있는 null은 뭘까? this를 대체하는 것을
+                      의미한다.
+                    </p>
+
+                    <p>
+                      this가 오렌지에서 오이로 바뀌었다. 친구소개 메소드는 귤
+                      객체의 것인데, 오이가 출력되다니. 이처럼 다른 call과
+                      apply는 다른 객체의 함수를 자기 것처럼 사용할 수 있다.
+                    </p>
+                  </div>
+
+                  <div class="code">
+                    <script src="https://gist.github.com/DuetoPark/08c81b1fe4cce435fa90d5a2afa29d01.js"></script>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="bind" aria-labelledby="bind-title">
+              <h3 id="bind-title" class="main-article-title">
+                <i aria-hidden="true">🎍</i>
+                bind
+              </h3>
+
+              <div>
+                <div class="bind-definition">
+                  <div class="desc">
+                    <p>this만 바꾸고 호출하지 않는다.</p>
+                  </div>
+
+                  <div class="code">
+                    <script src="https://gist.github.com/DuetoPark/61e638fe0314a51f335879f55bcdb5ff.js"></script>
+                  </div>
+                </div>
+
+                <div class="bind-parameter">
+                  <div class="desc">
+                    <p>
+                      미리 지정된 초기 인수가 있는 함수를 만든다. this 먼저 바꾼
+                      다음에 초기 인수를 삽입한다. 초기 인수는 대상 함수(원본
+                      함수)의 인수 앞에 삽입된다.
+                    </p>
+                  </div>
+                  <div class="code">
+                    <script src="https://gist.github.com/DuetoPark/f9e126d9938158b3c66c235d28a9850c.js"></script>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
-
-        <section class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🌌</span>
-            개요
-          </h3>
-          <p>
-            악 지원할 시기가 다가오는데 자꾸 모르는 개념들이 나온다.<br />
-            오늘은 함수의 기본 메소드인 bind, apply, call을 공부하려한다.
-          </p>
-        </section>
-
-        <section class="apply-call" aria-labelledby="apply-call-title">
-          <h3 id="apply-call-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">⛅</span>
-            apply와 call
-          </h3>
-          <p class="margin-8px">
-            함수를 호출하는 방법으로 함수명 뒤에 ()를 붙이는 것과 call,
-            apply하는 방법이 있다.
-          </p>
-          <script src="https://gist.github.com/DuetoPark/9b1c55cb84297e094eaeb8469e5122e9.js"></script>
-          <p class="margin-8px">
-            call에는 인자를 넣고, apply에는 인자를 하나로 묶어 놓은 배열을
-            넣는다. 'a'pply는 'a'rray를 넣는다.
-          </p>
-          <p class="margin-8px">
-            call과 apply에 있는 null은 뭘까? this를 대체하는 것을 의미한다.
-          </p>
-          <script src="https://gist.github.com/DuetoPark/08c81b1fe4cce435fa90d5a2afa29d01.js"></script>
-          <p>
-            this가 오렌지에서 오이로 바뀌었다. 친구소개 메소드는 귤 객체의
-            것인데, 오이가 출력되다니. 이처럼 다른 call과 apply는 다른 객체의
-            함수를 자기 것처럼 사용할 수 있다.
-          </p>
-        </section>
-
-        <section class="bind" aria-labelledby="bind-title">
-          <h3 id="bind-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🎍</span>
-            bind
-          </h3>
-          <p class="margin-8px">this만 바꾸고 호출하지 않는다.</p>
-          <script src="https://gist.github.com/DuetoPark/61e638fe0314a51f335879f55bcdb5ff.js"></script>
-        </section>
-
-        <section
-          class="bind-partially-applied-function"
-          aria-labelledby="bind-partially-applied-function-title"
-        >
-          <h3
-            id="bind-partially-applied-function-title"
-            class="main-article-title"
-          >
-            <span class="main-article-title" aria-hidden="true">💝</span>
-            bind 부분 적용 함수
-          </h3>
-          <p class="margin-8px">
-            미리 지정된 초기 인수가 있는 함수를 만든다. this 먼저 바꾼 다음에
-            초기 인수를 삽입한다. 초기 인수는 대상 함수(원본 함수)의 인수 앞에
-            삽입된다.
-          </p>
-          <script src="https://gist.github.com/DuetoPark/f9e126d9938158b3c66c235d28a9850c.js"></script>
-        </section>
       </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "MDN - Function.prototype.bind()", MDN, 2021년 4월 7일
-            접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="note-footer-reference"
+              cite="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"
             >
-              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
-            </a>
-          </cite>
-        </blockquote>
+              <strong class="note-footer-reference-name">
+                정보 출처: "MDN - Function.prototype.bind()", MDN, 2021년 4월
+                7일 접속,
+              </strong>
+              <cite class="note-footer-reference-url">
+                <a
+                  href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"
+                >
+                  https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "Zerocho.com - 함수의 메소드와 arguments", Zerocho.com,
-            2021년 4월 7일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd"
+            <blockquote
+              class="note-footer-reference"
+              cite="https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd"
             >
-              https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd
-            </a>
-          </cite>
-        </blockquote>
+              <strong class="note-footer-reference-name">
+                정보 출처: "Zerocho.com - 함수의 메소드와 arguments",
+                Zerocho.com, 2021년 4월 7일 접속,
+              </strong>
+              <cite class="note-footer-reference-url">
+                <a
+                  href="https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd"
+                >
+                  https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
-            2021년 4월 7일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="note-footer-reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong class="note-footer-reference-name">
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                Github, 2021년 4월 7일 접속,
+              </strong>
+              <cite class="note-footer-reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  https://gist.github.com/rxaviers/7360908
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

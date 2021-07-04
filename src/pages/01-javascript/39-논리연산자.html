@@ -37,352 +37,322 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-3-19">2021년 03월 19일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-2">2021년 07월 02일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
-      <section class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">🐣</span>
-            논리 연산자(||, &amp;&amp;)
-            <span class="main-title" aria-hidden="true">🐣</span>
-          </strong>
-        </h2>
-        <div class="time">
-          작성 날짜: <time datetime="2021-3-19">2021년 03월 19일</time>
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">🐣</i>
+                논리 연산자(||, &amp;&amp;)
+                <i aria-hidden="true">🐣</i>
+              </strong>
+            </h2>
+
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">🐝</i>
+                개요
+              </h3>
+
+              <p>
+                다른 사람의 코드에서, '||'나 '&amp;&amp;'를 종종 보곤한다.<br />
+                느낌상 뭔지는 알겠는데 정확하게 무슨 의미인지 물어보면 대답을
+                못하겠다.<br />
+                그래서 정리해봤다.
+              </p>
+            </section>
+
+            <section class="or-operator" aria-labelledby="or-operator-title">
+              <h3 id="or-operator-title" class="main-article-title">
+                <i aria-hidden="true">🐞</i>
+                OR 연산자 (||)
+              </h3>
+
+              <dl class="main-dl" aria-label="or 연산자 정의 및 추가기능">
+                <div>
+                  <dt>정의</dt>
+                  <dd>
+                    <strong class="underline"> const result = a || b; </strong>
+                  </dd>
+                  <dd>OR 연산자는 인수 중 하나라도 true면 true를 반환</dd>
+                  <dd>
+                    피연산자가 모두 false인 경우를 제외하면, 연산 결과는 항상
+                    true
+                  </dd>
+                </div>
+                <div>
+                  <dt>체이닝</dt>
+                  <dd>OR연산자를 여러개 명령</dd>
+                  <dd>
+                    <strong>
+                      <span class="underline">첫 번째 truthy를 반환한다.</span>
+                    </strong>
+                  </dd>
+                  <dd>
+                    피연산자에 truthy가 하나도 없으면, 마지막 피연산자를 반환
+                    <pre class="main-code">
+                      <code>
+                        alert( undefined || null || 0 ); // 0 (모두 falsy이므로, 마지막 값을 반환함)
+                      </code>
+                    </pre>
+                  </dd>
+                </div>
+                <div class="or-operator-plus">
+                  <dt>추가기능</dt>
+                  <dd>
+                    <strong class="highlight">
+                      변수에 값을 넣거나 빈칸으로 놔둘 때
+                    </strong>
+
+                    <p>
+                      변수 또는 표현식으로 구성된 목록에서 첫 번째 truthy 얻기
+                      <br />
+                      (false가 되는 값에는 false, undefined, "", null, Nan, 0이
+                      있다.)
+                    </p>
+
+                    <pre class="main-code">
+                      <code>
+                        let volume = this.volume : "";
+                      </code>
+                    </pre>
+                  </dd>
+                  <dd>
+                    <strong class="highlight">
+                      단락 평가(short circuit evaluation)
+                    </strong>
+
+                    <p>
+                      왼쪽부터 시작해서 오른쪽으로 평가를 진행
+                      <br />
+                      truthy를 만나면 나머지 값들은 건드리지 않은 채 평가를 멈춤
+                    </p>
+
+                    <pre class="main-code">
+                      <code>
+                        true || alert("not printed");
+                        false || alert("printed");
+                      </code>
+                    </pre>
+
+                    <p class="desc">
+                      첫 번째 줄은 좌항이 truthy이므로 평가를 멈춘다. 그러므로
+                      alert가 실행되지 않는다.<br />
+                      두 번째 줄은 좌항이 falsy이므로 alert가 실행된다.
+                    </p>
+                  </dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="and-operator" aria-labelledby="and-operator-title">
+              <h3 id="and-operator-title" class="main-article-title">
+                <i aria-hidden="true">🐟</i>
+                AND 연산자 (&amp;&amp;)
+              </h3>
+
+              <dl class="main-dl" aria-label="정의와 체이닝">
+                <div>
+                  <dt>정의</dt>
+                  <dd>
+                    <strong class="underline">
+                      const result = a &amp;&amp; b;
+                    </strong>
+                  </dd>
+                  <dd>OR 연산자는 두 인수가 true여야지 true를 반환</dd>
+                </div>
+                <div>
+                  <dt>체이닝</dt>
+                  <dd>
+                    <strong>
+                      OR 연산자를 여러 개 체이닝(chaining)하면
+                      <span class="underline">첫 번째 falsy 반환</span>
+                    </strong>
+                  </dd>
+                  <dd>
+                    피연산자에 falsy가 하나도 없다면 마지막 피연산자 반환
+                    <pre class="main-code">
+                      <code>
+                        alert( 1 && 2 && null && 3 ); // null
+                        alert( 1 && 2 && 3 ); // 마지막 값, 3
+                      </code>
+                    </pre>
+                  </dd>
+                </div>
+              </dl>
+            </section>
+          </div>
         </div>
-
-        <article class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🐝</span>
-            개요
-          </h3>
-          <p>
-            다른 사람의 코드에서, '||'나 '&amp;&amp;'를 종종 보곤한다.<br />
-            느낌상 뭔지는 알겠는데 정확하게 무슨 의미인지 물어보면 대답을
-            못하겠다.<br />
-            그래서 정리해봤다.
-          </p>
-        </article>
-
-        <article class="or-operator" aria-labelledby="or-operator-title">
-          <h3 id="or-operator-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🐞</span>
-            OR 연산자 (||)
-          </h3>
-          <dl class="main-article-dl" aria-label="정의 및 추가기능">
-            <div id="or-operator-desc">
-              <dt class="main-article-dt" aria-label="정의">정의</dt>
-              <dd class="main-article-dd">
-                <strong class="order"> const result = a || b; </strong>
-              </dd>
-              <dd class="main-article-dd">
-                OR 연산자는 인수 중 하나라도 true면 true를 반환한다.
-              </dd>
-              <dd class="main-article-dd margin-8px">
-                다음의 예시를 보면, 피연산자가 모두 false인 경우를 제외하고 연산
-                결과는 항상 true이다.
-              </dd>
-              <dd>
-                <div class="hidden">예시 코드</div>
-                <pre
-                  class="main-article-pre background-white-radius margin-8px"
-                >
-                  <code>
-                    alert( true || true );   // true
-                    alert( false || true );  // true
-                    alert( true || false );  // true
-                    alert( false || false ); // false
-                  </code>
-                </pre>
-              </dd>
-            </div>
-            <div id="or-operator-chaining">
-              <dt class="main-article-dt" aria-label="체이닝">체이닝</dt>
-              <dd class="main-article-dd margin-8px">
-                <strong>
-                  OR 연산자를 여러 개 체이닝(chaining)하면
-                  <span class="order">첫 번째 truthy를 반환한다.</span>
-                  피연산자에 truthy가 하나도 없다면 마지막 피연산자를 반환한다.
-                </strong>
-              </dd>
-              <dd>
-                <pre class="main-article-pre background-white-radius">
-                  <code>
-                    alert( undefined || null || 0 ); // 0 (모두 falsy이므로, 마지막 값을 반환함)
-                  </code>
-                </pre>
-              </dd>
-            </div>
-            <div id="or-operator-add-ins">
-              <dt class="main-article-dt" aria-label="추가기능">추가기능</dt>
-              <dd class="margin-8px">
-                <p class="error">
-                  <span class="hidden-inline">추가기능 1</span>
-                  변수 또는 표현식으로 구성된 목록에서 첫 번째 truthy 얻기
-                </p>
-                <p class="margin-8px hyphen">
-                  <strong>
-                    변수에 값을 넣거나 빈칸으로 놔두고 싶은 순간이 있다. 이럴 때
-                    유용하게 사용할 수 있다.
-                  </strong>
-                  <br />
-                  (false가 되는 값에는 false, undefined, "", null, Nan, 0이
-                  있다.)
-                </p>
-                <pre
-                  class="main-article-pre background-white-radius margin-8px"
-                >
-                  <code>
-                    let volume = this.volume : "";
-                  </code>
-                </pre>
-                <p id="code-desc" class="hyphen">
-                  이벤트 리스너 안에 위의 예시를 넣었다고 가정하자. 만약에 해당
-                  요소가 value속성을 가지고 있으면 변수에 값을 넣는다. 반대로
-                  value속성이 없으면 변수는 빈칸이 된다.
-                </p>
-              </dd>
-              <dd>
-                <p class="error">
-                  <span class="hidden-inline">추가기능 2</span>
-                  단락 평가(short circuit evaluation)
-                </p>
-                <p class="margin-8px">
-                  왼쪽부터 시작해서 오른쪽으로 평가를 진행한다. truthy를 만나면
-                  나머지 값들은 건드리지 않은 채 평가를 멈춘다. 이런 프로세스를
-                  '단락 평가'라고 한다.
-                </p>
-                <pre
-                  class="main-article-pre background-white-radius margin-8px"
-                >
-                  <code>
-                    true || alert("not printed");
-                    false || alert("printed");
-                  </code>
-                </pre>
-                <p id="code-desc" class="hyphen">
-                  첫 번째 줄은 좌항이 truthy이므로 평가를 멈춘다. 그러므로
-                  alert가 실행되지 않는다.<br />
-                  두 번째 줄은 좌항이 falsy이므로 alert가 실행된다.
-                </p>
-              </dd>
-            </div>
-          </dl>
-        </article>
-
-        <article class="and-operator" aria-labelledby="and-operator-title">
-          <h3 id="and-operator-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🐟</span>
-            AND 연산자 (&amp;&amp;)
-          </h3>
-          <dl class="main-article-dl" aria-label="정의와 체이닝">
-            <div id="and-operator-desc">
-              <dt class="main-article-dt" aria-label="정의">정의</dt>
-              <dd class="main-article-dd">
-                <strong class="order"> const result = a &amp;&amp; b; </strong>
-              </dd>
-              <dd class="main-article-dd">
-                OR 연산자는 두 인수가 true여야지 true를 반환한다.
-              </dd>
-            </div>
-            <div id="and-operator-chaining">
-              <dt class="main-article-dt" aria-label="체이닝">체이닝</dt>
-              <dd class="main-article-dd margin-8px">
-                <strong>
-                  OR 연산자를 여러 개 체이닝(chaining)하면
-                  <span class="order">첫 번째 falsy를 반환한다.</span>
-                  피연산자에 falsy가 하나도 없다면 마지막 피연산자를 반환한다.
-                </strong>
-              </dd>
-              <dd>
-                <pre class="main-article-pre background-white-radius">
-                  <code>
-                    alert( 1 && 2 && null && 3 ); // null
-                    alert( 1 && 2 && 3 ); // 마지막 값, 3
-                  </code>
-                </pre>
-              </dd>
-            </div>
-          </dl>
-        </article>
-      </section>
+      </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://ko.javascript.info/logical-operators"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "모던자바스크립트 - 논리 연산자", 모던자바스크립트,
-            2021년 3월 19일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://ko.javascript.info/logical-operators">
-              https://ko.javascript.info/logical-operators
-            </a>
-          </cite>
-        </blockquote>
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://ko.javascript.info/logical-operators"
+            >
+              <strong>
+                정보 출처: "모던자바스크립트 - 논리 연산자", 모던자바스크립트,
+                2021년 3월 19일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://ko.javascript.info/logical-operators">
+                  모던자바스크립트 - 논리 연산자
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
-            2021년 3월 19일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                Github, 2021년 3월 19일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

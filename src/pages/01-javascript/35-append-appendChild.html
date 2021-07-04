@@ -37,316 +37,283 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-3-15">2021년 03월 15일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-2">2021년 07월 02일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
-      <section class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">🍐</span>
-            append와 appendChild
-            <span class="main-title" aria-hidden="true">🍐</span>
-          </strong>
-        </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-3-17">2021년 03월 17일</time>
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">🍐</i>
+                append와 appendChild
+                <i aria-hidden="true">🍐</i>
+              </strong>
+            </h2>
+
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">🍒</i>
+                개요
+              </h3>
+
+              <p>
+                append와 appendChild의 차이. 언젠가는 정리해야지 했던 게 벌써 한
+                달이 지났다. 비슷한 맥락으로 묵혀놓았던 조각 개념들을 정리
+                중이다. 생각보다 시간이 걸린다. 돈은 티끌모아 티끌이면서. 다른건
+                꼭 이러더라. 구몬숙제부터 시작된 역사는 잘 바뀌지 않나보다.
+              </p>
+            </section>
+
+            <section class="append" aria-labelledby="append-title">
+              <h3 id="append-title" class="main-article-title">
+                <i aria-hidden="true">🍆</i>
+                append
+              </h3>
+
+              <div>
+                <dl class="main-dl">
+                  <dt>append</dt>
+                  <dd>
+                    노드 객체(Node object), 문자열(DOM String)을 인수로 받음
+                  </dd>
+                  <dd>한 번에 여러 개의 자식 요소 설정 가능</dd>
+                  <dd>return 값을 반환하지 않음</dd>
+                </dl>
+
+                <div class="code">
+                  <pre class="main-code">
+                    <code>
+                      div.append(p);
+                      p.appned("고소한 맛이 나구")
+  
+                      // 브라우저 개발자 도구
+                      // div
+                      //  ㄴp("고소한 맛이 나구")
+  
+                      엉덩이.append(좌궁둥, 우궁둥);
+      
+                      // 브라우저 개발자 도구
+                      // div#엉덩이
+                      //  ㄴdiv.좌궁둥
+                      //  ㄴdiv.우궁둥
+  
+                      // return
+                        const 엉덩이 = document.querySelector("#wrapper");
+      
+                        console.log(엉덩이.append("방구장인")); //undefined
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </section>
+
+            <section class="appendChild" aria-labelledby="appendChild-title">
+              <h3 id="appendChild-title" class="main-article-title">
+                <i aria-hidden="true">🍅</i>
+                appendChild
+              </h3>
+
+              <div>
+                <dl class="main-dl">
+                  <dt>appendChild</dt>
+                  <dd>노드 객체(Node object)만을 인수로 받음</dd>
+                  <dd>한 번에 하나의 자식 요소만 설정 가능</dd>
+                  <dd>return 값을 반환</dd>
+                </dl>
+
+                <div class="code">
+                  <pre class="main-code">
+                    <code>
+                      // 노드 객체(Node object) 삽입
+                        귤껍질.appendChild(알맹이);
+      
+                      // 브라우저 개발자 도구
+                      // div#귤껍질
+                      //  ㄴdiv.알맹이
+  
+                      엉덩이.appendChild(좌궁둥);
+                      엉덩이.appendChild(우궁둥);
+  
+                      // return
+                        const 엉덩이 = document.querySelector("#wrapper");
+                        const 좌궁둥 = document.createElement("div");
+                        좌궁둥.className = "뿡";
+      
+                        console.log(엉덩이.appendChild("좌궁둥")); // div.뿡
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
-
-        <article class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🍒</span>
-            개요
-          </h3>
-          <p>
-            append와 appendChild의 차이. 언젠가는 정리해야지 했던 게 벌써 한
-            달이 지났다. 비슷한 맥락으로 묵혀놓았던 조각 개념들을 정리 중이다.
-            생각보다 시간이 걸린다. 돈은 티끌모아 티끌이면서. 다른건 꼭
-            이러더라. 구몬숙제부터 시작된 역사는 잘 바뀌지 않나보다.
-          </p>
-        </article>
-
-        <article class="append" aria-labelledby="append-title">
-          <h3 id="append-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🍆</span>
-            append
-          </h3>
-          <ul aria-label="특징">
-            <li class="main-article-list-items">
-              <p class="margin-8px">
-                노드 객체(Node object)나 문자열(DOM String)을 사용할 수 있다.
-              </p>
-              <div class="hidden">예시 코드</div>
-              <pre class="main-article-pre background-white-radius margin-8px">
-                <code>
-                  // 노드 객체(Node object) 삽입
-                  귤껍질.append(알맹이);
-
-                  // 문자열(DOM String) 삽입
-                  알맹이.appned("고소한 맛이 나구");
-
-                  // 브라우저 개발자 도구
-                  // div#귤껍질
-                  //  ㄴdiv.알맹이
-                  //    ㄴ"고소한 맛이 나구"
-                </code>
-              </pre>
-            </li>
-            <li class="main-article-list-items">
-              <p class="margin-8px">
-                한 번에 여러 개의 자식 요소를 설정할 수 있다.
-              </p>
-              <div class="hidden">예시 코드</div>
-              <pre class="main-article-pre background-white-radius margin-8px">
-                <code>
-                  엉덩이.append(좌궁둥, 우궁둥);
-
-                  // 브라우저 개발자 도구
-                  // div#엉덩이
-                  //  ㄴdiv.좌궁둥
-                  //  ㄴdiv.우궁둥
-                </code>
-              </pre>
-            </li>
-            <li class="main-article-list-items">
-              <p class="margin-8px">return 값을 반환하지 않는다.</p>
-              <div class="hidden">예시 코드</div>
-              <pre class="main-article-pre background-white-radius margin-8px">
-                <code>
-                  // return
-                  const 엉덩이 = document.querySelector("#wrapper");
-
-                  console.log(엉덩이.append("방구장인")); //undefined
-                </code>
-              </pre>
-            </li>
-          </ul>
-        </article>
-
-        <article class="appendChild" aria-labelledby="appendChild-title">
-          <h3 id="appendChild-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🍅</span>
-            appendChild
-          </h3>
-          <ul aria-label="특징">
-            <li class="main-article-list-items">
-              <p class="margin-8px">
-                노드 객체(Node object)만을 사용할 수 있다.
-              </p>
-              <div class="hidden">예시 코드</div>
-              <pre class="main-article-pre background-white-radius margin-8px">
-                <code>
-                  // 노드 객체(Node object) 삽입
-                  귤껍질.appendChild(알맹이);
-
-                  // 브라우저 개발자 도구
-                  // div#귤껍질
-                  //  ㄴdiv.알맹이
-                </code>
-              </pre>
-            </li>
-            <li class="main-article-list-items">
-              <p class="margin-8px">오직 하나의 자식 요소를 설정할 수 있다.</p>
-              <div class="hidden">예시 코드</div>
-              <pre class="main-article-pre background-white-radius margin-8px">
-                <code>
-                  엉덩이.appendChild(좌궁둥);
-                  엉덩이.appendChild(우궁둥);
-                </code>
-              </pre>
-            </li>
-            <li class="main-article-list-items">
-              <p class="margin-8px">return 값을 반환한다.</p>
-              <div class="hidden">예시 코드</div>
-              <pre class="main-article-pre background-white-radius margin-8px">
-                <code>
-                  // return
-                  const 엉덩이 = document.querySelector("#wrapper");
-                  const 좌궁둥 = document.createElement("div");
-                  좌궁둥.className = "뿡";
-
-                  console.log(엉덩이.appendChild("좌궁둥")); // div.뿡
-                </code>
-              </pre>
-            </li>
-          </ul>
-        </article>
-      </section>
+      </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://webruden.tistory.com/634"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "Tistory - [Javascript] append vs appendChild 차이점
-            (초간단)", Tistory, 2021년 3월 15일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://webruden.tistory.com/634">
-              https://webruden.tistory.com/634
-            </a>
-          </cite>
-        </blockquote>
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://webruden.tistory.com/634"
+            >
+              <strong>
+                정보 출처: "Tistory - [Javascript] append vs appendChild 차이점
+                (초간단)", Tistory, 2021년 3월 15일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://webruden.tistory.com/634">
+                  Tistory - [Javascript] append vs appendChild 차이점 (초간단)
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
-            2021년 3월 15일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "", Github, 2021년 3월 15일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

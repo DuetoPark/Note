@@ -37,331 +37,355 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-3-12">2021년 03월 12일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-2">2021년 07월 02일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
-      <section class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">🐥</span>
-            콜바이밸류(call by value)
-            <span class="main-title" aria-hidden="true">🐥</span>
-          </strong>
-        </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-3-17">2021년 03월 17일</time>
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">🐥</i>
+                콜바이밸류(call by value)
+                <i aria-hidden="true">🐥</i>
+              </strong>
+            </h2>
+
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">🐢</i>
+                개요
+              </h3>
+
+              <p>
+                함수의 매개변수에 인자를 넣으면 어떤 일이 일어나는지 알아보자.
+              </p>
+            </section>
+
+            <section
+              class="call-by-value"
+              aria-labelledby="call-by-value-title"
+            >
+              <h3 id="call-by-value-title" class="main-article-title">
+                <i aria-hidden="true">🐎</i>
+                콜바이밸류(call by value)
+              </h3>
+
+              <div>
+                <dl class="main-dl">
+                  <dt lang="en">call by value</dt>
+                  <dd>함수의 인자와 매개변수(parameter) 간의 관계를 의미</dd>
+                  <dd>인자: 함수 실행할 때 괄호 안에 선언한 값</dd>
+                  <dd>매개변수: 함수 선언할 때 괄호 안에 넣은 변수</dd>
+                </dl>
+
+                <div class="is-basic">
+                  <div class="code">
+                    <pre class="main-code">
+                      <code>
+                        function 함수 (매개변수) {
+                          console.log(매개변수);
+                        }
+        
+                        함수(3); // 인자: 3
+                      </code>
+                    </pre>
+                  </div>
+
+                  <div class="code-desc">
+                    <p>함수를 실행하면서 인자에 3을 넣었다.</p>
+
+                    <p>선언한 함수의 매개변수에 3을 대입한다.</p>
+
+                    <p>var 매개변수 = 3;이므로 console.log는 3이 출력된다.</p>
+                  </div>
+                </div>
+
+                <div class="is-change">
+                  <div class="code">
+                    <pre class="main-code">
+                      <code>
+                        function 함수(매개변수) {
+                          매개변수 = 10;
+                          console.log(매개변수);
+                        }
+        
+                        var 인자 = 5;
+                        함수(인자); // 10
+                        console.log(인자); // 5
+                      </code>
+                    </pre>
+                  </div>
+
+                  <div class="code-desc">
+                    <p>
+                      함수 내부에서 매개변수가 10으로 수정되므로 함수(인자)는
+                      10을 출력한다.
+                    </p>
+
+                    <p>
+                      매개변수는 함수 밖을 빠져나가지 못하기 때문에
+                      console.log(인자)는 5를 출력한다.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="is-change-object">
+                  <div class="code">
+                    <pre class="main-code">
+                      <code>
+                        function 함수(매개변수) {
+                          매개변수.a = 10;
+                          console.log(매개변수);
+                        }
+        
+                        var 인자 = {a: 5};
+                        함수(인자); // 10
+                        console.log(인자); // 10
+                      </code>
+                    </pre>
+                  </div>
+
+                  <div class="code-desc">
+                    <p>매개변수에 {a: 5}를 대입한다.</p>
+
+                    <p>
+                      함수 내부에서 매개변수.a가 10으로 수정되므로 함수(인자)는
+                      10을 출력한다.
+                    </p>
+
+                    <p>
+                      <strong class="underline">
+                        여기에서 주의할 점은 매개함수에 객체를 대입한다는
+                        점이다.
+                      </strong>
+                      <strong>
+                        객체를 대입하면
+                        <span class="highlight">참조관계</span>가 된다.
+                      </strong>
+                      그러므로 인자.a도 10이 된다.<br />
+                      console.log(인자)가 10을 출력하는 이유이다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="call-by-reference"
+              aria-labelledby="call-by-reference-title"
+            >
+              <h3 id="call-by-reference-title" class="main-article-title">
+                <i aria-hidden="true">🐝</i>
+                콜바이레퍼런스(call by reference)
+              </h3>
+
+              <div>
+                <dl class="main-dl">
+                  <dt>call by reference</dt>
+                  <dd>
+                    <strong class="highlight">
+                      콜바이 레퍼런스는 자바스크립트에 존재하지 않는다!
+                    </strong>
+                  </dd>
+                  <dd>
+                    자바스크립트에서 인자에 어떤 것을 넣든 모두 콜바이밸류이다.
+                  </dd>
+                </dl>
+
+                <p>
+                  객체의 속성을 수정하는 부분에서 참조 관계를 띌 뿐이다.
+                  '객체'를 원시값으로 수정할 시에는 참조 관계가 깨져버린다.<br />
+                  아래의 코드는 콜바이레퍼런스라는 주장의 반례이다.
+                </p>
+
+                <pre class="main-code">
+                  <code>
+                    function 함수(매개변수) {
+                      매개변수 = "오이"; // 객체 --> 문자열로 수정, 참조 관계 깨짐
+                      console.log(매개변수);
+                    }
+      
+                    var 인자 = {a: 5}; //객체
+                    함수(인자); // "오이"
+                    console.log(인자); // {a: 5}
+                  </code>
+                </pre>
+              </div>
+            </section>
+          </div>
         </div>
-
-        <article class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🐢</span>
-            개요
-          </h3>
-          <p>함수의 매개변수에 인자를 넣으면 어떤 일이 일어나는지 알아보자.</p>
-        </article>
-
-        <article class="call-by-value" aria-labelledby="call-by-value-title">
-          <h3 id="call-by-value-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🐎</span>
-            콜바이밸류(call by value)
-          </h3>
-          <p class="margin-8px">
-            인자와 매개변수 간의 관계를 의미한다. 함수의 매개변수로 뭘 넣었나?에
-            집중하자. 다음의 예시 코드를 보자.
-          </p>
-          <div class="basic margin-8px">
-            <div class="hidden">기본코드</div>
-            <pre class="main-article-pre background-white-radius margin-8px">
-              <code>
-                function 함수 (매개변수) {
-                  console.log(매개변수);
-                }
-
-                함수(3); // 3
-              </code>
-            </pre>
-            <div class="code-desc">
-              <p class="hyphen">함수를 실행하면서 인자에 3을 넣었다.</p>
-              <p class="hyphen">
-                매개변수가 헷갈린다면, var 매개변수 = 인자;로 생각하면 된다.
-              </p>
-              <p class="hyphen">
-                var 매개변수 = 3;이므로 console.log는 3이 출력된다.
-              </p>
-            </div>
-          </div>
-          <div class="primitive-value margin-8px">
-            <div class="hidden">매개변수(원시값) 변경 코드</div>
-            <pre class="main-article-pre background-white-radius margin-8px">
-              <code>
-                function 함수(매개변수) {
-                  매개변수 = 10;
-                  console.log(매개변수);
-                }
-
-                var 인자 = 5;
-                함수(인자); // 10
-                console.log(인자); // 5
-              </code>
-            </pre>
-            <div class="code-desc">
-              <p class="hyphen">
-                var 매개변수 = 5;가 된다. 원시 값을 대입했으므로 깊은 복사된다.
-              </p>
-              <p class="hyphen">
-                함수 내부에서 매개변수가 10으로 수정되므로 함수(인자)는 10을
-                출력한다.
-              </p>
-              <p class="hyphen">
-                매개변수는 함수 밖을 빠져나가지 못하기 때문에
-                console.log(인자)는 5를 출력한다.
-              </p>
-            </div>
-          </div>
-          <div class="object-value">
-            <div class="hidden">매개변수(객체) 변경 코드</div>
-            <pre class="main-article-pre background-white-radius margin-8px">
-              <code>
-                function 함수(매개변수) {
-                  매개변수.a = 10;
-                  console.log(매개변수);
-                }
-
-                var 인자 = {a: 5};
-                함수(인자); // 10
-                console.log(인자); // 10
-              </code>
-            </pre>
-            <div class="code-desc">
-              <p class="hyphen">var 매개변수 = {a: 5};가 된다.</p>
-              <p class="hyphen">
-                함수 내부에서 매개변수.a가 10으로 수정되므로 함수(인자)는 10을
-                출력한다.
-              </p>
-              <p class="hyphen">
-                <strong class="underline"
-                  >여기에서 주의할 점은 매개함수에 객체를 대입한다는
-                  점이다.</strong
-                >
-                객체를 대입하면 참조관계가 된다. 그러므로 인자.a도 10이 된다.<br />
-                console.log(인자)가 10을 출력하는 이유이다.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article
-          class="call-by-reference"
-          aria-labelledby="call-by-reference-title"
-        >
-          <h3 id="call-by-reference-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🐝</span>
-            콜바이레퍼런스(call by reference)
-          </h3>
-          <p class="margin-8px">
-            <strong class="order">
-              콜바이 레퍼런스는 자바스크립트에 존재하지 않는다!
-            </strong>
-            <br />
-            자바스크립트에서 인자에 어떤 것을 넣든 모두 콜바이밸류이다.
-          </p>
-          <p class="margin-8px">
-            객체의 속성을 수정하는 부분에서 참조 관계를 띌 뿐이다. '객체'를
-            원시값으로 수정할 시에는 참조 관계가 깨져버린다.<br />
-            아래의 코드는 콜바이레퍼런스라는 주장의 반례이다.
-          </p>
-          <pre class="main-article-pre background-white-radius margin-8px">
-            <code>
-              function 함수(매개변수) {
-                매개변수 = "오이"; // 객체 --> 문자열로 수정, 참조 관계 깨짐
-                console.log(매개변수);
-              }
-
-              var 인자 = {a: 5}; //객체
-              함수(인자); // "오이"
-              console.log(인자); // {a: 5}
-            </code>
-          </pre>
-        </article>
-      </section>
+      </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://www.youtube.com/watch?v=-w-oJp6OVd4&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=84"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "Youtube - ZeroCho의 JS 중급 강좌 12-1. call by value,
-            call by reference, call by sharing", Youtube, 2021년 3월 12일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://www.youtube.com/watch?v=-w-oJp6OVd4&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=84"
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://www.youtube.com/watch?v=-w-oJp6OVd4&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=84"
             >
-              https://www.youtube.com/watch?v=-w-oJp6OVd4&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=84
-            </a>
-          </cite>
-        </blockquote>
+              <strong>
+                정보 출처: "Youtube - ZeroCho의 JS 중급 강좌 12-1. call by
+                value, call by reference, call by sharing", Youtube, 2021년 3월
+                12일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://www.youtube.com/watch?v=-w-oJp6OVd4&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=84"
+                >
+                  ZeroCho의 JS 중급 강좌 12-1. call by value, call by reference,
+                  call by sharing
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
-            2021년 3월 12일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                Github, 2021년 3월 12일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

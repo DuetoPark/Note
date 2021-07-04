@@ -37,260 +37,229 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-3-7">2021년 03월 07일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-3">2021년 07월 03일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
-      <section class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">🎓</span>
-            concat
-            <span class="main-title" aria-hidden="true">🎓</span>
-          </strong>
-        </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-3-17">2021년 03월 17일</time>
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">🎓</i>
+                concat
+                <i aria-hidden="true">🎓</i>
+              </strong>
+            </h2>
+
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">🎃</i>
+                개요
+              </h3>
+
+              <p>
+                일주일 내내 열두시간씩 코딩하고 공부 중이다.<br />
+                하다보면 다섯 시간은 금방 지나있다.<br />
+                사실 살면서 이렇게까지 열심히 공부한 적 있다.<br />
+                없을 줄 알았는데 쓰면서 생각났다.<br />
+                내 생각을 이어준 것처럼 기존의 배열에 주어진 인자를 붙여주는
+                메소드가 있다.<br />
+                concat메소드에 대해 알아보자.
+              </p>
+            </section>
+
+            <section class="concat" aria-labelledby="concat-title">
+              <h3 id="concat-title" class="main-article-title">
+                <i aria-hidden="true">🎏</i>
+                정의
+              </h3>
+              <dl class="main-dl">
+                <div>
+                  <dt>concat</dt>
+                  <dd>
+                    인자로 주어진 배열이나 값들을 기본 배열에 합쳐서 새 배열을
+                    반환하는 메소드
+                  </dd>
+                  <dd>문법: 배열.concat(인자1, 인자2, ... , 인자n);</dd>
+                  <dd>기존 배열은 유지</dd>
+                </div>
+                <div>
+                  <dt>concat의 인자</dt>
+                  <dd>배열이나 값을 넣는다.</dd>
+                </div>
+              </dl>
+            </section>
+          </div>
         </div>
-
-        <article class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🎃</span>
-            개요
-          </h3>
-          <p>
-            일주일 내내 열두시간씩 코딩하고 공부 중이다.<br />
-            하다보면 다섯 시간은 금방 지나있다.<br />
-            사실 살면서 이렇게까지 열심히 공부한 적 있다.<br />
-            없을 줄 알았는데 쓰면서 생각났다.<br />
-            내 생각을 이어준 것처럼 기존의 배열에 주어진 인자를 붙여주는
-            메소드가 있다.<br />
-            concat메소드에 대해 알아보자.
-          </p>
-        </article>
-
-        <article class="concat" aria-labelledby="concat-title">
-          <h3 id="concat-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🎏</span>
-            정의
-          </h3>
-          <p>
-            <strong class="underline">
-              인자로 주어진 배열이나 값들을 기본 배열에 합쳐서 새 배열을
-              반환한다.
-            </strong>
-            <br />
-            기존 배열은 변경하지 않는다.<br />
-            진짜 딱 대. 붙이고. 끝.
-          </p>
-        </article>
-
-        <article class="concat-syntax" aria-labelledby="concat-syntax-title">
-          <h3 id="concat-syntax-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">🎈</span>
-            문법
-          </h3>
-          <p class="margin-16px">
-            <strong class="order">
-              배열.concat(인자1, 인자2, ... , 인자n);
-            </strong>
-          </p>
-          <div class="hidden">문법 해석을 목록으로 정리했다.</div>
-          <dl class="main-article-dl" aria-label="문법 해석">
-            <div>
-              <dt class="main-article-dt" aria-label="인자">인자</dt>
-              <dd class="main-article-dd">배열이나 값을 넣는다.</dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="배열">배열</dt>
-              <dd class="main-article-dd">
-                concat은 기존의 배열에 인자를 붙여서 새로운 배열을 만들어 낸다.
-              </dd>
-              <dd class="main-article-dd">
-                배열 = 배열.concat(인자);로 명령하면 push와 같은 결과를 얻을 수
-                있다.
-              </dd>
-            </div>
-          </dl>
-        </article>
-      </section>
+      </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/concat"
-        >
-          <strong class="note-footer-reference-name">
-            정보 출처: "MDN - Array.prototype.concat()", MDN, 2021년 3월 7일
-            접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/concat"
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/concat"
             >
-              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
-            </a>
-          </cite>
-        </blockquote>
+              <strong>
+                정보 출처: "MDN - Array.prototype.concat()", MDN, 2021년 3월 7일
+                접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/concat"
+                >
+                  MDN - Array.prototype.concat()
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", Github,
-            2021년 3월 7일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                Github, 2021년 3월 7일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

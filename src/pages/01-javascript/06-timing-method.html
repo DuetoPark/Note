@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang="ko">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="dueto park"/>
-    <meta name="keywords" content="javascript, 타이밍 메소드"/>
-    <meta name="description" content="타이밍 메소드의 문법과 왜 사용해야 하는지에 대해서 알아봅시다!"/>
-    <meta name="Location" content="포도와 고구마의 고장"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dueto park" />
+    <meta name="keywords" content="javascript, 타이밍 메소드" />
+    <meta
+      name="description"
+      content="타이밍 메소드의 문법과 왜 사용해야 하는지에 대해서 알아봅시다!"
+    />
+    <meta name="Location" content="포도와 고구마의 고장" />
 
     <title>타이밍 메소드</title>
 
@@ -29,330 +32,368 @@
       href="../../../favicon-16x16.png"
     />
     <link rel="manifest" href="../../../site.webmanifest" />
-    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/style-common.css">
-    <link rel="stylesheet" href="../../css/style-html.css">
-    <link rel="stylesheet" href="../../css/responsive/style-common.css">
-    <link rel="stylesheet" href="../../css/responsive/style-html.css">
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css">
-    <link rel="stylesheet" href="../../css/animation/animation.css">
+    <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
-    <header class='note-header' aria-label="페이지 조작 영역">
-      <div class='container'>
-        <!-- 홈으로 이동 -->
-        <h1 class='note-header-title' aria-labelledby="go-to-home">
-          <a id="go-to-home" href='../../index.html'>
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+  <body class="mode-day">
+    <header class="note-header" aria-label="페이지 조작 영역">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class='toggle-button-group' aria-labelledby="toggle-button">
-          <span class='toggle-button-title' aria-hidden="true">Day/Night Switch</span>
-          <button id="toggle-button" class='toggle-button' type='button' aria-label="야간모드 켜기" aria-controls="page-mode-state"></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class='note-header-nav' aria-labelledby="note-header-nav-title">
-          <h2 id="note-header-nav-title" class='hidden note-header-nav-title' aria-hidden="true">다른 페이지로 이동</h2>
-          <ol class='note-header-nav-list' aria-label="주제 선택" role="tablist">
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-html">html</button>
-            </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-css">css</button>
-            </li>
-            <li class='note-header-nav-list-items'>
-              <button type='button' data-role='tab' aria-controls="go-to-page-div-js">javascript</button>
-            </li>
-          </ol>
+              <button
+                class="toggle-button"
+                type="button"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
+              >
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
 
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
+              >
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article id="go-to-pages" class="hidden" aria-hidden="true" aria-labelledby="select-chapter">
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button class="go-to-pages-close" type="button" aria-label="모달 닫기"></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div id="go-to-page-div-html" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="html-button">
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div id="go-to-page-div-css" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="css-button">
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div id="go-to-page-div-javascript" class="go-to-page-div hidden" data-role='tabpanel' aria-labelledby="js-button">
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-1-14">2021년 01월 14일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-3">2021년 07월 03일</time>
+          </div>
+        </div>
       </div>
     </header>
 
-    <main class='note-main' aria-label="본문 영역">
-      <section class='container' aria-labelledby="main-title">
-        <h2 id="main-title" class='main-title'>
-          <strong>
-            <span class='main-title' aria-hidden="true">👀</span>
-            타이밍 메소드
-            <span class='main-title' aria-hidden="true">👀</span>
-          </strong>
-        </h2>
-        <div class="time">
-          수정 날짜: <time datetime='2021-4-07'>2021년 04월 07일</time>
-        </div>
-
-        <section  class='summary' aria-labelledby="summary-title">
-          <h3 id="summary-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">👸</span>
-            개요
-          </h3>
-          <p>
-            함수 실행을 지연하거나 반복하는 메소드에 대해 알아보자.
-          </p>
-        </section>
-
-        <section class="setTimeout" aria-labelledby="setTimeout-title">
-          <h3 id="setTimeout-title" class="main-article-title">
-            <span class='main-article-title' aria-hidden="true">👮</span>
-            setTimeout
-          </h3>
-          <div id="setTimeout-desc" class="margin-24px">
-            <p class="margin-8px">
-              <strong class="order">
-                window.setTimeout(콜백함수, milliseconds);
+    <main class="note-main" aria-label="본문 영역">
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">👀</i>
+                타이밍 메소드
+                <i aria-hidden="true">👀</i>
               </strong>
-            </p>
-            <p class="margin-8px">
-              동작을 지연시키는 매소드다.<br/>
-              window 없이 함수 단독으로 나올 수 있다.<br/>
-              문법 해석은 목록으로 정리했다.
-            </p>
-            <dl class="main-article-dl" aria-label="문법 해석">
+            </h2>
+
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">👸</i>
+                개요
+              </h3>
+
+              <p>함수 실행을 지연하거나 반복하는 메소드에 대해 알아보자.</p>
+            </section>
+
+            <section class="setTimeout" aria-labelledby="setTimeout-title">
+              <h3 id="setTimeout-title" class="main-article-title">
+                <i aria-hidden="true">👮</i>
+                setTimeout
+              </h3>
+
               <div>
-                <dt class="main-article-dt" aria-label="콜백함수">
-                  콜백함수
-                </dt>
-                <dd class="main-article-dd">
-                  동작할 함수를 의미한다.
-                </dd>
-                <dd class="main-article-dd">
-                  함수를 직접 입력하거나, 함수명을 입력한다.
-                </dd>
+                <dl class="main-dl" aria-label="setTimeout 정의와 특징">
+                  <div>
+                    <dt>setTimeout</dt>
+                    <dd>동작을 지연시키는 메소드</dd>
+                    <dd>window 없이 함수 단독으로 사용 가능</dd>
+                    <dd>
+                      <strong>
+                        window.setTimeout(콜백함수, milliseconds);
+                      </strong>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>setTimeout의 콜백함수</dt>
+                    <dd>동작할 함수</dd>
+                    <dd>함수를 직접 입력하거나, 함수명을 입력한다.</dd>
+                  </div>
+                  <div>
+                    <dt>setTimeout의 milliseconds</dt>
+                    <dd>지연할 만큼의 시간</dd>
+                    <dd>단위는 기입하지 않으며, 1000은 1초를 의미한다.</dd>
+                  </div>
+                </dl>
+
+                <div class="code">
+                  <p>
+                    setTimeout은 CSS와 함께 사용하면 정확한 동작을 구현할 수
+                    있다.<br />
+                    예를 들어, display와 opacity 속성을 같이 조작할 때
+                    유용하다.<br />
+                    display는 trasition 속성이 적용되지 않는다. setTimeout를
+                    통해 display 속성을 변경하는 동작과 opacity 속성을 변경하는
+                    동작을 시간차를 두어 실행하면 원하는 동작이 이뤄진다.
+                  </p>
+
+                  <script src="https://gist.github.com/DuetoPark/2e68de64d9fc860b7455132363795f77.js"></script>
+                </div>
               </div>
+            </section>
+
+            <section class="setInterval" aria-labelledby="setInterval-title">
+              <h3 id="setInterval-title" class="main-article-title">
+                <i aria-hidden="true">🍤</i>
+                setInterval
+              </h3>
+
+              <dl class="main-dl" aria-label="setInterval 정의와 특징">
+                <div>
+                  <dt>setInterval</dt>
+                  <dd>함수를 무한반복 실행할 때 사용하는 메소드</dd>
+                  <dd>window 없이 함수 단독으로 사용 가능</dd>
+                  <dd>
+                    <strong>
+                      window.setInterval(function, milliseconds);
+                    </strong>
+                  </dd>
+                </div>
+                <div>
+                  <dt>setInterval의 콜백함수</dt>
+                  <dd>무한히 동작할 함수를 의미</dd>
+                  <dd>함수를 직접 입력하거나, 함수명을 입력한다.</dd>
+                </div>
+                <div>
+                  <dt>setInterval의 milliseconds</dt>
+                  <dd>입력한 시간 간격으로 동작이 실행</dd>
+                  <dd>생략하면 무한히 동작한다.</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section
+              class="clearInterval"
+              aria-labelledby="clearInterval-title"
+            >
+              <h3 id="clearInterval-title" class="main-article-title">
+                <i aria-hidden="true">🍵</i>
+                clearInterval
+              </h3>
+
+              <dl class="main-dl" aria-label="clearInterval 정의와 특징">
+                <dt>clearInterval</dt>
+                <dd>setInterval을 멈추는 메소드</dd>
+                <dd>
+                  <strong> window.clearInterval(setInterval함수); </strong>
+                </dd>
+              </dl>
+            </section>
+
+            <section class="clearTimeout" aria-labelledby="clearTimeout-title">
+              <h3 id="clearTimeout-title" class="main-article-title">
+                <i aria-hidden="true">🐴</i>
+                clearTimeout
+              </h3>
+
+              <dl class="main-dl" aria-label="clearTimeout 정의와 특징">
+                <dt>clearTimeout</dt>
+                <dd>setTimeout을 멈추는 메소드</dd>
+                <dd>
+                  <strong> window.clearTimeout(setTimeout 함수); </strong>
+                </dd>
+              </dl>
+            </section>
+
+            <section
+              class="timing-method-scope"
+              aria-labelledby="timing-method-scope-title"
+            >
+              <h3 id="timing-method-scope-title" class="main-article-title">
+                <i aria-hidden="true">🐋</i>
+                타이밍 메소드와 스코프
+              </h3>
+
               <div>
-                <dt class="main-article-dt" aria-label="milliseconds">
-                  milliseconds
-                </dt>
-                <dd class="main-article-dd">
-                  지연할 만큼의 시간을 입력한다.
-                </dd>
-                <dd class="main-article-dd">
-                  단위는 기입하지 않으며, 1000은 1초를 의미한다.
-                </dd>
+                <div class="desc">
+                  <p>
+                    clearTimeout은 setTimeout과 스코프가 다르면 호출스텍 문제가
+                    발생한다.
+                  </p>
+
+                  <p>
+                    이를 해결하려면 전역 함수에 변수를 빼내야 한다. 그 변수에
+                    setTimeout를 저장하면 호출스택 문제는 해결된다.
+                  </p>
+                </div>
+
+                <div class="code">
+                  <pre class="main-code">
+                    <code>
+                      var 타임아웃 = "";
+        
+                      if (조건1) {
+                        타임아웃 = setTimeout(function() {
+                          // 콜백함수 동작
+                        }, 2000);
+                      } else if (조건2) {
+                        clearTimeout(타임아웃);
+                      }
+                    </code>
+                  </pre>
+                </div>
               </div>
-            </dl>
+            </section>
           </div>
-          <div id="setTimeout-example">
-            <h4 class="main-article-subtitle">
-              <span aria-hidden="true">👉</span>사용 예시
-            </h4>
-            <p class="margin-8px">
-              setTimeout은 CSS와 함께 사용하면 정확한 동작을 구현할 수 있다.<br/>
-              예를 들어, display와 opacity 속성을 같이 조작할 때 유용하다.<br/>
-              display는 trasition 속성이 적용되지 않는 특성을 가진다. 이런 이유로 opacity 효과를 살리지 못하는 경우가 발생한다. 이를 보완하기 위해서, setTimeout을 이용해서 display 속성을 변경하는 동작과 opacity 속성을 변경하는 동작을 시간차를 두어 실행한다.
-            </p>
-            <script src="https://gist.github.com/DuetoPark/2e68de64d9fc860b7455132363795f77.js"></script>
-          </div>
-        </section>
-
-        <section class='setInterval' aria-labelledby="setInterval-title">
-          <h3 id="setInterval-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🍤</span>
-            setInterval
-          </h3>
-          <p class="margin-8px">
-            <strong class="order">
-              window.setInterval(function, milliseconds);
-            </strong>
-          </p>
-          <p class="margin-8px">
-            함수를 무한반복 실행할 때 사용하는 메소드다.<br/>
-            문법은 목록으로 정리했다.
-          </p>
-          <dl class="main-article-dl margin-8px" aria-label="문법 해석">
-            <div>
-              <dt class="main-article-dt" aria-label="콜백함수">
-                콜백함수
-              </dt>
-              <dd class="main-article-dd">
-                무한히 동작할 함수를 의미한다.
-              </dd>
-              <dd class="main-article-dd">
-                함수를 직접 입력하거나, 함수명을 입력한다.
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="milliseconds">
-                milliseconds
-              </dt>
-              <dd class="main-article-dd">
-                입력한 시간 간격으로 동작이 실행된다.
-              </dd>
-              <dd class="main-article-dd">
-                생략하면 무한히 동작한다.
-              </dd>
-            </div>
-          </dl>
-        </section>
-
-        <section class='clearInterval' aria-labelledby="clearInterval-title">
-          <h3 id="clearInterval-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🍵</span>
-            clearInterval
-          </h3>
-          <p class="margin-8px">
-            <strong class="order">
-              window.clearInterval(변수);
-            </strong>
-          </p>
-          <p class="margin-8px">
-            setInterval을 멈추는 메소드다.<br/>
-            문법은 목록으로 정리했다.
-          </p>
-          <dl class="main-article-dl" aria-label="문법 해석">
-            <dt class="main-article-dt" aria-label="변수">
-              변수
-            </dt>
-            <dd class="main-article-dd">
-              여기에서의 변수는 setInterval을 저장한 것을 의미한다.<br/>
-            </dd>
-            <dd class="main-article-dd">
-              let 변수 = setInterval(콜백함수, milliseconds);
-            </dd>
-          </dl>
-        </section>
-
-        <section class='clearTimeout' aria-labelledby="clearTimeout-title">
-          <h3 id="clearTimeout-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🐴</span>
-            clearTimeout
-          </h3>
-          <p class="margin-16px">
-            <strong class="order">
-              window.clearTimeout(변수);
-            </strong>
-          </p>
-          <p class="margin-8px">
-            setTimeout을 멈추는 메소드다.<br/>
-            문법은 목록으로 정리했다.
-          </p>
-          <dl class="main-article-dl" aria-label="문법 해석">
-            <dt class="main-article-dt" aria-label="변수">
-              변수
-            </dt>
-            <dd class="main-article-dd">
-              여기에서의 변수는 setTimeout을 저장한 것을 의미한다.<br/>
-            </dd>
-            <dd class="main-article-dd">
-              let 변수 = setTimeout(콜백함수, milliseconds);
-            </dd>
-          </dl>
-        </section>
-
-        <section class='timing-method-scope' aria-labelledby="timing-method-scope-title">
-          <h3 id="timing-method-scope-title" class='main-article-title'>
-            <span class='main-article-title' aria-hidden="true">🐋</span>
-            타이밍 메소드와 스코프
-          </h3>
-          <p class="margin-8px">
-            clearTimeout은 setTimeout과 스코프가 다르면 호출스텍 문제가 발생한다.
-          </p>
-          <p class="margin-8px">
-            이를 해결하려면 전역 함수에 변수를 빼내야 한다. 그 변수에 setTimeout를 저장하면 호출스택 문제는 해결된다.
-          </p>
-          <pre class="main-article-pre background-white-radius">
-            <code>
-              var 타임아웃 = "";
-
-              if (조건1) {
-                타임아웃 = setTimeout(function() {
-                  // 콜백함수 동작
-                }, 2000);
-              } else if (조건2) {
-                clearTimeout(타임아웃);
-              }
-            </code>
-          </pre>
-        </section>
+        </div>
       </article>
     </main>
 
-    <footer class='note-footer'>
-      <div class='container'>
-        <blockquote class='note-footer-reference'
-          cite='https://www.youtube.com/watch?v=OviFeiGJVm0&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=71'>
-          <strong class='note-footer-reference-name'>
-            자료 출처: "Youtube - ZeroCho의 JS 중급 강좌 9-5. 재귀, 비동기와 호출 스택", Youtube, 2021년 3월 10일 접속,
-          </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://www.youtube.com/watch?v=OviFeiGJVm0&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=71'>
-              https://www.youtube.com/watch?v=OviFeiGJVm0&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=71
-            </a>
-          </cite>
-        </blockquote>
+    <footer class="note-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://www.youtube.com/watch?v=OviFeiGJVm0&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=71"
+            >
+              <strong>
+                자료 출처: "Youtube - ZeroCho의 JS 중급 강좌 9-5. 재귀, 비동기와
+                호출 스택", Youtube, 2021년 3월 10일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://www.youtube.com/watch?v=OviFeiGJVm0&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=71"
+                >
+                  Youtube - ZeroCho의 JS 중급 강좌 9-5. 재귀, 비동기와 호출 스택
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://www.w3schools.com/js/js_timing.asp'>
-          <strong class='note-footer-reference-name'>
-            자료 출처: "w3schools - JavaScript Timing Events", w3schools.com, 2021년 1월 19일 접속,
-          </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://www.w3schools.com/js/js_timing.asp'>
-              https://www.w3schools.com/js/js_timing.asp
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://www.w3schools.com/js/js_timing.asp"
+            >
+              <strong>
+                자료 출처: "w3schools - JavaScript Timing Events",
+                w3schools.com, 2021년 1월 19일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://www.w3schools.com/js/js_timing.asp">
+                  w3schools - JavaScript Timing Events
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote class='note-footer-reference'
-          cite='https://gist.github.com/rxaviers/7360908'>
-          <strong class='note-footer-reference-name'>
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github, 2021년 1월 14일 접속,
-          </strong>
-          <cite class='note-footer-reference-url'>
-            <a href='https://gist.github.com/rxaviers/7360908'>
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong>
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                github, 2021년 1월 14일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='../../assets/data.js'></script>
-    <script src='../../assets/app/create.js'></script>
-    <script src='../../assets/app/app.js'></script>
+    <script src="../../assets/data.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>

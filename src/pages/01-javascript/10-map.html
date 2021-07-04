@@ -37,346 +37,338 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="../../css/style-common.css" />
-    <link rel="stylesheet" href="../../css/style-html.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-common.css" />
-    <link rel="stylesheet" href="../../css/responsive/style-html.css" />
-    <link rel="stylesheet" href="../../css/animation/modal-animation.css" />
-    <link rel="stylesheet" href="../../css/animation/animation.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
-  <body>
+  <body class="mode-day">
     <header class="note-header" aria-label="페이지 조작 영역">
       <div class="container">
-        <!-- 홈으로 이동 -->
-        <h1 class="note-header-title" aria-labelledby="go-to-home">
-          <a id="go-to-home" href="../../index.html">
-            <span aria-hidden="true">🔥</span>
-            기초튼튼 이가탄 <span class="hidden-inline">홈으로 이동</span>
-            <span aria-hidden="true">🔥</span>
-          </a>
-        </h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="header-title">
+              <a href="./index.html" aria-current="page">
+                <i aria-hidden="true">🔥</i>
+                기초튼튼 이가탄 <span class="visually-hidden">홈으로 이동</span>
+                <i aria-hidden="true">🔥</i>
+              </a>
+            </h1>
+          </div>
+        </div>
 
-        <!-- 야간 모드로 전환 -->
-        <section class="toggle-button-group" aria-labelledby="toggle-button">
-          <span class="toggle-button-title" aria-hidden="true"
-            >Day/Night Switch</span
-          >
-          <button
-            id="toggle-button"
-            class="toggle-button"
-            type="button"
-            aria-label="야간모드 켜기"
-            aria-controls="page-mode-state"
-          ></button>
-          <p id="page-mode-state" class="hidden" aria-live="polite">
-            야간 모드 꺼짐
-          </p>
-        </section>
+        <div class="row">
+          <div class="col-xs-4">
+            <section class="toggle" aria-labelledby="toggle-title">
+              <h2 id="toggle-title">Day/Night Switch</h2>
 
-        <!-- 다른 페이지로 이동 -->
-        <nav class="note-header-nav" aria-labelledby="note-header-nav-title">
-          <h2
-            id="note-header-nav-title"
-            class="hidden note-header-nav-title"
-            aria-hidden="true"
-          >
-            다른 페이지로 이동
-          </h2>
-          <ol
-            class="note-header-nav-list"
-            aria-label="주제 선택"
-            role="tablist"
-          >
-            <li class="note-header-nav-list-items">
               <button
+                class="toggle-button"
                 type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-html"
+                aria-label="야간모드 켜기"
+                aria-controls="page-mode-state"
+              ></button>
+              <strong
+                id="page-mode-state"
+                class="visually-hidden"
+                aria-live="polite"
               >
-                html
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-css"
+                야간 모드 꺼짐
+              </strong>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="menu">
+              <section
+                class="header-button-group"
+                aria-labelledby="header-button-group"
+                role="tablist"
               >
-                css
-              </button>
-            </li>
-            <li class="note-header-nav-list-items">
-              <button
-                type="button"
-                data-role="tab"
-                aria-controls="go-to-page-div-js"
-              >
-                javascript
-              </button>
-            </li>
-          </ol>
+                <h2 id="header-button-group" class="visually-hidden">
+                  메뉴 열기
+                </h2>
 
-          <article
-            id="go-to-pages"
-            class="hidden"
-            aria-hidden="true"
-            aria-labelledby="select-chapter"
-          >
-            <h2 id="select-chapter" class="hidden">챕터 선택 모달 열림</h2>
+                <div>
+                  <!-- NOTE: menu-buttons.js -->
+                </div>
+              </section>
 
-            <button
-              class="go-to-pages-close"
-              type="button"
-              aria-label="모달 닫기"
-            ></button>
+              <nav id="nav" class="nav" data-role="tabpanel">
+                <h2 class="visually-hidden">메뉴</h2>
+                <button
+                  class="nav-close"
+                  type="button"
+                  aria-label="메뉴 닫기"
+                ></button>
 
-            <div
-              id="go-to-page-div-html"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="html-button"
-            >
-              <h3 class="go-to-page-title" aria-hidden="true">
-                <span aria-hidden="true">😈</span>html
-              </h3>
-              <ol id="go-to-page-html" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.html) -->
-              </ol>
+                <article class="nav-html">
+                  <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-css">
+                  <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-javascript">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">😎</i>javascript
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-cross-browsing">
+                  <h3 class="nav-title">
+                    <i aria-hidden="true">👽</i>cross-browsing
+                  </h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-atom">
+                  <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-git">
+                  <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+                <article class="nav-vscode">
+                  <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+                  <ol class="nav-list">
+                    <!-- NOTE: nav.js -->
+                  </ol>
+                </article>
+              </nav>
             </div>
+          </div>
+        </div>
 
-            <div
-              id="go-to-page-div-css"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="css-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😇</span>CSS
-              </h3>
-              <ol id="go-to-page-css" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.css) -->
-              </ol>
-            </div>
-
-            <div
-              id="go-to-page-div-javascript"
-              class="go-to-page-div hidden"
-              data-role="tabpanel"
-              aria-labelledby="js-button"
-            >
-              <h3 class="go-to-page-title">
-                <span aria-hidden="true">😎</span>Javascript
-              </h3>
-              <ol id="go-to-page-javascript" class="go-to-page-list">
-                <!-- ../../assets/app/create.js (state.네비게이션.javascript) -->
-              </ol>
-            </div>
-          </article>
-        </nav>
+        <div class="time">
+          <div class="time-upload">
+            작성 날짜: <time datetime="2021-3-2">2021년 03월 02일</time>
+          </div>
+          <div class="time-last">
+            수정 날짜: <time datetime="2021-7-3">2021년 07월 03일</time>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="note-main" aria-label="본문 영역">
-      <section class="container" aria-labelledby="main-title">
-        <h2 id="main-title" class="main-title">
-          <strong>
-            <span class="main-title" aria-hidden="true">💔</span>
-            배열 map 메서드
-            <span class="main-title" aria-hidden="true">💔</span>
-          </strong>
-        </h2>
-        <div class="time">
-          수정 날짜: <time datetime="2021-3-17">2021년 03월 17일</time>
+      <article class="container" aria-labelledby="main-title">
+        <div class="row">
+          <div class="col-xs-4">
+            <h2 id="main-title" class="main-title">
+              <strong>
+                <i aria-hidden="true">💔</i>
+                배열 map 메서드
+                <i aria-hidden="true">💔</i>
+              </strong>
+            </h2>
+
+            <section class="summary" aria-labelledby="summary-title">
+              <h3 id="summary-title" class="main-article-title">
+                <i aria-hidden="true">⭐</i>
+                개요
+              </h3>
+
+              <p>
+                배열에 있는 값을 하나하나 넣어 줄 성실함은 나한테 없나보다.<br />
+                아니 이걸 다 손으로 치는 사람이 있을까.<br />
+                어쨌든, 배열의 요소에 규칙성 있는 내용을 넣는 방법을 알아보자.
+              </p>
+            </section>
+
+            <section class="map" aria-labelledby="map-title">
+              <h3 id="map-title" class="main-article-title">
+                <i aria-hidden="true">💥</i>
+                정의
+              </h3>
+
+              <dl class="main-dl" aria-label="map 정의와 특징">
+                <div>
+                  <dt>map</dt>
+                  <dd>
+                    배열의 요소들에 함수를 적용시키고, 일대일로 매칭한 결과 값을
+                    배열로 반환하는 메서드
+                  </dd>
+                  <dd>
+                    함수 각각의 요소에 대해서 한번씩 순서대로 불러내서
+                    콜백함수의 반환값으로 새로운 배열을 생성
+                  </dd>
+                  <dd>
+                    <strong>
+                      let 변수 = 배열.map(콜백함수(요소, 인덱스, 배열) { 동작},
+                      thisArg);
+                    </strong>
+                  </dd>
+                </div>
+                <div>
+                  <dt>map 콜백함수</dt>
+                  <dd>배열의 요소에 대입하여 새로운 배열 요소를 생성하는 함수</dd>
+                  <dd class="is-map-callback">
+                    <span>인수: 요소, 인덱스, 배열</span>
+                    <dl class="main-dl box-white" aria-level="map 콜백함수 문법">
+                      <div>
+                        <dt>요소</dt>
+                        <dd>처리할 현재 요소를 가리킨다.</dd>
+                        <dd>필수 기재</dd>
+                      </div>
+                      <div>
+                        <dt>인덱스</dt>
+                        <dd>처리할 현재 요소의 인덱스를 가리킨다.</dd>
+                        <dd>생략 가능</dd>
+                      </div>
+                      <div>
+                        <dt>배열</dt>
+                        <dd>map을 호출한 배열을 의미한다.</dd>
+                        <dd>생략 가능</dd>
+                      </div>
+                    </dl>
+                  </dd>
+                </div>
+                <div>
+                  <dt>map thisArg</dt>
+                  <dd>콜백함수를 실행할 때 this로 사용되는 값을 의미한다.</dd>
+                  <dd>생략 가능</dd>
+              </dl>
+            </section>
+
+            <section class="map-example" aria-labelledby="map-example-title">
+              <h3 id="map-example-title" class="main-article-title">
+                <i aria-hidden="true">💤</i>
+                예시
+              </h3>
+              
+              <ul>
+                <li class="main-item">
+                  <p>
+                    1에서 45까지의 숫자를 배열로 만드는 예시이다.
+                  </p>
+
+                  <div class="code">
+                    <pre class="main-code">
+                      <code>
+                        let 숫자배열 = Array(45).fill().map(function(요소, 인덱스) {
+                          return 인덱스 + 1;
+                        });
+                      </code>
+                    </pre>
+                  </div>
+                </li>
+
+                <li class="main-item">
+                  <p>
+                    요소의 숫자를 제곱근으로 변형하여 배열로 만드는 예시
+                  </p>
+                  
+                  <div class="code">
+                    <pre class="main-code">
+                      <code>
+                        var numbers = [1, 4, 9];
+                        var roots = numbers.map(Math.sqrt);
+          
+                        // roots는 [1, 2, 3]
+                        // numbers는 그대로 [1, 4, 9]
+                      </code>
+                    </pre>
+                  </div>
+                </li>
+
+                <li class="main-item">
+                  <p>
+                    요소의 숫자를 두배로 변형하여 배열로 만드는 예시
+                  </p>
+
+                  <div class="code">
+                    <pre class="main-code">
+                      <code>
+                        var numbers = [1, 4, 9];
+                        var doubles = numbers.map(function(num) {
+                          return num * 2;
+                        });
+          
+                        // doubles는 이제 [2, 8, 18]
+                        // numbers는 그대로 [1, 4, 9]
+                      </code>
+                    </pre>
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </div>
         </div>
-
-        <article class="summary" aria-labelledby="summary-title">
-          <h3 id="summary-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">⭐</span>
-            개요
-          </h3>
-          <p>
-            배열에 있는 값을 하나하나 넣어 줄 성실함은 나한테 없나보다.<br />
-            아니 이걸 다 손으로 치는 사람이 있을까.<br />
-            어쨌든, 배열의 요소에 규칙성 있는 내용을 넣는 방법을 알아보자.
-          </p>
-        </article>
-
-        <article class="map" aria-labelledby="map-title">
-          <h3 id="map-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">💥</span>
-            정의
-          </h3>
-          <p>
-            배열의 요소들에 함수를 적용시키고, 일대일로 매칭한 결과 값을 배열로
-            반환하는 메서드다.<br />
-            이 과정을 매핑한다라고 표현한다.<br />
-            함수 각각의 요소에 대해서 한번씩 순서대로 불러내서 콜백함수의
-            반환값으로 새로운 배열을 만든다.<br />
-          </p>
-        </article>
-
-        <article class="map-syntax" aria-labelledby="map-syntax-title">
-          <h3 id="map-syntax-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">💨</span>
-            문법
-          </h3>
-          <p class="margin-16px">문법은 다음과 같다.</p>
-          <p class="margin-16px">
-            <strong class="order">
-              let 변수 = 배열.map(콜백함수(요소, 인덱스, 배열) { 동작},
-              thisArg);
-            </strong>
-          </p>
-          <p class="margin-8px">map의 문법을 목록으로 정리했다.</p>
-          <dl class="main-article-dl" aria-label="문법 해석">
-            <div>
-              <dt class="main-article-dt" aria-label="변수">변수</dt>
-              <dd class="main-article-dd">
-                맵은 새로운 변수에다가 대입하여 사용한다.
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="콜백함수">콜백함수</dt>
-              <dd class="main-article-dd">
-                배열의 요소에 대입하여 새로운 배열 요소를 생성하는 함수이다.
-              </dd>
-              <dd class="main-article-dd">
-                요소, 인덱스, 배열 3개의 인수를 가진다.
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="요소">요소</dt>
-              <dd class="main-article-dd">처리할 현재 요소를 가리킨다.</dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="인덱스">인덱스</dt>
-              <dd class="main-article-dd">
-                처리할 현재 요소의 인덱스를 가리킨다.
-              </dd>
-              <dd class="main-article-dd">
-                사용하지않을 때에는 생략 가능하다.
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="배열">배열</dt>
-              <dd class="main-article-dd">map을 호출한 배열을 의미한다.</dd>
-              <dd class="main-article-dd">
-                사용하지않을 때에는 생략 가능하다.
-              </dd>
-            </div>
-            <div>
-              <dt class="main-article-dt" aria-label="thisArg">thisArg</dt>
-              <dd class="main-article-dd">
-                콜백함수를 실행할 때 this로 사용되는 값을 의미한다.
-              </dd>
-              <dd class="main-article-dd">
-                사용하지않을 때에는 생략 가능하다.
-              </dd>
-            </div>
-          </dl>
-        </article>
-
-        <article class="map-example" aria-labelledby="map-example-title">
-          <h3 id="map-example-title" class="main-article-title">
-            <span class="main-article-title" aria-hidden="true">💤</span>
-            예시
-          </h3>
-          <p class="margin-8px">
-            1에서 45까지의 숫자를 배열로 만드는 예시이다.
-          </p>
-          <pre class="main-article-pre background-white-radius margin-16px">
-            <code>
-              let 숫자배열 = Array(45).fill().map(function(요소, 인덱스) {
-                return 인덱스 + 1;
-              });
-            </code>
-          </pre>
-          <p class="margin-8px">
-            요소의 숫자를 제곱근으로 변형하여 배열로 만드는 예시
-          </p>
-          <pre class="main-article-pre background-white-radius margin-16px">
-            <code>
-              var numbers = [1, 4, 9];
-              var roots = numbers.map(Math.sqrt);
-
-              // roots는 [1, 2, 3]
-              // numbers는 그대로 [1, 4, 9]
-            </code>
-          </pre>
-          <p class="margin-8px">
-            요소의 숫자를 두배로 변형하여 배열로 만드는 예시
-          </p>
-          <pre class="main-article-pre background-white-radius">
-            <code>
-              var numbers = [1, 4, 9];
-              var doubles = numbers.map(function(num) {
-                return num * 2;
-              });
-
-              // doubles는 이제 [2, 8, 18]
-              // numbers는 그대로 [1, 4, 9]
-            </code>
-          </pre>
-        </article>
-      </section>
+      </article>
     </main>
 
     <footer class="note-footer">
       <div class="container">
-        <blockquote
-          class="note-footer-reference"
-          cite="https://www.youtube.com/watch?v=kFJUbZ7tX7I&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=39"
-        >
-          <strong class="note-footer-reference-name">
-            자료 출처: "유튜브 - ZeroCho의 JS 초급 강좌 6-2. 배열 map 메서드",
-            유튜브, 2021년 3월 2일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://www.youtube.com/watch?v=kFJUbZ7tX7I&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=39"
+        <div class="row">
+          <div class="col-xs-4">
+            <blockquote
+              class="reference"
+              cite="https://www.youtube.com/watch?v=kFJUbZ7tX7I&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=39"
             >
-              https://www.youtube.com/watch?v=kFJUbZ7tX7I&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=39
-            </a>
-          </cite>
-        </blockquote>
+              <strong >
+                자료 출처: "유튜브 - ZeroCho의 JS 초급 강좌 6-2. 배열 map
+                메서드", 유튜브, 2021년 3월 2일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://www.youtube.com/watch?v=kFJUbZ7tX7I&list=PLcqDmjxt30Rtbxbh4eJREOVekql_kWVmu&index=39"
+                >
+                유튜브 - ZeroCho의 JS 초급 강좌 6-2. 배열 map 메서드
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
-        >
-          <strong class="note-footer-reference-name">
-            자료 출처: "MDN - Array.prototype.map()", MDN, 2021년 3월 3일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a
-              href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+            <blockquote
+              class="reference"
+              cite="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
             >
-              https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-            </a>
-          </cite>
-        </blockquote>
+              <strong >
+                자료 출처: "MDN - Array.prototype.map()", MDN, 2021년 3월 3일
+                접속,
+              </strong>
+              <cite class="reference-url">
+                <a
+                  href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+                >
+                  MDN - Array.prototype.map()
+                </a>
+              </cite>
+            </blockquote>
 
-        <blockquote
-          class="note-footer-reference"
-          cite="https://gist.github.com/rxaviers/7360908"
-        >
-          <strong class="note-footer-reference-name">
-            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
-            2021년 3월 3일 접속,
-          </strong>
-          <cite class="note-footer-reference-url">
-            <a href="https://gist.github.com/rxaviers/7360908">
-              https://gist.github.com/rxaviers/7360908
-            </a>
-          </cite>
-        </blockquote>
+            <blockquote
+              class="reference"
+              cite="https://gist.github.com/rxaviers/7360908"
+            >
+              <strong >
+                이모티콘 출처: "rxaviers github / gist:7360908 repository",
+                github, 2021년 3월 3일 접속,
+              </strong>
+              <cite class="reference-url">
+                <a href="https://gist.github.com/rxaviers/7360908">
+                  rxaviers github / gist:7360908 repository
+                </a>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../../assets/data.js"></script>
-    <script src="../../assets/app/create.js"></script>
-    <script src="../../assets/app/app.js"></script>
+    <script src="../../assets/app/loader.js"></script>
   </body>
 </html>
