@@ -9,6 +9,12 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    > div {
+      > * {
+        @include margin(8);
+      }
+    }
   }
 
   @include responsive(M) {

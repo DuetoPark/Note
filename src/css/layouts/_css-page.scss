@@ -20,24 +20,6 @@
   }
 }
 
-// NOTE: 01-link
-.link-recommendations {
-  @extend %margin-8-div;
-}
-
-// NOTE: 02-stroke
-.stroke,
-.stroke > div,
-.stroke-cross-browsing,
-.stroke-animation {
-  @extend %margin-8-div;
-}
-
-// NOTE: 03-background-clip
-.background-clip {
-  @extend %margin-8-div;
-}
-
 .background-clip-type {
   ul {
     .main-item {
@@ -56,28 +38,12 @@
   }
 }
 
-.hyphens {
-  @extend %margin-8-div;
-}
-
-// NOTE: 05-pseudo-opacity
-.how-to-set-pseudo-opacity {
-  @extend %margin-8-div;
-}
-
 // NOTE: 06-width
 .calc {
-  @extend %margin-8-div;
-
   .width-calc-image-group {
     @extend %image-size;
     @include column-flexbox;
   }
-}
-
-// NOTE: 07-main-tag
-.main-tag {
-  @extend %margin-8-div;
 }
 
 // NOTE: 08-transform-origin
@@ -105,27 +71,7 @@
   }
 }
 
-// NOTE: 09-padding-top
-.padding-top-100 {
-  @extend %margin-8-div;
-}
-
-// NOTE: 10-direction
-.direction {
-  @extend %margin-8-div;
-}
-
-// NOTE: 12-미디어쿼리-에러
-.media-query-error-solution {
-  @extend %margin-8-div;
-}
-
 // NOTE: 13-input-styling
-.input-style,
-.box-shadow {
-  @extend %margin-8-div;
-}
-
 .input-style {
   &-example {
     .btn-fill {
@@ -147,29 +93,13 @@
   }
 }
 
-// NOTE: 14-inline-lineheight
-.inline-lineheight {
-  @extend %margin-8-div;
-}
-
 // NOTE: 15-flex-grow-flex-shrink
-.flex-grow,
-.flex-grow-bug,
-.flex-shrink {
-  @extend %margin-8-div;
-}
-
 .flex-grow {
   @extend %image-size;
 }
 
 // NOTE: 17-perspective
 .perspective-example {
-  &-slider,
-  &-flip {
-    @extend %margin-8-div;
-  }
-
   &-flip {
     .cards {
       .card-perspective {
@@ -177,9 +107,4 @@
       }
     }
   }
-}
-
-// NOTE: 20-transition-bug
-.transition-error {
-  @extend %margin-8-div;
 }
