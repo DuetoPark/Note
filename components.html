@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="./src/css/style.css" />
   </head>
 
-  <body class="mode-day">
+  <body class="mode-day" data-page="index">
     <div class="container">
       <div class="row">
         <div class="col-xs-1 col-sm-3 col-md-4 col-lg-5">
@@ -61,7 +61,7 @@
         </a>
       </h1>
 
-      <h3 class="header-nav-title"><i aria-hidden="true">😈</i>html</h3>
+      <h3 class="nav-title"><i aria-hidden="true">😈</i>html</h3>
 
       <h2 class="main-title">
         <strong>
@@ -217,43 +217,145 @@
         </button>
       </section>
 
-      <nav id="nav" class="nav select-html" data-role="tabpanel">
+      <nav id="nav" class="nav" data-role="tabpanel">
         <h2 class="visually-hidden">메뉴</h2>
         <button class="nav-close" type="button" aria-label="메뉴 닫기"></button>
 
         <article class="nav-html">
           <h3 class="nav-title"><i aria-hidden="true">😈</i> html</h3>
           <ol class="nav-list">
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
+            <!-- nav.js -->
           </ol>
         </article>
         <article class="nav-css">
           <h3 class="nav-title"><i aria-hidden="true">😇</i>css</h3>
           <ol class="nav-list">
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
+            <!-- nav.js -->
           </ol>
         </article>
         <article class="nav-javascript">
           <h3 class="nav-title"><i aria-hidden="true">😎</i>javascript</h3>
           <ol class="nav-list">
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
-            <li class="nav-item"><a href="">ddd</a></li>
+            <!-- nav.js -->
+          </ol>
+        </article>
+        <article class="nav-cross-browsing">
+          <h3 class="nav-title"><i aria-hidden="true">👽</i>cross-browsing</h3>
+          <ol class="nav-list">
+            <!-- nav.js -->
+          </ol>
+        </article>
+        <article class="nav-atom">
+          <h3 class="nav-title"><i aria-hidden="true">🙌</i>atom</h3>
+          <ol class="nav-list">
+            <!-- nav.js -->
+          </ol>
+        </article>
+        <article class="nav-git">
+          <h3 class="nav-title"><i aria-hidden="true">💪</i>git</h3>
+          <ol class="nav-list">
+            <!-- nav.js -->
+          </ol>
+        </article>
+        <article class="nav-vscode">
+          <h3 class="nav-title"><i aria-hidden="true">🙈</i>vscode</h3>
+          <ol class="nav-list">
+            <!-- nav.js -->
           </ol>
         </article>
       </nav>
     </div>
+
+    <div class="time">
+      <div class="time-upload">
+        작성 날짜: <time datetime="2021-3-16">2021년 03월 16일</time>
+      </div>
+
+      <div class="time-last">
+        수정 날짜: <time datetime="2021-3-16">2021년 03월 16일</time>
+      </div>
+    </div>
+
+    <div class="note-main">
+      <article style="border: 1px solid red">
+        <h2>article</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, dolorem.
+        </p>
+      </article>
+
+      <article style="border: 1px solid red">
+        <h2>article</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, dolorem.
+        </p>
+
+        <section>
+          <h2>section</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Exercitationem, quam?
+          </p>
+        </section>
+
+        <section>
+          <h2>section</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Exercitationem, quam?
+          </p>
+        </section>
+      </article>
+    </div>
+
+    <div class="pre box-white">
+      <pre class="code">
+        <code>
+          const pre = "자바스크립트 코드";
+        </code>
+      </pre>
+    </div>
+
+    <div class="table">
+      <table class="main-table">
+        <thead>
+          <tr>
+            <th>데프콘</th>
+            <th>붕어빵</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>안경</td>
+            <td>팥붕</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="note-footer">
+      <div class="container">
+        <blockquote
+          class="reference"
+          cite="https://gist.github.com/rxaviers/7360908"
+        >
+          <strong>
+            이모티콘 출처: "rxaviers github / gist:7360908 repository", github,
+            2020년 12월 29일 접속,
+          </strong>
+          <cite class="reference-url">
+            <a href="https://gist.github.com/rxaviers/7360908">
+              https://gist.github.com/rxaviers/7360908
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+    </footer>
+
+    <div class="main-image">
+      <img src="./src/assets/images/box.jpg" alt="box" />
+    </div>
     <script src="./src/assets/data.js"></script>
-    <script src="./src/assets/app/nav.js"></script>
+    <script src="./src/assets/app/loader.js"></script>
   </body>
 </html>
